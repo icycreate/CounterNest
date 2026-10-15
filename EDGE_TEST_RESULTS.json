@@ -1,0 +1,6 @@
+{
+  "functions": 4,
+  "status": "passed",
+  "environment": "Node execution of transpiled handlers with mocked Supabase Auth and database",
+  "limitation": "Does not verify live Supabase Auth, function gateway, CORS delivery, email or real password hashing."
+}

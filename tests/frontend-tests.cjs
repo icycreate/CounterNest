@@ -1,0 +1,15 @@
+const assert=require('assert'),path=require('path');
+const esbuild=require('esbuild');
+const filter=esbuild.buildSync({entryPoints:[path.join(__dirname,'../src/commercialFilters.ts')],bundle:true,write:false,platform:'node',format:'cjs'}).outputFiles[0].text;
+const moduleObject={exports:{}};new Function('module','exports',filter)(moduleObject,moduleObject.exports);
+const {filterCommercialProducts}=moduleObject.exports;
+const p={id:'cake',name:'Vanilla Cake',category_name:'Cakes',tags:['Birthday'],allergens:['Milk'],dietary:['Vegetarian'],featured:true,new_badge:true,seasonal_label:'Summer',price:20,regular_price:25,available:true,variants:[{price:20,regular_price:25,available:false},{price:50,regular_price:50,available:true}]};
+const f={query:'',category:'All',tag:'',min:'',max:'',availability:'all',badge:'',avoid:'',diet:''};
+assert.equal(filterCommercialProducts([p],{...f,query:'vanilla',category:'Cakes',tag:'birthday',diet:'vegetarian',min:'30',max:'60'}).length,1);
+assert.equal(filterCommercialProducts([p],{...f,avoid:'milk'}).length,0);
+assert.equal(filterCommercialProducts([p],{...f,min:'51'}).length,0);
+assert.equal(filterCommercialProducts([p],{...f,availability:'soldout'}).length,0);
+for(const badge of ['featured','new','seasonal','promo'])assert.equal(filterCommercialProducts([p],{...f,badge}).length,1);
+assert.equal(filterCommercialProducts([{...p,variants:[],available:false}],{...f,availability:'soldout'}).length,1);
+const idCode=esbuild.buildSync({entryPoints:[path.join(__dirname,'../src/id.ts')],bundle:true,write:false,platform:'node',format:'cjs'}).outputFiles[0].text;const ids={exports:{}};new Function('module','exports','crypto',idCode)(ids,ids.exports,{getRandomValues:b=>require('crypto').randomFillSync(b)});const id=ids.exports.randomId();assert.match(id,/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/);
+console.log('PASS frontend filters: name/category/tag/price/availability/badges/allergens/dietary');console.log('PASS HTTP-LAN UUID fallback');

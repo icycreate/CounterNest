@@ -1,0 +1,23 @@
+{
+  "build": "2026-10-15-update1",
+  "status": "passed",
+  "excluded": [
+    ".env",
+    ".env.local",
+    ".env.production",
+    "node_modules/example/file.js",
+    "dist/index.html",
+    "debug.log",
+    "settings.tsbuildinfo",
+    ".vercel/project.json",
+    "Thumbs.db",
+    ".vscode/settings.json"
+  ],
+  "tracked_candidates": [
+    ".env.example",
+    "package-lock.json",
+    "src/CataloguePreorders.tsx",
+    "supabase/migrations/202610151200_customer_requests_register.sql"
+  ],
+  "environment": "Isolated Git check; no .git shipped"
+}

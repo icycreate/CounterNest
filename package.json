@@ -1,0 +1,54 @@
+{
+  "name": "counternest-pos",
+  "private": true,
+  "version": "2.0.0-rc.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -b",
+    "test:database": "node tests/database-integration.cjs",
+    "test:frontend": "node tests/frontend-tests.cjs",
+    "test:ui": "node tests/ui-components.cjs",
+    "test:release": "node tests/STATIC_RELEASE_CHECKS.cjs",
+    "test:web": "node tests/web-deployment.cjs",
+    "test": "npm run test:frontend && npm run test:ui && npm run test:database && npm run test:release && npm run test:web && npm run test:edge && npm run test:display && npm run test:rc1 && npm run test:catalogue-export && npm run test:customer-requests",
+    "test:edge": "node tests/edge-functions.cjs",
+    "test:display": "node tests/catalogue-display.cjs",
+    "test:assets": "node tests/built-assets.cjs",
+    "test:preview": "node tests/preview-http.cjs",
+    "verify": "npm run build && npm test && npm run test:assets",
+    "test:rc1": "node tests/rc1-ui.cjs",
+    "test:catalogue-export": "node tests/catalogue-export.cjs",
+    "test:customer-requests": "node tests/customer-request-ui.cjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.57.4",
+    "@zxing/browser": "^0.2.1",
+    "jsbarcode": "^3.12.1",
+    "lucide-react": "^0.468.0",
+    "qrcode": "^1.5.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/jsbarcode": "^3.11.4",
+    "@types/qrcode": "^1.5.5",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5",
+    "@electric-sql/pglite": "0.5.9",
+    "esbuild": "0.25.12",
+    "react-test-renderer": "18.3.1"
+  },
+  "allowScripts": {
+    "esbuild@0.25.12": true
+  },
+  "description": "CounterNest POS Release Candidate 1 — browser / Vercel / Supabase",
+  "engines": {
+    "node": ">=22.12.0 <25"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "product": "CounterNest POS",
+  "version": "2.0.0-rc.1",
+  "baseline_version": "2.0.0-rc.1 (original RC1)",
+  "baseline_migration_count": 78,
+  "migration_count": 79,
+  "upgrade_migrations": [
+    "202610151200_customer_requests_register.sql"
+  ],
+  "release_type": "browser-release-candidate",
+  "backend": "Supabase Cloud",
+  "desktop_installer": false,
+  "features": [
+    {
+      "title": "Catalogue QR, anonymous pre-order requests, consent-based contact actions and admin register opening"
+    },
+    {
+      "title": "RC1 navigation, security, checkout recovery, stock-count and export hardening"
+    },
+    {
+      "title": "Catalogue Detail View & Standalone Display"
+    },
+    {
+      "title": "Advanced Catalogue Search & Filtering"
+    },
+    {
+      "title": "Product Variants & Independent Pricing"
+    },
+    {
+      "title": "Combo & Bundle Management"
+    },
+    {
+      "title": "Customer Order Number & Preparation Screen"
+    },
+    {
+      "title": "Customer Ready Display"
+    },
+    {
+      "title": "Pre-Orders & Pickup Scheduling"
+    },
+    {
+      "title": "Custom Cake / Special Order Module"
+    },
+    {
+      "title": "Production Demand Forecast"
+    },
+    {
+      "title": "Low Stock & Production Shortage Alerts"
+    }
+  ],
+  "validation": "BUILD_VALIDATION.json",
+  "deployment_status": "RC1 local validation; live cloud and device acceptance pending",
+  "name": "CounterNest POS v2.0.0-RC1",
+  "build": "2026-10-15-update1"
+}

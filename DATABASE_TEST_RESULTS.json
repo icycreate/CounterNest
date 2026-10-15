@@ -1,0 +1,239 @@
+{
+  "version": "2.0.0-rc.1",
+  "phase": "36.9",
+  "migration_count": 79,
+  "database_engine": "PGlite PostgreSQL with mocked Supabase auth/storage and mocked manager-PIN crypt for refund tests; pgcrypto extension omitted",
+  "checks": [
+    {
+      "name": "No promotion returns regular price",
+      "status": "passed"
+    },
+    {
+      "name": "Active fixed promotion and request price agree",
+      "status": "passed"
+    },
+    {
+      "name": "Percentage and expired/scheduled promotions",
+      "status": "passed"
+    },
+    {
+      "name": "Invalid discounts and date windows rejected",
+      "status": "passed"
+    },
+    {
+      "name": "Selection snapshots active promotion and aggregate stock protects shared variants",
+      "status": "passed"
+    },
+    {
+      "name": "Claim then checkout records promotion receipt and actual conversion",
+      "status": "passed"
+    },
+    {
+      "name": "Stale and missing quoted price rejected without stock deduction",
+      "status": "passed"
+    },
+    {
+      "name": "Media primary/label, cross-shop objects and malformed media",
+      "status": "passed"
+    },
+    {
+      "name": "Token view validation, session dedup and administrator analytics",
+      "status": "passed"
+    },
+    {
+      "name": "Employees cannot manage promotions/media or read analytics",
+      "status": "passed"
+    },
+    {
+      "name": "Cross-shop mutations and invalid token payloads rejected",
+      "status": "passed"
+    },
+    {
+      "name": "Unavailable customer product and inactive option blocked at payment",
+      "status": "passed"
+    },
+    {
+      "name": "Storage policies allow own admin folder and deny cross-shop/employee upload",
+      "status": "passed"
+    },
+    {
+      "name": "Catalogue metadata and standalone payload expose only customer fields",
+      "status": "passed"
+    },
+    {
+      "name": "Proper variants have unique prices identities and immutable inventory mode",
+      "status": "passed"
+    },
+    {
+      "name": "Shared variant price receipt cost and master stock deduction",
+      "status": "passed"
+    },
+    {
+      "name": "Independent variant lot stock deducts once without touching master stock",
+      "status": "passed"
+    },
+    {
+      "name": "Variant FEFO excludes expired lots and preserves stock on failure",
+      "status": "passed"
+    },
+    {
+      "name": "Fixed bundle allocates exact price and deducts every component once",
+      "status": "passed"
+    },
+    {
+      "name": "Category-choice combos validate choices and reject a foreign shop product",
+      "status": "passed"
+    },
+    {
+      "name": "Kitchen workflow friendly order numbers and ready-display privacy",
+      "status": "passed"
+    },
+    {
+      "name": "Pre-order quote deposit and final payment are idempotent and linked",
+      "status": "passed"
+    },
+    {
+      "name": "Custom cake quote private reference and cash deposits balance correctly",
+      "status": "passed"
+    },
+    {
+      "name": "Explainable forecast and approved scheduling do not deduct inventory",
+      "status": "passed"
+    },
+    {
+      "name": "Shortage alerts refresh resolve/dismiss and retain audit events",
+      "status": "passed"
+    },
+    {
+      "name": "Independent-variant refunds restore only its own lots and stock",
+      "status": "passed"
+    },
+    {
+      "name": "Bundle refund value equals allocated sale price and restores all components",
+      "status": "passed"
+    },
+    {
+      "name": "Independent variant approved production transfers output once",
+      "status": "passed"
+    },
+    {
+      "name": "Scheduled production plans are linked and duplicate approval is rejected",
+      "status": "passed"
+    },
+    {
+      "name": "Variant disable preserves receipt history and blocks new selection",
+      "status": "passed"
+    },
+    {
+      "name": "Staff catalogue works when customer display is disabled; cart repricing is authoritative",
+      "status": "passed"
+    },
+    {
+      "name": "Every new table has RLS and API roles cannot write ledgers or invoke private helpers",
+      "status": "passed"
+    },
+    {
+      "name": "Recipe-scaled variant production consumes usable ingredients once and propagates expiry/cost",
+      "status": "passed"
+    },
+    {
+      "name": "POS quote and checkout agree for a loyalty reward on allocated bundle pricing",
+      "status": "passed"
+    },
+    {
+      "name": "Customer profile history links scheduled orders and sales; large order numbers do not truncate",
+      "status": "passed"
+    },
+    {
+      "name": "Source-batch recalls and held-lot refunds/disposal cannot reintroduce unavailable variant stock",
+      "status": "passed"
+    },
+    {
+      "name": "Commercial mutations and private checkout helper enforce staff/admin boundaries",
+      "status": "passed"
+    },
+    {
+      "name": "RC1 temporary-password staff cannot bypass setup through RLS or RPCs",
+      "status": "passed"
+    },
+    {
+      "name": "RC1 checkout retry returns one receipt and deducts stock and cash once",
+      "status": "passed"
+    },
+    {
+      "name": "RC1 reused checkout references reject changed amounts and foreign staff",
+      "status": "passed"
+    },
+    {
+      "name": "RC1 insufficient cash rolls back sale, inventory, tender and retry ledger together",
+      "status": "passed"
+    },
+    {
+      "name": "RC1 checkout ledger is isolated and cannot be written directly by API roles",
+      "status": "passed"
+    },
+    {
+      "name": "RC1 supporting FEFO, allocation, kitchen, pickup and checkout indexes exist",
+      "status": "passed"
+    },
+    {
+      "name": "RC1 physical stock counts reject a concurrent sale and preserve the lot ledger",
+      "status": "passed"
+    },
+    {
+      "name": "Bakery UAT receives supplier lots and converts whole eggs with traceable yields",
+      "status": "passed"
+    },
+    {
+      "name": "Bakery UAT recipe production, variance and waste keep stock and ingredient lots aligned",
+      "status": "passed"
+    },
+    {
+      "name": "Bakery UAT catalogue, variant promotion, kitchen, POS receipt and daily cash agree",
+      "status": "passed"
+    },
+    {
+      "name": "Bakery UAT reports, refund, portable backup, audit and immutable day close reconcile",
+      "status": "passed"
+    },
+    {
+      "name": "Customer request settings enforce administrator, allowed methods and canonical HTTPS origin",
+      "status": "passed"
+    },
+    {
+      "name": "Anonymous pre-order submission needs no pickup, uses server promo prices and never reserves stock",
+      "status": "passed"
+    },
+    {
+      "name": "Public request input rejects disabled methods, malformed contact, stale prices and foreign products",
+      "status": "passed"
+    },
+    {
+      "name": "Request RLS prevents public reads/direct writes and foreign-shop staff access",
+      "status": "passed"
+    },
+    {
+      "name": "Only selected contact action is permitted to staff; alternate method needs admin reason and audits once",
+      "status": "passed"
+    },
+    {
+      "name": "Request states reject stale/skipped transitions and schedule exactly one linked order",
+      "status": "passed"
+    },
+    {
+      "name": "Linked request follows real production/paid collection, with one stock deduction",
+      "status": "passed"
+    },
+    {
+      "name": "Register opening is admin-only, station-stamped, audited and immutable for the day",
+      "status": "passed"
+    },
+    {
+      "name": "Disabled/rotated customer links stop requests and receipt sharing",
+      "status": "passed"
+    }
+  ],
+  "limitations": [
+    "Live Supabase deployment, real bcrypt PIN checks, storage HTTP upload, Edge Functions and browser UAT still require target-environment verification."
+  ]
+}

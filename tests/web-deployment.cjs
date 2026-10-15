@@ -1,0 +1,20 @@
+const fs=require('fs'),path=require('path'),assert=require('assert'),esbuild=require('esbuild');
+const root=path.resolve(__dirname,'..');
+function compile(file){const code=esbuild.buildSync({entryPoints:[path.join(root,file)],bundle:true,write:false,platform:'node',format:'cjs',packages:'external'}).outputFiles[0].text;const mod={exports:{}};new Function('module','exports','require',code)(mod,mod.exports,require);return mod.exports;}
+const {validatePublicConfig}=compile('src/lib/config.ts'),url='https://project.supabase.co';
+const jwt=role=>`eyJhbGciOiJIUzI1NiJ9.${Buffer.from(JSON.stringify({role})).toString('base64url')}.sig`;
+assert(validatePublicConfig({}).error);
+assert(validatePublicConfig({url,publishableKey:'sb_secret_private'}).error);assert(validatePublicConfig({url,anonKey:jwt('service_role')}).error);
+assert(!validatePublicConfig({url,publishableKey:'sb_publishable_example'}).error);assert(!validatePublicConfig({url,anonKey:jwt('anon')}).error);
+assert(validatePublicConfig({url:'http://project.supabase.co',anonKey:jwt('anon')}).error);
+assert.equal(validatePublicConfig({url,publishableKey:'sb_publishable_first',anonKey:jwt('anon')}).key,'sb_publishable_first');
+const {pageKeys,pageFromPath}=compile('src/routes.ts');for(const page of pageKeys){assert.equal(pageFromPath('/'+page),page);assert.equal(pageFromPath('/'+page+'/'),page)}assert.equal(pageFromPath('/'),'dashboard');assert.equal(pageFromPath('/unknown'),'dashboard');
+const React=require('react'),Renderer=require('react-test-renderer'),{useBrowserPage}=compile('src/routes.ts');let routeState,pop,pushed;
+global.window={location:{pathname:'/products',search:''},history:{pushState(_state,_title,p){pushed=p;window.location.pathname=p}},addEventListener(event,fn){if(event==='popstate')pop=fn},removeEventListener(){}};
+function RouteProbe(){routeState=useBrowserPage();return null}let probe;Renderer.act(()=>{probe=Renderer.create(React.createElement(RouteProbe))});assert.equal(routeState[0],'products');Renderer.act(()=>routeState[1]('settings'));assert.equal(routeState[0],'settings');assert.equal(pushed,'/settings');window.location.pathname='/products';Renderer.act(()=>pop());assert.equal(routeState[0],'products');Renderer.act(()=>probe.unmount());
+const {catalogueAvailable,cataloguePromotion,cataloguePriceRows}=compile('src/cataloguePricing.ts');
+const p={price:99,regular_price:99,stock:0,catalogue_sold_out:false,variants:[{name:'Small',price:20,regular_price:25,available:true},{name:'Large',price:50,regular_price:50,available:false}]};
+assert(catalogueAvailable(p));assert(cataloguePromotion(p));assert.deepEqual(cataloguePriceRows(p),[{name:'Small',price:20,regular:25,available:true},{name:'Large',price:50,regular:50,available:false}]);
+const config=JSON.parse(fs.readFileSync(path.join(root,'vercel.json')));assert(config.rewrites.some(r=>r.destination==='/index.html'));assert(config.headers.some(r=>r.source==='/sw.js'&&r.headers.some(h=>h.value==='no-cache')));
+assert(fs.readFileSync(path.join(root,'src/main.tsx'),'utf8').includes('configurationError && !demoEnabled'));
+console.log(`PASS browser config/key rejection, ${pageKeys.length} refresh routes, variant PDF prices/availability and SPA rewrite configuration`);

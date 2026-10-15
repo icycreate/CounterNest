@@ -1,0 +1,70 @@
+import {FormEvent,useEffect,useMemo,useState} from 'react'
+import {AlertTriangle,CheckCircle2,ClipboardList,Plus,RefreshCw,ShieldCheck,X} from 'lucide-react'
+import {supabase,supabaseConfigured} from './lib/supabase'
+import type {Role} from './types'
+
+type ShiftLabel='opening'|'morning'|'afternoon'|'evening'|'closing'|'other'
+type Acknowledgement={id:string;note:string;acknowledged_at:string;staff_name:string}
+type Handover={id:string;reference:string;business_date:string;shift_label:ShiftLabel;summary:string;pending_actions:string;stock_notes:string|null;equipment_notes:string|null;incident_references:string[];status:'open'|'closed';created_at:string;closed_at:string|null;closing_note:string|null;created_by_me:boolean;created_by_name:string;closed_by_name:string;acknowledged_by_me:boolean;acknowledgement_count:number;acknowledgements:Acknowledgement[]}
+type NewValues={shift:ShiftLabel;summary:string;pending:string;stock:string;equipment:string;incidents:string}
+
+const label=(value:string)=>value.replace(/_/g,' ').replace(/\b\w/g,character=>character.toUpperCase())
+const demoHandover=():Handover=>({id:'demo-previous-shift',reference:`HO-${new Date().toISOString().slice(0,10).replace(/-/g,'')}-000001`,business_date:new Date().toISOString().slice(0,10),shift_label:'morning',summary:'Morning sales completed normally and the counter was prepared for the incoming shift.',pending_actions:'Confirm the cake display count before the afternoon rush.',stock_notes:'Croissant stock is near the reorder level.',equipment_notes:'Receipt printer tested successfully.',incident_references:[],status:'open',created_at:new Date(Date.now()-45*60_000).toISOString(),closed_at:null,closing_note:null,created_by_me:false,created_by_name:'Previous Shift',closed_by_name:'—',acknowledged_by_me:false,acknowledgement_count:0,acknowledgements:[]})
+
+export default function ShiftHandover({role,online,showToast}:{role:Role;online:boolean;showToast:(message:string)=>void}){
+  const[rows,setRows]=useState<Handover[]>(()=>supabaseConfigured?[]:[demoHandover()]),[busy,setBusy]=useState(false),[adding,setAdding]=useState(false),[acknowledging,setAcknowledging]=useState<Handover|null>(null),[closing,setClosing]=useState<Handover|null>(null),[filter,setFilter]=useState<'open'|'closed'|'all'>('open')
+  async function load(){
+    if(!supabaseConfigured||!supabase)return
+    setBusy(true);const{data,error}=await supabase.rpc('get_shift_handovers',{p_limit:60});setBusy(false)
+    if(error)return showToast(error.message.includes('does not exist')?'Apply Supabase migration 45 before using Shift Handover.':error.message)
+    setRows((data??[]) as Handover[])
+  }
+  useEffect(()=>{void load()},[])
+  const shown=useMemo(()=>rows.filter(row=>filter==='all'||row.status===filter),[rows,filter])
+  async function create(values:NewValues){
+    if(!online)throw new Error('Reconnect before creating a shift handover.')
+    const incidentReferences=values.incidents.split(/[\s,]+/).map(value=>value.trim().toUpperCase()).filter(Boolean)
+    if(supabaseConfigured&&supabase){
+      const{error}=await supabase.rpc('create_shift_handover',{p_shift_label:values.shift,p_summary:values.summary,p_pending_actions:values.pending,p_stock_notes:values.stock||null,p_equipment_notes:values.equipment||null,p_incident_references:incidentReferences});if(error)throw error;await load()
+    }else{
+      const number=rows.length+1,now=new Date().toISOString(),row:Handover={id:`demo-${number}`,reference:`HO-${now.slice(0,10).replace(/-/g,'')}-${String(number).padStart(6,'0')}`,business_date:now.slice(0,10),shift_label:values.shift,summary:values.summary,pending_actions:values.pending,stock_notes:values.stock||null,equipment_notes:values.equipment||null,incident_references:incidentReferences,status:'open',created_at:now,closed_at:null,closing_note:null,created_by_me:true,created_by_name:'Demo Administrator',closed_by_name:'—',acknowledged_by_me:false,acknowledgement_count:0,acknowledgements:[]};setRows(old=>[row,...old])
+    }
+    setAdding(false);showToast('Shift handover created and retained in the operations log.')
+  }
+  async function acknowledge(row:Handover,note:string){
+    if(!online)throw new Error('Reconnect before acknowledging a handover.')
+    if(supabaseConfigured&&supabase){const{error}=await supabase.rpc('acknowledge_shift_handover',{p_handover_id:row.id,p_note:note});if(error)throw error;await load()}
+    else{const acknowledgement:Acknowledgement={id:`demo-ack-${Date.now()}`,note,acknowledged_at:new Date().toISOString(),staff_name:'Demo Administrator'};setRows(old=>old.map(item=>item.id===row.id?{...item,acknowledged_by_me:true,acknowledgement_count:item.acknowledgement_count+1,acknowledgements:[...item.acknowledgements,acknowledgement]}:item))}
+    setAcknowledging(null);showToast(`${row.reference} acknowledged.`)
+  }
+  async function close(row:Handover,note:string){
+    if(!online)throw new Error('Reconnect before closing a handover.')
+    if(supabaseConfigured&&supabase){const{error}=await supabase.rpc('close_shift_handover',{p_handover_id:row.id,p_note:note});if(error)throw error;await load()}
+    else setRows(old=>old.map(item=>item.id===row.id?{...item,status:'closed',closing_note:note,closed_at:new Date().toISOString(),closed_by_name:'Demo Administrator'}:item))
+    setClosing(null);showToast(`${row.reference} closed and retained in history.`)
+  }
+  return <>
+    <header className="page-header"><div><h1>Shift Handover</h1><p>Pass operational facts to the incoming shift and confirm management review</p></div><div className="report-actions"><button onClick={()=>void load()} disabled={busy||!supabaseConfigured}><RefreshCw size={17}/>{busy?'Refreshing…':'Refresh'}</button><button className="primary-btn" onClick={()=>setAdding(true)} disabled={!online}><Plus size={17}/> New Handover</button></div></header>
+    <div className="info-box drawer-security"><ShieldCheck size={18}/><span>Shift handovers are an operational log. Daily Cash remains the official cash record, inventory remains the stock record, and urgent failures should also be submitted through Report Issue. Records cannot be deleted here.</span></div>
+    {!online&&<div className="warning-box"><AlertTriangle size={18}/> This device is offline. Reconnect before creating, acknowledging, or closing a handover.</div>}
+    <section className="stats-grid three handover-stats"><Stat label="Open" value={String(rows.filter(row=>row.status==='open').length)} sub="Waiting for acknowledgement or closure"/><Stat label="Acknowledged" value={String(rows.filter(row=>row.status==='open'&&row.acknowledgement_count>0).length)} sub="Incoming staff confirmed review"/><Stat label="Closed" value={String(rows.filter(row=>row.status==='closed').length)} sub="Retained as operations history"/></section>
+    <section className="panel"><div className="panel-title handover-toolbar"><div><h2>Handover Log</h2><p className="muted">A creator cannot acknowledge their own handover; management closure requires an incoming-staff acknowledgement.</p></div><select aria-label="Filter handovers" value={filter} onChange={event=>setFilter(event.target.value as typeof filter)}><option value="open">Open</option><option value="closed">Closed</option><option value="all">All</option></select></div>
+      {shown.length?<div className="handover-list">{shown.map(row=><article className={`handover-card ${row.status}`} key={row.id}><div className="handover-head"><span><b>{row.reference}</b><small>{label(row.shift_label)} shift • {new Date(row.created_at).toLocaleString()}</small></span><em className={`incident-status ${row.status==='closed'?'resolved':'investigating'}`}>{row.status}</em></div><h3>{row.summary}</h3><div className="handover-details"><p><strong>Pending actions</strong><span>{row.pending_actions}</span></p>{row.stock_notes&&<p><strong>Stock notes</strong><span>{row.stock_notes}</span></p>}{row.equipment_notes&&<p><strong>Equipment notes</strong><span>{row.equipment_notes}</span></p>}</div>{row.incident_references.length>0&&<div className="handover-incidents">{row.incident_references.map(reference=><span key={reference}>{reference}</span>)}</div>}<div className="handover-ack"><strong>{row.acknowledgement_count} acknowledgement{row.acknowledgement_count===1?'':'s'}</strong>{row.acknowledgements.map(ack=><span key={ack.id}>{ack.staff_name}: {ack.note} <small>{new Date(ack.acknowledged_at).toLocaleString()}</small></span>)}</div>{row.status==='closed'&&<div className="handover-closed"><CheckCircle2 size={18}/><span><strong>Closed by {row.closed_by_name}</strong>{row.closing_note}{row.closed_at&&<small>{new Date(row.closed_at).toLocaleString()}</small>}</span></div>}<footer><span>Created by {row.created_by_name}</span><div>{row.status==='open'&&!row.created_by_me&&!row.acknowledged_by_me&&<button onClick={()=>setAcknowledging(row)} disabled={!online}>Acknowledge</button>}{row.status==='open'&&row.created_by_me&&<small>Waiting for incoming staff</small>}{role==='admin'&&row.status==='open'&&<button className="primary-btn" onClick={()=>setClosing(row)} disabled={!online||row.acknowledgement_count<1}>Close Handover</button>}</div></footer></article>)}</div>:<div className="empty-state"><ClipboardList size={34}/><strong>No handovers match this view.</strong><span>Create a handover before staff responsibility changes.</span></div>}
+    </section>
+    {adding&&<CreateModal onClose={()=>setAdding(false)} onSaved={create}/>} {acknowledging&&<NoteModal title={`Acknowledge ${acknowledging.reference}`} prompt="Confirm what you reviewed and any action you are accepting." action="Record Acknowledgement" minimum={3} onClose={()=>setAcknowledging(null)} onSaved={note=>acknowledge(acknowledging,note)}/>} {closing&&<NoteModal title={`Close ${closing.reference}`} prompt="Record the management outcome and confirm all outstanding work has an owner." action="Close Handover" minimum={5} onClose={()=>setClosing(null)} onSaved={note=>close(closing,note)}/>} 
+  </>
+}
+
+function Stat({label:heading,value,sub}:{label:string;value:string;sub:string}){return <div className="stat-card"><span>{heading}</span><strong>{value}</strong><small>{sub}</small></div>}
+
+function CreateModal({onClose,onSaved}:{onClose:()=>void;onSaved:(values:NewValues)=>Promise<void>}){
+  const[shift,setShift]=useState<ShiftLabel>('afternoon'),[summary,setSummary]=useState(''),[pending,setPending]=useState(''),[stock,setStock]=useState(''),[equipment,setEquipment]=useState(''),[incidents,setIncidents]=useState(''),[busy,setBusy]=useState(false),[error,setError]=useState('')
+  async function save(event:FormEvent){event.preventDefault();setBusy(true);setError('');try{await onSaved({shift,summary:summary.trim(),pending:pending.trim(),stock:stock.trim(),equipment:equipment.trim(),incidents:incidents.trim()})}catch(err){setError(err instanceof Error?err.message:'Handover could not be created.');setBusy(false)}}
+  return <div className="modal-backdrop"><form className="modal handover-modal" onSubmit={save}><div className="panel-title"><div><h2>New Shift Handover</h2><p className="muted">Record what the incoming shift must know or do.</p></div><button type="button" onClick={onClose}><X size={18}/></button></div><div className="form-grid"><label>Shift<select value={shift} onChange={event=>setShift(event.target.value as ShiftLabel)}>{['opening','morning','afternoon','evening','closing','other'].map(value=><option key={value} value={value}>{label(value)}</option>)}</select></label><label>Related incident references (optional)<input value={incidents} onChange={event=>setIncidents(event.target.value)} placeholder="INC-2026-000001, INC-2026-000002"/></label><label className="full-field">Shift summary<textarea required minLength={10} value={summary} onChange={event=>setSummary(event.target.value)} placeholder="What happened during this shift?"/></label><label className="full-field">Pending actions<textarea required minLength={3} value={pending} onChange={event=>setPending(event.target.value)} placeholder="Enter None when nothing remains outstanding."/></label><label>Stock notes (optional)<textarea value={stock} onChange={event=>setStock(event.target.value)} placeholder="Low stock, count differences, expected delivery…"/></label><label>Equipment notes (optional)<textarea value={equipment} onChange={event=>setEquipment(event.target.value)} placeholder="Printer, scanner, terminal, network…"/></label></div><div className="warning-box">Do not enter passwords, payment-card numbers, authentication codes, or Supabase keys.</div>{error&&<div className="form-error">{error}</div>}<div className="modal-actions"><button type="button" onClick={onClose}>Cancel</button><button className="primary-btn" disabled={busy||summary.trim().length<10||pending.trim().length<3}>{busy?'Creating…':'Create Handover'}</button></div></form></div>
+}
+
+function NoteModal({title,prompt,action,minimum,onClose,onSaved}:{title:string;prompt:string;action:string;minimum:number;onClose:()=>void;onSaved:(note:string)=>Promise<void>}){
+  const[note,setNote]=useState(''),[busy,setBusy]=useState(false),[error,setError]=useState('')
+  async function save(event:FormEvent){event.preventDefault();setBusy(true);setError('');try{await onSaved(note.trim())}catch(err){setError(err instanceof Error?err.message:'The update could not be recorded.');setBusy(false)}}
+  return <div className="modal-backdrop"><form className="modal compact-modal" onSubmit={save}><div className="panel-title"><div><h2>{title}</h2><p className="muted">{prompt}</p></div><button type="button" onClick={onClose}><X size={18}/></button></div><label>Required note<textarea autoFocus required minLength={minimum} value={note} onChange={event=>setNote(event.target.value)} placeholder="Record the facts and accepted action…"/></label>{error&&<div className="form-error">{error}</div>}<div className="modal-actions"><button type="button" onClick={onClose}>Cancel</button><button className="primary-btn" disabled={busy||note.trim().length<minimum}>{busy?'Recording…':action}</button></div></form></div>
+}

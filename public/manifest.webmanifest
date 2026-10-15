@@ -1,0 +1,35 @@
+{
+  "name": "CounterNest POS",
+  "short_name": "CounterNest",
+  "description": "Point-of-sale, inventory, customers, staff and business management.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f8efe6",
+  "theme_color": "#8b451f",
+  "categories": [
+    "business",
+    "productivity"
+  ],
+  "icons": [
+    {
+      "sizes": "192x192",
+      "type": "image/png",
+      "src": "/pwa/icon-192.png",
+      "purpose": "any"
+    },
+    {
+      "sizes": "512x512",
+      "type": "image/png",
+      "src": "/pwa/icon-512.png",
+      "purpose": "any"
+    },
+    {
+      "sizes": "512x512",
+      "type": "image/png",
+      "src": "/pwa/icon-maskable-512.png",
+      "purpose": "maskable"
+    }
+  ]
+}

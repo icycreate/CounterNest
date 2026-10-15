@@ -1,0 +1,13 @@
+ID,Role,Test,Expected Result,Status,Notes
+SL-01,Admin,Open Settings > Session Security,Automatic logoff controls are visible and editable,,
+SL-02,Employee,Open Settings > Session Security,Policy status is visible but controls cannot be changed,,
+SL-03,Admin,Enable automatic logoff and choose 5 minutes then Save Changes,Policy saves successfully and audit record is created,,
+SL-04,Staff,Remain inactive until final warning period,Session expiring warning appears,,
+SL-05,Staff,Press Stay Signed In during warning,Warning closes and inactivity timer restarts,,
+SL-06,Staff,Remain inactive through timeout,Supabase session signs out and sign-in screen appears,,
+SL-07,Staff,Review timeout sign-in screen,Message states logout occurred due to inactivity,,
+SL-08,Staff,Create unsaved cart then allow timeout,Cart is cleared after automatic logout,,
+SL-09,Admin,Review Daily Cash after a timeout,Daily Cash remains open/unchanged unless separately closed,,
+SL-10,Admin,Review Audit Log after policy change,Session timeout policy change shows old/new values,,
+SL-11,Admin,Disable automatic logoff and Save Changes,Idle warning/logout no longer occurs,,
+SL-12,Staff,Background app beyond timeout then reopen,App checks elapsed inactivity and signs out immediately,,

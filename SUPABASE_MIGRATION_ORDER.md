@@ -1,0 +1,88 @@
+# Supabase Migration Order — RC1
+
+Original RC1 contains 78 files. This update adds only migration 79 for catalogue requests, contact preferences and register opening. Confirmed level 78: apply only 79. Confirmed level 77: apply 78 then 79. Fresh empty project: all 79 in order. Verify the actual applied level before running any SQL; never replay historical files.
+
+Legacy duplicate timestamp prefixes require the sequential process in SUPABASE_DEPLOYMENT_GUIDE.md; do not blindly run CLI db push. MIGRATION_MANIFEST.json records byte-preservation hashes.
+
+1. 20260815_initial.sql
+2. 20260815_logo_settings.sql
+3. 20260816_business_onboarding.sql
+4. 20260816_receipt_system.sql
+5. 20260816_refunds_voids.sql
+6. 202608180800_cash_drawer.sql
+7. 202608180810_product_barcodes.sql
+8. 202608180820_management_reports.sql
+9. 202608180830_staff_management.sql
+10. 202608180840_unified_audit_log.sql
+11. 202608180850_expenses.sql
+12. 202608180860_profitability.sql
+13. 202608180870_stock_receiving.sql
+14. 202608180880_purchase_orders.sql
+15. 202608180890_production_batches.sql
+16. 202608180900_business_backup.sql
+17. 202608180910_launch_readiness.sql
+18. 202608180920_cash_tender.sql
+19. 202608180930_daily_cash_report.sql
+20. 202608190100_direct_staff_provisioning.sql
+21. 202608190200_cards_staff_daily_cash.sql
+22. 202608190300_manager_pin_pgcrypto_fix.sql
+23. 202608190310_product_image_storage_policy_fix.sql
+24. 202608190320_product_image_storage_auth_helper.sql
+25. 202608190330_loyalty_points_management.sql
+26. 202608190340_configurable_loyalty_earning_rules.sql
+27. 202608190350_entity_translations.sql
+28. 202608200100_product_emoji.sql
+29. 202608240100_ingredient_inventory.sql
+30. 202608240200_product_recipes.sql
+31. 202608240300_recipe_production_consumption.sql
+32. 202608240400_restock_and_pricing_recommendations.sql
+33. 202608240500_phase31_operational_acceptance.sql
+34. 202608240600_production_planning.sql
+35. 202608240700_ingredient_purchase_orders.sql
+36. 202608240800_ingredient_po_receiving.sql
+37. 202608240900_inventory_waste.sql
+38. 202608241000_supply_operations_reporting.sql
+39. 202608241100_ingredient_lot_traceability.sql
+40. 202608241200_finished_product_batch_traceability.sql
+41. 202608241300_finished_product_recall_case_management.sql
+42. 202608241400_phase32_internal_go_live.sql
+43. 202608241500_phase33_operational_monitoring.sql
+44. 202608241600_phase33_1_staff_issue_reporting.sql
+45. 202608241700_phase33_2_shift_handover.sql
+46. 202608251000_phase33_3_operational_tasks.sql
+47. 202608251100_phase33_4_daily_checklists.sql
+48. 202608251200_phase33_5_alerts_escalations.sql
+49. 202608251300_phase33_6_staff_schedule_attendance.sql
+50. 202608251400_phase33_7_operations_analytics.sql
+51. 202608251500_phase33_8_security_retention_recovery.sql
+52. 202608251600_phase33_9_internal_release_candidate.sql
+53. 202608261300_phase34_1_1_auto_session_logoff.sql
+54. 202608301300_phase34_3_customer_selection_supply_photos.sql
+55. 202609111900_phase34_5_ingredient_conversion_yield.sql
+56. 202609111910_phase34_6_recipe_preparation.sql
+57. 202609111920_phase34_7_34_8_recipe_scaling_costing.sql
+58. 202609111930_phase34_9_smart_production_planning.sql
+59. 202609111940_phase35_0_35_1_variance_substitutions.sql
+60. 202609111950_phase35_2_35_3_customer_status_supply_docs.sql
+61. 202609112000_phase35_5_acceptance_training.sql
+62. 202610121000_phase35_6_catalogue_account_security.sql
+63. 202610121100_phase35_7_catalogue_customer_experience.sql
+64. 202610121200_phase35_8_product_media.sql
+65. 202610121300_phase35_9_promotions.sql
+66. 202610121400_phase36_0_catalogue_pos_sync.sql
+67. 202610121500_phase36_1_catalogue_analytics.sql
+68. 202610130800_phase36_0_36_1_catalogue_displays.sql
+69. 202610130900_phase36_2_variants.sql
+70. 202610131000_phase36_3_combos.sql
+71. 202610131100_phase36_3_commercial_checkout.sql
+72. 202610131200_phase36_4_36_5_order_displays.sql
+73. 202610131300_phase36_6_36_7_scheduled_orders.sql
+74. 202610131400_phase36_6_36_8_planning_forecast.sql
+75. 202610131500_phase36_9_shortage_alerts.sql
+76. 202610131600_phase36_catalogue_integration.sql
+77. 202610131700_phase36_order_payment.sql
+
+
+78. 202610150900_rc1_security_hardening.sql
+
+79. 202610151200_customer_requests_register.sql

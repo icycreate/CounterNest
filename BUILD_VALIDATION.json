@@ -1,0 +1,68 @@
+{
+  "product": "CounterNest POS v2.0.0-RC1",
+  "version": "2.0.0-rc.1",
+  "build": "2026-10-15-update1",
+  "date": "2026-10-15",
+  "baseline": "Original RC1 clean source, 78 migrations; prior package retained",
+  "result": "Final npm run verify passed; staging/live cloud and physical device acceptance pending",
+  "runtime": {
+    "node": "v24.20.0",
+    "npm": "11.19.0",
+    "typescript": "5.9.3",
+    "vite": "6.4.3"
+  },
+  "checks": [
+    {
+      "name": "npm install --no-audit --no-fund --prefer-offline",
+      "status": "passed",
+      "note": "125 packages installed after approved registry access; dependency audit not run"
+    },
+    {
+      "name": "npm run verify",
+      "status": "passed",
+      "note": "TypeScript + production build; all frontend/UI/database/release/web/Edge/display/RC1/PDF/customer-request tests; production assets"
+    },
+    {
+      "name": "Migration chain",
+      "status": "passed",
+      "count": 79,
+      "preserved_baseline_files": 78,
+      "new_files": 1
+    },
+    {
+      "name": "Database regression groups",
+      "status": "passed",
+      "count": 57,
+      "environment": "PGlite PostgreSQL with mocked Supabase auth/storage and mocked manager-PIN crypt for refund tests; pgcrypto extension omitted"
+    },
+    {
+      "name": "Request/register security and workflow",
+      "status": "passed",
+      "note": "Anonymous no-pickup intake, current promo/variant prices/no stock mutation, RLS/shop isolation/direct-write denial, idempotency, input/method validation, admin audited contact override, no skipped/stale stages, one linked scheduled order and paid collection, station/admin/legacy register boundaries, unified audit and backup extension"
+    },
+    {
+      "name": "Customer UI and QR regression",
+      "status": "passed",
+      "note": "Canonical URL precedence and QR regeneration, receipt QR, review form, enabled methods, same-payload retry recovery, selected-only employee contact, cash login gate removed, unnumbered supply labels"
+    },
+    {
+      "name": "Four account Edge Functions",
+      "status": "passed",
+      "note": "Byte-identical original RC1 handlers, mocked services; authentication/confirmation/password reset/change and password-free audit regressions retained"
+    },
+    {
+      "name": "Catalogue/PDF/TV",
+      "status": "passed",
+      "note": "Existing six PDF scopes, authoritative variant prices, images/QR/paper/orientation HTML; TV survives polling; public details/privacy/cleanup"
+    },
+    {
+      "name": "Browser sample-data smoke checks",
+      "status": "passed within limits",
+      "note": "Add variant/quantity → customer info with enabled-only methods → review → received request; QR actions; preferred contact preparation without sending; admin register station/balance. Responsive overrides unreliable; no physical-device acceptance."
+    }
+  ],
+  "local_http_report": "PREVIEW_HTTP_RESULTS.json",
+  "known_issues": "KNOWN_ISSUES.md",
+  "cloud_modified": false,
+  "credentials_shipped": false
+}

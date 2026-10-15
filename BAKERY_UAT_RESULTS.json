@@ -1,0 +1,83 @@
+{
+  "status": "passed",
+  "environment": "Local PGlite PostgreSQL, real SQL/RPCs, mocked Supabase Auth/Storage and PIN crypt",
+  "staff_creation": "Covered separately by Edge Function mock tests; fixture authenticated staff used here",
+  "steps": [
+    {
+      "name": "Receive ingredients",
+      "status": "passed",
+      "evidence": "20 eggs from supplier PO; duplicate receipt rejected; dated supplier lot retained"
+    },
+    {
+      "name": "Convert ingredient",
+      "status": "passed",
+      "evidence": "6 eggs deducted once; 108 g yolk and 192 g white added with matching lot balances"
+    },
+    {
+      "name": "Create recipe",
+      "status": "passed",
+      "evidence": "4-unit recipe uses 50 g yolk and 80 g white, plus labor/overhead/packaging costs"
+    },
+    {
+      "name": "Produce goods",
+      "status": "passed",
+      "evidence": "4 finished units; production cannot complete twice; expiry and cost snapshots retained"
+    },
+    {
+      "name": "Review variance",
+      "status": "passed",
+      "evidence": "Extra 1 g yolk consumed once; duplicate variance rejected"
+    },
+    {
+      "name": "Record waste",
+      "status": "passed",
+      "evidence": "Damaged finished unit removed through audited stock/lot workflow"
+    },
+    {
+      "name": "Publish catalogue and promotion",
+      "status": "passed",
+      "evidence": "Customer payload exposes description/allergens/notes and variant price $9, without costs/supplier/recipe fields"
+    },
+    {
+      "name": "Kitchen and ready display",
+      "status": "passed",
+      "evidence": "Friendly order number moves Preparing → Ready with public order-number-only status"
+    },
+    {
+      "name": "POS, receipt, inventory and cash",
+      "status": "passed",
+      "evidence": "One $9 variant sale, $10 tender/$1 change; stock 3→2 and daily cash $50→$59"
+    },
+    {
+      "name": "Reports and profitability",
+      "status": "passed",
+      "evidence": "Saved sale and cost snapshot appear in management/profitability reporting"
+    },
+    {
+      "name": "Refund",
+      "status": "passed",
+      "evidence": "Full return restores one traced unit and reverses $9 cash once (PIN crypt mocked in local engine)"
+    },
+    {
+      "name": "Pre-orders and custom cakes",
+      "status": "passed",
+      "evidence": "Pickup order applies $2 deposit/$7 balance and deducts one unit; special cake retains size/flavor/filling/frosting/theme/message and $5 deposit on a $25 quote"
+    },
+    {
+      "name": "Backup/export",
+      "status": "passed",
+      "evidence": "Variant, conversion, pre-order, catalogue and checkout history are included in the protected RC1 extension; passwords/PIN hashes excluded"
+    },
+    {
+      "name": "Audit and close day",
+      "status": "passed",
+      "evidence": "Audit records exist; counted $50 closes the day with immutable closure and cannot reopen"
+    }
+  ],
+  "remaining": [
+    "Real Supabase Auth/Storage/Edge deployment",
+    "Hosted concurrent connections and lock-contention testing",
+    "Live browser against target project",
+    "Physical devices and payment/printer hardware"
+  ]
+}

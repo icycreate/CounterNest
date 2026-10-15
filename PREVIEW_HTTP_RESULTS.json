@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "routes": 49,
+  "server": "Local Vite production preview",
+  "checks": [
+    "Direct HTML responses and identical SPA shell for staff and dedicated display routes",
+    "Built JS/CSS/PWA assets return non-HTML content"
+  ],
+  "limitations": [
+    "Vercel deployment rewrite is configured but has not been exercised on Vercel hosting.",
+    "Real authenticated route refresh requires the live Supabase session."
+  ]
+}

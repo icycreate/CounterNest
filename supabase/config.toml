@@ -1,0 +1,15 @@
+project_id = "counternest-web"
+
+# Each handler validates the user JWT with auth.getUser and checks staff/shop authorization.
+# Gateway verification is disabled to support current Auth signing keys.
+[functions.create-staff-account]
+verify_jwt = false
+
+[functions.change-initial-password]
+verify_jwt = false
+
+[functions.change-password]
+verify_jwt = false
+
+[functions.reset-staff-password]
+verify_jwt = false

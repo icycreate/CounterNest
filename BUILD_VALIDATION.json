@@ -1,117 +1,43 @@
 {
   "product": "CounterNest POS",
-  "version": "2.0.0-rc.5",
-  "build": "2026-10-17-operations1",
-  "generated_at": "2026-10-17T04:57:09.098Z",
-  "result": "Local release candidate validation passed; live cloud and target-device acceptance pending",
+  "version": "2.0.0-rc.7",
+  "build": "2026-10-17-boot",
+  "generated_at": "2026-10-17T17:51:26.664Z",
+  "result": "Local candidate validation passed; physical-device and target-cloud UAT pending",
+  "dependency_install": {
+    "command": "npm install",
+    "status": "passed",
+    "packages_added": 125,
+    "audit_vulnerabilities": 0
+  },
   "checks": [
     {
-      "name": "Dependency install",
-      "status": "passed",
-      "note": "npm install --ignore-scripts --offline --no-audit --no-fund; dependency cache available; no registry vulnerability audit"
+      "command": "npm run build",
+      "exit_code": 0,
+      "status": "passed"
     },
     {
-      "name": "npm run verify",
-      "status": "passed",
-      "note": "Production build, all regression suites, operations UI/archive/Edge suites and built assets passed after owner hardening"
+      "command": "npm run test",
+      "exit_code": 0,
+      "status": "passed"
     },
     {
-      "name": "Database chain",
-      "status": "passed",
-      "migrations": 87,
-      "regression_groups": 108,
-      "preserved_delivered_migrations": 83,
-      "upgrade_only": [
-        84,
-        85,
-        86,
-        87
-      ],
-      "engine": "PGlite PostgreSQL with mocked Supabase auth/storage and mocked manager-PIN crypt for refund tests; pgcrypto extension omitted"
-    },
-    {
-      "name": "Role/language matrix",
-      "status": "passed",
-      "cases": 24,
-      "roles": [
-        "admin",
-        "cashier",
-        "production",
-        "inventory",
-        "manager",
-        "accounting"
-      ],
-      "languages": [
-        "en",
-        "es",
-        "zh-TW",
-        "zh-CN"
-      ]
-    },
-    {
-      "name": "Static translation coverage",
-      "status": "passed",
-      "source_labels": 3227,
-      "known_errors": 664,
-      "measured_labels": 2805,
-      "missing_measured_labels": 0
-    },
-    {
-      "name": "Production preview",
-      "status": "passed",
-      "routes": 50,
-      "note": "Local production SPA route and JS/CSS/PWA asset responses; Vercel hosting not deployed"
-    },
-    {
-      "name": "Ingredient purchasing and receiving",
-      "status": "passed_automated",
-      "note": "Private package projections, substitutes, barcode mismatch/override, approval-safe conversion, pack rounding, audited receipt/package snapshots and supplier price history"
-    },
-    {
-      "name": "Production intelligence",
-      "status": "passed_automated",
-      "note": "Physical stock unaffected by reservation, linked pre-order batch demand counted once, cancellation/completion, shortages, approved-offer costing, lot/recall and waste projections"
-    },
-    {
-      "name": "Workspace lifecycle",
-      "status": "passed_automated",
-      "note": "ZIP CRC/SHA tamper and secrets rejection; tenant remapping; full operational snapshot count/stock reconciliation; restore side-effect suppression; pending freeze and explicit expired-recovery purge on disposable database fixtures"
-    },
-    {
-      "name": "Imports/setup/permissions",
-      "status": "passed_automated",
-      "note": "Invalid rows refused atomically, idempotent retries, opening ledger adjustments, canonical phones, existing setup prefill and protected owner/admin grants"
-    },
-    {
-      "name": "Auth Edge handlers",
-      "status": "passed_mocked",
-      "total": 4,
-      "unchanged": 2,
-      "hardened": 2,
-      "note": "create-staff-account and reset-staff-password now enforce protected owner/admin grants. Both must be redeployed. Fresh authentication and password-free audit tests pass."
-    },
-    {
-      "name": "Workspace Edge handler",
-      "status": "passed_mocked",
-      "total": 1,
-      "note": "JWT/owner/password gates, signed files, changed-backup refusal, remapped new-account restore and disabled purge tested by tests/workspace-edge.cjs"
-    },
-    {
-      "name": "Browser QA",
-      "status": "passed_local_fixture_checks",
-      "report": "BROWSER_QA_RESULTS.json"
+      "command": "npm run test:assets",
+      "exit_code": 0,
+      "status": "passed"
     }
   ],
-  "advisories": [
-    "Vite emits a large app chunk advisory; existing app plus four-language dictionaries remain bundled.",
-    "Test-only CommonJS bundles emit expected import.meta warnings; production ESM build succeeds."
-  ],
-  "pending": [
-    "Real Supabase Auth/Storage/Realtime and five Edge gateways",
-    "Realistic backup/restore scale and file upload/download on target deployment",
-    "Native HTTPS PWA install/reopen and Vercel function routing",
-    "Physical printers/scanners/mobile devices and screen readers",
-    "Native-speaker acceptance in EN/ES/zh-TW/zh-CN"
-  ],
-  "packaging": "Separate OPERATIONAL_RC5_ZIP_VALIDATION.json verifies every archive entry hash and archive SHA-256. Dependencies, build output, credentials, Git metadata, desktop artifacts and fictional browser adapter are excluded."
+  "baseline_migrations_unchanged": 88,
+  "migration_count": 88,
+  "database_checks": 108,
+  "purchasing_model_checks": 12,
+  "purchasing_ui_checks": 7,
+  "boot_check_groups": 8,
+  "browser_checks": 6,
+  "limits": [
+    "PGlite simulates Supabase auth/storage; no target-cloud certification",
+    "Physical installed PWA, iPhone Safari, Android Chrome and hardware UAT pending",
+    "Large production bundle warning retained",
+    "Earlier RC6-specific evidence files retain their original scope; current logs are docs/validation/*.log"
+  ]
 }

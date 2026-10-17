@@ -3320,3 +3320,118 @@ export const errorTranslations:Record<string,Record<string,string>> = {
     "zh-CN": "请先创建员工邀请，再由所有者授予管理员权限。"
   }
 }
+
+Object.assign(errorTranslations,{
+  "Purchase item management access required": {
+    "es": "Se requiere permiso para gestionar artículos de compra",
+    "zh-TW": "需要採購品項管理權限",
+    "zh-CN": "需要采购品项管理权限"
+  },
+  "Classification change reason required": {
+    "es": "Se requiere un motivo para cambiar la clasificación",
+    "zh-TW": "請填寫分類變更原因",
+    "zh-CN": "请填写分类变更原因"
+  },
+  "Explicit resale product required": {
+    "es": "Se requiere un producto marcado para reventa",
+    "zh-TW": "商品必須明確標記為外購轉售",
+    "zh-CN": "商品必须明确标记为外购转售"
+  },
+  "Administrator and inventory source change reason required": {
+    "es": "Se requiere un administrador y un motivo para cambiar el origen",
+    "zh-TW": "需要管理員權限與庫存來源變更原因",
+    "zh-CN": "需要管理员权限与库存来源变更原因"
+  },
+  "Resolve active recipes, independent variants and production before changing inventory source": {
+    "es": "Resuelva recetas activas, variantes independientes y producción antes de cambiar el origen",
+    "zh-TW": "變更庫存來源前，請先處理使用中的配方、獨立庫存規格及生產工作",
+    "zh-CN": "变更库存来源前，请先处理使用中的配方、独立库存规格及生产工作"
+  },
+  "Clear resale stock and open purchase orders before reclassification": {
+    "es": "Agote las existencias de reventa y resuelva las órdenes abiertas antes de reclasificar",
+    "zh-TW": "重新分類前，請先清空轉售庫存並結清未結採購單",
+    "zh-CN": "重新分类前，请先清空转售库存并结清未结采购单"
+  },
+  "Inventory source and change reason required": {
+    "es": "Se requieren el origen y el motivo del cambio",
+    "zh-TW": "請提供庫存來源與變更原因",
+    "zh-CN": "请提供库存来源与变更原因"
+  },
+  "Item type and change reason required": {
+    "es": "Se requieren el tipo de artículo y el motivo del cambio",
+    "zh-TW": "請提供品項類型與變更原因",
+    "zh-CN": "请提供品项类型与变更原因"
+  },
+  "Purchase item not found": {
+    "es": "No se encontró el artículo de compra",
+    "zh-TW": "找不到採購品項",
+    "zh-CN": "找不到采购品项"
+  },
+  "Resale items cannot be recipe ingredients": {
+    "es": "Los artículos de reventa no pueden ser ingredientes de recetas",
+    "zh-TW": "轉售商品不能作為配方原料",
+    "zh-CN": "转售商品不能作为配方原料"
+  },
+  "Resale products cannot be produced": {
+    "es": "Los productos de reventa no se pueden producir",
+    "zh-TW": "轉售商品不能建立生產工作",
+    "zh-CN": "转售商品不能创建生产工作"
+  },
+  "Resale variants use the shared sellable stock balance": {
+    "es": "Las variantes de reventa usan las existencias compartidas",
+    "zh-TW": "轉售商品的規格共用可售庫存",
+    "zh-CN": "转售商品的规格共用可售库存"
+  },
+  "Eligible purchase item required": {
+    "es": "Se requiere un artículo de compra permitido",
+    "zh-TW": "需要符合資格的採購品項",
+    "zh-CN": "需要符合资格的采购品项"
+  },
+  "Use purchase items and approved purchase needs": {
+    "es": "Use artículos de compra y necesidades aprobadas",
+    "zh-TW": "請使用採購品項與已核准的採購需求",
+    "zh-CN": "请使用采购品项与已批准的采购需求"
+  },
+  "Use verified purchase-item receiving; legacy order preserved for review": {
+    "es": "Use la recepción verificada; la orden anterior se conserva para revisión",
+    "zh-TW": "請使用採購品項核驗收貨；舊訂單仍保留供檢查",
+    "zh-CN": "请使用采购品项核验收货；旧订单仍保留供检查"
+  },
+  "Use verified purchase-item order receiving": {
+    "es": "Use recepción verificada de órdenes de artículos de compra",
+    "zh-TW": "請使用採購品項訂單的核驗收貨流程",
+    "zh-CN": "请使用采购品项订单的核验收货流程"
+  },
+  "Use verified purchase-item receiving": {
+    "es": "Use recepción verificada de artículos de compra",
+    "zh-TW": "請使用採購品項核驗收貨",
+    "zh-CN": "请使用采购品项核验收货"
+  },
+  "Create a purchase order and use verified receiving": {
+    "es": "Cree una orden y use recepción verificada",
+    "zh-TW": "請先建立採購單，再使用核驗收貨",
+    "zh-CN": "请先创建采购单，再使用核验收货"
+  },
+  "Receiving access required": {
+    "es": "Se requiere permiso de recepción",
+    "zh-TW": "需要收貨權限",
+    "zh-CN": "需要收货权限"
+  },
+  "Supplier mismatch requires authorized override and reason": {
+    "es": "La discrepancia del proveedor requiere autorización y motivo",
+    "zh-TW": "供應商不符時，需要授權覆核並填寫原因",
+    "zh-CN": "供应商不符时，需要授权复核并填写原因"
+  },
+  "Purchase approval access required": {
+    "es": "Se requiere permiso para aprobar compras",
+    "zh-TW": "需要採購核准權限",
+    "zh-CN": "需要采购审批权限"
+  },
+  "Valid purchase item name, type and unit required": {
+    "es": "Se requieren nombre, tipo y unidad válidos",
+    "zh-TW": "請提供有效的採購品項名稱、類型與單位",
+    "zh-CN": "请提供有效的采购品项名称、类型与单位"
+  }
+})
+
+Object.assign(errorTranslations,{'Supplier management access required':{es:'Se requiere permiso para gestionar proveedores','zh-TW':'需要供應商管理權限','zh-CN':'需要供应商管理权限'}})

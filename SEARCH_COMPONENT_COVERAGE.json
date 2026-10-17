@@ -1,0 +1,46 @@
+[
+  {
+    "name": "App.tsx",
+    "count": 2
+  },
+  {
+    "name": "CashierHome.tsx",
+    "count": 1
+  },
+  {
+    "name": "Catalogue.tsx",
+    "count": 1
+  },
+  {
+    "name": "CommercialCatalogue.tsx",
+    "count": 1
+  },
+  {
+    "name": "CustomerDisplay.tsx",
+    "count": 1
+  },
+  {
+    "name": "OperationalTasks.tsx",
+    "count": 1
+  },
+  {
+    "name": "OperationsCenter.tsx",
+    "count": 1
+  },
+  {
+    "name": "PhoneInput.tsx",
+    "count": 1
+  },
+  {
+    "name": "PosTools.tsx",
+    "count": 2
+  },
+  {
+    "name": "ProductionOperations.tsx",
+    "count": 1
+  },
+  {
+    "name": "UxShell.tsx",
+    "count": 1
+  }
+]

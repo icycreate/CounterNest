@@ -11,9 +11,10 @@ module.exports=async({db,check,scalar,rejects,uid,shop})=>{
   egg=await ingredient('RC1 Whole Egg','each');yolk=await ingredient('RC1 Egg Yolk','g');white=await ingredient('RC1 Egg White','g');
   const po=await scalar('select create_ingredient_purchase_order($1,current_date,null,$2)',[supplier,JSON.stringify([{ingredient_id:egg,ordered_quantity:20,expected_unit_cost:.5}])]);
   const line=await scalar('select id from ingredient_purchase_order_items where order_id=$1',[po]);const expiry=await scalar('select (current_date+14)::text');
-  const receipt=[{order_item_id:line,quantity_received:20,actual_unit_cost:.5,lot_code:'RC1-FARM-LOT',expires_on:expiry}];
-  await scalar("select receive_ingredient_purchase_order($1,'RC1-INV-1','UAT receiving',$2)",[po,JSON.stringify(receipt)]);
-  await rejects("select receive_ingredient_purchase_order($1,'RC1-INV-1','Duplicate',$2)",[po,JSON.stringify(receipt)],/Open ingredient purchase order/);
+  await scalar('select save_ingredient_identification($1,$2)',[egg,JSON.stringify({barcode:'DEMO-EGG'})]);
+  const receipt=[{order_item_id:line,quantity_received:20,actual_unit_cost:.5,lot_code:'RC1-FARM-LOT',expires_on:expiry,barcode:'DEMO-EGG',checks:{ingredient:true,brand:true,size:true,barcode:true,supplier:true,condition:true}}];
+  await scalar("select verified_receive_ingredient_order($1,gen_random_uuid(),'RC1-INV-1','UAT receiving',$2)",[po,JSON.stringify(receipt)]);
+  await rejects("select verified_receive_ingredient_order($1,gen_random_uuid(),'RC1-INV-1','Duplicate',$2)",[po,JSON.stringify(receipt)],/Open ingredient purchase order/);
   assert.equal(Number(await scalar('select current_quantity from ingredients where id=$1',[egg])),20);step('Receive ingredients','20 eggs from supplier PO; duplicate receipt rejected; dated supplier lot retained');
   const outputs=[{ingredient_id:yolk,output_label:'Yolk',output_quantity:18,track_inventory:true,cost_share_percent:60,sort_order:0},{ingredient_id:white,output_label:'White',output_quantity:32,track_inventory:true,cost_share_percent:40,sort_order:1}];
   const rule=await scalar("select upsert_ingredient_conversion_rule(null,'RC1 Separate egg',$1,1,null,true,$2)",[egg,JSON.stringify(outputs)]);

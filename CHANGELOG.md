@@ -1,3 +1,11 @@
+# 2.0.0-rc.7 — CounterNest boot experience
+
+Integrated bounded SVG/CSS startup animation, real auth/workspace readiness, light/dark/system and reduced-motion behavior, offline shell assets and current CounterNest PWA icons.
+
+# 2.0.0-rc.6 — Purchasing cleanup
+
+Unified eligible purchase items, explicit resale stock model, verified PO receiving, supplier metadata, shared searches and dynamic favicon. See RELEASE_NOTES.md and PURCHASING_MODEL.md.
+
 # CounterNest POS Operational RC5
 
 2.0.0-rc.5 • 2026-10-17-operations1

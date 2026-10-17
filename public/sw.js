@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'counternest-web-v2-0-0-rc5-operations'
+const CACHE_VERSION = 'counternest-web-v2-0-0-rc7-boot'
 const SHELL_CACHE = `${CACHE_VERSION}-shell`
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`
 const CORE_ASSETS = [
@@ -6,6 +6,8 @@ const CORE_ASSETS = [
   '/index.html',
   '/manifest.webmanifest',
   '/counternest-default-logo.svg',
+  '/counternest-boot-logo-dark.svg',
+  '/boot-screen.css',
   '/pwa/icon-192.png',
   '/pwa/icon-512.png',
   '/pwa/icon-maskable-512.png',
@@ -69,7 +71,7 @@ self.addEventListener('fetch', event => {
     return
   }
 
-  if (!/^\/(?:assets\/|pwa\/|manifest\.webmanifest$)/.test(url.pathname)) return
+  if (!/^\/(?:assets\/|pwa\/|boot-screen\.css$|counternest-(?:default-logo|boot-logo-dark)\.svg$|manifest\.webmanifest$)/.test(url.pathname)) return
   event.respondWith((async () => {
     const cached = await caches.match(request)
     const network = fetch(request).then(async response => {

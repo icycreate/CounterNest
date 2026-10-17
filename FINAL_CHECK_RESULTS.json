@@ -1,0 +1,17 @@
+[
+  {
+    "command": "npm run build",
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "command": "npm run test",
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "command": "npm run test:assets",
+    "exit_code": 0,
+    "status": "passed"
+  }
+]

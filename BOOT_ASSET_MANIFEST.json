@@ -1,0 +1,47 @@
+[
+  {
+    "file": "public/counternest-default-logo.svg",
+    "bytes": 600,
+    "sha256": "47ad33c21349313ddf686e2a7d9cb2c16c7973224b7024c747ab5dcafc2fb75b"
+  },
+  {
+    "file": "public/counternest-boot-logo-dark.svg",
+    "bytes": 600,
+    "sha256": "d278dbadbd3d12c2b3714b8c92fb72d618f994d5ec8e57e0a29861dd546f59ec"
+  },
+  {
+    "file": "public/boot-screen.css",
+    "bytes": 4406,
+    "sha256": "6354658ad5a71ea7d44a92b39002a046fa2fdb611393d2b39a26248bbd3cbc97"
+  },
+  {
+    "file": "public/pwa/apple-touch-icon.png",
+    "bytes": 5748,
+    "sha256": "dd1e246c07ae0fe165d3b7d962cc479367c68a612fccd5b6a1bc95457eda7bea"
+  },
+  {
+    "file": "public/pwa/favicon-64.png",
+    "bytes": 2060,
+    "sha256": "0006606062ef5da00a9aac4af702bcbf33364bee1dfe0996496ab40278be5209"
+  },
+  {
+    "file": "public/pwa/icon-192.png",
+    "bytes": 6275,
+    "sha256": "1346e867d9438f56b37c4fae8d4fe7d6c90acd0211d2d1e4176297f84208b565"
+  },
+  {
+    "file": "public/pwa/icon-512.png",
+    "bytes": 18182,
+    "sha256": "71acb7d72ada1e9355f14b3cc40bf4564dfd0b1de605e7ac21b08d5ed5f19b7d"
+  },
+  {
+    "file": "public/pwa/icon-maskable-512.png",
+    "bytes": 18182,
+    "sha256": "71acb7d72ada1e9355f14b3cc40bf4564dfd0b1de605e7ac21b08d5ed5f19b7d"
+  },
+  {
+    "file": "public/pwa/splash-1024.png",
+    "bytes": 23697,
+    "sha256": "8f851ce8215bc5841cf0ce4b67d0f5e353681db9e2716445a3d73bab9624caaa"
+  }
+]

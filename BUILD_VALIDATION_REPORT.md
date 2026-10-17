@@ -1,13 +1,14 @@
-# CounterNest RC5 validation
+# CounterNest Boot RC7 validation
 
-2.0.0-rc.5 · 2026-10-17-operations1
+Version 2.0.0-rc.7. Local release candidate validated 2026-10-17T17:51:26.664Z.
 
-Local dependency install and final npm run verify passed. All87 SQL migrations apply to the local PostgreSQL test engine and all108 database groups pass, including full operational backup roundtrip with exact table-count and stock reconciliation. All83 delivered RC4 migrations retain their original hashes. Only84–87 are new.
+- npm install passed: 125 packages, zero audit vulnerabilities.
+- npm run build passed: TypeScript and Vite production build.
+- npm test passed, including 108 database regression checks, purchasing suites and eight new boot test groups.
+- npm run test:assets passed. Full command logs are in docs/validation/.
+- All 88 RC6 migrations are byte-identical; no database upgrade SQL or new runtime dependency.
+- Six browser checks passed against actual RC7 UI with fictional auth/data. Phone/tablet viewport requests and zoom-adjusted widths are recorded in BROWSER_QA_RESULTS.json.
 
-All24 role/language component cases and50 production preview routes pass. The translation catalogue has3227 source labels and664 known errors; none of2805 measured labels is missing. Entered business content remains unchanged. Four existing Auth handlers pass mocked execution, including new owner guards in create-staff-account and reset-staff-password; those two require redeployment. The fifth new workspace-lifecycle handler passes separate mocked authentication, password, backup/file, new-account restore and disabled-purge tests.
+Timing tests cover fast readiness, the 3.5-second absolute cap, reduced motion, late bundles, background resume, repeated readiness and cleanup. Simulated document tests cover theme selection and independent four-second bundle-failure recovery. Readiness never mutates authentication.
 
-New database tests cover package privacy, barcode/receiving checks, approvals, supplier comparison/history, reservations without double-counting linked orders, costing, lot/recall/waste projections, custom role restrictions, import validation/retry/ledger effects, tenant isolation, owner protections, pending deletion and disposable expired-recovery purge. ZIP tests cover checksums, CRC, secret exclusion, tenant/UUID/file path remapping and tampering. Existing POS/payment/stock/refund/receipt/PDF/PWA suites continue to pass.
-
-Actual browser QA with fictional fixtures reviewed purchasing identification photos/substitutes/warnings, quantities, the eight-step setup, saved currency/tax, and reason-gated import of a real deflated XLSX file. Backup/restore and disabled danger-zone gates were inspected without real credentials or destructive operations. Screenshot capture succeeded for local visual review; no screenshot file is packaged. See BROWSER_QA_RESULTS.json for exact scope.
-
-These are local candidate checks using mocked Auth/Storage/Edge services, not live deployment certification. Real Supabase/Vercel, realistic backup scale, original photo uploads, device printing/scanning, native PWA installation, screen-reader/mobile and native-speaker acceptance remain unchecked UAT. Permanent purge stays operator-disabled by default. Review KNOWN_ISSUES.md, INSTALL_UPGRADE_GUIDE.md and UAT_ACCEPTANCE_CHECKLIST.md before launch. Separate ZIP validation verifies each packaged source file and both archive checksums.
+The existing large-chunk build warning remains. Browser screenshot capture was unavailable; docs/boot contains clearly labeled design mockups of key stages. Installed PWA, real cloud sessions, physical iOS/Android devices and hardware remain UAT items in BOOT_UAT_CHECKLIST.md. Earlier evidence files from RC6 retain their original scope and do not certify those checks for RC7.

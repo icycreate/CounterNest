@@ -1,0 +1,51 @@
+{
+  "version": "2.0.0-rc.7",
+  "checks": [
+    {
+      "name": "Fast startup exits at 1.72 seconds without waiting for the full sequence",
+      "status": "passed"
+    },
+    {
+      "name": "Slow/unresolved startup has an absolute 3.5-second cap and cannot bypass authentication",
+      "status": "passed"
+    },
+    {
+      "name": "Readiness near deadline completes once; reduced motion has no artificial minimum",
+      "status": "passed"
+    },
+    {
+      "name": "Late bundles, background resume, repeated readiness and subscriber cleanup never replay the splash",
+      "status": "passed"
+    },
+    {
+      "name": "Boot component is platform-only, accessible, four-language and stable across re-renders",
+      "status": "passed"
+    },
+    {
+      "name": "Critical HTML theme selection and independent bundle-failure recovery work without the app bundle",
+      "status": "passed"
+    },
+    {
+      "name": "Responsive, reduced-motion, safe-area, fixed geometry and indeterminate loading styles are present",
+      "status": "passed"
+    },
+    {
+      "name": "Manifest and service worker use current platform icons and cache the boot shell without tenant/API data",
+      "status": "passed"
+    }
+  ],
+  "languages": [
+    "en",
+    "es",
+    "zh-TW",
+    "zh-CN"
+  ],
+  "timing": {
+    "minimum_ms": 1500,
+    "maximum_ms": 3500,
+    "exit_ms": 220,
+    "reduced_motion_exit_ms": 120,
+    "independent_recovery_ms": 4000
+  },
+  "type": "Deterministic clock, React renderer, simulated initial document, manifest and shell checks; physical installed-PWA/device verification pending"
+}

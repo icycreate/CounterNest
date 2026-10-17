@@ -71,15 +71,12 @@ module.exports=async({db,check,scalar,rejects})=>{
   const before=await scalar('select stock from products where id=$1',[product]);await as('');await db.exec('set role anon');const result=await scalar("select respond_catalogue_preorder($1,'confirm',null)",[tracking]);assert.equal(result.status,'confirmed');assert.equal(result.pickup_at,null);await rejects("select respond_catalogue_preorder($1,'confirm',null)",[tracking],/not awaiting/);await db.exec('reset role');
   assert.equal(await scalar('select stock from products where id=$1',[product]),before);assert.equal(Number(await scalar('select count(*) from scheduled_customer_orders where shop_id=$1',[shop])),0);assert.equal(Number(await scalar('select count(*) from sales where shop_id=$1',[shop])),0);
  });
- await check('Inventory receiving retains quantity, shop, stock-ledger and duplicate-order safeguards',async()=>{
+ await check('Retired product purchasing routes cannot receive made-in-house stock; history stays readable',async()=>{
   await as(inventory);await db.exec('set role authenticated');assert((await scalar('select get_stock_receiving()')).suppliers.some(x=>x.id===supplier));assert((await scalar('select get_purchase_orders()')).orders.some(x=>x.id===purchase));
-  const receipt=await scalar("select receive_stock($1,$2,2,3,'UX receipt','Inventory role receipt',false)",[supplier,product]);assert(receipt.receipt_id);
-  await rejects("select receive_stock($1,$2,1,3,null,null,false)",[supplier,foreign],/not found/);await rejects("select receive_stock($1,$2,-1,3,null,null,false)",[supplier,product],/Valid quantity/);
-  await db.exec('reset role');await db.query('insert into purchase_order_items(shop_id,order_id,product_id,product_name,quantity,unit_cost) values($1,$2,$3,$4,3,3)',[shop,purchase,product,'UX Search Cake']);
-  const before=Number(await scalar('select stock from products where id=$1',[product]));await db.exec('set role authenticated');await scalar('select receive_purchase_order($1)',[purchase]);await rejects('select receive_purchase_order($1)',[purchase],/not found/);await db.exec('reset role');assert.equal(Number(await scalar('select stock from products where id=$1',[product])),before+3);
-  for(const user of [cashier,production]){await as(user);await rejects('select get_stock_receiving()',[],/Administrator/);await rejects('select receive_purchase_order($1)',[purchase],/Administrator/);}
-  await as(outsider);await rejects('select receive_purchase_order($1)',[purchase],/Administrator/);await as(admin);await rejects("select ux_set_staff_role($1,'inventory')",[outsider],/not found/);
-  await db.query("update staff_profiles set workspace_role='inventory' where user_id=$1",[outsider]);await as(outsider);await rejects('select receive_purchase_order($1)',[purchase],/not found/);await rejects("select receive_stock($1,$2,1,3,null,null,false)",[supplier,product],/not found/);
+  const before=Number(await scalar('select stock from products where id=$1',[product]));
+  await rejects("select receive_stock($1,$2,2,3,'UX receipt','Inventory role receipt',false)",[supplier,product],/verified/);await rejects('select receive_purchase_order($1)',[purchase],/verified/);
+  await db.exec('reset role');assert.equal(Number(await scalar('select stock from products where id=$1',[product])),before);
+  for(const user of[cashier,production,outsider]){await as(user);await rejects('select receive_purchase_order($1)',[purchase],/verified/);}
   await as(inventory);await rejects("select create_supplier('Forbidden supplier')",[],/Administrator/);await rejects('select cancel_purchase_order($1)',[purchase],/Administrator/);
  });
  await check('UX backup includes preferences, role assignments and staff notes without tracking capabilities',async()=>{

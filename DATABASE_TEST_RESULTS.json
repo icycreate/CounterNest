@@ -1,7 +1,7 @@
 {
-  "version": "2.0.0-rc.5",
-  "build": "2026-10-17-operations1",
-  "migration_count": 87,
+  "version": "2.0.0-rc.7",
+  "build": "2026-10-17-boot",
+  "migration_count": 88,
   "database_engine": "PGlite PostgreSQL with mocked Supabase auth/storage and mocked manager-PIN crypt for refund tests; pgcrypto extension omitted",
   "checks": [
     {
@@ -273,7 +273,7 @@
       "status": "passed"
     },
     {
-      "name": "Inventory receiving retains quantity, shop, stock-ledger and duplicate-order safeguards",
+      "name": "Retired product purchasing routes cannot receive made-in-house stock; history stays readable",
       "status": "passed"
     },
     {

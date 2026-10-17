@@ -1,8 +1,6 @@
-# Supabase migration order — RC5
+# Supabase migration order — RC7 (unchanged)
 
-2.0.0-rc.5 • 2026-10-17-operations1
-
-Delivered RC4 ends at83. Apply only84,85,86,87 in order. All83 earlier migration files are unchanged. Older installations apply only missing files; fresh databases use all87. Back up and rehearse staging before production.
+RC7 adds no database migration after RC6. For an RC5 workspace, apply only migration 88 after a verified backup and staging rehearsal. Fresh projects apply the entire ordered list. Never reapply or edit old migrations.
 
 1. 20260815_initial.sql
 2. 20260815_logo_settings.sql
@@ -91,5 +89,6 @@ Delivered RC4 ends at83. Apply only84,85,86,87 in order. All83 earlier migration
 85. 202610171100_production_intelligence.sql
 86. 202610171200_workspace_recovery.sql
 87. 202610171300_operations_import_permissions.sql
+88. 202610171400_purchase_item_model.sql
 
-Every SHA-256 is in MIGRATION_MANIFEST.json. Deploy the new workspace-lifecycle Edge Function and its shared archive module after migrations. Keep server-only credentials in Supabase Edge secrets.
+Hashes are recorded in MIGRATION_MANIFEST.json.

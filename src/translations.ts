@@ -16135,3 +16135,137 @@ export const translations:Record<string,Record<string,string>> = {
     "zh-CN": "请先创建员工邀请，再由所有者授予管理员权限。"
   }
 }
+
+Object.assign(translations,{
+  "Purchase Items": {
+    "es": "Artículos de compra",
+    "zh-TW": "採購品項",
+    "zh-CN": "采购品项"
+  },
+  "Purchase item matches": {
+    "es": "El artículo de compra coincide",
+    "zh-TW": "採購品項相符",
+    "zh-CN": "采购品项相符"
+  },
+  "Supplier matches": {
+    "es": "El proveedor coincide",
+    "zh-TW": "供應商相符",
+    "zh-CN": "供应商相符"
+  },
+  "Search purchase items": {
+    "es": "Buscar artículos de compra",
+    "zh-TW": "搜尋採購品項",
+    "zh-CN": "搜索采购品项"
+  },
+  "Item Type": {
+    "es": "Tipo de artículo",
+    "zh-TW": "品項類型",
+    "zh-CN": "品项类型"
+  },
+  "All Purchase Items": {
+    "es": "Todos los artículos de compra",
+    "zh-TW": "全部採購品項",
+    "zh-CN": "全部采购品项"
+  },
+  "Packaging": {
+    "es": "Empaques",
+    "zh-TW": "包裝材料",
+    "zh-CN": "包装材料"
+  },
+  "Supplies": {
+    "es": "Suministros",
+    "zh-TW": "耗材",
+    "zh-CN": "耗材"
+  },
+  "Resale Products": {
+    "es": "Productos de reventa",
+    "zh-TW": "轉售商品",
+    "zh-CN": "转售商品"
+  },
+  "Finished Product for Resale": {
+    "es": "Producto terminado para reventa",
+    "zh-TW": "轉售成品",
+    "zh-CN": "转售成品"
+  },
+  "New Purchase Item": {
+    "es": "Nuevo artículo de compra",
+    "zh-TW": "新增採購品項",
+    "zh-CN": "新增采购品项"
+  },
+  "Create Purchase Item": {
+    "es": "Crear artículo de compra",
+    "zh-TW": "建立採購品項",
+    "zh-CN": "创建采购品项"
+  },
+  "Select Purchase Item": {
+    "es": "Seleccionar artículo de compra",
+    "zh-TW": "選擇採購品項",
+    "zh-CN": "选择采购品项"
+  },
+  "Item Name": {
+    "es": "Nombre del artículo",
+    "zh-TW": "品項名稱",
+    "zh-CN": "品项名称"
+  },
+  "Supplier SKU": {
+    "es": "SKU del proveedor",
+    "zh-TW": "供應商貨號",
+    "zh-CN": "供应商货号"
+  },
+  "Inventory Source": {
+    "es": "Origen del inventario",
+    "zh-TW": "庫存來源",
+    "zh-CN": "库存来源"
+  },
+  "Made In-House": {
+    "es": "Elaborado internamente",
+    "zh-TW": "店內製作",
+    "zh-CN": "店内制作"
+  },
+  "Purchased for Resale": {
+    "es": "Comprado para reventa",
+    "zh-TW": "外購轉售",
+    "zh-CN": "外购转售"
+  },
+  "Save Inventory Source": {
+    "es": "Guardar origen del inventario",
+    "zh-TW": "儲存庫存來源",
+    "zh-CN": "保存库存来源"
+  },
+  "Save Item Type and Supplier": {
+    "es": "Guardar tipo y proveedor",
+    "zh-TW": "儲存品項類型與供應商",
+    "zh-CN": "保存品项类型与供应商"
+  },
+  "Made-in-house products are excluded from purchasing. Mark resale items explicitly.": {
+    "es": "Los productos elaborados internamente no se compran. Marque explícitamente los artículos de reventa.",
+    "zh-TW": "店內製作商品不列入採購。請明確標記轉售商品。",
+    "zh-CN": "店内制作商品不列入采购。请明确标记转售商品。"
+  },
+  "Mark resale products from Products → Inventory Source.": {
+    "es": "Marque los productos de reventa en Productos → Origen del inventario.",
+    "zh-TW": "請在商品 → 庫存來源標記轉售商品。",
+    "zh-CN": "请在商品 → 库存来源标记转售商品。"
+  },
+  "If approval is required, create a Purchase Need and approve it before ordering.": {
+    "es": "Si se requiere aprobación, cree y apruebe una necesidad de compra antes de ordenar.",
+    "zh-TW": "若需要審核，請先建立採購需求並核准後再下單。",
+    "zh-CN": "若需要审批，请先创建采购需求并批准后再下单。"
+  },
+  "✓ Approved Item": {
+    "es": "✓ Artículo aprobado",
+    "zh-TW": "✓ 核准品項",
+    "zh-CN": "✓ 获准品项"
+  },
+  "This barcode does not match the approved item package.": {
+    "es": "Este código de barras no coincide con el envase del artículo aprobado.",
+    "zh-TW": "此條碼與核准品項的包裝不符。",
+    "zh-CN": "此条码与获准品项的包装不符。"
+  }
+})
+
+Object.assign(translations,{'Search records':{es:'Buscar registros','zh-TW':'搜尋記錄','zh-CN':'搜索记录'},'Purchase Item':{es:'Artículo de compra','zh-TW':'採購品項','zh-CN':'采购品项'}})
+
+Object.assign(translations,{"Legacy Purchase Order History":{"es":"Historial de órdenes de compra anteriores","zh-TW":"舊採購單紀錄","zh-CN":"旧采购单记录"},"Historical orders are preserved. Review and cancel old open orders, then recreate eligible items in the new purchase workflow.":{"es":"Se conservan las órdenes históricas. Revise y cancele las órdenes abiertas anteriores y vuelva a crear los artículos permitidos en el nuevo flujo de compras.","zh-TW":"歷史訂單仍保留。請檢查並取消舊的未結採購單，再以新採購流程建立符合資格的品項。","zh-CN":"历史订单仍保留。请检查并取消旧的未结采购单，再以新采购流程创建符合资格的品项。"}})
+
+Object.assign(translations,{"Loading your workspace…":{"es":"Cargando su espacio de trabajo…","zh-TW":"正在載入您的工作區…","zh-CN":"正在加载您的工作区…"},"Checking your session…":{"es":"Comprobando su sesión…","zh-TW":"正在檢查您的登入狀態…","zh-CN":"正在检查您的登录状态…"},"Still connecting. Check your connection and try again.":{"es":"Conectando. Compruebe su conexión e inténtelo de nuevo.","zh-TW":"仍在連線中。請檢查網路連線後再試一次。","zh-CN":"仍在连接中。请检查网络连接后重试。"}})

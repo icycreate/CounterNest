@@ -1,3 +1,4 @@
+import {RecordTable} from './RecordTable'
 import {systemLabel} from './systemLabels'
 import {trError,tr} from './i18n'
 import {randomId} from './id'
@@ -120,6 +121,6 @@ function TrainingTab({role,training,reload,showToast}:{role:Role;training:any;re
   return <><section className="panel"><h2>{tr("Role Training")}</h2><div className="training-modules">{modules.map(([key,label])=><article key={key}><ChefHat size={22}/><div><strong>{label}</strong><small>{mine.has(key)?tr("Acknowledged"):tr("Review the included training guide, then acknowledge.")}</small></div><button className={mine.has(key)?'':'primary-btn'} onClick={()=>void ack(key)}>{mine.has(key)?tr("Re-acknowledge"):tr("Acknowledge")}</button></article>)}</div></section>{role==='admin'&&<section className="panel"><div className="panel-title"><div><h2>{' '+tr("Acceptance")}</h2><p className="muted">{tr("Checks lot consistency, conversion rules, approved recipe guides, variance reviews, supply-document review and training evidence.")}</p></div><button className="primary-btn" onClick={()=>void acceptance()}><ClipboardCheck size={16}/>{' '+tr("Run Acceptance")}</button></div><StudioTable headers={['Training module','Staff acknowledgements','Latest']} rows={(training.shop_summary??[]).map((x:any)=>[x.training_module,String(x.acknowledged_staff),x.latest_acknowledgement?new Date(x.latest_acknowledgement).toLocaleString():'—'])}/></section>}</>
 }
 
-function StudioTable({headers,rows}:{headers:string[];rows:any[][]}){return <div className="table-scroll"><table><thead><tr>{headers.map(h=><th key={h}>{tr(h)}</th>)}</tr></thead><tbody>{rows.length?rows.map((row,i)=><tr key={i}>{row.map((cell,j)=><td key={j}>{cell}</td>)}</tr>):<tr><td colSpan={headers.length} className="muted">{tr("No records yet.")}</td></tr>}</tbody></table></div>}
+function StudioTable(props:{headers:string[];rows:React.ReactNode[][]}){return <RecordTable {...props}/>}
 function StatCard({label,value}:{label:string;value:string}){return <div className="costing-card"><small>{label}</small><strong>{value}</strong></div>}
 function escapeHtml(value:string){return value.replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]||c))}

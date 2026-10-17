@@ -1,24 +1,23 @@
-# RC5 acceptance checklist
+# RC6 target-environment UAT
 
-Automated results are in BUILD_VALIDATION.json. These unchecked items require target-environment evidence.
+Run after staging migration 88 and before production trading. Use fictional records and record operator, timestamp and evidence. Local automated results are separate from this checklist; unchecked items below are not production sign-off.
 
-- [ ] Apply only84–87 to staged RC4; verify prior83 hashes, existing rows and owner backfill.
-- [ ] Deploy workspace-lifecycle and verify JWT/owner/fresh-password guards; confirm no frontend service key.
-- [ ] Upload original/thumbnail/secondary/substitute ingredient photos; replace/remove, signed preview, master/purchase/buying/receiving views and no public catalogue exposure.
-- [ ] Preferred/substitute/mismatched/manual/scanned barcode; failed checklist blocks receipt; reasoned manager override audit.
-- [ ] Supplier multi-offer comparison, normalized base-unit costs, pack rounding, actual price/package history, no automatic supplier change.
-- [ ] Approval none/threshold/always; staff need → manager approval → one PO; legacy bypass blocked when configured.
-- [ ] Mobile buying found/substitute/unavailable, supplier contact and expected-vs-received quantity/lot/expiry.
-- [ ] Accepted pre-order reservation, linked batches without double demand/jobs, shortage need, cancellation and completion; physical stock unchanged until consumption.
-- [ ] Latest approved/weighted-average recipe costs, labor/packaging/overhead/yield/target margin; explicit selling-price approval.
-- [ ] FEFO/expired/recall exclusions and supplierlot → batch → finishedproduct → sale/preorder trace.
-- [ ] Waste reason/quantity/user/date/cost/batch and cause/item/trend summaries.
-- [ ] Role dashboards, stable exception IDs, authorized global search, quick actions and permission overrides.
-- [ ] Full backup with allseven supported buckets, missing-file failure, CRC/hash tamper rejection, preview counts and real new-account restore at realistic size.
-- [ ] Reconcile restored cash/stock/lot/order/history counts and remapped photos; invite staff and review sharing/settings.
-- [ ] Delete gates missing/stale/changed backup, wrong password/name/checkboxes; pending freeze/public catalogue suspension; owner cancellation within30 days.
-- [ ] Operator-disabled purge stays disabled; after rehearsal test expired-recovery purge on disposable staging data only.
-- [ ] CSV/XLSX mapping, invalid/duplicate/formula/oversize input, canonical phones, stock-ledger opening counts, atomic failure and retry.
-- [ ] Eight-step setup progress, currency/tax, Skip/open actions, register opened after login only; readiness versions/storage/Edge/backup/PWA status.
-- [ ] EN/ES/zh-TW/zh-CN labels/errors preserve entered business names/content. Tablet/mobile touch, keyboard/focus/contrast/screen reader.
-- [ ] Regression POS payment/stock/retry/refund/deposit, receipts/PDF/QR, customer PWA installation/reopening and physical printer.
+- [ ] Confirm baseline hashes and backup; all 88 migrations apply in order on a fresh project and migration 88 applies alone after RC5.
+- [ ] Existing products remain Made In-House; existing ingredient quantities, costs, images, suppliers and history are unchanged.
+- [ ] Chocolate Cake is absent from PO/receiving selectors; direct product IDs and retired RPCs cannot receive supplier stock.
+- [ ] Flour/Cream, Cake Box, Labels and an explicitly marked Bottled Drink appear in the correct item filters and can be ordered/received.
+- [ ] Admin-only resale opt-in requires a reason and audit user/time/old-new values; inventory/cashier/foreign-tenant attempts fail.
+- [ ] Bottled Drink remains available in POS/Catalogue if enabled. Receiving adds sellable stock once; a sale reduces stock once; exact checkout/receipt retries do not repeat stock changes.
+- [ ] Made-in-house production consumes its recipe ingredients once; completed/retried jobs do not double deduct. Recipe shortages create ingredient needs, not cake purchase needs.
+- [ ] Purchase cards appear in Needs/PO/mobile buying/receiving; original/secondary photos, brand, package size, unit, SKU, barcode, substitute and Do Not Buy notes are readable.
+- [ ] Preferred and alternate supplier selections, supplier-specific SKU/price/package/minimum order/lead time are retained; receiving does not switch the preferred supplier.
+- [ ] No-approval, threshold and always-approval modes behave correctly. New Purchase Order creates a pending need when approval is required; only authorized staff approve it with a reason.
+- [ ] Preferred barcode shows Approved Item; approved substitute is recognized; mismatches and failed supplier/brand/size/condition checks stop receiving without an authorized reasoned override.
+- [ ] Receiving compares expected vs received item, supplier, quantity, cost, lot and expiry. Partial receiving, over-receiving rejection, exact retries, changed retry rejection and rollback leave consistent balances.
+- [ ] Expired/recalled resale lots cannot be sold. Test inspected returns and manual adjustments with the business lot/expiry procedure.
+- [ ] SearchField layout/focus/icon/height works on desktop and phone, in light/dark modes, across Products/Catalogue/Customers/Pre-Orders/Inventory/Ingredients/Suppliers/PO/Receiving/Recipes/Production/Reports/Staff/Audit/Expenses/global search.
+- [ ] EN/ES/zh-TW/zh-CN labels and errors work; business names/item names/notes remain unchanged.
+- [ ] Upload/change/remove business logo; verify favicon/title/fallback after refresh, including signed storage URLs. New clean workspace uses CounterNest.
+- [ ] Source ZIP excludes .env/.env.local/node_modules/dist and desktop installers; clean npm install and npm run build succeed.
+- [ ] Export/restore a new workspace with resale products, linked purchase items, lots and receipts; IDs remap, balances match, and no receiving/sale effects replay.
+- [ ] Record real Supabase RLS/storage/Edge results, concurrent-session receiving/sale behavior, browser/device versions and scanner/printer checks before release sign-off.

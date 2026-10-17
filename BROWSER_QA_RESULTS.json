@@ -1,42 +1,31 @@
 {
-  "version": "2.0.0-rc.5",
-  "build": "2026-10-17-operations1",
-  "status": "passed_local_fixture_checks",
-  "environment": "Actual React app in local Vite browser with disposable fictional API fixtures. No live Supabase, credentials, payment, deletion or production business side effects. Adapter and sample workbook remain outside the package.",
+  "version": "2.0.0-rc.7",
+  "method": "In-app browser accessibility and read-only DOM checks against actual RC7 UI, with isolated fictional Supabase adapter. No production data.",
   "checks": [
+    "Fresh desktop launch exposes CounterNest loading status while application root is inert",
+    "Slow simulated authentication releases splash to Checking your session, then reaches signed-in tenant Dashboard",
+    "Dashboard to Products internal navigation leaves splash hidden and app interactive",
+    "Logged-out phone-sized launch reaches Sign in without horizontal overflow",
+    "Hard refresh starts a new CounterNest splash",
+    "Tablet-sized dark startup shows CounterNest loading status with dark boot theme and no horizontal overflow"
+  ],
+  "viewport_requests": [
     {
-      "name": "Ingredient purchasing card shows original package photo, preferred brand/package/barcode, approved substitute and do-not-buy warning",
-      "status": "passed"
+      "width": 390,
+      "height": 844,
+      "reported_css_width": 416
     },
     {
-      "name": "Projected quantities and purchase suggestions render incoming stock, reservations, forecast and pack rounding",
-      "status": "passed"
-    },
-    {
-      "name": "Workspace eight-step setup displays saved BZD currency and 12.5% tax with progress and open/skip actions",
-      "status": "passed"
-    },
-    {
-      "name": "Actual deflated XLSX upload, first-sheet parsing, automatic column mapping, valid preview and reason-gated import completion",
-      "status": "passed",
-      "note": "Fictional Sample Bread; backend completion mocked; actual SQL import verified separately"
-    },
-    {
-      "name": "Backup/restore and owner danger-zone controls render; delete remains disabled without backup, name, password and confirmations",
-      "status": "passed"
-    },
-    {
-      "name": "Workspace visual capture and interface review",
-      "status": "passed",
-      "note": "Screenshot returned inline during local QA; no screenshot artifact is included. Duplicate embedded heading found and removed; rebuilt successfully."
+      "width": 768,
+      "height": 1024,
+      "reported_css_width": 853
     }
   ],
-  "language_validation": "Automated 24 role/language cases and new four-language import/setup tests pass; prior RC4 manual catalogue/receipt checks retained as historical evidence only.",
-  "pending": [
-    "Real Supabase Auth/Storage/Realtime and five Edge gateways",
-    "Realistic backup/restore scale and file upload/download on target deployment",
-    "Native HTTPS PWA install/reopen and Vercel function routing",
-    "Physical printers/scanners/mobile devices and screen readers",
-    "Native-speaker acceptance in EN/ES/zh-TW/zh-CN"
-  ]
+  "screenshot_capture": "Unavailable: browser screenshot API returned Unable to capture screenshot. Supplied key-stage PNG/SVG files are design mockups, not browser captures.",
+  "limits": [
+    "Browser zoom affects reported CSS viewport sizes",
+    "Slow network modeled by delayed auth adapter, not bandwidth throttling",
+    "Physical Android/iOS installed PWA and real Supabase session UAT pending"
+  ],
+  "production_data_used": false
 }

@@ -1,0 +1,282 @@
+[
+  {
+    "file": "BOOT_ASSET_MANIFEST.json",
+    "change": "added",
+    "sha256": "32f245492d3ab0d669c9efff1e5cfe60e8fd3309e970c457e15a34ae4cb6390b"
+  },
+  {
+    "file": "BOOT_IMPLEMENTATION.md",
+    "change": "added",
+    "sha256": "49770e0e0f785a1ae7f2102e9cae21247509ae71c79aa210081e2304688f8977"
+  },
+  {
+    "file": "BOOT_TEST_RESULTS.json",
+    "change": "added",
+    "sha256": "9dd01ed95ca3df0944668599467b6f5e759e575aafe63e7c9f66b1aae461eef4"
+  },
+  {
+    "file": "BOOT_UAT_CHECKLIST.md",
+    "change": "added",
+    "sha256": "507bc90eb0385d4465ad4e3673857024979557c167512bc968cec3c137dd6840"
+  },
+  {
+    "file": "BROWSER_QA_RESULTS.json",
+    "change": "modified",
+    "sha256": "db9f937a9fc5610adcb788d8a543958f39616602d2e91df8fdb9547059b772de"
+  },
+  {
+    "file": "BUILD_VALIDATION.json",
+    "change": "modified",
+    "sha256": "eb47dcba30f8fddc34213b7e2245dc15dd179c32ef29f98c52b5a7f28ca99f33"
+  },
+  {
+    "file": "BUILD_VALIDATION_REPORT.md",
+    "change": "modified",
+    "sha256": "474d6c59f281e68337ee6c55107ff2b16639914967c233214af338a10026c9b9"
+  },
+  {
+    "file": "CHANGELOG.md",
+    "change": "modified",
+    "sha256": "16d451c30d005d9d4d122963f48ec64ab142497e92351d926a2221c48a93e5d6"
+  },
+  {
+    "file": "DATABASE_TEST_RESULTS.json",
+    "change": "modified",
+    "sha256": "67a8df9a4c0b17331b48921a6a6291c4f971cbeeee0032e68f8f055d759e29d2"
+  },
+  {
+    "file": "docs/boot/01-logo-fade.png",
+    "change": "added",
+    "sha256": "e3a6af601691c5a3fe0eae92644ad2e6a38c0867d6f5a14450d219787f7ef90c"
+  },
+  {
+    "file": "docs/boot/01-logo-fade.svg",
+    "change": "added",
+    "sha256": "465411844a68117d1198251c0e87d8f86538f572fe316bfb46d3175d3bb45e53"
+  },
+  {
+    "file": "docs/boot/02-nest-rings.png",
+    "change": "added",
+    "sha256": "557a578f7443ceac0d61eccad279a65db183a825c707552340e16cf0a96ab6ca"
+  },
+  {
+    "file": "docs/boot/02-nest-rings.svg",
+    "change": "added",
+    "sha256": "630bb5baaf0621ee9525d0a338643959bf384a19777a61d6b1f75daad3b80064"
+  },
+  {
+    "file": "docs/boot/03-brand-loading.png",
+    "change": "added",
+    "sha256": "c4811502da7be9a6db5b466f5d1291b3d761d470514f293e36b646edf3f94731"
+  },
+  {
+    "file": "docs/boot/03-brand-loading.svg",
+    "change": "added",
+    "sha256": "5de192baf7e8e51eeb5faef6a92d3479f784fcc711b62a7ed5403baddf684ff5"
+  },
+  {
+    "file": "docs/boot/04-mobile-dark.png",
+    "change": "added",
+    "sha256": "5ae729ef1caa0355ab69db2772f310c6d62e979442d187c94fe26a38c5d7d0b5"
+  },
+  {
+    "file": "docs/boot/04-mobile-dark.svg",
+    "change": "added",
+    "sha256": "a7a92d5a6a8a941b43e97cf32e5066abca81b4018faec354ca918c2c0d97c2e9"
+  },
+  {
+    "file": "docs/boot/05-reduced-motion.png",
+    "change": "added",
+    "sha256": "a708ac9a9fa4a4fbb61a0af49f6de07a1ad744d388e8527fd53bd143df959b93"
+  },
+  {
+    "file": "docs/boot/05-reduced-motion.svg",
+    "change": "added",
+    "sha256": "6c29f034664c55b6f3004cf8b437f31f4da10aa1a61e59e9a871e3f09c481f3c"
+  },
+  {
+    "file": "docs/boot/boot-stages-overview.png",
+    "change": "added",
+    "sha256": "ae23f060f73bc9482a46407bebbca9ce40ca1c763ca3ab985885ed10865748d6"
+  },
+  {
+    "file": "docs/boot/README.md",
+    "change": "added",
+    "sha256": "2cfc14ca9dc970df3beb14d9cbdb51e9301a90d96c2985d918f5757ad49c1939"
+  },
+  {
+    "file": "docs/validation/build.log",
+    "change": "modified",
+    "sha256": "42cbe79acec8fe815684173b88326b3faf6044c8a5205ea09ac639f2ea7db63b"
+  },
+  {
+    "file": "docs/validation/test-assets.log",
+    "change": "modified",
+    "sha256": "373eaee70ffa03290c99333ae86aee4f3b87f11f854056b13978b23877250954"
+  },
+  {
+    "file": "docs/validation/test.log",
+    "change": "modified",
+    "sha256": "d114932836afc55edeede2b3bde3795151c5c068366081106745e4ecef7e5b86"
+  },
+  {
+    "file": "index.html",
+    "change": "modified",
+    "sha256": "748114c558c64ea48724a9dd9a99defef20ca7881af57047641fe3b56ce6e3d0"
+  },
+  {
+    "file": "INSTALL_UPGRADE_GUIDE.md",
+    "change": "modified",
+    "sha256": "b681691a5e986d124972e78a99982a8ada4069999adde0df7d138d32b87c9d86"
+  },
+  {
+    "file": "KNOWN_ISSUES.md",
+    "change": "modified",
+    "sha256": "ae183c787363a78cfbb6cd5a961c5ba7c9e11ef89567ad77d5b9838bfa5f0154"
+  },
+  {
+    "file": "package-lock.json",
+    "change": "modified",
+    "sha256": "86944f47c02ab73ed0d14a081020dea047b23505db9436e8f2f8fd21e8355248"
+  },
+  {
+    "file": "package.json",
+    "change": "modified",
+    "sha256": "c6b0e34136865320a77cb857e9133c0edd00044419de24350bf0606cebcd27e8"
+  },
+  {
+    "file": "public/boot-screen.css",
+    "change": "added",
+    "sha256": "6354658ad5a71ea7d44a92b39002a046fa2fdb611393d2b39a26248bbd3cbc97"
+  },
+  {
+    "file": "public/counternest-boot-logo-dark.svg",
+    "change": "added",
+    "sha256": "d278dbadbd3d12c2b3714b8c92fb72d618f994d5ec8e57e0a29861dd546f59ec"
+  },
+  {
+    "file": "public/manifest.webmanifest",
+    "change": "modified",
+    "sha256": "6766f6d1fe5cdf4f6f081a77c971f99b2ea83b8f2922041ccf2d45d094cdc468"
+  },
+  {
+    "file": "public/pwa/apple-touch-icon.png",
+    "change": "modified",
+    "sha256": "dd1e246c07ae0fe165d3b7d962cc479367c68a612fccd5b6a1bc95457eda7bea"
+  },
+  {
+    "file": "public/pwa/favicon-64.png",
+    "change": "modified",
+    "sha256": "0006606062ef5da00a9aac4af702bcbf33364bee1dfe0996496ab40278be5209"
+  },
+  {
+    "file": "public/pwa/icon-192.png",
+    "change": "modified",
+    "sha256": "1346e867d9438f56b37c4fae8d4fe7d6c90acd0211d2d1e4176297f84208b565"
+  },
+  {
+    "file": "public/pwa/icon-512.png",
+    "change": "modified",
+    "sha256": "71acb7d72ada1e9355f14b3cc40bf4564dfd0b1de605e7ac21b08d5ed5f19b7d"
+  },
+  {
+    "file": "public/pwa/icon-maskable-512.png",
+    "change": "modified",
+    "sha256": "71acb7d72ada1e9355f14b3cc40bf4564dfd0b1de605e7ac21b08d5ed5f19b7d"
+  },
+  {
+    "file": "public/pwa/splash-1024.png",
+    "change": "modified",
+    "sha256": "8f851ce8215bc5841cf0ce4b67d0f5e353681db9e2716445a3d73bab9624caaa"
+  },
+  {
+    "file": "public/sw.js",
+    "change": "modified",
+    "sha256": "415c4cf88ef6c1d620c4df97abd4734965decb9c6fc52f29979431f8b0640d7d"
+  },
+  {
+    "file": "README.md",
+    "change": "modified",
+    "sha256": "20bd66cef40752540c78a5b281e3fd9b2b0fa759dac1b3fc4e792d531baf3252"
+  },
+  {
+    "file": "RELEASE_MANIFEST.json",
+    "change": "modified",
+    "sha256": "1955d31d4fa1a4945374af081d468beb5fb54da3727f47a56322fa9aeab50a10"
+  },
+  {
+    "file": "RELEASE_NOTES.md",
+    "change": "modified",
+    "sha256": "eac31945bc939de9247a6f4cdfa7e5e67a5014da74b925f30390aa8f26386718"
+  },
+  {
+    "file": "src/App.tsx",
+    "change": "modified",
+    "sha256": "5348f2f2045878b2625959ab9c2fb5dc085fe35a9758bd8229dd9fc40f94a8e8"
+  },
+  {
+    "file": "src/AuthStartupPending.tsx",
+    "change": "added",
+    "sha256": "b2f2b52fac03480774e3c9649ddd3d2ef11a9025ff143f9f6475f044b6c175c3"
+  },
+  {
+    "file": "src/BootSplash.tsx",
+    "change": "added",
+    "sha256": "f84a093cc3629c6b8b74228743183dc5eab72665cd286486355711d87f6e29bf"
+  },
+  {
+    "file": "src/CommercialCatalogue.tsx",
+    "change": "modified",
+    "sha256": "8d2e0815fc2bd8a422459fbf243f68f53fe6e055d36c687857e565d129139393"
+  },
+  {
+    "file": "src/ErrorBoundary.tsx",
+    "change": "modified",
+    "sha256": "2a4418492c773265305b6523a95be54643eb7c208f1e58b1799ec8b622a2a86d"
+  },
+  {
+    "file": "src/main.tsx",
+    "change": "modified",
+    "sha256": "1fe06e8e07279769214f07f38b3e12683d253e1933a3348f3ec91473c5499c62"
+  },
+  {
+    "file": "src/startupLifecycle.ts",
+    "change": "added",
+    "sha256": "4bcb6ed6c60fe8c28bb78d7f14ad8e75a48652eaa25a086225f44b8fb741f893"
+  },
+  {
+    "file": "src/translations.ts",
+    "change": "modified",
+    "sha256": "54b8a51ccf4933d1e512ed1cbd21b96e95ed45cf224397572c88fa25f3f5243d"
+  },
+  {
+    "file": "src/UxShell.tsx",
+    "change": "modified",
+    "sha256": "d20510f152d07b2a493f248753f3dfef2aad5479da9517085a28579349da43c2"
+  },
+  {
+    "file": "SUPABASE_MIGRATION_ORDER.md",
+    "change": "modified",
+    "sha256": "58bfeacfa4b89a0bee01aedd68ae0015ddfc787757cf3932926e220f47da846c"
+  },
+  {
+    "file": "SUPABASE_UPGRADE_GUIDE.md",
+    "change": "modified",
+    "sha256": "b531371e8eb41154640749ab23afce297cc8e159e1a42ac2b4ed058e4c069bcd"
+  },
+  {
+    "file": "tests/boot.cjs",
+    "change": "added",
+    "sha256": "fb18d2e617c0d5b600fab1a2288fc26669f954faaf3bd3f1246f33cb91769584"
+  },
+  {
+    "file": "tests/database-integration.cjs",
+    "change": "modified",
+    "sha256": "1e69f5c8180f08cc8737d3ab6defd6f81aa7e87f5dd7ac2bf1fb92cb915f3fb9"
+  },
+  {
+    "file": "tests/STATIC_RELEASE_CHECKS.cjs",
+    "change": "modified",
+    "sha256": "93d37952b05e70d70b8099617776c2ddec57784c93d43114e03a4081d83de49f"
+  }
+]

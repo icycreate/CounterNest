@@ -1,0 +1,58 @@
+{
+  "version": "2.0.0-rc.6",
+  "migration_count": 88,
+  "engine": "PGlite PostgreSQL; Supabase auth and storage mocked",
+  "checks": [
+    {
+      "name": "All 88 migrations preserve existing finished products as made-in-house",
+      "status": "passed"
+    },
+    {
+      "name": "Ingredients, packaging and supplies have a single purchase registry",
+      "status": "passed"
+    },
+    {
+      "name": "Resale opt-in is explicit, audited and preserves stock",
+      "status": "passed"
+    },
+    {
+      "name": "Reference photos, preferred supplier and supplier SKU remain tenant-scoped",
+      "status": "passed"
+    },
+    {
+      "name": "Normal product IDs cannot be ordered or used in purchase needs; legacy routes reject",
+      "status": "passed"
+    },
+    {
+      "name": "Each purchase type supports approval, PO, barcode checks, receiving and idempotent retry",
+      "status": "passed"
+    },
+    {
+      "name": "Preferred and approved-substitute barcode verification; mismatch override audit",
+      "status": "passed"
+    },
+    {
+      "name": "Resale receiving increases sellable stock once and POS decreases it once",
+      "status": "passed"
+    },
+    {
+      "name": "Expired resale lots block POS and roll back every stock balance",
+      "status": "passed"
+    },
+    {
+      "name": "Resale stock cannot be reclassified or consumed through production",
+      "status": "passed"
+    },
+    {
+      "name": "Made-in-house production consumes recipe ingredients once",
+      "status": "passed"
+    },
+    {
+      "name": "Roles and tenant boundaries protect classification, purchase items and private helpers",
+      "status": "passed"
+    }
+  ],
+  "limitations": [
+    "Live Supabase RLS/storage/Edge and multi-session concurrency require staging UAT."
+  ]
+}

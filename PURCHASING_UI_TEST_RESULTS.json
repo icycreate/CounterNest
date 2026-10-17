@@ -1,0 +1,18 @@
+{
+  "checks": [
+    "en purchase selector and resale filter",
+    "es purchase selector and resale filter",
+    "zh-TW purchase selector and resale filter",
+    "zh-CN purchase selector and resale filter",
+    "shared search filters visible row text",
+    "dynamic logo, removed-logo fallback, neutral title, signed URL and load-error fallback",
+    "keyboard focus, shared height, responsive and theme variables"
+  ],
+  "languages": [
+    "en",
+    "es",
+    "zh-TW",
+    "zh-CN"
+  ],
+  "type": "React renderer and simulated DOM tests"
+}

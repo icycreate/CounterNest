@@ -433,5 +433,10 @@
     "order": 87,
     "file": "202610171300_operations_import_permissions.sql",
     "sha256": "8cd1a27531124091cecc23a9ba63279cf7bc1e05038c3c6aaf1fc4cbb42877a5"
+  },
+  {
+    "order": 88,
+    "file": "202610171400_purchase_item_model.sql",
+    "sha256": "6ed9dbe3f72d5bf9ea2d89869249df53064b00193f5bc9a130dc3ce6458ba95b"
   }
 ]

@@ -1,22 +1,17 @@
-# CounterNest POS
-Internal release: **CounterNest POS v2.0.0-RC1**, update build **2026-10-15-update1**. This package supersedes the original RC1 source without overwriting its archive.
+# CounterNest POS — Consolidated Release Candidate 3
 
-Browser → private GitHub → Vercel → Supabase Cloud. No native installer or app installation is required.
+Browser application → GitHub → Vercel → Supabase Cloud. Internal version 2.0.0-rc.3, build 2026-10-16-consolidated1. The visible product remains CounterNest POS, with your configured business name.
 
-## This update
-- Catalogue → Display Settings: customer QR view/save/print, canonical public URL, copy link, preview and open display; optional receipt QR.
-- Public catalogue: product details, multi-item pre-order requests, selected variant/quantity, customer name, enabled preferred contact method, notes, review and retry recovery. No pickup is required at intake; no stock/payment is reserved.
-- Staff pre-order inbox: review/contact/confirmation/deposit states and one-time audited admin contact override. Confirmed requests link once to real scheduled orders and follow production/paid collection.
-- Login opens Dashboard after authentication. Admin uses Daily Cash → Open Register to record station/opening cash. Legacy declarations remain historical; new writes are disabled.
-- Numbered supply tabs removed; grouped, persistent, role-filtered navigation remains.
+This source extends the finalized RC1 customer-request/register update. It includes role dashboards, command search, pinned navigation, notifications, four language preferences, appearance, held sales, customer tracking and response links, production stages and inventory receiving permissions.
 
-## Run and deploy
-Use Node 22.12+ or 24 (below 25). Run `npm ci` (or `npm install`), copy .env.example to ignored .env.local and configure browser-safe Supabase settings. Keep demo false. Run `npm run dev`, `npm run verify`, then `npm run preview` to inspect the production build.
+- Start with [Release notes](RELEASE_NOTES.md), [Upgrade guide](SUPABASE_UPGRADE_GUIDE.md), [Known issues](KNOWN_ISSUES.md) and [UAT checklist](UAT_ACCEPTANCE_CHECKLIST.md).
+- [Build validation](BUILD_VALIDATION.json), [database results](DATABASE_TEST_RESULTS.json), [role/language UI results](UX_UI_TEST_RESULTS.json), [translation coverage](I18N_COVERAGE.json).
+- [GitHub upload](GITHUB_UPLOAD_GUIDE.md), [Vercel deployment](VERCEL_DEPLOYMENT_GUIDE.md), [environment variables](ENVIRONMENT_VARIABLES.md), [Supabase deployment](SUPABASE_DEPLOYMENT_GUIDE.md).
 
-An existing database confirmed at original RC1 migration 78 needs **only migration 79**, `202610151200_customer_requests_register.sql`. Read INSTALL_UPGRADE_GUIDE.md and SUPABASE_UPGRADE_GUIDE.md first. All 78 earlier SQL files remain unchanged. A fresh project needs all 79 in the exact documented order. Never blindly push or replay the legacy SQL chain.
+Use Node 22.12–24, then npm install and npm run verify. Vercel builds with npm run build and serves dist; vercel.json supplies SPA rewrites. Set the public Supabase URL and publishable/anon key in Vercel. Never put a service-role key or private credentials into browser variables.
 
-Use GITHUB_UPLOAD_GUIDE.md, VERCEL_DEPLOYMENT_GUIDE.md, ENVIRONMENT_VARIABLES.md and EDGE_FUNCTIONS.md for deployment. Vercel builds dist; source packages exclude dependencies, build output, local credentials and QA fixtures.
+Existing installations at migration 79 apply ONLY pending migrations 80 and 81, in that order. Fresh databases use all 81 files in SUPABASE_MIGRATION_ORDER.md. Do not replay earlier migrations.
 
-Start with docs/guides/CUSTOMER_REQUESTS_GUIDE.md for QR/contact/register procedures. Other user guides remain in docs/guides/. RELEASE_NOTES.md, BUILD_VALIDATION.json, DATABASE_TEST_RESULTS.json and KNOWN_ISSUES.md describe evidence and limits. UAT_ACCEPTANCE_CHECKLIST.md remains to be signed off on the real cloud and devices. Development history lives in docs/internal/history/.
+Source packages deliberately exclude dependencies, build output, credentials, Git metadata, local QA fixtures and native installers. No live deployment or production account changes were performed.
 
-This is a release candidate for staging UAT, not stable production acceptance.
+Latest decisions: catalogue slides/rotations and timing controls have been removed. Initial requests use direct Accept Order / Decline Order. Accepted orders have a printable confirmation receipt, optional pickup/deposit, and a single shared kitchen queue. New product/gallery images open a crop editor before upload. The recommended catalogue PDF uses portrait cards. A neutral CounterNest default logo follows every current branding surface.

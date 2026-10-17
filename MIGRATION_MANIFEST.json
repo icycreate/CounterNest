@@ -393,5 +393,15 @@
     "order": 79,
     "file": "202610151200_customer_requests_register.sql",
     "sha256": "d5f66dfd8132bfd159bbb1f2dd2edf44acec7c0d73a118cad2eba2c4848033c0"
+  },
+  {
+    "order": 80,
+    "file": "202610151800_ux_workspace.sql",
+    "sha256": "7ca98b9af7a5168da232db1cc4aa5487beb58b35dda8397c25729e63a37067e1"
+  },
+  {
+    "order": 81,
+    "file": "202610161200_catalogue_finalization.sql",
+    "sha256": "d058a4a6ba97329be6ee9fca087032f8a41e6478f8b9b54d85567362a614e510"
   }
 ]

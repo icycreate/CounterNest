@@ -246,7 +246,9 @@ async function main(){
  });
  await require('./rc1-database-checks.cjs')({db,check,scalar,rejects,uid,emp,shop,other,prod});
  await require('./customer-request-database.cjs')({db,check,scalar,rejects,other,emp});
- fs.writeFileSync(path.join(root,'DATABASE_TEST_RESULTS.json'),JSON.stringify({version:'2.0.0-rc.1',phase:'36.9',migration_count:files.length,database_engine:'PGlite PostgreSQL with mocked Supabase auth/storage and mocked manager-PIN crypt for refund tests; pgcrypto extension omitted',checks,limitations:['Live Supabase deployment, real bcrypt PIN checks, storage HTTP upload, Edge Functions and browser UAT still require target-environment verification.']},null,2));
+ await require('./ux-database.cjs')({db,check,scalar,rejects});
+ await require('./finalization-database.cjs')({db,check,scalar,rejects});
+ fs.writeFileSync(path.join(root,'DATABASE_TEST_RESULTS.json'),JSON.stringify({version:'2.0.0-rc.3',build:'2026-10-16-consolidated1',migration_count:files.length,database_engine:'PGlite PostgreSQL with mocked Supabase auth/storage and mocked manager-PIN crypt for refund tests; pgcrypto extension omitted',checks,limitations:['Live Supabase deployment, real bcrypt PIN checks, storage HTTP upload, Edge Functions and browser UAT still require target-environment verification.']},null,2));
  await db.close();
 }
 main().catch(e=>{console.error(e.message);process.exit(1)});

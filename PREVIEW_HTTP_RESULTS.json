@@ -1,6 +1,6 @@
 {
   "status": "passed",
-  "routes": 49,
+  "routes": 50,
   "server": "Local Vite production preview",
   "checks": [
     "Direct HTML responses and identical SPA shell for staff and dedicated display routes",

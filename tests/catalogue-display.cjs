@@ -11,12 +11,13 @@ async function main(){
  const result=await esbuild.build({entryPoints:[path.join(__dirname,'../src/CommercialCatalogue.tsx')],bundle:true,write:false,platform:'node',format:'cjs',packages:'external',jsx:'automatic',plugins:[{name:'mock',setup(b){b.onLoad({filter:/[\\/]lib[\\/]supabase\.ts$/},()=>({contents:'export const supabase=globalThis.testCatalogueClient;',loader:'ts'}))}}]});
  const mod=new Module(path.join(__dirname,'compiled-display.cjs'),module);mod.paths=Module._nodeModulePaths(__dirname);mod._compile(result.outputFiles[0].text,path.join(__dirname,'compiled-display.cjs'));
  let tree;await Renderer.act(async()=>{tree=Renderer.create(React.createElement(mod.exports.CommercialCatalogue,{token:'mock-token',mode:'display'}))});
- const slide=()=>Array.from(timers.entries()).find(([,t])=>t.ms===10000),poll=()=>Array.from(timers.values()).find(t=>t.ms===5000);
- const original=slide()[0];for(let n=0;n<3;n++){await Renderer.act(async()=>{await poll().fn()});assert.equal(slide()[0],original,'Polling must not restart TV slides');loads++;}
- Renderer.act(()=>slide()[1].fn());assert.equal(tree.root.findByProps({role:'dialog'}).props['aria-label'],'First Cake');assert.equal(tree.root.findByProps({className:'discount-badge'}).children.join(''),'20% off');
- Renderer.act(()=>slide()[1].fn());assert.equal(tree.root.findByProps({role:'dialog'}).props['aria-label'],'Second Cake');
- assert(!JSON.stringify(tree.toJSON()).includes('Your selection'),'Display must not show customer cart');
+ const poll=()=>Array.from(timers.values()).find(t=>t.ms===5000);
+ assert(!JSON.stringify(tree.toJSON()).includes('TV auto-slide'));assert(!Array.from(timers.values()).some(t=>t.ms===10000||t.ms===1000));
+ Renderer.act(()=>tree.root.findAllByProps({className:'commercial-card'})[0].props.onClick());assert.equal(tree.root.findByProps({role:'dialog'}).props['aria-label'],'First Cake');
+ for(let n=0;n<3;n++){await Renderer.act(async()=>{await poll().fn()});assert.equal(tree.root.findByProps({role:'dialog'}).props['aria-label'],'First Cake');loads++}
+ assert.equal(tree.root.findByProps({className:'discount-badge'}).children.join(''),'20% off');assert(!JSON.stringify(tree.toJSON()).includes('Your selection'),'Display must not show POS cart');
+
  Renderer.act(()=>tree.unmount());assert.equal(timers.size,0);
- console.log('PASS standalone TV slides survive '+loads+' data refreshes; customer detail discounts, hidden cart and timer cleanup');
+ console.log('PASS no automatic slides or rotations; manual detail survives '+loads+' data refreshes; discounts, hidden POS cart and timer cleanup');
 }
 main().catch(e=>{console.error(e);process.exit(1)});

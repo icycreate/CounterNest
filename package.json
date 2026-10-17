@@ -1,7 +1,7 @@
 {
   "name": "counternest-pos",
   "private": true,
-  "version": "2.0.0-rc.1",
+  "version": "2.0.0-rc.3",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,7 +13,7 @@
     "test:ui": "node tests/ui-components.cjs",
     "test:release": "node tests/STATIC_RELEASE_CHECKS.cjs",
     "test:web": "node tests/web-deployment.cjs",
-    "test": "npm run test:frontend && npm run test:ui && npm run test:database && npm run test:release && npm run test:web && npm run test:edge && npm run test:display && npm run test:rc1 && npm run test:catalogue-export && npm run test:customer-requests",
+    "test": "npm run test:frontend && npm run test:ui && npm run test:database && npm run test:release && npm run test:web && npm run test:edge && npm run test:display && npm run test:rc1 && npm run test:catalogue-export && npm run test:customer-requests && npm run test:ux && npm run test:finalization",
     "test:edge": "node tests/edge-functions.cjs",
     "test:display": "node tests/catalogue-display.cjs",
     "test:assets": "node tests/built-assets.cjs",
@@ -21,7 +21,9 @@
     "verify": "npm run build && npm test && npm run test:assets",
     "test:rc1": "node tests/rc1-ui.cjs",
     "test:catalogue-export": "node tests/catalogue-export.cjs",
-    "test:customer-requests": "node tests/customer-request-ui.cjs"
+    "test:customer-requests": "node tests/customer-request-ui.cjs",
+    "test:ux": "node tests/pos-ux.cjs && node tests/preorder-ux.cjs && node tests/ux-ui.cjs && node tests/i18n.cjs",
+    "test:finalization": "node tests/catalogue-finalization.cjs && node tests/preorder-finalization-ui.cjs && node tests/print-i18n.cjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",
@@ -47,7 +49,7 @@
   "allowScripts": {
     "esbuild@0.25.12": true
   },
-  "description": "CounterNest POS Release Candidate 1 — browser / Vercel / Supabase",
+  "description": "CounterNest POS consolidated UX / Catalogue / Pre-Order release candidate",
   "engines": {
     "node": ">=22.12.0 <25"
   }

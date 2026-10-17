@@ -1,10 +1,11 @@
-const CACHE_VERSION = 'counternest-web-v2-0-0-rc1-update1'
+const CACHE_VERSION = 'counternest-web-v2-0-0-rc3-consolidated1'
 const SHELL_CACHE = `${CACHE_VERSION}-shell`
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`
 const CORE_ASSETS = [
   '/',
   '/index.html',
   '/manifest.webmanifest',
+  '/counternest-default-logo.svg',
   '/pwa/icon-192.png',
   '/pwa/icon-512.png',
   '/pwa/icon-maskable-512.png',

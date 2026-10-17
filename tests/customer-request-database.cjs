@@ -27,7 +27,7 @@ module.exports=async({db,check,scalar,rejects,other,emp})=>{
  });
  await check('Anonymous pre-order submission needs no pickup, uses server promo prices and never reserves stock',async()=>{
   await db.query("select set_config('test.user','',false)");await db.exec('set role anon');
-  const result=await send();number=result.request_number;assert(number);assert.deepEqual(Object.keys(result).sort(),['replayed','request_number','status']);await db.exec('reset role');
+  const result=await send();number=result.request_number;assert(number);assert.deepEqual(Object.keys(result).sort(),['replayed','request_number','status','status_token']);await db.exec('reset role');
   request=await scalar('select id from catalogue_preorder_requests where shop_id=$1 and client_key=$2',[shop,key]);
   const row=await scalar('select to_jsonb(r) from catalogue_preorder_requests r where id=$1',[request]);assert.equal(row.status,'new_request');assert.equal(Number(row.estimated_subtotal),18);assert(!JSON.stringify(row.summary).includes('cost'));assert(!JSON.stringify(row.items).includes('Forged'));
   assert.equal(Number(await scalar('select stock from products where id=$1',[product])),20);assert.equal(Number(await scalar('select count(*) from sales where shop_id=$1',[shop])),0);

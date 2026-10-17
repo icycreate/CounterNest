@@ -1,0 +1,26 @@
+{
+  "matrix_cases": 16,
+  "languages": [
+    "en",
+    "es",
+    "zh-TW",
+    "zh-CN"
+  ],
+  "roles": [
+    "admin",
+    "cashier",
+    "production",
+    "inventory"
+  ],
+  "type": "React component tests with mocked API and DOM; not physical-device UAT",
+  "checks": [
+    "role navigation",
+    "quick action permissions",
+    "command palette keyboard navigation",
+    "dynamic branding preservation",
+    "bounded mark-all read IDs",
+    "status route",
+    "held-sale server repricing",
+    "touch and contrast CSS"
+  ]
+}

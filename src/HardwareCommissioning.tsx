@@ -1,3 +1,5 @@
+import {getUiLanguage,getUiLocale,trError,tr} from './i18n'
+import {escapeHtml} from './customerLinks'
 import {useMemo,useState} from 'react'
 import {AlertTriangle,CheckCircle2,ClipboardCheck,Download,Landmark,Printer,ShieldCheck,Wifi} from 'lucide-react'
 import type {PageKey,Role} from './types'
@@ -56,36 +58,40 @@ export default function HardwareCommissioning({role,staffName,shopName,online,sh
     localStorage.setItem('counternest.drawerMode',drawerMode)
     localStorage.setItem('counternest.drawerNotes',drawerNotes.trim())
     Object.entries(checklist).forEach(([k,v])=>localStorage.setItem(`counternest.hw.${k}`,String(v)))
-    showToast('POS hardware setup saved on this workstation.')
+    showToast(trError(tr("POS hardware setup saved on this workstation.")))
   }
 
   function printerTest(){
     const w=window.open('','_blank','width=420,height=720')
-    if(!w)return showToast('Allow pop-ups to run the printer test.')
+    if(!w)return showToast(trError(tr("Allow pop-ups to run the printer test.")))
     const width=paperWidth==='58'?'58mm':'80mm'
-    w.document.write(`<!doctype html><html><head><title>CounterNest Printer Test</title><style>@page{size:${width} auto;margin:3mm}body{font-family:monospace;width:${width};margin:0;padding:3mm;box-sizing:border-box;text-align:center}hr{border:0;border-top:1px dashed #000}.left{text-align:left}</style></head><body><h3>${shopName||'CounterNest POS'}</h3><b> PRINTER TEST</b><hr><div class="left">Station: ${stationLabel||'Not named'}<br>Printer: ${printerMakeModel||'Not entered'}<br>Connection: ${printerConnection}<br>Paper: ${paperWidth} mm<br>Date: ${new Date().toLocaleString()}</div><hr><p>Confirm text is centered, readable, and fully inside the paper.</p><script>setTimeout(()=>window.print(),250)<\/script></body></html>`)
+    const label=(source:string)=>escapeHtml(tr(source))
+    const connection={system:'System Print / Windows driver',usb:'USB',bluetooth:'Bluetooth',wifi:'Wi-Fi / LAN'}[printerConnection]??'System Print / Windows driver'
+    w.opener=null
+    w.document.write(`<!doctype html><html lang="${getUiLanguage()}"><head><meta charset="utf-8"><title>${escapeHtml(shopName||'CounterNest POS')} • ${label('Printer Test')}</title><style>@page{size:${width} auto;margin:3mm}body{font-family:monospace;width:${width};margin:0;padding:3mm;box-sizing:border-box;text-align:center}hr{border:0;border-top:1px dashed #000}.left{text-align:left}</style></head><body><h3>${escapeHtml(shopName||'CounterNest POS')}</h3><b>${label('Printer Test')}</b><hr><div class="left">${label('Station')}: ${escapeHtml(stationLabel)||label('Not named')}<br>${label('Printer')}: ${escapeHtml(printerMakeModel)||label('Not entered')}<br>${label('Connection')}: ${label(connection)}<br>${label('Paper')}: ${escapeHtml(paperWidth)} mm<br>${label('Date')}: ${escapeHtml(new Date().toLocaleString(getUiLocale()))}</div><hr><p>${label('Confirm text is centered, readable, and fully inside the paper.')}</p><script>setTimeout(()=>window.print(),250)<\/script></body></html>`)
     w.document.close()
   }
 
   function drawerTest(){
-    if(drawerMode==='none')return showToast('Select a cash-drawer mode first.')
-    if(drawerMode==='manual')return showToast('Manual/key drawer mode selected. Open the drawer manually and mark the test only after physical verification.')
+    if(drawerMode==='none')return showToast(trError(tr("Select a cash-drawer mode first.")))
+    if(drawerMode==='manual')return showToast(trError(tr("Manual/key drawer mode selected. Open the drawer manually and mark the test only after physical verification.")))
     const w=window.open('','_blank','width=360,height=500')
-    if(!w)return showToast('Allow pop-ups to run the cash-drawer test.')
-    w.document.write(`<!doctype html><html><head><title>CounterNest Cash Drawer Test</title><style>@page{size:58mm auto;margin:2mm}body{font-family:monospace;width:58mm;text-align:center;margin:0;padding:2mm;box-sizing:border-box}</style></head><body><b>CASH DRAWER TEST</b><p>${shopName||'CounterNest POS'}</p><p>${new Date().toLocaleString()}</p><small>If the Windows printer driver is configured to pulse the connected cash drawer when a job prints, the drawer should open after this test.</small><script>setTimeout(()=>window.print(),250)<\/script></body></html>`)
+    if(!w)return showToast(trError(tr("Allow pop-ups to run the cash-drawer test.")))
+    w.opener=null
+    w.document.write(`<!doctype html><html lang="${getUiLanguage()}"><head><meta charset="utf-8"><title>${escapeHtml(shopName||'CounterNest POS')} • ${escapeHtml(tr('Cash Drawer Test'))}</title><style>@page{size:58mm auto;margin:2mm}body{font-family:monospace;width:58mm;text-align:center;margin:0;padding:2mm;box-sizing:border-box}</style></head><body><b>${escapeHtml(tr('Cash Drawer Test'))}</b><p>${escapeHtml(shopName||'CounterNest POS')}</p><p>${escapeHtml(new Date().toLocaleString(getUiLocale()))}</p><small>${escapeHtml(tr('If the printer driver is configured to open the connected cash drawer when a job prints, the drawer should open after this test.'))}</small><script>setTimeout(()=>window.print(),250)<\/script></body></html>`)
     w.document.close()
-    showToast('Select the receipt printer. Mark the drawer test passed only if the physical drawer actually opens.')
+    showToast(trError(tr("Select the receipt printer. Mark the drawer test passed only if the physical drawer actually opens.")))
   }
 
   function record(){
     if(role!=='admin')return
-    if(!ready)return showToast('Complete all required hardware checks before marking this station ready.')
+    if(!ready)return showToast(trError(tr("Complete all required hardware checks before marking this station ready.")))
     save()
     const now=new Date().toISOString()
     localStorage.setItem('counternest.hardwareCommissionedAt',now)
     localStorage.setItem('counternest.hardwareCommissionedBy',staffName)
     setLastCommissioned(now)
-    showToast('This POS station is marked ready for internal use.')
+    showToast(trError(tr("This POS station is marked ready for internal use.")))
   }
 
   function exportRecord(){
@@ -104,7 +110,7 @@ export default function HardwareCommissioning({role,staffName,shopName,online,sh
     {key:'station',label:'Workstation identified',detail:'Station has a clear label such as Front Counter 1.'},
     {key:'printerInstalled',label:'Receipt printer installed',detail:'Windows/Android can see and select the intended printer.'},
     {key:'printerTest',label:'Test receipt printed',detail:'A physical test receipt printed successfully.'},
-    {key:'receiptLayout',label:'Receipt width verified',detail:`Receipt is readable and fits the selected ${paperWidth} mm paper.`},
+    {key:'receiptLayout',label:'Receipt width verified',detail:tr('Receipt is readable and fits the selected {width} mm paper.').replace('{width}',paperWidth)},
     {key:'drawerConnected',label:'Cash drawer physically connected',detail:'Drawer is connected to the printer or available by manual key.',drawer:true},
     {key:'drawerTest',label:'Cash drawer opening verified',detail:'The selected opening method was physically tested.',drawer:true},
     {key:'dailyCash',label:'Daily Cash workflow verified',detail:'Management can enter opening cash, cash in/out, count and close the drawer.'},
@@ -112,16 +118,16 @@ export default function HardwareCommissioning({role,staffName,shopName,online,sh
   ]
 
   return <>
-    <header className="page-header"><div><h1>POS Hardware Setup</h1><p>receipt printer, cash drawer, and counter workstation verification</p></div><div className="report-actions"><button onClick={exportRecord}><Download size={17}/> Export Record</button><button className="primary-btn" onClick={record} disabled={role!=='admin'||!ready}><CheckCircle2 size={17}/> Mark Station Ready</button></div></header>
-    <div className="info-box drawer-security"><ShieldCheck size={18}/><span>This phase is for internal same-network operation. Hardware settings are workstation-specific. CounterNest does not expose the POS publicly and does not send raw cash-drawer pulses unless a verified printer/native adapter is later added.</span></div>
-    {!online&&<div className="warning-box"><AlertTriangle size={18}/> Supabase is currently offline. Hardware tests can still be performed, but Daily Cash verification requires the cloud connection.</div>}
+    <header className="page-header"><div><h1>{tr("POS Hardware Setup")}</h1><p>{tr("receipt printer, cash drawer, and counter workstation verification")}</p></div><div className="report-actions"><button onClick={exportRecord}><Download size={17}/>{' '+tr("Export Record")}</button><button className="primary-btn" onClick={record} disabled={role!=='admin'||!ready}><CheckCircle2 size={17}/>{' '+tr("Mark Station Ready")}</button></div></header>
+    <div className="info-box drawer-security"><ShieldCheck size={18}/><span>{tr('Hardware settings apply to this workstation. Browser printing uses your installed printer driver; test the receipt and cash drawer on this device.')}</span></div>
+    {!online&&<div className="warning-box"><AlertTriangle size={18}/>{' '+tr("Supabase is currently offline. Hardware tests can still be performed, but Daily Cash verification requires the cloud connection.")}</div>}
     <section className="panel hardware-commission-summary">
-      <div><strong>Station status</strong><span className={`commission-status ${ready?'ready':'pending'}`}>{ready?'READY FOR SIGN-OFF':'SETUP IN PROGRESS'}</span></div>
-      <div><strong>Last sign-off</strong><span>{lastCommissioned?new Date(lastCommissioned).toLocaleString():'Not yet commissioned'}</span></div>
-      <div><strong>Connection</strong><span><Wifi size={15}/>{window.location.origin}</span></div>
+      <div><strong>{tr("Station status")}</strong><span className={`commission-status ${ready?'ready':'pending'}`}>{ready?tr("READY FOR SIGN-OFF"):tr("SETUP IN PROGRESS")}</span></div>
+      <div><strong>{tr("Last sign-off")}</strong><span>{lastCommissioned?new Date(lastCommissioned).toLocaleString(getUiLocale()):tr("Not yet commissioned")}</span></div>
+      <div><strong>{tr("Connection")}</strong><span><Wifi size={15}/>{window.location.origin}</span></div>
     </section>
-    <section className="panel"><h2><Printer size={20}/> Receipt Printer</h2><div className="form-grid"><label>Station label<input value={stationLabel} onChange={e=>setStationLabel(e.target.value)} placeholder="Front Counter 1"/></label><label>Printer make / model<input value={printerMakeModel} onChange={e=>setPrinterMakeModel(e.target.value)} placeholder="Example: Epson TM-T20III"/></label><label>Connection<select value={printerConnection} onChange={e=>setPrinterConnection(e.target.value as PrinterConnection)}><option value="system">System Print / Windows driver</option><option value="usb">USB</option><option value="bluetooth">Bluetooth</option><option value="wifi">Wi-Fi / LAN</option></select></label><label>Paper width<select value={paperWidth} onChange={e=>setPaperWidth(e.target.value)}><option value="58">58 mm</option><option value="80">80 mm</option></select></label></div><div className="receipt-actions"><button className="primary-btn small" onClick={save} disabled={role!=='admin'}>Save Device Profile</button><button onClick={printerTest}><Printer size={17}/> Print Test Receipt</button></div></section>
-    <section className="panel"><h2><Landmark size={20}/> Cash Drawer</h2><p className="muted">The accountable cash balance remains in Daily Cash. This section only verifies the physical drawer/opening method on this workstation.</p><div className="form-grid"><label>Drawer mode<select value={drawerMode} onChange={e=>setDrawerMode(e.target.value as DrawerMode)}><option value="none">No physical drawer installed</option><option value="manual">Manual / key opening</option><option value="printer-driver">Open through receipt-printer driver</option></select></label><label>Connection / notes<input value={drawerNotes} onChange={e=>setDrawerNotes(e.target.value)} placeholder="RJ11/RJ12 to receipt printer, drawer model, etc."/></label></div><div className="receipt-actions"><button onClick={drawerTest} disabled={drawerMode==='none'}><Landmark size={17}/> Test Drawer Opening</button><button onClick={()=>setPage('cash-drawer')}><ClipboardCheck size={17}/> Open Daily Cash</button></div>{drawerMode==='printer-driver'&&<div className="info-box"><strong>Printer-driver mode:</strong> configure the receipt printer driver to open the drawer when a print job/receipt is sent. The test button prints a small job; CounterNest does not claim the drawer opened until you physically verify it.</div>}</section>
-    <section className="panel"><h2><ClipboardCheck size={20}/> Hardware Acceptance Checklist</h2><div className="hardware-checklist">{items.filter(i=>!i.drawer||drawerMode!=='none').map(item=><label key={item.key} className={checklist[item.key]?'passed':''}><input type="checkbox" checked={checklist[item.key]} onChange={e=>toggle(item.key,e.target.checked)} disabled={role!=='admin'}/><span>{checklist[item.key]?<CheckCircle2 size={19}/>:<span className="check-placeholder"/>}<span><strong>{item.label}</strong><small>{item.detail}</small></span></span></label>)}</div><div className="info-box"><strong>Acceptance rule:</strong> management marks a station ready only after the receipt and cash-drawer behavior is physically observed. Software configuration alone is not treated as proof.</div></section>
+    <section className="panel"><h2><Printer size={20}/>{' '+tr("Receipt Printer")}</h2><div className="form-grid"><label>{tr("Station label")}<input value={stationLabel} onChange={e=>setStationLabel(e.target.value)} placeholder={tr("Front Counter 1")}/></label><label>{tr("Printer make / model")}<input value={printerMakeModel} onChange={e=>setPrinterMakeModel(e.target.value)} placeholder={tr("Example: Epson TM-T20III")}/></label><label>{tr("Connection")}<select value={printerConnection} onChange={e=>setPrinterConnection(e.target.value as PrinterConnection)}><option value="system">{tr("System Print / Windows driver")}</option><option value="usb">{tr("USB")}</option><option value="bluetooth">{tr("Bluetooth")}</option><option value="wifi">{tr("Wi-Fi / LAN")}</option></select></label><label>{tr("Paper width")}<select value={paperWidth} onChange={e=>setPaperWidth(e.target.value)}><option value="58">{tr("58 mm")}</option><option value="80">{tr("80 mm")}</option></select></label></div><div className="receipt-actions"><button className="primary-btn small" onClick={save} disabled={role!=='admin'}>{tr("Save Device Profile")}</button><button onClick={printerTest}><Printer size={17}/>{' '+tr("Print Test Receipt")}</button></div></section>
+    <section className="panel"><h2><Landmark size={20}/>{' '+tr("Cash Drawer")}</h2><p className="muted">{tr("The accountable cash balance remains in Daily Cash. This section only verifies the physical drawer/opening method on this workstation.")}</p><div className="form-grid"><label>{tr("Drawer mode")}<select value={drawerMode} onChange={e=>setDrawerMode(e.target.value as DrawerMode)}><option value="none">{tr("No physical drawer installed")}</option><option value="manual">{tr("Manual / key opening")}</option><option value="printer-driver">{tr("Open through receipt-printer driver")}</option></select></label><label>{tr("Connection / notes")}<input value={drawerNotes} onChange={e=>setDrawerNotes(e.target.value)} placeholder={tr("RJ11/RJ12 to receipt printer, drawer model, etc.")}/></label></div><div className="receipt-actions"><button onClick={drawerTest} disabled={drawerMode==='none'}><Landmark size={17}/>{' '+tr("Test Drawer Opening")}</button><button onClick={()=>setPage('cash-drawer')}><ClipboardCheck size={17}/>{' '+tr("Open Daily Cash")}</button></div>{drawerMode==='printer-driver'&&<div className="info-box"><strong>{tr("Printer-driver mode:")}</strong>{' '+tr("configure the receipt printer driver to open the drawer when a print job/receipt is sent. The test button prints a small job; CounterNest does not claim the drawer opened until you physically verify it.")}</div>}</section>
+    <section className="panel"><h2><ClipboardCheck size={20}/>{' '+tr("Hardware Acceptance Checklist")}</h2><div className="hardware-checklist">{items.filter(i=>!i.drawer||drawerMode!=='none').map(item=><label key={item.key} className={checklist[item.key]?'passed':''}><input type="checkbox" checked={checklist[item.key]} onChange={e=>toggle(item.key,e.target.checked)} disabled={role!=='admin'}/><span>{checklist[item.key]?<CheckCircle2 size={19}/>:<span className="check-placeholder"/>}<span><strong>{tr(item.label)}</strong><small>{tr(item.detail)}</small></span></span></label>)}</div><div className="info-box"><strong>{tr("Acceptance rule:")}</strong>{' '+tr("management marks a station ready only after the receipt and cash-drawer behavior is physically observed. Software configuration alone is not treated as proof.")}</div></section>
   </>
 }

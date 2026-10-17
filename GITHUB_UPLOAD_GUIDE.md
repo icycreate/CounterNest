@@ -1,20 +1,7 @@
-# Upload to private GitHub
+# GitHub upload
 
-Extract the ZIP and open a terminal inside CounterNest-POS-RC1-Update (the directory containing package.json). Create an empty **private** repository in GitHub. Do not initialize it with another README/license before the first push.
+Extract CounterNest-POS-Consolidated-RC3.zip. Open the folder containing package.json. Internal version 2.0.0-rc.3, build 2026-10-16-consolidated1. Use a private GitHub repository and review staged files before committing.
 
-```sh
-git init
-git add .
-git status --short
-git commit -m "CounterNest POS RC1 update"
-git branch -M main
-git remote add origin <github-repository>
-git push -u origin main
-```
+The included .gitignore excludes private environment files, dependencies, build output, local logs, editor/OS state and Vercel metadata. Track .env.example, package-lock.json, src, public, tests, docs and Supabase migrations/functions. Never commit service-role keys, customer exports, backups, passwords or private certificates.
 
-Review staged files before committing. .gitignore excludes .env/.env.local and other environment files, node_modules, dist, local logs, build metadata, editor/OS files, Vercel state and private certificate files. .env.example and package-lock.json are intentionally tracked. Never commit service-role credentials, production backup exports or customer data. If a key was committed, rotate it and remove it from repository history.
-
-Connect only this repository to Vercel. Supabase migrations/Edge Functions are source files; importing into Vercel does not deploy them. Cloud upgrade instructions are in SUPABASE_UPGRADE_GUIDE.md.
-
-
-This update source is CounterNest-POS-RC1-Update. The internal package version remains 2.0.0-rc.1; RELEASE_MANIFEST.json identifies build 2026-10-15-update1. Confirm your committed source/build before deploying.
+Run npm install then npm run verify. Commit the reviewed source and push through your normal GitHub workflow, then import that repository into Vercel using VERCEL_DEPLOYMENT_GUIDE.md. Publishing the frontend does not deploy SQL or Edge Functions: follow SUPABASE_UPGRADE_GUIDE.md separately.

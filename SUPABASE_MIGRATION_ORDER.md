@@ -1,8 +1,6 @@
-# Supabase Migration Order — RC1
+# Supabase migration order
 
-Original RC1 contains 78 files. This update adds only migration 79 for catalogue requests, contact preferences and register opening. Confirmed level 78: apply only 79. Confirmed level 77: apply 78 then 79. Fresh empty project: all 79 in order. Verify the actual applied level before running any SQL; never replay historical files.
-
-Legacy duplicate timestamp prefixes require the sequential process in SUPABASE_DEPLOYMENT_GUIDE.md; do not blindly run CLI db push. MIGRATION_MANIFEST.json records byte-preservation hashes.
+Fresh database: apply every file below once, in order. Existing finalized RC1 update at migration 79: apply only 80 and 81. If the unfinished UX source migration 80 is already applied, apply only 81. Never replay or edit applied migrations.
 
 1. 20260815_initial.sql
 2. 20260815_logo_settings.sql
@@ -81,8 +79,7 @@ Legacy duplicate timestamp prefixes require the sequential process in SUPABASE_D
 75. 202610131500_phase36_9_shortage_alerts.sql
 76. 202610131600_phase36_catalogue_integration.sql
 77. 202610131700_phase36_order_payment.sql
-
-
 78. 202610150900_rc1_security_hardening.sql
-
 79. 202610151200_customer_requests_register.sql
+80. 202610151800_ux_workspace.sql
+81. 202610161200_catalogue_finalization.sql

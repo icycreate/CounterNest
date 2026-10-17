@@ -1,14 +1,14 @@
 {
-  "build": "2026-10-15-update1",
+  "build": "2026-10-16-consolidated1",
   "status": "passed",
   "excluded": [
     ".env",
     ".env.local",
     ".env.production",
-    "node_modules/example/file.js",
+    "node_modules/package/index.js",
     "dist/index.html",
     "debug.log",
-    "settings.tsbuildinfo",
+    "tsconfig.app.tsbuildinfo",
     ".vercel/project.json",
     "Thumbs.db",
     ".vscode/settings.json"
@@ -16,8 +16,9 @@
   "tracked_candidates": [
     ".env.example",
     "package-lock.json",
-    "src/CataloguePreorders.tsx",
-    "supabase/migrations/202610151200_customer_requests_register.sql"
+    "src/ImageCropper.tsx",
+    "public/counternest-default-logo.svg",
+    "supabase/migrations/202610161200_catalogue_finalization.sql"
   ],
-  "environment": "Isolated Git check; no .git shipped"
+  "environment": "Isolated Git check; Git metadata excluded from package"
 }

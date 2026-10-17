@@ -1,16 +1,23 @@
 {
   "product": "CounterNest POS",
-  "version": "2.0.0-rc.1",
-  "baseline_version": "2.0.0-rc.1 (original RC1)",
-  "baseline_migration_count": 78,
-  "migration_count": 79,
+  "version": "2.0.0-rc.3",
+  "baseline_version": "Finalized RC1 customer requests/register update",
+  "baseline_migration_count": 79,
+  "migration_count": 81,
   "upgrade_migrations": [
-    "202610151200_customer_requests_register.sql"
+    "202610151800_ux_workspace.sql",
+    "202610161200_catalogue_finalization.sql"
   ],
   "release_type": "browser-release-candidate",
   "backend": "Supabase Cloud",
   "desktop_installer": false,
   "features": [
+    {
+      "title": "Consolidated UX, cropped catalogue photos, portrait PDF cards, direct accepted pre-orders and customer receipts"
+    },
+    {
+      "title": "Role dashboards, search, command palette, notifications, pins, appearance and four-language preferences"
+    },
     {
       "title": "Catalogue QR, anonymous pre-order requests, consent-based contact actions and admin register opening"
     },
@@ -49,7 +56,7 @@
     }
   ],
   "validation": "BUILD_VALIDATION.json",
-  "deployment_status": "RC1 local validation; live cloud and device acceptance pending",
-  "name": "CounterNest POS v2.0.0-RC1",
-  "build": "2026-10-15-update1"
+  "deployment_status": "Validated local candidate; live cloud and physical device UAT pending",
+  "name": "CounterNest POS Consolidated Release Candidate 3",
+  "build": "2026-10-16-consolidated1"
 }

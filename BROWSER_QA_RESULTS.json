@@ -1,22 +1,41 @@
 {
-  "build": "2026-10-15-update1",
-  "status": "passed within stated scope",
-  "data": "Disposable sample adapter outside release source; no live Supabase connection",
+  "build": "2026-10-16-consolidated1",
+  "date": "2026-10-16",
+  "environment": "Local Vite development server with disposable fictional API fixtures outside release source; browser DOM checks only",
+  "status": "passed_with_capture_limit",
   "checks": [
-    "Tokenized standalone catalogue hides admin/POS sidebar",
-    "Product detail has variant, quantity, badges, discount, allergens and Add to Pre-Order",
-    "Two 8-inch cakes at45 each →90 subtotal; only WhatsApp/Email enabled in sample customer form",
-    "Name/preference/contact/notes review; no pickup field; received request1042",
-    "Display settings QR image and view/save/print/copy/open/preview actions present",
-    "Staff request inbox shows selected WhatsApp action plus admin-only override",
-    "Prepared WhatsApp destination/message verified without opening app or sending",
-    "Admin Open Register Front Counter/50 →open state/station/opened-by/time"
+    {
+      "name": "Admin direct acceptance",
+      "result": "New request shows Accept Order / Decline Order without mandatory intermediate transitions; preferred-method-only contact"
+    },
+    {
+      "name": "Optional acceptance details",
+      "result": "Fresh server quote, optional pickup/deadline/deposit and separate customer/internal notes displayed"
+    },
+    {
+      "name": "Accepted receipt",
+      "result": "Accepted/Confirmed, customer, items, deposit/balance, accepted by and Print Receipt/Save as PDF controls displayed after acceptance"
+    },
+    {
+      "name": "Crop before save",
+      "result": "Selecting local PNG opens crop editor before setting product image; original and JPEG preview loaded, 512×512 input produces 384×512 portrait preview; Save crop enabled and closes editor"
+    },
+    {
+      "name": "Production, Inventory and Cashier homes",
+      "result": "Role-specific headings and permitted navigation; held-sales shortcut shown for cashier"
+    },
+    {
+      "name": "Public catalogue languages",
+      "result": "EN, ES, zh-TW, zh-CN selectors update labels while business name/product/category content remains unchanged"
+    },
+    {
+      "name": "Standalone presentation",
+      "result": "Fullscreen, manual product details, filters and QR; no admin navigation or TV auto-slide controls"
+    }
   ],
-  "console_errors": 0,
   "limitations": [
-    "QA services were mocked, not an end-to-end live cloud test",
-    "Requested phone viewport was not retained reliably; device acceptance remains open",
-    "Actual app launch/delivery, printer, QR scanning and PDF pagination not exercised"
-  ],
-  "screenshots": "Sibling CounterNest-RC1-Update-QA folder; sample data"
+    "Browser screenshot capture returned unavailable; pixel-level layout screenshots were not produced.",
+    "No live Supabase, Vercel, real financial transactions, real Realtime delivery, physical tablet/scanner/printer or native-speaker sign-off was performed.",
+    "API fixtures demonstrate browser behavior only; actual authorization/isolation/deposit/stock behavior is covered separately by SQL tests."
+  ]
 }

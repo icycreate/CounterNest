@@ -1,23 +1,19 @@
-# Supabase upgrade — RC1 update
-Inspected baseline: original CounterNest RC1, 78 local migrations ending 202610150900_rc1_security_hardening.sql. This update adds **only file 79**, 202610151200_customer_requests_register.sql. All earlier files remain byte-identical. The remote applied level has not been inspected; no live database was accessed or modified.
+# Supabase upgrade
 
-## Verify pending files
-Confirmed at 78: run only 79 once. Confirmed at 77: run 78 then 79. Fresh empty project: all 79 in SUPABASE_MIGRATION_ORDER.md. Other levels: compare deployment records, actual schema/function definitions and any CLI history before applying the exact pending sequence.
+Build 2026-10-16-consolidated1, version 2.0.0-rc.3. Permanent architecture: Browser → GitHub → Vercel → Supabase Cloud.
 
-The legacy chain includes duplicate version prefixes (20260815 and 20260816) and mixed date lengths. Do not blindly run supabase db push, rename/squash old migrations, or repair ledger entries to force a push. Use the SQL Editor or a DBA-controlled sequential process with a record of filename/hash/operator/time. Stop on errors.
+1. Take a managed database backup plus private Storage backups. Rehearse in a separate staging project. In-app exports do not back up Auth credentials or Storage binaries.
+2. Check applied migration history. The latest delivered RC1 update ends at migration 79. Apply ONLY these pending files, in order:
 
-## File 79
-Runs in a transaction and preserves existing records. Adds customer request settings to the existing display config; two request/event tables with RLS, shop/config/order/user foreign keys and indexes; token-checked anonymous intake; staff review/contact preparation; admin override and scheduling; status synchronization with actual scheduled orders; admin station-aware register opening; unified audit entries and business export extensions.
+- 80. 202610151800_ux_workspace.sql — SHA-256 7ca98b9af7a5168da232db1cc4aa5487beb58b35dda8397c25729e63a37067e1
+- 81. 202610161200_catalogue_finalization.sql — SHA-256 d058a4a6ba97329be6ee9fca087032f8a41e6478f8b9b54d85567362a614e510
 
-The public RPC takes an idempotency UUID, validates one of the enabled contact methods, sanitizes item fields, normalizes live promotional/variant prices and saves no cost fields in the customer summary. Requests do not reserve or deduct stock and do not take payment. Limits: 25 cart lines, 20 units per input line, three requests per contact per ten minutes and 500 per display per day. These are basic abuse caps, not comprehensive bot protection.
+If migration 80 was applied from the earlier working UX source, apply only 81. Never replay prior migrations. Fresh databases apply all 81 files in SUPABASE_MIGRATION_ORDER.md.
 
-API roles cannot write request/event tables directly. Authenticated SELECT is limited to the effective shop. Public users get a receipt number only and cannot read the inbox. Alternate contact requires active shop admin, alternate destination and a reason. One override does not change the stored preference or authorize later employee use of that alternate method. Nothing sends a message automatically.
+3. Migration 80 introduces role workspaces; existing employees default to Cashier. Assign Production/Inventory in Staff without promoting them to Administrator. Migration 81 adds direct acceptance/decline, receipts, optional scheduled dates, kitchen integration and conditional Realtime publication. All tables/RPCs retain scoped authentication/role checks.
+4. Deploy the source through GitHub/Vercel after SQL succeeds. Existing authentication Edge Functions remain unchanged. Keep production environment secrets private and never expose a service-role key.
+5. Complete UAT for roles/languages, crop/PDF/QR/default branding, direct acceptance/decline/contact restrictions, real deposits, paid reprints, kitchen/planning deduplication, register opening and checkout recovery. Verify Realtime delivery in cloud; 30-second visibility-aware workspace polling remains the fallback.
 
-A linked scheduled order is created only after confirmation with agreed pickup/deadline and an existing same-shop customer. Its current quote must be reviewed; normal deposit/payment/stock rules apply. Its state drives Scheduled → In Production → Ready → Collected; collection still requires payment.
+Legacy request states remain readable; they no longer require manual traversal to accept a new order. Existing linked orders/deposits/receipts are retained. Acceptance itself does not deduct stock. Collection/payment and ingredient/lot completion retain the established audited workflows.
 
-Register opening is admin-only, serializes against the shop row and retains the existing one open register per shop / one daily record rule. Station is recorded for that shared register; this is not a new multi-drawer accounting module. Legacy opening RPC delegates to the same audit path. The old staff declaration RPC is revoked, retaining its historical rows.
-
-## Deployment and acceptance
-Back up PostgreSQL/Storage, rehearse in staging and compare historical counts/receipts. Pause mutations; apply only pending SQL; deploy all stations together. Deploy/reconfirm the four original RC1 account handlers as listed in EDGE_FUNCTIONS.md. Set Auth/Storage/Vercel configuration, save permitted contact settings and final public URL, and test with admin/employee/another shop plus logged-out customer.
-
-Supabase platform grants, real Auth/Storage/Edge/PIN behavior and concurrent lock contention still require live UAT. Local tests use PGlite with service stubs. No automated reverse migration or full JSON restore is supplied. The portable export adds customer_request_records but still excludes Auth and Storage binaries.
+Do not attempt an ad hoc down-migration after new financial writes. Rehearse rollback with managed backup and coordinated application rollback, retaining new ledgers/requests. Public tracking links are private bearer capabilities; keep them with their requester.

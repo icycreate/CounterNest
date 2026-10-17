@@ -1,16 +1,18 @@
-# CounterNest POS v2.0.0-RC1 — update
-Build 2026-10-15-update1 · 15 October 2026. User-facing branding remains CounterNest POS; version/build identification is internal.
+# CounterNest POS consolidated release candidate
 
-Catalogue QR controls now live in Catalogue → Display Settings: View QR, PNG download, printable QR, Copy Catalogue Link, Open Customer Display and Preview Catalogue. Shared URL generation uses saved public origin, then VITE_PUBLIC_APP_URL, then current origin. QR regenerates on base/token change; catalogue/price-list PDFs and optional receipt QR use the same destination. No install/staff login is required.
+Version 2.0.0-rc.3 · Build 2026-10-16-consolidated1
 
-Customer catalogue product detail supports Add to Pre-Order, variant/quantity selection, more items, name, one enabled contact method, notes, review and submission with same-intent retry recovery. Intake has no mandatory pickup date, payment, reservation or stock mutation. Kiosk/TV remain display-only; normal phone catalogue/display links can submit requests. The legacy counter-selection flow remains available with intent=counter.
+This release consolidates the UX enhancements with catalogue and pre-order finalization. The app remains Browser → GitHub → Vercel → Supabase Cloud.
 
-Settings adds all eight supported contact-method choices. Staff see only the selected action. Other methods require a one-action admin override with reason/alternate details and an audit record. WhatsApp, phone, SMS and email use safe links; Messenger/LINE/WeChat/Other provide an editable/copyable message. No messaging integration or automatic sending is installed.
+- Role-aware homes, permission-filtered actions/search, Ctrl/Cmd+K, notifications with Realtime invalidation and polling fallback, private pins/recent pages, Light/Dark/System and four language preferences.
+- Categorized collapsible sidebar with Loyalty, Forecast / Shortages and Customer Display Setup visible in their approved groups. Daily Cash opening stays administrator-only after login.
+- Neutral CounterNest default logo, dynamic company identity, touch targets, focus indicators, accessible dialogs and bounded queries.
+- Product and gallery uploads require crop approval before becoming saved images. The editor shows original/crop overlay, zoom/framing, reset, preview and original download. Output is an optimized JPEG. Existing files are preserved.
+- A4/Letter catalogue PDF defaults to portrait photo cards with name, authoritative variant/promotion prices and a short description; business/default logo and catalogue QR remain available.
+- Standalone catalogue detail, gallery, language selector, search, filtering, fullscreen and data refresh remain. All automatic slide/category/product rotation and their settings are removed.
+- New/legacy unaccepted requests now offer direct Accept Order / Decline Order. Acceptance verifies a fresh server quote, accepted items/quantities, optional pickup/deadline, customer instructions/private notes and an optional deposit actually received through the existing audited ledger. Decline requires an audited reason. No long status sequence is required.
+- Acceptance creates one linked order and feeds the shared kitchen queue, production overview and existing planning, without reserving/deducting stock or manufacturing duplicate jobs. Normal payment remains authoritative.
+- Accepted-only Pre-Order Receipt supports browser printing/Save as PDF, customer contact/items/variants/prices/deposit/balance/pickup/accepted-by and safe branding. Staff notes remain private. Paid reprints use actual recorded sale totals and zero remaining balance.
+- Six editable contact templates and selected-method restriction remain, with a reasoned administrator override. No communication is sent automatically.
 
-The new staff request inbox covers New Request through review/contact/confirmation and optional Awaiting Deposit. Admin links an agreed request once to a scheduled order, which drives Scheduled, In Production, Ready and paid Collected. Cancelled, Declined and No Response preserve reason/history before linkage; linked-order cancellation follows the existing deposit/payment rules.
-
-Login no longer asks for opening cash and goes to Dashboard after explicit sign-in. Admin opens Daily Cash → Open Register with station, amount and note. Cashiers cannot use the retired declaration RPC. Old history is preserved. One shared register per shop/day remains the accounting model.
-
-Unnumbered supply tabs complete the UI numbering cleanup. The seven grouped navigation sections, existing feature tabs, role/page restrictions and browser architecture remain.
-
-Migration 79 is append-only; all 78 baseline SQL files remain unchanged. Local build/regressions and sample-data browser checks passed. Read BUILD_VALIDATION.json and KNOWN_ISSUES.md for scope; real cloud/device/printer/contact-app acceptance remains open.
+The first 79 delivered migrations and migration 80 from the current UX source remain unchanged. Fresh installs apply 81 migrations; installations at delivered migration 79 apply only 80+81, or only 81 if 80 is already applied. Read the upgrade guide and validation report. Live cloud/device acceptance is still required before production.

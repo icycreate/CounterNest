@@ -1,7 +1,7 @@
 {
-  "version": "2.0.0-rc.1",
-  "phase": "36.9",
-  "migration_count": 79,
+  "version": "2.0.0-rc.3",
+  "build": "2026-10-16-consolidated1",
+  "migration_count": 81,
   "database_engine": "PGlite PostgreSQL with mocked Supabase auth/storage and mocked manager-PIN crypt for refund tests; pgcrypto extension omitted",
   "checks": [
     {
@@ -230,6 +230,90 @@
     },
     {
       "name": "Disabled/rotated customer links stop requests and receipt sharing",
+      "status": "passed"
+    },
+    {
+      "name": "Four workspace roles preserve base administrator authorization and password setup lock",
+      "status": "passed"
+    },
+    {
+      "name": "Universal search is bounded and excludes foreign records, costs and forbidden entity types",
+      "status": "passed"
+    },
+    {
+      "name": "Per-user preferences validate languages and remain private across staff and shops",
+      "status": "passed"
+    },
+    {
+      "name": "Role dashboards and board stage writes are scoped, optimistic and never change stock",
+      "status": "passed"
+    },
+    {
+      "name": "Kitchen and inventory direct API calls cannot read or mutate customer service records",
+      "status": "passed"
+    },
+    {
+      "name": "Customer tracking capability exposes safe status only and preserves idempotent intake",
+      "status": "passed"
+    },
+    {
+      "name": "Staff notes and contact templates are separate, scoped and never automatically sent",
+      "status": "passed"
+    },
+    {
+      "name": "Customer confirmation uses the exact pipeline without creating payment, pickup or stock changes",
+      "status": "passed"
+    },
+    {
+      "name": "Inventory receiving retains quantity, shop, stock-ledger and duplicate-order safeguards",
+      "status": "passed"
+    },
+    {
+      "name": "UX backup includes preferences, role assignments and staff notes without tracking capabilities",
+      "status": "passed"
+    },
+    {
+      "name": "Low-stock cards need no alert refresh, and blocked/issue notifications keep stable role-scoped IDs",
+      "status": "passed"
+    },
+    {
+      "name": "Administrator financial dashboard totals use the business day and all sales; other roles receive no financial amounts",
+      "status": "passed"
+    },
+    {
+      "name": "Public catalogue branding follows only its enabled token shop and neutral logo fallback",
+      "status": "passed"
+    },
+    {
+      "name": "Direct acceptance from new request uses current variant quote, optional pickup and atomic real deposit",
+      "status": "passed"
+    },
+    {
+      "name": "Accepted receipt uses immutable accepted prices, real deposits and excludes internal notes",
+      "status": "passed"
+    },
+    {
+      "name": "Accepted orders reach kitchen, dashboard and planner once without duplicate jobs or stock deduction",
+      "status": "passed"
+    },
+    {
+      "name": "Direct decline is reasoned, audited once and available from legacy review states",
+      "status": "passed"
+    },
+    {
+      "name": "Acceptance, quote, receipt and decline enforce four roles, shop isolation and public denial",
+      "status": "passed"
+    },
+    {
+      "name": "Direct acceptance retains allocated bundle prices through quote, receipt and one stock deduction",
+      "status": "passed"
+    },
+    {
+      "name": "Recent staff activity is bounded, deterministic, administrator-only and excludes event details",
+      "status": "passed"
+    },
+    {
+      "name": "Kitchen includes manual pre-orders and cakes once with safe item projection and no customer PII",
       "status": "passed"
     }
   ],

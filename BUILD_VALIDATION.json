@@ -1,68 +1,104 @@
 {
-  "product": "CounterNest POS v2.0.0-RC1",
-  "version": "2.0.0-rc.1",
-  "build": "2026-10-15-update1",
-  "date": "2026-10-15",
-  "baseline": "Original RC1 clean source, 78 migrations; prior package retained",
-  "result": "Final npm run verify passed; staging/live cloud and physical device acceptance pending",
-  "runtime": {
-    "node": "v24.20.0",
-    "npm": "11.19.0",
-    "typescript": "5.9.3",
-    "vite": "6.4.3"
-  },
+  "product": "CounterNest POS",
+  "version": "2.0.0-rc.3",
+  "build": "2026-10-16-consolidated1",
+  "date": "2026-10-16",
+  "result": "Local release candidate validation passed; cloud and physical acceptance pending",
   "checks": [
     {
-      "name": "npm install --no-audit --no-fund --prefer-offline",
+      "name": "npm install --ignore-scripts --offline --no-audit --no-fund",
       "status": "passed",
-      "note": "125 packages installed after approved registry access; dependency audit not run"
+      "note": "Dependencies installed from available cache; registry audit not run"
     },
     {
       "name": "npm run verify",
       "status": "passed",
-      "note": "TypeScript + production build; all frontend/UI/database/release/web/Edge/display/RC1/PDF/customer-request tests; production assets"
+      "note": "Production TypeScript/Vite build, full frontend/UI/SQL/release/web/Edge/display/navigation/PDF/request/UX/finalization suite and built assets"
     },
     {
-      "name": "Migration chain",
+      "name": "Final public-route scope change",
       "status": "passed",
-      "count": 79,
-      "preserved_baseline_files": 78,
-      "new_files": 1
+      "note": "Final production rebuild, built-asset check and UX suite passed after preventing staff hydration on public customer routes"
+    },
+    {
+      "name": "Database migration chain",
+      "status": "passed",
+      "migrations": 81,
+      "delivered_files_preserved": 79,
+      "new_pending_from_delivered_baseline": [
+        80,
+        81
+      ]
     },
     {
       "name": "Database regression groups",
       "status": "passed",
-      "count": 57,
-      "environment": "PGlite PostgreSQL with mocked Supabase auth/storage and mocked manager-PIN crypt for refund tests; pgcrypto extension omitted"
+      "count": 78
     },
     {
-      "name": "Request/register security and workflow",
+      "name": "Role/language component matrix",
       "status": "passed",
-      "note": "Anonymous no-pickup intake, current promo/variant prices/no stock mutation, RLS/shop isolation/direct-write denial, idempotency, input/method validation, admin audited contact override, no skipped/stale stages, one linked scheduled order and paid collection, station/admin/legacy register boundaries, unified audit and backup extension"
+      "cases": 16,
+      "roles": [
+        "admin",
+        "cashier",
+        "production",
+        "inventory"
+      ],
+      "languages": [
+        "en",
+        "es",
+        "zh-TW",
+        "zh-CN"
+      ]
     },
     {
-      "name": "Customer UI and QR regression",
+      "name": "Production direct routes/assets",
       "status": "passed",
-      "note": "Canonical URL precedence and QR regeneration, receipt QR, review form, enabled methods, same-payload retry recovery, selected-only employee contact, cash login gate removed, unnumbered supply labels"
+      "routes": 50
     },
     {
-      "name": "Four account Edge Functions",
+      "name": "Authentication Edge handlers",
       "status": "passed",
-      "note": "Byte-identical original RC1 handlers, mocked services; authentication/confirmation/password reset/change and password-free audit regressions retained"
+      "functions": 4,
+      "note": "Mocked execution; handlers unchanged from delivered RC1"
     },
     {
-      "name": "Catalogue/PDF/TV",
+      "name": "Localization",
+      "status": "passed_in_measured_scope",
+      "source_labels": 2854,
+      "system_errors": 491,
+      "measured_labels": 2637,
+      "english_fallbacks": 0
+    },
+    {
+      "name": "Browser DOM interaction",
+      "status": "passed_with_capture_limit",
+      "report": "BROWSER_QA_RESULTS.json"
+    },
+    {
+      "name": "Photo/PDF/receipt integrity",
       "status": "passed",
-      "note": "Existing six PDF scopes, authoritative variant prices, images/QR/paper/orientation HTML; TV survives polling; public details/privacy/cleanup"
-    },
-    {
-      "name": "Browser sample-data smoke checks",
-      "status": "passed within limits",
-      "note": "Add variant/quantity → customer info with enabled-only methods → review → received request; QR actions; preferred contact preparation without sending; admin register station/balance. Responsive overrides unreliable; no physical-device acceptance."
+      "note": "Crop geometry/bitmap cleanup/output bounds; portrait PDF HTML, A4/Letter/orientation, current variant/promotion pricing; accepted receipt permissions/escaping and paid totals; four-language receipt labels"
     }
   ],
-  "local_http_report": "PREVIEW_HTTP_RESULTS.json",
-  "known_issues": "KNOWN_ISSUES.md",
-  "cloud_modified": false,
-  "credentials_shipped": false
+  "warnings": [
+    "Vite reports a main chunk of approximately 1.01 MB minified / 304 KB gzip, including the complete language catalogues. Other major screens/scanner are separate chunks; slow-device first-load performance requires staging measurement.",
+    "CJS test bundles warn about import.meta in a mocked URL module; actual ESM production build and URL precedence tests pass.",
+    "Screenshot capture was unavailable; browser evidence is DOM-level and the printed output needs actual-device/native-speaker acceptance."
+  ],
+  "not_performed": [
+    "Live GitHub push or Vercel deployment",
+    "Live Supabase migration/Realtime/Auth/Storage verification",
+    "Physical printer/scanner/tablet acceptance and native-speaker review"
+  ],
+  "reports": [
+    "DATABASE_TEST_RESULTS.json",
+    "BAKERY_UAT_RESULTS.json",
+    "EDGE_TEST_RESULTS.json",
+    "UX_UI_TEST_RESULTS.json",
+    "I18N_COVERAGE.json",
+    "PREVIEW_HTTP_RESULTS.json",
+    "BROWSER_QA_RESULTS.json"
+  ]
 }

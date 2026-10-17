@@ -36,7 +36,12 @@ export function tr(source:string,selected:UiLanguage=language):string{
  return prefix+translated.replace(/^[\s•.:…#()/:，。；、-]+|[\s•.:…#()/:，。；、-]+$/g,'')+suffix
 }
 /** Exact system-error catalogue only; unknown provider details are retained verbatim. */
-export function trError(message:string):string{const translated=language==='en'?message:errorTranslations[message]?.[language]??message;return translated.replace(/\bphases?\s+\d+(?:[.]\d+)*(?:\s*(?:through|to|[–—-])\s*\d+(?:[.]\d+)*)?\s*/gi,'').trim()}
+export function trError(message:string):string{
+ let translated=language==='en'?message:errorTranslations[message]?.[language]??translations[message]?.[language]??message
+ if(language!=='en'&&translated===message){for(const key of ['Unsupported restore table: %','Reference is outside this backup: %.%']){const segments=key.split('%'),pattern='^'+segments.map(part=>part.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('(.+?)')+'$',match=message.match(new RegExp(pattern));if(match){let index=1;translated=(errorTranslations[key]?.[language]??key).replace(/%/g,()=>match[index++]);break}}}
+ return translated.replace(/\bphases?\s+\d+(?:[.]\d+)*(?:\s*(?:through|to|[–—-])\s*\d+(?:[.]\d+)*)?\s*/gi,'').trim()
+}
+
 export function TranslatedText({text}:{text:string}){useUiLanguage();return <>{tr(text)}</>}
 export function LanguageSelector({id='system-language',compact=false}:{id?:string;compact?:boolean}){
  const selected=useUiLanguage()

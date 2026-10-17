@@ -16,3 +16,11 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 )
 
 registerPosServiceWorker()
+
+import './buttons.css'
+import './phone.css'
+import './receipts.css'
+
+import './operations.css'
+
+import './ingredientPurchasing.css'

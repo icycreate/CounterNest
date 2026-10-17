@@ -1,9 +1,11 @@
-# Supabase Cloud deployment
+# Supabase Cloud RC5 deployment
 
-Use SUPABASE_UPGRADE_GUIDE.md to verify your current level. This source contains 81 ordered migrations. The latest delivered RC1 update at 79 needs only 80 and 81. If the earlier working-source migration 80 is already applied, apply only 81. Every delivered file 1–79 retains its hash.
+Use INSTALL_UPGRADE_GUIDE.md and SUPABASE_MIGRATION_ORDER.md. RC4 needs only84–87; all87 apply to fresh databases. RLS remains enabled; ingredient package photos are private and delivered through short-lived signed URLs. No ingredient purchase data is added to customer catalogue projections.
 
-The four account Edge handlers in EDGE_FUNCTIONS.md are unchanged; there are no new Edge Functions. Acceptance/decline/quotes/deposits/receipts, role workspaces/search/preferences, Realtime publication, contact restrictions, register opening and audit/export are database RPCs/policies.
+Deploy workspace-lifecycle from supabase/functions/workspace-lifecycle with supabase/functions/_shared/workspaceArchive.ts. The handler validates the presented Auth JWT with getUser, checks shop/owner state server-side and re-verifies the current password for restore/delete/cancel/purge. Only the service-role Edge caller can invoke privileged lifecycle SQL; browser callers cannot impersonate p_actor. Configure platform Edge secrets, never VITE service keys. Redeploy create-staff-account and reset-staff-password for the owner protections. The other two existing Auth handlers remain unchanged.
 
-Configure Auth site/redirect URLs and Storage for your staging/production origins. Service credentials stay server-side. Frontend VITE_* variables may contain only the public URL and publishable/anon key. Set VITE_ENABLE_DEMO=false. Verify RLS/roles, publication membership/Realtime delivery and polling fallback, actual email/password handling, uploaded product crops, protected public QR links and restore procedures in staging.
+Review workspace_owners backfill before production. Leave WORKSPACE_PURGE_ENABLED=false by default. An owner may cancel pending deletion within30 days. A permanent purge requires operator enablement after rehearsal, expired recovery, fresh password, exact business name and explicit confirmations. It is never scheduled by the browser.
 
-No live deployment was performed during package preparation. Complete UAT_ACCEPTANCE_CHECKLIST.md before production operations.
+The in-app backup limit is48MB uncompressed. Rehearse realistic database/file sizes against the target Edge memory/response limits and retain Supabase platform backups for larger estates. Supported uploads include product-images, shop-logos, catalogue-media, special-order-references, ingredient-packages, recipe-steps and supply-imports; external URLs and Auth accounts are excluded.
+
+Local tests use PGlite with mocked Auth/Storage/PIN crypt and mocked Edge services. They do not deploy migrations or prove live Auth/Storage/Realtime/gateway delivery. Validate actual redirects, Storage upload/download, Realtime publication, five Edge functions and recovery before launch.

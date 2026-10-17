@@ -49,6 +49,10 @@ Deno.serve(async (request) => {
     return json(400, { error: 'Temporary password must be at least 12 characters and include upper-case, lower-case, and a number' })
   }
 
+  if(role==='admin'){
+    const{data:callerState,error:ownerCheckError}=await admin.rpc('workspace_actor_state',{p_actor:callerData.user.id})
+    if(ownerCheckError||!callerState?.is_owner)return json(403,{error:'Workspace owner access required'})
+  }
   const { data: existing } = await admin.from('staff_profiles').select('user_id')
     .eq('shop_id', caller.shop_id).eq('email', email).maybeSingle()
   if (existing) return json(409, { error: 'This email already belongs to a staff account' })

@@ -1,7 +1,7 @@
 {
-  "version": "2.0.0-rc.3",
-  "build": "2026-10-16-consolidated1",
-  "migration_count": 81,
+  "version": "2.0.0-rc.5",
+  "build": "2026-10-17-operations1",
+  "migration_count": 87,
   "database_engine": "PGlite PostgreSQL with mocked Supabase auth/storage and mocked manager-PIN crypt for refund tests; pgcrypto extension omitted",
   "checks": [
     {
@@ -197,6 +197,14 @@
       "status": "passed"
     },
     {
+      "name": "Original and cropped photos persist separately without exposing uploader metadata",
+      "status": "passed"
+    },
+    {
+      "name": "Gallery rejects foreign originals and preserves existing saved photos on failure",
+      "status": "passed"
+    },
+    {
       "name": "Customer request settings enforce administrator, allowed methods and canonical HTTPS origin",
       "status": "passed"
     },
@@ -314,6 +322,118 @@
     },
     {
       "name": "Kitchen includes manual pre-orders and cakes once with safe item projection and no customer PII",
+      "status": "passed"
+    },
+    {
+      "name": "New shop, supplier and customer phones use international canonical storage and reject malformed input",
+      "status": "passed"
+    },
+    {
+      "name": "Anonymous request normalization precedes replay checks and rate limits; contact override remains audited and normalized",
+      "status": "passed"
+    },
+    {
+      "name": "Purchasing identification and original photos are tenant-private and audited",
+      "status": "passed"
+    },
+    {
+      "name": "Preferred and substitute barcodes match; mismatches require reasoned authorized override",
+      "status": "passed"
+    },
+    {
+      "name": "Supplier offers retain normalized unit cost and immutable comparison history",
+      "status": "passed"
+    },
+    {
+      "name": "Configured approval blocks direct ordering and conversion is idempotent",
+      "status": "passed"
+    },
+    {
+      "name": "Receiving cannot bypass configured verification through legacy PO or stock RPCs",
+      "status": "passed"
+    },
+    {
+      "name": "Verified receiving preserves lot accounting, partial quantities and exact retry idempotency",
+      "status": "passed"
+    },
+    {
+      "name": "Inventory purchasing projections show operational records without historical costs",
+      "status": "passed"
+    },
+    {
+      "name": "Failed receiving checklist rolls back stock and override audit without approval",
+      "status": "passed"
+    },
+    {
+      "name": "Production reservations are idempotent commitments; accepted-order demand is replaced once by linked batches",
+      "status": "passed"
+    },
+    {
+      "name": "Latest approved normalized supplier cost drives full recipe cost and target margin without exposing costs to production",
+      "status": "passed"
+    },
+    {
+      "name": "Projected stock subtracts forecast and reservation once and rounds suggestions to supplier packs",
+      "status": "passed"
+    },
+    {
+      "name": "Existing FEFO consumption releases reservations on completion, records waste once and traces supplier lot into sale",
+      "status": "passed"
+    },
+    {
+      "name": "Operational role projections hide costs, reject cross-tenant recall and return stable exception IDs",
+      "status": "passed"
+    },
+    {
+      "name": "Workspace ownership is established atomically at bootstrap; employees cannot claim it",
+      "status": "passed"
+    },
+    {
+      "name": "Workspace privileged lifecycle RPCs are denied to authenticated browser roles",
+      "status": "passed"
+    },
+    {
+      "name": "Workspace exports are shop-scoped and remove PINs/passwords/tokens recursively",
+      "status": "passed"
+    },
+    {
+      "name": "Deletion refuses missing/stale backup, wrong name and missing confirmations; owner can cancel",
+      "status": "passed"
+    },
+    {
+      "name": "Restore creates a new workspace, never replaces an existing ID or membership",
+      "status": "passed"
+    },
+    {
+      "name": "Restore rejects foreign rows, credentials, unsupported tables and foreign public references atomically",
+      "status": "passed"
+    },
+    {
+      "name": "Full supported table snapshot roundtrips through UUID remapping into an isolated workspace",
+      "status": "passed"
+    },
+    {
+      "name": "Permission presets protect owner and admin grants, support manager/accounting, and audit old/new customization",
+      "status": "passed"
+    },
+    {
+      "name": "Import validates every row and rejects duplicates, malformed values, phones and foreign inventory without partial writes",
+      "status": "passed"
+    },
+    {
+      "name": "Imported opening stock uses ledgers; exact retries replay once and changed retries reject atomically",
+      "status": "passed"
+    },
+    {
+      "name": "Setup progress and enriched search remain tenant-scoped, permission-aware and bounded",
+      "status": "passed"
+    },
+    {
+      "name": "Full operational snapshot restores recipes, cash/stock ledgers, lots and reservations without replaying business side effects",
+      "status": "passed"
+    },
+    {
+      "name": "Expired recovery can be permanently purged only for its confirmed owner and leaves no partial tenant data",
       "status": "passed"
     }
   ],

@@ -1,19 +1,15 @@
-# Supabase upgrade
+# Install and upgrade RC5
 
-Build 2026-10-16-consolidated1, version 2.0.0-rc.3. Permanent architecture: Browser → GitHub → Vercel → Supabase Cloud.
+2.0.0-rc.5 • 2026-10-17-operations1
 
-1. Take a managed database backup plus private Storage backups. Rehearse in a separate staging project. In-app exports do not back up Auth credentials or Storage binaries.
-2. Check applied migration history. The latest delivered RC1 update ends at migration 79. Apply ONLY these pending files, in order:
+1. Preserve independent database and Storage backups. Rehearse on an isolated Supabase staging project before production; the new in-app restore is not a replacement for platform disaster recovery.
+2. Verify the deployed migration history. Delivered RC4 ends at83. Apply 84 ingredient purchasing, 85 production intelligence, 86 workspace recovery and 87 operations/import/permissions, in order. Never replay or edit1–83. Fresh databases use all87. Check MIGRATION_MANIFEST.json and SUPABASE_MIGRATION_ORDER.md.
+3. Review the backfilled owner: the oldest active administrator is selected deterministically for existing shops and audited. Resolve ownership with the deployment administrator before using deletion. New business bootstrap establishes owner atomically.
+4. Deploy the unchanged four authentication Edge handlers if missing and the new workspace-lifecycle function plus its shared archive module. supabase/config.toml disables gateway verification for these functions because each handler validates JWTs itself. Keep SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY and SUPABASE_ANON_KEY in the Edge environment only. Leave WORKSPACE_PURGE_ENABLED unset/false until a restore rehearsal passes.
+5. Deploy source to Vercel with public frontend and tenant-manifest runtime configuration from ENVIRONMENT_VARIABLES.md. Run npm install then npm run build; output dist, API function remains in api/. Reload old browser tabs after service-worker activation.
+6. In Workspace review setup, import mappings, permissions and backup health. Configure purchasing approval and verification deliberately; existing shops default to no purchase approval and optional verification for compatibility.
+7. Verify private ingredient photos, substitutions, mismatches/overrides, purchase-to-receipt quantities/lots, reservations/shortages, accepted-order links, costs/waste/trace, new-account restore and pending-deletion cancellation in staging. Complete UAT_ACCEPTANCE_CHECKLIST.md before rollout.
 
-- 80. 202610151800_ux_workspace.sql — SHA-256 7ca98b9af7a5168da232db1cc4aa5487beb58b35dda8397c25729e63a37067e1
-- 81. 202610161200_catalogue_finalization.sql — SHA-256 d058a4a6ba97329be6ee9fca087032f8a41e6478f8b9b54d85567362a614e510
+Rollback: retain the prior source and backups. Do not roll back by dropping columns/tables or replaying applied migrations. Diagnose and forward-fix in staging. Pause production activity for the upgrade/recovery rehearsal and reconcile stock, cash, orders and counts afterward.
 
-If migration 80 was applied from the earlier working UX source, apply only 81. Never replay prior migrations. Fresh databases apply all 81 files in SUPABASE_MIGRATION_ORDER.md.
-
-3. Migration 80 introduces role workspaces; existing employees default to Cashier. Assign Production/Inventory in Staff without promoting them to Administrator. Migration 81 adds direct acceptance/decline, receipts, optional scheduled dates, kitchen integration and conditional Realtime publication. All tables/RPCs retain scoped authentication/role checks.
-4. Deploy the source through GitHub/Vercel after SQL succeeds. Existing authentication Edge Functions remain unchanged. Keep production environment secrets private and never expose a service-role key.
-5. Complete UAT for roles/languages, crop/PDF/QR/default branding, direct acceptance/decline/contact restrictions, real deposits, paid reprints, kitchen/planning deduplication, register opening and checkout recovery. Verify Realtime delivery in cloud; 30-second visibility-aware workspace polling remains the fallback.
-
-Legacy request states remain readable; they no longer require manual traversal to accept a new order. Existing linked orders/deposits/receipts are retained. Acceptance itself does not deduct stock. Collection/payment and ingredient/lot completion retain the established audited workflows.
-
-Do not attempt an ad hoc down-migration after new financial writes. Rehearse rollback with managed backup and coordinated application rollback, retaining new ledgers/requests. Public tracking links are private bearer capabilities; keep them with their requester.
+Deploy the new workspace-lifecycle function and redeploy create-staff-account and reset-staff-password for owner-account protections after applying SQL84–87.

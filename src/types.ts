@@ -1,4 +1,4 @@
-export type Role = 'admin' | 'employee' | 'cashier' | 'production' | 'inventory'
+export type Role = 'admin' | 'employee' | 'cashier' | 'production' | 'inventory' | 'manager' | 'accounting'
 export type PageKey = 'dashboard' | 'sale' | 'products' | 'catalogue' | 'commercial' | 'scheduled-orders' | 'preparation' | 'forecast-shortages' | 'inventory' | 'recipes' | 'production' | 'production-studio' | 'planning' | 'receiving' | 'purchasing' | 'supply' | 'customers' | 'loyalty' | 'cards' | 'sales' | 'reports' | 'profit' | 'cash-drawer' | 'hardware' | 'customer-display' | 'expenses' | 'staff' | 'audit' | 'backup' | 'readiness' | 'acceptance' | 'go-live' | 'report-issue' | 'handover' | 'tasks' | 'checklists' | 'alerts' | 'schedule' | 'analytics' | 'security-recovery' | 'release-candidate' | 'operations' | 'settings'
 
 export type CashDrawerSession = {

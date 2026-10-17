@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'counternest-web-v2-0-0-rc3-consolidated1'
+const CACHE_VERSION = 'counternest-web-v2-0-0-rc5-operations'
 const SHELL_CACHE = `${CACHE_VERSION}-shell`
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`
 const CORE_ASSETS = [
@@ -51,13 +51,16 @@ self.addEventListener('fetch', event => {
 
   // Never cache Supabase/Auth/API traffic or cross-origin customer data.
   if (url.origin !== self.location.origin) return
+  // Manifest responses contain a customer capability token. Never persist API data.
+  if (url.pathname.startsWith('/api/')) return
 
   if (request.mode === 'navigate') {
     event.respondWith((async () => {
       try {
         const fresh = await fetch(request)
         const cache = await caches.open(SHELL_CACHE)
-        if (fresh.ok && fresh.headers.get('content-type')?.includes('text/html')) await cache.put('/index.html', fresh.clone())
+        // Only cache the common public shell, never a token-bearing navigation response.
+        if (fresh.ok && !url.search && ['/', '/index.html'].includes(url.pathname) && fresh.headers.get('content-type')?.includes('text/html')) await cache.put('/index.html', fresh.clone())
         return fresh
       } catch (_) {
         return (await caches.match('/index.html')) || (await caches.match('/')) || Response.error()

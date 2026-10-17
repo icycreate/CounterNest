@@ -1,41 +1,42 @@
 {
-  "build": "2026-10-16-consolidated1",
-  "date": "2026-10-16",
-  "environment": "Local Vite development server with disposable fictional API fixtures outside release source; browser DOM checks only",
-  "status": "passed_with_capture_limit",
+  "version": "2.0.0-rc.5",
+  "build": "2026-10-17-operations1",
+  "status": "passed_local_fixture_checks",
+  "environment": "Actual React app in local Vite browser with disposable fictional API fixtures. No live Supabase, credentials, payment, deletion or production business side effects. Adapter and sample workbook remain outside the package.",
   "checks": [
     {
-      "name": "Admin direct acceptance",
-      "result": "New request shows Accept Order / Decline Order without mandatory intermediate transitions; preferred-method-only contact"
+      "name": "Ingredient purchasing card shows original package photo, preferred brand/package/barcode, approved substitute and do-not-buy warning",
+      "status": "passed"
     },
     {
-      "name": "Optional acceptance details",
-      "result": "Fresh server quote, optional pickup/deadline/deposit and separate customer/internal notes displayed"
+      "name": "Projected quantities and purchase suggestions render incoming stock, reservations, forecast and pack rounding",
+      "status": "passed"
     },
     {
-      "name": "Accepted receipt",
-      "result": "Accepted/Confirmed, customer, items, deposit/balance, accepted by and Print Receipt/Save as PDF controls displayed after acceptance"
+      "name": "Workspace eight-step setup displays saved BZD currency and 12.5% tax with progress and open/skip actions",
+      "status": "passed"
     },
     {
-      "name": "Crop before save",
-      "result": "Selecting local PNG opens crop editor before setting product image; original and JPEG preview loaded, 512×512 input produces 384×512 portrait preview; Save crop enabled and closes editor"
+      "name": "Actual deflated XLSX upload, first-sheet parsing, automatic column mapping, valid preview and reason-gated import completion",
+      "status": "passed",
+      "note": "Fictional Sample Bread; backend completion mocked; actual SQL import verified separately"
     },
     {
-      "name": "Production, Inventory and Cashier homes",
-      "result": "Role-specific headings and permitted navigation; held-sales shortcut shown for cashier"
+      "name": "Backup/restore and owner danger-zone controls render; delete remains disabled without backup, name, password and confirmations",
+      "status": "passed"
     },
     {
-      "name": "Public catalogue languages",
-      "result": "EN, ES, zh-TW, zh-CN selectors update labels while business name/product/category content remains unchanged"
-    },
-    {
-      "name": "Standalone presentation",
-      "result": "Fullscreen, manual product details, filters and QR; no admin navigation or TV auto-slide controls"
+      "name": "Workspace visual capture and interface review",
+      "status": "passed",
+      "note": "Screenshot returned inline during local QA; no screenshot artifact is included. Duplicate embedded heading found and removed; rebuilt successfully."
     }
   ],
-  "limitations": [
-    "Browser screenshot capture returned unavailable; pixel-level layout screenshots were not produced.",
-    "No live Supabase, Vercel, real financial transactions, real Realtime delivery, physical tablet/scanner/printer or native-speaker sign-off was performed.",
-    "API fixtures demonstrate browser behavior only; actual authorization/isolation/deposit/stock behavior is covered separately by SQL tests."
+  "language_validation": "Automated 24 role/language cases and new four-language import/setup tests pass; prior RC4 manual catalogue/receipt checks retained as historical evidence only.",
+  "pending": [
+    "Real Supabase Auth/Storage/Realtime and five Edge gateways",
+    "Realistic backup/restore scale and file upload/download on target deployment",
+    "Native HTTPS PWA install/reopen and Vercel function routing",
+    "Physical printers/scanners/mobile devices and screen readers",
+    "Native-speaker acceptance in EN/ES/zh-TW/zh-CN"
   ]
 }

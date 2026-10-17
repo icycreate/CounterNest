@@ -245,10 +245,16 @@ async function main(){
  await db.exec('set role authenticated');await rejects("select complete_sale(null,'card','[]',null)",[],/permission denied/);await rejects('select normalize_commercial_items($1,$2,false,false)',[shop,'[]'],/permission denied/);await db.exec('reset role');await db.query("select set_config('test.user',$1,false)",[uid]);
  });
  await require('./rc1-database-checks.cjs')({db,check,scalar,rejects,uid,emp,shop,other,prod});
+ await require('./original-image-database.cjs')({db,check,scalar,rejects});
  await require('./customer-request-database.cjs')({db,check,scalar,rejects,other,emp});
  await require('./ux-database.cjs')({db,check,scalar,rejects});
  await require('./finalization-database.cjs')({db,check,scalar,rejects});
- fs.writeFileSync(path.join(root,'DATABASE_TEST_RESULTS.json'),JSON.stringify({version:'2.0.0-rc.3',build:'2026-10-16-consolidated1',migration_count:files.length,database_engine:'PGlite PostgreSQL with mocked Supabase auth/storage and mocked manager-PIN crypt for refund tests; pgcrypto extension omitted',checks,limitations:['Live Supabase deployment, real bcrypt PIN checks, storage HTTP upload, Edge Functions and browser UAT still require target-environment verification.']},null,2));
+ await require('./phone-receipt-database.cjs')({db,check,scalar,rejects});
+ await require('./ingredient-purchasing-database.cjs')({db,check,scalar,rejects});
+ await require('./production-operations-database.cjs')({db,check,scalar,rejects});
+ await require('./workspace-recovery-database.cjs')({db,check,scalar,rejects});
+ await require('./operations-import-database.cjs')({db,check,scalar,rejects});
+ fs.writeFileSync(path.join(root,'DATABASE_TEST_RESULTS.json'),JSON.stringify({version:'2.0.0-rc.5',build:'2026-10-17-operations1',migration_count:files.length,database_engine:'PGlite PostgreSQL with mocked Supabase auth/storage and mocked manager-PIN crypt for refund tests; pgcrypto extension omitted',checks,limitations:['Live Supabase deployment, real bcrypt PIN checks, storage HTTP upload, Edge Functions and browser UAT still require target-environment verification.']},null,2));
  await db.close();
 }
 main().catch(e=>{console.error(e.message);process.exit(1)});

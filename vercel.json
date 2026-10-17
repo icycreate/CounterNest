@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "rewrites": [
+  "rewrites": [{"source":"/api/catalogue-manifest","destination":"/api/catalogue-manifest"},
     {
       "source": "/(.*)",
       "destination": "/index.html"

@@ -9,6 +9,17 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="CounterNest POS" />
     <link rel="manifest" href="/manifest.webmanifest" />
+    <script>
+      // Select the public tenant manifest before the browser considers installation.
+      // Browser-tab favicons always retain the CounterNest identity below.
+      if (/^\/catalogue(?:-display)?\/?$/.test(location.pathname)) {
+        const catalogueToken = new URLSearchParams(location.search).get('token');
+        const catalogueManifest = document.querySelector('link[rel="manifest"]');
+        if (catalogueToken && /^[a-zA-Z0-9_-]{32,128}$/.test(catalogueToken)) {
+          catalogueManifest.href = '/api/catalogue-manifest?' + new URLSearchParams({token:catalogueToken});
+        } else catalogueManifest.remove();
+      }
+    </script>
     <link rel="apple-touch-icon" href="/pwa/apple-touch-icon.png" />
     <link rel="icon" type="image/png" href="/pwa/favicon-64.png" />
     <title>CounterNest POS</title>

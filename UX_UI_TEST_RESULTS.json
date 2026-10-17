@@ -1,5 +1,5 @@
 {
-  "matrix_cases": 16,
+  "matrix_cases": 24,
   "languages": [
     "en",
     "es",
@@ -10,7 +10,9 @@
     "admin",
     "cashier",
     "production",
-    "inventory"
+    "inventory",
+    "manager",
+    "accounting"
   ],
   "type": "React component tests with mocked API and DOM; not physical-device UAT",
   "checks": [

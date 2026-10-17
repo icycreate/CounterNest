@@ -56,7 +56,7 @@ module.exports=async({db,check,scalar,rejects,other,emp})=>{
   await db.exec('set role authenticated');assert.equal((await db.query("update catalogue_preorder_requests set status='confirmed' where id=$1 returning id",[request])).rows.length,0);await db.exec('reset role');
  });
  await check('Only selected contact action is permitted to staff; alternate method needs admin reason and audits once',async()=>{
-  const contact=await scalar("select prepare_catalogue_contact($1,'whatsapp')",[request]);assert.equal(contact.destination,details.contact);assert.equal(contact.method,'whatsapp');
+  const contact=await scalar("select prepare_catalogue_contact($1,'whatsapp')",[request]);assert.equal(contact.destination,details.contact.replace(/\s/g,""));assert.equal(contact.method,'whatsapp');
   await rejects("select prepare_catalogue_contact($1,'email','Customer requested email','person@example.test')",[request],/Administrator override/);
   await db.query("select set_config('test.user',$1,false)",[uid]);await rejects("select prepare_catalogue_contact($1,'email','bad','person@example.test')",[request],/reason/);
   const result=await scalar("select prepare_catalogue_contact($1,'email','Customer approved alternate contact','person@example.test')",[request]);assert.equal(result.method,'email');
@@ -96,4 +96,5 @@ module.exports=async({db,check,scalar,rejects,other,emp})=>{
   await rejects('select submit_catalogue_preorder($1,$2,$3,$4)',[token,await scalar('select gen_random_uuid()'),JSON.stringify(items),JSON.stringify(details)],/unavailable/);
  });
 };
+
 

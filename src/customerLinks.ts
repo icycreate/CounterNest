@@ -1,3 +1,4 @@
+import {normalizePhone,isValidPhone,getCompanyPhoneCountry} from './phone'
 import {businessLogo} from './branding'
 export const contactMethods = [['whatsapp','WhatsApp'],['phone','Phone'],['sms','SMS'],['email','Email'],['messenger','Messenger'],['line','LINE'],['wechat','WeChat'],['other','Other']] as const
 export const contactLabel=(key:string)=>{const label=contactMethods.find(m=>m[0]===key)?.[1];return label?tr(label):key}
@@ -12,7 +13,7 @@ export function customerLinks(token:string,configuredBase?:string|null,environme
  }catch{return {display:'',catalogue:'',preview:''}}
 }
 export function contactHref(method:string,destination:string,message:string){
- const digits=destination.replace(/\D/g,'')
+ const canonical=normalizePhone(destination,getCompanyPhoneCountry()),digits=isValidPhone(canonical)?canonical.slice(1):''
  if(method==='whatsapp'&&digits.length>=6)return 'https://wa.me/'+digits+'?text='+encodeURIComponent(message)
  if(method==='phone'&&digits.length>=6)return 'tel:+'+digits
  if(method==='sms'&&digits.length>=6)return 'sms:+'+digits+'?body='+encodeURIComponent(message)

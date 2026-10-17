@@ -1,17 +1,25 @@
 {
   "product": "CounterNest POS",
-  "version": "2.0.0-rc.3",
-  "baseline_version": "Finalized RC1 customer requests/register update",
-  "baseline_migration_count": 79,
-  "migration_count": 81,
+  "version": "2.0.0-rc.5",
+  "baseline_version": "Consolidated RC4",
+  "baseline_migration_count": 83,
+  "migration_count": 87,
   "upgrade_migrations": [
-    "202610151800_ux_workspace.sql",
-    "202610161200_catalogue_finalization.sql"
+    "202610171000_ingredient_purchasing.sql",
+    "202610171100_production_intelligence.sql",
+    "202610171200_workspace_recovery.sql",
+    "202610171300_operations_import_permissions.sql"
   ],
   "release_type": "browser-release-candidate",
   "backend": "Supabase Cloud",
   "desktop_installer": false,
   "features": [
+    {
+      "title": "Private ingredient purchase identification, barcode/receiving checks, approval-safe buying lists, reservations, costing, recall/waste intelligence, protected workspace ZIP backup/restore and imports"
+    },
+    {
+      "title": "International phones, original and cropped images, original-first PDF, tenant catalogue PWA and consistent text receipts/buttons"
+    },
     {
       "title": "Consolidated UX, cropped catalogue photos, portrait PDF cards, direct accepted pre-orders and customer receipts"
     },
@@ -57,6 +65,6 @@
   ],
   "validation": "BUILD_VALIDATION.json",
   "deployment_status": "Validated local candidate; live cloud and physical device UAT pending",
-  "name": "CounterNest POS Consolidated Release Candidate 3",
-  "build": "2026-10-16-consolidated1"
+  "name": "CounterNest POS Operational Release Candidate 5",
+  "build": "2026-10-17-operations1"
 }

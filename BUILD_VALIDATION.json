@@ -1,49 +1,45 @@
 {
   "product": "CounterNest POS",
-  "version": "2.0.0-rc.3",
-  "build": "2026-10-16-consolidated1",
-  "date": "2026-10-16",
-  "result": "Local release candidate validation passed; cloud and physical acceptance pending",
+  "version": "2.0.0-rc.5",
+  "build": "2026-10-17-operations1",
+  "generated_at": "2026-10-17T04:57:09.098Z",
+  "result": "Local release candidate validation passed; live cloud and target-device acceptance pending",
   "checks": [
     {
-      "name": "npm install --ignore-scripts --offline --no-audit --no-fund",
+      "name": "Dependency install",
       "status": "passed",
-      "note": "Dependencies installed from available cache; registry audit not run"
+      "note": "npm install --ignore-scripts --offline --no-audit --no-fund; dependency cache available; no registry vulnerability audit"
     },
     {
       "name": "npm run verify",
       "status": "passed",
-      "note": "Production TypeScript/Vite build, full frontend/UI/SQL/release/web/Edge/display/navigation/PDF/request/UX/finalization suite and built assets"
+      "note": "Production build, all regression suites, operations UI/archive/Edge suites and built assets passed after owner hardening"
     },
     {
-      "name": "Final public-route scope change",
+      "name": "Database chain",
       "status": "passed",
-      "note": "Final production rebuild, built-asset check and UX suite passed after preventing staff hydration on public customer routes"
+      "migrations": 87,
+      "regression_groups": 108,
+      "preserved_delivered_migrations": 83,
+      "upgrade_only": [
+        84,
+        85,
+        86,
+        87
+      ],
+      "engine": "PGlite PostgreSQL with mocked Supabase auth/storage and mocked manager-PIN crypt for refund tests; pgcrypto extension omitted"
     },
     {
-      "name": "Database migration chain",
+      "name": "Role/language matrix",
       "status": "passed",
-      "migrations": 81,
-      "delivered_files_preserved": 79,
-      "new_pending_from_delivered_baseline": [
-        80,
-        81
-      ]
-    },
-    {
-      "name": "Database regression groups",
-      "status": "passed",
-      "count": 78
-    },
-    {
-      "name": "Role/language component matrix",
-      "status": "passed",
-      "cases": 16,
+      "cases": 24,
       "roles": [
         "admin",
         "cashier",
         "production",
-        "inventory"
+        "inventory",
+        "manager",
+        "accounting"
       ],
       "languages": [
         "en",
@@ -53,52 +49,69 @@
       ]
     },
     {
-      "name": "Production direct routes/assets",
+      "name": "Static translation coverage",
       "status": "passed",
-      "routes": 50
+      "source_labels": 3227,
+      "known_errors": 664,
+      "measured_labels": 2805,
+      "missing_measured_labels": 0
     },
     {
-      "name": "Authentication Edge handlers",
+      "name": "Production preview",
       "status": "passed",
-      "functions": 4,
-      "note": "Mocked execution; handlers unchanged from delivered RC1"
+      "routes": 50,
+      "note": "Local production SPA route and JS/CSS/PWA asset responses; Vercel hosting not deployed"
     },
     {
-      "name": "Localization",
-      "status": "passed_in_measured_scope",
-      "source_labels": 2854,
-      "system_errors": 491,
-      "measured_labels": 2637,
-      "english_fallbacks": 0
+      "name": "Ingredient purchasing and receiving",
+      "status": "passed_automated",
+      "note": "Private package projections, substitutes, barcode mismatch/override, approval-safe conversion, pack rounding, audited receipt/package snapshots and supplier price history"
     },
     {
-      "name": "Browser DOM interaction",
-      "status": "passed_with_capture_limit",
+      "name": "Production intelligence",
+      "status": "passed_automated",
+      "note": "Physical stock unaffected by reservation, linked pre-order batch demand counted once, cancellation/completion, shortages, approved-offer costing, lot/recall and waste projections"
+    },
+    {
+      "name": "Workspace lifecycle",
+      "status": "passed_automated",
+      "note": "ZIP CRC/SHA tamper and secrets rejection; tenant remapping; full operational snapshot count/stock reconciliation; restore side-effect suppression; pending freeze and explicit expired-recovery purge on disposable database fixtures"
+    },
+    {
+      "name": "Imports/setup/permissions",
+      "status": "passed_automated",
+      "note": "Invalid rows refused atomically, idempotent retries, opening ledger adjustments, canonical phones, existing setup prefill and protected owner/admin grants"
+    },
+    {
+      "name": "Auth Edge handlers",
+      "status": "passed_mocked",
+      "total": 4,
+      "unchanged": 2,
+      "hardened": 2,
+      "note": "create-staff-account and reset-staff-password now enforce protected owner/admin grants. Both must be redeployed. Fresh authentication and password-free audit tests pass."
+    },
+    {
+      "name": "Workspace Edge handler",
+      "status": "passed_mocked",
+      "total": 1,
+      "note": "JWT/owner/password gates, signed files, changed-backup refusal, remapped new-account restore and disabled purge tested by tests/workspace-edge.cjs"
+    },
+    {
+      "name": "Browser QA",
+      "status": "passed_local_fixture_checks",
       "report": "BROWSER_QA_RESULTS.json"
-    },
-    {
-      "name": "Photo/PDF/receipt integrity",
-      "status": "passed",
-      "note": "Crop geometry/bitmap cleanup/output bounds; portrait PDF HTML, A4/Letter/orientation, current variant/promotion pricing; accepted receipt permissions/escaping and paid totals; four-language receipt labels"
     }
   ],
-  "warnings": [
-    "Vite reports a main chunk of approximately 1.01 MB minified / 304 KB gzip, including the complete language catalogues. Other major screens/scanner are separate chunks; slow-device first-load performance requires staging measurement.",
-    "CJS test bundles warn about import.meta in a mocked URL module; actual ESM production build and URL precedence tests pass.",
-    "Screenshot capture was unavailable; browser evidence is DOM-level and the printed output needs actual-device/native-speaker acceptance."
+  "advisories": [
+    "Vite emits a large app chunk advisory; existing app plus four-language dictionaries remain bundled.",
+    "Test-only CommonJS bundles emit expected import.meta warnings; production ESM build succeeds."
   ],
-  "not_performed": [
-    "Live GitHub push or Vercel deployment",
-    "Live Supabase migration/Realtime/Auth/Storage verification",
-    "Physical printer/scanner/tablet acceptance and native-speaker review"
+  "pending": [
+    "Real Supabase Auth/Storage/Realtime and five Edge gateways",
+    "Realistic backup/restore scale and file upload/download on target deployment",
+    "Native HTTPS PWA install/reopen and Vercel function routing",
+    "Physical printers/scanners/mobile devices and screen readers",
+    "Native-speaker acceptance in EN/ES/zh-TW/zh-CN"
   ],
-  "reports": [
-    "DATABASE_TEST_RESULTS.json",
-    "BAKERY_UAT_RESULTS.json",
-    "EDGE_TEST_RESULTS.json",
-    "UX_UI_TEST_RESULTS.json",
-    "I18N_COVERAGE.json",
-    "PREVIEW_HTTP_RESULTS.json",
-    "BROWSER_QA_RESULTS.json"
-  ]
+  "packaging": "Separate OPERATIONAL_RC5_ZIP_VALIDATION.json verifies every archive entry hash and archive SHA-256. Dependencies, build output, credentials, Git metadata, desktop artifacts and fictional browser adapter are excluded."
 }

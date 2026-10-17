@@ -2,7 +2,7 @@ const fs=require('fs'),path=require('path'),assert=require('assert'),esbuild=req
 const root=path.resolve(__dirname,'..');
 async function handler(name,ctx={}){
  let serve;const writes=[];const caller={id:'caller',email:'caller@test.invalid'};
- const admin={auth:{getUser:async()=>ctx.invalid?{error:{message:'invalid'}}:{data:{user:caller}},admin:{updateUserById:async(id,values)=>{writes.push({type:'password',id,values});return {error:ctx.authFail?{message:'failure'}:null}},createUser:async()=>({data:{user:{id:'created'}}}),deleteUser:async()=>({})}},from(table){
+ const admin={rpc:async(_name,args)=>({data:{is_owner:args.p_actor==='caller'?(ctx.callerOwner??true):(ctx.targetOwner??false)},error:ctx.ownerCheckFail?{message:'failed'}:null}),auth:{getUser:async()=>ctx.invalid?{error:{message:'invalid'}}:{data:{user:caller}},admin:{updateUserById:async(id,values)=>{writes.push({type:'password',id,values});return {error:ctx.authFail?{message:'failure'}:null}},createUser:async()=>({data:{user:{id:'created'}}}),deleteUser:async()=>({})}},from(table){
   const filters={};let action,values;const q={select(){return q},eq(key,value){filters[key]=value;return q},insert(v){action='insert';values=v;return q},update(v){action='update';values=v;return q},delete(){action='delete';return q},maybeSingle:async()=>{
    if(table!=='staff_profiles')return {data:null};
    if(filters.user_id==='caller')return {data:{user_id:'caller',shop_id:'own',email:caller.email,role:ctx.role??'admin',active:!ctx.inactive,must_change_password:ctx.force||name==='change-initial-password'}};
@@ -19,6 +19,8 @@ async function handler(name,ctx={}){
 async function main(){let count=0;const strong='ExampleOnly123';
  for(const name of ['create-staff-account','change-initial-password','change-password','reset-staff-password']){
   const body=name==='create-staff-account'?{email:'new@test.invalid',display_name:'New Staff',role:'employee',temporary_password:strong,confirm_password:strong}:name==='reset-staff-password'?{target_user_id:'target',temporary_password:strong,confirm_password:strong}:{current_password:'OldExample123',new_password:strong,confirm_password:strong};
+  if(name==='reset-staff-password'){const owner=await handler(name,{targetOwner:true});assert.equal((await owner.call(body)).status,403);assert.equal(owner.writes.length,0);const unknown=await handler(name,{ownerCheckFail:true});assert.equal((await unknown.call(body)).status,503);assert.equal(unknown.writes.length,0)}
+  if(name==='create-staff-account'){const limited=await handler(name,{callerOwner:false});assert.equal((await limited.call({...body,role:'admin'})).status,403);assert.equal(limited.writes.length,0)}
   const test=await handler(name);assert.equal((await test.call(body,false)).status,401);assert.equal((await test.call(body,true,'GET')).status,405);assert.equal((await test.call(body,true,'OPTIONS')).status,200);
   const invalid=await handler(name,{invalid:true});assert.equal((await invalid.call(body)).status,401);
   const inactive=await handler(name,{inactive:true});assert.equal((await inactive.call(body)).status,403);

@@ -14,3 +14,5 @@ html[data-appearance=dark]{color-scheme:dark;--surface:#29221e;--page-bg:#1d1916
 .ux-header-logo{width:32px;height:32px;object-fit:contain}.report-business{display:flex;gap:.6rem;align-items:center}.catalogue-request-inbox .request-card:target{outline:3px solid var(--primary)}
 
 .ux-register-status{font-size:.8rem;padding:.5rem;border:1px solid var(--border,#dfcbb9);border-radius:8px}.ux-accepted-order{padding:.8rem 0;border-bottom:1px solid var(--border,#dfcbb9)}.ux-accepted-order>strong{margin-left:.6rem}
+
+.full-image-view{position:fixed;inset:0;z-index:1500;background:rgba(0,0,0,.94);display:flex;flex-direction:column;align-items:center;padding:16px;gap:12px;overflow:auto}.full-image-view img{max-width:100%;max-height:calc(100dvh - 90px);object-fit:contain}.full-image-view button{flex-shrink:0}

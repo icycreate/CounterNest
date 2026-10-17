@@ -5,8 +5,8 @@ import {supabase} from './lib/supabase'
 import ImageCropper from './ImageCropper'
 import {validateImageFile,renderImageCrop} from './cropHelpers'
 
-export type MediaPhoto={url:string;caption?:string}
-export type AdvancedProduct={id:string;name:string;regular_price:number;image_url:string|null;catalogue_media:MediaPhoto[];catalogue_label_url:string|null;promotion_kind:string|null;promotion_value:number|null;promotion_starts_at:string|null;promotion_ends_at:string|null;promotion_featured:boolean}
+export type MediaPhoto={url:string;original_image?:string;cropped_catalogue_image?:string;caption?:string}
+export type AdvancedProduct={id:string;name:string;regular_price:number;image_url:string|null;original_image?:string|null;cropped_catalogue_image?:string|null;catalogue_media:MediaPhoto[];catalogue_label_url:string|null;promotion_kind:string|null;promotion_value:number|null;promotion_starts_at:string|null;promotion_ends_at:string|null;promotion_featured:boolean}
 
 export async function processCataloguePhoto(file:File,crop:boolean):Promise<Blob>{
  validateImageFile(file)
@@ -19,6 +19,7 @@ export function CatalogueMediaPromotion({product,onSaved}:{product:AdvancedProdu
  const[photos,setPhotos]=useState<MediaPhoto[]>(product.catalogue_media??[])
  const[label,setLabel]=useState(product.catalogue_label_url)
  const[cropFile,setCropFile]=useState<File|null>(null),[pending,setPending]=useState<Blob|null>(null),[preview,setPreview]=useState('')
+ const[originalFile,setOriginalFile]=useState<File|null>(null)
  const[asLabel,setAsLabel]=useState(false),[busy,setBusy]=useState(false),[error,setError]=useState('')
  const[kind,setKind]=useState(product.promotion_kind??'')
  const[value,setValue]=useState(String(product.promotion_value??''))
@@ -27,16 +28,19 @@ export function CatalogueMediaPromotion({product,onSaved}:{product:AdvancedProdu
  const[featured,setFeatured]=useState(product.promotion_featured??false)
  useEffect(()=>()=>{if(preview)URL.revokeObjectURL(preview)},[preview])
  function choose(file:File){setError('');try{validateImageFile(file);setCropFile(file)}catch(e){setError(trError(e instanceof Error?e.message:String(e)))}}
- function acceptCrop(blob:Blob){if(preview)URL.revokeObjectURL(preview);setPending(blob);setPreview(URL.createObjectURL(blob));setCropFile(null)}
- async function upload(){if(!supabase||!pending)return;setBusy(true);setError(trError(''));let storagePath='';let registered=false;try{
+ function acceptCrop(blob:Blob){setOriginalFile(cropFile);if(preview)URL.revokeObjectURL(preview);setPending(blob);setPreview(URL.createObjectURL(blob));setCropFile(null)}
+ async function upload(){if(!supabase||!pending)return;setBusy(true);setError(trError(''));let storagePath='';let originalPath='';let registered=false;try{
   const profile=await supabase.from('staff_profiles').select('shop_id').eq('user_id',(await supabase.auth.getUser()).data.user!.id).single();if(profile.error)throw profile.error
   storagePath=`${profile.data.shop_id}/${product.id}/${randomId()}.jpg`
   const result=await supabase.storage.from('catalogue-media').upload(storagePath,pending,{contentType:'image/jpeg',upsert:false});if(result.error)throw result.error
   const url=supabase.storage.from('catalogue-media').getPublicUrl(storagePath).data.publicUrl
-  const next=asLabel?photos:[...photos,{url}],nextLabel=asLabel?url:label
+  let originalUrl=url
+  if(originalFile){originalPath=`${profile.data.shop_id}/${product.id}/${randomId()}-original.${originalFile.name.split('.').pop()||'jpg'}`;const originalUpload=await supabase.storage.from('catalogue-media').upload(originalPath,originalFile,{contentType:originalFile.type,upsert:false});if(originalUpload.error)throw originalUpload.error;originalUrl=supabase.storage.from('catalogue-media').getPublicUrl(originalPath).data.publicUrl}
+  const next=asLabel?photos:[...photos,{url,original_image:originalUrl,cropped_catalogue_image:url}],nextLabel=asLabel?originalUrl:label
   const saved=await supabase.rpc('save_catalogue_media',{p_product_id:product.id,p_media:next,p_label_url:nextLabel});if(saved.error)throw saved.error;registered=true
-  setPhotos(next);setLabel(nextLabel);setPending(null);URL.revokeObjectURL(preview);setPreview('');await onSaved()
- }catch(e){if(storagePath&&!registered)await supabase.storage.from('catalogue-media').remove([storagePath]);setError(trError(e instanceof Error?e.message:String(e)))}finally{setBusy(false)}}
+  if(asLabel&&originalUrl!==url)await supabase.storage.from('catalogue-media').remove([storagePath])
+  setPhotos(next);setLabel(nextLabel);setPending(null);setOriginalFile(null);URL.revokeObjectURL(preview);setPreview('');await onSaved()
+ }catch(e){if(storagePath&&!registered)await supabase.storage.from('catalogue-media').remove([storagePath,...(originalPath?[originalPath]:[])]);setError(trError(e instanceof Error?e.message:String(e)))}finally{setBusy(false)}}
  async function saveMedia(next:MediaPhoto[],nextLabel=label){if(!supabase)return;setBusy(true);setError(trError(''));const result=await supabase.rpc('save_catalogue_media',{p_product_id:product.id,p_media:next,p_label_url:nextLabel});if(result.error)setError(trError(result.error.message));else{setPhotos(next);setLabel(nextLabel);await onSaved()}setBusy(false)}
  async function savePromotion(){if(!supabase)return;setError(trError(''));if(kind&&(!start||!end||new Date(end)<=new Date(start)||!Number.isFinite(Number(value))||value.trim()===''||Number(value)<0||(kind==='percent'&&Number(value)>100)||(kind==='fixed'&&Number(value)>product.regular_price))){setError(trError(tr("Enter a valid discount or special price and an end time after the start.")));return}setBusy(true);const result=await supabase.rpc('save_catalogue_promotion',{p_product_id:product.id,p_kind:kind||null,p_value:kind?Number(value):null,p_starts_at:kind?new Date(start).toISOString():null,p_ends_at:kind?new Date(end).toISOString():null,p_featured:featured});if(result.error)setError(trError(result.error.message));else await onSaved();setBusy(false)}
  return <section className="catalogue-advanced"><h3>{tr("Product photos & label")}</h3><p>{tr("First photo is the primary catalogue photo. Removing a gallery entry preserves its stored image for older documents.")}</p>{product.image_url&&!photos.length&&<p>{tr("Existing product photo stays until a gallery is saved.")}</p>}

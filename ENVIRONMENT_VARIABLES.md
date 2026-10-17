@@ -15,3 +15,7 @@ All VITE_* values are public in compiled assets. .env.example contains placehold
 
 
 No new environment variables in this update. Saved customer public_base_url (admin UI) overrides VITE_PUBLIC_APP_URL for customer links/QR. Otherwise the active site origin is used. Use the final HTTPS origin without path/query/user credentials. Staging must use its own Supabase settings and public origin. Contact-method IDs, enabling and receipt QR are shop configuration, not environment secrets.
+
+RC4: the Vercel catalogue-manifest function also reads the same VITE_SUPABASE_URL and public publishable/anon key at runtime. Deploy api/ alongside dist; changing its runtime environment requires redeployment. The endpoint rejects secret/service-role keys.
+
+RC5 Edge-only optional WORKSPACE_PURGE_ENABLED: leave unset/false; true enables the server purge action only after recovery expiry and owner confirmation. No new frontend secret or key is required.

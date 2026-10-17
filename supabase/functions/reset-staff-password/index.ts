@@ -32,6 +32,10 @@ Deno.serve(async(request)=>{
   if(targetError||!target)return json(404,{error:'Staff account not found in this business'})
   if(!target.active)return json(409,{error:'Reactivate the staff account before resetting its password'})
 
+  const{data:targetState,error:ownerCheckError}=await admin.rpc('workspace_actor_state',{p_actor:targetUserId})
+  if(ownerCheckError)return json(503,{error:'Workspace ownership could not be verified'})
+  if(targetState?.is_owner)return json(403,{error:'Owner credentials cannot be reset by another staff member.'})
+
   // Fail closed: block shop operations before replacing the Auth password.
   const{error:profileError}=await admin.from('staff_profiles').update({must_change_password:true,password_initialized_at:null}).eq('user_id',targetUserId).eq('shop_id',caller.shop_id)
   if(profileError)return json(500,{error:'The required password-change status could not be saved; the password was not reset'})

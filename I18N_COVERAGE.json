@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T14:59:46.552Z",
+  "generated_at": "2026-10-17T04:56:26.864Z",
   "languages": [
     "en",
     "es",
@@ -7,9 +7,9 @@
     "zh-CN"
   ],
   "static_catalogue_complete": true,
-  "dictionary_source_labels": 2854,
-  "system_error_labels": 491,
-  "measured_static_source_labels": 2637,
+  "dictionary_source_labels": 3227,
+  "system_error_labels": 664,
+  "measured_static_source_labels": 2805,
   "english_fallback_measured_source_labels": 0,
   "scope": "Literal tr labels, static label/sub/title/header props, navigation labels and fixed enum mappings. Dynamic business values are excluded. Unknown provider diagnostics and formatted SQL exceptions retain their original details.",
   "preference_storage": "Per-account browser preference and cloud ux_user_preferences; public catalogue preference uses separate device scope.",

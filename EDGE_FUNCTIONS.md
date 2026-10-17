@@ -31,3 +31,7 @@ References: [Function authentication](https://supabase.com/docs/guides/functions
 
 ## RC1 update build
 No additional Edge Function or messaging integration is introduced. The same four handlers are retained byte-for-byte from original RC1. New request/contact/register functionality lives in migration 79. If all four current RC1 handlers are already deployed, verify their versions; otherwise deploy them together using the list above. Do not rerun migration 78 if already applied.
+
+
+## RC5 workspace-lifecycle
+Deploy supabase/functions/workspace-lifecycle/index.ts with ../_shared/workspaceArchive.ts after SQL84–87. The handler verifies JWT and ownership, reauthenticates current passwords for sensitive lifecycle actions, and is the sole service-role caller for lifecycle SQL. Keep SUPABASE_URL/SUPABASE_SERVICE_ROLE_KEY/SUPABASE_ANON_KEY server-only. WORKSPACE_PURGE_ENABLED defaults disabled; enable only after staging restore UAT. Never expose these secrets in VITE variables or backups. Redeploy create-staff-account and reset-staff-password for the owner protections. The other two existing Auth handlers remain unchanged.

@@ -8,7 +8,7 @@ const product={id:'first',name:'First Cake',price:20,regular_price:25,category_n
 global.testCatalogueClient={rpc:async(name)=>name==='get_commercial_catalogue'?{data:{shop_name:'Preview',currency:'USD',targets:['Main POS'],products:[{...product},{...product,id:'second',name:'Second Cake'}],combos:[],display_options:{idle_seconds:60,slide_seconds:10}}}:{data:null}};
 const originalRPC=global.testCatalogueClient.rpc;global.testCatalogueClient.rpc=(...args)=>{const promise=originalRPC(...args);promise.abortSignal=()=>promise;return promise};
 async function main(){
- const result=await esbuild.build({entryPoints:[path.join(__dirname,'../src/CommercialCatalogue.tsx')],bundle:true,write:false,platform:'node',format:'cjs',packages:'external',jsx:'automatic',plugins:[{name:'mock',setup(b){b.onLoad({filter:/[\\/]lib[\\/]supabase\.ts$/},()=>({contents:'export const supabase=globalThis.testCatalogueClient;',loader:'ts'}))}}]});
+ const result=await esbuild.build({entryPoints:[path.join(__dirname,'../src/CommercialCatalogue.tsx')],bundle:true,write:false,loader:{'.css':'empty'},platform:'node',format:'cjs',packages:'external',jsx:'automatic',plugins:[{name:'mock',setup(b){b.onLoad({filter:/[\\/]lib[\\/]supabase\.ts$/},()=>({contents:'export const supabase=globalThis.testCatalogueClient;',loader:'ts'}))}}]});
  const mod=new Module(path.join(__dirname,'compiled-display.cjs'),module);mod.paths=Module._nodeModulePaths(__dirname);mod._compile(result.outputFiles[0].text,path.join(__dirname,'compiled-display.cjs'));
  let tree;await Renderer.act(async()=>{tree=Renderer.create(React.createElement(mod.exports.CommercialCatalogue,{token:'mock-token',mode:'display'}))});
  const poll=()=>Array.from(timers.values()).find(t=>t.ms===5000);

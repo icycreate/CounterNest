@@ -1906,8 +1906,8 @@ export const translations:Record<string,Record<string,string>> = {
   },
   "Availability": {
     "es": "Disponibilidad",
-    "zh-TW": "供應狀態",
-    "zh-CN": "供应状态"
+    "zh-TW": "供貨狀況",
+    "zh-CN": "供货状况"
   },
   "Available now": {
     "es": "Disponible ahora",
@@ -9025,7 +9025,7 @@ export const translations:Record<string,Record<string,string>> = {
     "zh-CN": "记录恢复演练"
   },
   "Record Waste": {
-    "es": "Registrar merma",
+    "es": "Registrar desperdicio",
     "zh-TW": "記錄耗損",
     "zh-CN": "记录损耗"
   },
@@ -12855,7 +12855,7 @@ export const translations:Record<string,Record<string,string>> = {
     "zh-CN": "总额"
   },
   "Gross Profit": {
-    "es": "Utilidad bruta",
+    "es": "Ganancia bruta",
     "zh-TW": "毛利",
     "zh-CN": "毛利"
   },
@@ -14264,9 +14264,1874 @@ export const translations:Record<string,Record<string,string>> = {
     "zh-TW": "必須先接受訂單才能列印收據。",
     "zh-CN": "必须先接受订单才能打印收据。"
   },
+  "Search country or dial code": {
+    "es": "Buscar país o prefijo",
+    "zh-TW": "搜尋國家或國碼",
+    "zh-CN": "搜索国家或区号"
+  },
+  "Country and calling code": {
+    "es": "País y prefijo telefónico",
+    "zh-TW": "國家與電話國碼",
+    "zh-CN": "国家与电话区号"
+  },
+  "Phone number": {
+    "es": "Número de teléfono",
+    "zh-TW": "電話號碼",
+    "zh-CN": "电话号码"
+  },
+  "Enter a valid international phone number.": {
+    "es": "Introduzca un número de teléfono internacional válido.",
+    "zh-TW": "請輸入有效的國際電話號碼。",
+    "zh-CN": "请输入有效的国际电话号码。"
+  },
   "Allow the receipt window to open, then try again.": {
     "es": "Permita abrir la ventana del recibo e inténtelo de nuevo.",
     "zh-TW": "請允許開啟收據視窗後再試一次。",
     "zh-CN": "请允许打开收据窗口后再试一次。"
+  },
+  "Image source": {
+    "es": "Origen de la imagen",
+    "zh-TW": "圖片來源",
+    "zh-CN": "图片来源"
+  },
+  "Original image": {
+    "es": "Imagen original",
+    "zh-TW": "原始圖片",
+    "zh-CN": "原始图片"
+  },
+  "Cropped catalogue image": {
+    "es": "Imagen recortada del catálogo",
+    "zh-TW": "已裁切的型錄圖片",
+    "zh-CN": "已裁剪的目录图片"
+  },
+  "View full image": {
+    "es": "Ver imagen completa",
+    "zh-TW": "查看完整圖片",
+    "zh-CN": "查看完整图片"
+  },
+  "Close full image": {
+    "es": "Cerrar imagen completa",
+    "zh-TW": "關閉完整圖片",
+    "zh-CN": "关闭完整图片"
+  },
+  "Production & Inventory Intelligence": {
+    "es": "Inteligencia de producción e inventario",
+    "zh-TW": "生產與庫存分析",
+    "zh-CN": "生产与库存分析"
+  },
+  "Reservations protect planned production. Physical stock is consumed only when production is completed.": {
+    "es": "Las reservas protegen la producción planificada. Las existencias se consumen al completar la producción.",
+    "zh-TW": "預留量保障生產計畫。完成生產時才扣減實際庫存。",
+    "zh-CN": "预留量保障生产计划。完成生产时才扣减实际库存。"
+  },
+  "Operational views": {
+    "es": "Vistas operativas",
+    "zh-TW": "營運檢視",
+    "zh-CN": "运营视图"
+  },
+  "Projected Stock": {
+    "es": "Existencias proyectadas",
+    "zh-TW": "預計庫存",
+    "zh-CN": "预计库存"
+  },
+  "Lots & Expiry": {
+    "es": "Lotes y vencimiento",
+    "zh-TW": "批號與效期",
+    "zh-CN": "批号与效期"
+  },
+  "Production Demand": {
+    "es": "Demanda de producción",
+    "zh-TW": "生產需求",
+    "zh-CN": "生产需求"
+  },
+  "Recipe Costing": {
+    "es": "Costeo de recetas",
+    "zh-TW": "配方成本",
+    "zh-CN": "配方成本"
+  },
+  "Waste Intelligence": {
+    "es": "Análisis de desperdicio",
+    "zh-TW": "耗損分析",
+    "zh-CN": "损耗分析"
+  },
+  "Search ingredients": {
+    "es": "Buscar ingredientes",
+    "zh-TW": "搜尋原料",
+    "zh-CN": "搜索原料"
+  },
+  "On Hand": {
+    "es": "Disponible físicamente",
+    "zh-TW": "實際庫存",
+    "zh-CN": "实际库存"
+  },
+  "Incoming Stock": {
+    "es": "Existencias entrantes",
+    "zh-TW": "在途庫存",
+    "zh-CN": "在途库存"
+  },
+  "Reserved Production": {
+    "es": "Reservado para producción",
+    "zh-TW": "生產預留",
+    "zh-CN": "生产预留"
+  },
+  "Forecast Demand": {
+    "es": "Demanda prevista",
+    "zh-TW": "預測需求",
+    "zh-CN": "预测需求"
+  },
+  "Projected Available Stock": {
+    "es": "Existencias disponibles previstas",
+    "zh-TW": "預計可用庫存",
+    "zh-CN": "预计可用库存"
+  },
+  "Suggested Purchase Quantity": {
+    "es": "Cantidad de compra sugerida",
+    "zh-TW": "建議採購量",
+    "zh-CN": "建议采购量"
+  },
+  "Buy Now": {
+    "es": "Comprar ahora",
+    "zh-TW": "立即採購",
+    "zh-CN": "立即采购"
+  },
+  "Buy Soon": {
+    "es": "Comprar pronto",
+    "zh-TW": "近期採購",
+    "zh-CN": "近期采购"
+  },
+  "Enough Stock": {
+    "es": "Existencias suficientes",
+    "zh-TW": "庫存充足",
+    "zh-CN": "库存充足"
+  },
+  "Overstock Risk": {
+    "es": "Riesgo de exceso de existencias",
+    "zh-TW": "庫存過量風險",
+    "zh-CN": "库存过量风险"
+  },
+  "Set Forecast": {
+    "es": "Establecer previsión",
+    "zh-TW": "設定預測",
+    "zh-CN": "设置预测"
+  },
+  "Forecast expires": {
+    "es": "Vencimiento de la previsión",
+    "zh-TW": "預測到期日",
+    "zh-CN": "预测到期日"
+  },
+  "Expiring Soon": {
+    "es": "Próximo a vencer",
+    "zh-TW": "即將到期",
+    "zh-CN": "即将到期"
+  },
+  "Use First": {
+    "es": "Usar primero",
+    "zh-TW": "優先使用",
+    "zh-CN": "优先使用"
+  },
+  "No expiry date": {
+    "es": "Sin fecha de vencimiento",
+    "zh-TW": "無效期",
+    "zh-CN": "无效期"
+  },
+  "Recall Trace": {
+    "es": "Trazabilidad de retiro",
+    "zh-TW": "召回追溯",
+    "zh-CN": "召回追溯"
+  },
+  "Accepted pre-orders reserve recipe ingredients automatically. Linked production batches replace the same order demand without double counting.": {
+    "es": "Los pedidos anticipados aceptados reservan ingredientes automáticamente. Los lotes vinculados reemplazan la demanda sin duplicarla.",
+    "zh-TW": "已接受的預購會自動預留配方原料。連結的生產批次會取代相同訂單的需求，避免重複計算。",
+    "zh-CN": "已接受的预购会自动预留配方原料。关联的生产批次会替代相同订单的需求，避免重复计算。"
+  },
+  "No scheduled production batches.": {
+    "es": "No hay lotes de producción programados.",
+    "zh-TW": "沒有已排程的生產批次。",
+    "zh-CN": "没有已排程的生产批次。"
+  },
+  "View Missing Ingredients": {
+    "es": "Ver ingredientes faltantes",
+    "zh-TW": "檢視缺少的原料",
+    "zh-CN": "查看缺少的原料"
+  },
+  "Ingredient Cost": {
+    "es": "Costo de ingredientes",
+    "zh-TW": "原料成本",
+    "zh-CN": "原料成本"
+  },
+  "Packaging Cost": {
+    "es": "Costo de empaque",
+    "zh-TW": "包裝成本",
+    "zh-CN": "包装成本"
+  },
+  "Labor Estimate": {
+    "es": "Estimación de mano de obra",
+    "zh-TW": "人工估計",
+    "zh-CN": "人工估计"
+  },
+  "Overhead Estimate": {
+    "es": "Estimación de gastos generales",
+    "zh-TW": "間接費用估計",
+    "zh-CN": "间接费用估计"
+  },
+  "Total Recipe Cost": {
+    "es": "Costo total de receta",
+    "zh-TW": "配方總成本",
+    "zh-CN": "配方总成本"
+  },
+  "Cost per Unit": {
+    "es": "Costo por unidad",
+    "zh-TW": "單位成本",
+    "zh-CN": "单位成本"
+  },
+  "Selling Price": {
+    "es": "Precio de venta",
+    "zh-TW": "售價",
+    "zh-CN": "售价"
+  },
+  "Gross Margin %": {
+    "es": "Margen bruto %",
+    "zh-TW": "毛利率 %",
+    "zh-CN": "毛利率 %"
+  },
+  "Target Margin %": {
+    "es": "Margen objetivo %",
+    "zh-TW": "目標毛利率 %",
+    "zh-CN": "目标毛利率 %"
+  },
+  "Selling price is below target margin.": {
+    "es": "El precio de venta está por debajo del margen objetivo.",
+    "zh-TW": "售價低於目標毛利率。",
+    "zh-CN": "售价低于目标毛利率。"
+  },
+  "Costing method": {
+    "es": "Método de costeo",
+    "zh-TW": "成本計算方法",
+    "zh-CN": "成本计算方法"
+  },
+  "Latest approved cost": {
+    "es": "Último costo aprobado",
+    "zh-TW": "最新核准成本",
+    "zh-CN": "最新批准成本"
+  },
+  "Weighted average cost": {
+    "es": "Costo promedio ponderado",
+    "zh-TW": "加權平均成本",
+    "zh-CN": "加权平均成本"
+  },
+  "Top Waste Causes": {
+    "es": "Principales causas de desperdicio",
+    "zh-TW": "主要耗損原因",
+    "zh-CN": "主要损耗原因"
+  },
+  "Most Wasted Ingredients & Products": {
+    "es": "Ingredientes y productos con mayor desperdicio",
+    "zh-TW": "耗損最多的原料與產品",
+    "zh-CN": "损耗最多的原料与产品"
+  },
+  "Waste Trend": {
+    "es": "Tendencia de desperdicio",
+    "zh-TW": "耗損趨勢",
+    "zh-CN": "损耗趋势"
+  },
+  "No waste recorded in the last 30 days.": {
+    "es": "No se registró desperdicio en los últimos 30 días.",
+    "zh-TW": "最近 30 天沒有耗損記錄。",
+    "zh-CN": "最近 30 天没有损耗记录。"
+  },
+  "Cost Impact": {
+    "es": "Impacto en el costo",
+    "zh-TW": "成本影響",
+    "zh-CN": "成本影响"
+  },
+  "Affected Batches": {
+    "es": "Lotes afectados",
+    "zh-TW": "受影響批次",
+    "zh-CN": "受影响批次"
+  },
+  "Affected Sales": {
+    "es": "Ventas afectadas",
+    "zh-TW": "受影響銷售",
+    "zh-CN": "受影响销售"
+  },
+  "Affected Pre-Orders": {
+    "es": "Pedidos anticipados afectados",
+    "zh-TW": "受影響預購",
+    "zh-CN": "受影响预购"
+  },
+  "Damaged": {
+    "es": "Dañado",
+    "zh-TW": "損壞",
+    "zh-CN": "损坏"
+  },
+  "Quality Failure": {
+    "es": "Falla de calidad",
+    "zh-TW": "品質不合格",
+    "zh-CN": "质量不合格"
+  },
+  "Overproduction": {
+    "es": "Sobreproducción",
+    "zh-TW": "生產過量",
+    "zh-CN": "生产过量"
+  },
+  "Preparation Error": {
+    "es": "Error de preparación",
+    "zh-TW": "製作錯誤",
+    "zh-CN": "制作错误"
+  },
+  "Customer Return": {
+    "es": "Devolución del cliente",
+    "zh-TW": "顧客退貨",
+    "zh-CN": "顾客退货"
+  },
+  "Count correction": {
+    "es": "Corrección de conteo",
+    "zh-TW": "盤點修正",
+    "zh-CN": "盘点修正"
+  },
+  "Production Shortage": {
+    "es": "Faltante de producción",
+    "zh-TW": "生產缺料",
+    "zh-CN": "生产缺料"
+  },
+  "Purchase Approval Required": {
+    "es": "Aprobación de compra requerida",
+    "zh-TW": "採購待核准",
+    "zh-CN": "采购待批准"
+  },
+  "Purchase Order Late": {
+    "es": "Orden de compra atrasada",
+    "zh-TW": "採購單逾期",
+    "zh-CN": "采购单逾期"
+  },
+  "Abnormal Waste": {
+    "es": "Desperdicio anormal",
+    "zh-TW": "異常耗損",
+    "zh-CN": "异常损耗"
+  },
+  "Operations access required": {
+    "es": "Se requiere acceso a operaciones",
+    "zh-TW": "需要營運存取權限",
+    "zh-CN": "需要运营访问权限"
+  },
+  "Recall management access required": {
+    "es": "Se requiere acceso a gestión de retiros",
+    "zh-TW": "需要召回管理權限",
+    "zh-CN": "需要召回管理权限"
+  },
+  "Cost access required": {
+    "es": "Se requiere acceso a costos",
+    "zh-TW": "需要成本存取權限",
+    "zh-CN": "需要成本访问权限"
+  },
+  "Recipe cost management access required": {
+    "es": "Se requiere acceso a gestión de costos de recetas",
+    "zh-TW": "需要配方成本管理權限",
+    "zh-CN": "需要配方成本管理权限"
+  },
+  "Production management access required": {
+    "es": "Se requiere acceso a gestión de producción",
+    "zh-TW": "需要生產管理權限",
+    "zh-CN": "需要生产管理权限"
+  },
+  "Invalid operation search": {
+    "es": "Búsqueda operativa inválida",
+    "zh-TW": "營運搜尋無效",
+    "zh-CN": "运营搜索无效"
+  },
+  "Valid forecast quantity, date and note required": {
+    "es": "Se requieren cantidad, fecha y nota de previsión válidas",
+    "zh-TW": "請提供有效的預測數量、日期和備註",
+    "zh-CN": "请提供有效的预测数量、日期和备注"
+  },
+  "Invalid costing method": {
+    "es": "Método de costeo inválido",
+    "zh-TW": "成本計算方法無效",
+    "zh-CN": "成本计算方法无效"
+  },
+  "No additional purchase is required": {
+    "es": "No se requiere ninguna compra adicional",
+    "zh-TW": "無需額外採購",
+    "zh-CN": "无需额外采购"
+  },
+  "Purchase creation access required": {
+    "es": "Se requiere permiso para crear compras",
+    "zh-TW": "需要建立採購權限",
+    "zh-CN": "需要创建采购权限"
+  },
+  "Invalid purchase identification": {
+    "es": "Identificación de compra no válida",
+    "zh-TW": "採購識別資料無效",
+    "zh-CN": "采购识别资料无效"
+  },
+  "Private ingredient image not found": {
+    "es": "No se encontró la imagen privada del ingrediente",
+    "zh-TW": "找不到原料私密圖片",
+    "zh-CN": "找不到原料私密图片"
+  },
+  "Ingredient or supplier not found": {
+    "es": "No se encontró el ingrediente o proveedor",
+    "zh-TW": "找不到原料或供應商",
+    "zh-CN": "找不到原料或供应商"
+  },
+  "Purchasing access required": {
+    "es": "Se requiere acceso a compras",
+    "zh-TW": "需要採購權限",
+    "zh-CN": "需要采购权限"
+  },
+  "Purchase approval requires administrator access": {
+    "es": "La aprobación de compras requiere acceso de administrador",
+    "zh-TW": "採購核准需要管理員權限",
+    "zh-CN": "采购批准需要管理员权限"
+  },
+  "Pending purchase need not found": {
+    "es": "No se encontró la necesidad de compra pendiente",
+    "zh-TW": "找不到待核准採購需求",
+    "zh-CN": "找不到待批准采购需求"
+  },
+  "Create and approve a purchase need before ordering": {
+    "es": "Cree y apruebe una necesidad de compra antes de ordenar",
+    "zh-TW": "下單前請先建立並核准採購需求",
+    "zh-CN": "下单前请先创建并批准采购需求"
+  },
+  "Purchase need not found": {
+    "es": "No se encontró la necesidad de compra",
+    "zh-TW": "找不到採購需求",
+    "zh-CN": "找不到采购需求"
+  },
+  "Purchase approval is required": {
+    "es": "Se requiere aprobación de compra",
+    "zh-TW": "需要採購核准",
+    "zh-CN": "需要采购批准"
+  },
+  "Package mismatch requires administrator override and reason": {
+    "es": "Una discrepancia del envase requiere una excepción del administrador con motivo",
+    "zh-TW": "包裝不符需要管理員例外放行並填寫原因",
+    "zh-CN": "包装不符需要管理员例外放行并填写原因"
+  },
+  "Approved purchase need not found": {
+    "es": "No se encontró la necesidad de compra aprobada",
+    "zh-TW": "找不到已核准採購需求",
+    "zh-CN": "找不到已批准采购需求"
+  },
+  "Invalid buying status": {
+    "es": "Estado de compra no válido",
+    "zh-TW": "採購狀態無效",
+    "zh-CN": "采购状态无效"
+  },
+  "Use verified receiving for this workspace": {
+    "es": "Use la recepción verificada para este espacio de trabajo",
+    "zh-TW": "此工作區請使用核驗收貨流程",
+    "zh-CN": "此工作区请使用核验收货流程"
+  },
+  "Receiving request key is required": {
+    "es": "Se requiere una clave de solicitud de recepción",
+    "zh-TW": "需要收貨請求識別碼",
+    "zh-CN": "需要收货请求识别码"
+  },
+  "Receiving retry details changed": {
+    "es": "Los datos del reintento de recepción cambiaron",
+    "zh-TW": "重試收貨的資料已變更",
+    "zh-CN": "重试收货的数据已更改"
+  },
+  "Use verified purchase-order receiving for this workspace": {
+    "es": "Use la recepción verificada de órdenes de compra para este espacio de trabajo",
+    "zh-TW": "此工作區請使用採購單核驗收貨流程",
+    "zh-CN": "此工作区请使用采购单核验收货流程"
+  },
+  "Request at most 100 ingredient cards": {
+    "es": "Solicite como máximo 100 fichas de ingredientes",
+    "zh-TW": "每次最多請求 100 張原料卡片",
+    "zh-CN": "每次最多请求 100 张原料卡片"
+  },
+  "Ingredient Purchasing": {
+    "es": "Compra de ingredientes",
+    "zh-TW": "原料採購",
+    "zh-CN": "原料采购"
+  },
+  "Identify approved packages, compare suppliers, approve needs, and verify deliveries.": {
+    "es": "Identifique envases aprobados, compare proveedores, apruebe necesidades y verifique entregas.",
+    "zh-TW": "識別核准包裝、比較供應商、核准需求並核對收貨。",
+    "zh-CN": "识别批准包装、比较供应商、批准需求并核对收货。"
+  },
+  "Ingredient purchasing sections": {
+    "es": "Secciones de compra de ingredientes",
+    "zh-TW": "原料採購分區",
+    "zh-CN": "原料采购分区"
+  },
+  "Purchase Identification": {
+    "es": "Identificación de compra",
+    "zh-TW": "採購識別",
+    "zh-CN": "采购识别"
+  },
+  "Reference Package Photo": {
+    "es": "Foto de referencia del envase",
+    "zh-TW": "包裝參考照片",
+    "zh-CN": "包装参考照片"
+  },
+  "Preferred Brand": {
+    "es": "Marca preferida",
+    "zh-TW": "首選品牌",
+    "zh-CN": "首选品牌"
+  },
+  "Package Size": {
+    "es": "Tamaño del envase",
+    "zh-TW": "包裝規格",
+    "zh-CN": "包装规格"
+  },
+  "Last Price": {
+    "es": "Último precio",
+    "zh-TW": "上次價格",
+    "zh-CN": "上次价格"
+  },
+  "Last Purchased": {
+    "es": "Última compra",
+    "zh-TW": "上次採購日期",
+    "zh-CN": "上次采购日期"
+  },
+  "Approved Substitute": {
+    "es": "Sustituto aprobado",
+    "zh-TW": "核准替代品",
+    "zh-CN": "批准替代品"
+  },
+  "Approved Substitutes": {
+    "es": "Sustitutos aprobados",
+    "zh-TW": "核准替代品",
+    "zh-CN": "批准替代品"
+  },
+  "DO NOT BUY": {
+    "es": "NO COMPRAR",
+    "zh-TW": "請勿購買",
+    "zh-CN": "请勿购买"
+  },
+  "Scan Barcode": {
+    "es": "Escanear código de barras",
+    "zh-TW": "掃描條碼",
+    "zh-CN": "扫描条码"
+  },
+  "View Supplier": {
+    "es": "Ver proveedor",
+    "zh-TW": "查看供應商",
+    "zh-CN": "查看供应商"
+  },
+  "Mobile Buying List": {
+    "es": "Lista de compras móvil",
+    "zh-TW": "行動採購清單",
+    "zh-CN": "移动采购清单"
+  },
+  "Verified Receiving": {
+    "es": "Recepción verificada",
+    "zh-TW": "核驗收貨",
+    "zh-CN": "核验收货"
+  },
+  "Purchasing Settings": {
+    "es": "Configuración de compras",
+    "zh-TW": "採購設定",
+    "zh-CN": "采购设置"
+  },
+  "Search Ingredients": {
+    "es": "Buscar ingredientes",
+    "zh-TW": "搜尋原料",
+    "zh-CN": "搜索原料"
+  },
+  "Edit Purchase Identification": {
+    "es": "Editar identificación de compra",
+    "zh-TW": "編輯採購識別",
+    "zh-CN": "编辑采购识别"
+  },
+  "Add Supplier Offer": {
+    "es": "Agregar oferta de proveedor",
+    "zh-TW": "新增供應商報價",
+    "zh-CN": "新增供应商报价"
+  },
+  "Quantity to purchase": {
+    "es": "Cantidad a comprar",
+    "zh-TW": "待採購數量",
+    "zh-CN": "待采购数量"
+  },
+  "Mark Found / Scan Barcode": {
+    "es": "Marcar encontrado / Escanear código",
+    "zh-TW": "標記已找到／掃描條碼",
+    "zh-CN": "标记已找到／扫描条码"
+  },
+  "Use Approved Substitute": {
+    "es": "Usar sustituto aprobado",
+    "zh-TW": "使用核准替代品",
+    "zh-CN": "使用批准替代品"
+  },
+  "Not Available": {
+    "es": "No disponible",
+    "zh-TW": "無法供應",
+    "zh-CN": "无法供应"
+  },
+  "Estimated Cost": {
+    "es": "Costo estimado",
+    "zh-TW": "預估成本",
+    "zh-CN": "预估成本"
+  },
+  "PO quantity": {
+    "es": "Cantidad de la orden",
+    "zh-TW": "採購單數量",
+    "zh-CN": "采购单数量"
+  },
+  "Verify & Receive": {
+    "es": "Verificar y recibir",
+    "zh-TW": "核驗並收貨",
+    "zh-CN": "核验并收货"
+  },
+  "Approval is enforced on the server. No supplier is switched automatically.": {
+    "es": "La aprobación se exige en el servidor. Ningún proveedor se cambia automáticamente.",
+    "zh-TW": "伺服器會強制執行核准流程，不會自動更換供應商。",
+    "zh-CN": "服务器会强制执行批准流程，不会自动更换供应商。"
+  },
+  "Approval Mode": {
+    "es": "Modo de aprobación",
+    "zh-TW": "核准模式",
+    "zh-CN": "批准模式"
+  },
+  "No approval": {
+    "es": "Sin aprobación",
+    "zh-TW": "無須核准",
+    "zh-CN": "无需批准"
+  },
+  "Approval above amount": {
+    "es": "Aprobación por encima del importe",
+    "zh-TW": "超過金額須核准",
+    "zh-CN": "超过金额须批准"
+  },
+  "Always require approval": {
+    "es": "Requerir aprobación siempre",
+    "zh-TW": "一律須核准",
+    "zh-CN": "一律须批准"
+  },
+  "Approval Threshold": {
+    "es": "Umbral de aprobación",
+    "zh-TW": "核准金額門檻",
+    "zh-CN": "批准金额门槛"
+  },
+  "Require verified receiving": {
+    "es": "Exigir recepción verificada",
+    "zh-TW": "要求核驗收貨",
+    "zh-CN": "要求核验收货"
+  },
+  "Purchasing Audit": {
+    "es": "Auditoría de compras",
+    "zh-TW": "採購稽核紀錄",
+    "zh-CN": "采购审计记录"
+  },
+  "Purchase Approval": {
+    "es": "Aprobación de compra",
+    "zh-TW": "採購核准",
+    "zh-CN": "采购批准"
+  },
+  "Supplier SKU / Product Code": {
+    "es": "SKU del proveedor / Código del producto",
+    "zh-TW": "供應商 SKU／產品代碼",
+    "zh-CN": "供应商 SKU／产品代码"
+  },
+  "Base units per package": {
+    "es": "Unidades base por envase",
+    "zh-TW": "每包裝基本單位數",
+    "zh-CN": "每包装基本单位数"
+  },
+  "Optional Secondary Photo": {
+    "es": "Foto secundaria opcional",
+    "zh-TW": "選填第二張照片",
+    "zh-CN": "选填第二张照片"
+  },
+  "The original package photo is preserved privately. Cropping only changes the thumbnail.": {
+    "es": "La foto original del envase se conserva de forma privada. El recorte solo cambia la miniatura.",
+    "zh-TW": "原始包裝照片會以私密方式保留，裁切僅會變更縮圖。",
+    "zh-CN": "原始包装照片会以私密方式保留，裁剪仅会更改缩略图。"
+  },
+  "Substitute Notes": {
+    "es": "Notas sobre sustitutos",
+    "zh-TW": "替代品備註",
+    "zh-CN": "替代品备注"
+  },
+  "Do Not Buy Notes": {
+    "es": "Notas de productos que no se deben comprar",
+    "zh-TW": "禁止採購備註",
+    "zh-CN": "禁止采购备注"
+  },
+  "Purchase Notes": {
+    "es": "Notas de compra",
+    "zh-TW": "採購備註",
+    "zh-CN": "采购备注"
+  },
+  "Add Approved Substitute": {
+    "es": "Agregar sustituto aprobado",
+    "zh-TW": "新增核准替代品",
+    "zh-CN": "新增批准替代品"
+  },
+  "Use a connected scanner or enter the barcode manually.": {
+    "es": "Use un escáner conectado o ingrese el código de barras manualmente.",
+    "zh-TW": "請使用已連接的掃描器或手動輸入條碼。",
+    "zh-CN": "请使用已连接的扫描器或手动输入条码。"
+  },
+  "Preferred": {
+    "es": "Preferido",
+    "zh-TW": "首選",
+    "zh-CN": "首选"
+  },
+  "Not Approved": {
+    "es": "No aprobado",
+    "zh-TW": "未核准",
+    "zh-CN": "未批准"
+  },
+  "Enter or scan barcode": {
+    "es": "Ingrese o escanee el código de barras",
+    "zh-TW": "輸入或掃描條碼",
+    "zh-CN": "输入或扫描条码"
+  },
+  "This barcode does not match the approved ingredient package.": {
+    "es": "Este código de barras no coincide con el envase de ingrediente aprobado.",
+    "zh-TW": "此條碼與核准的原料包裝不符。",
+    "zh-CN": "此条码与批准的原料包装不符。"
+  },
+  "Administrator override reason": {
+    "es": "Motivo de excepción del administrador",
+    "zh-TW": "管理員例外放行原因",
+    "zh-CN": "管理员例外放行原因"
+  },
+  "Verify Package": {
+    "es": "Verificar envase",
+    "zh-TW": "核驗包裝",
+    "zh-CN": "核验包装"
+  },
+  "Supplier Comparison & Price History": {
+    "es": "Comparación de proveedores e historial de precios",
+    "zh-TW": "供應商比較與價格歷史",
+    "zh-CN": "供应商比较与价格历史"
+  },
+  "Normalized Unit Cost": {
+    "es": "Costo unitario normalizado",
+    "zh-TW": "標準化單位成本",
+    "zh-CN": "标准化单位成本"
+  },
+  "Minimum Order": {
+    "es": "Pedido mínimo",
+    "zh-TW": "最低訂購量",
+    "zh-CN": "最低订购量"
+  },
+  "Lead Time": {
+    "es": "Plazo de entrega",
+    "zh-TW": "交貨天數",
+    "zh-CN": "交货天数"
+  },
+  "Delivery Reliability": {
+    "es": "Fiabilidad de entrega",
+    "zh-TW": "交貨可靠度",
+    "zh-CN": "交货可靠度"
+  },
+  "Quality Rating": {
+    "es": "Calificación de calidad",
+    "zh-TW": "品質評分",
+    "zh-CN": "质量评分"
+  },
+  "Preferred Supplier": {
+    "es": "Proveedor preferido",
+    "zh-TW": "首選供應商",
+    "zh-CN": "首选供应商"
+  },
+  "Best Price": {
+    "es": "Mejor precio",
+    "zh-TW": "最佳價格",
+    "zh-CN": "最佳价格"
+  },
+  "Fastest Delivery": {
+    "es": "Entrega más rápida",
+    "zh-TW": "最快交貨",
+    "zh-CN": "最快交货"
+  },
+  "Supplier Price History": {
+    "es": "Historial de precios del proveedor",
+    "zh-TW": "供應商價格歷史",
+    "zh-CN": "供应商价格历史"
+  },
+  "Normalized unit cost trend": {
+    "es": "Tendencia del costo unitario normalizado",
+    "zh-TW": "標準化單位成本趨勢",
+    "zh-CN": "标准化单位成本趋势"
+  },
+  "Package Price": {
+    "es": "Precio por envase",
+    "zh-TW": "每包裝價格",
+    "zh-CN": "每包装价格"
+  },
+  "Save Approved Offer": {
+    "es": "Guardar oferta aprobada",
+    "zh-TW": "儲存核准報價",
+    "zh-CN": "保存批准报价"
+  },
+  "Expected Approved Item vs. Received Item": {
+    "es": "Artículo aprobado esperado frente a artículo recibido",
+    "zh-TW": "預期核准品項與實收品項比較",
+    "zh-CN": "预期批准品项与实收品项比较"
+  },
+  "Expected Approved Item": {
+    "es": "Artículo aprobado esperado",
+    "zh-TW": "預期核准品項",
+    "zh-CN": "预期批准品项"
+  },
+  "Received Item": {
+    "es": "Artículo recibido",
+    "zh-TW": "實收品項",
+    "zh-CN": "实收品项"
+  },
+  "Search the ingredient to load its package reference before verification.": {
+    "es": "Busque el ingrediente para cargar la referencia del envase antes de verificar.",
+    "zh-TW": "核驗前請搜尋原料以載入包裝參考資料。",
+    "zh-CN": "核验前请搜索原料以加载包装参考资料。"
+  },
+  "Received Quantity": {
+    "es": "Cantidad recibida",
+    "zh-TW": "實收數量",
+    "zh-CN": "实收数量"
+  },
+  "Lot Number": {
+    "es": "Número de lote",
+    "zh-TW": "批號",
+    "zh-CN": "批号"
+  },
+  "Ingredient matches": {
+    "es": "El ingrediente coincide",
+    "zh-TW": "原料相符",
+    "zh-CN": "原料相符"
+  },
+  "Brand matches": {
+    "es": "La marca coincide",
+    "zh-TW": "品牌相符",
+    "zh-CN": "品牌相符"
+  },
+  "Package size matches": {
+    "es": "El tamaño del envase coincide",
+    "zh-TW": "包裝規格相符",
+    "zh-CN": "包装规格相符"
+  },
+  "Barcode matches": {
+    "es": "El código de barras coincide",
+    "zh-TW": "條碼相符",
+    "zh-CN": "条码相符"
+  },
+  "Package condition acceptable": {
+    "es": "El estado del envase es aceptable",
+    "zh-TW": "包裝狀況合格",
+    "zh-CN": "包装状况合格"
+  },
+  "A package mismatch or failed checklist requires an administrator override.": {
+    "es": "Una discrepancia del envase o una verificación fallida requiere una excepción del administrador.",
+    "zh-TW": "包裝不符或核對項目未通過時，須由管理員說明原因並放行。",
+    "zh-CN": "包装不符或核对项目未通过时，须由管理员说明原因并放行。"
+  },
+  "Finalize Verified Receiving": {
+    "es": "Finalizar recepción verificada",
+    "zh-TW": "完成核驗收貨",
+    "zh-CN": "完成核验收货"
+  },
+  "needed": {
+    "es": "pendiente de compra",
+    "zh-TW": "待採購",
+    "zh-CN": "待采购"
+  },
+  "found": {
+    "es": "encontrado",
+    "zh-TW": "已找到",
+    "zh-CN": "已找到"
+  },
+  "substitute": {
+    "es": "sustituto",
+    "zh-TW": "替代品",
+    "zh-CN": "替代品"
+  },
+  "unavailable": {
+    "es": "no disponible",
+    "zh-TW": "無法供應",
+    "zh-CN": "无法供应"
+  },
+  "purchase_identification": {
+    "es": "identificación de compra",
+    "zh-TW": "採購識別",
+    "zh-CN": "采购识别"
+  },
+  "approved_supplier_offer": {
+    "es": "oferta de proveedor aprobada",
+    "zh-TW": "核准供應商報價",
+    "zh-CN": "批准供应商报价"
+  },
+  "purchasing_settings": {
+    "es": "configuración de compras",
+    "zh-TW": "採購設定",
+    "zh-CN": "采购设置"
+  },
+  "purchase_approval": {
+    "es": "aprobación de compra",
+    "zh-TW": "採購核准",
+    "zh-CN": "采购批准"
+  },
+  "barcode_or_checklist_override": {
+    "es": "excepción de código o lista de verificación",
+    "zh-TW": "條碼或核對清單例外放行",
+    "zh-CN": "条码或核对清单例外放行"
+  },
+  "buying_status": {
+    "es": "estado de compra",
+    "zh-TW": "採購狀態",
+    "zh-CN": "采购状态"
+  },
+  "Workspace · Backup & Restore": {
+    "es": "Espacio de trabajo · Copia y restauración",
+    "zh-TW": "工作區 · 備份與還原",
+    "zh-CN": "工作区 · 备份与还原"
+  },
+  "Create Full Backup": {
+    "es": "Crear copia completa",
+    "zh-TW": "建立完整備份",
+    "zh-CN": "创建完整备份"
+  },
+  "Business records and supported uploaded files are included in a versioned ZIP with SHA-256 checksums. Passwords, PIN hashes, API keys and login sessions are excluded.": {
+    "es": "Los registros y archivos admitidos se incluyen en un ZIP versionado con sumas SHA-256. Se excluyen contraseñas, hashes de PIN, claves API y sesiones.",
+    "zh-TW": "以附有 SHA-256 校驗碼的版本化 ZIP 備份業務記錄與支援的上傳檔案；不包含密碼、PIN 雜湊、API 金鑰及登入工作階段。",
+    "zh-CN": "使用附有 SHA-256 校验码的版本化 ZIP 备份业务记录与支持的上传文件；不包含密码、PIN 哈希、API 密钥及登录会话。"
+  },
+  "Store backups securely. They contain customer and financial data.": {
+    "es": "Guarde las copias de forma segura. Contienen datos de clientes y financieros.",
+    "zh-TW": "請妥善保管備份，其中包含客戶與財務資料。",
+    "zh-CN": "请妥善保管备份，其中包含客户与财务数据。"
+  },
+  "Backup generated and validated. Download it before continuing.": {
+    "es": "Copia creada y validada. Descárguela antes de continuar.",
+    "zh-TW": "備份已建立並驗證，繼續前請先下載。",
+    "zh-CN": "备份已创建并验证，继续前请先下载。"
+  },
+  "Backup checksum": {
+    "es": "Suma de verificación",
+    "zh-TW": "備份校驗碼",
+    "zh-CN": "备份校验码"
+  },
+  "Backup date": {
+    "es": "Fecha de copia",
+    "zh-TW": "備份日期",
+    "zh-CN": "备份日期"
+  },
+  "File count": {
+    "es": "Cantidad de archivos",
+    "zh-TW": "檔案數量",
+    "zh-CN": "文件数量"
+  },
+  "Restore from CounterNest Backup": {
+    "es": "Restaurar desde copia de CounterNest",
+    "zh-TW": "從 CounterNest 備份還原",
+    "zh-CN": "从 CounterNest 备份还原"
+  },
+  "Restore creates a new workspace with new internal IDs. Use a new signed-in account that has no workspace. Existing workspaces are never overwritten.": {
+    "es": "La restauración crea un espacio nuevo con identificadores nuevos. Use una cuenta nueva sin espacio de trabajo. Los espacios existentes nunca se sobrescriben.",
+    "zh-TW": "還原會使用新的內部識別碼建立新工作區。請使用尚未建立工作區的新登入帳號，不會覆寫現有工作區。",
+    "zh-CN": "还原会使用新的内部标识创建新工作区。请使用尚未建立工作区的新登录账号，不会覆盖现有工作区。"
+  },
+  "Staff passwords and login accounts are not restored. Invite staff again after recovery.": {
+    "es": "No se restauran cuentas ni contraseñas de personal. Invite al personal de nuevo después de recuperar.",
+    "zh-TW": "不會還原員工密碼與登入帳號，請在還原後重新邀請員工。",
+    "zh-CN": "不会还原员工密码与登录账号，请在还原后重新邀请员工。"
+  },
+  "Upload Backup ZIP": {
+    "es": "Subir ZIP de copia",
+    "zh-TW": "上傳備份 ZIP",
+    "zh-CN": "上传备份 ZIP"
+  },
+  "Backup Preview": {
+    "es": "Vista previa de la copia",
+    "zh-TW": "備份預覽",
+    "zh-CN": "备份预览"
+  },
+  "Backup format version": {
+    "es": "Versión del formato de copia",
+    "zh-TW": "備份格式版本",
+    "zh-CN": "备份格式版本"
+  },
+  "Record counts": {
+    "es": "Cantidad de registros",
+    "zh-TW": "記錄數量",
+    "zh-CN": "记录数量"
+  },
+  "I reviewed this backup and want to create a new workspace.": {
+    "es": "Revisé esta copia y deseo crear un espacio nuevo.",
+    "zh-TW": "我已檢查此備份，並要建立新工作區。",
+    "zh-CN": "我已检查此备份，并要创建新工作区。"
+  },
+  "Confirm current password": {
+    "es": "Confirmar contraseña actual",
+    "zh-TW": "確認目前密碼",
+    "zh-CN": "确认当前密码"
+  },
+  "Restore Backup": {
+    "es": "Restaurar copia",
+    "zh-TW": "還原備份",
+    "zh-CN": "还原备份"
+  },
+  "Backup checksums validated. Review the preview before restoring.": {
+    "es": "Sumas de verificación validadas. Revise la vista previa antes de restaurar.",
+    "zh-TW": "備份校驗碼已通過驗證，還原前請檢查預覽。",
+    "zh-CN": "备份校验码已通过验证，还原前请检查预览。"
+  },
+  "Backup restored into a new workspace.": {
+    "es": "Copia restaurada en un espacio nuevo.",
+    "zh-TW": "備份已還原至新工作區。",
+    "zh-CN": "备份已还原至新工作区。"
+  },
+  "Danger Zone": {
+    "es": "Zona de peligro",
+    "zh-TW": "危險區域",
+    "zh-CN": "危险区域"
+  },
+  "Workspace is pending deletion. Normal operations are suspended.": {
+    "es": "El espacio está pendiente de eliminación. Las operaciones están suspendidas.",
+    "zh-TW": "工作區等待刪除，一般作業已暫停。",
+    "zh-CN": "工作区等待删除，一般操作已暂停。"
+  },
+  "Recovery deadline": {
+    "es": "Fecha límite de recuperación",
+    "zh-TW": "復原期限",
+    "zh-CN": "恢复期限"
+  },
+  "Cancel Workspace Deletion": {
+    "es": "Cancelar eliminación del espacio",
+    "zh-TW": "取消刪除工作區",
+    "zh-CN": "取消删除工作区"
+  },
+  "Only the workspace owner may request deletion. A fresh verified backup and password confirmation are required. Recovery remains available for 30 days.": {
+    "es": "Solo el propietario puede solicitar la eliminación. Se requieren una copia reciente validada y la contraseña. Se puede recuperar durante 30 días.",
+    "zh-TW": "僅工作區擁有者可要求刪除，必須提供新驗證的備份與密碼確認。30 天內可取消刪除。",
+    "zh-CN": "仅工作区所有者可要求删除，必须提供新验证的备份与密码确认。30 天内可取消删除。"
+  },
+  "Create and download a new backup above immediately before requesting deletion.": {
+    "es": "Cree y descargue arriba una copia nueva justo antes de solicitar la eliminación.",
+    "zh-TW": "要求刪除前，請立即在上方建立並下載新備份。",
+    "zh-CN": "要求删除前，请立即在上方创建并下载新备份。"
+  },
+  "Type exact business name": {
+    "es": "Escriba el nombre exacto del negocio",
+    "zh-TW": "輸入完整且完全相同的商家名稱",
+    "zh-CN": "输入完整且完全相同的商家名称"
+  },
+  "I downloaded the verified backup and understand the 30-day recovery period.": {
+    "es": "Descargué la copia validada y entiendo el período de recuperación de 30 días.",
+    "zh-TW": "我已下載驗證過的備份，並了解 30 天復原期。",
+    "zh-CN": "我已下载验证过的备份，并了解 30 天恢复期。"
+  },
+  "Final confirmation: suspend this workspace and request deletion.": {
+    "es": "Confirmación final: suspender este espacio y solicitar su eliminación.",
+    "zh-TW": "最終確認：暫停此工作區並要求刪除。",
+    "zh-CN": "最终确认：暂停此工作区并要求删除。"
+  },
+  "Backup & Delete Workspace": {
+    "es": "Respaldar y eliminar espacio",
+    "zh-TW": "備份並刪除工作區",
+    "zh-CN": "备份并删除工作区"
+  },
+  "Workspace deletion cancelled. Reload to resume operations.": {
+    "es": "Eliminación cancelada. Recargue para reanudar operaciones.",
+    "zh-TW": "已取消刪除工作區，請重新載入以繼續作業。",
+    "zh-CN": "已取消删除工作区，请重新加载以继续操作。"
+  },
+  "Workspace is pending deletion. You can cancel during the recovery period.": {
+    "es": "El espacio está pendiente de eliminación. Puede cancelarla durante el período de recuperación.",
+    "zh-TW": "工作區等待刪除，您可在復原期間取消。",
+    "zh-CN": "工作区等待删除，您可在恢复期间取消。"
+  },
+  "Backups up to 48 MB are supported. External image URLs and authentication accounts are outside the archive. Permanent purge is disabled until the deployment operator explicitly enables it after recovery testing.": {
+    "es": "Se admiten copias de hasta 48 MB. Se excluyen imágenes externas y cuentas de autenticación. El borrado permanente está desactivado hasta que el operador lo habilite tras probar la recuperación.",
+    "zh-TW": "支援最大 48 MB 備份，不包含外部圖片與驗證帳號。部署管理員完成復原測試並明確啟用前，永久清除功能維持停用。",
+    "zh-CN": "支持最大 48 MB 备份，不包含外部图片与认证账号。部署管理员完成恢复测试并明确启用前，永久清除功能保持停用。"
+  },
+  "Workspace Health": {
+    "es": "Estado del espacio",
+    "zh-TW": "工作區健康狀態",
+    "zh-CN": "工作区健康状态"
+  },
+  "Latest backup time": {
+    "es": "Última copia validada",
+    "zh-TW": "最近備份時間",
+    "zh-CN": "最近备份时间"
+  },
+  "No verified backup": {
+    "es": "No hay copia validada",
+    "zh-TW": "尚無驗證過的備份",
+    "zh-CN": "尚无验证过的备份"
+  },
+  "Supported by this browser; installation must be tested on the target device.": {
+    "es": "El navegador lo admite; debe probar la instalación en el dispositivo de destino.",
+    "zh-TW": "此瀏覽器支援，仍須在目標裝置測試安裝。",
+    "zh-CN": "此浏览器支持，仍须在目标设备测试安装。"
+  },
+  "A configured bucket is not proof of a successful upload. Live storage, restore, printing and deployment readiness require target-environment checks.": {
+    "es": "Un contenedor configurado no demuestra una carga correcta. El almacenamiento, la restauración, la impresión y la preparación requieren pruebas en el entorno de destino.",
+    "zh-TW": "已設定儲存空間不代表上傳成功。實際儲存、還原、列印與部署準備狀態仍須於目標環境測試。",
+    "zh-CN": "已配置存储桶不代表上传成功。实际存储、还原、打印与部署就绪状态仍须在目标环境测试。"
+  },
+  "configured; upload/download probe not performed": {
+    "es": "Configurado; carga y descarga sin probar",
+    "zh-TW": "已設定；尚未測試上傳及下載",
+    "zh-CN": "已设置；尚未测试上传和下载"
+  },
+  "missing product-images bucket": {
+    "es": "Falta el depósito product-images",
+    "zh-TW": "缺少 product-images 儲存桶",
+    "zh-CN": "缺少 product-images 存储桶"
+  },
+  "Connect Supabase to use workspace recovery.": {
+    "es": "Conecte Supabase para recuperar espacios.",
+    "zh-TW": "請連接 Supabase 以使用工作區復原功能。",
+    "zh-CN": "请连接 Supabase 以使用工作区恢复功能。"
+  },
+  "Backup checksum mismatch": {
+    "es": "La suma de verificación no coincide",
+    "zh-TW": "備份校驗碼不符",
+    "zh-CN": "备份校验码不符"
+  },
+  "Backup exceeds the supported 48 MB limit": {
+    "es": "La copia supera el límite de 48 MB",
+    "zh-TW": "備份超過支援的 48 MB 上限",
+    "zh-CN": "备份超过支持的 48 MB 上限"
+  },
+  "Fresh password confirmation is required": {
+    "es": "Debe confirmar de nuevo su contraseña",
+    "zh-TW": "必須重新確認密碼",
+    "zh-CN": "必须重新确认密码"
+  },
+  "Workspace owner required": {
+    "es": "Se requiere el propietario del espacio",
+    "zh-TW": "需要工作區擁有者權限",
+    "zh-CN": "需要工作区所有者权限"
+  },
+  "A supported uploaded file could not be read; backup stopped": {
+    "es": "No se pudo leer un archivo admitido; copia detenida",
+    "zh-TW": "無法讀取支援的上傳檔案，備份已停止",
+    "zh-CN": "无法读取支持的上传文件，备份已停止"
+  },
+  "A freshly generated backup of this workspace is required": {
+    "es": "Se requiere una copia recién creada de este espacio",
+    "zh-TW": "需要此工作區剛建立的備份",
+    "zh-CN": "需要此工作区刚创建的备份"
+  },
+  "Workspace changed after backup; create a new backup before deletion": {
+    "es": "El espacio cambió tras la copia; cree otra antes de eliminar",
+    "zh-TW": "工作區在備份後已變更，刪除前請建立新備份",
+    "zh-CN": "工作区在备份后已变更，删除前请创建新备份"
+  },
+  "Restore requires a new account without an existing workspace": {
+    "es": "La restauración requiere una cuenta nueva sin espacio existente",
+    "zh-TW": "還原需要尚無工作區的新帳號",
+    "zh-CN": "还原需要尚无工作区的新账号"
+  },
+  "Restore preview confirmation is required": {
+    "es": "Debe confirmar la vista previa antes de restaurar",
+    "zh-TW": "請先確認還原預覽",
+    "zh-CN": "请先确认还原预览"
+  },
+  "Restore file upload failed": {
+    "es": "Error al subir un archivo de restauración",
+    "zh-TW": "還原檔案上傳失敗",
+    "zh-CN": "还原文件上传失败"
+  },
+  "Permanent purge is disabled by the deployment operator": {
+    "es": "El operador tiene desactivado el borrado permanente",
+    "zh-TW": "部署管理員已停用永久清除功能",
+    "zh-CN": "部署管理员已停用永久清除功能"
+  },
+  "Backup contains a prohibited credential field": {
+    "es": "La copia contiene un campo de credenciales prohibido",
+    "zh-TW": "備份含有禁止的憑證欄位",
+    "zh-CN": "备份含有禁止的凭据字段"
+  },
+  "Foreign workspace row": {
+    "es": "Registro de otro espacio de trabajo",
+    "zh-TW": "含有其他工作區的記錄",
+    "zh-CN": "含有其他工作区的记录"
+  },
+  "Foreign workspace file": {
+    "es": "Archivo de otro espacio de trabajo",
+    "zh-TW": "含有其他工作區的檔案",
+    "zh-CN": "含有其他工作区的文件"
+  },
+  "Unsupported backup manifest": {
+    "es": "Manifiesto de copia no admitido",
+    "zh-TW": "不支援的備份清單",
+    "zh-CN": "不支持的备份清单"
+  },
+  "Invalid backup ZIP": {
+    "es": "ZIP de copia no válido",
+    "zh-TW": "備份 ZIP 無效",
+    "zh-CN": "备份 ZIP 无效"
+  },
+  "Backup CRC mismatch": {
+    "es": "La verificación CRC no coincide",
+    "zh-TW": "備份 CRC 校驗不符",
+    "zh-CN": "备份 CRC 校验不符"
+  },
+  "Backup workspace mismatch": {
+    "es": "El espacio de la copia no coincide",
+    "zh-TW": "備份工作區不符",
+    "zh-CN": "备份工作区不符"
+  },
+  "Backup record count mismatch": {
+    "es": "La cantidad de registros no coincide",
+    "zh-TW": "備份記錄數量不符",
+    "zh-CN": "备份记录数量不符"
+  },
+  "Backup file list mismatch": {
+    "es": "La lista de archivos no coincide",
+    "zh-TW": "備份檔案清單不符",
+    "zh-CN": "备份文件清单不符"
+  },
+  "Accounting Overview": {
+    "es": "Resumen contable",
+    "zh-TW": "會計概覽",
+    "zh-CN": "会计概览"
+  },
+  "All rows are valid": {
+    "es": "Todas las filas son válidas",
+    "zh-TW": "所有資料列均有效",
+    "zh-CN": "所有数据行均有效"
+  },
+  "App version": {
+    "es": "Versión de la app",
+    "zh-TW": "應用程式版本",
+    "zh-CN": "应用版本"
+  },
+  "Connected": {
+    "es": "Conectado",
+    "zh-TW": "已連線",
+    "zh-CN": "已连接"
+  },
+  "Correct all invalid rows before importing": {
+    "es": "Corrige todas las filas no válidas antes de importar",
+    "zh-TW": "匯入前請修正所有無效資料列",
+    "zh-CN": "导入前请修正所有无效数据行"
+  },
+  "Customize permissions": {
+    "es": "Personalizar permisos",
+    "zh-TW": "自訂權限",
+    "zh-CN": "自定义权限"
+  },
+  "Edge Function status": {
+    "es": "Estado de Edge Function",
+    "zh-TW": "Edge Function 狀態",
+    "zh-CN": "Edge Function 状态"
+  },
+  "I downloaded the verified backup.": {
+    "es": "Descargué la copia de seguridad verificada.",
+    "zh-TW": "我已下載驗證過的備份。",
+    "zh-CN": "我已下载验证过的备份。"
+  },
+  "I understand permanent deletion cannot be undone.": {
+    "es": "Entiendo que la eliminación permanente no se puede deshacer.",
+    "zh-TW": "我了解永久刪除後無法復原。",
+    "zh-CN": "我了解永久删除后无法恢复。"
+  },
+  "Import business data": {
+    "es": "Importar datos del negocio",
+    "zh-TW": "匯入商家資料",
+    "zh-CN": "导入商家数据"
+  },
+  "Import reason": {
+    "es": "Motivo de importación",
+    "zh-TW": "匯入原因",
+    "zh-CN": "导入原因"
+  },
+  "Import type": {
+    "es": "Tipo de importación",
+    "zh-TW": "匯入類型",
+    "zh-CN": "导入类型"
+  },
+  "Import validated rows": {
+    "es": "Importar filas validadas",
+    "zh-TW": "匯入已驗證資料列",
+    "zh-CN": "导入已验证数据行"
+  },
+  "Imported rows": {
+    "es": "Filas importadas",
+    "zh-TW": "已匯入資料列",
+    "zh-CN": "已导入数据行"
+  },
+  "Invoice Reference": {
+    "es": "Referencia de factura",
+    "zh-TW": "發票編號",
+    "zh-CN": "发票编号"
+  },
+  "Latest migration": {
+    "es": "Última migración",
+    "zh-TW": "最新資料庫遷移",
+    "zh-CN": "最新数据库迁移"
+  },
+  "Mark complete / Skip": {
+    "es": "Marcar completado / Omitir",
+    "zh-TW": "標記完成／略過",
+    "zh-CN": "标记完成／跳过"
+  },
+  "New Business Setup Wizard": {
+    "es": "Asistente de configuración del negocio",
+    "zh-TW": "新商家設定精靈",
+    "zh-CN": "新商家设置向导"
+  },
+  "Not mapped": {
+    "es": "Sin asignar",
+    "zh-TW": "未對應",
+    "zh-CN": "未映射"
+  },
+  "Owner access is protected. Operational permissions may be customized; legacy sales and financial actions retain their base role safeguards.": {
+    "es": "El acceso del propietario está protegido. Los permisos operativos son personalizables; las ventas y finanzas existentes conservan sus controles por rol.",
+    "zh-TW": "擁有者權限受到保護。可自訂營運權限；既有銷售及財務操作仍受基本角色限制。",
+    "zh-CN": "所有者权限受到保护。可自定义运营权限；现有销售和财务操作仍受基本角色限制。"
+  },
+  "Permanently Delete Workspace": {
+    "es": "Eliminar espacio permanentemente",
+    "zh-TW": "永久刪除工作區",
+    "zh-CN": "永久删除工作区"
+  },
+  "Permission Presets": {
+    "es": "Perfiles de permisos",
+    "zh-TW": "權限預設",
+    "zh-CN": "权限预设"
+  },
+  "Preset": {
+    "es": "Perfil",
+    "zh-TW": "預設",
+    "zh-CN": "预设"
+  },
+  "PWA status": {
+    "es": "Estado de PWA",
+    "zh-TW": "PWA 狀態",
+    "zh-CN": "PWA 状态"
+  },
+  "Refresh workspace": {
+    "es": "Actualizar espacio",
+    "zh-TW": "重新整理工作區",
+    "zh-CN": "刷新工作区"
+  },
+  "Row": {
+    "es": "Fila",
+    "zh-TW": "資料列",
+    "zh-CN": "数据行"
+  },
+  "Rows": {
+    "es": "Filas",
+    "zh-TW": "資料列",
+    "zh-CN": "数据行"
+  },
+  "Save Currency & Tax": {
+    "es": "Guardar moneda e impuesto",
+    "zh-TW": "儲存幣別與稅率",
+    "zh-CN": "保存币种和税率"
+  },
+  "Save Permissions": {
+    "es": "Guardar permisos",
+    "zh-TW": "儲存權限",
+    "zh-CN": "保存权限"
+  },
+  "Select a JPEG, PNG, or WebP image up to 12 MB.": {
+    "es": "Selecciona una imagen JPEG, PNG o WebP de hasta 12 MB.",
+    "zh-TW": "請選擇不超過 12 MB 的 JPEG、PNG 或 WebP 圖片。",
+    "zh-CN": "请选择不超过 12 MB 的 JPEG、PNG 或 WebP 图片。"
+  },
+  "Storage connection": {
+    "es": "Conexión de almacenamiento",
+    "zh-TW": "儲存服務連線",
+    "zh-CN": "存储服务连接"
+  },
+  "Supabase connection": {
+    "es": "Conexión de Supabase",
+    "zh-TW": "Supabase 連線",
+    "zh-CN": "Supabase 连接"
+  },
+  "The recovery period has ended. Permanent deletion requires operator enablement, a fresh downloaded backup and final owner confirmation.": {
+    "es": "El periodo de recuperación terminó. La eliminación permanente requiere habilitación del operador, una copia reciente descargada y confirmación final del propietario.",
+    "zh-TW": "復原期限已結束。永久刪除需要部署管理員啟用、下載最新備份及擁有者最終確認。",
+    "zh-CN": "恢复期限已结束。永久删除需要部署管理员启用、下载最新备份和所有者最终确认。"
+  },
+  "Upload CSV or XLSX, map columns, validate every row and review before importing. XLSX uses the first worksheet; export formulas as values. Existing records are not overwritten. Opening Inventory sets the named ingredient balance with an audited adjustment.": {
+    "es": "Carga CSV o XLSX, asigna columnas, valida y revisa cada fila. Se usa la primera hoja XLSX; exporta las fórmulas como valores. No se sobrescriben registros existentes. Inventario inicial ajusta el saldo del ingrediente con auditoría.",
+    "zh-TW": "上傳 CSV 或 XLSX，對應欄位並驗證及檢查每列後再匯入。XLSX 使用第一張工作表；請先將公式轉為值。不覆寫既有記錄。期初庫存會以稽核調整設定指定原料的餘額。",
+    "zh-CN": "上传 CSV 或 XLSX，映射列并验证、检查每行后再导入。XLSX 使用第一个工作表；请先将公式转为值。不覆盖现有记录。期初库存会以审计调整设置指定原料的余额。"
+  },
+  "Validate and Preview": {
+    "es": "Validar y previsualizar",
+    "zh-TW": "驗證並預覽",
+    "zh-CN": "验证并预览"
+  },
+  "Workspace": {
+    "es": "Espacio de trabajo",
+    "zh-TW": "工作區",
+    "zh-CN": "工作区"
+  },
+  "Workspace Pending Deletion": {
+    "es": "Espacio pendiente de eliminación",
+    "zh-TW": "工作區待刪除",
+    "zh-CN": "工作区待删除"
+  },
+  "Workspace sections": {
+    "es": "Secciones del espacio",
+    "zh-TW": "工作區區段",
+    "zh-CN": "工作区部分"
+  },
+  "Business Setup": {
+    "es": "Configuración del negocio",
+    "zh-TW": "商家設定",
+    "zh-CN": "商家设置"
+  },
+  "Import Tools": {
+    "es": "Herramientas de importación",
+    "zh-TW": "匯入工具",
+    "zh-CN": "导入工具"
+  },
+  "Business Profile": {
+    "es": "Perfil del negocio",
+    "zh-TW": "商家資料",
+    "zh-CN": "商家资料"
+  },
+  "Currency & Tax": {
+    "es": "Moneda e impuesto",
+    "zh-TW": "幣別與稅率",
+    "zh-CN": "币种和税率"
+  },
+  "Opening Inventory": {
+    "es": "Inventario inicial",
+    "zh-TW": "期初庫存",
+    "zh-CN": "期初库存"
+  },
+  "View operations": {
+    "es": "Ver operaciones",
+    "zh-TW": "檢視營運",
+    "zh-CN": "查看运营"
+  },
+  "Manage ingredients": {
+    "es": "Gestionar ingredientes",
+    "zh-TW": "管理原料",
+    "zh-CN": "管理原料"
+  },
+  "Manage suppliers": {
+    "es": "Gestionar proveedores",
+    "zh-TW": "管理供應商",
+    "zh-CN": "管理供应商"
+  },
+  "Approve purchases": {
+    "es": "Aprobar compras",
+    "zh-TW": "核准採購",
+    "zh-CN": "批准采购"
+  },
+  "Override purchase mismatch": {
+    "es": "Autorizar discrepancia de compra",
+    "zh-TW": "覆核採購不符",
+    "zh-CN": "覆核采购不符"
+  },
+  "Manage production": {
+    "es": "Gestionar producción",
+    "zh-TW": "管理生產",
+    "zh-CN": "管理生产"
+  },
+  "View costs": {
+    "es": "Ver costos",
+    "zh-TW": "檢視成本",
+    "zh-CN": "查看成本"
+  },
+  "Manage recalls": {
+    "es": "Gestionar retiradas",
+    "zh-TW": "管理召回",
+    "zh-CN": "管理召回"
+  },
+  "Manage permissions": {
+    "es": "Gestionar permisos",
+    "zh-TW": "管理權限",
+    "zh-CN": "管理权限"
+  },
+  "View accounting": {
+    "es": "Ver contabilidad",
+    "zh-TW": "檢視會計資料",
+    "zh-CN": "查看会计数据"
+  },
+  "Accounting": {
+    "es": "Contabilidad",
+    "zh-TW": "會計",
+    "zh-CN": "会计"
+  },
+  "Admin": {
+    "es": "Administrador",
+    "zh-TW": "管理員",
+    "zh-CN": "管理员"
+  },
+  "Workspace permanently deleted.": {
+    "es": "Espacio eliminado permanentemente.",
+    "zh-TW": "工作區已永久刪除。",
+    "zh-CN": "工作区已永久删除。"
+  },
+  "Exact business name and both confirmations are required": {
+    "es": "Escribe el nombre exacto del negocio y marca ambas confirmaciones.",
+    "zh-TW": "請輸入完整商家名稱並勾選兩項確認。",
+    "zh-CN": "请输入完整商家名称并勾选两项确认。"
+  },
+  "A freshly generated and server-validated backup is required": {
+    "es": "Se requiere una copia reciente validada por el servidor.",
+    "zh-TW": "需要剛產生並經伺服器驗證的備份。",
+    "zh-CN": "需要刚生成并经服务器验证的备份。"
+  },
+  "Workspace is already pending deletion": {
+    "es": "El espacio ya está pendiente de eliminación.",
+    "zh-TW": "工作區已進入待刪除狀態。",
+    "zh-CN": "工作区已进入待删除状态。"
+  },
+  "No pending deletion": {
+    "es": "No hay eliminación pendiente.",
+    "zh-TW": "沒有待刪除要求。",
+    "zh-CN": "没有待删除请求。"
+  },
+  "Recovery period has expired; contact the deployment administrator": {
+    "es": "El periodo de recuperación terminó; contacta al administrador del despliegue.",
+    "zh-TW": "復原期限已結束，請聯絡部署管理員。",
+    "zh-CN": "恢复期限已结束，请联系部署管理员。"
+  },
+  "Workspace is pending deletion; cancel recovery before resuming operations": {
+    "es": "El espacio está pendiente de eliminación; cancela la solicitud para reanudar las operaciones.",
+    "zh-TW": "工作區待刪除；請先取消刪除要求再恢復營運。",
+    "zh-CN": "工作区待删除；请先取消删除请求再恢复运营。"
+  },
+  "Existing workspace owner required": {
+    "es": "Se requiere el propietario del espacio existente.",
+    "zh-TW": "需要既有工作區擁有者權限。",
+    "zh-CN": "需要现有工作区所有者权限。"
+  },
+  "Authenticated account required": {
+    "es": "Se requiere una cuenta autenticada.",
+    "zh-TW": "需要已登入的帳號。",
+    "zh-CN": "需要已登录的账号。"
+  },
+  "Restore must use a new workspace ID": {
+    "es": "La restauración debe usar un ID de espacio nuevo.",
+    "zh-TW": "復原必須使用新的工作區 ID。",
+    "zh-CN": "恢复必须使用新的工作区 ID。"
+  },
+  "Invalid backup checksum": {
+    "es": "La suma de verificación de la copia no es válida.",
+    "zh-TW": "備份校驗碼無效。",
+    "zh-CN": "备份校验码无效。"
+  },
+  "Credential fields are prohibited": {
+    "es": "No se permiten campos de credenciales.",
+    "zh-TW": "禁止包含憑證欄位。",
+    "zh-CN": "禁止包含凭证字段。"
+  },
+  "Unsupported restore table: %": {
+    "es": "Tabla de restauración no compatible: %",
+    "zh-TW": "不支援的復原資料表：%",
+    "zh-CN": "不支持的恢复数据表：%"
+  },
+  "Unsupported restore column": {
+    "es": "Columna de restauración no compatible.",
+    "zh-TW": "不支援的復原欄位。",
+    "zh-CN": "不支持的恢复字段。"
+  },
+  "Foreign authentication reference": {
+    "es": "Referencia de autenticación de otra cuenta.",
+    "zh-TW": "包含其他帳號的驗證參照。",
+    "zh-CN": "包含其他账号的认证引用。"
+  },
+  "Foreign workspace reference": {
+    "es": "Referencia a otro espacio.",
+    "zh-TW": "包含其他工作區的參照。",
+    "zh-CN": "包含其他工作区的引用。"
+  },
+  "Reference is outside this backup: %.%": {
+    "es": "La referencia está fuera de esta copia: %.%",
+    "zh-TW": "參照不在此備份內：%.%",
+    "zh-CN": "引用不在此备份内：%.%"
+  },
+  "Restore table has no safe primary key": {
+    "es": "La tabla no tiene una clave primaria segura para restaurar.",
+    "zh-TW": "資料表沒有可安全復原的主索引鍵。",
+    "zh-CN": "数据表没有可安全恢复的主键。"
+  },
+  "Restore has unresolved or cyclic references; no data was committed": {
+    "es": "La restauración tiene referencias sin resolver o circulares; no se guardó ningún dato.",
+    "zh-TW": "復原資料有未解決或循環參照；未寫入任何資料。",
+    "zh-CN": "恢复数据有未解决或循环引用；未写入任何数据。"
+  },
+  "Owner confirmation and expired 30-day recovery period required": {
+    "es": "Se requiere confirmación del propietario y que termine el periodo de recuperación de 30 días.",
+    "zh-TW": "需要擁有者確認，且 30 天復原期限必須已結束。",
+    "zh-CN": "需要所有者确认，且 30 天恢复期限必须已结束。"
+  },
+  "Dependent records prevent safe purge; no deletion committed": {
+    "es": "Hay registros dependientes que impiden eliminar de forma segura; no se eliminó nada.",
+    "zh-TW": "相依記錄阻止安全清除；未刪除任何資料。",
+    "zh-CN": "依赖记录阻止安全清除；未删除任何数据。"
+  },
+  "Permission management access required": {
+    "es": "Se requiere permiso para gestionar permisos.",
+    "zh-TW": "需要權限管理權限。",
+    "zh-CN": "需要权限管理权限。"
+  },
+  "Valid preset and change reason required": {
+    "es": "Se requiere un perfil válido y un motivo del cambio.",
+    "zh-TW": "需要有效的權限預設及變更原因。",
+    "zh-CN": "需要有效的权限预设和变更原因。"
+  },
+  "Owner permissions cannot be changed here": {
+    "es": "Los permisos del propietario no se pueden cambiar aquí.",
+    "zh-TW": "無法在此變更擁有者權限。",
+    "zh-CN": "无法在此更改所有者权限。"
+  },
+  "Workspace owner access required": {
+    "es": "Se requiere acceso de propietario del espacio.",
+    "zh-TW": "需要工作區擁有者權限。",
+    "zh-CN": "需要工作区所有者权限。"
+  },
+  "Unknown permission": {
+    "es": "Permiso desconocido.",
+    "zh-TW": "未知權限。",
+    "zh-CN": "未知权限。"
+  },
+  "Cannot grant a permission you do not hold": {
+    "es": "No puedes conceder un permiso que no tienes.",
+    "zh-TW": "無法授予自己未持有的權限。",
+    "zh-CN": "无法授予自己未持有的权限。"
+  },
+  "Invalid setup step": {
+    "es": "Paso de configuración no válido.",
+    "zh-TW": "無效的設定步驟。",
+    "zh-CN": "无效的设置步骤。"
+  },
+  "Valid currency and tax required": {
+    "es": "Se requieren moneda e impuesto válidos.",
+    "zh-TW": "需要有效的幣別及稅率。",
+    "zh-CN": "需要有效的币种和税率。"
+  },
+  "Administrator import access required": {
+    "es": "Se requiere acceso de administrador para importar.",
+    "zh-TW": "需要管理員匯入權限。",
+    "zh-CN": "需要管理员导入权限。"
+  },
+  "Choose one to 500 valid import rows": {
+    "es": "Selecciona entre 1 y 500 filas válidas para importar.",
+    "zh-TW": "請選擇 1 至 500 列有效資料。",
+    "zh-CN": "请选择 1 至 500 行有效数据。"
+  },
+  "Invalid row": {
+    "es": "Fila no válida.",
+    "zh-TW": "無效的資料列。",
+    "zh-CN": "无效的数据行。"
+  },
+  "Name is required": {
+    "es": "El nombre es obligatorio.",
+    "zh-TW": "名稱為必填。",
+    "zh-CN": "名称为必填。"
+  },
+  "Duplicate name in import": {
+    "es": "Nombre duplicado en la importación.",
+    "zh-TW": "匯入資料中的名稱重複。",
+    "zh-CN": "导入数据中的名称重复。"
+  },
+  "Invalid nonnegative numeric value": {
+    "es": "Introduce un número válido igual o mayor que cero.",
+    "zh-TW": "請輸入大於或等於零的有效數字。",
+    "zh-CN": "请输入大于或等于零的有效数字。"
+  },
+  "Numeric value is too large": {
+    "es": "El valor numérico es demasiado grande.",
+    "zh-TW": "數值過大。",
+    "zh-CN": "数值过大。"
+  },
+  "Selling price is required": {
+    "es": "El precio de venta es obligatorio.",
+    "zh-TW": "售價為必填。",
+    "zh-CN": "售价为必填。"
+  },
+  "Base unit is required": {
+    "es": "La unidad base es obligatoria.",
+    "zh-TW": "基本單位為必填。",
+    "zh-CN": "基本单位为必填。"
+  },
+  "Quantity is required": {
+    "es": "La cantidad es obligatoria.",
+    "zh-TW": "數量為必填。",
+    "zh-CN": "数量为必填。"
+  },
+  "Barcode already exists": {
+    "es": "El código de barras ya existe.",
+    "zh-TW": "條碼已存在。",
+    "zh-CN": "条码已存在。"
+  },
+  "Product already exists": {
+    "es": "El producto ya existe.",
+    "zh-TW": "商品已存在。",
+    "zh-CN": "商品已存在。"
+  },
+  "Target must meet reorder level": {
+    "es": "El objetivo debe ser igual o mayor que el punto de reposición.",
+    "zh-TW": "目標庫存不得低於補貨點。",
+    "zh-CN": "目标库存不得低于补货点。"
+  },
+  "Ingredient already exists": {
+    "es": "El ingrediente ya existe.",
+    "zh-TW": "原料已存在。",
+    "zh-CN": "原料已存在。"
+  },
+  "Supplier already exists": {
+    "es": "El proveedor ya existe.",
+    "zh-TW": "供應商已存在。",
+    "zh-CN": "供应商已存在。"
+  },
+  "Customer already exists": {
+    "es": "El cliente ya existe.",
+    "zh-TW": "顧客已存在。",
+    "zh-CN": "顾客已存在。"
+  },
+  "Import reason and key required": {
+    "es": "Se requiere motivo y clave de importación.",
+    "zh-TW": "需要匯入原因及識別碼。",
+    "zh-CN": "需要导入原因和标识码。"
+  },
+  "Import key already used with different details": {
+    "es": "La clave de importación ya se usó con otros datos.",
+    "zh-TW": "此匯入識別碼已用於不同資料。",
+    "zh-CN": "此导入标识码已用于不同数据。"
+  },
+  "Accounting access required": {
+    "es": "Se requiere acceso contable.",
+    "zh-TW": "需要會計存取權限。",
+    "zh-CN": "需要会计访问权限。"
+  },
+  "Choose a date range up to one year": {
+    "es": "Selecciona un periodo máximo de un año.",
+    "zh-TW": "請選擇不超過一年的日期範圍。",
+    "zh-CN": "请选择不超过一年的日期范围。"
+  },
+  "Record not found": {
+    "es": "Registro no encontrado.",
+    "zh-TW": "找不到記錄。",
+    "zh-CN": "找不到记录。"
+  },
+  "Import file must be 8 MB or smaller": {
+    "es": "El archivo debe ser de 8 MB o menos.",
+    "zh-TW": "匯入檔案不得超過 8 MB。",
+    "zh-CN": "导入文件不得超过 8 MB。"
+  },
+  "Choose a CSV or XLSX file": {
+    "es": "Selecciona un archivo CSV o XLSX.",
+    "zh-TW": "請選擇 CSV 或 XLSX 檔案。",
+    "zh-CN": "请选择 CSV 或 XLSX 文件。"
+  },
+  "Invalid CSV quoting": {
+    "es": "Las comillas del CSV no son válidas.",
+    "zh-TW": "CSV 引號格式無效。",
+    "zh-CN": "CSV 引号格式无效。"
+  },
+  "Unclosed CSV quote": {
+    "es": "Hay comillas sin cerrar en el CSV.",
+    "zh-TW": "CSV 有未關閉的引號。",
+    "zh-CN": "CSV 有未关闭的引号。"
+  },
+  "Choose one to 500 data rows": {
+    "es": "Selecciona entre 1 y 500 filas de datos.",
+    "zh-TW": "請選擇 1 至 500 列資料。",
+    "zh-CN": "请选择 1 至 500 行数据。"
+  },
+  "Unique nonempty column headers required": {
+    "es": "Los encabezados deben ser únicos y no estar vacíos.",
+    "zh-TW": "欄位標題不得為空或重複。",
+    "zh-CN": "列标题不得为空或重复。"
+  },
+  "A row has more columns than the header": {
+    "es": "Una fila tiene más columnas que el encabezado.",
+    "zh-TW": "資料列的欄位數超過標題。",
+    "zh-CN": "数据行的列数超过标题。"
+  },
+  "Export formulas as values before importing": {
+    "es": "Exporta las fórmulas como valores antes de importar.",
+    "zh-TW": "匯入前請將公式匯出為值。",
+    "zh-CN": "导入前请将公式导出为值。"
+  },
+  "Too many worksheet columns": {
+    "es": "La hoja tiene demasiadas columnas.",
+    "zh-TW": "工作表欄位過多。",
+    "zh-CN": "工作表列数过多。"
+  },
+  "Worksheet contains an error value": {
+    "es": "La hoja contiene un valor de error.",
+    "zh-TW": "工作表包含錯誤值。",
+    "zh-CN": "工作表包含错误值。"
+  },
+  "Map the Name column": {
+    "es": "Asigna la columna Nombre.",
+    "zh-TW": "請對應名稱欄位。",
+    "zh-CN": "请映射名称列。"
+  },
+  "Unsupported backup size": {
+    "es": "El tamaño de la copia no es compatible.",
+    "zh-TW": "備份大小不受支援。",
+    "zh-CN": "备份大小不受支持。"
+  },
+  "Unsupported or foreign workspace file": {
+    "es": "Archivo no compatible o de otro espacio.",
+    "zh-TW": "檔案不受支援或屬於其他工作區。",
+    "zh-CN": "文件不受支持或属于其他工作区。"
+  },
+  "Workspace files changed after backup; create a new backup before deletion": {
+    "es": "Los archivos cambiaron después de la copia; crea otra antes de eliminar.",
+    "zh-TW": "備份後檔案已變更；刪除前請重新備份。",
+    "zh-CN": "备份后文件已更改；删除前请重新备份。"
+  },
+  "A supported uploaded file could not be read; deletion stopped": {
+    "es": "No se pudo leer un archivo subido; se detuvo la eliminación.",
+    "zh-TW": "無法讀取上傳的檔案；已停止刪除。",
+    "zh-CN": "无法读取上传的文件；已停止删除。"
+  },
+  "Unsupported storage bucket": {
+    "es": "Depósito de almacenamiento no compatible.",
+    "zh-TW": "不支援的儲存桶。",
+    "zh-CN": "不支持的存储桶。"
+  },
+  "Explicit permanent deletion confirmation required": {
+    "es": "Se requiere confirmación explícita de eliminación permanente.",
+    "zh-TW": "需要明確確認永久刪除。",
+    "zh-CN": "需要明确确认永久删除。"
+  },
+  "Correct all invalid import rows before importing": {
+    "es": "Corrige todas las filas no válidas antes de importar.",
+    "zh-TW": "匯入前請修正所有無效的匯入資料列。",
+    "zh-CN": "导入前请修正所有无效的导入数据行。"
+  },
+  "Frontend build/version": {
+    "es": "Compilación/versión del frontend",
+    "zh-TW": "前端組建／版本",
+    "zh-CN": "前端构建／版本"
+  },
+  "Backup status": {
+    "es": "Estado de la copia",
+    "zh-TW": "備份狀態",
+    "zh-CN": "备份状态"
+  },
+  "Verified backup available": {
+    "es": "Copia verificada disponible",
+    "zh-TW": "已有驗證過的備份",
+    "zh-CN": "已有验证过的备份"
+  },
+  "Ingredient purchase cards, production reservations and protected workspace recovery.": {
+    "es": "Tarjetas de compra de ingredientes, reservas de producción y recuperación protegida del espacio.",
+    "zh-TW": "原料採購卡、生產預留及受保護的工作區復原。",
+    "zh-CN": "原料采购卡、生产预留和受保护的工作区恢复。"
+  },
+  "Owner credentials cannot be reset by another staff member.": {
+    "es": "Otro empleado no puede restablecer las credenciales del propietario.",
+    "zh-TW": "其他員工無法重設擁有者的登入憑證。",
+    "zh-CN": "其他员工无法重置所有者的登录凭证。"
+  },
+  "Workspace ownership could not be verified": {
+    "es": "No se pudo verificar la propiedad del espacio.",
+    "zh-TW": "無法驗證工作區擁有者。",
+    "zh-CN": "无法验证工作区所有者。"
+  },
+  "Create an employee invitation, then ask the owner to grant Admin access": {
+    "es": "Crea una invitación de empleado y pide al propietario que conceda acceso de administrador.",
+    "zh-TW": "請先建立員工邀請，再由擁有者授予管理員權限。",
+    "zh-CN": "请先创建员工邀请，再由所有者授予管理员权限。"
   }
 }

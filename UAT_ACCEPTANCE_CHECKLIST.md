@@ -1,20 +1,24 @@
-# Staging acceptance checklist
+# RC5 acceptance checklist
 
-Record tester, date, business, build, browser/device, role, language and evidence for each case. Automated component/database tests supplement this checklist; they do not constitute real staff/device acceptance.
+Automated results are in BUILD_VALIDATION.json. These unchecked items require target-environment evidence.
 
-Repeat the applicable steps for Administrator, Cashier, Production and Inventory in EN, ES, zh-TW and zh-CN (16 cases). Use distinct real staging accounts and two separate shops.
-
-- Confirm home layout, title/business branding, permitted sidebar sections, direct URL refresh and denied pages. Pin/unpin pages, sign out/in, and confirm another account does not inherit preferences.
-- Open Ctrl/Cmd+K. Search each permitted record type, navigate with arrows/Enter/Escape, verify focus returns, recent pages update, and unrelated-shop/customer/staff/financial records remain hidden.
-- Exercise quick actions. Verify unauthorized actions are absent and direct RPC attempts remain denied. Check register status; only Admin opens Daily Cash with station and opening amount. Cashier login must not ask for opening cash.
-- Check notification severity/time/record navigation, individual read/all-read persistence, duplicate prevention after polling, expiry/shortage/blocked workflow/issue/customer-response alerts and empty states.
-- Set Light/Dark/System and verify contrast, keyboard focus, configured branding color, tables and modal controls. Test coarse-pointer tablet targets, portrait/landscape, scrolling, virtual keyboards and desktop density.
-- Cashier: favorite/search/category/recent products, lookup customer, barcode/Alt+B/F/U/H. Hold and resume through current price/stock changes. Check 24-hour expiry and account/shop isolation. Interrupt a submitted checkout, retry the same reference, and verify one receipt/stock/cash deduction. Test cash, card and QR confirmation, refund/reprint and FEFO.
-- Production: view five board columns with batch, quantity, due date, linked order, shortage and assignee; change stage with a concurrent edit. Verify stage changes do not produce stock; complete batches through the original audited production/FEFO workflow as an authorized manager.
-- Inventory: review available/required/shortage values and units, distinguish reorder target from production need, inspect incoming POs and expiring lots. Receive a delivery and an approved PO once. Reject cross-shop/double receipts. Confirm supplier creation, PO creation/cancellation and private attachment uploads remain management actions.
-- Customer: open /catalogue-display and /catalogue using a protected QR link in each language. Product text must remain unchanged. Test detail/gallery/variants/promotions, kiosk/monitor (no automatic slides), image loading and responsive navigation. Upload and crop a photo: original, overlay, zoom/framing/reset/preview, Save crop before upload, and original download. Export portrait photo-card PDFs on A4 and Letter. Verify default/uploaded/removed logo behavior. No download or app install is required.
-- Submit a pre-order with no pickup date. Verify unique number, private tracking link, same-request retry, no payment/stock reservation, selected contact restriction, audited override and editable templates. Keep staff notes private. Accept directly from New Request without manual status traversal; decline with a required reason. Confirm optional pickup/deposit and one linked order/job. Print the accepted receipt in each language and verify staff notes are absent. Verify deposit rollback on failure and paid reprints after tax changes.
-- Change company name/logo; verify header, browser title, public displays, reports, QR branding, receipts and PDFs. Print at actual receipt paper widths and A4 in all languages; verify glyphs, breaks and numbers.
-- Verify GitHub upload exclusions, Vercel HTTPS routes/assets/PWA update, Supabase RLS, backups and restore rehearsal. Review every entry in KNOWN_ISSUES.md and I18N_COVERAGE.json before signing off.
-
-Acceptance: [ ] Passed [ ] Conditional [ ] Failed. Tester/signature: ______. Evidence and unresolved findings: ______.
+- [ ] Apply only84–87 to staged RC4; verify prior83 hashes, existing rows and owner backfill.
+- [ ] Deploy workspace-lifecycle and verify JWT/owner/fresh-password guards; confirm no frontend service key.
+- [ ] Upload original/thumbnail/secondary/substitute ingredient photos; replace/remove, signed preview, master/purchase/buying/receiving views and no public catalogue exposure.
+- [ ] Preferred/substitute/mismatched/manual/scanned barcode; failed checklist blocks receipt; reasoned manager override audit.
+- [ ] Supplier multi-offer comparison, normalized base-unit costs, pack rounding, actual price/package history, no automatic supplier change.
+- [ ] Approval none/threshold/always; staff need → manager approval → one PO; legacy bypass blocked when configured.
+- [ ] Mobile buying found/substitute/unavailable, supplier contact and expected-vs-received quantity/lot/expiry.
+- [ ] Accepted pre-order reservation, linked batches without double demand/jobs, shortage need, cancellation and completion; physical stock unchanged until consumption.
+- [ ] Latest approved/weighted-average recipe costs, labor/packaging/overhead/yield/target margin; explicit selling-price approval.
+- [ ] FEFO/expired/recall exclusions and supplierlot → batch → finishedproduct → sale/preorder trace.
+- [ ] Waste reason/quantity/user/date/cost/batch and cause/item/trend summaries.
+- [ ] Role dashboards, stable exception IDs, authorized global search, quick actions and permission overrides.
+- [ ] Full backup with allseven supported buckets, missing-file failure, CRC/hash tamper rejection, preview counts and real new-account restore at realistic size.
+- [ ] Reconcile restored cash/stock/lot/order/history counts and remapped photos; invite staff and review sharing/settings.
+- [ ] Delete gates missing/stale/changed backup, wrong password/name/checkboxes; pending freeze/public catalogue suspension; owner cancellation within30 days.
+- [ ] Operator-disabled purge stays disabled; after rehearsal test expired-recovery purge on disposable staging data only.
+- [ ] CSV/XLSX mapping, invalid/duplicate/formula/oversize input, canonical phones, stock-ledger opening counts, atomic failure and retry.
+- [ ] Eight-step setup progress, currency/tax, Skip/open actions, register opened after login only; readiness versions/storage/Edge/backup/PWA status.
+- [ ] EN/ES/zh-TW/zh-CN labels/errors preserve entered business names/content. Tablet/mobile touch, keyboard/focus/contrast/screen reader.
+- [ ] Regression POS payment/stock/retry/refund/deposit, receipts/PDF/QR, customer PWA installation/reopening and physical printer.

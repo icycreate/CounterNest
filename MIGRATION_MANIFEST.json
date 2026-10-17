@@ -403,5 +403,35 @@
     "order": 81,
     "file": "202610161200_catalogue_finalization.sql",
     "sha256": "d058a4a6ba97329be6ee9fca087032f8a41e6478f8b9b54d85567362a614e510"
+  },
+  {
+    "order": 82,
+    "file": "202610161500_original_catalogue_images.sql",
+    "sha256": "cecaa6552e63afeed6986dc32f6ed967d9c49ddc5f758d34772c9e6affce728e"
+  },
+  {
+    "order": 83,
+    "file": "202610161600_phone_receipt_consistency.sql",
+    "sha256": "39b4c967d0796894a8d6255f798c1013fd22bcb186a4246113ed7882a58ba4ba"
+  },
+  {
+    "order": 84,
+    "file": "202610171000_ingredient_purchasing.sql",
+    "sha256": "18fb1d5f63daaccb3311282e9edf61ca5956809ced84d1ae36952f50ecd02c16"
+  },
+  {
+    "order": 85,
+    "file": "202610171100_production_intelligence.sql",
+    "sha256": "71d3689713b335d095b4fc845cca8aac1fb52d13457243c767b5b77fb396fd77"
+  },
+  {
+    "order": 86,
+    "file": "202610171200_workspace_recovery.sql",
+    "sha256": "8247c44159d0ee3d3db166e0bf8490468dd7978ba908561b8094e4e84f9f9668"
+  },
+  {
+    "order": 87,
+    "file": "202610171300_operations_import_permissions.sql",
+    "sha256": "8cd1a27531124091cecc23a9ba63279cf7bc1e05038c3c6aaf1fc4cbb42877a5"
   }
 ]

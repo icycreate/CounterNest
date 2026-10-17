@@ -1,6 +1,8 @@
-# Supabase migration order
+# Supabase migration order — RC5
 
-Fresh database: apply every file below once, in order. Existing finalized RC1 update at migration 79: apply only 80 and 81. If the unfinished UX source migration 80 is already applied, apply only 81. Never replay or edit applied migrations.
+2.0.0-rc.5 • 2026-10-17-operations1
+
+Delivered RC4 ends at83. Apply only84,85,86,87 in order. All83 earlier migration files are unchanged. Older installations apply only missing files; fresh databases use all87. Back up and rehearse staging before production.
 
 1. 20260815_initial.sql
 2. 20260815_logo_settings.sql
@@ -83,3 +85,11 @@ Fresh database: apply every file below once, in order. Existing finalized RC1 up
 79. 202610151200_customer_requests_register.sql
 80. 202610151800_ux_workspace.sql
 81. 202610161200_catalogue_finalization.sql
+82. 202610161500_original_catalogue_images.sql
+83. 202610161600_phone_receipt_consistency.sql
+84. 202610171000_ingredient_purchasing.sql
+85. 202610171100_production_intelligence.sql
+86. 202610171200_workspace_recovery.sql
+87. 202610171300_operations_import_permissions.sql
+
+Every SHA-256 is in MIGRATION_MANIFEST.json. Deploy the new workspace-lifecycle Edge Function and its shared archive module after migrations. Keep server-only credentials in Supabase Edge secrets.

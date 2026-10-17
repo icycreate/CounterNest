@@ -1,0 +1,8 @@
+/* The same geometry is used on screen and by browser print / Save PDF. */
+.receipt-sheet{box-sizing:border-box;width:80mm;max-width:100%;padding:5mm 4mm}
+.receipt-brand>img{display:block;margin:0 auto 7px;width:72px;height:72px;object-fit:contain;border-radius:0;clip-path:none;border:0;padding:0}
+.receipt-brand,.receipt-catalogue-qr{text-align:center}
+.receipt-item-head,.receipt-item{grid-template-columns:minmax(0,1fr) 26px 58px 66px;gap:5px}
+.receipt-item>span:nth-child(n+2),.receipt-item-head>span:nth-child(n+2){text-align:right}
+.preorder-receipt-preview{display:block;width:100%;height:65vh;border:1px solid var(--line);background:white}
+@media print{body:has(.receipt-backdrop) .receipt-sheet{box-sizing:border-box;width:80mm;max-width:80mm;padding:5mm 4mm}}

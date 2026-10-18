@@ -1,0 +1,162 @@
+[
+  {
+    "file": "src/AlertsEscalations.tsx",
+    "controls": 2
+  },
+  {
+    "file": "src/App.tsx",
+    "controls": 436
+  },
+  {
+    "file": "src/CashierHome.tsx",
+    "controls": 2
+  },
+  {
+    "file": "src/Catalogue.tsx",
+    "controls": 84
+  },
+  {
+    "file": "src/CatalogueAdvanced.tsx",
+    "controls": 29
+  },
+  {
+    "file": "src/CataloguePreorders.tsx",
+    "controls": 75
+  },
+  {
+    "file": "src/CommercialCatalogue.tsx",
+    "controls": 38
+  },
+  {
+    "file": "src/CommercialOperations.tsx",
+    "controls": 88
+  },
+  {
+    "file": "src/CustomerContactSettings.tsx",
+    "controls": 13
+  },
+  {
+    "file": "src/CustomerDisplay.tsx",
+    "controls": 15
+  },
+  {
+    "file": "src/DailyChecklists.tsx",
+    "controls": 3
+  },
+  {
+    "file": "src/FinishedBatchTraceability.tsx",
+    "controls": 19
+  },
+  {
+    "file": "src/HardwareCommissioning.tsx",
+    "controls": 24
+  },
+  {
+    "file": "src/i18n.tsx",
+    "controls": 4
+  },
+  {
+    "file": "src/ImageCropper.tsx",
+    "controls": 13
+  },
+  {
+    "file": "src/IngredientPurchasing.tsx",
+    "controls": 91
+  },
+  {
+    "file": "src/InternalGoLive.tsx",
+    "controls": 6
+  },
+  {
+    "file": "src/InventorySources.tsx",
+    "controls": 11
+  },
+  {
+    "file": "src/IssueReport.tsx",
+    "controls": 17
+  },
+  {
+    "file": "src/OperationalAcceptance.tsx",
+    "controls": 3
+  },
+  {
+    "file": "src/OperationalTasks.tsx",
+    "controls": 38
+  },
+  {
+    "file": "src/OperationsAnalytics.tsx",
+    "controls": 6
+  },
+  {
+    "file": "src/OperationsCalendar.tsx",
+    "controls": 43
+  },
+  {
+    "file": "src/OperationsCenter.tsx",
+    "controls": 34
+  },
+  {
+    "file": "src/OperationsSetup.tsx",
+    "controls": 37
+  },
+  {
+    "file": "src/PhoneInput.tsx",
+    "controls": 3
+  },
+  {
+    "file": "src/PosTools.tsx",
+    "controls": 8
+  },
+  {
+    "file": "src/ProductionOperations.tsx",
+    "controls": 19
+  },
+  {
+    "file": "src/ProductionPlanning.tsx",
+    "controls": 22
+  },
+  {
+    "file": "src/ProductionStudio.tsx",
+    "controls": 155
+  },
+  {
+    "file": "src/PurchaseItemEditors.tsx",
+    "controls": 43
+  },
+  {
+    "file": "src/RecallCaseManagement.tsx",
+    "controls": 10
+  },
+  {
+    "file": "src/RecipeInventory.tsx",
+    "controls": 88
+  },
+  {
+    "file": "src/SearchField.tsx",
+    "controls": 1
+  },
+  {
+    "file": "src/SecurityRecovery.tsx",
+    "controls": 33
+  },
+  {
+    "file": "src/ShiftHandover.tsx",
+    "controls": 24
+  },
+  {
+    "file": "src/StaffSchedule.tsx",
+    "controls": 21
+  },
+  {
+    "file": "src/SupplyOperations.tsx",
+    "controls": 103
+  },
+  {
+    "file": "src/UxShell.tsx",
+    "controls": 16
+  },
+  {
+    "file": "src/WorkspaceRecovery.tsx",
+    "controls": 33
+  }
+]

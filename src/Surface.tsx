@@ -1,0 +1,3 @@
+import type {HTMLAttributes,ReactNode} from 'react'
+export function Card({className='panel',...props}:HTMLAttributes<HTMLElement>){return <section {...props} data-cn-card="true" className={className}/>}
+export function SectionHeader({title,description,icon,actions}:{title:ReactNode;description?:ReactNode;icon?:ReactNode;actions?:ReactNode}){return <div className="cn-section-header"><div className="cn-section-copy">{icon&&<span className="cn-section-icon" aria-hidden="true">{icon}</span>}<div><h2>{title}</h2>{description&&<p>{description}</p>}</div></div>{actions&&<div className="cn-section-actions">{actions}</div>}</div>}

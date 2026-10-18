@@ -1,3 +1,5 @@
+> RC11 update: apply migration 92 after RC10. See INSTALL_UPGRADE_GUIDE.md and NOTIFICATION_SETUP.md for current deployment variables, webhook and retry setup. The detailed base deployment guidance below remains applicable.
+
 # Vercel RC5 deployment
 
 Import the intended GitHub repository. Root contains package.json and vercel.json. Use Vite, Node22.x, npm install, npm run build and output dist. Include api/catalogue-manifest.js for persistent customer PWA manifests.

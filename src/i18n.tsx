@@ -1,3 +1,4 @@
+import {FormField,SelectField} from './Fields'
 import {useSyncExternalStore} from 'react'
 import {translations} from './translations'
 import {errorTranslations} from './errorTranslations'
@@ -45,7 +46,7 @@ export function trError(message:string):string{
 export function TranslatedText({text}:{text:string}){useUiLanguage();return <>{tr(text)}</>}
 export function LanguageSelector({id='system-language',compact=false}:{id?:string;compact?:boolean}){
  const selected=useUiLanguage()
- return <label className={'language-selector'+(compact?' compact':'')} htmlFor={id}><span>{tr('Language')}</span><select id={id} aria-label={tr('System Language')} value={selected} onChange={event=>setUiLanguage(event.target.value as UiLanguage)}>{languageOptions.map(option=><option key={option.value} value={option.value} lang={option.value}>{option.label}</option>)}</select></label>
+ return <FormField className={'language-selector'+(compact?' compact':'')} htmlFor={id}><span>{tr('Language')}</span><SelectField id={id} aria-label={tr('System Language')} value={selected} onChange={event=>setUiLanguage(event.target.value as UiLanguage)}>{languageOptions.map(option=><option key={option.value} value={option.value} lang={option.value}>{option.label}</option>)}</SelectField></FormField>
 }
 if(typeof document!=='undefined'&&document.documentElement)document.documentElement.lang=language
 if(typeof window!=='undefined'&&typeof window.addEventListener==='function')window.addEventListener('storage',event=>{if(event.key===preferenceKey()||event.key===DEVICE_KEY){const next=readLanguage();if(next!==language){language=next;notify()}}})

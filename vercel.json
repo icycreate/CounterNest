@@ -1,6 +1,14 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "rewrites": [{"source":"/api/catalogue-manifest","destination":"/api/catalogue-manifest"},
+  "rewrites": [
+    {
+      "source": "/api/order-push",
+      "destination": "/api/order-push"
+    },
+    {
+      "source": "/api/catalogue-manifest",
+      "destination": "/api/catalogue-manifest"
+    },
     {
       "source": "/(.*)",
       "destination": "/index.html"

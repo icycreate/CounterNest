@@ -1,0 +1,40 @@
+{
+  "version": "2.0.0-rc.11",
+  "checks": [
+    {
+      "name": "Approved default is self-contained artwork; custom logos keep their original URL",
+      "status": "passed"
+    },
+    {
+      "name": "Four-language standard categories localize safely while unknown business labels remain exact",
+      "status": "passed"
+    },
+    {
+      "name": "Public contact URLs reject executable schemes and normalize WhatsApp to international digits",
+      "status": "passed"
+    },
+    {
+      "name": "Foreground test produces exactly three two-note rings and optional single ring",
+      "status": "passed"
+    },
+    {
+      "name": "Deep links target exact original request records",
+      "status": "passed"
+    },
+    {
+      "name": "Service worker push respects persisted account binding, visible clients, event tags and guarded deep links",
+      "status": "passed"
+    },
+    {
+      "name": "Server push restricts endpoints and requires a private dispatcher credential",
+      "status": "passed"
+    },
+    {
+      "name": "Customer theme preference defaults to light and stays separate from administrator accents",
+      "status": "passed"
+    }
+  ],
+  "limitations": [
+    "Real browser subscription, external push transport, physical installed PWA and OS delivery require deployment acceptance."
+  ]
+}

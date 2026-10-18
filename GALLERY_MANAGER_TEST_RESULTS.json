@@ -1,0 +1,10 @@
+{
+  "version": "2.0.0-rc.10",
+  "checks": [
+    "Reorder saves original product ID and exact media order while retaining original files",
+    "Photos-only manager excludes promotion actions and labels immediate saves",
+    "Full preview uses the original and closes without unmounting manager",
+    "Server errors remain visible in photos-only Product Edit"
+  ],
+  "status": "passed"
+}

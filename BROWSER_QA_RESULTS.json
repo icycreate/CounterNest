@@ -1,76 +1,115 @@
 {
-  "version": "2.0.0-rc.9",
-  "generated_at": "2026-10-18T04:18:11.892Z",
-  "status": "passed within local fixture scope",
+  "version": "2.0.0-rc.10",
+  "generated_at": "2026-10-18T07:34:54.337Z",
+  "status": "passed within local QA scope",
+  "environment": "IAB localhost, actual RC10 components with isolated fictional Supabase adapter outside release source",
   "checks": [
     {
-      "name": "Operations navigation and Week/default desktop with Month, Week, Day and Agenda controls",
+      "name": "Settings uses the supplied serif title, full-width section cards, icon badges, normal-weight input values and retained original controls",
       "status": "passed"
     },
     {
-      "name": "Search Swiss Roll restricts board to BATCH-206; delivery filter returns only PO events",
+      "name": "Desktop Settings header stays sticky at 8 CSS pixels with Save Changes visible while content scrolls",
       "status": "passed"
     },
     {
-      "name": "Original BATCH-205 detail includes ingredient lines, schedule and assigned staff",
+      "name": "Phone Settings at 388×550 has no document overflow; pinned header top 60.99 is below mobile topbar bottom 60.80, Save bottom 188.75 remains in viewport",
       "status": "passed"
     },
     {
-      "name": "Native time editor saves 08:00 to 14:00, expected finish 16:00; fresh original detail confirms values",
+      "name": "Tablet portrait 830×607 and landscape 1104×607 Settings have no document horizontal overflow",
       "status": "passed"
     },
     {
-      "name": "Open source workspace shows the exact selected BATCH-205 in original Preparation workspace",
+      "name": "Dashboard uses the shared page header and has no document overflow at 1036×546",
       "status": "passed"
     },
     {
-      "name": "Back while schedule is edited prompts; Stay preserves the open form",
+      "name": "Product Edit uses shared barcode/fields/gallery and sticky Save Product within short desktop and phone views",
       "status": "passed"
     },
     {
-      "name": "Phone defaults to Agenda; Day view, original detail and modal-first Back verified",
+      "name": "New Purchase Order overlay is fixed and bounded; sticky action bottom 523.75 remains in the 546-high viewport, with original approval flow retained",
       "status": "passed"
     },
     {
-      "name": "Measured 388×842 CSS phone view has no document horizontal overflow",
+      "name": "Dark Receiving shows distinct fields and its sticky Finalize Verified Receiving action; disabled foreground and surface remain readable",
       "status": "passed"
     },
     {
-      "name": "Measured 830×809 CSS tablet view has no overflow; narrow Week stacks readable day cards",
+      "name": "System appearance selection matches actual prefers-color-scheme: dark in this environment",
       "status": "passed"
     },
     {
-      "name": "Light/green and Dark/blue themes: event text, selected view, Today and conflict action buttons readable",
+      "name": "Sign In and Sign Up retain white card rgb(255,255,255) and dark text rgb(39,37,34) under Dark preference",
       "status": "passed"
     },
     {
-      "name": "Dark Today/event and conflict action backgrounds rgb(40,45,52), text rgb(243,245,247)",
+      "name": "Gallery original preview opens and closes while retaining Product Edit; reorder action is available and saves fixture source state",
       "status": "passed"
     },
     {
-      "name": "Date-only, overdue, Today, unscheduled and actionable warnings visible in rendered page",
+      "name": "Product removal confirmation offers Archive and explicitly retains linked history; unused-customer confirmation offers Delete",
+      "status": "passed"
+    },
+    {
+      "name": "Customer page retains shared search, section tabs, Add Customer and authorized removal action",
+      "status": "passed"
+    },
+    {
+      "name": "Phone Product Edit dirty Cancel shows unsaved prompt; Stay preserves Chocolate Cake QA; Discard closes editor and stays on Products",
+      "status": "passed"
+    },
+    {
+      "name": "Customer editor opens with focus inside modal, Tab from Save wraps within modal with visible approximately 3px ring, and Cancel restores Add Customer focus",
+      "status": "passed"
+    },
+    {
+      "name": "Calendar phone defaults to Agenda; rendered event cards retain original references with no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "Dark customer Catalogue detail retains prices/variants; adding a product opens pre-order steps and customer information without submitting a request",
+      "status": "passed"
+    },
+    {
+      "name": "Dark Settings native field background rgb(40,45,52), text rgb(243,245,247), font weight 400; blue and green accents render through shared theme tokens",
       "status": "passed"
     }
   ],
   "screenshots": [
-    "docs/calendar-screenshots/back-unsaved-schedule.jpg",
-    "docs/calendar-screenshots/conflict-warnings-dark.jpg",
-    "docs/calendar-screenshots/day-light.jpg",
-    "docs/calendar-screenshots/month-light.jpg",
-    "docs/calendar-screenshots/phone-agenda-light.jpg",
-    "docs/calendar-screenshots/phone-day-light.jpg",
-    "docs/calendar-screenshots/phone-record-detail.jpg",
-    "docs/calendar-screenshots/production-rescheduled.jpg",
-    "docs/calendar-screenshots/tablet-week-light.jpg",
-    "docs/calendar-screenshots/today-panel-dark.jpg",
-    "docs/calendar-screenshots/week-dark-blue.jpg",
-    "docs/calendar-screenshots/week-light.jpg"
+    "docs/system-style-screenshots/calendar-dark-green.jpg",
+    "docs/system-style-screenshots/calendar-mobile-agenda.jpg",
+    "docs/system-style-screenshots/catalogue-dark-blue.jpg",
+    "docs/system-style-screenshots/catalogue-product-dark.jpg",
+    "docs/system-style-screenshots/customer-delete-confirmation.jpg",
+    "docs/system-style-screenshots/customers-light.jpg",
+    "docs/system-style-screenshots/dashboard-light-green.jpg",
+    "docs/system-style-screenshots/mobile-unsaved-back.jpg",
+    "docs/system-style-screenshots/product-archive-confirmation.jpg",
+    "docs/system-style-screenshots/product-edit-light.jpg",
+    "docs/system-style-screenshots/product-edit-mobile.jpg",
+    "docs/system-style-screenshots/product-gallery-manager.jpg",
+    "docs/system-style-screenshots/product-gallery-preview.jpg",
+    "docs/system-style-screenshots/products-light.jpg",
+    "docs/system-style-screenshots/purchase-order-sticky-action.jpg",
+    "docs/system-style-screenshots/purchase-orders-light.jpg",
+    "docs/system-style-screenshots/receiving-dark-blue.jpg",
+    "docs/system-style-screenshots/receiving-sticky-dark.jpg",
+    "docs/system-style-screenshots/settings-dark-blue.jpg",
+    "docs/system-style-screenshots/settings-light.jpg",
+    "docs/system-style-screenshots/settings-mobile-light.jpg",
+    "docs/system-style-screenshots/settings-mobile-sticky.jpg",
+    "docs/system-style-screenshots/settings-sticky-actions.jpg",
+    "docs/system-style-screenshots/settings-tablet-landscape.jpg",
+    "docs/system-style-screenshots/settings-tablet-portrait.jpg",
+    "docs/system-style-screenshots/sign-in-light-card.jpg",
+    "docs/system-style-screenshots/sign-up-light-card.jpg"
   ],
-  "environment": "IAB localhost RC9 source with separate fictional Supabase adapter outside release; canonical DTOs match separately tested SQL RPCs",
   "limits": [
-    "Native Android/iOS installed PWA, physical touch swipe and OS Back are pending.",
-    "Browser reschedule writes fixture state; real original-row mutation, authorization, audits and no-stock-change assertions are covered separately in migrated PostgreSQL.",
-    "Host-panel scaling changes requested viewport sizes; measured CSS sizes are reported above.",
-    "Four languages covered by automated React rendering; all four were not manually exercised in the browser."
+    "Browser changes write only fictional adapter state; real original-row mutation/permissions/audits are tested separately in migrated PostgreSQL.",
+    "Physical installed Android/iOS PWA, OS gestures, touch, actual storage upload/CORS, real recovery email and target deployment are pending.",
+    "Desktop/tablet/phone dimensions are measured CSS pixels; screenshots are host-scaled captures.",
+    "All four interface languages are exercised by React/regression tests, not all manually in the browser."
   ]
 }

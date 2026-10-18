@@ -1,25 +1,29 @@
 {
-  "build": "2026-10-17-calendar",
-  "status": "passed",
-  "excluded": [
-    ".env",
-    ".env.local",
-    ".env.production",
-    "node_modules/package/index.js",
-    "dist/index.html",
-    "debug.log",
-    "tsconfig.app.tsbuildinfo",
-    ".vercel/project.json",
-    "Thumbs.db",
-    ".vscode/settings.json"
-  ],
-  "tracked_candidates": [
-    ".env.example",
-    "package-lock.json",
-    "src/ImageCropper.tsx",
-    "public/counternest-default-logo.svg",
-    "supabase/migrations/202610161200_catalogue_finalization.sql"
-  ],
-  "environment": "Isolated Git check; Git metadata excluded from package",
-  "note": "Baseline isolated Git ignore check retained; final RC9 source archive exclusions independently verified in external ArchiveValidation report."
+  "provenance": "Retained RC10 baseline evidence. Current RC11 commands are in FINAL_CHECK_RESULTS.json.",
+  "baseline": {
+    "build": "2026-10-17-calendar",
+    "status": "passed",
+    "excluded": [
+      ".env",
+      ".env.local",
+      ".env.production",
+      "node_modules/package/index.js",
+      "dist/index.html",
+      "debug.log",
+      "tsconfig.app.tsbuildinfo",
+      ".vercel/project.json",
+      "Thumbs.db",
+      ".vscode/settings.json"
+    ],
+    "tracked_candidates": [
+      ".env.example",
+      "package-lock.json",
+      "src/ImageCropper.tsx",
+      "public/counternest-default-logo.svg",
+      "supabase/migrations/202610161200_catalogue_finalization.sql"
+    ],
+    "environment": "Isolated Git check; Git metadata excluded from package",
+    "note": "Baseline isolated Git ignore check retained; final RC9 source archive exclusions independently verified in external ArchiveValidation report.",
+    "provenance": "Retained baseline evidence; RC10 current build/assets/browser and final archive exclusions are recorded separately in current validation reports."
+  }
 }

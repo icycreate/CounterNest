@@ -1,3 +1,16 @@
+# 2.0.0-rc.11 — 2026-10-18
+
+Approved identity, customer appearance and business contacts, safe category localization, per-device order notification outbox/dispatcher, custom-cake intake and independent settings save guards. Migration 92 is additive; all earlier SQL files remain unchanged.
+
+# 2.0.0-rc.10 — System Style
+
+- Consolidate actual page headers, cards, native fields, dropdown arrows, tabs, buttons and spacing.
+- Apply the supplied Settings reference and shared light/dark/system/accent surfaces.
+- Keep long-page headers and editor actions visible with bounded sticky positioning.
+- Reuse the product gallery in Product Edit; add original preview/crop/replace/reorder/removal and immediate-save notice.
+- Add clean delete/archive confirmations and migration 91 for original-record history, authorization, audit, archive selection and backup safety.
+- Strengthen initial modal focus while retaining layered Back and unsaved guards.
+
 # 2.0.0-rc.9 — Operations Calendar
 
 - Original-source Calendar with four views, filters, Today and unscheduled orders.

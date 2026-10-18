@@ -1,0 +1,1 @@
+RC11 is copied from the actual completed work/rc10-source. Synced sources/ references were not modified. QA fixtures live outside this source and are excluded. Production src/lib/supabase.ts uses the real configured Supabase client. All 91 prior SQL files remain unchanged. New migration: 202610181200_customer_experience_notifications.sql.

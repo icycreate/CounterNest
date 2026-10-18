@@ -1,0 +1,76 @@
+{
+  "version": "2.0.0-rc.11",
+  "environment": "Local browser, isolated fictional adapter outside release source; real Supabase client remains in packaged src",
+  "checks": [
+    {
+      "name": "Default approved emblem loads in public catalogue",
+      "status": "passed",
+      "evidence": "Business logo image complete with nonzero natural width; source /counternest-default-logo.svg"
+    },
+    {
+      "name": "Business title and favicon projection",
+      "status": "passed",
+      "evidence": "Browser title Feng’s Lotus & Flour • CounterNest; shared custom/fallback helper also covered automatically"
+    },
+    {
+      "name": "Customer default and Dark selector",
+      "status": "passed",
+      "evidence": "Initial Light selection, switched to Dark using the customer selector; restored on a fresh tab"
+    },
+    {
+      "name": "Public contacts",
+      "status": "passed",
+      "evidence": "Expanded enabled WhatsApp and email cards; WhatsApp URL https://wa.me/50160001234; no message sent"
+    },
+    {
+      "name": "Spanish and traditional Chinese categories preserve original names",
+      "status": "passed",
+      "evidence": "Cakes → Pasteles/蛋糕; Chocolate Cake, Butter Croissant, 6 inch and 8 inch remain exact"
+    },
+    {
+      "name": "Dark prices and controls",
+      "status": "passed",
+      "evidence": "Public card price rgb(243,245,247) on rgb(40,45,52); product detail inputs/selects use the same pair"
+    },
+    {
+      "name": "Phone responsive catalogue",
+      "status": "passed",
+      "evidence": "Measured innerWidth390 innerHeight700, document width does not exceed viewport"
+    },
+    {
+      "name": "Desktop layout",
+      "status": "passed",
+      "evidence": "Measured innerWidth1380; no document overflow"
+    },
+    {
+      "name": "Gallery count and exact names",
+      "status": "passed",
+      "evidence": "Traditional Chinese Image 1 of 2 label; original names and variant prices retained; full-image/thumbnail controls present"
+    },
+    {
+      "name": "Custom cake request selection",
+      "status": "passed",
+      "evidence": "Request type options Pre-Order/Custom Cake found and selection changed on the actual phone form; no request submitted"
+    },
+    {
+      "name": "Notification and contact settings",
+      "status": "passed",
+      "evidence": "Loaded New Order Alerts, Customer Contact Methods and Pre-Order Contact Choices; Translation card absent"
+    },
+    {
+      "name": "Local Test Notification",
+      "status": "passed",
+      "evidence": "Clicked test control in fictional preview; status Test Notification shown, no external transport or OS permission requested"
+    },
+    {
+      "name": "Screenshot capture coverage",
+      "status": "partial",
+      "evidence": "Valid phone catalogue/contacts and Settings captures saved. Tool intermittently reported Unable to capture screenshot; some native viewport/full-page attempts had compositor artifacts and were removed from release evidence. Further desktop/alert/gallery captures remain a staging task."
+    }
+  ],
+  "pending": [
+    "Real custom logo upload/removal and favicon cache switch",
+    "Real browser subscription, VAPID transport/webhook/scheduler and OS delivery",
+    "Physical PWA install/relaunch and hardware/storage flows"
+  ]
+}

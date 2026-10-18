@@ -1,0 +1,168 @@
+{
+  "version": "2.0.0-rc.10",
+  "scope": "Actual rendered RC10 using fictional local QA records. Screenshot pixels differ from host-scaled measured CSS viewports. Reference image is separate in docs/reference/approved-settings.png.",
+  "screenshots": [
+    {
+      "file": "docs/system-style-screenshots/calendar-dark-green.jpg",
+      "width": 1030,
+      "height": 543,
+      "sha256": "04c01b0a6a255e77056570ba1c679a47446b48ee2f9f01a7b14bbaf798c885d6"
+    },
+    {
+      "file": "docs/system-style-screenshots/calendar-mobile-agenda.jpg",
+      "width": 383,
+      "height": 543,
+      "sha256": "4cdcf18e91f265b445e191a75655f2ca0228f8b30fa2308de1b96fe6101ef997"
+    },
+    {
+      "file": "docs/system-style-screenshots/catalogue-dark-blue.jpg",
+      "width": 1030,
+      "height": 543,
+      "sha256": "f038b26da9c64b441f2c242abc21d4c10acc0b8cf1c0779bb4a3726739871961"
+    },
+    {
+      "file": "docs/system-style-screenshots/catalogue-product-dark.jpg",
+      "width": 1030,
+      "height": 543,
+      "sha256": "447af37cc735bff0cdc7159c180b9e988ee6cec2745a9bbdf3633a07a70ebc2c"
+    },
+    {
+      "file": "docs/system-style-screenshots/customer-delete-confirmation.jpg",
+      "width": 512,
+      "height": 288,
+      "sha256": "1623fac06fdfbd3bc44295630f51b648fbd9dc1e031d7ff5dbc48ededd6023c3"
+    },
+    {
+      "file": "docs/system-style-screenshots/customers-light.jpg",
+      "width": 1030,
+      "height": 543,
+      "sha256": "983b865e5e217236d0d7e149f57e3e5bd9586750a3e019974b99c2a924212799"
+    },
+    {
+      "file": "docs/system-style-screenshots/dashboard-light-green.jpg",
+      "width": 1030,
+      "height": 543,
+      "sha256": "d91896470cd46c5affaa78ee7cd8d2bef29e805085f2652bae9b3d90d30dd44a"
+    },
+    {
+      "file": "docs/system-style-screenshots/mobile-unsaved-back.jpg",
+      "width": 383,
+      "height": 543,
+      "sha256": "249bde9ec76e4fa5167da34bbcdd8427236e5ac7631c10d73641b7976f2482c5"
+    },
+    {
+      "file": "docs/system-style-screenshots/product-archive-confirmation.jpg",
+      "width": 512,
+      "height": 288,
+      "sha256": "34c028759ec8451bd2932c0404b88fa30f09ea638f4d988f2fd7a2fd0452c2cb"
+    },
+    {
+      "file": "docs/system-style-screenshots/product-edit-light.jpg",
+      "width": 1010,
+      "height": 543,
+      "sha256": "226d73ea9d60664c0e89f554b879aa0a5d7bf4bf163dcefc1aff1dce97d94452"
+    },
+    {
+      "file": "docs/system-style-screenshots/product-edit-mobile.jpg",
+      "width": 383,
+      "height": 543,
+      "sha256": "fbb7657936ced75519c18b281f4d25d2ba2c4cbe6908b640da9e5cc28eff4108"
+    },
+    {
+      "file": "docs/system-style-screenshots/product-gallery-manager.jpg",
+      "width": 512,
+      "height": 288,
+      "sha256": "d911d9a179ff284778760e70c78813cd59c0cffe50b7ae00ffaa9a95373aeadd"
+    },
+    {
+      "file": "docs/system-style-screenshots/product-gallery-preview.jpg",
+      "width": 512,
+      "height": 288,
+      "sha256": "1b2cfe90ba394d50bba4740caf001c7449e1fd41a65d08f4f97e8d04477170c7"
+    },
+    {
+      "file": "docs/system-style-screenshots/products-light.jpg",
+      "width": 1030,
+      "height": 543,
+      "sha256": "ea15ef6db047b148c9f77b7961de91ccfd31eca1f9130dddc92760e61979621f"
+    },
+    {
+      "file": "docs/system-style-screenshots/purchase-order-sticky-action.jpg",
+      "width": 1030,
+      "height": 543,
+      "sha256": "7af890deafbadd35b5fbba6e0d2dbb46e6e0ccdcd280059f5da3086c3a383ad1"
+    },
+    {
+      "file": "docs/system-style-screenshots/purchase-orders-light.jpg",
+      "width": 1030,
+      "height": 543,
+      "sha256": "eae344f8a6fb4c0598212c759c8b9d8f0b67f79a7f72a92a3c293c9917d7c941"
+    },
+    {
+      "file": "docs/system-style-screenshots/receiving-dark-blue.jpg",
+      "width": 1010,
+      "height": 543,
+      "sha256": "3d6c2582cd03eb826d7a5e99ab4b269f67aac5ff7a4c3dbaa6b126788b19d8b3"
+    },
+    {
+      "file": "docs/system-style-screenshots/receiving-sticky-dark.jpg",
+      "width": 1010,
+      "height": 543,
+      "sha256": "f5fb1874b2618e0544bcc1b2e4ed18554ddda04a6a7a5d1aae6d585c3ac10efb"
+    },
+    {
+      "file": "docs/system-style-screenshots/settings-dark-blue.jpg",
+      "width": 1030,
+      "height": 543,
+      "sha256": "10f440750d3b636768616884b03d46deeb32e4a8cfa60902d89911080b5eb805"
+    },
+    {
+      "file": "docs/system-style-screenshots/settings-light.jpg",
+      "width": 1030,
+      "height": 554,
+      "sha256": "bb68ab7b8074c9619b7608a4b228a72b3ed896d793af9016276b4edc9dbae925"
+    },
+    {
+      "file": "docs/system-style-screenshots/settings-mobile-light.jpg",
+      "width": 383,
+      "height": 543,
+      "sha256": "a60170f7d001ae033f2317a6621ae0c0363bccbdf392a88c8c717d6cd1a21be0"
+    },
+    {
+      "file": "docs/system-style-screenshots/settings-mobile-sticky.jpg",
+      "width": 383,
+      "height": 543,
+      "sha256": "2e448dce7940f1386cdce932f18a62ed499629fcbea0a6a44c4604c8326537ba"
+    },
+    {
+      "file": "docs/system-style-screenshots/settings-sticky-actions.jpg",
+      "width": 1030,
+      "height": 554,
+      "sha256": "68ec6051def7b1cc4bbe21057eedaf54b8b397303f585378243efa86a9dd30fc"
+    },
+    {
+      "file": "docs/system-style-screenshots/settings-tablet-landscape.jpg",
+      "width": 1098,
+      "height": 604,
+      "sha256": "b608761e0f385dda15b91804a858b2888d48d6e7d165468452f68f1e0327bd74"
+    },
+    {
+      "file": "docs/system-style-screenshots/settings-tablet-portrait.jpg",
+      "width": 824,
+      "height": 603,
+      "sha256": "4e8b9c83cb181f9e5c01f84a9e6784a347b0734b9fc0e69910148b8c1e7a056f"
+    },
+    {
+      "file": "docs/system-style-screenshots/sign-in-light-card.jpg",
+      "width": 830,
+      "height": 607,
+      "sha256": "f77563597d9f88eec1504cb01bb049085e851e592815797a395fc2c8b3df7c39"
+    },
+    {
+      "file": "docs/system-style-screenshots/sign-up-light-card.jpg",
+      "width": 824,
+      "height": 603,
+      "sha256": "65a40652b280bf2adc22ae06ee16568cd88b243d0189e1acd60ebc8a55151273"
+    }
+  ]
+}

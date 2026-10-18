@@ -23,7 +23,7 @@ async function main(){
  for(const language of Object.keys(languages)){
   api.setUiLanguage(language);
   Renderer.act(()=>{tree=Renderer.create(React.createElement(api.CatalogueExportModal,{products:[product],settings:{catalogue_title:'Business title',pdf_footer:'Business footer in English'},shopName:'Save',logoUrl:null,currency:'USD',customerUrl:'',qrDataUrl:'',onClose(){},showToast(){}}))});
-  Renderer.act(()=>tree.root.findAllByType('button').find(button=>button.props.className==='primary-btn').props.onClick());
+  Renderer.act(()=>tree.root.findAllByType('button').find(button=>String(button.props.className||'').split(' ').includes('primary-btn')).props.onClick());
   assert(html.includes('<h3>Save</h3>'),'Business product name must remain unchanged in '+language);
   assert(html.includes('Business footer in English'));assert(html.includes('Business title'));
   assert(html.includes('<span>'+api.tr('Available')+'</span>'),'Printed availability must use '+language);

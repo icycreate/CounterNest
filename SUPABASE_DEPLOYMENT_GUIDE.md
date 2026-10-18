@@ -1,3 +1,5 @@
+> RC11 update: apply migration 92 after RC10. See INSTALL_UPGRADE_GUIDE.md and NOTIFICATION_SETUP.md for current deployment variables, webhook and retry setup. The detailed base deployment guidance below remains applicable.
+
 # Supabase Cloud RC5 deployment
 
 Use INSTALL_UPGRADE_GUIDE.md and SUPABASE_MIGRATION_ORDER.md. RC4 needs only84–87; all87 apply to fresh databases. RLS remains enabled; ingredient package photos are private and delivered through short-lived signed URLs. No ingredient purchase data is added to customer catalogue projections.

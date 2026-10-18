@@ -1,16 +1,15 @@
-# CounterNest POS — Operations Calendar RC9
+# CounterNest POS — Customer Experience RC11
 
-Version 2.0.0-rc.9. Continues the actual Navigation & Appearance RC8 source. Browser/Web → GitHub → Vercel → Supabase Cloud.
+Version 2.0.0-rc.11 · 2026-10-18. Built from the actual System Style RC10 source.
 
-Operations → Calendar provides Month, Week, Day and Agenda over original accepted orders, custom cakes, production batches, and ingredient/legacy purchase orders. No calendar event table or duplicate business records are created. Date-only records stay date-only. Accepted orders without pickup times have an Unscheduled panel.
+Browser/Web Application → GitHub → Vercel → Supabase Cloud.
 
-Authorized schedule edits update original records with concurrency checks and commercial-event audits. Includes search, type/status/staff/date filters, Today, planning warnings, source links, module quick-create, stable notification IDs, four interface languages and shared light/dark/accent themes.
+The approved bakery identity now supplies the platform fallback logo, boot logo, browser icon and installed-app icons. A business logo continues to replace the fallback on business-facing screens and documents.
 
-## Run and deploy
+Customer catalogues offer Light / Dark / System, default to Light on a new device, and retain the business accent. Explicit public contact methods are configured separately from the customer's preferred contact choice. Product, variant, option and brand names remain as entered. Known standard categories may localize; custom categories remain unchanged.
 
-1. Copy .env.example to your local environment configuration and supply your own Supabase URL and browser-safe key. Never commit privileged keys or local env files.
-2. Run npm install, npm run build, npm test and npm run test:assets. Start locally with npm run dev.
-3. Existing RC8 databases: apply migration 90 only, following INSTALL_UPGRADE_GUIDE.md. Fresh databases: apply all 90 migrations in SUPABASE_MIGRATION_ORDER.md.
-4. Commit this source to the existing GitHub repository and deploy through the existing Vercel project. The ZIP excludes node_modules, dist, local secrets and installers.
+New request alerts include foreground popups, a device badge and a three-ring sound after browser audio activation. Background Web Push uses per-account device registrations, a transactional Supabase outbox and the protected Vercel dispatcher. Custom cake requests use the original Accept / Decline and scheduled cake workflow.
 
-See CALENDAR_USER_GUIDE.md, CALENDAR_IMPLEMENTATION.md, UAT_ACCEPTANCE_CHECKLIST.md, BUILD_VALIDATION_REPORT.md and KNOWN_ISSUES.md. Local automated and browser validation passed; live Supabase/Vercel staging and physical installed-PWA checks remain pending. Historical feature guides and screenshots retained from RC8 are baseline references; current calendar evidence is in docs/calendar-screenshots.
+Upgrade from RC10: apply migration 92 before the frontend. Existing 91 migrations are unchanged. Run npm install, npm run build, npm test and npm run test:assets. Use Vercel build npm run build, output dist. Source ZIP excludes environment secrets, node_modules and dist.
+
+Read INSTALL_UPGRADE_GUIDE.md, NOTIFICATION_SETUP.md, PWA_NOTES.md, BRANDING_NOTES.md, CALENDAR_USER_GUIDE.md, UAT_ACCEPTANCE_CHECKLIST.md and KNOWN_ISSUES.md. Validation is local; external push transport, live Supabase deployment and physical-device acceptance remain pending. No production deployment or database changes were performed during this build.

@@ -1,3 +1,5 @@
+> RC11 update: apply migration 92 after RC10. See INSTALL_UPGRADE_GUIDE.md and NOTIFICATION_SETUP.md for current deployment variables, webhook and retry setup. The detailed base deployment guidance below remains applicable.
+
 # Environment variables
 
 | Exact name | Location | Requirement |

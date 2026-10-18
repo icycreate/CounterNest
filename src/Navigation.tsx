@@ -1,3 +1,5 @@
+import {Button} from './Button'
+import {SegmentedNav} from './SegmentedNav'
 import {businessLogo} from './branding'
 import {tr} from './i18n'
 import {useEffect,useId,useRef,useState} from 'react'
@@ -19,17 +21,17 @@ export function GroupedNavigation({page,role,onNavigate,compact=false}:{page:Pag
     const expanded=open[section.id]??section.id===group
     const selected=section.id===group
     return <section className={`nav-group ${selected?'current-group':''}`} key={section.id}>
-      <button type="button" className="nav-group-toggle" aria-expanded={expanded} aria-controls={`nav-${instance}-${section.id}`} aria-label={tr(section.label)} title={compact?tr(section.label):undefined} onClick={()=>toggle(section.id)}>{expanded?<ChevronDown size={15}/>:<ChevronRight size={15}/>}<span>{tr(section.label)}</span></button>
-      {expanded&&<div id={`nav-${instance}-${section.id}`} className="nav-group-items">{section.items.map(entry=>{const Icon=icons[entry.key]??Store;const active=primaryPage(page)===entry.key;return <button type="button" key={entry.key} aria-label={tr(entry.label)} aria-current={active?'page':undefined} title={compact?tr(entry.label):undefined} className={active?'active':''} onClick={()=>onNavigate(entry.key)}><Icon size={19}/><span>{tr(entry.label)}</span></button>})}</div>}
+      <Button variant="secondary" type="button" className="nav-group-toggle" aria-expanded={expanded} aria-controls={`nav-${instance}-${section.id}`} aria-label={tr(section.label)} title={compact?tr(section.label):undefined} onClick={()=>toggle(section.id)}>{expanded?<ChevronDown size={15}/>:<ChevronRight size={15}/>}<span>{tr(section.label)}</span></Button>
+      {expanded&&<div id={`nav-${instance}-${section.id}`} className="nav-group-items">{section.items.map(entry=>{const Icon=icons[entry.key]??Store;const active=primaryPage(page)===entry.key;return <Button variant="secondary" type="button" key={entry.key} aria-label={tr(entry.label)} aria-current={active?'page':undefined} title={compact?tr(entry.label):undefined} className={active?'active':''} onClick={()=>onNavigate(entry.key)}><Icon size={19}/><span>{tr(entry.label)}</span></Button>})}</div>}
     </section>
   })}</nav>
 }
 export function Sidebar({compact,onToggleCompact,...props}:Props&{compact:boolean;onToggleCompact:()=>void}){
   return <aside className={`sidebar rc-sidebar ${compact?'is-compact':''}`} aria-label={tr("Staff sidebar")}>
-    <header className="sidebar-brand"><div className="sidebar-logo"><img src={businessLogo(props.logoUrl)} alt=""/></div><strong title={props.shopName}>{props.shopName}</strong><button type="button" aria-label={compact?tr("Expand sidebar"):tr("Collapse sidebar")} aria-pressed={compact} onClick={onToggleCompact}>{compact?<PanelLeftOpen size={19}/>:<PanelLeftClose size={19}/>}</button></header>
+    <header className="sidebar-brand"><div className="sidebar-logo"><img src={businessLogo(props.logoUrl)} alt=""/></div><strong title={props.shopName}>{props.shopName}</strong><Button variant="secondary" type="button" aria-label={compact?tr("Expand sidebar"):tr("Collapse sidebar")} aria-pressed={compact} onClick={onToggleCompact}>{compact?<PanelLeftOpen size={19}/>:<PanelLeftClose size={19}/>}</Button></header>
     <GroupedNavigation page={props.page} role={props.role} compact={compact} onNavigate={props.setPage}/>
     <div className="staff-box"><CircleUserRound size={28}/><div><strong>{props.staffName}</strong><small>{props.role==='admin'?tr("Administrator"):props.role==='production'?tr("Production"):props.role==='inventory'?tr("Inventory"):tr("Cashier")}</small></div></div>
-    <button type="button" className="logout-btn" aria-label={tr("Sign out")} title={compact?tr("Sign out"):undefined} onClick={props.logout}><LogOut size={18}/><span>{tr("Sign out")}</span></button>
+    <Button variant="secondary" type="button" className="logout-btn" aria-label={tr("Sign out")} title={compact?tr("Sign out"):undefined} onClick={props.logout}><LogOut size={18}/><span>{tr("Sign out")}</span></Button>
   </aside>
 }
 export function MobileNavigation(props:Props){
@@ -45,12 +47,12 @@ export function MobileNavigation(props:Props){
     return()=>{document.body.style.overflow=oldOverflow;document.removeEventListener('keydown',key);trigger.current?.focus()}
   },[open])
   return <>
-    <header className="mobile-topbar"><div className="mobile-shop-mark"><img src={businessLogo(props.logoUrl)} alt=""/></div><div className="mobile-shop-name"><strong>{props.shopName}</strong><small>{props.staffName} • {props.role==='admin'?tr("Administrator"):props.role==='production'?tr("Production"):props.role==='inventory'?tr("Inventory"):tr("Cashier")}</small></div><button type="button" ref={trigger} aria-label={tr("Open menu")} aria-expanded={open} onClick={()=>setOpen(true)}><Menu size={22}/></button></header>
-    <nav className="mobile-bottom-nav" aria-label={tr("Quick navigation")}>{([['dashboard','Dashboard'],['sale','Sale'],['products','Products'],['customers','Customers']] as [PageKey,string][]).filter(([key])=>canAccessPage(props.role,key)).map(([key,label])=>{const Icon=icons[key]??Store;return <button type="button" key={key} aria-current={primaryPage(props.page)===key?'page':undefined} className={primaryPage(props.page)===key?'active':''} onClick={()=>go(key)}><Icon size={20}/><span>{tr(label)}</span></button>})}<button type="button" aria-label={tr("More navigation")} onClick={()=>setOpen(true)}><Menu size={20}/><span>{tr("More")}</span></button></nav>
-    {open&&<div className="mobile-menu-backdrop" onClick={()=>setOpen(false)}><section ref={sheet} className="mobile-menu-sheet" role="dialog" aria-modal="true" aria-label={tr("Navigation menu")} onClick={e=>e.stopPropagation()}><div className="mobile-menu-head"><div><strong>{props.shopName}</strong><small>{props.staffName}</small></div><button data-back-close="true" type="button" aria-label={tr("Close menu")} onClick={()=>setOpen(false)}><X size={22}/></button></div><GroupedNavigation page={props.page} role={props.role} onNavigate={go}/><button type="button" className="mobile-menu-logout" onClick={props.logout}><LogOut size={18}/>{' '+tr("Sign out")}</button></section></div>}
+    <header className="mobile-topbar"><div className="mobile-shop-mark"><img src={businessLogo(props.logoUrl)} alt=""/></div><div className="mobile-shop-name"><strong>{props.shopName}</strong><small>{props.staffName} • {props.role==='admin'?tr("Administrator"):props.role==='production'?tr("Production"):props.role==='inventory'?tr("Inventory"):tr("Cashier")}</small></div><Button variant="secondary" type="button" ref={trigger} aria-label={tr("Open menu")} aria-expanded={open} onClick={()=>setOpen(true)}><Menu size={22}/></Button></header>
+    <nav className="mobile-bottom-nav" aria-label={tr("Quick navigation")}>{([['dashboard','Dashboard'],['sale','Sale'],['products','Products'],['customers','Customers']] as [PageKey,string][]).filter(([key])=>canAccessPage(props.role,key)).map(([key,label])=>{const Icon=icons[key]??Store;return <Button variant="secondary" type="button" key={key} aria-current={primaryPage(props.page)===key?'page':undefined} className={primaryPage(props.page)===key?'active':''} onClick={()=>go(key)}><Icon size={20}/><span>{tr(label)}</span></Button>})}<Button variant="secondary" type="button" aria-label={tr("More navigation")} onClick={()=>setOpen(true)}><Menu size={20}/><span>{tr("More")}</span></Button></nav>
+    {open&&<div className="mobile-menu-backdrop" onClick={()=>setOpen(false)}><section ref={sheet} className="mobile-menu-sheet" role="dialog" aria-modal="true" aria-label={tr("Navigation menu")} onClick={e=>e.stopPropagation()}><div className="mobile-menu-head"><div><strong>{props.shopName}</strong><small>{props.staffName}</small></div><Button variant="secondary" data-back-close="true" type="button" aria-label={tr("Close menu")} onClick={()=>setOpen(false)}><X size={22}/></Button></div><GroupedNavigation page={props.page} role={props.role} onNavigate={go}/><Button variant="secondary" type="button" className="mobile-menu-logout" onClick={props.logout}><LogOut size={18}/>{' '+tr("Sign out")}</Button></section></div>}
   </>
 }
 
 export function SectionTabs({page,setPage,items,label}:{page:PageKey;setPage:(p:PageKey)=>void;items:[PageKey,string][];label:string}){
-  return <nav className="section-tabs" aria-label={label}>{items.map(([key,title])=><button type="button" key={key} aria-current={page===key?'page':undefined} className={page===key?'active':''} onClick={()=>setPage(key)}>{tr(title)}</button>)}</nav>
+  return <SegmentedNav className="section-tabs" aria-label={label}>{items.map(([key,title])=><Button variant="secondary" type="button" key={key} aria-current={page===key?'page':undefined} className={page===key?'active':''} onClick={()=>setPage(key)}>{tr(title)}</Button>)}</SegmentedNav>
 }

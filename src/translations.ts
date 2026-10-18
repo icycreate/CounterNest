@@ -16703,3 +16703,138 @@ Object.assign(translations,{
 Object.assign(translations,{'Schedule / View':{es:'Programar / Ver','zh-TW':'排程／檢視','zh-CN':'排程／查看'}})
 
 Object.assign(translations,{'Partially received':{es:'Recibido parcialmente','zh-TW':'部分已收貨','zh-CN':'部分已收货'}})
+
+// RC10 gallery controls
+Object.assign(translations,{
+  "Product Images": {
+    "es": "Imágenes del producto",
+    "zh-TW": "商品圖片",
+    "zh-CN": "商品图片"
+  },
+  "images": {
+    "es": "imágenes",
+    "zh-TW": "張圖片",
+    "zh-CN": "张图片"
+  },
+  "Full preview": {
+    "es": "Vista completa",
+    "zh-TW": "完整預覽",
+    "zh-CN": "完整预览"
+  },
+  "Edit / crop": {
+    "es": "Editar / recortar",
+    "zh-TW": "編輯／裁切",
+    "zh-CN": "编辑／裁剪"
+  },
+  "Replace photo": {
+    "es": "Reemplazar foto",
+    "zh-TW": "更換圖片",
+    "zh-CN": "替换图片"
+  },
+  "Move earlier": {
+    "es": "Mover antes",
+    "zh-TW": "向前移動",
+    "zh-CN": "向前移动"
+  },
+  "Move later": {
+    "es": "Mover después",
+    "zh-TW": "向後移動",
+    "zh-CN": "向后移动"
+  },
+  "Save photo replacement": {
+    "es": "Guardar reemplazo",
+    "zh-TW": "儲存更換圖片",
+    "zh-CN": "保存替换图片"
+  },
+  "Remove this photo from the gallery? The stored original is retained.": {
+    "es": "¿Quitar esta foto de la galería? Se conserva el original guardado.",
+    "zh-TW": "要從圖庫移除此圖片嗎？已儲存的原圖會保留。",
+    "zh-CN": "要从图库移除此图片吗？已保存的原图会保留。"
+  },
+  "Unable to load photo for editing.": {
+    "es": "No se pudo cargar la foto para editar.",
+    "zh-TW": "無法載入圖片進行編輯。",
+    "zh-CN": "无法加载图片进行编辑。"
+  }
+})
+
+Object.assign(translations,{
+  "Business Information": {
+    "es": "Información del negocio",
+    "zh-TW": "商家資訊",
+    "zh-CN": "商家信息"
+  },
+  "Manage your business details and how they appear on receipts and communications.": {
+    "es": "Administra los datos de tu negocio y cómo aparecen en recibos y comunicaciones.",
+    "zh-TW": "管理商家資料及其在收據與通訊中的顯示方式。",
+    "zh-CN": "管理商家资料及其在收据与通信中的显示方式。"
+  },
+  "Store Preferences": {
+    "es": "Preferencias de la tienda",
+    "zh-TW": "商店偏好設定",
+    "zh-CN": "商店偏好设置"
+  },
+  "Customize how CounterNest works for your business.": {
+    "es": "Personaliza cómo funciona CounterNest para tu negocio.",
+    "zh-TW": "自訂 CounterNest 在商家中的運作方式。",
+    "zh-CN": "自定义 CounterNest 在商家中的运作方式。"
+  }
+})
+
+Object.assign(translations,{
+  "Remove record": {
+    "es": "Quitar registro",
+    "zh-TW": "移除記錄",
+    "zh-CN": "移除记录"
+  },
+  "Linked records are preserved. This record will be archived and removed from new selections.": {
+    "es": "Se conservan los registros vinculados. Este registro se archivará y se quitará de las nuevas selecciones.",
+    "zh-TW": "關聯記錄會保留。此記錄將封存並從新選項中移除。",
+    "zh-CN": "关联记录会保留。此记录将归档并从新选项中移除。"
+  },
+  "No linked records were found. This record will be permanently deleted.": {
+    "es": "No se encontraron registros vinculados. Este registro se eliminará permanentemente.",
+    "zh-TW": "找不到關聯記錄。此記錄將永久刪除。",
+    "zh-CN": "找不到关联记录。此记录将永久删除。"
+  },
+  "Checking linked history…": {
+    "es": "Revisando historial vinculado…",
+    "zh-TW": "正在檢查關聯歷史…",
+    "zh-CN": "正在检查关联历史…"
+  },
+  "Record deleted.": {
+    "es": "Registro eliminado.",
+    "zh-TW": "記錄已刪除。",
+    "zh-CN": "记录已删除。"
+  },
+  "Record archived.": {
+    "es": "Registro archivado.",
+    "zh-TW": "記錄已封存。",
+    "zh-CN": "记录已归档。"
+  },
+  "Removal policy changed. Reopen and review the action.": {
+    "es": "La política de eliminación cambió. Abre de nuevo y revisa la acción.",
+    "zh-TW": "移除規則已變更。請重新開啟並檢查操作。",
+    "zh-CN": "移除规则已更改。请重新打开并检查操作。"
+  },
+  "Linked records must be archived, not deleted.": {
+    "es": "Los registros vinculados deben archivarse, no eliminarse.",
+    "zh-TW": "有關聯的記錄必須封存，不能刪除。",
+    "zh-CN": "有关联的记录必须归档，不能删除。"
+  }
+})
+
+Object.assign(translations,{"Gallery changes save immediately. Product details use Save Product.":{"es":"Los cambios de la galería se guardan inmediatamente. Para los detalles usa Guardar producto.","zh-TW":"圖庫變更會立即儲存。商品資料請使用「儲存商品」。","zh-CN":"图库更改会立即保存。商品资料请使用“保存商品”。"}})
+
+Object.assign(translations,{"Archived customers cannot be used for new orders.":{"es":"Los clientes archivados no pueden usarse en pedidos nuevos.","zh-TW":"封存的顧客不能用於新訂單。","zh-CN":"归档的客户不能用于新订单。"}})
+
+// RC11 customer experience labels; business data remains untouched.
+Object.assign(translations,{"Contact Business":{"es":"Contactar al negocio","zh-TW":"聯絡商家","zh-CN":"联系商家"},"Customer Contact":{"es":"Contacto del cliente","zh-TW":"顧客聯絡方式","zh-CN":"顾客联系方式"},"Only these enabled business contacts are public. Staff details are never copied automatically.":{"es":"Solo se publican estos contactos habilitados. No se copian datos del personal.","zh-TW":"僅公開已啟用的商家聯絡方式，不會自動複製員工資料。","zh-CN":"仅公开已启用的商家联系方式，不会自动复制员工资料。"},"Enter a valid international phone, email or HTTPS address.":{"es":"Ingrese un teléfono internacional, correo o dirección HTTPS válida.","zh-TW":"請輸入有效的國際電話、電郵或 HTTPS 網址。","zh-CN":"请输入有效的国际电话、邮箱或 HTTPS 地址。"},"Contact method":{"es":"Método de contacto","zh-TW":"聯絡方式","zh-CN":"联系方式"},"Contact value":{"es":"Dato de contacto","zh-TW":"聯絡資料","zh-CN":"联系信息"},"Short note":{"es":"Nota breve","zh-TW":"簡短備註","zh-CN":"简短备注"},"QR image URL (optional)":{"es":"URL de imagen QR (opcional)","zh-TW":"QR 圖片網址（選填）","zh-CN":"QR 图片网址（选填）"},"Preferred":{"es":"Preferido","zh-TW":"首選","zh-CN":"首选"},"Add contact method":{"es":"Agregar contacto","zh-TW":"新增聯絡方式","zh-CN":"新增联系方式"},"New Order Alerts":{"es":"Alertas de nuevos pedidos","zh-TW":"新訂單通知","zh-CN":"新订单通知"},"New Pre-Order Alerts":{"es":"Alertas de nuevos pedidos anticipados","zh-TW":"新預訂通知","zh-CN":"新预订通知"},"New Catalogue Requests":{"es":"Nuevas solicitudes del catálogo","zh-TW":"新目錄請求","zh-CN":"新目录请求"},"New Catalogue Request":{"es":"Nueva solicitud del catálogo","zh-TW":"新目錄請求","zh-CN":"新目录请求"},"New Custom Cake Request":{"es":"Nueva solicitud de pastel personalizado","zh-TW":"新客製蛋糕請求","zh-CN":"新定制蛋糕请求"},"New Pre-Order":{"es":"Nuevo pedido anticipado","zh-TW":"新預訂","zh-CN":"新预订"},"Sound":{"es":"Sonido","zh-TW":"音效","zh-CN":"音效"},"Repeat Sound":{"es":"Repetir sonido","zh-TW":"重複音效","zh-CN":"重复音效"},"Desktop Push":{"es":"Notificaciones de escritorio","zh-TW":"電腦推播","zh-CN":"电脑推送"},"Mobile Push":{"es":"Notificaciones móviles","zh-TW":"手機推播","zh-CN":"手机推送"},"App Badge":{"es":"Insignia de la aplicación","zh-TW":"應用程式徽章","zh-CN":"应用徽章"},"Test Notification":{"es":"Probar notificación","zh-TW":"測試通知","zh-CN":"测试通知"},"Register this device":{"es":"Registrar este dispositivo","zh-TW":"註冊此裝置","zh-CN":"注册此设备"},"Update this device":{"es":"Actualizar este dispositivo","zh-TW":"更新此裝置","zh-CN":"更新此设备"},"Unregister this device":{"es":"Dar de baja este dispositivo","zh-TW":"取消裝置註冊","zh-CN":"取消设备注册"},"Device unregistered.":{"es":"Dispositivo dado de baja.","zh-TW":"已取消裝置註冊。","zh-CN":"已取消设备注册。"},"Enable alert sound":{"es":"Activar sonido de alertas","zh-TW":"啟用通知音效","zh-CN":"启用通知音效"},"Preferences apply to this account on this device. Register each device separately.":{"es":"Estas preferencias se aplican a esta cuenta en este dispositivo. Registre cada dispositivo por separado.","zh-TW":"偏好設定僅適用於此裝置上的此帳號，請分別註冊每個裝置。","zh-CN":"偏好设置仅适用于此设备上的此账号，请分别注册每个设备。"},"Foreground sound needs a tap first. Closed-app sound and badges depend on the operating system.":{"es":"El sonido requiere un toque inicial. Con la aplicación cerrada, el sonido y las insignias dependen del sistema operativo.","zh-TW":"前景音效需先點選畫面。關閉應用程式後的音效與徽章取決於作業系統。","zh-CN":"前台音效需先点击画面。关闭应用后的音效与徽章取决于操作系统。"},"Push is unavailable in this browser.":{"es":"Este navegador no admite notificaciones push.","zh-TW":"此瀏覽器不支援推播。","zh-CN":"此浏览器不支持推送。"},"Push setup is required before registration.":{"es":"Configure las notificaciones push antes de registrar el dispositivo.","zh-TW":"註冊前請先設定推播服務。","zh-CN":"注册前请先设置推送服务。"},"Notification permission was not granted.":{"es":"No se concedió permiso de notificación.","zh-TW":"未授予通知權限。","zh-CN":"未授予通知权限。"},"Image":{"es":"Imagen","zh-TW":"圖片","zh-CN":"图片"},"of":{"es":"de","zh-TW":"／","zh-CN":"／"},"Bread":{"es":"Pan","zh-TW":"麵包","zh-CN":"面包"},"Breads":{"es":"Panes","zh-TW":"麵包","zh-CN":"面包"},"Pastries":{"es":"Pastelería","zh-TW":"酥點","zh-CN":"酥点"},"Cakes":{"es":"Pasteles","zh-TW":"蛋糕","zh-CN":"蛋糕"},"Cookies":{"es":"Galletas","zh-TW":"餅乾","zh-CN":"饼干"},"Desserts":{"es":"Postres","zh-TW":"甜點","zh-CN":"甜点"},"Drinks":{"es":"Bebidas","zh-TW":"飲品","zh-CN":"饮品"},"Packaging":{"es":"Empaque","zh-TW":"包材","zh-CN":"包材"},"Ingredients":{"es":"Ingredientes","zh-TW":"原料","zh-CN":"原料"},"Supplies":{"es":"Suministros","zh-TW":"用品","zh-CN":"用品"},"Other":{"es":"Otro","zh-TW":"其他","zh-CN":"其他"}})
+
+Object.assign(translations,{"Request type":{"es":"Tipo de solicitud","zh-TW":"請求類型","zh-CN":"请求类型"},"Add to Pre-Order":{"es":"Agregar al pedido anticipado","zh-TW":"加入預訂","zh-CN":"加入预订"},"Custom Cake":{"es":"Pastel personalizado","zh-TW":"客製蛋糕","zh-CN":"定制蛋糕"}})
+
+Object.assign(translations,{"Pre-Order Contact Choices":{"es":"Opciones de contacto para pedidos anticipados","zh-TW":"預訂聯絡方式選項","zh-CN":"预订联系方式选项"}})
+
+Object.assign(translations,{"Business colors are shared with the catalogue. Customers choose their own Light, Dark or System mode.":{"es":"Los colores del negocio se comparten con el catálogo. Los clientes eligen Claro, Oscuro o Sistema.","zh-TW":"商家色彩會套用至目錄。顧客可自行選擇淺色、深色或跟隨系統。","zh-CN":"商家色彩会应用于目录。顾客可自行选择浅色、深色或跟随系统。"}})
+
+Object.assign(translations,{"Catalogue Request":{"es":"Solicitud del catálogo","zh-TW":"目錄請求","zh-CN":"目录请求"},"Request unavailable":{"es":"Solicitud no disponible","zh-TW":"無法取得請求","zh-CN":"无法获取请求"},"Load this request from its assigned station queue. Opening an alert does not create a sale.":{"es":"Cargue esta solicitud desde la cola de su estación asignada. Abrir una alerta no crea una venta.","zh-TW":"請從指派工作站的佇列載入此請求。開啟通知不會建立銷售。","zh-CN":"请从指定工作站的队列加载此请求。打开通知不会创建销售。"}})

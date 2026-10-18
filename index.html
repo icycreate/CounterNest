@@ -27,7 +27,7 @@
       try {
         var publicToken = /^\/catalogue(?:-display)?\/?$/.test(location.pathname) ? new URLSearchParams(location.search).get('token') : null;
         var publicTheme = publicToken ? JSON.parse(localStorage.getItem('counternest.catalogue-theme.' + encodeURIComponent(publicToken)) || 'null') : null;
-        var appearance = publicToken ? (publicTheme && publicTheme.appearance || 'system') : (localStorage.getItem('counternest.appearance') || 'system');
+        var appearance = publicToken ? (localStorage.getItem('counternest.catalogue-theme.' + encodeURIComponent(publicToken) + '.preference') || 'light') : (localStorage.getItem('counternest.appearance') || 'system');
         if (!['light', 'dark', 'system'].includes(appearance)) appearance = 'system';
         var dark = appearance === 'dark' || (appearance === 'system' && matchMedia('(prefers-color-scheme: dark)').matches);
         document.documentElement.dataset.bootTheme = dark ? 'dark' : 'light';

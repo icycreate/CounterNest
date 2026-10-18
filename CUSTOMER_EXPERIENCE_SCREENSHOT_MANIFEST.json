@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0-rc.11",
+  "screenshots": [
+    {
+      "file": "docs/customer-experience-screenshots/catalogue-phone-dark-contacts.jpg",
+      "bytes": 33010,
+      "sha256": "10e17be431e8cf0edffa83b74b5b33ad05571fb0abdc9adc57c24f8094de3651",
+      "source": "Actual local browser capture with fictional data",
+      "note": "Phone catalogue viewport capture; other major pages retain RC10 baseline screenshots."
+    },
+    {
+      "file": "docs/customer-experience-screenshots/catalogue-phone-dark.jpg",
+      "bytes": 32353,
+      "sha256": "34d499419faf964a50c4a885703683fc3bf13c23d3b07cba28603b23d0328bc7",
+      "source": "Actual local browser capture with fictional data",
+      "note": "Phone catalogue viewport capture; other major pages retain RC10 baseline screenshots."
+    },
+    {
+      "file": "docs/customer-experience-screenshots/settings-phone-header.jpg",
+      "bytes": 50787,
+      "sha256": "07029befa708f0ea5a5eda86b694610a1b40e7c6ee291a08cfb0acf7cdf6a747",
+      "source": "Actual local browser capture with fictional data",
+      "note": "Native capture includes unused panel background outside the app viewport."
+    }
+  ],
+  "capture_limitations": "Intermittent native screenshot failures/compositor artifacts prevented complete new desktop/alert/gallery captures; rejected attempts are outside release source. See RC11_BROWSER_QA.json."
+}

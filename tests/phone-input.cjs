@@ -7,7 +7,7 @@ async function main(){const p=await load('phone.ts'),{PhoneInput,setUiLanguage}=
  assert.equal(p.inferPhoneCountry('+886912345678'),'TW');assert.equal(p.inferPhoneCountry('+12425550123'),'BS');assert.equal(p.inferPhoneCountry('+14165550123','CA'),'CA');assert.equal(p.companyPhoneCountry('+50160001234','USD'),'BZ');assert.equal(p.companyPhoneCountry('','MXN'),'MX');assert(p.phoneCountries.length>230);assert.equal(new Set(p.phoneCountries.map(c=>c.iso)).size,p.phoneCountries.length);
  let tree,value='',last='',validity='';const change=next=>{last=next;value=next;tree.update(React.createElement(PhoneInput,{value,onChange:change,defaultCountry:'BZ',required:true}))};
  Renderer.act(()=>{tree=Renderer.create(React.createElement(PhoneInput,{value,onChange:change,defaultCountry:'BZ',required:true}),{createNodeMock:element=>element.type==='input'?{setCustomValidity(message){validity=message}}:null})});
- const number=()=>tree.root.findByProps({type:'tel'}),select=()=>tree.root.findByType('select'),search=()=>tree.root.findByProps({type:'search'});
+ const number=()=>tree.root.findAllByType('input').find(n=>n.props.type==='tel'),select=()=>tree.root.findByType('select'),search=()=>tree.root.findAllByType('input').find(n=>n.props.type==='search');
  assert.equal(select().props.value,'BZ');assert.equal(number().props.value,'');assert.equal(number().props.required,true);
  Renderer.act(()=>number().props.onChange({target:{value:'600-01234'}}));assert.equal(last,'+50160001234');assert.equal(number().props.value,'60001234');assert.equal(validity,'');
  Renderer.act(()=>select().props.onChange({target:{value:'MX'}}));assert.equal(last,'+5260001234');assert.equal(select().props.value,'MX');

@@ -1,0 +1,268 @@
+[
+  {
+    "file": "src/AlertsEscalations.tsx",
+    "headers": 2,
+    "cards": 2,
+    "tabs": 0,
+    "header_buttons": 1
+  },
+  {
+    "file": "src/App.tsx",
+    "headers": 0,
+    "cards": 45,
+    "tabs": 3,
+    "header_buttons": 21
+  },
+  {
+    "file": "src/CashierHome.tsx",
+    "headers": 0,
+    "cards": 1,
+    "tabs": 0,
+    "header_buttons": 0
+  },
+  {
+    "file": "src/Catalogue.tsx",
+    "headers": 2,
+    "cards": 1,
+    "tabs": 0,
+    "header_buttons": 4
+  },
+  {
+    "file": "src/CatalogueAdvanced.tsx",
+    "headers": 0,
+    "cards": 1,
+    "tabs": 0,
+    "header_buttons": 0
+  },
+  {
+    "file": "src/CataloguePreorders.tsx",
+    "headers": 1,
+    "cards": 3,
+    "tabs": 0,
+    "header_buttons": 0
+  },
+  {
+    "file": "src/CommercialCatalogue.tsx",
+    "headers": 0,
+    "cards": 2,
+    "tabs": 0,
+    "header_buttons": 0
+  },
+  {
+    "file": "src/CommercialOperations.tsx",
+    "headers": 3,
+    "cards": 7,
+    "tabs": 1,
+    "header_buttons": 4
+  },
+  {
+    "file": "src/CustomerContactSettings.tsx",
+    "headers": 0,
+    "cards": 1,
+    "tabs": 0,
+    "header_buttons": 0
+  },
+  {
+    "file": "src/CustomerDisplay.tsx",
+    "headers": 2,
+    "cards": 3,
+    "tabs": 0,
+    "header_buttons": 1
+  },
+  {
+    "file": "src/DailyChecklists.tsx",
+    "headers": 1,
+    "cards": 1,
+    "tabs": 0,
+    "header_buttons": 1
+  },
+  {
+    "file": "src/ErrorBoundary.tsx",
+    "headers": 0,
+    "cards": 1,
+    "tabs": 0,
+    "header_buttons": 0
+  },
+  {
+    "file": "src/FinishedBatchTraceability.tsx",
+    "headers": 0,
+    "cards": 2,
+    "tabs": 0,
+    "header_buttons": 0
+  },
+  {
+    "file": "src/HardwareCommissioning.tsx",
+    "headers": 1,
+    "cards": 4,
+    "tabs": 0,
+    "header_buttons": 2
+  },
+  {
+    "file": "src/IngredientPurchasing.tsx",
+    "headers": 1,
+    "cards": 0,
+    "tabs": 0,
+    "header_buttons": 0
+  },
+  {
+    "file": "src/InternalGoLive.tsx",
+    "headers": 2,
+    "cards": 3,
+    "tabs": 0,
+    "header_buttons": 3
+  },
+  {
+    "file": "src/InternalReleaseCandidate.tsx",
+    "headers": 2,
+    "cards": 1,
+    "tabs": 0,
+    "header_buttons": 1
+  },
+  {
+    "file": "src/IssueReport.tsx",
+    "headers": 1,
+    "cards": 1,
+    "tabs": 0,
+    "header_buttons": 1
+  },
+  {
+    "file": "src/Navigation.tsx",
+    "headers": 0,
+    "cards": 0,
+    "tabs": 1,
+    "header_buttons": 0
+  },
+  {
+    "file": "src/OperationalAcceptance.tsx",
+    "headers": 2,
+    "cards": 2,
+    "tabs": 0,
+    "header_buttons": 1
+  },
+  {
+    "file": "src/OperationalTasks.tsx",
+    "headers": 1,
+    "cards": 1,
+    "tabs": 0,
+    "header_buttons": 2
+  },
+  {
+    "file": "src/OperationalWorkspace.tsx",
+    "headers": 1,
+    "cards": 0,
+    "tabs": 0,
+    "header_buttons": 0
+  },
+  {
+    "file": "src/OperationsAnalytics.tsx",
+    "headers": 2,
+    "cards": 2,
+    "tabs": 0,
+    "header_buttons": 2
+  },
+  {
+    "file": "src/OperationsCalendar.tsx",
+    "headers": 1,
+    "cards": 4,
+    "tabs": 0,
+    "header_buttons": 0
+  },
+  {
+    "file": "src/OperationsCenter.tsx",
+    "headers": 2,
+    "cards": 1,
+    "tabs": 0,
+    "header_buttons": 4
+  },
+  {
+    "file": "src/OperationsSetup.tsx",
+    "headers": 0,
+    "cards": 4,
+    "tabs": 0,
+    "header_buttons": 0
+  },
+  {
+    "file": "src/PosTools.tsx",
+    "headers": 0,
+    "cards": 1,
+    "tabs": 0,
+    "header_buttons": 0
+  },
+  {
+    "file": "src/ProductionOperations.tsx",
+    "headers": 0,
+    "cards": 2,
+    "tabs": 0,
+    "header_buttons": 0
+  },
+  {
+    "file": "src/ProductionPlanning.tsx",
+    "headers": 2,
+    "cards": 2,
+    "tabs": 0,
+    "header_buttons": 1
+  },
+  {
+    "file": "src/ProductionStudio.tsx",
+    "headers": 1,
+    "cards": 17,
+    "tabs": 1,
+    "header_buttons": 1
+  },
+  {
+    "file": "src/RecallCaseManagement.tsx",
+    "headers": 0,
+    "cards": 2,
+    "tabs": 0,
+    "header_buttons": 0
+  },
+  {
+    "file": "src/RecipeInventory.tsx",
+    "headers": 2,
+    "cards": 5,
+    "tabs": 1,
+    "header_buttons": 1
+  },
+  {
+    "file": "src/SecurityRecovery.tsx",
+    "headers": 2,
+    "cards": 2,
+    "tabs": 0,
+    "header_buttons": 2
+  },
+  {
+    "file": "src/ShiftHandover.tsx",
+    "headers": 1,
+    "cards": 1,
+    "tabs": 0,
+    "header_buttons": 2
+  },
+  {
+    "file": "src/StaffSchedule.tsx",
+    "headers": 1,
+    "cards": 3,
+    "tabs": 0,
+    "header_buttons": 2
+  },
+  {
+    "file": "src/SupplyOperations.tsx",
+    "headers": 2,
+    "cards": 10,
+    "tabs": 1,
+    "header_buttons": 2
+  },
+  {
+    "file": "src/UxShell.tsx",
+    "headers": 0,
+    "cards": 6,
+    "tabs": 0,
+    "header_buttons": 0
+  },
+  {
+    "file": "src/WorkspaceRecovery.tsx",
+    "headers": 0,
+    "cards": 4,
+    "tabs": 0,
+    "header_buttons": 0
+  }
+]

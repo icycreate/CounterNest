@@ -1,7 +1,7 @@
 {
-  "version": "2.0.0-rc.9",
-  "build": "2026-10-17-calendar",
-  "migration_count": 90,
+  "version": "2.0.0-rc.11",
+  "build": "2026-10-18-customer-experience",
+  "migration_count": 92,
   "database_engine": "PGlite PostgreSQL with mocked Supabase auth/storage and mocked manager-PIN crypt for refund tests; pgcrypto extension omitted",
   "checks": [
     {
@@ -478,6 +478,62 @@
     },
     {
       "name": "Pending workspace deletion blocks Calendar reads and schedule changes",
+      "status": "passed"
+    },
+    {
+      "name": "RC10 removes unlinked zero-stock products and audits the actor and original ID",
+      "status": "passed"
+    },
+    {
+      "name": "RC10 archives products with inventory or real production links and blocks direct cascading deletion",
+      "status": "passed"
+    },
+    {
+      "name": "RC10 deletes unused customers but archives linked customer orders without changing history",
+      "status": "passed"
+    },
+    {
+      "name": "RC10 backups include the archive flag instead of reactivating archived customers",
+      "status": "passed"
+    },
+    {
+      "name": "RC10 archives stay out of new order pickers; staff cannot bypass removal via direct writes",
+      "status": "passed"
+    },
+    {
+      "name": "RC10 removal rechecks history under lock and rejects a stale delete decision",
+      "status": "passed"
+    },
+    {
+      "name": "RC10 removal RPCs reject staff, foreign-shop IDs, inactive and pending-deletion workspaces",
+      "status": "passed"
+    },
+    {
+      "name": "RC11 publishes explicitly enabled business contacts only, without staff details",
+      "status": "passed"
+    },
+    {
+      "name": "RC11 registers independent devices, updates the same device and blocks account takeover",
+      "status": "passed"
+    },
+    {
+      "name": "RC11 transactional request triggers queue each event/device once and respect alert preferences",
+      "status": "passed"
+    },
+    {
+      "name": "RC11 foreground cursors use server time and support same-timestamp pagination without duplicates",
+      "status": "passed"
+    },
+    {
+      "name": "RC11 push leases are exclusive and exclude revoked staff, disabled preferences and frozen workspaces",
+      "status": "passed"
+    },
+    {
+      "name": "RC11 unregister removes only the current account device and cascades queued deliveries",
+      "status": "passed"
+    },
+    {
+      "name": "RC11 public custom-cake requests retain replay identity and accept into the original cake workflow",
       "status": "passed"
     }
   ],

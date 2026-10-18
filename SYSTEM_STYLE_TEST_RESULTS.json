@@ -1,0 +1,30 @@
+{
+  "version": "2.0.0-rc.10",
+  "checks": [
+    {
+      "name": "Shared fields retain native validation, disabled state, labels and editable callbacks",
+      "status": "passed"
+    },
+    {
+      "name": "Buttons retain native type and callbacks; loading prevents repeat submission with visible state",
+      "status": "passed"
+    },
+    {
+      "name": "PageHeader supports title, subtitle, status and original action in all four languages",
+      "status": "passed"
+    },
+    {
+      "name": "Segmented navigation exposes active state and preserves each original action",
+      "status": "passed"
+    },
+    {
+      "name": "Theme contrast covers field, action, semantic and focus tokens for every accent and mode",
+      "status": "passed"
+    },
+    {
+      "name": "System migration reuses native components without a new framework or calendar data store",
+      "status": "passed"
+    }
+  ],
+  "scope": "Shared component interaction, state and theme contrast; sticky geometry and full pages verified separately in browser"
+}

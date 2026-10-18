@@ -12,7 +12,7 @@ export function catalogueManifest(token, catalogue) {
     if (logo.protocol === 'https:' && !logo.username && !logo.password) icons.unshift({src:logo.href, sizes:'any', purpose:'any'})
   } catch { /* Neutral CounterNest icons remain available. */ }
   const validHex=(v,f)=>typeof v==='string'&&/^#[0-9a-f]{6}$/i.test(v)?v:f
-  const dark=catalogue.theme?.appearance==='dark'
+  const dark=false // New customer devices start in Light; saved device choices apply after launch.
   const background=dark?'#1d2025':validHex(catalogue.theme?.background,'#fbf7f2')
   return {id:route, name, short_name:name.slice(0, 32), description:name + ' • Catalogue', start_url:route, scope:'/catalogue', display:'standalone', background_color:background, theme_color:background, icons}
 }

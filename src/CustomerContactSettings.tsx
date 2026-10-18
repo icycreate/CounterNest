@@ -1,3 +1,5 @@
+import {FormField,InputField} from './Fields'
+import {Card} from './Surface'
 import {Button} from './Button'
 import {trError,tr} from './i18n'
 import {useEffect,useState} from 'react'
@@ -14,19 +16,19 @@ export function CustomerContactSettings({role,showToast,display=false,shopName='
  async function save(){if(!supabase)return;setBusy(true);try{const r=await supabase.rpc('save_customer_contact_settings',{p_methods:methods,p_enabled:enabled,p_base_url:base.trim()||null,p_receipt_qr:receipt});if(r.error)throw r.error;await load();window.dispatchEvent(new Event('counternest:catalogue-settings'));showToast(trError(tr("Customer contact methods and catalogue URL saved.")))}catch(e){showToast(trError((e as Error).message))}finally{setBusy(false)}}
  async function copy(){try{await navigator.clipboard.writeText(url);showToast(trError(tr("Catalogue link copied.")))}catch{showToast(trError(tr("Select and copy the link manually.")))}}
  if(role!=='admin')return null
- return <section className="panel contact-settings"><div className="panel-title"><div><h2>{display?tr("Catalogue QR & Customer Link"):tr("Customer Contact Methods")}</h2><p>{tr("Choose how customers may request an order. Only their selected method is offered to staff.")}</p></div><Button onClick={()=>void load()} disabled={busy} type="button" variant="secondary">{tr("Refresh settings")}</Button></div>
+ return <Card className="panel contact-settings"><div className="panel-title"><div><h2>{display?tr("Catalogue QR & Customer Link"):tr("Pre-Order Contact Choices")}</h2><p>{tr("Choose how customers may request an order. Only their selected method is offered to staff.")}</p></div><Button onClick={()=>void load()} disabled={busy} type="button" variant="secondary">{tr("Refresh settings")}</Button></div>
  {!loaded?<p>{tr("Load the configured Supabase project to manage customer requests.")}</p>:<>
- <div className="contact-method-options">{contactMethods.map(([key,label])=><label key={key}><input type="checkbox" checked={methods.includes(key)} onChange={e=>setMethods(old=>e.target.checked?[...old,key]:old.filter(x=>x!==key))}/>{tr(label)}</label>)}</div>
- <label className="switch-line"><input type="checkbox" checked={enabled} onChange={e=>setEnabled(e.target.checked)}/>{' '+tr("Accept catalogue pre-order requests")}</label>
- <label>{tr("Public catalogue base URL")}<input type="url" value={base} placeholder={tr("https://your-domain.vercel.app")} onChange={e=>setBase(e.target.value)} aria-describedby="public-base-help"/></label><small id="public-base-help">{tr("Optional HTTPS origin. If blank, uses VITE_PUBLIC_APP_URL or the current site. Save changes before printing or sharing.")}</small>
- <label className="switch-line"><input type="checkbox" checked={receipt} onChange={e=>setReceipt(e.target.checked)}/>{' '+tr("Include catalogue QR on receipts")}</label>
+ <div className="contact-method-options">{contactMethods.map(([key,label])=><FormField key={key}><InputField type="checkbox" checked={methods.includes(key)} onChange={e=>setMethods(old=>e.target.checked?[...old,key]:old.filter(x=>x!==key))}/>{tr(label)}</FormField>)}</div>
+ <FormField className="switch-line"><InputField type="checkbox" checked={enabled} onChange={e=>setEnabled(e.target.checked)}/>{' '+tr("Accept catalogue pre-order requests")}</FormField>
+ <FormField>{tr("Public catalogue base URL")}<InputField type="url" value={base} placeholder={tr("https://your-domain.vercel.app")} onChange={e=>setBase(e.target.value)} aria-describedby="public-base-help"/></FormField><small id="public-base-help">{tr("Optional HTTPS origin. If blank, uses VITE_PUBLIC_APP_URL or the current site. Save changes before printing or sharing.")}</small>
+ <FormField className="switch-line"><InputField type="checkbox" checked={receipt} onChange={e=>setReceipt(e.target.checked)}/>{' '+tr("Include catalogue QR on receipts")}</FormField>
  <Button  disabled={busy||!url||(enabled&&!methods.length)} onClick={()=>void save()} type="button" variant="primary">{busy?tr("Saving…"):tr("Save Contact & URL Settings")}</Button>
- {display&&<><div className="customer-link-row"><input aria-label={tr("Customer catalogue link")} readOnly value={url}/><Button disabled={!url||!active} onClick={()=>void copy()} type="button" variant="secondary">{tr("Copy Catalogue Link")}</Button><Button disabled={!url||!active} onClick={()=>window.open(url,'_blank','noopener,noreferrer')} type="button" variant="secondary">{tr("Open Customer Display")}</Button><Button disabled={!links.preview||!active} onClick={()=>window.open(links.preview,'_blank','noopener,noreferrer')} type="button" variant="secondary">{tr("Preview Catalogue")}</Button></div>
+ {display&&<><div className="customer-link-row"><InputField aria-label={tr("Customer catalogue link")} readOnly value={url}/><Button disabled={!url||!active} onClick={()=>void copy()} type="button" variant="secondary">{tr("Copy Catalogue Link")}</Button><Button disabled={!url||!active} onClick={()=>window.open(url,'_blank','noopener,noreferrer')} type="button" variant="secondary">{tr("Open Customer Display")}</Button><Button disabled={!links.preview||!active} onClick={()=>window.open(links.preview,'_blank','noopener,noreferrer')} type="button" variant="secondary">{tr("Preview Catalogue")}</Button></div>
  {!active&&<p className="warning-box">{tr("Customer display sharing is disabled. Enable it in Display Settings before sharing QR codes.")}</p>}
  <div className="report-actions"><Button disabled={!qr||!active} onClick={()=>setShowQr(v=>!v)} type="button" variant="secondary">{showQr?tr("Hide QR Code"):tr("Show QR Code / View QR")}</Button>{qr&&active&&<><a className="primary-btn" href={qr} download="CounterNest-catalogue-QR.png">{tr("Save QR Image")}</a><Button onClick={()=>{if(!printCatalogueQr(url,qr,shopName,logoUrl))showToast(trError(tr("Allow popups to print the QR.")))}} type="button" variant="secondary">{tr("Print QR")}</Button></>}</div>
  {showQr&&qr&&active&&<div className="catalogue-qr-panel"><img src={qr} alt={tr("Customer catalogue QR code")}/><p>{tr("Scan to browse and request a pre-order. No staff login or app installation. Save this PNG for signage, flyers and price lists.")}</p></div>}</>}
  <p className="muted">{tr("No messages are sent automatically. Staff prepare a message or open the selected contact app. Another method requires a one-time administrator override and an audited reason.")}</p></>}
- </section>
+ </Card>
 }
 export function ReceiptCatalogueQr(){
  const[qr,setQr]=useState('')

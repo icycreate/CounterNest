@@ -1,6 +1,6 @@
 {
   "version": "2.0.0-rc.6",
-  "migration_count": 90,
+  "migration_count": 92,
   "engine": "PGlite PostgreSQL; Supabase auth and storage mocked",
   "checks": [
     {

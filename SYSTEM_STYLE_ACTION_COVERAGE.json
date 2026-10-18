@@ -1,0 +1,150 @@
+[
+  {
+    "file": "src/AlertsEscalations.tsx",
+    "edits": 9
+  },
+  {
+    "file": "src/App.tsx",
+    "edits": 503
+  },
+  {
+    "file": "src/AuthStartupPending.tsx",
+    "edits": 3
+  },
+  {
+    "file": "src/CashierHome.tsx",
+    "edits": 9
+  },
+  {
+    "file": "src/Catalogue.tsx",
+    "edits": 39
+  },
+  {
+    "file": "src/CatalogueAdvanced.tsx",
+    "edits": 15
+  },
+  {
+    "file": "src/CommercialCatalogue.tsx",
+    "edits": 42
+  },
+  {
+    "file": "src/CommercialOperations.tsx",
+    "edits": 134
+  },
+  {
+    "file": "src/ConfirmDialog.tsx",
+    "edits": 2
+  },
+  {
+    "file": "src/CustomerDisplay.tsx",
+    "edits": 60
+  },
+  {
+    "file": "src/DailyChecklists.tsx",
+    "edits": 20
+  },
+  {
+    "file": "src/ErrorBoundary.tsx",
+    "edits": 3
+  },
+  {
+    "file": "src/FinishedBatchTraceability.tsx",
+    "edits": 59
+  },
+  {
+    "file": "src/HardwareCommissioning.tsx",
+    "edits": 12
+  },
+  {
+    "file": "src/ImageCropper.tsx",
+    "edits": 14
+  },
+  {
+    "file": "src/InternalGoLive.tsx",
+    "edits": 8
+  },
+  {
+    "file": "src/InternalReleaseCandidate.tsx",
+    "edits": 3
+  },
+  {
+    "file": "src/InventorySources.tsx",
+    "edits": 3
+  },
+  {
+    "file": "src/IssueReport.tsx",
+    "edits": 3
+  },
+  {
+    "file": "src/LegacyPurchaseHistory.tsx",
+    "edits": 3
+  },
+  {
+    "file": "src/Navigation.tsx",
+    "edits": 30
+  },
+  {
+    "file": "src/NavigationBoundary.tsx",
+    "edits": 6
+  },
+  {
+    "file": "src/OperationalAcceptance.tsx",
+    "edits": 3
+  },
+  {
+    "file": "src/OperationalTasks.tsx",
+    "edits": 54
+  },
+  {
+    "file": "src/OperationsAnalytics.tsx",
+    "edits": 3
+  },
+  {
+    "file": "src/OperationsCalendar.tsx",
+    "edits": 6
+  },
+  {
+    "file": "src/OperationsCenter.tsx",
+    "edits": 25
+  },
+  {
+    "file": "src/OrderDisplays.tsx",
+    "edits": 15
+  },
+  {
+    "file": "src/PosTools.tsx",
+    "edits": 27
+  },
+  {
+    "file": "src/ProductionPlanning.tsx",
+    "edits": 17
+  },
+  {
+    "file": "src/ProductionStudio.tsx",
+    "edits": 69
+  },
+  {
+    "file": "src/RecallCaseManagement.tsx",
+    "edits": 23
+  },
+  {
+    "file": "src/RecipeInventory.tsx",
+    "edits": 83
+  },
+  {
+    "file": "src/SecurityRecovery.tsx",
+    "edits": 17
+  },
+  {
+    "file": "src/ShiftHandover.tsx",
+    "edits": 28
+  },
+  {
+    "file": "src/StaffSchedule.tsx",
+    "edits": 23
+  },
+  {
+    "file": "src/SupplyOperations.tsx",
+    "edits": 136
+  }
+]

@@ -1,3 +1,5 @@
+> RC11 update: apply migration 92 after RC10. See INSTALL_UPGRADE_GUIDE.md and NOTIFICATION_SETUP.md for current deployment variables, webhook and retry setup. The detailed base deployment guidance below remains applicable.
+
 # RC5 deployment notes
 
 Current source version 2.0.0-rc.5; build 2026-10-17-operations1. RC4 migration baseline83, new files84–87. Deploy SQL in order, then the new workspace-lifecycle Edge handler/shared archive module, then Vercel source. Redeploy create-staff-account and reset-staff-password for the new owner protections. The change-password and change-initial-password handlers remain unchanged. The separate Vercel catalogue-manifest endpoint remains included.

@@ -1,15 +1,16 @@
 {
   "product": "CounterNest POS",
-  "version": "2.0.0-rc.9",
-  "build": "2026-10-17-calendar",
-  "generated_at": "2026-10-18T04:18:11.998Z",
-  "result": "Local build, automated and browser validation passed; live staging and installed-PWA acceptance pending",
+  "version": "2.0.0-rc.11",
+  "build": "2026-10-18-customer-experience",
+  "date": "2026-10-18",
+  "result": "Local candidate validation passed; live staging/push and physical-device acceptance pending",
   "dependency_install": {
     "command": "npm install",
     "status": "passed",
-    "packages_added": 125,
+    "packages_added": 140,
+    "packages_audited": 141,
     "audit_vulnerabilities": 0,
-    "new_runtime_dependencies": 0
+    "new_dependency": "web-push (Vercel server only)"
   },
   "checks": [
     {
@@ -28,19 +29,80 @@
       "status": "passed"
     }
   ],
-  "migration_count": 90,
-  "baseline_migrations_unchanged": 89,
-  "new_migrations": [
-    "202610171700_operations_calendar.sql"
+  "database_checks": 133,
+  "experience_checks": 8,
+  "migration_count": 92,
+  "preserved_migrations": 91,
+  "browser": [
+    {
+      "name": "Default approved emblem loads in public catalogue",
+      "status": "passed",
+      "evidence": "Business logo image complete with nonzero natural width; source /counternest-default-logo.svg"
+    },
+    {
+      "name": "Business title and favicon projection",
+      "status": "passed",
+      "evidence": "Browser title Feng’s Lotus & Flour • CounterNest; shared custom/fallback helper also covered automatically"
+    },
+    {
+      "name": "Customer default and Dark selector",
+      "status": "passed",
+      "evidence": "Initial Light selection, switched to Dark using the customer selector; restored on a fresh tab"
+    },
+    {
+      "name": "Public contacts",
+      "status": "passed",
+      "evidence": "Expanded enabled WhatsApp and email cards; WhatsApp URL https://wa.me/50160001234; no message sent"
+    },
+    {
+      "name": "Spanish and traditional Chinese categories preserve original names",
+      "status": "passed",
+      "evidence": "Cakes → Pasteles/蛋糕; Chocolate Cake, Butter Croissant, 6 inch and 8 inch remain exact"
+    },
+    {
+      "name": "Dark prices and controls",
+      "status": "passed",
+      "evidence": "Public card price rgb(243,245,247) on rgb(40,45,52); product detail inputs/selects use the same pair"
+    },
+    {
+      "name": "Phone responsive catalogue",
+      "status": "passed",
+      "evidence": "Measured innerWidth390 innerHeight700, document width does not exceed viewport"
+    },
+    {
+      "name": "Desktop layout",
+      "status": "passed",
+      "evidence": "Measured innerWidth1380; no document overflow"
+    },
+    {
+      "name": "Gallery count and exact names",
+      "status": "passed",
+      "evidence": "Traditional Chinese Image 1 of 2 label; original names and variant prices retained; full-image/thumbnail controls present"
+    },
+    {
+      "name": "Custom cake request selection",
+      "status": "passed",
+      "evidence": "Request type options Pre-Order/Custom Cake found and selection changed on the actual phone form; no request submitted"
+    },
+    {
+      "name": "Notification and contact settings",
+      "status": "passed",
+      "evidence": "Loaded New Order Alerts, Customer Contact Methods and Pre-Order Contact Choices; Translation card absent"
+    },
+    {
+      "name": "Local Test Notification",
+      "status": "passed",
+      "evidence": "Clicked test control in fictional preview; status Test Notification shown, no external transport or OS permission requested"
+    },
+    {
+      "name": "Screenshot capture coverage",
+      "status": "partial",
+      "evidence": "Valid phone catalogue/contacts and Settings captures saved. Tool intermittently reported Unable to capture screenshot; some native viewport/full-page attempts had compositor artifacts and were removed from release evidence. Further desktop/alert/gallery captures remain a staging task."
+    }
   ],
-  "database_checks": 119,
-  "calendar_groups": 8,
-  "browser_checks": 12,
-  "screenshot_count": 12,
-  "limits": [
-    "PGlite uses mocked Supabase auth/storage and test crypt; cloud project configuration is not certified.",
-    "Browser evidence uses fictional QA data outside the deployable source.",
-    "Physical installed-PWA, touch/OS gestures, real email recovery and target deployment acceptance remain pending.",
-    "Vite large-bundle and CJS test-only import.meta warnings remain nonfatal."
+  "limitations": [
+    "Real custom logo upload/removal and favicon cache switch",
+    "Real browser subscription, VAPID transport/webhook/scheduler and OS delivery",
+    "Physical PWA install/relaunch and hardware/storage flows"
   ]
 }

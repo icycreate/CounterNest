@@ -448,5 +448,15 @@
     "order": 90,
     "file": "202610171700_operations_calendar.sql",
     "sha256": "f464483ea788475e6154e63a007a9b1208256fef4e2494e42468a6d98ceaaafa"
+  },
+  {
+    "order": 91,
+    "file": "202610180800_master_record_removal.sql",
+    "sha256": "79b231fe599b724a20adc2cedf9d655abe1e4973caa95ae2a5967670c840564e"
+  },
+  {
+    "order": 92,
+    "file": "202610181200_customer_experience_notifications.sql",
+    "sha256": "8cf3d2a4bc2a2d6a676a7afdafd014f85db1d337644c42a067b6238912498be2"
   }
 ]

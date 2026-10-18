@@ -1,0 +1,30 @@
+{
+  "provenance": "Retained RC10 baseline evidence. Current RC11 commands are in FINAL_CHECK_RESULTS.json.",
+  "baseline": [
+    {
+      "command": "npm run test:system-style",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "command": "npm run test:purchasing-model",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "command": "npm run test:navigation-theme",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "command": "npm run build",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "command": "npm run test:assets",
+      "status": "passed",
+      "exit_code": 0
+    }
+  ]
+}

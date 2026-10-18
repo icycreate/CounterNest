@@ -1,0 +1,577 @@
+{
+  "version": "2.0.0-rc.10",
+  "scope": "Actual JSX component usage in final source; counts include conditional branches and reusable definitions.",
+  "totals": {
+    "PageHeader": 67,
+    "Button": 716,
+    "Card": 149,
+    "SelectField": 130,
+    "FormField": 522,
+    "InputField": 355,
+    "PhoneInput": 7,
+    "StickyActions": 52,
+    "RecordRemovalDialog": 2,
+    "BarcodeField": 1,
+    "ProductImages": 1,
+    "SegmentedNav": 11,
+    "SearchField": 21,
+    "TextAreaField": 52,
+    "SectionHeader": 4,
+    "Toggle": 1,
+    "ConfirmDialog": 1,
+    "EmptyState": 1
+  },
+  "files": [
+    {
+      "file": "src/AlertsEscalations.tsx",
+      "components": {
+        "PageHeader": 2,
+        "Button": 4,
+        "Card": 2,
+        "SelectField": 1
+      }
+    },
+    {
+      "file": "src/App.tsx",
+      "components": {
+        "Card": 46,
+        "Button": 187,
+        "FormField": 144,
+        "InputField": 106,
+        "PhoneInput": 4,
+        "PageHeader": 27,
+        "SelectField": 18,
+        "StickyActions": 16,
+        "RecordRemovalDialog": 2,
+        "BarcodeField": 1,
+        "ProductImages": 1,
+        "SegmentedNav": 3,
+        "SearchField": 2,
+        "TextAreaField": 3,
+        "SectionHeader": 4,
+        "Toggle": 1
+      }
+    },
+    {
+      "file": "src/AuthStartupPending.tsx",
+      "components": {
+        "Button": 1
+      }
+    },
+    {
+      "file": "src/CashierHome.tsx",
+      "components": {
+        "Card": 1,
+        "Button": 3,
+        "FormField": 1,
+        "SearchField": 1
+      }
+    },
+    {
+      "file": "src/Catalogue.tsx",
+      "components": {
+        "PageHeader": 2,
+        "Button": 17,
+        "Card": 1,
+        "SearchField": 1,
+        "SelectField": 7,
+        "FormField": 25,
+        "TextAreaField": 1,
+        "InputField": 19,
+        "StickyActions": 3
+      }
+    },
+    {
+      "file": "src/CatalogueAdvanced.tsx",
+      "components": {
+        "Button": 14,
+        "FormField": 9,
+        "InputField": 9,
+        "SelectField": 1,
+        "Card": 1
+      }
+    },
+    {
+      "file": "src/CatalogueInstall.tsx",
+      "components": {
+        "Button": 2
+      }
+    },
+    {
+      "file": "src/CataloguePreorders.tsx",
+      "components": {
+        "Button": 39,
+        "Card": 3,
+        "FormField": 23,
+        "SelectField": 6,
+        "TextAreaField": 8,
+        "InputField": 9,
+        "PhoneInput": 2,
+        "PageHeader": 1
+      }
+    },
+    {
+      "file": "src/CommercialCatalogue.tsx",
+      "components": {
+        "Button": 16,
+        "SearchField": 1,
+        "SelectField": 11,
+        "InputField": 4,
+        "Card": 2,
+        "FormField": 6
+      }
+    },
+    {
+      "file": "src/CommercialOperations.tsx",
+      "components": {
+        "Button": 49,
+        "FormField": 25,
+        "InputField": 21,
+        "TextAreaField": 3,
+        "PageHeader": 3,
+        "Card": 7,
+        "SelectField": 7,
+        "SegmentedNav": 1,
+        "SearchField": 1
+      }
+    },
+    {
+      "file": "src/ConfirmDialog.tsx",
+      "components": {
+        "StickyActions": 1,
+        "Button": 2
+      }
+    },
+    {
+      "file": "src/CustomerContactSettings.tsx",
+      "components": {
+        "Card": 1,
+        "Button": 7,
+        "FormField": 4,
+        "InputField": 5
+      }
+    },
+    {
+      "file": "src/CustomerDisplay.tsx",
+      "components": {
+        "Button": 21,
+        "SearchField": 1,
+        "FormField": 4,
+        "SelectField": 2,
+        "InputField": 3,
+        "PageHeader": 2,
+        "Card": 3
+      }
+    },
+    {
+      "file": "src/DailyChecklists.tsx",
+      "components": {
+        "PageHeader": 1,
+        "Button": 7,
+        "Card": 1,
+        "FormField": 1,
+        "InputField": 1,
+        "StickyActions": 1
+      }
+    },
+    {
+      "file": "src/ErrorBoundary.tsx",
+      "components": {
+        "Card": 1,
+        "Button": 1
+      }
+    },
+    {
+      "file": "src/Fields.tsx",
+      "components": {
+        "FormField": 1,
+        "InputField": 2
+      }
+    },
+    {
+      "file": "src/FinishedBatchTraceability.tsx",
+      "components": {
+        "Card": 2,
+        "FormField": 6,
+        "SelectField": 1,
+        "Button": 17,
+        "StickyActions": 4,
+        "InputField": 3,
+        "TextAreaField": 2
+      }
+    },
+    {
+      "file": "src/HardwareCommissioning.tsx",
+      "components": {
+        "PageHeader": 1,
+        "Button": 6,
+        "Card": 4,
+        "FormField": 7,
+        "InputField": 4,
+        "SelectField": 3
+      }
+    },
+    {
+      "file": "src/i18n.tsx",
+      "components": {
+        "FormField": 1,
+        "SelectField": 1
+      }
+    },
+    {
+      "file": "src/ImageCropper.tsx",
+      "components": {
+        "FormField": 4,
+        "SelectField": 1,
+        "InputField": 3,
+        "StickyActions": 1,
+        "Button": 4
+      }
+    },
+    {
+      "file": "src/IngredientPurchasing.tsx",
+      "components": {
+        "Button": 30,
+        "PageHeader": 1,
+        "SegmentedNav": 1,
+        "FormField": 29,
+        "SearchField": 2,
+        "SelectField": 5,
+        "InputField": 18,
+        "TextAreaField": 5,
+        "StickyActions": 1
+      }
+    },
+    {
+      "file": "src/InternalGoLive.tsx",
+      "components": {
+        "PageHeader": 2,
+        "Button": 5,
+        "Card": 3,
+        "FormField": 2,
+        "InputField": 1,
+        "TextAreaField": 1,
+        "StickyActions": 1
+      }
+    },
+    {
+      "file": "src/InternalReleaseCandidate.tsx",
+      "components": {
+        "PageHeader": 2,
+        "Button": 2,
+        "Card": 1
+      }
+    },
+    {
+      "file": "src/InventorySources.tsx",
+      "components": {
+        "SearchField": 1,
+        "FormField": 3,
+        "SelectField": 2,
+        "InputField": 1,
+        "Button": 1
+      }
+    },
+    {
+      "file": "src/IssueReport.tsx",
+      "components": {
+        "PageHeader": 1,
+        "Button": 2,
+        "FormField": 5,
+        "SelectField": 2,
+        "InputField": 1,
+        "TextAreaField": 2,
+        "Card": 1
+      }
+    },
+    {
+      "file": "src/LegacyPurchaseHistory.tsx",
+      "components": {
+        "Button": 1
+      }
+    },
+    {
+      "file": "src/Navigation.tsx",
+      "components": {
+        "Button": 10,
+        "SegmentedNav": 1
+      }
+    },
+    {
+      "file": "src/NavigationBoundary.tsx",
+      "components": {
+        "Button": 3
+      }
+    },
+    {
+      "file": "src/OperationalAcceptance.tsx",
+      "components": {
+        "PageHeader": 2,
+        "Button": 2,
+        "FormField": 1,
+        "TextAreaField": 1,
+        "Card": 2
+      }
+    },
+    {
+      "file": "src/OperationalTasks.tsx",
+      "components": {
+        "PageHeader": 1,
+        "Button": 18,
+        "Card": 1,
+        "FormField": 11,
+        "SearchField": 1,
+        "SelectField": 5,
+        "InputField": 3,
+        "TextAreaField": 3,
+        "StickyActions": 3
+      }
+    },
+    {
+      "file": "src/OperationalWorkspace.tsx",
+      "components": {
+        "PageHeader": 1,
+        "SegmentedNav": 1,
+        "Button": 1
+      }
+    },
+    {
+      "file": "src/OperationsAnalytics.tsx",
+      "components": {
+        "PageHeader": 2,
+        "Button": 3,
+        "Card": 2,
+        "FormField": 2,
+        "InputField": 2
+      }
+    },
+    {
+      "file": "src/OperationsCalendar.tsx",
+      "components": {
+        "Button": 23,
+        "PageHeader": 1,
+        "SegmentedNav": 1,
+        "SearchField": 1,
+        "FormField": 13,
+        "SelectField": 4,
+        "InputField": 8,
+        "Card": 4,
+        "TextAreaField": 1
+      }
+    },
+    {
+      "file": "src/OperationsCenter.tsx",
+      "components": {
+        "PageHeader": 2,
+        "Button": 11,
+        "Card": 1,
+        "SearchField": 1,
+        "SelectField": 6,
+        "FormField": 9,
+        "InputField": 2,
+        "TextAreaField": 2,
+        "StickyActions": 2
+      }
+    },
+    {
+      "file": "src/OperationsSetup.tsx",
+      "components": {
+        "Card": 4,
+        "FormField": 11,
+        "SelectField": 4,
+        "InputField": 7,
+        "Button": 9
+      }
+    },
+    {
+      "file": "src/OrderDisplays.tsx",
+      "components": {
+        "Button": 5
+      }
+    },
+    {
+      "file": "src/PhoneInput.tsx",
+      "components": {
+        "SearchField": 1,
+        "SelectField": 1,
+        "InputField": 1
+      }
+    },
+    {
+      "file": "src/PosTools.tsx",
+      "components": {
+        "Card": 1,
+        "Button": 9,
+        "FormField": 3,
+        "SearchField": 2,
+        "SelectField": 1
+      }
+    },
+    {
+      "file": "src/ProductionOperations.tsx",
+      "components": {
+        "Card": 2,
+        "Button": 13,
+        "FormField": 6,
+        "SearchField": 1,
+        "SelectField": 2,
+        "InputField": 3
+      }
+    },
+    {
+      "file": "src/ProductionPlanning.tsx",
+      "components": {
+        "PageHeader": 2,
+        "Button": 6,
+        "Card": 2,
+        "FormField": 7,
+        "InputField": 6,
+        "SelectField": 1,
+        "StickyActions": 1
+      }
+    },
+    {
+      "file": "src/ProductionStudio.tsx",
+      "components": {
+        "PageHeader": 1,
+        "Button": 24,
+        "SegmentedNav": 1,
+        "Card": 17,
+        "FormField": 47,
+        "InputField": 28,
+        "SelectField": 12,
+        "TextAreaField": 9
+      }
+    },
+    {
+      "file": "src/PurchaseItemEditors.tsx",
+      "components": {
+        "FormField": 12,
+        "SelectField": 7,
+        "InputField": 4,
+        "Button": 4,
+        "SearchField": 1,
+        "TextAreaField": 1,
+        "StickyActions": 1
+      }
+    },
+    {
+      "file": "src/RecallCaseManagement.tsx",
+      "components": {
+        "Card": 2,
+        "Button": 7,
+        "FormField": 3,
+        "TextAreaField": 1,
+        "StickyActions": 1,
+        "SelectField": 1,
+        "InputField": 1
+      }
+    },
+    {
+      "file": "src/RecipeInventory.tsx",
+      "components": {
+        "PageHeader": 2,
+        "Button": 26,
+        "SegmentedNav": 1,
+        "Card": 5,
+        "FormField": 27,
+        "InputField": 24,
+        "SelectField": 5,
+        "StickyActions": 4
+      }
+    },
+    {
+      "file": "src/RecordRemovalDialog.tsx",
+      "components": {
+        "ConfirmDialog": 1
+      }
+    },
+    {
+      "file": "src/RecordTable.tsx",
+      "components": {
+        "SearchField": 1,
+        "EmptyState": 1
+      }
+    },
+    {
+      "file": "src/SearchField.tsx",
+      "components": {
+        "InputField": 1
+      }
+    },
+    {
+      "file": "src/SecurityRecovery.tsx",
+      "components": {
+        "PageHeader": 2,
+        "Button": 7,
+        "FormField": 11,
+        "InputField": 10,
+        "Card": 2,
+        "TextAreaField": 1,
+        "StickyActions": 1
+      }
+    },
+    {
+      "file": "src/ShiftHandover.tsx",
+      "components": {
+        "PageHeader": 1,
+        "Button": 10,
+        "Card": 1,
+        "SelectField": 2,
+        "FormField": 7,
+        "InputField": 1,
+        "TextAreaField": 5,
+        "StickyActions": 2
+      }
+    },
+    {
+      "file": "src/StaffSchedule.tsx",
+      "components": {
+        "PageHeader": 1,
+        "Button": 9,
+        "Card": 3,
+        "InputField": 7,
+        "FormField": 6,
+        "SelectField": 1,
+        "StickyActions": 1
+      }
+    },
+    {
+      "file": "src/SupplyOperations.tsx",
+      "components": {
+        "PageHeader": 2,
+        "Button": 42,
+        "SegmentedNav": 1,
+        "SearchField": 1,
+        "Card": 10,
+        "FormField": 31,
+        "InputField": 26,
+        "SelectField": 6,
+        "PhoneInput": 1,
+        "TextAreaField": 3,
+        "StickyActions": 8
+      }
+    },
+    {
+      "file": "src/UxShell.tsx",
+      "components": {
+        "Button": 30,
+        "SearchField": 1,
+        "PageHeader": 1,
+        "Card": 6,
+        "FormField": 4,
+        "SelectField": 4
+      }
+    },
+    {
+      "file": "src/WorkspaceRecovery.tsx",
+      "components": {
+        "PageHeader": 1,
+        "Card": 4,
+        "Button": 6,
+        "FormField": 11,
+        "InputField": 11
+      }
+    }
+  ]
+}

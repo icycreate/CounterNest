@@ -1,22 +1,22 @@
 {
-  "version": "2.0.0-rc.9",
-  "baseline_version": "Navigation & Appearance RC8",
-  "baseline_migration_count": 89,
-  "migration_count": 90,
+  "version": "2.0.0-rc.11",
+  "baseline_version": "System Style RC10",
+  "baseline_migration_count": 91,
+  "migration_count": 92,
   "upgrade_migrations": [
-    "202610171700_operations_calendar.sql"
+    "202610181200_customer_experience_notifications.sql"
   ],
-  "name": "CounterNest POS Operations Calendar RC9",
-  "build": "2026-10-17-calendar",
+  "name": "CounterNest POS Customer Experience RC11",
+  "build": "2026-10-18-customer-experience",
   "product": "CounterNest POS",
   "release_type": "browser-release-candidate",
   "backend": "Supabase Cloud",
   "desktop_installer": false,
   "features": [
     {
-      "title": "Source-linked Operations Calendar with four views, permissions, audited rescheduling, conflicts and stable notifications"
+      "title": "Approved brand, public contacts, customer appearance, category localization and per-device order push"
     }
   ],
   "validation": "BUILD_VALIDATION.json",
-  "deployment_status": "Local build/tests/browser validation passed; live staging and physical installed-PWA UAT pending"
+  "deployment_status": "Local candidate validation passed; live staging/push and physical-device acceptance pending"
 }

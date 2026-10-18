@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'counternest-web-v2-0-0-rc7-boot'
+const CACHE_VERSION = 'counternest-web-v2-0-0-rc8-theme-navigation'
 const SHELL_CACHE = `${CACHE_VERSION}-shell`
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`
 const CORE_ASSETS = [

@@ -1,7 +1,9 @@
-# CounterNest POS — Boot Experience RC7
+# CounterNest POS — Navigation & Appearance RC8
 
-Browser/Web Application → GitHub → Vercel → Supabase Cloud.
+Browser → GitHub → Vercel → Supabase Cloud. Version 2.0.0-rc.8, based on Boot RC7.
 
-This source includes the actual web/mobile/PWA startup animation and retains RC6 purchasing behavior. Read RELEASE_NOTES.md, BOOT_IMPLEMENTATION.md, BOOT_UAT_CHECKLIST.md and BUILD_VALIDATION_REPORT.md.
+This release integrates protected internal Back navigation, shared Catalogue appearance, consistent light authentication, and the supplied boot storyboard's warm glow, tagline and loading bar around the official CounterNest nest logo. Existing bakery, purchasing, production and checkout functionality is retained.
 
-Run npm install, npm run build and npm test. The ZIP excludes credentials, node_modules and dist. All 88 database migrations remain unchanged from RC6; no new SQL is required for this boot update. Existing migration/deployment guides still apply to older baselines. Key-stage design mockups are in docs/boot.
+Start with INSTALL_UPGRADE_GUIDE.md. Apply the single new migration after all 88 RC7 migrations, configure .env.example using browser-safe values, then run npm install and npm run build. Never expose a service-role key. The ZIP excludes .env files, node_modules, dist and native installers.
+
+See NAVIGATION_THEME_IMPLEMENTATION.md, BUILD_VALIDATION_REPORT.md, UI_UAT_CHECKLIST.md, RELEASE_NOTES.md and KNOWN_ISSUES.md. Actual browser screenshots are in docs/screenshots; boot design frames are in docs/boot. This source is ready for GitHub/Vercel review; production deployment and real-device UAT remain separate steps.

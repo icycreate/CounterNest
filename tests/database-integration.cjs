@@ -27,6 +27,19 @@ async function main(){
  async function check(name,fn){await fn();checks.push({name,status:'passed'});console.log('PASS',name)}
  const scalar=async(sql,params=[])=>Object.values((await db.query(sql,params)).rows[0])[0];
  const rejects=async(sql,params,pattern)=>{let error;try{await db.query(sql,params)}catch(e){error=e}assert(error,'Expected rejection');if(pattern)assert.match(error.message,pattern)};
+ await check('Catalogue themes are scoped by validated public token and expose visual fields only',async()=>{
+ await db.query("update shops set theme=$1 where id=$2",[JSON.stringify({primary:'#2367ac',background:'#f0f4fa',text:'#263b58',appearance:'light',private_setting:'must-not-leak'}),shop]);
+ await db.query("update shops set theme=$1 where id=$2",[JSON.stringify({primary:'#27653c',background:'#f1f5f0',text:'#263f2d',appearance:'dark'}),other]);
+ await db.query("insert into customer_display_configs(shop_id,access_token,target_labels,enabled) values($1,'other-theme-token',array['Counter'],true)",[other]);
+ const first=await scalar("select get_commercial_catalogue('test-catalogue-token')"),second=await scalar("select get_commercial_catalogue('other-theme-token')");assert.equal(first.theme.primary,'#2367ac');assert.equal(second.theme.primary,'#27653c');assert.equal(second.theme.appearance,'dark');assert.deepEqual(Object.keys(first.theme).sort(),['appearance','background','primary','text']);assert(!JSON.stringify(first).includes('must-not-leak'));
+ await rejects("select get_commercial_catalogue('invalid-token')",[],/unavailable|Invalid/i);
+ assert.equal(await scalar("select has_function_privilege('anon','get_commercial_catalogue_before_shared_theme(text)','execute')"),false);
+ });
+ await check('Admin appearance publishes to the same business; staff appearance stays private',async()=>{
+ await db.query('select ux_save_preferences($1::jsonb)',[JSON.stringify({appearance:'dark'})]);assert.equal((await scalar("select get_commercial_catalogue('test-catalogue-token')")).theme.appearance,'dark');
+ await db.query("select set_config('test.user',$1,false)",[emp]);await db.query('select ux_save_preferences($1::jsonb)',[JSON.stringify({appearance:'light'})]);assert.equal((await scalar("select get_commercial_catalogue('test-catalogue-token')")).theme.appearance,'dark');
+ await db.query("select set_config('test.user',$1,false)",[uid]);await db.query('select ux_save_preferences($1::jsonb)',[JSON.stringify({appearance:'system'})]);assert.equal((await scalar("select get_commercial_catalogue('other-theme-token')")).theme.appearance,'dark');
+ });
  await check('No promotion returns regular price',async()=>assert.equal(Number(await scalar('select public.catalogue_effective_price(p) from products p where id=$1',[prod])),35));
  await check('Active fixed promotion and request price agree',async()=>{
  await db.query("select save_catalogue_promotion($1,'fixed',30,now()-interval '1 hour',now()+interval '1 hour',true)",[prod]);
@@ -254,7 +267,7 @@ async function main(){
  await require('./production-operations-database.cjs')({db,check,scalar,rejects});
  await require('./workspace-recovery-database.cjs')({db,check,scalar,rejects});
  await require('./operations-import-database.cjs')({db,check,scalar,rejects});
- fs.writeFileSync(path.join(root,'DATABASE_TEST_RESULTS.json'),JSON.stringify({version:'2.0.0-rc.7',build:'2026-10-17-boot',migration_count:files.length,database_engine:'PGlite PostgreSQL with mocked Supabase auth/storage and mocked manager-PIN crypt for refund tests; pgcrypto extension omitted',checks,limitations:['Live Supabase deployment, real bcrypt PIN checks, storage HTTP upload, Edge Functions and browser UAT still require target-environment verification.']},null,2));
+ fs.writeFileSync(path.join(root,'DATABASE_TEST_RESULTS.json'),JSON.stringify({version:'2.0.0-rc.8',build:'2026-10-17-navigation-theme',migration_count:files.length,database_engine:'PGlite PostgreSQL with mocked Supabase auth/storage and mocked manager-PIN crypt for refund tests; pgcrypto extension omitted',checks,limitations:['Live Supabase deployment, real bcrypt PIN checks, storage HTTP upload, Edge Functions and browser UAT still require target-environment verification.']},null,2));
  await db.close();
 }
 main().catch(e=>{console.error(e.message);process.exit(1)});

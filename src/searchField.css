@@ -1,12 +1,12 @@
-.cn-search-field{display:inline-flex;position:relative;align-items:center;min-width:0;width:100%;max-width:100%;vertical-align:middle;color:var(--accent,#984d2b)}
+.cn-search-field{display:inline-flex;position:relative;align-items:center;min-width:0;width:100%;max-width:100%;vertical-align:middle;color:var(--primary)}
 .cn-search-field>svg{position:absolute;left:13px;pointer-events:none;z-index:1;flex-shrink:0}
-.cn-search-field>input{box-sizing:border-box;width:100%;min-width:0;min-height:42px;border:1px solid var(--accent,#984d2b)!important;border-radius:12px!important;background:var(--panel,#fffaf5);color:inherit;font:inherit;padding:10px 14px 10px 41px!important;outline:none;transition:box-shadow .15s,border-color .15s}
-.cn-search-field>input:focus-visible{outline:2px solid var(--accent,#984d2b);outline-offset:3px;box-shadow:0 0 0 3px #a65b3025}
+.cn-search-field>input{box-sizing:border-box;width:100%;min-width:0;min-height:42px;border:1px solid var(--primary)!important;border-radius:12px!important;background:var(--surface);color:inherit;font:inherit;padding:10px 14px 10px 41px!important;outline:none;transition:box-shadow .15s,border-color .15s}
+.cn-search-field>input:focus-visible{outline:2px solid var(--primary);outline-offset:3px;box-shadow:0 0 0 3px color-mix(in srgb,var(--primary) 18%,transparent)}
 .cn-search-field>input::placeholder{color:var(--muted,#806e61);opacity:1}
-[data-theme=dark] .cn-search-field>input,.dark .cn-search-field>input{background:var(--panel,#241c18);color:var(--text,#f8eee5);border-color:#d8996a!important}
+[data-theme=dark] .cn-search-field>input,.dark .cn-search-field>input{background:var(--panel,#241c18);color:var(--text,#f8eee5);border-color:var(--primary)!important}
 @media(max-width:640px){.cn-search-field{flex:1 1 100%}.cn-search-field>input{font-size:16px}}
 
-input[type="search"]{border-radius:12px;border:1px solid var(--accent,#984d2b);min-height:42px;font:inherit}
+input[type="search"]{border-radius:12px;border:1px solid var(--primary);min-height:42px;font:inherit}
 
 .cn-search-field>input{color:var(--text,#482e20)}.record-search{max-width:34rem;margin:0 0 12px}
 @media print{.record-search{display:none!important}}

@@ -438,5 +438,10 @@
     "order": 88,
     "file": "202610171400_purchase_item_model.sql",
     "sha256": "6ed9dbe3f72d5bf9ea2d89869249df53064b00193f5bc9a130dc3ce6458ba95b"
+  },
+  {
+    "order": 89,
+    "file": "202610171500_shared_catalogue_theme.sql",
+    "sha256": "a6bb770eea61f08001f4caeb80c1906ca72cef3c3e7977d95954578628ee946d"
   }
 ]

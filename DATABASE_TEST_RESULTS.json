@@ -1,9 +1,17 @@
 {
-  "version": "2.0.0-rc.7",
-  "build": "2026-10-17-boot",
-  "migration_count": 88,
+  "version": "2.0.0-rc.8",
+  "build": "2026-10-17-navigation-theme",
+  "migration_count": 89,
   "database_engine": "PGlite PostgreSQL with mocked Supabase auth/storage and mocked manager-PIN crypt for refund tests; pgcrypto extension omitted",
   "checks": [
+    {
+      "name": "Catalogue themes are scoped by validated public token and expose visual fields only",
+      "status": "passed"
+    },
+    {
+      "name": "Admin appearance publishes to the same business; staff appearance stays private",
+      "status": "passed"
+    },
     {
       "name": "No promotion returns regular price",
       "status": "passed"

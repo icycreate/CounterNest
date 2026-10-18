@@ -84,6 +84,7 @@ export type Reward = {
 }
 
 export type ThemeConfig = {
+  appearance?: 'light'|'dark'|'system'
   primary: string
   background: string
   text: string

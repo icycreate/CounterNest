@@ -1,8 +1,9 @@
-# RC7 upgrade from RC6
+# Upgrade RC7 → RC8
 
-1. Keep the existing RC6 database and verified backup. This frontend/asset update adds no database migration. All 88 migrations and their hashes are unchanged. Older installations must first follow the RC6 purchasing upgrade guide.
-2. Extract the source into the intended GitHub/Vercel project. Configure existing browser-safe environment variables; never put service-role credentials into the frontend.
-3. Run npm install and npm run build. Deploy through the normal Vercel workflow.
-4. Verify Login/session/dashboard startup and the controls in BOOT_UAT_CHECKLIST.md. The service-worker shell cache version is updated; allow a clean refresh before testing the new launch.
-5. Existing installed PWA icons/native splash snapshots may be cached by the OS. Remove/reinstall a test PWA if its launcher still shows old artwork. Customer Catalogue manifest identity remains tenant-specific by its existing rules.
-6. Roll back the frontend build if necessary; there are no RC7 database changes to reverse.
+1. Keep a verified backup of the current Supabase project and the RC7 frontend deployment.
+2. Apply supabase/migrations/202610171500_shared_catalogue_theme.sql after the existing 88 migrations. It wraps the authorized catalogue RPC to expose four validated visual fields and publishes an administrator's appearance choice to that same business. It grants no public table access. Do not replay the old migrations on an existing database.
+3. Deploy the complete RC8 source through the existing GitHub/Vercel project. Use the current VITE_SUPABASE_URL and browser-safe publishable/anon key; keep privileged keys in approved server environments only. Configure the Supabase Auth redirect allowlist and email templates for the deployed origin; password reset redirects to /dashboard.
+4. Run npm install, npm run build, npm test and npm run test:assets before deployment. New installs apply all 89 migrations in SUPABASE_MIGRATION_ORDER.md.
+5. Test an administrator appearance/accent save, a public Catalogue link on another device, sign-in/out, unsaved Back and email recovery. Public Catalogue polls visible data every five seconds. Existing personal non-admin appearance stays private.
+6. Allow the updated service-worker shell to activate, then refresh. Native PWA launch colors/icons may stay cached until reinstall; an OS-controlled splash cannot animate.
+7. To roll back the frontend, redeploy RC7. The additive RPC fields remain backward-compatible; retaining migration 89 is safe for RC7. Restoring pre-RC8 database definitions should be done only with a reviewed database rollback, not by deleting migration history.

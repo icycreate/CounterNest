@@ -1,15 +1,24 @@
 {
-  "version": "2.0.0-rc.7",
-  "method": "In-app browser accessibility and read-only DOM checks against actual RC7 UI, with isolated fictional Supabase adapter. No production data.",
+  "version": "2.0.0-rc.8",
+  "method": "Actual RC8 frontend in in-app browser, isolated fictional Supabase adapter, accessibility tree and read-only computed-style verification",
+  "production_data_used": false,
   "checks": [
-    "Fresh desktop launch exposes CounterNest loading status while application root is inert",
-    "Slow simulated authentication releases splash to Checking your session, then reaches signed-in tenant Dashboard",
-    "Dashboard to Products internal navigation leaves splash hidden and app interactive",
-    "Logged-out phone-sized launch reaches Sign in without horizontal overflow",
-    "Hard refresh starts a new CounterNest splash",
-    "Tablet-sized dark startup shows CounterNest loading status with dark boot theme and no horizontal overflow"
+    "Dark appearance sign-in retains white card, white fields, password eye and orange accent action; Sign Up exposes owner/confirmation fields in the same light design",
+    "Dashboard → Products → Modify: browser Back with changed product name shows localized unsaved confirmation",
+    "Stay Here keeps the exact edited product text and editor state",
+    "Discard & Go Back closes editor to Products; next browser Back returns to Dashboard",
+    "Catalogue product detail → full image: Back closes image, then detail, returning focus to product card",
+    "Light Catalogue card is white and search border follows #ad4b20 accent",
+    "Dark/blue Catalogue uses #282d34 cards, #f3f5f7 text, #2367ac accent and matching search border",
+    "Phone green Catalogue uses #27653c accent without horizontal overflow; product detail Back closes correctly",
+    "Tablet green Catalogue has no horizontal overflow",
+    "Hard reload starts one platform-only boot with the storyboard tagline"
   ],
-  "viewport_requests": [
+  "requested_viewports": [
+    {
+      "width": 1280,
+      "height": 800
+    },
     {
       "width": 390,
       "height": 844,
@@ -21,11 +30,20 @@
       "reported_css_width": 853
     }
   ],
-  "screenshot_capture": "Unavailable: browser screenshot API returned Unable to capture screenshot. Supplied key-stage PNG/SVG files are design mockups, not browser captures.",
-  "limits": [
-    "Browser zoom affects reported CSS viewport sizes",
-    "Slow network modeled by delayed auth adapter, not bandwidth throttling",
-    "Physical Android/iOS installed PWA and real Supabase session UAT pending"
+  "screenshots": [
+    "docs/screenshots/back-unsaved-confirmation.png",
+    "docs/screenshots/boot-desktop-storyboard.png",
+    "docs/screenshots/boot-mobile-storyboard.png",
+    "docs/screenshots/catalogue-dark-blue.png",
+    "docs/screenshots/catalogue-light.png",
+    "docs/screenshots/catalogue-mobile-green.png",
+    "docs/screenshots/catalogue-tablet-green.png",
+    "docs/screenshots/sign-in.png",
+    "docs/screenshots/sign-up.png"
   ],
-  "production_data_used": false
+  "limits": [
+    "Viewport CSS sizes reflect browser zoom; screenshots include in-app panel margins",
+    "Android system gestures, installed PWA, physical iOS/Android and live recovery emails were not exercised",
+    "Public theme responses are fictional browser fixtures; SQL isolation/publishing is tested separately in PostgreSQL"
+  ]
 }

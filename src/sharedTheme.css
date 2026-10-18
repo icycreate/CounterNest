@@ -1,0 +1,37 @@
+/* Shared tokens are applied by sharedTheme.ts for POS and public catalogue alike. */
+:root{--primary:#ad4b20;--accent:var(--primary);--primary-foreground:#fff;--page-bg:#fbf7f2;--background:var(--page-bg);--surface:#fff;--panel:var(--surface);--card:var(--surface);--text:#33251e;--border:#c8cdd3;--line:var(--border);--muted:#58616e;--focus:#164b8b;--success:#17623c;--success-foreground:#fff;--warning:#7c530b;--danger:#a52329;--danger-foreground:#fff;--color-primary:var(--primary);--color-primary-foreground:var(--primary-foreground);--color-background:var(--page-bg);--color-surface:var(--surface);--color-card:var(--card);--color-border:var(--border);--color-text:var(--text);--color-muted:var(--muted);--color-success:var(--success);--color-warning:var(--warning);--color-danger:var(--danger);--color-focus:var(--focus)}
+html[data-appearance] body{background:var(--page-bg);color:var(--text)}
+/* Avoid the legacy dark stylesheet overriding the central palette or light auth cards. */
+html[data-appearance] :is(.panel,.modal,.ux-dialog,.stat-card,.product-card,.customer-card,.page-header,.section-tabs,.mobile-menu-sheet){background:var(--surface);color:var(--text);border-color:var(--border)}
+html[data-appearance] :is(input,select,textarea){background:var(--surface);color:var(--text);border-color:var(--border)}
+html[data-appearance] :is(button,a.cn-button){background:var(--surface);color:var(--text);border-color:var(--border)}
+html[data-appearance] :is(.primary-btn,.auth-submit,.cn-button--primary){background:var(--primary);color:var(--primary-foreground);border-color:var(--primary)}
+html[data-appearance] .cn-button--secondary{background:var(--surface);color:var(--text);border-color:var(--border)}
+html[data-appearance] .cn-button--success{background:var(--success);color:var(--success-foreground);border-color:var(--success)}
+html[data-appearance] .cn-button--danger{background:var(--danger);color:var(--danger-foreground);border-color:var(--danger)}
+html[data-appearance] .cn-button--ghost{background:transparent;color:var(--text);border-color:transparent}
+button svg{color:currentColor;stroke:currentColor}
+html[data-appearance] :is(button,input,select,textarea,a,summary):focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.cn-search-field{color:var(--primary)}html[data-appearance] .cn-search-field>input{background:var(--surface);color:var(--text);border-color:var(--primary)!important}.cn-search-field>input:focus-visible{outline-color:var(--focus);box-shadow:0 0 0 3px color-mix(in srgb,var(--primary) 18%,transparent)}
+html[data-appearance] :is(.commercial-catalogue,.catalogue-display,.customer-display-screen){background:var(--page-bg);color:var(--text)}
+html[data-appearance] :is(.commercial-card,.commercial-detail,.commercial-cart,.catalogue-card,.catalogue-qr-panel,.full-image-view,.catalogue-install-help){background:var(--surface);color:var(--text);border-color:var(--border)}
+html[data-appearance] .commercial-card:hover{border-color:var(--primary);box-shadow:0 6px 20px color-mix(in srgb,var(--primary) 12%,transparent)}
+html[data-appearance] .commercial-card :is(h2,strong,span,b){color:var(--text)}
+html[data-appearance] .commercial-badges span{background:color-mix(in srgb,var(--primary) 12%,var(--surface));color:var(--text);border:1px solid var(--border)}
+html[data-appearance] :is(.commercial-filters,.commercial-detail,.commercial-cart) button:not(.primary-btn):not(.cn-button){background:var(--surface);color:var(--text);border-color:var(--border)}
+html[data-appearance] :is(.auth-stage,.onboarding-stage){background:#f7f7f4;color:#272522;color-scheme:light}
+html[data-appearance] :is(.auth-card,.onboarding-modal){background:#fff;color:#272522;border:1px solid #deddd8}
+html[data-appearance] :is(.auth-card,.onboarding-modal) :is(h1,h2,label,p,small){color:#38352f}
+html[data-appearance] :is(.auth-card,.onboarding-modal) :is(input,select,textarea){background:#fff;color:#272522;border-color:#c8c6c0;color-scheme:light}
+html[data-appearance] :is(.auth-card,.onboarding-modal) :is(.auth-submit,.primary-btn){background:var(--primary);color:var(--primary-foreground);border-color:var(--primary)}
+html[data-appearance] .auth-card .auth-notice{background:#edf6ec;color:#3f603a;border-color:#c9dec7}
+html[data-appearance] .auth-card .password-visibility{background:transparent;color:#4d514e;border:0}
+html[data-appearance] .auth-card :is(.text-button,.auth-switch button){background:transparent;color:#6e341c;border:0}
+.cn-back-bar{display:flex;align-items:center;gap:12px;margin:0 0 12px}.cn-back-bar button{display:inline-flex;gap:6px;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:10px;min-height:42px;padding:8px 14px;font:inherit}
+.cn-unsaved-backdrop{position:fixed;inset:0;z-index:2147482000;background:#0008;display:grid;place-items:center;padding:20px}.cn-unsaved-dialog{width:min(430px,100%);background:var(--surface);color:var(--text);border:1px solid var(--border);border-radius:18px;padding:26px;box-shadow:0 20px 80px #0005}.cn-unsaved-dialog h2{font-size:21px;margin:0 0 24px}.cn-unsaved-dialog>div{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap}
+@media(prefers-reduced-motion:reduce){.commercial-card{transition:none}}
+
+html[data-appearance] :is(.catalogue-admin-card,.customer-product-card,.catalogue-select-list,.catalogue-export-summary,.catalogue-install-help){background:var(--surface);color:var(--text);border-color:var(--border)}
+html[data-appearance] :is(.catalogue-badges,.customer-product-badges) span{background:color-mix(in srgb,var(--primary) 12%,var(--surface));color:var(--text);border:1px solid var(--border)}
+html[data-appearance] .commercial-catalogue .preorder-public-form{background:var(--surface);color:var(--text);border-color:var(--border)}
+html[data-appearance] .auth-stage :is(select,.language-selector){background:#fff;color:#38352f;color-scheme:light}

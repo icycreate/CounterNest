@@ -1,0 +1,50 @@
+{
+  "version": "2.0.0-rc.8",
+  "checks": [
+    {
+      "name": "Products edit Back closes editor, then returns to Dashboard; root fallback stays bounded",
+      "status": "passed"
+    },
+    {
+      "name": "Dirty editor restores history before confirmation and preserves edits on Stay; discard closes once",
+      "status": "passed"
+    },
+    {
+      "name": "Unsaved route navigation is confirmed before URL changes",
+      "status": "passed"
+    },
+    {
+      "name": "Public Catalogue detail and full-image Back close top layer first and retain exact link on Home fallback",
+      "status": "passed"
+    },
+    {
+      "name": "Mobile drawer navigation replaces its temporary layer instead of adding a duplicate Back step",
+      "status": "passed"
+    },
+    {
+      "name": "Purchase, receiving and pre-order editor Back preserves parent route and normal forward navigation",
+      "status": "passed"
+    },
+    {
+      "name": "Shared palette supports orange, blue, green, light and dark with accessible action contrast",
+      "status": "passed"
+    },
+    {
+      "name": "Invalid colors normalize; public cache scopes never reuse a different tenant link",
+      "status": "passed"
+    },
+    {
+      "name": "Public theme RPC preserves authorization and exposes only validated visual fields",
+      "status": "passed"
+    },
+    {
+      "name": "Close adapters, light auth override, multilingual prompt and platform boot are integrated",
+      "status": "passed"
+    },
+    {
+      "name": "Recovery fragments are consumed before managed history creates an entry",
+      "status": "passed"
+    }
+  ],
+  "scope": "Deterministic history-port, palette contrast, source integration checks; browser and physical PWA evidence reported separately"
+}

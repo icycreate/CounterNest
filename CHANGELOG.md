@@ -1,3 +1,11 @@
+# 2.0.0-rc.8 — 2026-10-17
+
+- Shared validated theme tokens and tenant-scoped public Catalogue palette, including manifest colors.
+- Managed route/layer history, modal-first Back and localized unsaved-edit protection.
+- Light auth overrides, Supabase password recovery UI and cleared sign-out branding.
+- Storyboard-inspired tagline, glow and wider boot loader; official platform logo retained.
+- Actual browser screenshots, regression evidence and one additive theme migration.
+
 # 2.0.0-rc.7 — CounterNest boot experience
 
 Integrated bounded SVG/CSS startup animation, real auth/workspace readiness, light/dark/system and reduced-motion behavior, offline shell assets and current CounterNest PWA icons.

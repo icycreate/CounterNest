@@ -11,7 +11,10 @@ export function catalogueManifest(token, catalogue) {
     const logo = new URL(catalogue.logo_url)
     if (logo.protocol === 'https:' && !logo.username && !logo.password) icons.unshift({src:logo.href, sizes:'any', purpose:'any'})
   } catch { /* Neutral CounterNest icons remain available. */ }
-  return {id:route, name, short_name:name.slice(0, 32), description:name + ' • Catalogue', start_url:route, scope:'/catalogue', display:'standalone', background_color:'#ffffff', theme_color:'#8b451f', icons}
+  const validHex=(v,f)=>typeof v==='string'&&/^#[0-9a-f]{6}$/i.test(v)?v:f
+  const dark=catalogue.theme?.appearance==='dark'
+  const background=dark?'#1d2025':validHex(catalogue.theme?.background,'#fbf7f2')
+  return {id:route, name, short_name:name.slice(0, 32), description:name + ' • Catalogue', start_url:route, scope:'/catalogue', display:'standalone', background_color:background, theme_color:background, icons}
 }
 
 export default async function handler(req, res) {

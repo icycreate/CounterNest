@@ -1,9 +1,9 @@
 {
   "product": "CounterNest POS",
-  "version": "2.0.0-rc.7",
-  "build": "2026-10-17-boot",
-  "generated_at": "2026-10-17T17:51:26.664Z",
-  "result": "Local candidate validation passed; physical-device and target-cloud UAT pending",
+  "version": "2.0.0-rc.8",
+  "build": "2026-10-17-navigation-theme",
+  "generated_at": "2026-10-18T01:30:02.566Z",
+  "result": "Local candidate validation passed; target cloud and physical installed-PWA UAT pending",
   "dependency_install": {
     "command": "npm install",
     "status": "passed",
@@ -27,17 +27,21 @@
       "status": "passed"
     }
   ],
+  "migration_count": 89,
   "baseline_migrations_unchanged": 88,
-  "migration_count": 88,
-  "database_checks": 108,
-  "purchasing_model_checks": 12,
-  "purchasing_ui_checks": 7,
-  "boot_check_groups": 8,
-  "browser_checks": 6,
+  "new_migrations": [
+    "202610171500_shared_catalogue_theme.sql"
+  ],
+  "database_checks": 110,
+  "boot_groups": 8,
+  "navigation_theme_groups": 11,
+  "browser_checks": 10,
+  "screenshot_count": 9,
   "limits": [
-    "PGlite simulates Supabase auth/storage; no target-cloud certification",
-    "Physical installed PWA, iPhone Safari, Android Chrome and hardware UAT pending",
-    "Large production bundle warning retained",
-    "Earlier RC6-specific evidence files retain their original scope; current logs are docs/validation/*.log"
+    "Viewport CSS sizes reflect browser zoom; screenshots include in-app panel margins",
+    "Android system gestures, installed PWA, physical iOS/Android and live recovery emails were not exercised",
+    "Public theme responses are fictional browser fixtures; SQL isolation/publishing is tested separately in PostgreSQL",
+    "Existing Vite large-chunk warning; CJS test-only import.meta warning",
+    "PGlite uses simulated Supabase auth/storage and does not certify live project configuration"
   ]
 }

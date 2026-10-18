@@ -1,20 +1,22 @@
 {
-  "version": "2.0.0-rc.7",
-  "baseline_version": "Purchasing RC6",
+  "version": "2.0.0-rc.8",
+  "baseline_version": "Boot RC7",
   "baseline_migration_count": 88,
-  "migration_count": 88,
-  "upgrade_migrations": [],
-  "name": "CounterNest POS Boot Experience RC7",
-  "build": "2026-10-17-boot",
+  "migration_count": 89,
+  "upgrade_migrations": [
+    "202610171500_shared_catalogue_theme.sql"
+  ],
+  "name": "CounterNest POS Navigation & Appearance RC8",
+  "build": "2026-10-17-navigation-theme",
   "product": "CounterNest POS",
   "release_type": "browser-release-candidate",
   "backend": "Supabase Cloud",
   "desktop_installer": false,
   "features": [
     {
-      "title": "Launch-scoped SVG/CSS boot animation, real startup readiness, static/reduced-motion fallbacks, warm light/dark palettes and current CounterNest PWA icons"
+      "title": "Shared tenant Catalogue theme, protected Back navigation, light authentication and storyboard-inspired platform boot"
     }
   ],
   "validation": "BUILD_VALIDATION.json",
-  "deployment_status": "Local candidate validation passed; physical-device and target-cloud UAT pending"
+  "deployment_status": "Local candidate validation passed; target cloud and physical installed-PWA UAT pending"
 }

@@ -11,8 +11,8 @@
   },
   {
     "file": "public/boot-screen.css",
-    "bytes": 4406,
-    "sha256": "6354658ad5a71ea7d44a92b39002a046fa2fdb611393d2b39a26248bbd3cbc97"
+    "bytes": 5713,
+    "sha256": "e0ddf19582cae379135a81d75fe6dba18f2f0e2a6fb4ba174a0e4e4e88e1b657"
   },
   {
     "file": "public/pwa/apple-touch-icon.png",
@@ -43,5 +43,105 @@
     "file": "public/pwa/splash-1024.png",
     "bytes": 23697,
     "sha256": "8f851ce8215bc5841cf0ce4b67d0f5e353681db9e2716445a3d73bab9624caaa"
+  },
+  {
+    "file": "docs/boot/01-logo-fade.png",
+    "bytes": 12182,
+    "sha256": "503b22826abb34c5c04fba0cec965c89ea25c4faeb509f575bade00302a8eea3"
+  },
+  {
+    "file": "docs/boot/01-logo-fade.svg",
+    "bytes": 1696,
+    "sha256": "69041b82e3a9175408fb66d1b06a64a838e32fa914674f165826eda05d3458db"
+  },
+  {
+    "file": "docs/boot/02-nest-rings.png",
+    "bytes": 23219,
+    "sha256": "bf2b78f18e0a052570ae4e01f8a6a290b10d1059db6f405af93632999a33d4e3"
+  },
+  {
+    "file": "docs/boot/02-nest-rings.svg",
+    "bytes": 2224,
+    "sha256": "03c1a8cfa5ceef181166a6e4a8d0d3bd8180d2b51b65bd076cd72dd284182911"
+  },
+  {
+    "file": "docs/boot/03-brand-loading.png",
+    "bytes": 24995,
+    "sha256": "5ae22b2fd65f70e948d149dfd2657aee6f57d51db5634ff70d1bcaedfe7c1588"
+  },
+  {
+    "file": "docs/boot/03-brand-loading.svg",
+    "bytes": 2840,
+    "sha256": "8cbaf896f00471375e910496efbe9b735fd70ab416a5e6d15deaf6b4f3b2973d"
+  },
+  {
+    "file": "docs/boot/04-mobile-dark.png",
+    "bytes": 23534,
+    "sha256": "c3a42c19bec99e8f84ed09d648c6d7efaf02273c9a4a5d276a109f62532b0bb6"
+  },
+  {
+    "file": "docs/boot/04-mobile-dark.svg",
+    "bytes": 2838,
+    "sha256": "13036463d726dacdb41ba84988c93deb3e63e22ecf7450d2d51c29285bd9d5fe"
+  },
+  {
+    "file": "docs/boot/05-reduced-motion.png",
+    "bytes": 14061,
+    "sha256": "9c41cc60723cb04d0f0fda55dc03634751a3a263e2609739e98c651d27bf38e4"
+  },
+  {
+    "file": "docs/boot/05-reduced-motion.svg",
+    "bytes": 1867,
+    "sha256": "9a47d0ac4837eeb8b22b060db78b2654a9bd7670864f1b99516b2440ae94d405"
+  },
+  {
+    "file": "docs/boot/boot-stages-overview.png",
+    "bytes": 81226,
+    "sha256": "b05f209bab4143b618d0c94fdef1a3f38ec53a63b20875ce8ec655ce523f0047"
+  },
+  {
+    "file": "docs/screenshots/back-unsaved-confirmation.png",
+    "bytes": 71009,
+    "sha256": "56d87da2720a91db80d089ef9fb7fb42aeabcb025c6bb969ec09b665e1220826"
+  },
+  {
+    "file": "docs/screenshots/boot-desktop-storyboard.png",
+    "bytes": 23945,
+    "sha256": "a1ea72ab97e891d04efa3d9d88c770df626d179be36b9e9833b27749b822f1a9"
+  },
+  {
+    "file": "docs/screenshots/boot-mobile-storyboard.png",
+    "bytes": 11344,
+    "sha256": "2612251c96cdcade42d2500f43e683df2827b5b49b466c5a4c0dd64a1a383c1d"
+  },
+  {
+    "file": "docs/screenshots/catalogue-dark-blue.png",
+    "bytes": 82055,
+    "sha256": "2de89e7327d7e267a99ebbfbbc203cb85d40760d122f274630e11489a80d93fa"
+  },
+  {
+    "file": "docs/screenshots/catalogue-light.png",
+    "bytes": 80415,
+    "sha256": "e7f7f94396edff36f9bfee067f211218d996b9880e5507a28a49ea2212db3402"
+  },
+  {
+    "file": "docs/screenshots/catalogue-mobile-green.png",
+    "bytes": 45946,
+    "sha256": "dd312b44c5d8275119faee20f56a03427cc782d4de6ad853079776b64a247cde"
+  },
+  {
+    "file": "docs/screenshots/catalogue-tablet-green.png",
+    "bytes": 73063,
+    "sha256": "fe50021252de075ecbcd9d0cea50707ff7c5c2f2b498239110485739f0af14ba"
+  },
+  {
+    "file": "docs/screenshots/sign-in.png",
+    "bytes": 26426,
+    "sha256": "f94074f1696d8dbdb787ce0db527c357ba44edb7ad7742e508a8bcc219caa4d8"
+  },
+  {
+    "file": "docs/screenshots/sign-up.png",
+    "bytes": 35062,
+    "sha256": "424cb5eebcc60706ef86df0e64e41773261545233b98a56647c63551e055d3f3"
   }
 ]

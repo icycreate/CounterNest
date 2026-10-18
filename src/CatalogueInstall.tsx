@@ -35,5 +35,5 @@ export function CatalogueInstall({token,shopName,logoUrl}:{token:string;shopName
   try{await prompt.prompt();const choice=await prompt.userChoice;setDismissed(choice.outcome==='dismissed');setHelp(choice.outcome==='dismissed')}catch{setHelp(true)}finally{setPrompt(null)}
  }
  const ios=typeof navigator!=='undefined'&&(/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1))
- return <div className="catalogue-install"><Button disabled={installed} onClick={()=>void install()}>{installed?t.installed:t.install}</Button>{help&&<div role="status" className="info-box"><strong>{t.help}</strong><p>{dismissed?t.cancelled:!available?t.unavailable:''}</p><p>{ios?t.ios:t.other}</p><Button variant="ghost" onClick={()=>setHelp(false)}>{t.close}</Button></div>}</div>
+ return <div className="catalogue-install"><Button disabled={installed} onClick={()=>void install()}>{installed?t.installed:t.install}</Button>{help&&<div role="status" className="info-box"><strong>{t.help}</strong><p>{dismissed?t.cancelled:!available?t.unavailable:''}</p><p>{ios?t.ios:t.other}</p><Button data-back-close="true" variant="ghost" onClick={()=>setHelp(false)}>{t.close}</Button></div>}</div>
 }

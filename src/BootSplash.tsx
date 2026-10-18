@@ -20,6 +20,7 @@ export default function BootSplash({lifecycle}:{lifecycle:BootLifecycle}){
     <svg className="cn-boot-detail cn-boot-wheat" viewBox="0 0 40 40" fill="none"><path d="m10 35 18-27 M17 25c-10 2-12-4-10-9 7 0 10 3 10 9Zm5-8c-8 0-10-5-7-9 6 1 8 3 7 9Zm1 8c8 1 11-4 10-8-6-1-9 2-10 8Z M28 13c-3-5 0-10 5-11 3 6 1 9-5 11Z"/></svg>
    </div>
    <p className="cn-boot-name">CounterNest</p>
+   <p className="cn-boot-tagline">{tr('Sweet business.')}<br/>{tr('Simpler days.')}</p>
    <p className="cn-boot-status" role="status" aria-live="polite">{tr('Loading your workspace…')}</p>
    <div className="cn-boot-track" aria-hidden="true"><span/></div>
   </div>

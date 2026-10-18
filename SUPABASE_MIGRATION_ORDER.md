@@ -1,6 +1,6 @@
-# Supabase migration order — RC7 (unchanged)
+# Supabase migration order — RC8
 
-RC7 adds no database migration after RC6. For an RC5 workspace, apply only migration 88 after a verified backup and staging rehearsal. Fresh projects apply the entire ordered list. Never reapply or edit old migrations.
+RC8 adds migration 89 after the 88 unchanged RC7 migrations. For an RC7 workspace, apply only migration 89 after a verified backup and staging rehearsal. Older workspaces first apply their missing prior migrations in order. Fresh projects apply the entire list. Never reapply or edit old migrations.
 
 1. 20260815_initial.sql
 2. 20260815_logo_settings.sql
@@ -92,3 +92,5 @@ RC7 adds no database migration after RC6. For an RC5 workspace, apply only migra
 88. 202610171400_purchase_item_model.sql
 
 Hashes are recorded in MIGRATION_MANIFEST.json.
+
+89. 202610171500_shared_catalogue_theme.sql

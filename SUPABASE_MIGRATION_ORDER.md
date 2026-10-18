@@ -1,6 +1,6 @@
-# Supabase migration order — RC8
+# Supabase migration order — RC9
 
-RC8 adds migration 89 after the 88 unchanged RC7 migrations. For an RC7 workspace, apply only migration 89 after a verified backup and staging rehearsal. Older workspaces first apply their missing prior migrations in order. Fresh projects apply the entire list. Never reapply or edit old migrations.
+RC9 adds migration 90 after the 89 unchanged RC8 migrations. For an RC8 workspace, apply only migration 90 after a verified backup and staging rehearsal. Older workspaces first apply their missing prior migrations in order. Fresh projects apply the entire list. Never reapply or edit old migrations.
 
 1. 20260815_initial.sql
 2. 20260815_logo_settings.sql
@@ -94,3 +94,5 @@ RC8 adds migration 89 after the 88 unchanged RC7 migrations. For an RC7 workspac
 Hashes are recorded in MIGRATION_MANIFEST.json.
 
 89. 202610171500_shared_catalogue_theme.sql
+
+90. 202610171700_operations_calendar.sql

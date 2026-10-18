@@ -1,0 +1,44 @@
+{
+  "version": "2.0.0-rc.9",
+  "checks": [
+    {
+      "name": "Calendar ranges remain stable across month, leap-day and week boundaries",
+      "status": "passed"
+    },
+    {
+      "name": "Business-zone day/time conversion and overnight events never invent a time",
+      "status": "passed"
+    },
+    {
+      "name": "Conflict model reports real timed overlaps and ignores untimed or finished batches",
+      "status": "passed"
+    },
+    {
+      "name": "Real Calendar component switches Month, Week, Day and Agenda while preserving original event titles",
+      "status": "passed"
+    },
+    {
+      "name": "Calendar shared search and type filters are sent to range-bound server requests",
+      "status": "passed"
+    },
+    {
+      "name": "Event selection fetches the exact original source; rescheduling submits the original ID and concurrency snapshot",
+      "status": "passed"
+    },
+    {
+      "name": "Mobile defaults to Agenda and all four languages translate Calendar controls without changing business content",
+      "status": "passed"
+    },
+    {
+      "name": "Operations navigation and source actions preserve role gates and use original modules",
+      "status": "passed"
+    }
+  ],
+  "languages": [
+    "en",
+    "es",
+    "zh-TW",
+    "zh-CN"
+  ],
+  "scope": "Model, React component, source/permission contract checks; database and live browser evidence are separate"
+}

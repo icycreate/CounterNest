@@ -1,0 +1,77 @@
+{
+  "scope": "Actual CounterNest RC9 rendered in IAB with fictional QA source records; no generated UI mockups. Image dimensions are capture pixels, not physical device claims.",
+  "screenshots": [
+    {
+      "file": "docs/calendar-screenshots/back-unsaved-schedule.jpg",
+      "width": 1029,
+      "height": 820,
+      "sha256": "5d19de6a819b597209627b50f8c75a0686e02bab75c52e609cc6dc7abf42435d"
+    },
+    {
+      "file": "docs/calendar-screenshots/conflict-warnings-dark.jpg",
+      "width": 1029,
+      "height": 820,
+      "sha256": "3562483f2c92bb7c752ac05e89fdbff5c661ff985d9212e8f480486978e10bc8"
+    },
+    {
+      "file": "docs/calendar-screenshots/day-light.jpg",
+      "width": 1029,
+      "height": 820,
+      "sha256": "f8d5e84df64c53ee38c2578b293e89bd9ffa127383468ec29ceb19360b89b0a4"
+    },
+    {
+      "file": "docs/calendar-screenshots/month-light.jpg",
+      "width": 1098,
+      "height": 870,
+      "sha256": "259eebc3f01599b669f04f4751043d69ef748e1c60c9ec56286a77ecfdbaad9f"
+    },
+    {
+      "file": "docs/calendar-screenshots/phone-agenda-light.jpg",
+      "width": 383,
+      "height": 830,
+      "sha256": "d62eeaa6444eaca667725dd6189202e0cfc4e6f2625dfc161460e58592c8a0e3"
+    },
+    {
+      "file": "docs/calendar-screenshots/phone-day-light.jpg",
+      "width": 383,
+      "height": 830,
+      "sha256": "e07e3effd9c844d4b4f6e7138763d4ab8c5252706745275ba458c3bb9b9feabd"
+    },
+    {
+      "file": "docs/calendar-screenshots/phone-record-detail.jpg",
+      "width": 383,
+      "height": 830,
+      "sha256": "fc783d52a286b062912cb71055b78a6f5d4420cc57b4eb721bda0db0083234f1"
+    },
+    {
+      "file": "docs/calendar-screenshots/production-rescheduled.jpg",
+      "width": 1029,
+      "height": 820,
+      "sha256": "336a918c3eae19e86dd9320c4f69dc97dc92b9decd92ed142d09f46f80834949"
+    },
+    {
+      "file": "docs/calendar-screenshots/tablet-week-light.jpg",
+      "width": 824,
+      "height": 804,
+      "sha256": "f73fc999dd16616e62a9143be532e79dd80a6b110075da3996090cb787af8ee7"
+    },
+    {
+      "file": "docs/calendar-screenshots/today-panel-dark.jpg",
+      "width": 1029,
+      "height": 820,
+      "sha256": "79a2f46a4222be2cce29892dd826253be4e32332ec8033529e8665c8b75f5e2f"
+    },
+    {
+      "file": "docs/calendar-screenshots/week-dark-blue.jpg",
+      "width": 1029,
+      "height": 820,
+      "sha256": "4eb2cbd3db49f279ae8de6dbac23a734d43e1afb87060eac2d288d1ccccea28c"
+    },
+    {
+      "file": "docs/calendar-screenshots/week-light.jpg",
+      "width": 1098,
+      "height": 870,
+      "sha256": "d7508fdbda2422cf05ce7c855fbb8d2b7eaee56355909f723bbafaa6e1aa99dd"
+    }
+  ]
+}

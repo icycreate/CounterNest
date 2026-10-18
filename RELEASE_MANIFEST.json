@@ -1,22 +1,22 @@
 {
-  "version": "2.0.0-rc.8",
-  "baseline_version": "Boot RC7",
-  "baseline_migration_count": 88,
-  "migration_count": 89,
+  "version": "2.0.0-rc.9",
+  "baseline_version": "Navigation & Appearance RC8",
+  "baseline_migration_count": 89,
+  "migration_count": 90,
   "upgrade_migrations": [
-    "202610171500_shared_catalogue_theme.sql"
+    "202610171700_operations_calendar.sql"
   ],
-  "name": "CounterNest POS Navigation & Appearance RC8",
-  "build": "2026-10-17-navigation-theme",
+  "name": "CounterNest POS Operations Calendar RC9",
+  "build": "2026-10-17-calendar",
   "product": "CounterNest POS",
   "release_type": "browser-release-candidate",
   "backend": "Supabase Cloud",
   "desktop_installer": false,
   "features": [
     {
-      "title": "Shared tenant Catalogue theme, protected Back navigation, light authentication and storyboard-inspired platform boot"
+      "title": "Source-linked Operations Calendar with four views, permissions, audited rescheduling, conflicts and stable notifications"
     }
   ],
   "validation": "BUILD_VALIDATION.json",
-  "deployment_status": "Local candidate validation passed; target cloud and physical installed-PWA UAT pending"
+  "deployment_status": "Local build/tests/browser validation passed; live staging and physical installed-PWA UAT pending"
 }

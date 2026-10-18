@@ -443,5 +443,10 @@
     "order": 89,
     "file": "202610171500_shared_catalogue_theme.sql",
     "sha256": "a6bb770eea61f08001f4caeb80c1906ca72cef3c3e7977d95954578628ee946d"
+  },
+  {
+    "order": 90,
+    "file": "202610171700_operations_calendar.sql",
+    "sha256": "f464483ea788475e6154e63a007a9b1208256fef4e2494e42468a6d98ceaaafa"
   }
 ]

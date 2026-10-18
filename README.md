@@ -1,9 +1,16 @@
-# CounterNest POS — Navigation & Appearance RC8
+# CounterNest POS — Operations Calendar RC9
 
-Browser → GitHub → Vercel → Supabase Cloud. Version 2.0.0-rc.8, based on Boot RC7.
+Version 2.0.0-rc.9. Continues the actual Navigation & Appearance RC8 source. Browser/Web → GitHub → Vercel → Supabase Cloud.
 
-This release integrates protected internal Back navigation, shared Catalogue appearance, consistent light authentication, and the supplied boot storyboard's warm glow, tagline and loading bar around the official CounterNest nest logo. Existing bakery, purchasing, production and checkout functionality is retained.
+Operations → Calendar provides Month, Week, Day and Agenda over original accepted orders, custom cakes, production batches, and ingredient/legacy purchase orders. No calendar event table or duplicate business records are created. Date-only records stay date-only. Accepted orders without pickup times have an Unscheduled panel.
 
-Start with INSTALL_UPGRADE_GUIDE.md. Apply the single new migration after all 88 RC7 migrations, configure .env.example using browser-safe values, then run npm install and npm run build. Never expose a service-role key. The ZIP excludes .env files, node_modules, dist and native installers.
+Authorized schedule edits update original records with concurrency checks and commercial-event audits. Includes search, type/status/staff/date filters, Today, planning warnings, source links, module quick-create, stable notification IDs, four interface languages and shared light/dark/accent themes.
 
-See NAVIGATION_THEME_IMPLEMENTATION.md, BUILD_VALIDATION_REPORT.md, UI_UAT_CHECKLIST.md, RELEASE_NOTES.md and KNOWN_ISSUES.md. Actual browser screenshots are in docs/screenshots; boot design frames are in docs/boot. This source is ready for GitHub/Vercel review; production deployment and real-device UAT remain separate steps.
+## Run and deploy
+
+1. Copy .env.example to your local environment configuration and supply your own Supabase URL and browser-safe key. Never commit privileged keys or local env files.
+2. Run npm install, npm run build, npm test and npm run test:assets. Start locally with npm run dev.
+3. Existing RC8 databases: apply migration 90 only, following INSTALL_UPGRADE_GUIDE.md. Fresh databases: apply all 90 migrations in SUPABASE_MIGRATION_ORDER.md.
+4. Commit this source to the existing GitHub repository and deploy through the existing Vercel project. The ZIP excludes node_modules, dist, local secrets and installers.
+
+See CALENDAR_USER_GUIDE.md, CALENDAR_IMPLEMENTATION.md, UAT_ACCEPTANCE_CHECKLIST.md, BUILD_VALIDATION_REPORT.md and KNOWN_ISSUES.md. Local automated and browser validation passed; live Supabase/Vercel staging and physical installed-PWA checks remain pending. Historical feature guides and screenshots retained from RC8 are baseline references; current calendar evidence is in docs/calendar-screenshots.

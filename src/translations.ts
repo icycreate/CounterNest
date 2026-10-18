@@ -16271,3 +16271,435 @@ Object.assign(translations,{"Legacy Purchase Order History":{"es":"Historial de 
 Object.assign(translations,{"Loading your workspace…":{"es":"Cargando su espacio de trabajo…","zh-TW":"正在載入您的工作區…","zh-CN":"正在加载您的工作区…"},"Checking your session…":{"es":"Comprobando su sesión…","zh-TW":"正在檢查您的登入狀態…","zh-CN":"正在检查您的登录状态…"},"Still connecting. Check your connection and try again.":{"es":"Conectando. Compruebe su conexión e inténtelo de nuevo.","zh-TW":"仍在連線中。請檢查網路連線後再試一次。","zh-CN":"仍在连接中。请检查网络连接后重试。"}})
 
 Object.assign(translations,{"You have unsaved changes.":{"es":"Tiene cambios sin guardar.","zh-TW":"您有尚未儲存的變更。","zh-CN":"您有尚未保存的更改。"},"Stay Here":{"es":"Permanecer aquí","zh-TW":"留在此頁","zh-CN":"留在此页"},"Discard & Go Back":{"es":"Descartar y volver","zh-TW":"捨棄並返回","zh-CN":"放弃并返回"},"Back":{"es":"Volver","zh-TW":"返回","zh-CN":"返回"},"Search":{"es":"Buscar","zh-TW":"搜尋","zh-CN":"搜索"},"Sweet business.":{"es":"Un negocio dulce.","zh-TW":"甜蜜事業。","zh-CN":"甜蜜事业。"},"Simpler days.":{"es":"Días más sencillos.","zh-TW":"輕鬆每一天。","zh-CN":"轻松每一天。"},"Forgot password?":{"es":"¿Olvidó su contraseña?","zh-TW":"忘記密碼？","zh-CN":"忘记密码？"},"Reset password":{"es":"Restablecer contraseña","zh-TW":"重設密碼","zh-CN":"重置密码"},"Send reset link":{"es":"Enviar enlace de restablecimiento","zh-TW":"傳送重設連結","zh-CN":"发送重置链接"},"If an account matches, a password reset link will arrive by email.":{"es":"Si existe una cuenta, recibirá un enlace por correo electrónico.","zh-TW":"若有符合的帳號，您將收到密碼重設郵件。","zh-CN":"若有匹配的账号，您将收到密码重置邮件。"},"Save new password":{"es":"Guardar nueva contraseña","zh-TW":"儲存新密碼","zh-CN":"保存新密码"},"Password updated. Sign in with your new password.":{"es":"Contraseña actualizada. Inicie sesión con la nueva contraseña.","zh-TW":"密碼已更新，請使用新密碼登入。","zh-CN":"密码已更新，请使用新密码登录。"},"Request a reset link before changing your password.":{"es":"Solicite un enlace antes de cambiar su contraseña.","zh-TW":"請先取得重設連結再變更密碼。","zh-CN":"请先获取重置链接再更改密码。"},"Administrator appearance also sets the customer catalogue default.":{"es":"La apariencia del administrador también establece el valor predeterminado del catálogo de clientes.","zh-TW":"管理員的外觀設定也會作為顧客目錄的預設值。","zh-CN":"管理员的外观设置也会作为顾客目录的默认值。"}})
+
+Object.assign(translations,{
+  "Operations Calendar": {
+    "es": "Calendario de operaciones",
+    "zh-TW": "營運行事曆",
+    "zh-CN": "运营日历"
+  },
+  "Calendar": {
+    "es": "Calendario",
+    "zh-TW": "行事曆",
+    "zh-CN": "日历"
+  },
+  "Month": {
+    "es": "Mes",
+    "zh-TW": "月",
+    "zh-CN": "月"
+  },
+  "Week": {
+    "es": "Semana",
+    "zh-TW": "週",
+    "zh-CN": "周"
+  },
+  "Day": {
+    "es": "Día",
+    "zh-TW": "日",
+    "zh-CN": "日"
+  },
+  "Agenda": {
+    "es": "Agenda",
+    "zh-TW": "議程",
+    "zh-CN": "日程"
+  },
+  "Today": {
+    "es": "Hoy",
+    "zh-TW": "今天",
+    "zh-CN": "今天"
+  },
+  "Pre-Orders": {
+    "es": "Pedidos anticipados",
+    "zh-TW": "預購訂單",
+    "zh-CN": "预购订单"
+  },
+  "Custom Cakes": {
+    "es": "Pasteles personalizados",
+    "zh-TW": "客製蛋糕",
+    "zh-CN": "定制蛋糕"
+  },
+  "Custom Cake": {
+    "es": "Pastel personalizado",
+    "zh-TW": "客製蛋糕",
+    "zh-CN": "定制蛋糕"
+  },
+  "Deliveries": {
+    "es": "Entregas",
+    "zh-TW": "供應商送貨",
+    "zh-CN": "供应商送货"
+  },
+  "Unscheduled": {
+    "es": "Sin programar",
+    "zh-TW": "尚未排程",
+    "zh-CN": "尚未排程"
+  },
+  "Overdue": {
+    "es": "Atrasado",
+    "zh-TW": "已逾期",
+    "zh-CN": "已逾期"
+  },
+  "Conflict": {
+    "es": "Conflicto",
+    "zh-TW": "衝突",
+    "zh-CN": "冲突"
+  },
+  "Reschedule": {
+    "es": "Reprogramar",
+    "zh-TW": "重新排程",
+    "zh-CN": "重新排程"
+  },
+  "Pre-Order Pickup": {
+    "es": "Retiro de pedido anticipado",
+    "zh-TW": "預購取貨",
+    "zh-CN": "预购取货"
+  },
+  "Supplier Delivery": {
+    "es": "Entrega del proveedor",
+    "zh-TW": "供應商送貨",
+    "zh-CN": "供应商送货"
+  },
+  "Assigned Staff": {
+    "es": "Personal asignado",
+    "zh-TW": "指派員工",
+    "zh-CN": "指派员工"
+  },
+  "Date Range": {
+    "es": "Rango de fechas",
+    "zh-TW": "日期範圍",
+    "zh-CN": "日期范围"
+  },
+  "Date only": {
+    "es": "Solo fecha",
+    "zh-TW": "僅日期",
+    "zh-CN": "仅日期"
+  },
+  "One planning view. Original records stay in their own modules.": {
+    "es": "Una vista de planificación. Los registros originales permanecen en sus módulos.",
+    "zh-TW": "統一規劃檢視，原始紀錄仍保留在各模組。",
+    "zh-CN": "统一规划视图，原始记录仍保留在各模块。"
+  },
+  "Calendar view": {
+    "es": "Vista del calendario",
+    "zh-TW": "行事曆檢視",
+    "zh-CN": "日历视图"
+  },
+  "Event type": {
+    "es": "Tipo de evento",
+    "zh-TW": "事件類型",
+    "zh-CN": "事件类型"
+  },
+  "New Custom Cake": {
+    "es": "Nuevo pastel personalizado",
+    "zh-TW": "新增客製蛋糕",
+    "zh-CN": "新增定制蛋糕"
+  },
+  "Schedule Production": {
+    "es": "Programar producción",
+    "zh-TW": "安排生產",
+    "zh-CN": "安排生产"
+  },
+  "Business timezone": {
+    "es": "Zona horaria del negocio",
+    "zh-TW": "商家時區",
+    "zh-CN": "商家时区"
+  },
+  "Search events, orders, customers": {
+    "es": "Buscar eventos, pedidos y clientes",
+    "zh-TW": "搜尋事件、訂單、顧客",
+    "zh-CN": "搜索事件、订单、顾客"
+  },
+  "Loading calendar…": {
+    "es": "Cargando calendario…",
+    "zh-TW": "正在載入行事曆…",
+    "zh-CN": "正在加载日历…"
+  },
+  "Calendar could not be loaded.": {
+    "es": "No se pudo cargar el calendario.",
+    "zh-TW": "無法載入行事曆。",
+    "zh-CN": "无法加载日历。"
+  },
+  "Calendar refresh timed out. Try Refresh.": {
+    "es": "Se agotó el tiempo. Pulse Actualizar.",
+    "zh-TW": "重新整理逾時，請再按重新整理。",
+    "zh-CN": "刷新超时，请再次刷新。"
+  },
+  "Choose a range of no more than 60 days.": {
+    "es": "Seleccione un rango de hasta 60 días.",
+    "zh-TW": "請選擇最多 60 天的日期範圍。",
+    "zh-CN": "请选择最多 60 天的日期范围。"
+  },
+  "No scheduled events": {
+    "es": "No hay eventos programados",
+    "zh-TW": "沒有已排程的事件",
+    "zh-CN": "没有已排程的事件"
+  },
+  "More events are available. Warnings cover loaded events only.": {
+    "es": "Hay más eventos. Las advertencias solo incluyen los eventos cargados.",
+    "zh-TW": "還有更多事件，警示僅涵蓋已載入的事件。",
+    "zh-CN": "还有更多事件，警示仅涵盖已加载的事件。"
+  },
+  "Load more events": {
+    "es": "Cargar más eventos",
+    "zh-TW": "載入更多事件",
+    "zh-CN": "加载更多事件"
+  },
+  "Schedule conflicts": {
+    "es": "Conflictos de programación",
+    "zh-TW": "排程衝突",
+    "zh-CN": "排程冲突"
+  },
+  "Warnings are planning guidance; they do not reserve stock or block source workflows.": {
+    "es": "Las advertencias orientan la planificación; no reservan existencias ni bloquean los flujos originales.",
+    "zh-TW": "警示僅供規劃參考，不會預留庫存或阻擋原有作業。",
+    "zh-CN": "警示仅供规划参考，不会预留库存或阻止原有操作。"
+  },
+  "No conflicts detected in loaded events.": {
+    "es": "No se detectaron conflictos en los eventos cargados.",
+    "zh-TW": "已載入的事件未發現衝突。",
+    "zh-CN": "已加载的事件未发现冲突。"
+  },
+  "View Conflict": {
+    "es": "Ver conflicto",
+    "zh-TW": "檢視衝突",
+    "zh-CN": "查看冲突"
+  },
+  "View Shortage": {
+    "es": "Ver faltante",
+    "zh-TW": "檢視短缺",
+    "zh-CN": "查看短缺"
+  },
+  "Unscheduled Pre-Orders": {
+    "es": "Pedidos anticipados sin programar",
+    "zh-TW": "尚未排程的預購訂單",
+    "zh-CN": "尚未排程的预购订单"
+  },
+  "Accepted orders without a pickup time. No time is assumed.": {
+    "es": "Pedidos aceptados sin hora de retiro. No se supone ninguna hora.",
+    "zh-TW": "已接受但尚未指定取貨時間的訂單，不會假設取貨時間。",
+    "zh-CN": "已接受但尚未指定取货时间的订单，不会假设取货时间。"
+  },
+  "Showing the most recent 25. Open Pre-Orders for the full queue.": {
+    "es": "Se muestran los 25 más recientes. Abra Pedidos anticipados para ver todos.",
+    "zh-TW": "顯示最近 25 筆，請開啟預購訂單查看完整佇列。",
+    "zh-CN": "显示最近 25 条，请打开预购订单查看完整队列。"
+  },
+  "View all today": {
+    "es": "Ver todo lo de hoy",
+    "zh-TW": "檢視今日全部",
+    "zh-CN": "查看今日全部"
+  },
+  "Event detail": {
+    "es": "Detalle del evento",
+    "zh-TW": "事件明細",
+    "zh-CN": "事件详情"
+  },
+  "Schedule": {
+    "es": "Programación",
+    "zh-TW": "排程",
+    "zh-CN": "排程"
+  },
+  "Expected completion": {
+    "es": "Finalización prevista",
+    "zh-TW": "預計完成時間",
+    "zh-CN": "预计完成时间"
+  },
+  "Production deadline": {
+    "es": "Fecha límite de producción",
+    "zh-TW": "生產截止時間",
+    "zh-CN": "生产截止时间"
+  },
+  "Open source workspace": {
+    "es": "Abrir módulo original",
+    "zh-TW": "開啟原始模組",
+    "zh-CN": "打开原始模块"
+  },
+  "Selected source record": {
+    "es": "Registro original seleccionado",
+    "zh-TW": "選取的原始紀錄",
+    "zh-CN": "所选原始记录"
+  },
+  "Calendar record could not be loaded.": {
+    "es": "No se pudo cargar el registro del calendario.",
+    "zh-TW": "無法載入行事曆紀錄。",
+    "zh-CN": "无法加载日历记录。"
+  },
+  "Scheduled date": {
+    "es": "Fecha programada",
+    "zh-TW": "排定日期",
+    "zh-CN": "排定日期"
+  },
+  "Scheduled start": {
+    "es": "Inicio programado",
+    "zh-TW": "排定開始時間",
+    "zh-CN": "排定开始时间"
+  },
+  "Unassigned": {
+    "es": "Sin asignar",
+    "zh-TW": "尚未指派",
+    "zh-CN": "尚未指派"
+  },
+  "Pickup date / time": {
+    "es": "Fecha y hora de retiro",
+    "zh-TW": "取貨日期與時間",
+    "zh-CN": "取货日期与时间"
+  },
+  "Expected delivery date": {
+    "es": "Fecha prevista de entrega",
+    "zh-TW": "預計送貨日期",
+    "zh-CN": "预计送货日期"
+  },
+  "Reason for schedule change": {
+    "es": "Motivo del cambio de programación",
+    "zh-TW": "排程變更原因",
+    "zh-CN": "排程变更原因"
+  },
+  "Date-only events keep their time unassigned. Saving updates the original record and its audit trail.": {
+    "es": "Los eventos con solo fecha no reciben una hora. Al guardar se actualizan el registro original y su auditoría.",
+    "zh-TW": "僅有日期的事件不會指定時間，儲存會更新原始紀錄與稽核軌跡。",
+    "zh-CN": "仅有日期的事件不会指定时间，保存会更新原始记录与审计轨迹。"
+  },
+  "Save schedule": {
+    "es": "Guardar programación",
+    "zh-TW": "儲存排程",
+    "zh-CN": "保存排程"
+  },
+  "Schedule could not be saved.": {
+    "es": "No se pudo guardar la programación.",
+    "zh-TW": "無法儲存排程。",
+    "zh-CN": "无法保存排程。"
+  },
+  "Production times overlap": {
+    "es": "Los horarios de producción se superponen",
+    "zh-TW": "生產時間重疊",
+    "zh-CN": "生产时间重叠"
+  },
+  "Reserved ingredients need review": {
+    "es": "Es necesario revisar los ingredientes reservados",
+    "zh-TW": "預留原料需要檢查",
+    "zh-CN": "预留原料需要检查"
+  },
+  "Related delivery is later than production": {
+    "es": "La entrega relacionada es posterior a la producción",
+    "zh-TW": "相關送貨日期晚於生產",
+    "zh-CN": "相关送货日期晚于生产"
+  },
+  "Pickup precedes expected production completion": {
+    "es": "El retiro es anterior al fin previsto de producción",
+    "zh-TW": "取貨時間早於預計生產完成時間",
+    "zh-CN": "取货时间早于预计生产完成时间"
+  },
+  "Custom cake deadline is overdue": {
+    "es": "El plazo del pastel personalizado está vencido",
+    "zh-TW": "客製蛋糕截止時間已逾期",
+    "zh-CN": "定制蛋糕截止时间已逾期"
+  },
+  "Supplier delivery is overdue": {
+    "es": "La entrega del proveedor está atrasada",
+    "zh-TW": "供應商送貨已逾期",
+    "zh-CN": "供应商送货已逾期"
+  },
+  "Production starts within an hour": {
+    "es": "La producción comienza dentro de una hora",
+    "zh-TW": "生產將於一小時內開始",
+    "zh-CN": "生产将于一小时内开始"
+  },
+  "Pre-order pickup today": {
+    "es": "Retiro de pedido anticipado hoy",
+    "zh-TW": "今日預購取貨",
+    "zh-CN": "今日预购取货"
+  },
+  "Custom cake due today": {
+    "es": "Pastel personalizado para hoy",
+    "zh-TW": "客製蛋糕今日到期",
+    "zh-CN": "定制蛋糕今日到期"
+  },
+  "Supplier delivery overdue": {
+    "es": "Entrega del proveedor atrasada",
+    "zh-TW": "供應商送貨逾期",
+    "zh-CN": "供应商送货逾期"
+  },
+  "Calendar access required": {
+    "es": "Se requiere acceso al calendario",
+    "zh-TW": "需要行事曆存取權限",
+    "zh-CN": "需要日历访问权限"
+  },
+  "Invalid calendar range or filters": {
+    "es": "Rango o filtros del calendario no válidos",
+    "zh-TW": "行事曆日期範圍或篩選條件無效",
+    "zh-CN": "日历日期范围或筛选条件无效"
+  },
+  "Calendar record access required": {
+    "es": "Se requiere acceso al registro",
+    "zh-TW": "需要紀錄存取權限",
+    "zh-CN": "需要记录访问权限"
+  },
+  "Calendar record unavailable": {
+    "es": "Registro del calendario no disponible",
+    "zh-TW": "行事曆紀錄無法使用",
+    "zh-CN": "日历记录不可用"
+  },
+  "Invalid calendar source": {
+    "es": "Origen del calendario no válido",
+    "zh-TW": "行事曆來源無效",
+    "zh-CN": "日历来源无效"
+  },
+  "Schedule access required": {
+    "es": "Se requiere acceso a la programación",
+    "zh-TW": "需要排程存取權限",
+    "zh-CN": "需要排程访问权限"
+  },
+  "Schedule values and a reason are required": {
+    "es": "Se requieren los datos y un motivo",
+    "zh-TW": "請填寫排程資料與原因",
+    "zh-CN": "请填写排程资料与原因"
+  },
+  "Production scheduling permission required": {
+    "es": "Se requiere permiso para programar producción",
+    "zh-TW": "需要生產排程權限",
+    "zh-CN": "需要生产排程权限"
+  },
+  "Invalid production schedule": {
+    "es": "Programación de producción no válida",
+    "zh-TW": "生產排程無效",
+    "zh-CN": "生产排程无效"
+  },
+  "Invalid local time in business timezone": {
+    "es": "Hora local no válida en la zona del negocio",
+    "zh-TW": "商家時區的本地時間無效",
+    "zh-CN": "商家时区的本地时间无效"
+  },
+  "Invalid assigned staff": {
+    "es": "Personal asignado no válido",
+    "zh-TW": "指派員工無效",
+    "zh-CN": "指派员工无效"
+  },
+  "Schedule changed or record unavailable; refresh": {
+    "es": "La programación cambió o el registro no está disponible; actualice",
+    "zh-TW": "排程已變更或紀錄無法使用，請重新整理",
+    "zh-CN": "排程已变更或记录不可用，请刷新"
+  },
+  "Administrator scheduling access required": {
+    "es": "Se requiere acceso de administrador",
+    "zh-TW": "需要管理員排程權限",
+    "zh-CN": "需要管理员排程权限"
+  },
+  "Production deadline must not be after pickup": {
+    "es": "El plazo de producción no puede ser posterior al retiro",
+    "zh-TW": "生產截止時間不得晚於取貨時間",
+    "zh-CN": "生产截止时间不得晚于取货时间"
+  },
+  "Purchase scheduling permission required": {
+    "es": "Se requiere permiso para programar compras",
+    "zh-TW": "需要採購排程權限",
+    "zh-CN": "需要采购排程权限"
+  },
+  "Expected date required": {
+    "es": "Se requiere la fecha prevista",
+    "zh-TW": "請填寫預計日期",
+    "zh-CN": "请填写预计日期"
+  }
+})
+
+Object.assign(translations,{'Schedule / View':{es:'Programar / Ver','zh-TW':'排程／檢視','zh-CN':'排程／查看'}})
+
+Object.assign(translations,{'Partially received':{es:'Recibido parcialmente','zh-TW':'部分已收貨','zh-CN':'部分已收货'}})

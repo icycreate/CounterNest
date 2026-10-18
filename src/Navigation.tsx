@@ -6,7 +6,7 @@ import type {PageKey,Role} from './types'
 import {canAccessPage,activeGroup,navStorageKey,primaryPage,readOpenGroups,visibleNavigation} from './navigationModel'
 
 type Props={page:PageKey;setPage:(page:PageKey)=>void;staffName:string;role:Role;shopName:string;logoUrl:string|null;logout:()=>void}
-const icons:Partial<Record<PageKey,typeof Store>>={dashboard:LayoutDashboard,sale:ShoppingCart,products:Package,catalogue:Store,customers:Users,'scheduled-orders':CalendarDays,preparation:ChefHat,'production-studio':ChefHat,planning:CalendarDays,inventory:Boxes,recipes:ChefHat,receiving:Package,purchasing:FileBarChart,supply:Truck,sales:BarChart3,reports:FileBarChart,profit:BarChart3,'cash-drawer':Landmark,expenses:CreditCard,staff:Users,audit:ShieldCheck,tasks:ClipboardCheck,hardware:Printer,backup:Download,readiness:ShieldCheck,'report-issue':MessageSquareWarning,settings:Settings}
+const icons:Partial<Record<PageKey,typeof Store>>={calendar:CalendarDays,dashboard:LayoutDashboard,sale:ShoppingCart,products:Package,catalogue:Store,customers:Users,'scheduled-orders':CalendarDays,preparation:ChefHat,'production-studio':ChefHat,planning:CalendarDays,inventory:Boxes,recipes:ChefHat,receiving:Package,purchasing:FileBarChart,supply:Truck,sales:BarChart3,reports:FileBarChart,profit:BarChart3,'cash-drawer':Landmark,expenses:CreditCard,staff:Users,audit:ShieldCheck,tasks:ClipboardCheck,hardware:Printer,backup:Download,readiness:ShieldCheck,'report-issue':MessageSquareWarning,settings:Settings}
 
 export function GroupedNavigation({page,role,onNavigate,compact=false}:{page:PageKey;role:Role;onNavigate:(page:PageKey)=>void;compact?:boolean}){
   const instance=useId().replace(/:/g,'')

@@ -1,7 +1,7 @@
 {
-  "version": "2.0.0-rc.8",
-  "build": "2026-10-17-navigation-theme",
-  "migration_count": 89,
+  "version": "2.0.0-rc.9",
+  "build": "2026-10-17-calendar",
+  "migration_count": 90,
   "database_engine": "PGlite PostgreSQL with mocked Supabase auth/storage and mocked manager-PIN crypt for refund tests; pgcrypto extension omitted",
   "checks": [
     {
@@ -442,6 +442,42 @@
     },
     {
       "name": "Expired recovery can be permanently purged only for its confirmed owner and leaves no partial tenant data",
+      "status": "passed"
+    },
+    {
+      "name": "Calendar projects each accepted source once, keeps untimed orders separate and never invents clock times",
+      "status": "passed"
+    },
+    {
+      "name": "Calendar date bounds, event/staff/search filters and pagination are enforced by the server",
+      "status": "passed"
+    },
+    {
+      "name": "Calendar flags pickup-before-completion, ingredient commitment shortage, late and overdue deliveries",
+      "status": "passed"
+    },
+    {
+      "name": "Calendar roles and tenant checks block hidden event types, financial fields and foreign records",
+      "status": "passed"
+    },
+    {
+      "name": "Production rescheduling changes the original batch once with assignment, optimistic concurrency and old/new audit",
+      "status": "passed"
+    },
+    {
+      "name": "Production scheduling rejects foreign staff, invalid intervals, missing permission and records that changed",
+      "status": "passed"
+    },
+    {
+      "name": "Pickup and delivery rescheduling updates existing sources, and source-module date edits also create audit",
+      "status": "passed"
+    },
+    {
+      "name": "Calendar notification IDs are stable and deduplicated in the existing notification centre",
+      "status": "passed"
+    },
+    {
+      "name": "Pending workspace deletion blocks Calendar reads and schedule changes",
       "status": "passed"
     }
   ],

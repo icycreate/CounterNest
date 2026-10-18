@@ -1,9 +1,11 @@
-# Upgrade RC7 → RC8
+# Upgrade RC8 → Operations Calendar RC9
 
-1. Keep a verified backup of the current Supabase project and the RC7 frontend deployment.
-2. Apply supabase/migrations/202610171500_shared_catalogue_theme.sql after the existing 88 migrations. It wraps the authorized catalogue RPC to expose four validated visual fields and publishes an administrator's appearance choice to that same business. It grants no public table access. Do not replay the old migrations on an existing database.
-3. Deploy the complete RC8 source through the existing GitHub/Vercel project. Use the current VITE_SUPABASE_URL and browser-safe publishable/anon key; keep privileged keys in approved server environments only. Configure the Supabase Auth redirect allowlist and email templates for the deployed origin; password reset redirects to /dashboard.
-4. Run npm install, npm run build, npm test and npm run test:assets before deployment. New installs apply all 89 migrations in SUPABASE_MIGRATION_ORDER.md.
-5. Test an administrator appearance/accent save, a public Catalogue link on another device, sign-in/out, unsaved Back and email recovery. Public Catalogue polls visible data every five seconds. Existing personal non-admin appearance stays private.
-6. Allow the updated service-worker shell to activate, then refresh. Native PWA launch colors/icons may stay cached until reinstall; an OS-controlled splash cannot animate.
-7. To roll back the frontend, redeploy RC7. The additive RPC fields remain backward-compatible; retaining migration 89 is safe for RC7. Restoring pre-RC8 database definitions should be done only with a reviewed database rollback, not by deleting migration history.
+1. Back up the current Supabase project and preserve the RC8 frontend deployment. Confirm migrations 1–89 already match SUPABASE_MIGRATION_ORDER.md. Those 89 files are unchanged in RC9.
+2. Apply only supabase/migrations/202610171700_operations_calendar.sql (migration 90) to an existing RC8 project, using the normal privileged migration workflow. It adds two nullable production timestamp fields, indexes, authorized RPCs and audit triggers; it does not backfill invented times or delete production records. Do not replay the earlier migrations.
+3. Fresh projects must apply all 90 migrations in the documented order. Use your existing Supabase Auth/RLS/storage and edge-function deployment instructions. Do not expose service-role credentials in frontend variables.
+4. Run npm install, npm run build, npm test and npm run test:assets. Deploy this complete source through the existing GitHub/Vercel project with its own environment values. Build command: npm run build; output: dist. Local env files, node_modules and dist are excluded from the source ZIP.
+5. Stage two separate businesses and all applicable roles. Verify four source types, original IDs/counts, real schedule changes, commercial_events old/new/actor/time, stale-edit rejection, notifications, timezone handling, original quick-create workflows and unchanged stock totals. Follow UAT_ACCEPTANCE_CHECKLIST.md.
+6. Let the updated service worker activate and refresh. Verify Calendar in actual installed Android and iOS PWAs, including OS Back, offline/reconnect and update activation. Browser screenshots do not certify installed-device behavior.
+7. Roll back the frontend by redeploying RC8 if required. Its original date fields remain compatible with the additive nullable columns. Preserve migration history and audits; removing the SQL wrapper/triggers requires a separately reviewed database rollback. Do not drop production data to undo the UI.
+
+No production deployment was performed during this local build. See KNOWN_ISSUES.md for remaining staging/device acceptance.

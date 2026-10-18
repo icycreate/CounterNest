@@ -267,7 +267,9 @@ async function main(){
  await require('./production-operations-database.cjs')({db,check,scalar,rejects});
  await require('./workspace-recovery-database.cjs')({db,check,scalar,rejects});
  await require('./operations-import-database.cjs')({db,check,scalar,rejects});
- fs.writeFileSync(path.join(root,'DATABASE_TEST_RESULTS.json'),JSON.stringify({version:'2.0.0-rc.8',build:'2026-10-17-navigation-theme',migration_count:files.length,database_engine:'PGlite PostgreSQL with mocked Supabase auth/storage and mocked manager-PIN crypt for refund tests; pgcrypto extension omitted',checks,limitations:['Live Supabase deployment, real bcrypt PIN checks, storage HTTP upload, Edge Functions and browser UAT still require target-environment verification.']},null,2));
+ await require('./calendar-database.cjs')({db,check,scalar,rejects});
+ fs.writeFileSync(path.join(root,'DATABASE_TEST_RESULTS.json'),JSON.stringify({version:'2.0.0-rc.9',build:'2026-10-17-calendar',migration_count:files.length,database_engine:'PGlite PostgreSQL with mocked Supabase auth/storage and mocked manager-PIN crypt for refund tests; pgcrypto extension omitted',checks,limitations:['Live Supabase deployment, real bcrypt PIN checks, storage HTTP upload, Edge Functions and browser UAT still require target-environment verification.']},null,2));
  await db.close();
 }
 main().catch(e=>{console.error(e.message);process.exit(1)});
+

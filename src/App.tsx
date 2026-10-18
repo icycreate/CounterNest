@@ -1,3 +1,4 @@
+import OperationsCalendar,{CalendarSourcePanel} from './OperationsCalendar'
 import {useSharedTheme,defaultTheme,normalizeTheme} from './sharedTheme'
 import {BackButton} from './NavigationBoundary'
 import {resetUnsaved} from './appNavigation'
@@ -433,7 +434,7 @@ export default function App() {
   if(window.location.pathname.replace(/\/$/,'')==='/request-status')return <RequestStatus token={new URLSearchParams(window.location.search).get('token')??''}/>
   if(window.location.pathname.replace(/\/$/,'')==='/ready-display'||readyToken)return readyToken?<ReadyDisplay token={readyToken}/>:<main className="commercial-catalogue"><p role="alert">{tr("Open the protected ready-display link from Display Settings.")}</p></main>
   if (customerDisplayToken || (window.location.pathname.replace(/\/$/,'')==='/catalogue'&&displayParams.has('token'))) return <CommercialCatalogue key={customerDisplayToken??displayParams.get('token')??'customer'} token={customerDisplayToken??displayParams.get('token')??undefined} mode="customer"/>
-  if((displayParams.get('preparation')==='1'||['/preparation','/kitchen'].includes(window.location.pathname.replace(/\/$/,'')))&&authenticated&&!mustChangePassword)return <PreparationScreen standalone/>
+  if((displayParams.get('preparation')==='1'||['/preparation','/kitchen'].includes(window.location.pathname.replace(/\/$/,'')))&&authenticated&&!mustChangePassword)return <><CalendarSourcePanel/><PreparationScreen standalone/></>
   if (!online && supabaseConfigured && !authenticated) return <OfflineStage />
   if (inviteToken) return <LoyaltyJoin token={inviteToken} />
   if (staffInviteToken) return <StaffInvitationJoin token={staffInviteToken} />
@@ -469,6 +470,8 @@ export default function App() {
         {['tasks','checklists','handover','schedule','alerts','analytics'].includes(page)&&<SectionTabs label={tr("Team workspace sections")} page={page} setPage={setPage} items={([['tasks','Tasks'],['checklists','Checklists'],['handover','Shift Handover'],['schedule','Schedule & Attendance'],['alerts','Alerts'],['analytics','Analytics']] as [PageKey,string][]).filter(([key])=>canAccessPage(effectiveRole,key))}/>}
         {page === 'dashboard' && <>{['admin','inventory','production','manager'].includes(effectiveRole)&&workspace.operational&&<ProductionOperations role={effectiveRole} initialData={workspace.operational} onNavigate={setPage}/>} {effectiveRole==='accounting'&&<AccountingSummary/>}{effectiveRole==='cashier'&&<CashierHome scope={scope} customers={customers} onSale={customer=>{if(customer)setSelectedCustomerId(customer);setPage('sale')}}/>}<WorkspaceDashboard workspace={workspace} role={effectiveRole} setPage={setPage} onRecord={setRecord}/>{['admin','cashier'].includes(effectiveRole)&&<Dashboard role={effectiveRole} sales={sales} products={products} setPage={setPage} currency={currency}/>}</>}
         {page === 'sale' && <NewSale checkoutScope={`${shopId??'demo'}:${accountEmail}`} products={products} customers={customers} rewards={rewards} cart={cart} setCart={setCart} taxRate={taxRate} stampsRequired={stampsRequired} selectedCustomerId={selectedCustomerId} setSelectedCustomerId={setSelectedCustomerId} setCustomers={setCustomers} setProducts={setProducts} setSales={setSales} showToast={showToast} refresh={hydrateFromSupabase} receiptConfig={receiptConfig} />}
+        {['scheduled-orders','preparation','purchasing','receiving'].includes(page)&&<CalendarSourcePanel/>}
+        {page === 'calendar' && <OperationsCalendar key={scope} scope={scope} timezone={timezone}/>}
         {page === 'products' && <Products products={products} setProducts={setProducts} role={effectiveRole} shopId={shopId} showToast={showToast} currency={currency} />}
         {page==='commercial'&&<CommercialManagement role={effectiveRole} showToast={showToast}/>}
         {page==='scheduled-orders'&&<ScheduledOrders role={effectiveRole} showToast={showToast} onPaid={async()=>{await hydrateFromSupabase();setPage('sales');showToast(trError(tr("Order paid. Open its receipt in Sales.")))}}/>}

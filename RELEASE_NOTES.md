@@ -1,11 +1,9 @@
-# CounterNest Navigation & Appearance RC8
+# CounterNest POS Operations Calendar RC9 — 2.0.0-rc.9
 
-The customer Catalogue now receives the business's published visual settings through its existing protected link. Main app, public Catalogue, product details, QR screens and embedded selection share one palette and reusable search/button styles. Light/dark/system and orange/blue/green accents use the same source; the existing grid and filters are preserved.
+Adds Operations → Calendar as a live planning view of existing orders, cakes, batches and supplier POs. Includes Month/Week/Day/Agenda, Today, accepted unscheduled pre-orders, shared search, type/status/staff/date filters and role-aware original-record detail links.
 
-Back closes an open image, modal or mobile drawer before returning to an internal route. Modified editors show localized Stay Here / Discard & Go Back controls. A bounded home cushion provides Dashboard or the exact public Catalogue link when no useful route remains. Settings discard restores its inline App state. Reload/tab-close uses the browser's native unsaved-changes prompt.
+Adds optional production start/finish fields with business-timezone validation. Authorized reschedules update original records with stale-edit protection and old/new/actor/time audits. Module quick-create actions retain their original approval and permission rules. Planning warnings and source-linked Notification Center entries use existing operational data, with stable deduplicated notification identities.
 
-Sign In, Sign Up, business onboarding and password screens retain white cards, readable fields, accent actions and password eyes even when the app uses dark mode. Forgot/reset password flows use Supabase recovery events.
+Includes four interface languages, phone Agenda, touch date navigation, Back/unsaved handling and shared light/dark/accent styling. Corrects conflicting legacy panel-button colors affecting dark Calendar controls and ensures native schedule controls submit their displayed values.
 
-The platform boot keeps the official CounterNest SVG and adds the supplied storyboard's two-line tagline, warm glow and wider indeterminate loader. It remains launch-scoped, capped at 3.5 seconds, responsive and reduced-motion aware. Business title/favicon behavior resumes after startup and clears on sign-out.
-
-Upgrade: apply migration 89, 202610171500_shared_catalogue_theme.sql, before deploying this frontend. All 88 earlier migrations are unchanged. Physical PWA and live Supabase/email recovery verification remain staging checks.
+Upgrade RC8 with migration 90 only. All 89 baseline migrations are preserved. npm install, production build, full tests and asset checks passed locally. Deployment and physical installed-PWA UAT remain pending. See the build report and Calendar user guide.

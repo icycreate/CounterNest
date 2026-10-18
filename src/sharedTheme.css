@@ -4,7 +4,7 @@ html[data-appearance] body{background:var(--page-bg);color:var(--text)}
 /* Avoid the legacy dark stylesheet overriding the central palette or light auth cards. */
 html[data-appearance] :is(.panel,.modal,.ux-dialog,.stat-card,.product-card,.customer-card,.page-header,.section-tabs,.mobile-menu-sheet){background:var(--surface);color:var(--text);border-color:var(--border)}
 html[data-appearance] :is(input,select,textarea){background:var(--surface);color:var(--text);border-color:var(--border)}
-html[data-appearance] :is(button,a.cn-button){background:var(--surface);color:var(--text);border-color:var(--border)}
+html[data-appearance] :where(button,a.cn-button){background:var(--surface);color:var(--text);border-color:var(--border)}
 html[data-appearance] :is(.primary-btn,.auth-submit,.cn-button--primary){background:var(--primary);color:var(--primary-foreground);border-color:var(--primary)}
 html[data-appearance] .cn-button--secondary{background:var(--surface);color:var(--text);border-color:var(--border)}
 html[data-appearance] .cn-button--success{background:var(--success);color:var(--success-foreground);border-color:var(--success)}
@@ -35,3 +35,4 @@ html[data-appearance] :is(.catalogue-admin-card,.customer-product-card,.catalogu
 html[data-appearance] :is(.catalogue-badges,.customer-product-badges) span{background:color-mix(in srgb,var(--primary) 12%,var(--surface));color:var(--text);border:1px solid var(--border)}
 html[data-appearance] .commercial-catalogue .preorder-public-form{background:var(--surface);color:var(--text);border-color:var(--border)}
 html[data-appearance] .auth-stage :is(select,.language-selector){background:#fff;color:#38352f;color-scheme:light}
+

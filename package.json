@@ -1,7 +1,7 @@
 {
   "name": "counternest-pos",
   "private": true,
-  "version": "2.0.0-rc.8",
+  "version": "2.0.0-rc.9",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,7 +13,7 @@
     "test:ui": "node tests/ui-components.cjs",
     "test:release": "node tests/STATIC_RELEASE_CHECKS.cjs",
     "test:web": "node tests/web-deployment.cjs",
-    "test": "npm run test:frontend && npm run test:ui && npm run test:database && npm run test:release && npm run test:web && npm run test:edge && npm run test:display && npm run test:rc1 && npm run test:catalogue-export && npm run test:customer-requests && npm run test:ux && npm run test:finalization && npm run test:rc4 && npm run test:operations && npm run test:purchasing-model && npm run test:boot && npm run test:navigation-theme",
+    "test": "npm run test:frontend && npm run test:ui && npm run test:database && npm run test:release && npm run test:web && npm run test:edge && npm run test:display && npm run test:rc1 && npm run test:catalogue-export && npm run test:customer-requests && npm run test:ux && npm run test:finalization && npm run test:rc4 && npm run test:operations && npm run test:purchasing-model && npm run test:boot && npm run test:navigation-theme && npm run test:calendar",
     "test:edge": "node tests/edge-functions.cjs",
     "test:display": "node tests/catalogue-display.cjs",
     "test:assets": "node tests/built-assets.cjs",
@@ -28,7 +28,8 @@
     "test:operations": "node tests/ingredient-purchasing-ui.cjs && node tests/import-setup-ui.cjs && node tests/workspace-recovery.cjs && node tests/workspace-edge.cjs",
     "test:purchasing-model": "node tests/purchasing-model.cjs && node tests/purchasing-ui.cjs",
     "test:boot": "node tests/boot.cjs",
-    "test:navigation-theme": "node tests/navigation-theme.cjs"
+    "test:navigation-theme": "node tests/navigation-theme.cjs",
+    "test:calendar": "node tests/calendar.cjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",
@@ -54,7 +55,7 @@
   "allowScripts": {
     "esbuild@0.25.12": true
   },
-  "description": "CounterNest POS operational purchasing, production and workspace recovery release candidate",
+  "description": "CounterNest POS source-linked Operations Calendar release candidate",
   "engines": {
     "node": ">=22.12.0 <25"
   }

@@ -9,5 +9,6 @@
   "limitations": [
     "Vercel deployment rewrite is configured but has not been exercised on Vercel hosting.",
     "Real authenticated route refresh requires the live Supabase session."
-  ]
+  ],
+  "provenance": "Retained RC8 production-preview HTTP evidence; current RC9 is covered by build/assets and local browser source checks. Target Vercel runtime checks pending."
 }

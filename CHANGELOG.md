@@ -1,3 +1,11 @@
+# 2.0.0-rc.9 — Operations Calendar
+
+- Original-source Calendar with four views, filters, Today and unscheduled orders.
+- Authorized original-row rescheduling, concurrency checks, schedule audit triggers and stable notification IDs.
+- Conflict/shortage/deadline guidance, original-module links and quick-create.
+- Four languages, shared themes, mobile Agenda and protected Back.
+- Migration 90 adds only missing batch start/end timestamps and supporting indexes/functions.
+
 # 2.0.0-rc.8 — 2026-10-17
 
 - Shared validated theme tokens and tenant-scoped public Catalogue palette, including manifest colors.

@@ -17,7 +17,7 @@ const qty=(value:number,unit='units')=>`${Number(value??0).toLocaleString(undefi
 export default function ProductionPlanning({products,role,showToast}:{products:Product[];role:Role;showToast:(message:string)=>void}){
   const today=new Date().toISOString().slice(0,10)
   const endDate=new Date(Date.now()+6*86400000).toISOString().slice(0,10)
-  const[from,setFrom]=useState(today),[to,setTo]=useState(endDate),[data,setData]=useState<PlanningData>(empty),[adding,setAdding]=useState(false),[busy,setBusy]=useState(false)
+  const[from,setFrom]=useState(today),[to,setTo]=useState(endDate),[data,setData]=useState<PlanningData>(empty),[adding,setAdding]=useState(new URLSearchParams(location.search).get('create')==='production'),[busy,setBusy]=useState(false)
   async function load(){
     if(role!=='admin')return
     setBusy(true)
@@ -43,7 +43,7 @@ export default function ProductionPlanning({products,role,showToast}:{products:P
 }
 
 function PlanProductionModal({products,onClose,onSaved}:{products:Product[];onClose:()=>void;onSaved:()=>Promise<void>}){
-  const[productId,setProductId]=useState(products[0]?.id??''),[date,setDate]=useState(new Date().toISOString().slice(0,10)),[planned,setPlanned]=useState('1'),[note,setNote]=useState(''),[preview,setPreview]=useState<PlanPreview|null>(null),[allowShortage,setAllowShortage]=useState(false),[busy,setBusy]=useState(false),[loading,setLoading]=useState(false)
+  const[productId,setProductId]=useState(products[0]?.id??''),[date,setDate]=useState(new URLSearchParams(location.search).get('date')||new Date().toISOString().slice(0,10)),[planned,setPlanned]=useState('1'),[note,setNote]=useState(''),[preview,setPreview]=useState<PlanPreview|null>(null),[allowShortage,setAllowShortage]=useState(false),[busy,setBusy]=useState(false),[loading,setLoading]=useState(false)
   const validQuantity=Number(planned)>0
   useEffect(()=>{
     setAllowShortage(false)

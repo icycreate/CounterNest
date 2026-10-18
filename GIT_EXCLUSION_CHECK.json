@@ -1,5 +1,5 @@
 {
-  "build": "2026-10-17-operations1",
+  "build": "2026-10-17-calendar",
   "status": "passed",
   "excluded": [
     ".env",
@@ -20,5 +20,6 @@
     "public/counternest-default-logo.svg",
     "supabase/migrations/202610161200_catalogue_finalization.sql"
   ],
-  "environment": "Isolated Git check; Git metadata excluded from package"
+  "environment": "Isolated Git check; Git metadata excluded from package",
+  "note": "Baseline isolated Git ignore check retained; final RC9 source archive exclusions independently verified in external ArchiveValidation report."
 }

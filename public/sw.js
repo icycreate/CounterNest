@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'counternest-web-v2-0-0-rc11-customer-experience'
+const CACHE_VERSION = 'counternest-web-v2-0-0-rc12-units-gallery'
 const SHELL_CACHE = `${CACHE_VERSION}-shell`
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`
 // Persist only the account binding, never a session/JWT or order details.
@@ -33,6 +33,7 @@ const CORE_ASSETS = [
   '/index.html',
   '/manifest.webmanifest',
   '/counternest-default-logo.svg',
+  '/counternest-icon.svg',
   '/counternest-boot-logo-dark.svg',
   '/boot-screen.css',
   '/pwa/icon-192.png',

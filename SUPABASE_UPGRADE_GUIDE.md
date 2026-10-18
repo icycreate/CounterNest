@@ -1,9 +1,3 @@
-# Upgrade RC10 → Customer Experience RC11
+# Supabase RC12 upgrade
 
-1. Retain the RC10 deployment and take a verified workspace/database backup. Compare existing migration hashes with MIGRATION_MANIFEST.json. Do not rerun old migrations.
-2. Apply only supabase/migrations/202610181200_customer_experience_notifications.sql (migration 92). Fresh projects apply all 92 in SUPABASE_MIGRATION_ORDER.md. This adds public contact configuration, explicit request type, private notification tables, guarded RPCs and event triggers. Existing business rows are not deleted. Previously configured contact choices do not become public business contacts automatically.
-3. Configure the existing browser-safe Supabase variables. For push, follow NOTIFICATION_SETUP.md; the VAPID public key may use VITE_WEB_PUSH_PUBLIC_KEY. All private keys remain server-only in Vercel. Keep existing Supabase Auth, RLS, storage and Edge Functions.
-4. Run npm install, npm run build, npm test and npm run test:assets. Deploy the source through the existing GitHub/Vercel project. Build npm run build; output dist. No desktop tooling is required.
-5. Configure the authenticated database webhook and retry schedule described in NOTIFICATION_SETUP.md. Subscribe only after the deployed service worker is active. Register each authorized device separately.
-6. Rehearse UAT with two businesses and all roles. Confirm public contacts, custom-logo removal/fallback, category languages with unchanged names, dark totals, exact push links, repeat/retry behavior, revoked staff, source Calendar, historical receipts and safe backup/restore/delete. Use disposable staging records.
-7. Rollback: disable webhook/scheduler and unregister devices before restoring RC10 frontend. Retain migration 92 and data; do not drop tables or revert request types while records are linked. RC10 ignores new UI/configuration. Custom cake orders remain normal cake records. Re-enable the new frontend and register again to resume push.
+Follow INSTALL_UPGRADE_GUIDE.md and SUPABASE_MIGRATION_ORDER.md. RC11 installs add only migrations 93 and 94; fresh installs apply all 94. Back up and verify on staging before production. No live cloud SQL was executed during this build.

@@ -1,11 +1,11 @@
-# RC11 validation report
+# RC12 validation report
 
-Local install, production build, full npm test and built-asset checks passed. npm install added 140 packages and audited 141 with zero vulnerabilities reported. The only new dependency is server-only web-push; the browser UI framework is unchanged.
+Dependency installation completed: 141 packages audited, zero reported vulnerabilities, no new runtime dependency. Production build, full npm test suite and built-asset checks passed. Logs are in docs/validation; FINAL_CHECK_RESULTS.json records exit codes.
 
-All 92 migrations apply to the local PostgreSQL test engine. 133 database checks cover existing financial/inventory/workspace workflows and new contacts, per-device subscriptions, queue deduplication, authorization, leases, cursors and cake intake/acceptance. 8 focused checks cover identity embedding, four-language category/name rules, contact URLs, three-ring audio synthesis, deep links, worker account binding, endpoint restrictions and theme preference. Full prior regressions also ran; older embedded report version labels remain historical labels, while docs/validation/test.log records this RC11 run.
+All 94 SQL migrations applied locally. The original 92 migration bytes match RC11. 145 database behavior checks passed, plus the RC11 upgrade preservation fixture. New checks cover scientific factors, density rejection, tenant custom units, unchanged stock, source snapshots, partial receiving and retry idempotency, approval, source recipe versions, immutable order factors, gallery promotion/clearing, owned branding and backup/restore.
 
-All 91 prior migration files are byte-identical to RC10. The only new SQL file is migration 92. Build warnings are the existing large browser bundle and test-only CommonJS import.meta notices.
+9 focused RC12 UI checks passed alongside every existing frontend suite. Token checks exercise standard and bright custom accents in Light/Dark, danger, success and disabled states. The catalogue was checked at 390/768/1280 px, with no document overflow and contained logo sizing. 10 sample-data screenshots are included; SCREENSHOT_GALLERY.md lists them.
 
-Browser inspection used fictional records via work/rc11-qa outside release source. See RC11_BROWSER_QA.json for exact measurements and screenshot limits. No real Supabase credentials, Auth emails, external messages, background push delivery, installations, production writes or destructive workspace tests were performed.
+Local results do not certify deployment or physical-device behavior. Staging UAT, live Supabase storage/RLS/Edge, external push, physical PWA install and human screen review remain pending. Existing large-chunk and test-bundler import.meta warnings are non-fatal and documented in logs.
 
-Remaining: live staging deployment/roles, real storage/logo upload, two-device push and retries, actual PWA/OS behavior and printer/scanner acceptance.
+Production preview: 51 direct route responses and built asset content types passed. The check validates the current boot shell and SPA fallback; Vercel hosting acceptance remains pending.

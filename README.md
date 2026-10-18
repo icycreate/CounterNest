@@ -1,15 +1,15 @@
-# CounterNest POS — Customer Experience RC11
+# CounterNest POS — Units and Catalogue RC12
 
-Version 2.0.0-rc.11 · 2026-10-18. Built from the actual System Style RC10 source.
+Version 2.0.0-rc.12 · 2026-10-18. Continues the actual Customer Experience RC11 source.
 
 Browser/Web Application → GitHub → Vercel → Supabase Cloud.
 
-The approved bakery identity now supplies the platform fallback logo, boot logo, browser icon and installed-app icons. A business logo continues to replace the fallback on business-facing screens and documents.
+RC12 adds a workspace unit registry, explicit base/purchase/recipe units, order and receipt source snapshots, normalized recipe quantities, a canonical product gallery, catalogue header/background decoration controls, stronger semantic contrast and the complete approved logo in medium/large areas. Compact marks and PWA icons use dedicated icon artwork.
 
-Customer catalogues offer Light / Dark / System, default to Light on a new device, and retain the business accent. Explicit public contact methods are configured separately from the customer's preferred contact choice. Product, variant, option and brand names remain as entered. Known standard categories may localize; custom categories remain unchanged.
+Apply only migrations 93 and 94 when upgrading RC11. All original 92 files are unchanged. Fresh projects apply all 94 migrations in SUPABASE_MIGRATION_ORDER.md. No production deployment or cloud data changes are performed by this source package.
 
-New request alerts include foreground popups, a device badge and a three-ring sound after browser audio activation. Background Web Push uses per-account device registrations, a transactional Supabase outbox and the protected Vercel dispatcher. Custom cake requests use the original Accept / Decline and scheduled cake workflow.
+Use npm install, npm run build, npm test and npm run test:assets. Vercel uses npm run build with output dist. Use Node 22.12+ or 24, as specified in package.json. Copy .env.example into a private local environment or set the documented public variables in Vercel; never commit secret files. Supabase service-role credentials stay on server-only endpoints.
 
-Upgrade from RC10: apply migration 92 before the frontend. Existing 91 migrations are unchanged. Run npm install, npm run build, npm test and npm run test:assets. Use Vercel build npm run build, output dist. Source ZIP excludes environment secrets, node_modules and dist.
+Read INSTALL_UPGRADE_GUIDE.md, UNIT_CONVERSION_GUIDE.md, PRODUCT_GALLERY_GUIDE.md, CATALOGUE_APPEARANCE_GUIDE.md, UAT_ACCEPTANCE_CHECKLIST.md, BUILD_VALIDATION.json and KNOWN_ISSUES.md. Existing Calendar, notifications, contacts, four-language system UI, Back handling and business-name preservation remain in place.
 
-Read INSTALL_UPGRADE_GUIDE.md, NOTIFICATION_SETUP.md, PWA_NOTES.md, BRANDING_NOTES.md, CALENDAR_USER_GUIDE.md, UAT_ACCEPTANCE_CHECKLIST.md and KNOWN_ISSUES.md. Validation is local; external push transport, live Supabase deployment and physical-device acceptance remain pending. No production deployment or database changes were performed during this build.
+The qa/ folder contains isolated sample-data component fixtures used only with the external local QA configuration. They are not connected to production or referenced by the production entry point. Screenshots under docs/screenshots are explicitly sample-data verification evidence, not live business records.

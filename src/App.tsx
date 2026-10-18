@@ -25,7 +25,7 @@ import {companyPhoneCountry,setCompanyPhoneCountry,normalizePhone,getCompanyPhon
 import {Button} from './Button'
 import CashierHome from './CashierHome'
 import ImageCropper from './ImageCropper'
-import {businessLogo,updateBrowserBranding} from './branding'
+import {businessLogo,businessIcon,updateBrowserBranding} from './branding'
 import InventorySources from './InventorySources'
 import {systemLabel} from './systemLabels'
 import {useDialogFocus} from './useDialogFocus'
@@ -585,7 +585,7 @@ function PasswordInput(props:InputHTMLAttributes<HTMLInputElement>){
 
 function Brand({ shopName, compact = false, logoUrl = null }: { shopName: string; compact?: boolean; logoUrl?: string | null }) {
   return <div className={`brand ${compact ? 'compact' : ''}`}>
-    <div className={`logo-circle ${!logoUrl ? 'logo-empty' : ''}`}><img src={businessLogo(logoUrl)} alt={`${shopName||'CounterNest POS'} logo`} /></div>
+    <div className={`logo-circle ${!logoUrl ? 'logo-empty' : ''}`}><img src={compact?businessIcon(logoUrl):businessLogo(logoUrl)} alt={`${shopName||'CounterNest POS'} logo`} /></div>
     <div className="brand-name">{shopName}</div>
   </div>
 }

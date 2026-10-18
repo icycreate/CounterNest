@@ -37,3 +37,6 @@ html[data-boot-theme=dark] .cn-boot-logo-light{display:none}html[data-boot-theme
 .cn-boot-name,.cn-boot-tagline{animation-name:cn-boot-copy-in}
 @keyframes cn-boot-copy-in{from{opacity:0;translate:0 5px}to{opacity:1;translate:0 0}}
 @media(prefers-reduced-motion:reduce){.cn-boot-art:before{animation:none}.cn-boot-tagline{opacity:1}}
+
+/* Full approved lockup keeps its original proportions. */
+.cn-boot-logo{left:30px;top:62px;width:200px;height:138px;object-fit:contain;border-radius:0}

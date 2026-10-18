@@ -1,0 +1,31 @@
+:root{--color-danger:var(--danger,#a52329);--color-danger-foreground:var(--danger-foreground,#fff);--color-primary:var(--primary);--color-primary-foreground:var(--primary-foreground);--color-disabled-bg:#e1e5ea;--color-disabled-text:#424b56}
+html[data-appearance] .cn-button.cn-button--danger{background:var(--color-danger);color:var(--color-danger-foreground);border-color:var(--color-danger)}
+html[data-appearance] .cn-button.cn-button--primary{background:var(--color-primary);color:var(--color-primary-foreground)}
+html[data-appearance] .cn-button.cn-button--success{background:var(--success);color:var(--success-foreground)}
+html[data-appearance] .cn-button:disabled{background:var(--color-disabled-bg);color:var(--color-disabled-text);border-color:var(--border);opacity:1;filter:none;cursor:not-allowed}
+html[data-appearance] .cn-button:hover{filter:none}
+.cn-button svg,.cn-button svg *{color:inherit;stroke:currentColor}
+.cn-button:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.cn-unit-setup,.catalogue-decoration-editor{border:1px solid var(--border);border-radius:16px;padding:16px;margin-block:16px;background:var(--surface);color:var(--text)}
+.cn-unit-select{display:grid;gap:6px}.cn-unit-select>.cn-button{justify-self:start}.cn-unit-setup legend{font-weight:700;padding-inline:8px}
+.commercial-catalogue{position:relative;isolation:isolate;background:var(--page-bg);color:var(--text)}
+.commercial-catalogue::before{content:"";position:absolute;inset:0;z-index:-1;background-image:var(--catalogue-background-image);background-size:cover;background-position:center;opacity:var(--catalogue-background-opacity,0);pointer-events:none}
+.commercial-catalogue .catalogue-branded-header{position:relative;isolation:isolate;overflow:hidden;border-radius:20px;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:16px;padding:24px;background:var(--surface);color:var(--text);border:1px solid var(--border)}
+.catalogue-branded-header::before{content:"";position:absolute;inset:-24px;z-index:-1;background-image:var(--catalogue-header-image);background-size:cover;background-position:var(--catalogue-focal,50% 50%);filter:blur(var(--catalogue-header-blur,0));opacity:var(--catalogue-header-opacity,0);pointer-events:none}
+.catalogue-business-title{flex-basis:100%;text-align:center;order:-1}.catalogue-business-title h1{color:var(--text);overflow-wrap:anywhere;font-size:clamp(1.6rem,4vw,2.7rem)}
+.commercial-catalogue .catalogue-business-logo{width:190px;height:125px;max-width:100%;object-fit:contain;border-radius:0;background:transparent;flex-shrink:0}
+.commercial-filters{padding:16px;border:1px solid var(--border);border-radius:16px;background:var(--surface);color:var(--text);gap:10px}
+.catalogue-decoration-preview{padding:18px;margin-block:16px;border:1px solid var(--border);border-radius:16px;min-height:170px}
+.commercial-card,.commercial-detail,.commercial-cart{color:var(--text)}
+.commercial-detail .commercial-price,.commercial-card>span{color:var(--text)}
+.logo-circle.logo-empty{width:230px;height:160px;max-width:100%;border-radius:0;background:transparent;overflow:visible}
+.logo-circle.logo-empty img,.receipt-brand img,.report-business-logo,.card-back-content>img,.onboarding-logo-preview img{object-fit:contain;object-position:center;border-radius:0}
+.brand.compact .logo-empty{width:44px;height:44px}
+.receipt-brand img{width:180px;height:120px}.report-business-logo{width:140px;height:95px}
+.boot-logo-image{object-fit:contain!important;border-radius:0!important}
+@media(max-width:600px){.commercial-catalogue .catalogue-branded-header{padding:16px;gap:10px}.commercial-catalogue .catalogue-business-logo{width:160px;height:110px}.cn-unit-setup .form-grid{grid-template-columns:1fr}}
+
+.catalogue-decoration-editor [data-cn-field]{display:flex;flex-direction:column;gap:7px;font-size:14px;font-weight:600;color:var(--text)}
+.catalogue-decoration-editor :is(select,input:not([type=file]):not([type=range])){min-height:44px;width:100%;border:1px solid var(--border);border-radius:12px;background:var(--surface);color:var(--text);padding:10px 12px;font:inherit}
+.catalogue-decoration-editor :is(select,input):focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.catalogue-decoration-editor input[type=range]{width:100%;accent-color:var(--primary)}

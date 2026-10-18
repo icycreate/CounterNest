@@ -1,22 +1,23 @@
 {
-  "version": "2.0.0-rc.11",
-  "baseline_version": "System Style RC10",
-  "baseline_migration_count": 91,
-  "migration_count": 92,
+  "version": "2.0.0-rc.12",
+  "baseline_version": "Customer Experience RC11",
+  "baseline_migration_count": 92,
+  "migration_count": 94,
   "upgrade_migrations": [
-    "202610181200_customer_experience_notifications.sql"
+    "202610181600_ingredient_measurement_units.sql",
+    "202610181700_gallery_catalogue_appearance.sql"
   ],
-  "name": "CounterNest POS Customer Experience RC11",
-  "build": "2026-10-18-customer-experience",
+  "name": "CounterNest POS Units and Catalogue RC12",
+  "build": "2026-10-18-units-gallery",
   "product": "CounterNest POS",
   "release_type": "browser-release-candidate",
   "backend": "Supabase Cloud",
   "desktop_installer": false,
   "features": [
     {
-      "title": "Approved brand, public contacts, customer appearance, category localization and per-device order push"
+      "title": "Workspace measurement units, normalized purchasing/recipes, canonical gallery, decorative catalogue controls, semantic contrast and full approved lockup"
     }
   ],
   "validation": "BUILD_VALIDATION.json",
-  "deployment_status": "Local candidate validation passed; live staging/push and physical-device acceptance pending"
+  "deployment_status": "Local release candidate; live cloud and physical device acceptance pending"
 }

@@ -1,0 +1,23 @@
+[
+  {
+    "appearance": "light",
+    "height": 844,
+    "logoFit": "contain",
+    "overflow": false,
+    "width": 390
+  },
+  {
+    "appearance": "light",
+    "height": 844,
+    "logoFit": "contain",
+    "overflow": false,
+    "width": 768
+  },
+  {
+    "appearance": "light",
+    "height": 844,
+    "logoFit": "contain",
+    "overflow": false,
+    "width": 1280
+  }
+]

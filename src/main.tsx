@@ -42,3 +42,5 @@ import './sharedTheme.css'
 import './calendar.css'
 
 import './systemStyle.css'
+
+import './release12.css'

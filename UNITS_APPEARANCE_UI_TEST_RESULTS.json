@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0-rc.12",
+  "checks": [
+    "Weight, volume, count and ingredient factors match server conventions and reject guessed density",
+    "Legacy original and gallery deduplicate to one canonical collection with unchanged original URLs",
+    "Shared scientific and custom unit editor uses grouped fields; unknown legacy unit remains visible for review",
+    "Custom unit modal submits entered workspace configuration through the secured RPC",
+    "Existing ingredient editor locks base units and retains purchase and recipe controls",
+    "Catalogue appearance saves independently, preview clamps decorative opacity, and reset restores defaults",
+    "Both appearances keep primary, danger, success, disabled and surface labels above 4.5 contrast",
+    "All new unit and appearance labels localize in four languages while custom labels remain literal",
+    "Failed configuration reads cannot overwrite existing unit profiles or published catalogue appearance"
+  ],
+  "status": "passed"
+}

@@ -1,0 +1,17 @@
+# Ingredient units
+
+Open Recipes / Ingredient Inventory → Add Ingredient or Edit Ingredient. Choose the internal Base Unit once; existing records keep it locked in the editor to protect stock/history. The server also blocks base changes after stock or purchasing/recipe history exists. Existing unknown units stay unchanged and are marked Review required; their original quantity is never guessed or rescaled.
+
+Automatic weight units are mg, g, kg, oz and lb. Volume units are ml, L, tsp, tbsp and cup. Weight and volume never convert automatically into one another. The cooking measures use US customary definitions: 1 tbsp = 3 tsp, 1 cup = 16 tbsp and 1 cup = 236.5882365 ml. A metric 250 ml cup must be created as a different explicit custom unit. References: https://www.nist.gov/pml/owm/metric-si/unit-conversion/approximate-conversions-us-customary-measures-metric and https://www.nist.gov/pml/owm/metric-si/metric-kitchen/metric-kitchen-cooking-measurement-equivalencies .
+
+Each, piece, pack, bag, bottle, box, case, tray, jar, can, carton, sack, bucket, roll, sheet and dozen are offered without implicit factors. Even dozen→each needs explicit configuration. Add Custom Unit accepts a workspace-only name, abbreviation and type. An optional reference defines 1 custom unit = a positive quantity of a known measurement unit. Names/codes cannot duplicate built-ins or the same workspace, ignoring letter case. Custom/business labels remain exactly as entered.
+
+For flour: Base g; Purchase bag; Package Size 25; content kg; label 25 kg Bag; Recipe kg. Preview: 1 bag = 25000 g, 1 kg = 1000 g. For cream: Base ml; Purchase carton; Package Size 1; content L; Recipe ml. An explicit cross-family or count factor goes under Ingredient-specific conversion and requires a reason, such as a measured density. Factors affect that ingredient only. Scientific same-family factors cannot be redefined.
+
+Purchase Orders allow package size/content overrides for count/packaging, preview the base equivalent, and accept the supplier price per entered purchase unit. For 3 × 25 kg bags at 50 each: 75000 g, total 150, normalized unit cost .002 per g. Orders freeze their source quantity/unit, factor and price. Later profile edits do not reinterpret the order. Purchase Needs retain the same snapshot through approval into a PO.
+
+In Verified Receiving, enter the number of purchase units and the actual price per purchase unit. 2 bags add 50000 g once. The original barcode/checklist/authorized override flow remains required. Receipts preserve entered and normalized quantities and actual purchase price. Legacy orders without unit snapshots continue using their original base units. Retrying the same request never adds stock twice; changing its details is rejected.
+
+Recipes accept source units and save normalized base quantities. 0.5 kg against g inventory stores 500 g. Source quantities/units are retained on recipe rows and version snapshots. Editing an existing recipe starts from its normalized base quantity so a later conversion change cannot silently reinterpret it.
+
+Inventory quantities retain the existing 0.001 base-unit precision, and normalized unit costs retain 0.000001 precision. The preview uses that quantity precision. Very small inputs that round to zero are rejected by existing ledger validation. Choose an appropriately fine base unit before creating stock; rounded per-base costs can cause small valuation differences for very large packages. Review material costs before finalizing.

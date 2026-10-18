@@ -1,19 +1,7 @@
-# CounterNest POS — Customer Experience RC11
+# RC12 release notes · 2026-10-18
 
-Version 2.0.0-rc.11 · 2026-10-18. Built from the actual System Style RC10 source.
+Implemented from Customer Experience RC11. Adds ten scientific units, workspace custom units, explicit ingredient purchase/recipe profiles, package-size PO previews, immutable source snapshots in purchasing/receiving, recipe source history, legacy-unit review, canonical photo galleries, custom decorative catalogue headers/backgrounds and contained approved branding.
 
-Browser/Web Application → GitHub → Vercel → Supabase Cloud.
+Semantic action/disabled colors now retain readable foregrounds. Accent foregrounds choose true white or black to cover bright red as well as the standard palette. Danger actions use a dark red surface with white text. Buttons/icons inherit currentColor. Shared rounded fields continue through the unit editors. All new system labels support English, Spanish, Traditional Chinese and Simplified Chinese; business values remain literal.
 
-Implemented:
-
-- Approved supplied artwork embedded unchanged in self-contained SVG viewports; regenerated PNG app icons with maskable padding. Custom tenant logo and favicon fallback behavior preserved.
-- Customer appearance selector, persisted per catalogue/device and separate from administrator preferences. Dark prices and native controls inherit readable shared tokens.
-- Enabled-only public contact cards with optional QR image, note, sorting and preferred method. International phone fields generate normalized WhatsApp links. No automatic copying of staff details.
-- Removed the Translation manager. Product master names no longer use entity translation overrides. Only an explicit standard-category dictionary localizes known labels. Existing translation rows are retained for history/rollback.
-- New device subscriptions, role-checked event polling, transactional request triggers, queue leases, duplicate tags, expired-subscription cleanup and private dispatcher credentials. Foreground notifications play three two-note rings by default; Repeat Sound off plays once.
-- Public custom-cake request metadata participates in idempotency and acceptance creates the existing cake order type. No duplicate calendar or status chain.
-- Independent settings sections retain their own unsaved-change state. Main Settings save does not save public contacts or device preferences.
-
-Preserved: light authentication cards; bounded/reduced-motion boot; internal Back and dirty guards; reusable controls; historical delete/archive safety; original/cropped galleries and PDF images; text-only receipt lines; inventory source exclusions and receiving barcode overrides; original-source Calendar; phone normalization; backup, new-workspace restore and recovery-period deletion.
-
-Deployment requires migration 92 and notification setup. Local tests do not certify external transport, OS sound, physical PWA installation, real storage/hardware or a production rollout.
+Only two new migrations follow the unchanged original 92. Local validation evidence is in BUILD_VALIDATION.json, FINAL_CHECK_RESULTS.json, DATABASE_TEST_RESULTS.json and docs/validation. Sample-data screen evidence is under docs/screenshots. Live deployment, real storage/Edge networking and physical installed-device acceptance remain pending; see KNOWN_ISSUES.md.

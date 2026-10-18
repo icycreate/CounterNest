@@ -1,7 +1,7 @@
 {
-  "version": "2.0.0-rc.11",
-  "build": "2026-10-18-customer-experience",
-  "migration_count": 92,
+  "version": "2.0.0-rc.12",
+  "build": "2026-10-18-units-gallery",
+  "migration_count": 94,
   "database_engine": "PGlite PostgreSQL with mocked Supabase auth/storage and mocked manager-PIN crypt for refund tests; pgcrypto extension omitted",
   "checks": [
     {
@@ -534,6 +534,54 @@
     },
     {
       "name": "RC11 public custom-cake requests retain replay identity and accept into the original cake workflow",
+      "status": "passed"
+    },
+    {
+      "name": "RC12 ten scientific units convert only within family, with explicit US cooking ratios",
+      "status": "passed"
+    },
+    {
+      "name": "RC12 ingredient profiles preserve balances, enforce scientific factors and configure packaging and density explicitly",
+      "status": "passed"
+    },
+    {
+      "name": "RC12 custom units are workspace scoped, reject duplicates and preserve optional explicit reference factors",
+      "status": "passed"
+    },
+    {
+      "name": "RC12 purchase order captures three bags as 75000 g and receiving two bags adds exactly 50000 g once",
+      "status": "passed"
+    },
+    {
+      "name": "RC12 profile edits cannot reinterpret an existing order snapshot; inventory projections hide source costs",
+      "status": "passed"
+    },
+    {
+      "name": "RC12 recipes normalize half a kilogram and preserve the exact entered unit in the current recipe version",
+      "status": "passed"
+    },
+    {
+      "name": "RC12 approval needs retain purchase units through approved order creation without double conversion",
+      "status": "passed"
+    },
+    {
+      "name": "RC12 legacy gallery normalizes once, promotes next primary and rejects unowned replacements atomically",
+      "status": "passed"
+    },
+    {
+      "name": "RC12 custom appearance publishes only validated tenant assets, bounds readability and stays token scoped",
+      "status": "passed"
+    },
+    {
+      "name": "RC12 per-order package-size overrides freeze the chosen factor without changing ingredient setup",
+      "status": "passed"
+    },
+    {
+      "name": "RC12 configured custom base units save atomically without losing opening stock",
+      "status": "passed"
+    },
+    {
+      "name": "RC12 backups restore custom units, profiles, source snapshots and decorative media references together",
       "status": "passed"
     }
   ],

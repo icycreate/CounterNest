@@ -458,5 +458,15 @@
     "order": 92,
     "file": "202610181200_customer_experience_notifications.sql",
     "sha256": "8cf3d2a4bc2a2d6a676a7afdafd014f85db1d337644c42a067b6238912498be2"
+  },
+  {
+    "order": 93,
+    "file": "202610181600_ingredient_measurement_units.sql",
+    "sha256": "2f7b9274ca3680bdca9ba819c0e9f44a7b10125802758879f2b3662c9d1ae52d"
+  },
+  {
+    "order": 94,
+    "file": "202610181700_gallery_catalogue_appearance.sql",
+    "sha256": "95a50edb01864cc6988911ff67f6259ee565f40e44c27486389d4f7ebbcab95e"
   }
 ]

@@ -1,17 +1,13 @@
 {
-  "provenance": "Retained RC10 baseline evidence. Current RC11 commands are in FINAL_CHECK_RESULTS.json.",
-  "baseline": {
-    "status": "passed",
-    "routes": 50,
-    "server": "Local Vite production preview",
-    "checks": [
-      "Direct HTML responses and identical SPA shell for staff and dedicated display routes",
-      "Built JS/CSS/PWA assets return non-HTML content"
-    ],
-    "limitations": [
-      "Vercel deployment rewrite is configured but has not been exercised on Vercel hosting.",
-      "Real authenticated route refresh requires the live Supabase session."
-    ],
-    "provenance": "Retained baseline evidence; RC10 current build/assets/browser and final archive exclusions are recorded separately in current validation reports."
-  }
+  "status": "passed",
+  "routes": 51,
+  "server": "Local Vite production preview",
+  "checks": [
+    "Direct HTML responses and identical SPA shell for staff and dedicated display routes",
+    "Built JS/CSS/PWA assets return non-HTML content"
+  ],
+  "limitations": [
+    "Vercel deployment rewrite is configured but has not been exercised on Vercel hosting.",
+    "Real authenticated route refresh requires the live Supabase session."
+  ]
 }

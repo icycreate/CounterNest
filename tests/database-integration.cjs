@@ -13,7 +13,8 @@ async function main(){
  create function public.gen_random_bytes(int) returns bytea language sql as $$select decode(repeat('ab',$1),'hex')$$;
  `);
  const files=fs.readdirSync(path.join(root,'supabase/migrations')).filter(f=>f.endsWith('.sql')).sort();
- for(const f of files){let sql=fs.readFileSync(path.join(root,'supabase/migrations',f),'utf8').replace(/create extension if not exists pgcrypto[^;]*;/gi,'');try{await db.exec(sql)}catch(e){console.error('MIGRATION FAILED',f,e.message);throw e}}
+ for(const f of files){if(f==='202610181600_ingredient_measurement_units.sql')await db.exec(`insert into shops(id,name)values('12121212-1212-4212-8212-121212121212','RC11 upgrade fixture');do $$declare c record;begin for c in select conname from pg_constraint where conrelid='ingredients'::regclass and contype='c' and pg_get_constraintdef(oid) like '%base_unit%' loop execute format('alter table ingredients drop constraint %I',c.conname);end loop;end$$;insert into ingredients(id,shop_id,name,base_unit,current_quantity,average_unit_cost)values('12121212-1212-4212-8212-121212121213','12121212-1212-4212-8212-121212121212','Known legacy','g',123.456,.123456),('12121212-1212-4212-8212-121212121214','12121212-1212-4212-8212-121212121212','Unknown legacy','old-scoop',7.25,1.25);`);let sql=fs.readFileSync(path.join(root,'supabase/migrations',f),'utf8').replace(/create extension if not exists pgcrypto[^;]*;/gi,'');try{await db.exec(sql)}catch(e){console.error('MIGRATION FAILED',f,e.message,e.position,e.internalPosition,e.where,e.internalQuery,sql.slice(Math.max(0,Number(e.position)-120),Number(e.position)+120));throw e}}
+ const upgradeRows=(await db.query("select i.base_unit,i.current_quantity,i.average_unit_cost,p.review_required from ingredients i join ingredient_unit_profiles p on p.ingredient_id=i.id where i.shop_id='12121212-1212-4212-8212-121212121212' order by i.name")).rows;assert.equal(upgradeRows.length,2);assert.equal(Number(upgradeRows[0].current_quantity),123.456);assert.equal(Number(upgradeRows[0].average_unit_cost),.123456);assert.equal(upgradeRows[0].review_required,false);assert.equal(upgradeRows[1].base_unit,'old-scoop');assert.equal(Number(upgradeRows[1].current_quantity),7.25);assert.equal(upgradeRows[1].review_required,true);await db.exec("delete from ingredient_unit_profiles where shop_id='12121212-1212-4212-8212-121212121212';delete from ingredients where shop_id='12121212-1212-4212-8212-121212121212';delete from shops where id='12121212-1212-4212-8212-121212121212'");console.log('PASS RC11 existing balances/costs and unknown legacy units survive upgrade without reinterpretation');
  console.log('Applied',files.length,'migrations to local PostgreSQL test engine');
  const uid='11111111-1111-4111-8111-111111111111',shop='22222222-2222-4222-8222-222222222222',prod='33333333-3333-4333-8333-333333333333';
  const other='44444444-4444-4444-8444-444444444444',emp='55555555-5555-4555-8555-555555555555';
@@ -85,7 +86,8 @@ async function main(){
  await db.query("insert into storage.objects(bucket_id,name) values('catalogue-media',$1)",[`${shop}/${prod}/photo.jpg`]);
  await db.query('update products set image_url=$2 where id=$1',[prod,'https://test.invalid/legacy.jpg']);
  await db.query("select save_catalogue_media($1,'[]',$2)",[prod,url]);
- assert.equal(await scalar('select image_url from products where id=$1',[prod]),'https://test.invalid/legacy.jpg');
+ assert.equal(await scalar('select image_url from products where id=$1',[prod]),null);
+ assert.equal(Number(await scalar('select jsonb_array_length(catalogue_media) from products where id=$1',[prod])),0);
  await db.query('select save_catalogue_media($1,$2,$3)',[prod,JSON.stringify([{url}]),url]);
  assert.equal(await scalar('select image_url from products where id=$1',[prod]),url);
  await rejects('select save_catalogue_media($1,$2,null)',[prod,JSON.stringify([{url:url.replace(shop,other)}])],/Invalid catalogue media/);
@@ -270,7 +272,8 @@ async function main(){
  await require('./calendar-database.cjs')({db,check,scalar,rejects});
  await require('./master-removal-database.cjs')({db,check,scalar,rejects});
  await require('./customer-experience-database.cjs')({db,check,scalar,rejects});
- fs.writeFileSync(path.join(root,'DATABASE_TEST_RESULTS.json'),JSON.stringify({version:'2.0.0-rc.11',build:'2026-10-18-customer-experience',migration_count:files.length,database_engine:'PGlite PostgreSQL with mocked Supabase auth/storage and mocked manager-PIN crypt for refund tests; pgcrypto extension omitted',checks,limitations:['Live Supabase deployment, real bcrypt PIN checks, storage HTTP upload, Edge Functions and browser UAT still require target-environment verification.']},null,2));
+ await require('./units-gallery-appearance-database.cjs')({db,check,scalar,rejects});
+ fs.writeFileSync(path.join(root,'DATABASE_TEST_RESULTS.json'),JSON.stringify({version:'2.0.0-rc.12',build:'2026-10-18-units-gallery',migration_count:files.length,database_engine:'PGlite PostgreSQL with mocked Supabase auth/storage and mocked manager-PIN crypt for refund tests; pgcrypto extension omitted',checks,limitations:['Live Supabase deployment, real bcrypt PIN checks, storage HTTP upload, Edge Functions and browser UAT still require target-environment verification.']},null,2));
  await db.close();
 }
 main().catch(e=>{console.error(e.stack||e.message);process.exit(1)});

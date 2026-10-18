@@ -1,22 +1,17 @@
-# RC11 acceptance
+# RC12 acceptance checklist
 
-Local evidence: FINAL_CHECK_RESULTS.json, DATABASE_TEST_RESULTS.json, CUSTOMER_EXPERIENCE_TEST_RESULTS.json, docs/validation and RC11_BROWSER_QA.json. Older RC10 screenshot sets are retained as baseline evidence, not recaptured RC11 screens.
+Local automated results are recorded separately; unchecked items require staging/device acceptance.
 
-- [x] Install dependencies, production build, complete regression and built asset validation (see final reports).
-- [x] All prior 91 migration hashes preserved; new migration applies in local PostgreSQL.
-- [x] Default artwork, custom-logo helper and dynamic icon integration; bounded boot and light auth regression.
-- [x] Standard category translations in all four languages; original product names; Translation card removed.
-- [x] Enabled-only business contacts, admin permissions, normalized WhatsApp and unsafe-link rejection.
-- [x] Transactional request deduplication, separate device registration, role rejection, server cursors, lease exclusion, frozen/revoked recipients and unregister behavior.
-- [x] Foreground three-ring/single-ring synthesis, worker account binding and request deep links in deterministic checks.
-- [x] Public custom-cake intake retry and acceptance into original scheduled cake workflow.
-- [x] Preserved removal/archive, purchasing/receiving/barcode verification, Calendar, receipts, phone and workspace restore/delete regression.
-- [ ] Apply migration 92 and deploy to live staging with two businesses and every staff role.
-- [ ] Real business logo upload/removal, icon cache update, gallery originals/crop/storage upload and PDF print.
-- [ ] Register two real devices and verify database webhook, retry schedule, foreground ×3, background/closed OS push, exact record links, no cross-business delivery, permissions revoked and expired endpoints.
-- [ ] Physical PWA install/relaunch, browser Back, reduced-motion boot and OS badges/sound on target phones/tablets/desktops.
-- [ ] Full EN/ES/zh-TW/zh-CN manual UX pass, custom names, dark prices/subtotals/totals/steps/controls and keyboard/focus accessibility.
-- [ ] Staging barcode scanners, mismatches/reason audit, purchase-item exclusions, operations Calendar source events and real printer/QR hardware.
-- [ ] Verified secret-free backup, isolated relationship remapping restore and recovery-period deletion using disposable workspaces.
-
-- [ ] Refresh the remaining desktop notifications/contact/gallery screenshots on the deployed staging application; local native capture had intermittent compositor failures.
+- [ ] Upgrade a copy of RC11 with real ingredient balances, unknown legacy units, supplier links and purchase history; compare every balance and cost.
+- [ ] Add/edit ingredient with each measurement family; create custom count, packaging, weight and volume units; reject case-insensitive duplicates and foreign workspace access.
+- [ ] Configure 25 kg flour bag and 1 L cream carton; confirm 3 bags → 75000 g, 2 received bags → 50000 g and 0.5 kg recipe → 500 g.
+- [ ] Try weight↔volume without configuration, then with a measured ingredient-specific reason; reject guessing and conflicting scientific factors.
+- [ ] Override a PO package size, approve a purchase need, change the ingredient profile, partially receive and retry; confirm source/normalized snapshots and single stock increment.
+- [ ] Open a legacy product and variant gallery with no reupload; compare admin/customer counts. Preview/crop/replace/reorder/set primary/delete, including last photo; verify original full view and mobile swipe.
+- [ ] Upload/crop/reposition/replace/remove/reset header and background; publish and inspect the correct protected customer link. Deny a different workspace's assets and ordinary staff writes.
+- [ ] Test Light/Dark/System with orange, blue, green and bright custom accents. Inspect prices, subtotal, badges, fields, focus, hover, active, disabled, danger and success states.
+- [ ] Inspect full CounterNest lockup at login, boot, receipt/report/catalogue and dedicated compact icon/favicon/PWA artwork; no stretching or wordmark crop.
+- [ ] Test 390 px phone, 768 px tablet and desktop layouts, installed PWA reopening/cache update, camera/barcode permissions and original upload CORS on actual devices.
+- [ ] Verify enabled-only contacts, four languages, literal custom/product names, modal-first Back, dirty-field guards and Home fallback.
+- [ ] Export and restore a real RC12 workspace including custom units, unit profiles, receipt snapshots, gallery originals and catalogue-branding files into an isolated new account.
+- [ ] Obtain business sign-off before production promotion.

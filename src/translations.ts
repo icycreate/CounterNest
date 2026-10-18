@@ -16838,3 +16838,401 @@ Object.assign(translations,{"Pre-Order Contact Choices":{"es":"Opciones de conta
 Object.assign(translations,{"Business colors are shared with the catalogue. Customers choose their own Light, Dark or System mode.":{"es":"Los colores del negocio se comparten con el catálogo. Los clientes eligen Claro, Oscuro o Sistema.","zh-TW":"商家色彩會套用至目錄。顧客可自行選擇淺色、深色或跟隨系統。","zh-CN":"商家色彩会应用于目录。顾客可自行选择浅色、深色或跟随系统。"}})
 
 Object.assign(translations,{"Catalogue Request":{"es":"Solicitud del catálogo","zh-TW":"目錄請求","zh-CN":"目录请求"},"Request unavailable":{"es":"Solicitud no disponible","zh-TW":"無法取得請求","zh-CN":"无法获取请求"},"Load this request from its assigned station queue. Opening an alert does not create a sale.":{"es":"Cargue esta solicitud desde la cola de su estación asignada. Abrir una alerta no crea una venta.","zh-TW":"請從指派工作站的佇列載入此請求。開啟通知不會建立銷售。","zh-CN":"请从指定工作站的队列加载此请求。打开通知不会创建销售。"}})
+
+Object.assign(translations,{
+  "Base Unit": {
+    "es": "Unidad base",
+    "zh-TW": "庫存基本單位",
+    "zh-CN": "库存基本单位"
+  },
+  "Purchase Unit": {
+    "es": "Unidad de compra",
+    "zh-TW": "採購單位",
+    "zh-CN": "采购单位"
+  },
+  "Recipe Unit": {
+    "es": "Unidad de receta",
+    "zh-TW": "配方單位",
+    "zh-CN": "配方单位"
+  },
+  "Purchase / Recipe Units": {
+    "es": "Unidades de compra / receta",
+    "zh-TW": "採購／配方單位",
+    "zh-CN": "采购／配方单位"
+  },
+  "Package Size": {
+    "es": "Tamaño del paquete",
+    "zh-TW": "包裝容量",
+    "zh-CN": "包装容量"
+  },
+  "Package content unit": {
+    "es": "Unidad del contenido",
+    "zh-TW": "包裝內容單位",
+    "zh-CN": "包装内容单位"
+  },
+  "Package label": {
+    "es": "Etiqueta del paquete",
+    "zh-TW": "包裝標籤",
+    "zh-CN": "包装标签"
+  },
+  "+ Add Custom Unit": {
+    "es": "+ Agregar unidad personalizada",
+    "zh-TW": "＋新增自訂單位",
+    "zh-CN": "＋新增自定义单位"
+  },
+  "Add Custom Unit": {
+    "es": "Agregar unidad personalizada",
+    "zh-TW": "新增自訂單位",
+    "zh-CN": "新增自定义单位"
+  },
+  "Unit name": {
+    "es": "Nombre de la unidad",
+    "zh-TW": "單位名稱",
+    "zh-CN": "单位名称"
+  },
+  "Abbreviation": {
+    "es": "Abreviatura",
+    "zh-TW": "縮寫",
+    "zh-CN": "缩写"
+  },
+  "Unit type": {
+    "es": "Tipo de unidad",
+    "zh-TW": "單位類型",
+    "zh-CN": "单位类型"
+  },
+  "Optional conversion": {
+    "es": "Conversión opcional",
+    "zh-TW": "選填換算",
+    "zh-CN": "选填换算"
+  },
+  "Equals quantity": {
+    "es": "Cantidad equivalente",
+    "zh-TW": "等於數量",
+    "zh-CN": "等于数量"
+  },
+  "Reference unit": {
+    "es": "Unidad de referencia",
+    "zh-TW": "參考單位",
+    "zh-CN": "参考单位"
+  },
+  "No automatic conversion": {
+    "es": "Sin conversión automática",
+    "zh-TW": "不自動換算",
+    "zh-CN": "不自动换算"
+  },
+  "Add Unit": {
+    "es": "Agregar unidad",
+    "zh-TW": "新增單位",
+    "zh-CN": "新增单位"
+  },
+  "Review required": {
+    "es": "Revisión necesaria",
+    "zh-TW": "需要檢查",
+    "zh-CN": "需要检查"
+  },
+  "Weight": {
+    "es": "Peso",
+    "zh-TW": "重量",
+    "zh-CN": "重量"
+  },
+  "Volume": {
+    "es": "Volumen",
+    "zh-TW": "容量",
+    "zh-CN": "容量"
+  },
+  "Count": {
+    "es": "Conteo",
+    "zh-TW": "數量",
+    "zh-CN": "数量"
+  },
+  "Packaging": {
+    "es": "Embalaje",
+    "zh-TW": "包裝",
+    "zh-CN": "包装"
+  },
+  "Milligram": {
+    "es": "Miligramo",
+    "zh-TW": "毫克",
+    "zh-CN": "毫克"
+  },
+  "Gram": {
+    "es": "Gramo",
+    "zh-TW": "公克",
+    "zh-CN": "克"
+  },
+  "Kilogram": {
+    "es": "Kilogramo",
+    "zh-TW": "公斤",
+    "zh-CN": "千克"
+  },
+  "Ounce": {
+    "es": "Onza",
+    "zh-TW": "盎司",
+    "zh-CN": "盎司"
+  },
+  "Pound": {
+    "es": "Libra",
+    "zh-TW": "磅",
+    "zh-CN": "磅"
+  },
+  "Milliliter": {
+    "es": "Mililitro",
+    "zh-TW": "毫升",
+    "zh-CN": "毫升"
+  },
+  "Liter": {
+    "es": "Litro",
+    "zh-TW": "公升",
+    "zh-CN": "升"
+  },
+  "Teaspoon (US)": {
+    "es": "Cucharadita (EE. UU.)",
+    "zh-TW": "茶匙（美制）",
+    "zh-CN": "茶匙（美制）"
+  },
+  "Tablespoon (US)": {
+    "es": "Cucharada (EE. UU.)",
+    "zh-TW": "大匙（美制）",
+    "zh-CN": "汤匙（美制）"
+  },
+  "Cup (US)": {
+    "es": "Taza (EE. UU.)",
+    "zh-TW": "杯（美制）",
+    "zh-CN": "杯（美制）"
+  },
+  "Each": {
+    "es": "Unidad",
+    "zh-TW": "個",
+    "zh-CN": "个"
+  },
+  "Piece": {
+    "es": "Pieza",
+    "zh-TW": "件",
+    "zh-CN": "件"
+  },
+  "Pack": {
+    "es": "Paquete",
+    "zh-TW": "包",
+    "zh-CN": "包"
+  },
+  "Bag": {
+    "es": "Bolsa",
+    "zh-TW": "袋",
+    "zh-CN": "袋"
+  },
+  "Bottle": {
+    "es": "Botella",
+    "zh-TW": "瓶",
+    "zh-CN": "瓶"
+  },
+  "Box": {
+    "es": "Caja",
+    "zh-TW": "盒",
+    "zh-CN": "盒"
+  },
+  "Case": {
+    "es": "Caja mayorista",
+    "zh-TW": "箱",
+    "zh-CN": "箱"
+  },
+  "Tray": {
+    "es": "Bandeja",
+    "zh-TW": "盤",
+    "zh-CN": "盘"
+  },
+  "Jar": {
+    "es": "Frasco",
+    "zh-TW": "罐",
+    "zh-CN": "罐"
+  },
+  "Can": {
+    "es": "Lata",
+    "zh-TW": "罐頭",
+    "zh-CN": "罐头"
+  },
+  "Carton": {
+    "es": "Cartón",
+    "zh-TW": "紙盒",
+    "zh-CN": "纸盒"
+  },
+  "Sack": {
+    "es": "Saco",
+    "zh-TW": "大袋",
+    "zh-CN": "大袋"
+  },
+  "Bucket": {
+    "es": "Cubeta",
+    "zh-TW": "桶",
+    "zh-CN": "桶"
+  },
+  "Roll": {
+    "es": "Rollo",
+    "zh-TW": "卷",
+    "zh-CN": "卷"
+  },
+  "Sheet": {
+    "es": "Hoja",
+    "zh-TW": "張",
+    "zh-CN": "张"
+  },
+  "Dozen": {
+    "es": "Docena",
+    "zh-TW": "打",
+    "zh-CN": "打"
+  },
+  "Ingredient-specific conversion (optional)": {
+    "es": "Conversión por ingrediente (opcional)",
+    "zh-TW": "食材專用換算（選填）",
+    "zh-CN": "食材专用换算（选填）"
+  },
+  "A conversion between weight and volume requires an ingredient-specific conversion.": {
+    "es": "La conversión entre peso y volumen requiere un factor específico del ingrediente.",
+    "zh-TW": "重量與容量之間的換算需要設定此食材專用的換算係數。",
+    "zh-CN": "重量与容量之间的换算需要设置此食材专用的换算系数。"
+  },
+  "A conversion between weight and volume requires an ingredient-specific conversion. Count and packaging units also require an explicit conversion.": {
+    "es": "La conversión entre peso y volumen requiere un factor específico del ingrediente. Las unidades de conteo y embalaje también requieren una conversión explícita.",
+    "zh-TW": "重量與容量之間的換算需要食材專用係數；數量與包裝單位也需要明確設定換算。",
+    "zh-CN": "重量与容量之间的换算需要食材专用系数；数量与包装单位也需要明确设置换算。"
+  },
+  "Base units per purchase unit": {
+    "es": "Unidades base por unidad de compra",
+    "zh-TW": "每採購單位的基本單位數",
+    "zh-CN": "每采购单位的基本单位数"
+  },
+  "Base units per recipe unit": {
+    "es": "Unidades base por unidad de receta",
+    "zh-TW": "每配方單位的基本單位數",
+    "zh-CN": "每配方单位的基本单位数"
+  },
+  "Conversion reason": {
+    "es": "Motivo de conversión",
+    "zh-TW": "換算依據",
+    "zh-CN": "换算依据"
+  },
+  "Unit name or abbreviation already exists": {
+    "es": "El nombre o la abreviatura ya existe",
+    "zh-TW": "單位名稱或縮寫已存在",
+    "zh-CN": "单位名称或缩写已存在"
+  },
+  "Base unit is locked to preserve stock and history. Configure purchase and recipe units below.": {
+    "es": "La unidad base está bloqueada para conservar existencias e historial. Configure abajo las unidades de compra y receta.",
+    "zh-TW": "為保留庫存與歷史，基本單位已鎖定。請在下方設定採購與配方單位。",
+    "zh-CN": "为保留库存与历史，基本单位已锁定。请在下方设置采购与配方单位。"
+  },
+  "Supplier Price per purchase unit": {
+    "es": "Precio del proveedor por unidad de compra",
+    "zh-TW": "每採購單位供應商價格",
+    "zh-CN": "每采购单位供应商价格"
+  },
+  "Equivalent": {
+    "es": "Equivalente",
+    "zh-TW": "換算結果",
+    "zh-CN": "换算结果"
+  },
+  "uploaded": {
+    "es": "cargadas",
+    "zh-TW": "張已上傳",
+    "zh-CN": "张已上传"
+  },
+  "Header Style": {
+    "es": "Estilo del encabezado",
+    "zh-TW": "頁首樣式",
+    "zh-CN": "页首样式"
+  },
+  "Theme Color": {
+    "es": "Color del tema",
+    "zh-TW": "主題色彩",
+    "zh-CN": "主题色彩"
+  },
+  "Gradient": {
+    "es": "Degradado",
+    "zh-TW": "漸層",
+    "zh-CN": "渐变"
+  },
+  "Custom Header Image": {
+    "es": "Imagen del encabezado",
+    "zh-TW": "自訂頁首圖片",
+    "zh-CN": "自定义页首图片"
+  },
+  "Background Style": {
+    "es": "Estilo del fondo",
+    "zh-TW": "背景樣式",
+    "zh-CN": "背景样式"
+  },
+  "Theme Background": {
+    "es": "Fondo del tema",
+    "zh-TW": "主題背景",
+    "zh-CN": "主题背景"
+  },
+  "Custom Background Image": {
+    "es": "Imagen de fondo personalizada",
+    "zh-TW": "自訂背景圖片",
+    "zh-CN": "自定义背景图片"
+  },
+  "Upload / replace header image": {
+    "es": "Cargar / reemplazar encabezado",
+    "zh-TW": "上傳／替換頁首圖片",
+    "zh-CN": "上传／替换页首图片"
+  },
+  "Upload / replace background image": {
+    "es": "Cargar / reemplazar fondo",
+    "zh-TW": "上傳／替換背景圖片",
+    "zh-CN": "上传／替换背景图片"
+  },
+  "Remove image": {
+    "es": "Quitar imagen",
+    "zh-TW": "移除圖片",
+    "zh-CN": "移除图片"
+  },
+  "Header overlay": {
+    "es": "Capa del encabezado",
+    "zh-TW": "頁首遮罩強度",
+    "zh-CN": "页首遮罩强度"
+  },
+  "Background overlay": {
+    "es": "Capa del fondo",
+    "zh-TW": "背景遮罩強度",
+    "zh-CN": "背景遮罩强度"
+  },
+  "Header blur": {
+    "es": "Desenfoque del encabezado",
+    "zh-TW": "頁首模糊程度",
+    "zh-CN": "页首模糊程度"
+  },
+  "Focal point horizontal": {
+    "es": "Punto focal horizontal",
+    "zh-TW": "水平焦點",
+    "zh-CN": "水平焦点"
+  },
+  "Focal point vertical": {
+    "es": "Punto focal vertical",
+    "zh-TW": "垂直焦點",
+    "zh-CN": "垂直焦点"
+  },
+  "Reset to default": {
+    "es": "Restablecer valores predeterminados",
+    "zh-TW": "恢復預設",
+    "zh-CN": "恢复默认"
+  },
+  "Header preview": {
+    "es": "Vista previa del encabezado",
+    "zh-TW": "頁首預覽",
+    "zh-CN": "页首预览"
+  },
+  "Decorative images preserve the current theme and readable text.": {
+    "es": "Las imágenes decorativas conservan el tema actual y la legibilidad.",
+    "zh-TW": "裝飾圖片保留目前主題與清晰文字。",
+    "zh-CN": "装饰图片保留当前主题与清晰文字。"
+  },
+  "Save Appearance": {
+    "es": "Guardar apariencia",
+    "zh-TW": "儲存外觀",
+    "zh-CN": "保存外观"
+  },
+  "Appearance saved": {
+    "es": "Apariencia guardada",
+    "zh-TW": "外觀已儲存",
+    "zh-CN": "外观已保存"
+  }
+})

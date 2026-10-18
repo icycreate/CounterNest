@@ -1,6 +1,6 @@
-# Supabase migration order — RC11
+# Supabase migration order
 
-RC10 upgrades apply only migration 92. Fresh projects apply all files in this order. Prior migrations are unchanged.
+RC11 upgrades apply only migrations 93 and 94, in order, before the RC12 frontend. Fresh projects apply all 94 files. The original 92 files are unchanged. Back up first and review unknown units after upgrade.
 
 1. 20260815_initial.sql
 2. 20260815_logo_settings.sql
@@ -94,3 +94,5 @@ RC10 upgrades apply only migration 92. Fresh projects apply all files in this or
 90. 202610171700_operations_calendar.sql
 91. 202610180800_master_record_removal.sql
 92. 202610181200_customer_experience_notifications.sql
+93. 202610181600_ingredient_measurement_units.sql
+94. 202610181700_gallery_catalogue_appearance.sql

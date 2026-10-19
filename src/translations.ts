@@ -1,4 +1,8 @@
 export const translations:Record<string,Record<string,string>> = {
+"Fit Business Logo":{"es":"Ajustar logotipo del negocio","zh-TW":"調整商家標誌","zh-CN":"调整商家标志"},
+"Your full logo is contained by default. Zoom only if you want to crop.":{"es":"Se muestra el logotipo completo. Amplía solo si deseas recortarlo.","zh-TW":"預設顯示完整標誌。只有需要裁切時才放大。","zh-CN":"默认显示完整标志。只有需要裁切时才放大。"},
+"Transparent padding preserves your logo colors and proportions across headers, receipts, cards and print.":{"es":"El espacio transparente conserva los colores y las proporciones en encabezados, recibos, tarjetas e impresiones.","zh-TW":"透明留白讓頁首、收據、卡片與列印保持標誌原色與比例。","zh-CN":"透明留白让页眉、收据、卡片与打印保持标志原色与比例。"},
+
   "Dashboard": {
     "es": "Panel",
     "zh-TW": "儀表板",

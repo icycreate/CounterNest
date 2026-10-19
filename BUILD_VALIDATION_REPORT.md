@@ -1,11 +1,11 @@
-# RC13 build validation report
+# RC14 build validation report
 
-2026-10-18 · 2.0.0-rc.13
+2026-10-18 · 2.0.0-rc.14
 
-Fresh npm install completed: 140 packages added, 141 audited, zero vulnerabilities reported, no new runtime dependency. npm run build, full npm test and npm run test:assets passed. Logs: docs/validation; exit codes: FINAL_CHECK_RESULTS.json. The production preview returned valid SPA shells and non-HTML asset responses across 51 routes.
+Dependency installation passed: 145 packages added, 146 audited, zero reported vulnerabilities. sharp is development-only; no runtime package was added. Production build, full npm test and built-asset checks passed. After final branding/cache adjustments, build, focused branding, customer PWA/receipt checks and assets passed again. Logs are under docs/validation and exit codes are in FINAL_CHECK_RESULTS.json.
 
-All 94 migrations applied to local PGlite; 145 database checks passed. Every migration and 10 public image assets match RC12 byte-for-byte. Automated accessibility checks passed 126976 pairs plus eight Button variants, four languages, shared paint contracts and public/staff route regressions.
+The full established suite includes 145 local PGlite database checks, all 94 migrations and the existing UI/tenant/permissions tests. All migration bytes match RC13. 7 focused branding checks verify path-only vectors, alpha-preserving fallbacks, PWA/icon dimensions and related behavior, custom-logo URL/color preservation, legacy fallback classification, native image errors, contained preparation and print paths. Offline service-worker tests exercise the new logo formats while retaining API/tenant cache exclusions.
 
-The actual-browser sample audit records 70 scenarios and 5489 text measurements without remaining recorded contrast findings or document overflow. There are 22 current screenshots under docs/accessibility; prior releases' evidence remains historical.
+Local browser review: 18 scenarios and 34 visible logo measurements; loaded logos, contain geometry, no clip, transparent image background and no document overflow. 15 current screenshots are included. Production preview: 51 direct route responses and asset content types passed.
 
-Vite's established large-chunk warning and test-bundler import.meta warnings are non-fatal. No runtime exception was found in reviewed fixture modules. Local PGlite mocks auth/storage and manager-PIN crypt; live cloud and physical installed-PWA acceptance remain pending. See KNOWN_ISSUES.md and UAT_ACCEPTANCE_CHECKLIST.md.
+The current build retains Vite's established large-chunk warning. Test bundling may report import.meta warnings; these are non-fatal and visible in logs. PGlite mocks Supabase auth/storage and manager-PIN crypt. Target cloud, physical installed-PWA, native Save as PDF/printer output and real uploaded artwork acceptance remain pending. See UAT_ACCEPTANCE_CHECKLIST.md.

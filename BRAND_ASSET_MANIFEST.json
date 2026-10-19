@@ -1,0 +1,56 @@
+{
+  "version": "2.0.0-rc.14",
+  "source": "docs/reference/approved-brand-identity.png",
+  "source_sha256": "40758b620c705ba3646583a6ca1e5f4568858912f92e4d754093ebec44667c7a",
+  "method": "Six-color contour tracing of approved artwork; vector paths, transparent negative space, no embedded bitmap or font",
+  "entries": [
+    {
+      "file": "counternest-logo-full-transparent.svg",
+      "bytes": 204756,
+      "variant": "full",
+      "surface": "light",
+      "sha256": "ee26e2e3c4c2f22ae5c8c27a65f2c0a6cbebbec3f67956c25f893b0a9951d06b",
+      "gzip_bytes": 59708
+    },
+    {
+      "file": "counternest-logo-full-light.svg",
+      "bytes": 204756,
+      "variant": "full",
+      "surface": "dark",
+      "sha256": "56aee02f7ce658af3309db1dfb35c04812337e56675fd629c506d32887a54449",
+      "gzip_bytes": 59712
+    },
+    {
+      "file": "counternest-icon-transparent.svg",
+      "bytes": 158178,
+      "variant": "icon",
+      "surface": "light",
+      "sha256": "b8e653168c59e438b8c6e4a4422e70f257f0595505c84e3a92ec5dd43997a3cd",
+      "gzip_bytes": 45813
+    },
+    {
+      "file": "counternest-icon-light.svg",
+      "bytes": 158178,
+      "variant": "icon",
+      "surface": "dark",
+      "sha256": "373484908cf595d7547b1323346c6440ba4a929116605b2d583eefab27d49d49",
+      "gzip_bytes": 45816
+    },
+    {
+      "file": "counternest-logo-horizontal-transparent.svg",
+      "bytes": 200783,
+      "variant": "horizontal",
+      "surface": "light",
+      "sha256": "920efc0983fef654e260013be32b3dec53d0059087ba9b708caaa2a4c6f8c690",
+      "gzip_bytes": 59117
+    },
+    {
+      "file": "counternest-logo-horizontal-light.svg",
+      "bytes": 200783,
+      "variant": "horizontal",
+      "surface": "dark",
+      "sha256": "388ec146e7601f9a789c4f4ca1631ba1f1268b014ea5b176fba0b0a1f5581ed5",
+      "gzip_bytes": 59122
+    }
+  ]
+}

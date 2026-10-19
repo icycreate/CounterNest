@@ -1,14 +1,16 @@
-# RC13 acceptance checklist
+# RC14 branding acceptance
 
-Local checks are documented in UI_REGRESSION_CHECKLIST.md. Complete these on staging before rollout.
+Local evidence is in BRANDING_TEST_RESULTS.json, BUILD_VALIDATION.json and docs/branding. Complete the remaining target checks before rollout.
 
-- [ ] Deploy normal source to Vercel with the existing Supabase variables; verify authenticated deep-link refresh and public customer token links.
-- [ ] Repeat Light/Dark/System while changing the OS preference, including installed PWA cold start.
-- [ ] On physical iPhone, Android and tablet, inspect all primary/destructive controls, menus, native pickers, prices and disabled/loading labels.
-- [ ] Repeat all major modules named in ACCESSIBILITY_AUDIT.md with real representative records, role permissions and errors.
-- [ ] Verify keyboard tab/focus, zoom 200%, screen reader names and custom business backgrounds.
-- [ ] Repeat English, Español, 繁體中文 and 简体中文 with long real product/business names.
-- [ ] Verify full wordmark is contained; tiny square slots use icon artwork.
-- [ ] Perform approved sale, refund/void, PO/receiving, preorder and backup/restore staging workflows and reconcile data.
+- [x] Full, horizontal and icon variants are transparent vector paths with alpha-preserving fallbacks.
+- [x] Boot, Login/Sign Up, dashboard/header, public/admin Catalogue, reports, Settings and receipt preview reviewed locally.
+- [x] Light/Dark/System paths, desktop, 768px tablet and 390px phone layout checks.
+- [x] Uploaded business colors and broken/missing fallback behavior checked; no default crop or white flattening.
+- [x] Print HTML and four-language receipt regression checks.
+- [ ] Physical iPhone/Android/tablet: cold start, OS preference changes, sharpness and safe areas.
+- [ ] Installed PWA: update cache, offline logo variants, launch icon and OS splash appearance.
+- [ ] Target browser Save as PDF and physical printer: receipt, Catalogue, purchase/inventory/operational reports and QR signage.
+- [ ] Live Vercel/Supabase: signed custom logo URLs, remove/upload/recover, tenant favicon and token-bound Catalogue install identity.
+- [ ] Check long/wide/portrait custom business logos with real records.
 
-Acceptance rule: visible controls, labels, values, prices and totals must be immediately readable. Record device/browser/version, screenshot, measured pair and pass/fail for any finding. RC13 requires no new SQL when upgrading RC12.
+Acceptance: no platform white rectangle, cropped wordmark, stretching, mismatched panel or invisible dark logo. Intentional PWA maskable/OS canvases use the matching cream surface. All 94 SQL migrations remain unchanged from RC13.

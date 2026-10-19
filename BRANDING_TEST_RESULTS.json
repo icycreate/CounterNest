@@ -1,0 +1,36 @@
+{
+  "version": "2.0.0-rc.14",
+  "checks": [
+    {
+      "name": "All six production vector variants contain paths and no raster, font, opaque background or external link",
+      "status": "passed"
+    },
+    {
+      "name": "Transparent PNG alpha preserves empty corners and artwork across full/horizontal/icon variants",
+      "status": "passed"
+    },
+    {
+      "name": "Platform full/horizontal/icon and inverse routes are centralized; business URLs and signed queries remain exact",
+      "status": "passed"
+    },
+    {
+      "name": "BrandLogo preserves custom colors, semantic names, fixed intrinsic geometry and on-error fallback",
+      "status": "passed"
+    },
+    {
+      "name": "Business logo preparation contains full artwork and preserves alpha by default",
+      "status": "passed"
+    },
+    {
+      "name": "Shared branded areas and print paths use central assets without square masks",
+      "status": "passed"
+    },
+    {
+      "name": "Favicon and PWA use dedicated icon-only assets; maskable logo stays within safe zone",
+      "status": "passed"
+    }
+  ],
+  "limitations": [
+    "Browser screenshots and geometry checks complement these source, alpha and renderer checks. Physical installed-PWA and target printer acceptance pending."
+  ]
+}

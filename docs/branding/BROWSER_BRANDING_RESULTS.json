@@ -1,0 +1,619 @@
+{
+  "version": "2.0.0-rc.14",
+  "environment": "Actual components and sample-data adapter; boot preview uses a fixed clock",
+  "scenarios": 18,
+  "visible_logo_measurements": 34,
+  "results": [
+    {
+      "screen": "variants-dark-custom-broken",
+      "appearance": "dark",
+      "logos": [
+        {
+          "alt": "CounterNest",
+          "background": "rgba(0, 0, 0, 0)",
+          "brand": "platform",
+          "clip": "none",
+          "fit": "contain",
+          "height": 185.8125,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-logo-full-light.svg",
+          "theme": "dark",
+          "variant": "full",
+          "width": 280
+        },
+        {
+          "alt": "CounterNest",
+          "background": "rgba(0, 0, 0, 0)",
+          "brand": "platform",
+          "clip": "none",
+          "fit": "contain",
+          "height": 85.546875,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-logo-horizontal-light.svg",
+          "theme": "dark",
+          "variant": "horizontal",
+          "width": 280
+        },
+        {
+          "alt": "CounterNest",
+          "background": "rgba(0, 0, 0, 0)",
+          "brand": "platform",
+          "clip": "none",
+          "fit": "contain",
+          "height": 64,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-icon-light.svg",
+          "theme": "dark",
+          "variant": "icon",
+          "width": 64
+        },
+        {
+          "alt": "CounterNest",
+          "background": "rgba(0, 0, 0, 0)",
+          "brand": "platform",
+          "clip": "none",
+          "fit": "contain",
+          "height": 126.078125,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-logo-full-light.svg",
+          "theme": "dark",
+          "variant": "full",
+          "width": 190
+        },
+        {
+          "alt": "Example Bakery logo",
+          "background": "rgba(0, 0, 0, 0)",
+          "brand": "business",
+          "clip": "none",
+          "fit": "contain",
+          "height": 185.8125,
+          "loaded": true,
+          "radius": "0px",
+          "src": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22300%22%20height%3D%2280%22%3E%3Crect%20width%3D%22300%22%20height%3D%2280%22%20fill%3D%22%23026b81%22%2F%3E%3Ctext%20x%3D%2220%22%20y%3D%2255%22%20font-family%3D%22Arial%22%20font-size%3D%2232%22%20fill%3D%22white%22%3EExample%20Bakery%3C%2Ftext%3E%3C%2Fsvg%3E",
+          "theme": "dark",
+          "variant": "full",
+          "width": 280
+        }
+      ],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "screen": "boot-light",
+      "appearance": "light",
+      "logos": [
+        {
+          "alt": "",
+          "background": "rgba(0, 0, 0, 0)",
+          "clip": "none",
+          "fit": "contain",
+          "height": 162,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-logo-full-transparent.svg",
+          "width": 244
+        }
+      ],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "screen": "boot-dark",
+      "appearance": "dark",
+      "logos": [
+        {
+          "alt": "",
+          "background": "rgba(0, 0, 0, 0)",
+          "clip": "none",
+          "fit": "contain",
+          "height": 162,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-logo-light.svg",
+          "width": 244
+        }
+      ],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "screen": "login",
+      "appearance": "dark",
+      "logos": [
+        {
+          "alt": "CounterNest",
+          "background": "rgba(0, 0, 0, 0)",
+          "brand": "platform",
+          "clip": "none",
+          "fit": "contain",
+          "height": 159.265625,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-logo-full-transparent.svg",
+          "theme": "light",
+          "variant": "full",
+          "width": 240
+        }
+      ],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "screen": "signup",
+      "appearance": "dark",
+      "logos": [
+        {
+          "alt": "CounterNest",
+          "background": "rgba(0, 0, 0, 0)",
+          "brand": "platform",
+          "clip": "none",
+          "fit": "contain",
+          "height": 159.265625,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-logo-full-transparent.svg",
+          "theme": "light",
+          "variant": "full",
+          "width": 240
+        }
+      ],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "screen": "dashboard-light",
+      "appearance": "light",
+      "logos": [
+        {
+          "alt": "CounterNest",
+          "background": "rgba(0, 0, 0, 0)",
+          "brand": "platform",
+          "clip": "none",
+          "fit": "contain",
+          "height": 38,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-icon-light.svg",
+          "theme": "dark",
+          "variant": "icon",
+          "width": 38
+        },
+        {
+          "alt": "CounterNest",
+          "background": "rgba(0, 0, 0, 0)",
+          "brand": "platform",
+          "clip": "none",
+          "fit": "contain",
+          "height": 34,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-icon-transparent.svg",
+          "theme": "light",
+          "variant": "icon",
+          "width": 34
+        }
+      ],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "screen": "dashboard-dark",
+      "appearance": "dark",
+      "logos": [
+        {
+          "alt": "CounterNest",
+          "background": "rgba(0, 0, 0, 0)",
+          "brand": "platform",
+          "clip": "none",
+          "fit": "contain",
+          "height": 38,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-icon-light.svg",
+          "theme": "dark",
+          "variant": "icon",
+          "width": 38
+        },
+        {
+          "alt": "CounterNest",
+          "background": "rgba(0, 0, 0, 0)",
+          "brand": "platform",
+          "clip": "none",
+          "fit": "contain",
+          "height": 34,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-icon-light.svg",
+          "theme": "dark",
+          "variant": "icon",
+          "width": 34
+        }
+      ],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "screen": "catalogue-light",
+      "appearance": "light",
+      "logos": [
+        {
+          "alt": "CounterNest",
+          "background": "rgba(0, 0, 0, 0)",
+          "brand": "platform",
+          "clip": "none",
+          "fit": "contain",
+          "height": 126.078125,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-logo-full-transparent.svg",
+          "theme": "light",
+          "variant": "full",
+          "width": 190
+        }
+      ],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "screen": "catalogue-dark",
+      "appearance": "dark",
+      "logos": [
+        {
+          "alt": "CounterNest",
+          "background": "rgba(0, 0, 0, 0)",
+          "brand": "platform",
+          "clip": "none",
+          "fit": "contain",
+          "height": 126.078125,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-logo-full-light.svg",
+          "theme": "dark",
+          "variant": "full",
+          "width": 190
+        }
+      ],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "screen": "catalogue-system",
+      "appearance": "dark",
+      "logos": [
+        {
+          "alt": "CounterNest",
+          "background": "rgba(0, 0, 0, 0)",
+          "brand": "platform",
+          "clip": "none",
+          "fit": "contain",
+          "height": 126.078125,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-logo-full-light.svg",
+          "theme": "dark",
+          "variant": "full",
+          "width": 190
+        }
+      ],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "screen": "catalogue-mobile-system",
+      "appearance": "dark",
+      "logos": [
+        {
+          "alt": "CounterNest",
+          "background": "rgba(0, 0, 0, 0)",
+          "brand": "platform",
+          "clip": "none",
+          "fit": "contain",
+          "height": 106.171875,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-logo-full-light.svg",
+          "theme": "dark",
+          "variant": "full",
+          "width": 160
+        }
+      ],
+      "overflow": false,
+      "width": 390
+    },
+    {
+      "screen": "mobile-header-dark",
+      "appearance": "dark",
+      "logos": [
+        {
+          "alt": "CounterNest",
+          "background": "rgba(0, 0, 0, 0)",
+          "brand": "platform",
+          "clip": "none",
+          "fit": "contain",
+          "height": 38,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-icon-light.svg",
+          "theme": "dark",
+          "variant": "icon",
+          "width": 38
+        },
+        {
+          "alt": "CounterNest",
+          "background": "rgba(0, 0, 0, 0)",
+          "brand": "platform",
+          "clip": "none",
+          "fit": "contain",
+          "height": 34,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-icon-light.svg",
+          "theme": "dark",
+          "variant": "icon",
+          "width": 34
+        }
+      ],
+      "overflow": false,
+      "width": 390
+    },
+    {
+      "screen": "tablet-header-dark",
+      "appearance": "dark",
+      "logos": [
+        {
+          "alt": "CounterNest",
+          "background": "rgba(0, 0, 0, 0)",
+          "brand": "platform",
+          "clip": "none",
+          "fit": "contain",
+          "height": 38,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-icon-light.svg",
+          "theme": "dark",
+          "variant": "icon",
+          "width": 38
+        },
+        {
+          "alt": "CounterNest",
+          "background": "rgba(0, 0, 0, 0)",
+          "brand": "platform",
+          "clip": "none",
+          "fit": "contain",
+          "height": 34,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-icon-light.svg",
+          "theme": "dark",
+          "variant": "icon",
+          "width": 34
+        }
+      ],
+      "overflow": false,
+      "width": 768
+    },
+    {
+      "screen": "receipt-dark",
+      "appearance": "dark",
+      "logos": [
+        {
+          "alt": "CounterNest",
+          "background": "rgba(0, 0, 0, 0)",
+          "brand": "platform",
+          "clip": "none",
+          "fit": "contain",
+          "height": 38,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-icon-light.svg",
+          "theme": "dark",
+          "variant": "icon",
+          "width": 38
+        },
+        {
+          "alt": "CounterNest",
+          "background": "rgba(0, 0, 0, 0)",
+          "brand": "platform",
+          "clip": "none",
+          "fit": "contain",
+          "height": 34,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-icon-light.svg",
+          "theme": "dark",
+          "variant": "icon",
+          "width": 34
+        },
+        {
+          "alt": "CounterNest",
+          "background": "rgba(0, 0, 0, 0)",
+          "brand": "platform",
+          "clip": "none",
+          "fit": "contain",
+          "height": 119.453125,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-logo-full-transparent.svg",
+          "theme": "light",
+          "variant": "full",
+          "width": 180
+        }
+      ],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "screen": "reports-dark",
+      "appearance": "dark",
+      "logos": [
+        {
+          "alt": "CounterNest",
+          "background": "rgba(0, 0, 0, 0)",
+          "brand": "platform",
+          "clip": "none",
+          "fit": "contain",
+          "height": 38,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-icon-light.svg",
+          "theme": "dark",
+          "variant": "icon",
+          "width": 38
+        },
+        {
+          "alt": "CounterNest",
+          "background": "rgba(0, 0, 0, 0)",
+          "brand": "platform",
+          "clip": "none",
+          "fit": "contain",
+          "height": 34,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-icon-light.svg",
+          "theme": "dark",
+          "variant": "icon",
+          "width": 34
+        },
+        {
+          "alt": "CounterNest",
+          "background": "rgba(0, 0, 0, 0)",
+          "brand": "platform",
+          "clip": "none",
+          "fit": "contain",
+          "height": 92.90625,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-logo-full-light.svg",
+          "theme": "dark",
+          "variant": "full",
+          "width": 140
+        }
+      ],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "screen": "admin-catalogue-dark",
+      "appearance": "dark",
+      "logos": [
+        {
+          "alt": "CounterNest",
+          "background": "rgba(0, 0, 0, 0)",
+          "brand": "platform",
+          "clip": "none",
+          "fit": "contain",
+          "height": 38,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-icon-light.svg",
+          "theme": "dark",
+          "variant": "icon",
+          "width": 38
+        },
+        {
+          "alt": "CounterNest",
+          "background": "rgba(0, 0, 0, 0)",
+          "brand": "platform",
+          "clip": "none",
+          "fit": "contain",
+          "height": 34,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-icon-light.svg",
+          "theme": "dark",
+          "variant": "icon",
+          "width": 34
+        },
+        {
+          "alt": "CounterNest",
+          "background": "rgba(0, 0, 0, 0)",
+          "brand": "platform",
+          "clip": "none",
+          "fit": "contain",
+          "height": 112.8125,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-logo-full-light.svg",
+          "theme": "dark",
+          "variant": "full",
+          "width": 170
+        }
+      ],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "screen": "settings-dark",
+      "appearance": "dark",
+      "logos": [
+        {
+          "alt": "CounterNest",
+          "background": "rgba(0, 0, 0, 0)",
+          "brand": "platform",
+          "clip": "none",
+          "fit": "contain",
+          "height": 38,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-icon-light.svg",
+          "theme": "dark",
+          "variant": "icon",
+          "width": 38
+        },
+        {
+          "alt": "CounterNest",
+          "background": "rgba(0, 0, 0, 0)",
+          "brand": "platform",
+          "clip": "none",
+          "fit": "contain",
+          "height": 34,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-icon-light.svg",
+          "theme": "dark",
+          "variant": "icon",
+          "width": 34
+        },
+        {
+          "alt": "CounterNest",
+          "background": "rgba(0, 0, 0, 0)",
+          "brand": "platform",
+          "clip": "none",
+          "fit": "contain",
+          "height": 44,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-icon-light.svg",
+          "theme": "dark",
+          "variant": "icon",
+          "width": 44
+        }
+      ],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "screen": "boot-system",
+      "appearance": "dark",
+      "logos": [
+        {
+          "alt": "",
+          "background": "rgba(0, 0, 0, 0)",
+          "clip": "none",
+          "fit": "contain",
+          "height": 162,
+          "loaded": true,
+          "radius": "0px",
+          "src": "http://127.0.0.1:5194/counternest-logo-light.svg",
+          "width": 244
+        }
+      ],
+      "overflow": false,
+      "width": 1280
+    }
+  ]
+}

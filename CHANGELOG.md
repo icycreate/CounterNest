@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.0.0-rc.14 — 2026-10-18
+
+RC14 replaces opaque bitmap-in-SVG fallback artwork with transparent vector paths traced from the approved CounterNest identity. A shared BrandLogo component keeps the full lockup in larger areas and the nest icon in compact areas, contains uploaded logos, selects platform ink for the containing surface, and recovers when a business logo fails or is removed.
+
+- Added reproducible six-color contour tracing into real SVG paths, plus transparent PNG/WebP assets.
+- Added full/horizontal/icon, inverse dark-surface variants, adaptive favicon and updated PWA assets.
+- Centralized logo usage and print fallback; removed forced white fills, circular masks and default cover crop.
+- Added automatic recovery for missing business images and legacy fallback paths.
+- Updated platform-asset service-worker caching while retaining tenant/API cache exclusions.
+- Added branding regression tests and current screenshots.
+
+# Changelog
+
 ## 2.0.0-rc.13 — 2026-10-18
 
 RC13 centralizes measured foreground/background pairs and enforces the shared Button paint contract. Remove, Delete, Archive, Decline, Clear, Reset and Void actions keep a strong red identity; disabled and loading labels remain opaque and readable. Cards, prices, fields, table rows, statuses, report panels, receipt toolbars and customer preorder steps use theme-safe colors. Staff Catalogue now initializes authentication and theme normally; token-bearing customer links remain public.
@@ -21,4 +34,5 @@ RC13 centralizes measured foreground/background pairs and enforces the shared Bu
 - Add validated public decorative branding storage, administrator appearance controls and token-scoped customer projection.
 - Add semantic danger/disabled tokens, broad accent contrast checks and contained full logo/icon separation.
 - Preserve RC11 contacts, notification flows, four languages, category rules, dirty navigation handling and browser-only deployment.
+
 

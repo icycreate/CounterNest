@@ -1,9 +1,9 @@
-# RC13 known issues and verification limits
+# RC14 known issues and verification limits
 
-No unresolved measured contrast failure remains in the recorded local scenarios. This is a local release candidate; no GitHub push, Vercel deployment or live Supabase changes were performed. Physical installed PWA, native date/time widgets, browser/OS preference changes and target-cloud acceptance remain pending. See UAT_ACCEPTANCE_CHECKLIST.md.
+The source is locally validated; no GitHub push, Vercel deployment or live Supabase change has been performed. Physical installed-PWA, OS icon rendering, native Save as PDF destinations and target printers need the UAT checklist. Local browser geometry/screenshots and generated print HTML do not replace those device checks.
 
-Custom photographic backgrounds and arbitrary real data/permission combinations still require visual acceptance. The audit does not certify all WCAG criteria. Digital card gradients use a solid chosen color to preserve a mathematically valid foreground.
+The production vector is traced from the approved raster source with a simplified six-color palette. It retains the shape and lettering but is not an original design-file master. Custom business images keep their uploaded colors; their own opaque background cannot safely be removed automatically. Existing saved circular/square crops cannot recover lost edges without an original re-upload.
 
-Existing operational limits continue: inventory quantity precision is 0.001 base units and normalized cost precision 0.000001; US customary cooking units; remote image crop fetches can fail CORS; removed images remain in storage for history. External card/QR reversals require the provider. Large established frontend chunks produce Vite size warnings.
+Arbitrary photographs and transparent business artwork may need owner review on their chosen surface. The platform fallback uses automatic inverse/standard ink, while custom artwork is intentionally preserved. Four legacy platform filenames are retained as transparent compatibility aliases for historical server values and old clients.
 
-Screenshots use isolated sample records. Earlier release reports/screenshots remain historical; current readability evidence is under docs/accessibility and BUILD_VALIDATION.json.
+Existing operational limits remain: inventory/base-cost precision, remote crop-fetch CORS restrictions, historical stored images, external card/QR reversal workflows and the established frontend chunk-size warning. Earlier release audits/screenshots in this package are historical. Current branding evidence is under docs/branding.

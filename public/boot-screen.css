@@ -40,3 +40,6 @@ html[data-boot-theme=dark] .cn-boot-logo-light{display:none}html[data-boot-theme
 
 /* Full approved lockup keeps its original proportions. */
 .cn-boot-logo{left:30px;top:62px;width:200px;height:138px;object-fit:contain;border-radius:0}
+
+/* RC14 transparent lockup; no background panel and no duplicate wordmark. */
+.cn-boot-logo{left:8px;top:52px;width:244px;height:162px;object-fit:contain;border-radius:0;filter:none}

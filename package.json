@@ -1,7 +1,7 @@
 {
   "name": "counternest-pos",
   "private": true,
-  "version": "2.0.0-rc.13",
+  "version": "2.0.0-rc.14",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,7 +13,7 @@
     "test:ui": "node tests/ui-components.cjs",
     "test:release": "node tests/STATIC_RELEASE_CHECKS.cjs",
     "test:web": "node tests/web-deployment.cjs",
-    "test": "npm run test:frontend && npm run test:ui && npm run test:database && npm run test:release && npm run test:web && npm run test:edge && npm run test:display && npm run test:rc1 && npm run test:catalogue-export && npm run test:customer-requests && npm run test:ux && npm run test:finalization && npm run test:rc4 && npm run test:operations && npm run test:purchasing-model && npm run test:boot && npm run test:navigation-theme && npm run test:calendar && npm run test:system-style && npm run test:experience && npm run test:units && npm run test:accessibility",
+    "test": "npm run test:frontend && npm run test:ui && npm run test:database && npm run test:release && npm run test:web && npm run test:edge && npm run test:display && npm run test:rc1 && npm run test:catalogue-export && npm run test:customer-requests && npm run test:ux && npm run test:finalization && npm run test:rc4 && npm run test:operations && npm run test:purchasing-model && npm run test:boot && npm run test:navigation-theme && npm run test:calendar && npm run test:system-style && npm run test:experience && npm run test:units && npm run test:accessibility && npm run test:branding",
     "test:edge": "node tests/edge-functions.cjs",
     "test:display": "node tests/catalogue-display.cjs",
     "test:assets": "node tests/built-assets.cjs",
@@ -33,7 +33,9 @@
     "test:system-style": "node tests/system-style.cjs && node tests/gallery-manager.cjs",
     "test:experience": "node tests/customer-experience.cjs",
     "test:units": "node tests/units-appearance-ui.cjs",
-    "test:accessibility": "node tests/accessibility.cjs"
+    "test:accessibility": "node tests/accessibility.cjs",
+    "brand:assets": "node scripts/build-brand-assets.cjs",
+    "test:branding": "node tests/branding-rc14.cjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",
@@ -46,21 +48,22 @@
     "web-push": "^3.6.7"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "0.5.9",
     "@types/jsbarcode": "^3.11.4",
     "@types/qrcode": "^1.5.5",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
-    "typescript": "^5.7.2",
-    "vite": "^6.0.5",
-    "@electric-sql/pglite": "0.5.9",
     "esbuild": "0.25.12",
-    "react-test-renderer": "18.3.1"
+    "react-test-renderer": "18.3.1",
+    "sharp": "^0.35.5",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5"
   },
   "allowScripts": {
     "esbuild@0.25.12": true
   },
-  "description": "CounterNest POS system readability and accessibility correction RC13",
+  "description": "CounterNest POS transparent blended branding RC14",
   "engines": {
     "node": ">=22.12.0 <25"
   }

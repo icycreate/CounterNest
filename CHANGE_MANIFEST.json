@@ -1,448 +1,577 @@
 {
-  "baseline": "actual Units and Catalogue RC12 source",
-  "version": "2.0.0-rc.13",
+  "version": "2.0.0-rc.14",
+  "baseline": "completed Readability RC13 source",
+  "unchanged_migrations": 94,
   "changes": [
     {
       "file": "ACCESSIBILITY_AUDIT.md",
-      "status": "added",
-      "sha256": "72504b62a9cd1bb54c7e8759e18172f58bf90dcb259c129f9b2c38c94f063184"
+      "status": "modified",
+      "sha256": "4e405f0049de25697484d3607cd37dc19770d34d19b9540f48205fab358b199e"
     },
     {
-      "file": "ACCESSIBILITY_TEST_RESULTS.json",
+      "file": "BOOT_ASSET_MANIFEST.json",
+      "status": "modified",
+      "sha256": "340cbcec3168f9706f1376d574d8c93f53f5fadcbe90417a681166e8f1705761"
+    },
+    {
+      "file": "BRANDING_IMPLEMENTATION.md",
       "status": "added",
-      "sha256": "f90e471be400dc87284304086afda1dc8d213afc30bf13eafe8f951005862550"
+      "sha256": "93bd4b8c9183d9873e4e02e45deec9ec697009bd8c4722a4993b98ea03cd59f8"
+    },
+    {
+      "file": "BRANDING_NOTES.md",
+      "status": "modified",
+      "sha256": "93bd4b8c9183d9873e4e02e45deec9ec697009bd8c4722a4993b98ea03cd59f8"
+    },
+    {
+      "file": "BRANDING_TEST_RESULTS.json",
+      "status": "added",
+      "sha256": "ba9817efb9d2409478b7e4c9ff2d246ff3c81e4632834503661e8004b8249b0e"
+    },
+    {
+      "file": "BRAND_ASSET_MANIFEST.json",
+      "status": "added",
+      "sha256": "2fc284e9866d72893cd4f7d65b9c93da00fcc776a420a1c048e0ca25db0e1d9c"
     },
     {
       "file": "BUILD_VALIDATION.json",
       "status": "modified",
-      "sha256": "601ea38aa773fef5a0bb327198a49adba4f776ced205c2e63da3c303127d0996"
+      "sha256": "cf9b4ae14e353f599f12c54b37d9df847711e5b7b9302f4f7e209c21ca386865"
     },
     {
       "file": "BUILD_VALIDATION_REPORT.md",
       "status": "modified",
-      "sha256": "d6e35c481a328c95fc99a4214b86a28d73365323a114fed29f6eaeca3de6d399"
+      "sha256": "38ed060c31fb42494bf5c6134ea8b35631a72045675081aa07f295403be8773d"
     },
     {
       "file": "CHANGELOG.md",
       "status": "modified",
-      "sha256": "23b8379057e3facd310354cf26239d4f7add45d41ea1e55714d6e4fccfc8ddbc"
+      "sha256": "c5ffdbbffcc7f1de1be384479355be78f3bc15699169842d01b3779e523375d4"
     },
     {
       "file": "DATABASE_TEST_RESULTS.json",
       "status": "modified",
-      "sha256": "9593b3eafb1f132dea6f9b0513bbd585deeea4d5aac09b38ecd593d659e913ee"
+      "sha256": "d9699aa5b4b93908ac1af9ee6e367ded479e2b3cf27b5a7034d9a6bf7b95f451"
     },
     {
       "file": "DEPLOYMENT_NOTES.md",
       "status": "modified",
-      "sha256": "d7dafc984c19bf8027d0be6feaa4044baaab2671164252648f93484db0f4ea1b"
+      "sha256": "041370430b451899ddcc9e54eb0fe53673dc3faffcea210d47196256d4374c80"
     },
     {
-      "file": "docs/accessibility/BROWSER_READABILITY_RESULTS.json",
+      "file": "docs/branding/admin-catalogue-dark.jpg",
       "status": "added",
-      "sha256": "72ce37cbe43d7c1db9634d0b2d91ccfe381af1a3926ac921e8b8dc0d6de423c5"
+      "sha256": "7a80178c084bdc18838be99afb4547c4d260767797b8b1dc60713493a3ca8502"
     },
     {
-      "file": "docs/accessibility/contrast-read.js",
+      "file": "docs/branding/boot-dark.jpg",
       "status": "added",
-      "sha256": "7e87dee8f30047e2719d036d4a4da7400cd587915560db58477741fb92dcf368"
+      "sha256": "8ae94ea1d6ac2ed5613af24c9db232974e9dd6233127ca3ec9335f7c76807819"
     },
     {
-      "file": "docs/accessibility/INITIAL_BROWSER_FINDINGS.json",
+      "file": "docs/branding/boot-light.jpg",
       "status": "added",
-      "sha256": "9296bc12de4df2f0883f98ef8c90cde78cdeffef851705e1506c96d2ca1cbb2d"
+      "sha256": "59a8d1fa0b56d54922405ba86bad0e7b84af89ed68d7ab1a802b553bd6472d51"
     },
     {
-      "file": "docs/accessibility/RC13-accent-2367ac.jpg",
+      "file": "docs/branding/BROWSER_BRANDING_RESULTS.json",
       "status": "added",
-      "sha256": "6cb30a3149f86df2d70e1fd17bfe6ed4064c2378b5454ce290d62c947c8b5cce"
+      "sha256": "b160f018af9eb6b1b292bf5b51770a7e7c9a6d73ed0e4fbad31da6e643a61fd6"
     },
     {
-      "file": "docs/accessibility/RC13-accent-ffff00.jpg",
+      "file": "docs/branding/catalogue-dark.jpg",
       "status": "added",
-      "sha256": "273fff471b392904c5f587b8b59b5f9cb35bccbc6c6c186c6e5043bfbcddb60d"
+      "sha256": "4711016ef0f27eec7f817ec8ba34c135130408b0167a03b0e6efa0c7ebb41597"
     },
     {
-      "file": "docs/accessibility/RC13-buttons-dark.jpg",
+      "file": "docs/branding/catalogue-light.jpg",
       "status": "added",
-      "sha256": "d8880b1dcd19a75f27ca502ae93cebf52eb3be82b2d7d4b1eef5923b6ea023d8"
+      "sha256": "d495319528e2bcd40f8b5a60d04a8269921901aa5e04fe0908534addf59fb525"
     },
     {
-      "file": "docs/accessibility/RC13-buttons-light.jpg",
+      "file": "docs/branding/dashboard-dark.jpg",
       "status": "added",
-      "sha256": "5eec041117487bc3f891eaa3b171be99f17de9f61209066854c75165db5597e8"
+      "sha256": "e2c55517da5d9586ad192ce0cf73d9d6f5599b29145744439906a2cd4648cb35"
     },
     {
-      "file": "docs/accessibility/RC13-buttons-system.jpg",
+      "file": "docs/branding/dashboard-light.jpg",
       "status": "added",
-      "sha256": "22e877241ba1ee8ac7d3f487736feb05ec5ed0c55a026e15981161b5ff6ce409"
+      "sha256": "e71e5e428d1992f16aa54ae60a33ce21fb45fe65ad965b074ff8813c7a8940c7"
     },
     {
-      "file": "docs/accessibility/RC13-custom-cake-dark.jpg",
+      "file": "docs/branding/login.jpg",
       "status": "added",
-      "sha256": "b57bffd269bdfca42c875d2c09a43b55710ea51c63a9e0412c0f0b2eac6cd1e6"
+      "sha256": "c5cfb1d19c45cc2ed7447a449a279b4208d50c89f352d688ab3ad41386adefbc"
     },
     {
-      "file": "docs/accessibility/RC13-customer-catalogue-dark.jpg",
+      "file": "docs/branding/mobile-catalogue.jpg",
       "status": "added",
-      "sha256": "5f7d3e4a9cf643a1cfac870565b23e72d7fc23e36404a5b275bf0a1d63a39061"
+      "sha256": "31bf48a816c76a3a28da071053b7b2df64be125af4e4664ccbb0f4c0e481d3cb"
     },
     {
-      "file": "docs/accessibility/RC13-customer-phone-light.jpg",
+      "file": "docs/branding/mobile-header-dark.jpg",
       "status": "added",
-      "sha256": "d7d8034d1d27f3ad2c420066ecd59571788d78a4383cf5775540c8a98c6c42e6"
+      "sha256": "463214aa9585371c1b43d63c41cc50cc5df503881062a39b667804332476edd7"
     },
     {
-      "file": "docs/accessibility/RC13-customers-dark.jpg",
+      "file": "docs/branding/receipt-dark.jpg",
       "status": "added",
-      "sha256": "3f2680cd8f4c021bf655774de19aaca79dd3069b5cbe3b9e0061c40da8f5d78b"
+      "sha256": "8b9b7b08f05422bed296d11896c04c4b9a38dd3ce85b982474ca5a5cf0dc6360"
     },
     {
-      "file": "docs/accessibility/RC13-customers-light.jpg",
+      "file": "docs/branding/reports-dark.jpg",
       "status": "added",
-      "sha256": "3a4bcaa3a6f3a387400907e50511824680c956355ec19b9badab263f1c6c3cec"
+      "sha256": "8c83b62567715440be192cb2b01184f44ec721f3a5ae0804caa4de1abce11c98"
     },
     {
-      "file": "docs/accessibility/RC13-notifications-dark.jpg",
+      "file": "docs/branding/signup.jpg",
       "status": "added",
-      "sha256": "d639cec759b9f13ffd94f3d57ee06db2b10d44c8aa18585c91d920b2c20133ce"
+      "sha256": "0e8926a09e9b01d976191f51d3190817de0f7e00fab63ce90077066f6361b53c"
     },
     {
-      "file": "docs/accessibility/RC13-phone-en.jpg",
+      "file": "docs/branding/tablet-header-dark.jpg",
       "status": "added",
-      "sha256": "fca5a376eccb8ebeb70329ed206b34faf552293dd263a0462d61a09c817fa9b5"
+      "sha256": "ac6033b4c9836ae199b4529fd3c093433ec6da6f3abd5703f7d4466436e836cf"
     },
     {
-      "file": "docs/accessibility/RC13-phone-es.jpg",
+      "file": "docs/branding/variants-dark.jpg",
       "status": "added",
-      "sha256": "1322497f92658413d01a514ddb0f38a18bf99655b2332131a36c403e3914ebc9"
+      "sha256": "907abf67a5514d619b633cd921e353e73b1875a0d13fcfb19c99f067d52706f3"
     },
     {
-      "file": "docs/accessibility/RC13-phone-zh-CN.jpg",
+      "file": "docs/qa/rc14/fixture-client.js",
       "status": "added",
-      "sha256": "2e9dbbda36795cdebad132a3b3efe1e5d66949c762df65bfeb311149cb9586c5"
+      "sha256": "43a0b2f655af59c766a8eca114a1b04d5d7f0246d25eb44495a39ef076a98930"
     },
     {
-      "file": "docs/accessibility/RC13-phone-zh-TW.jpg",
+      "file": "docs/qa/rc14/vite.config.mjs",
       "status": "added",
-      "sha256": "fa92bbc1cc4ffe858055888dfb91acf0aa5a11dde47fc9b8df1f7e3e79341192"
-    },
-    {
-      "file": "docs/accessibility/RC13-preorder-dark.jpg",
-      "status": "added",
-      "sha256": "ae72c58e37faac934435215f5ee609d84036bf8bb2b41f5fa17947df599ba95a"
-    },
-    {
-      "file": "docs/accessibility/RC13-products-dark.jpg",
-      "status": "added",
-      "sha256": "771e53a0202bbb51f0cdc12c05a4e5b2b28c321000d7288b1816ff096213c75f"
-    },
-    {
-      "file": "docs/accessibility/RC13-products-light.jpg",
-      "status": "added",
-      "sha256": "586f37f077e1e7b18c5688ffb3273f2481ca40d3b7c9fd3442a8a04ef5a3287a"
-    },
-    {
-      "file": "docs/accessibility/RC13-purchase-order-editor-light.jpg",
-      "status": "added",
-      "sha256": "0a1635b9ded31c6db1e2333cabc434ec6ae18dcfc0c3185a978eb3d8697526b3"
-    },
-    {
-      "file": "docs/accessibility/RC13-receipt-dark.jpg",
-      "status": "added",
-      "sha256": "ce68dc7f242c10120a25a8d67e1e72781d1f0659982c6df293378f1c0a154d17"
-    },
-    {
-      "file": "docs/accessibility/RC13-receiving-dialog-dark.jpg",
-      "status": "added",
-      "sha256": "c9c6394d0d3c7b7e624fddb1bd2de5474d14c4f86d63d8cdd761007a1ef7bffc"
-    },
-    {
-      "file": "docs/accessibility/RC13-tablet-es.jpg",
-      "status": "added",
-      "sha256": "4014c1af2f8de28043811369012b07131ba947a89d470e2a133597c622122578"
-    },
-    {
-      "file": "docs/accessibility/SOURCE_AUDIT.json",
-      "status": "added",
-      "sha256": "8c8f402e68c56162644720656d0601f64bbb934e66cbdae7d18b0fbafaad8d13"
-    },
-    {
-      "file": "docs/qa/rc13/fixture-client.js",
-      "status": "added",
-      "sha256": "bad3e31771c7d98b02616aa08b91783e6701072f773ecc7165da8fd111eb0f9c"
-    },
-    {
-      "file": "docs/qa/rc13/vite.config.mjs",
-      "status": "added",
-      "sha256": "b21000abf78bc3482da118da097c0a6db8a75f35d27799187e3d989707dbbe6c"
+      "sha256": "432466ea7ef1188614e3102cb48f564f8610b8a4f047449ae32c8a6749a2ba68"
     },
     {
       "file": "docs/validation/build.log",
       "status": "modified",
-      "sha256": "c64aeb5734058150641a03ea9cdc46793f72ed263840ef9b2a4758cbf98546fe"
+      "sha256": "180e4822fc760a3287d0b44afa6a19ab6fad96577a20b663aa057a29dc2d442c"
+    },
+    {
+      "file": "docs/validation/FINAL_REVIEW.md",
+      "status": "added",
+      "sha256": "59d166abc8a68c853cc3c677abdd29c18dec5748c12f397521366d743af5bbbf"
     },
     {
       "file": "docs/validation/test-assets.log",
       "status": "modified",
-      "sha256": "a538cd600ef4c0f676cd5c0ec0d3e6b34ed5fccf2e8cb78e6b7e431ee0e09e77"
+      "sha256": "9b93e8a184d0644fd6e8c6eff1117a9c15947f849c74254251c5b5ca9c04240f"
+    },
+    {
+      "file": "docs/validation/test-branding.log",
+      "status": "added",
+      "sha256": "039773516172f96f881408a9d06d8711b4f71476eb8a6ef48ba46797dcf4248b"
+    },
+    {
+      "file": "docs/validation/test-rc4.log",
+      "status": "added",
+      "sha256": "c8fba74d2cd5a6f9c3010f4f4e6e415b52faec03486e5713041da3acad675c03"
     },
     {
       "file": "docs/validation/test.log",
       "status": "modified",
-      "sha256": "f69463eb5297f7b97b22035be5097ed9542a0d31945ec16d6e27166c02b13c02"
+      "sha256": "b7898bf0be4ff962564d61df3efc42a9b357bd0470cfe085fed4fa1ef2d95b21"
     },
     {
       "file": "FINAL_SOURCE_NOTE.txt",
       "status": "modified",
-      "sha256": "919bcf352dab47669bd3fba8456944fe04de06bff89b43b163d0b794b30dab99"
+      "sha256": "0bb27e2369a71cbfe162e117773b653221cc6e93b0ddd664830a47c4dce90080"
     },
     {
       "file": "GITHUB_UPLOAD_GUIDE.md",
       "status": "modified",
-      "sha256": "f20109315ce1fdb2690aee4314203cd3a165b370fada8d8cf55da6a0fb7289d6"
+      "sha256": "0c60c35812338bce47da9bf274fcf10e20ed9d31d9e356db8618c388ba8ab57a"
+    },
+    {
+      "file": "index.html",
+      "status": "modified",
+      "sha256": "5cb9881ab9e6ba3e6b28c78507c27c9113fde65bfb83d0c30f2cb73d017a8f3d"
     },
     {
       "file": "INSTALL_UPGRADE_GUIDE.md",
       "status": "modified",
-      "sha256": "0ab15c66ee61c8cab8afc1ee7330fb46a4b0fe5fc70b5481fb66dfc801f7be15"
+      "sha256": "0a1f24bade09945cec9747ce39a03b11d471b6fa1e9cb774c1c5656e073ec496"
     },
     {
       "file": "KNOWN_ISSUES.md",
       "status": "modified",
-      "sha256": "be01c85c5bcf0a4b51b3db16a9221fee2ad613879bde070023ec784f089edd28"
+      "sha256": "65db4ebcbf394f7ef3c0b9fc555ba71ffee8d6bd499eed178ee5104f086d57c4"
     },
     {
       "file": "package-lock.json",
       "status": "modified",
-      "sha256": "a4c006d47d3f3ab058fd1afa52823802edb04f5153025ac324dcd46f033f3002"
+      "sha256": "485a9dd8dcee333bdcdfe583e4bb44ccb3b2c76af7ddc365d3379309d36e666a"
     },
     {
       "file": "package.json",
       "status": "modified",
-      "sha256": "7cfee0ad33f60976e2cc3594f0bef3777664811cba18ce0883a590b044c5d45a"
+      "sha256": "871a41c2f4ea2ae954a409005734ef73438b9798e4ecb86d9ae682dbbbee2648"
+    },
+    {
+      "file": "public/boot-screen.css",
+      "status": "modified",
+      "sha256": "17c5607adb845e086e73fddd004780f778ebfd9afc2899848ad0e573a1e5880b"
+    },
+    {
+      "file": "public/counternest-boot-logo-dark.svg",
+      "status": "modified",
+      "sha256": "56aee02f7ce658af3309db1dfb35c04812337e56675fd629c506d32887a54449"
+    },
+    {
+      "file": "public/counternest-brand-lockup.svg",
+      "status": "modified",
+      "sha256": "920efc0983fef654e260013be32b3dec53d0059087ba9b708caaa2a4c6f8c690"
+    },
+    {
+      "file": "public/counternest-default-logo.svg",
+      "status": "modified",
+      "sha256": "ee26e2e3c4c2f22ae5c8c27a65f2c0a6cbebbec3f67956c25f893b0a9951d06b"
+    },
+    {
+      "file": "public/counternest-favicon.svg",
+      "status": "added",
+      "sha256": "ddc3812959036170ce385db9f10a1cb28afb80d0e001da50be37dc6bb9420f87"
+    },
+    {
+      "file": "public/counternest-icon-light.png",
+      "status": "added",
+      "sha256": "88204f5a5ff0aa663412a3cd84142684d6573eee19fa475ddd4ec7be13547fdf"
+    },
+    {
+      "file": "public/counternest-icon-light.svg",
+      "status": "added",
+      "sha256": "373484908cf595d7547b1323346c6440ba4a929116605b2d583eefab27d49d49"
+    },
+    {
+      "file": "public/counternest-icon-light.webp",
+      "status": "added",
+      "sha256": "ac90191e86c7c710ebc736f08391c00bff48ecd245e7a507ef0bad7ce2c81043"
+    },
+    {
+      "file": "public/counternest-icon-transparent.png",
+      "status": "added",
+      "sha256": "e83072aebcf1b76c00d3ec4f717572608917422d2b182627c5c4ac55ce509aad"
+    },
+    {
+      "file": "public/counternest-icon-transparent.svg",
+      "status": "added",
+      "sha256": "b8e653168c59e438b8c6e4a4422e70f257f0595505c84e3a92ec5dd43997a3cd"
+    },
+    {
+      "file": "public/counternest-icon-transparent.webp",
+      "status": "added",
+      "sha256": "ac9859771f6a4b5285193a3ba97a0249655e3d3082ffa40a319bc7a1a4a7d238"
+    },
+    {
+      "file": "public/counternest-icon.svg",
+      "status": "modified",
+      "sha256": "b8e653168c59e438b8c6e4a4422e70f257f0595505c84e3a92ec5dd43997a3cd"
+    },
+    {
+      "file": "public/counternest-logo-dark.svg",
+      "status": "added",
+      "sha256": "ee26e2e3c4c2f22ae5c8c27a65f2c0a6cbebbec3f67956c25f893b0a9951d06b"
+    },
+    {
+      "file": "public/counternest-logo-full-light.png",
+      "status": "added",
+      "sha256": "3287de63b57abc9536a8b3f189c4d25a662cbe667edfbb92b3a568a278bc054f"
+    },
+    {
+      "file": "public/counternest-logo-full-light.svg",
+      "status": "added",
+      "sha256": "56aee02f7ce658af3309db1dfb35c04812337e56675fd629c506d32887a54449"
+    },
+    {
+      "file": "public/counternest-logo-full-light.webp",
+      "status": "added",
+      "sha256": "d794013ade597e24319f6bb3a8b45439416ab9ba1d42e27b995984e8571aae3c"
+    },
+    {
+      "file": "public/counternest-logo-full-transparent.png",
+      "status": "added",
+      "sha256": "a4366453f4745c6db0da654650c43c2d599b4d45f4fc4218c46fd2ce28c08103"
+    },
+    {
+      "file": "public/counternest-logo-full-transparent.svg",
+      "status": "added",
+      "sha256": "ee26e2e3c4c2f22ae5c8c27a65f2c0a6cbebbec3f67956c25f893b0a9951d06b"
+    },
+    {
+      "file": "public/counternest-logo-full-transparent.webp",
+      "status": "added",
+      "sha256": "e1dae6963749402eebfad0a91e5a964a2ce07ffecb2dd4ac7377cec32bc0179e"
+    },
+    {
+      "file": "public/counternest-logo-horizontal-light.png",
+      "status": "added",
+      "sha256": "1c3c362bfaea7df530ccc8453d9d07e156e30dadb39856b909a86d256324d153"
+    },
+    {
+      "file": "public/counternest-logo-horizontal-light.svg",
+      "status": "added",
+      "sha256": "388ec146e7601f9a789c4f4ca1631ba1f1268b014ea5b176fba0b0a1f5581ed5"
+    },
+    {
+      "file": "public/counternest-logo-horizontal-light.webp",
+      "status": "added",
+      "sha256": "b5c979390ca770be9ee267b996d2059774da711ea345a68d288a529075d96bd4"
+    },
+    {
+      "file": "public/counternest-logo-horizontal-transparent.png",
+      "status": "added",
+      "sha256": "8958b8a3cac0a2210db25d790056a1837084979e7a4c7b50adc0b5788322a597"
+    },
+    {
+      "file": "public/counternest-logo-horizontal-transparent.svg",
+      "status": "added",
+      "sha256": "920efc0983fef654e260013be32b3dec53d0059087ba9b708caaa2a4c6f8c690"
+    },
+    {
+      "file": "public/counternest-logo-horizontal-transparent.webp",
+      "status": "added",
+      "sha256": "bf45f47bd597b9da27713a48a52c0b6f81458e2af51a50617295a3250d097ff7"
+    },
+    {
+      "file": "public/counternest-logo-light.svg",
+      "status": "added",
+      "sha256": "56aee02f7ce658af3309db1dfb35c04812337e56675fd629c506d32887a54449"
+    },
+    {
+      "file": "public/pwa/apple-touch-icon.png",
+      "status": "modified",
+      "sha256": "02ce9aee2327d1a8a7e23aab1040d605235d9e1599ff893892795e1d0dc071c2"
+    },
+    {
+      "file": "public/pwa/favicon-64.png",
+      "status": "modified",
+      "sha256": "9031721e02ec8c7bdc65d77aafcc8772619715ba3274eaca563212679eda46bb"
+    },
+    {
+      "file": "public/pwa/icon-192.png",
+      "status": "modified",
+      "sha256": "79eaa86ff0187f4c5fe04d8576bf5947ff667889711f4bcdf88e74d585dbf331"
+    },
+    {
+      "file": "public/pwa/icon-512.png",
+      "status": "modified",
+      "sha256": "e83072aebcf1b76c00d3ec4f717572608917422d2b182627c5c4ac55ce509aad"
+    },
+    {
+      "file": "public/pwa/icon-maskable-512.png",
+      "status": "modified",
+      "sha256": "97f3d636474d954a2e5f15598355c675b73e974ca065862e1c95600fa6a3cf2b"
+    },
+    {
+      "file": "public/pwa/splash-1024.png",
+      "status": "modified",
+      "sha256": "2d8ce5df6503f21e9efa9bff28ead533f6c98a27578736d4495703df19927814"
     },
     {
       "file": "public/sw.js",
       "status": "modified",
-      "sha256": "5943c8a7327e10af6692d229a00de09b6a104f70311117e8dbe8ba8542858d13"
+      "sha256": "11953018fad8de7d25859e9b91bda8d7aca24553a1e4c8a0ff2af5659177a55a"
     },
     {
-      "file": "qa/readability.tsx",
+      "file": "qa/branding.tsx",
       "status": "added",
-      "sha256": "a4c35425afb1ef8a006f16a3118523782c959ce658b43ded7761b8387b9adca3"
+      "sha256": "f4635b4ad925132ce342432ea93402047d2ee77a9dc0cd990f817dbc8a0fe73c"
     },
     {
       "file": "README.md",
       "status": "modified",
-      "sha256": "f7034a55f8ff2da1a6ac5796546dad3aeabad11804f42bcc68c532668eeccc40"
+      "sha256": "068029bf7e004a7168765bbb679a2b3364400d87918bc6d60f07a0bc5f3212cf"
     },
     {
       "file": "RELEASE_MANIFEST.json",
       "status": "modified",
-      "sha256": "9a5cb79f72137ab3e65ad80e301de736d41277d29f34f3a4035f057be8b11df9"
+      "sha256": "4998e4718282a5d732802f2c7e36f16fa95c014cff6d0b0540855fa1a9b79640"
     },
     {
       "file": "RELEASE_NOTES.md",
       "status": "modified",
-      "sha256": "529c17eb9fcb0d547cb184fc27a1eda1653fc329aacb984675e3b28972bf9f28"
+      "sha256": "891a298518a10dbc7884b5a72f9acbe6e10d8e757022d2f5418656ef42806e35"
     },
     {
       "file": "SCREENSHOT_EVIDENCE.md",
       "status": "modified",
-      "sha256": "2a9263f497180df5bfe8cfb17cdcc14b9266f5604592564473f918ec946ff3d5"
+      "sha256": "57dd74aab79497157caa9a8cd42b1003160406c2c3442d2b13f83ef838080a92"
     },
     {
       "file": "SCREENSHOT_GALLERY.md",
       "status": "modified",
-      "sha256": "791f808825f6287a03d7bbf422a74da95093d2fdb23d009237ff7c4cac97ced5"
+      "sha256": "810d8e249468eb8188d663866e053628abd5fcf5a5101645a4f656cf9842c79c"
     },
     {
-      "file": "src/accessibility.css",
+      "file": "scripts/build-brand-assets.cjs",
       "status": "added",
-      "sha256": "a2db41bc62dba3a51afcef101413ece4c632c48dec0a8db05826d703c4557712"
-    },
-    {
-      "file": "src/accessiblePalette.ts",
-      "status": "added",
-      "sha256": "5d40699485246cba786ad145b75e48b9c10941d072f2e67fa6a6be6937de9ff2"
+      "sha256": "47f66a0d487c4adeb7b8273886dbf70e76971ffb67efc0b759a21fbf61d7bcb2"
     },
     {
       "file": "src/App.tsx",
       "status": "modified",
-      "sha256": "9cab4af9c1d16318ef87bee8e85ca084ee3c3c5904bfe7ffd32a6c14a7e79ca5"
+      "sha256": "6b8477809f5d2beac07bc03af6675768919815bb2b57ebecc380cb56dee0637d"
     },
     {
-      "file": "src/BusinessContacts.tsx",
+      "file": "src/BootSplash.tsx",
       "status": "modified",
-      "sha256": "95a8d8510ba3af89666e4c6a0f486960102fafd7e381f40dfc796ee263c3970c"
+      "sha256": "e3600a4899e2e0f0229520d94e5f5a70e0cd7e0f34b09277ca204fefba5bbe4a"
     },
     {
-      "file": "src/Button.tsx",
-      "status": "modified",
-      "sha256": "aaac5abf4dc4e6ba4a327c5e653f57a0ae0fc472235a41014ed3f605ba19b8a3"
+      "file": "src/branding.css",
+      "status": "added",
+      "sha256": "561a6527060205eb460541b35184618163d688ade1c5dfa857b9e5859581aac5"
     },
     {
-      "file": "src/calendar.css",
+      "file": "src/branding.ts",
       "status": "modified",
-      "sha256": "b2779a0be6ffe153f253b05b8f5ec4dff88d0e3081e2fe45aa8a340d89ac5ced"
+      "sha256": "0aeef1737a2df0a85b97425fcc4c9e754cdc6c9ac6df7a85291fd1f175f4c554"
     },
     {
-      "file": "src/CatalogueAdvanced.tsx",
-      "status": "modified",
-      "sha256": "d44d1ab9fb6319ee12e19d90e7f9171ce1cb7fed8ebfef928e21774a30ef0c1b"
+      "file": "src/BrandLogo.tsx",
+      "status": "added",
+      "sha256": "8c23816f6a6429879efe17c221b780a7a72eb494ae79c00241202f7c0a62c6d8"
     },
     {
-      "file": "src/CatalogueDecorationEditor.tsx",
+      "file": "src/Catalogue.tsx",
       "status": "modified",
-      "sha256": "965f9917d246bce1416ff4fd59a062d160e8a26bd982a035f4a1acca9190ca91"
-    },
-    {
-      "file": "src/CataloguePreorders.tsx",
-      "status": "modified",
-      "sha256": "2f368446efc3bfac49ac44f37fc9b117b4e0b6f008fcff508ca6b7f52cef9282"
+      "sha256": "877208d8622b6c72082553f1b1d7b0872f29c0ca489380ac7d177a10c02e40ca"
     },
     {
       "file": "src/CommercialCatalogue.tsx",
       "status": "modified",
-      "sha256": "65d0cbd08c0fb8ebd795da703d44ed981ce6f8da006402f5ed2f1763a623fb8a"
-    },
-    {
-      "file": "src/CommercialOperations.tsx",
-      "status": "modified",
-      "sha256": "58afa6b2b6461b43114fbb655e8cde10a1e8854bfe9a7aeae65df13a7a1fe35f"
+      "sha256": "bee8d3b1575fa8b56247ff23da5391703333894fa98201722f80b6372b314f5c"
     },
     {
       "file": "src/CustomerDisplay.tsx",
       "status": "modified",
-      "sha256": "9270ebaa45d7c53955cd0414ab88ec07a9aaccc05c3fea7f1671e58a5f6ba40e"
+      "sha256": "47767078b3a87b87edbf7b17d58146fe94e417c07b893dea18cbb89ed19d15b6"
     },
     {
-      "file": "src/customerRoutes.ts",
-      "status": "added",
-      "sha256": "333169dfa21c5dd059b1563f1fd1613575eff85c8f65aca46196cb6bf4e5c335"
-    },
-    {
-      "file": "src/ImageCropper.tsx",
+      "file": "src/customerLinks.ts",
       "status": "modified",
-      "sha256": "ab062d8ee6f4956f59786aa38844bee493f2778f9de7c781d724ff79c3767fd3"
-    },
-    {
-      "file": "src/IngredientPurchasing.tsx",
-      "status": "modified",
-      "sha256": "c463645d93acfa5731c579161b2a270ddc68f548bf20811abcfcd341de498991"
+      "sha256": "eb471b206bcbcee31d36d3c30e4c6673b66006ee67efc246004ed5040ee88593"
     },
     {
       "file": "src/main.tsx",
       "status": "modified",
-      "sha256": "001c37378e93032128dbc2d658f2cba73cd48d4e58c704e5689481e99a7e12ea"
+      "sha256": "1ffb59f3c4db2146c0c4676e671b5c9ef339341f69c2757a9193f8aa4fe11575"
     },
     {
-      "file": "src/navigation.css",
+      "file": "src/Navigation.tsx",
       "status": "modified",
-      "sha256": "72a1f7350f596a6b28cb13dee1f25522afc01f41472f92a9e80e1487b386e889"
+      "sha256": "4696935a762d1e1c70d61135d29f4e1d5e5b88d7e72a45871eedd02f2a3e2724"
     },
     {
-      "file": "src/OperationsCalendar.tsx",
+      "file": "src/preorderReceipt.ts",
       "status": "modified",
-      "sha256": "d2026516973b3de750096d485c8476e76f277e3cff5b54fdb862fa267f6d1f65"
-    },
-    {
-      "file": "src/ProductionStudio.tsx",
-      "status": "modified",
-      "sha256": "70754e3e3724adf848bef6ef2fcc7588e6819b28165834330eadd6355ba5d352"
-    },
-    {
-      "file": "src/RecipeInventory.tsx",
-      "status": "modified",
-      "sha256": "57395486dbd27eb54af17b983f377623aa640c1e4ad3bdc5102ac9732821a3d1"
+      "sha256": "ac86021b5d95da6086237cd2a439673a95f6673f326c2f3ca1dc682ab5f15ca1"
     },
     {
       "file": "src/release.ts",
       "status": "modified",
-      "sha256": "6197f569962ea5e9e222f734177ec277b0151576138ee95818989dbefb2858b5"
+      "sha256": "3803f369054df2ff15c666e1453f65c2525792ff66de09a823f0a5cdadbdd55f"
     },
     {
-      "file": "src/searchField.css",
+      "file": "src/translations.ts",
       "status": "modified",
-      "sha256": "ceedccc1a4e7fe43fb429d7a083a541a49b93dc7bc463edfbcf85fe5a5906473"
+      "sha256": "cddc7564116e88f078f235479122e9b1c8843e8e0f38c936fb72cbf6d2c063fa"
     },
     {
-      "file": "src/sharedTheme.ts",
+      "file": "src/UxShell.tsx",
       "status": "modified",
-      "sha256": "2742133e3dfbc605ec77e54a7d9d3c23944594edc27534892a74726a2abf9768"
-    },
-    {
-      "file": "src/styles.css",
-      "status": "modified",
-      "sha256": "8c40a8369c322f51c63b7fb91ff479d78b3492d59d45cd2a301679a97d1a6d32"
-    },
-    {
-      "file": "src/systemStyle.css",
-      "status": "modified",
-      "sha256": "a12030e1a8f9c09f0c5430a23b87bcd32a14d9a3b6d85144d4ecb93387190da6"
+      "sha256": "05e79796b0f3d6abfa8923fb4f87a9290f0befa2486329d31ce34e6743b1dfef"
     },
     {
       "file": "SUPABASE_DEPLOYMENT_GUIDE.md",
       "status": "modified",
-      "sha256": "99c4a0c3b53c65040b829d006463033bbb87807648078bc9d8dc763918efc31f"
+      "sha256": "9a0b47f0d413a4ce96c89d3f57e0e43fcb1bc7fff302fa0623e55a8830d84ee6"
     },
     {
       "file": "SUPABASE_MIGRATION_ORDER.md",
       "status": "modified",
-      "sha256": "036748d092e4cb6db0d66bbcc23ef811003d4672ba9b490787832a18f1d84e74"
+      "sha256": "3203633bc5af2492a2a73c694e92575f48a3b87e0d1324e8651e2c2418bc5ba7"
     },
     {
       "file": "SUPABASE_UPGRADE_GUIDE.md",
       "status": "modified",
-      "sha256": "cec29efdbb32d316fce52a1d7d5eaff5bfb3ac7f3c71a6df4b0ad10ca1b7ec56"
-    },
-    {
-      "file": "tests/accessibility.cjs",
-      "status": "added",
-      "sha256": "21353a2e78c215128ac04c4851b5e11fc0d8404c88871401f7844732d50021f0"
+      "sha256": "42280af54a1bfddf8a26c97c3a57da2380f38e1e9936cf2304dddb5cffefa0ad"
     },
     {
       "file": "tests/boot.cjs",
       "status": "modified",
-      "sha256": "a0ec57f11466fbb88c9f9e9bac67975d7d4f903648946b11ef5d6f737eba0f70"
+      "sha256": "40446fc9a51fbc414429dfe28cbb843b22aa793d29187401d3537f5a6d3194de"
+    },
+    {
+      "file": "tests/branding-rc14.cjs",
+      "status": "added",
+      "sha256": "d98c9b48c029aee304deb3b13768c6e8f23b7f5fc99300731c5a4adbdbbfa7f7"
+    },
+    {
+      "file": "tests/catalogue-finalization.cjs",
+      "status": "modified",
+      "sha256": "d33e6249cd41b427dc5fc720df96f5bacfc8e73386e17d07123c080e8df74313"
+    },
+    {
+      "file": "tests/customer-experience.cjs",
+      "status": "modified",
+      "sha256": "76684c73b6526b3ca229e0d9d7c71a595cff800bd63fc40a133848f13044a0cb"
+    },
+    {
+      "file": "tests/customer-pwa.cjs",
+      "status": "modified",
+      "sha256": "80e2fcdaf9a9d0a27556ed933b4434138d24f1b6b3ca50aab2b6f24849bcd8ee"
     },
     {
       "file": "tests/database-integration.cjs",
       "status": "modified",
-      "sha256": "8eb2bd32fcf2f840a97064b6f5bc55619ca46cbe4147d0dc1045fa2763a5b729"
+      "sha256": "40131e92d9e182b7e53e69b96c5bce1da033910dd3d065cb2413ed9fdbbf3918"
+    },
+    {
+      "file": "tests/preorder-finalization-ui.cjs",
+      "status": "modified",
+      "sha256": "4b8652e754b45d36a3806b24decec22ea92c8e107e82be6f16a088c33b64b87b"
+    },
+    {
+      "file": "tests/print-i18n.cjs",
+      "status": "modified",
+      "sha256": "4099722533397e02ac5d73ea36a81b780bc8c8581b15d150c1358dafa736202a"
+    },
+    {
+      "file": "tests/purchasing-ui.cjs",
+      "status": "modified",
+      "sha256": "cfc56eaebb38488c6f0b8a1c08f08fe3ef88bafa7a944746f4a426a58b78d459"
     },
     {
       "file": "tests/STATIC_RELEASE_CHECKS.cjs",
       "status": "modified",
-      "sha256": "0f67593db41209c289d1c82b9f0f327bd6d186d4fb0cebc70a97cf2f429bb2f9"
+      "sha256": "472060155354d29d3ec1323409666caf01aff8e766e0ac44d33de29a95344b0c"
     },
     {
       "file": "UAT_ACCEPTANCE_CHECKLIST.md",
       "status": "modified",
-      "sha256": "4fd15c4ef8fa98c03aef10c3590f7df648422e21400a51d09f9328be1ca6ad4d"
-    },
-    {
-      "file": "UI_DESIGN_SYSTEM.md",
-      "status": "modified",
-      "sha256": "0a1528532cd49d8f1286b8ccc6169f473414701264129c15529c93b2c6d273bd"
+      "sha256": "089cb5cf48b266a22f549085dae1c54ac66f057947b244a17548cab328263d2d"
     },
     {
       "file": "UI_REGRESSION_CHECKLIST.md",
-      "status": "added",
-      "sha256": "51b10cb4726bc2fe36b651a39e2bb829455f7ce9806f0b9b760841d4a41e157c"
+      "status": "modified",
+      "sha256": "337d58a8a840c4c173e4fb292204b83dfb22707b38aec111203fc1f95d2dba18"
     },
     {
       "file": "UI_UAT_CHECKLIST.md",
       "status": "modified",
-      "sha256": "d55510cb43a2a3bc73a3295472d6dabb2731d4c441f38abf1fcbf35fe14292f7"
+      "sha256": "23c38f1d69d8d81a9fbe15dc419c693956e71f88b3d232c93297dcf5a96c50a1"
     },
     {
       "file": "VERCEL_DEPLOYMENT_GUIDE.md",
       "status": "modified",
-      "sha256": "c61d037a98f1f1032252395adb29856f833cb99f23cc0e118bfc866492e9b218"
+      "sha256": "469f26c6721157ffec3f9e9438300f7cb92ea23d9cf783e7f070744aa64b9848"
     }
-  ],
-  "unchanged_migrations": 94,
-  "unchanged_public_image_assets": 10
+  ]
 }

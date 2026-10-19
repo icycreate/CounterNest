@@ -1,43 +1,131 @@
 {
-  "version": "2.0.0-rc.11",
+  "version": "2.0.0-rc.14",
   "source": "docs/reference/approved-brand-identity.png",
   "source_sha256": "40758b620c705ba3646583a6ca1e5f4568858912f92e4d754093ebec44667c7a",
   "assets": [
     {
-      "file": "public/counternest-default-logo.svg",
-      "sha256": "4f4ea9923996eef50ae3e14ec84e47a23cafee66f342063a0cc280d9bfb98063"
-    },
-    {
       "file": "public/counternest-boot-logo-dark.svg",
-      "sha256": "4f4ea9923996eef50ae3e14ec84e47a23cafee66f342063a0cc280d9bfb98063"
+      "sha256": "56aee02f7ce658af3309db1dfb35c04812337e56675fd629c506d32887a54449"
     },
     {
       "file": "public/counternest-brand-lockup.svg",
-      "sha256": "9bbb1f91d1d25cf18df876654f0f52ea5386b617ec61e507d5857d54363d5a63"
+      "sha256": "920efc0983fef654e260013be32b3dec53d0059087ba9b708caaa2a4c6f8c690"
+    },
+    {
+      "file": "public/counternest-default-logo.svg",
+      "sha256": "ee26e2e3c4c2f22ae5c8c27a65f2c0a6cbebbec3f67956c25f893b0a9951d06b"
+    },
+    {
+      "file": "public/counternest-favicon.svg",
+      "sha256": "ddc3812959036170ce385db9f10a1cb28afb80d0e001da50be37dc6bb9420f87"
+    },
+    {
+      "file": "public/counternest-icon-light.png",
+      "sha256": "88204f5a5ff0aa663412a3cd84142684d6573eee19fa475ddd4ec7be13547fdf"
+    },
+    {
+      "file": "public/counternest-icon-light.svg",
+      "sha256": "373484908cf595d7547b1323346c6440ba4a929116605b2d583eefab27d49d49"
+    },
+    {
+      "file": "public/counternest-icon-light.webp",
+      "sha256": "ac90191e86c7c710ebc736f08391c00bff48ecd245e7a507ef0bad7ce2c81043"
+    },
+    {
+      "file": "public/counternest-icon-transparent.png",
+      "sha256": "e83072aebcf1b76c00d3ec4f717572608917422d2b182627c5c4ac55ce509aad"
+    },
+    {
+      "file": "public/counternest-icon-transparent.svg",
+      "sha256": "b8e653168c59e438b8c6e4a4422e70f257f0595505c84e3a92ec5dd43997a3cd"
+    },
+    {
+      "file": "public/counternest-icon-transparent.webp",
+      "sha256": "ac9859771f6a4b5285193a3ba97a0249655e3d3082ffa40a319bc7a1a4a7d238"
+    },
+    {
+      "file": "public/counternest-icon.svg",
+      "sha256": "b8e653168c59e438b8c6e4a4422e70f257f0595505c84e3a92ec5dd43997a3cd"
+    },
+    {
+      "file": "public/counternest-logo-dark.svg",
+      "sha256": "ee26e2e3c4c2f22ae5c8c27a65f2c0a6cbebbec3f67956c25f893b0a9951d06b"
+    },
+    {
+      "file": "public/counternest-logo-full-light.png",
+      "sha256": "3287de63b57abc9536a8b3f189c4d25a662cbe667edfbb92b3a568a278bc054f"
+    },
+    {
+      "file": "public/counternest-logo-full-light.svg",
+      "sha256": "56aee02f7ce658af3309db1dfb35c04812337e56675fd629c506d32887a54449"
+    },
+    {
+      "file": "public/counternest-logo-full-light.webp",
+      "sha256": "d794013ade597e24319f6bb3a8b45439416ab9ba1d42e27b995984e8571aae3c"
+    },
+    {
+      "file": "public/counternest-logo-full-transparent.png",
+      "sha256": "a4366453f4745c6db0da654650c43c2d599b4d45f4fc4218c46fd2ce28c08103"
+    },
+    {
+      "file": "public/counternest-logo-full-transparent.svg",
+      "sha256": "ee26e2e3c4c2f22ae5c8c27a65f2c0a6cbebbec3f67956c25f893b0a9951d06b"
+    },
+    {
+      "file": "public/counternest-logo-full-transparent.webp",
+      "sha256": "e1dae6963749402eebfad0a91e5a964a2ce07ffecb2dd4ac7377cec32bc0179e"
+    },
+    {
+      "file": "public/counternest-logo-horizontal-light.png",
+      "sha256": "1c3c362bfaea7df530ccc8453d9d07e156e30dadb39856b909a86d256324d153"
+    },
+    {
+      "file": "public/counternest-logo-horizontal-light.svg",
+      "sha256": "388ec146e7601f9a789c4f4ca1631ba1f1268b014ea5b176fba0b0a1f5581ed5"
+    },
+    {
+      "file": "public/counternest-logo-horizontal-light.webp",
+      "sha256": "b5c979390ca770be9ee267b996d2059774da711ea345a68d288a529075d96bd4"
+    },
+    {
+      "file": "public/counternest-logo-horizontal-transparent.png",
+      "sha256": "8958b8a3cac0a2210db25d790056a1837084979e7a4c7b50adc0b5788322a597"
+    },
+    {
+      "file": "public/counternest-logo-horizontal-transparent.svg",
+      "sha256": "920efc0983fef654e260013be32b3dec53d0059087ba9b708caaa2a4c6f8c690"
+    },
+    {
+      "file": "public/counternest-logo-horizontal-transparent.webp",
+      "sha256": "bf45f47bd597b9da27713a48a52c0b6f81458e2af51a50617295a3250d097ff7"
+    },
+    {
+      "file": "public/counternest-logo-light.svg",
+      "sha256": "56aee02f7ce658af3309db1dfb35c04812337e56675fd629c506d32887a54449"
     },
     {
       "file": "public/pwa/apple-touch-icon.png",
-      "sha256": "ab5cb252d7410f969e952a93b3f19d309567d41c6b30d94667a57d4714bbc4f1"
+      "sha256": "02ce9aee2327d1a8a7e23aab1040d605235d9e1599ff893892795e1d0dc071c2"
     },
     {
       "file": "public/pwa/favicon-64.png",
-      "sha256": "861f173f727213c1d3831c47229dd830dd959c43222c4bf718a72a3d1b0e2125"
+      "sha256": "9031721e02ec8c7bdc65d77aafcc8772619715ba3274eaca563212679eda46bb"
     },
     {
       "file": "public/pwa/icon-192.png",
-      "sha256": "cc36a0486f0b43da0f3e28eb0d4c238afafd8dfaaf061c219c4a113c9c3d6f83"
+      "sha256": "79eaa86ff0187f4c5fe04d8576bf5947ff667889711f4bcdf88e74d585dbf331"
     },
     {
       "file": "public/pwa/icon-512.png",
-      "sha256": "e014cfb8c8fd91d2fae1c4420506c0c74aabeb432df8a3d6c59a52230c67acf9"
+      "sha256": "e83072aebcf1b76c00d3ec4f717572608917422d2b182627c5c4ac55ce509aad"
     },
     {
       "file": "public/pwa/icon-maskable-512.png",
-      "sha256": "7437b12c887d5322f6a8c0f9230c1be1d68126873829ea99fb9e2b2887a99e5b"
+      "sha256": "97f3d636474d954a2e5f15598355c675b73e974ca065862e1c95600fa6a3cf2b"
     },
     {
       "file": "public/pwa/splash-1024.png",
-      "sha256": "9a94113a568c5648b3373f03b5c50586abcf4d04fceb02a8f625a7650de1c6a5"
+      "sha256": "2d8ce5df6503f21e9efa9bff28ead533f6c98a27578736d4495703df19927814"
     }
   ]
 }

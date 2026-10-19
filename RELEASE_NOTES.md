@@ -1,11 +1,13 @@
-# CounterNest RC13 release notes
+# RC14 release notes
 
-2026-10-18 · 2.0.0-rc.13
+2026-10-18 · 2.0.0-rc.14
 
-RC13 centralizes measured foreground/background pairs and enforces the shared Button paint contract. Remove, Delete, Archive, Decline, Clear, Reset and Void actions keep a strong red identity; disabled and loading labels remain opaque and readable. Cards, prices, fields, table rows, statuses, report panels, receipt toolbars and customer preorder steps use theme-safe colors. Staff Catalogue now initializes authentication and theme normally; token-bearing customer links remain public.
+RC14 replaces opaque bitmap-in-SVG fallback artwork with transparent vector paths traced from the approved CounterNest identity. A shared BrandLogo component keeps the full lockup in larger areas and the nest icon in compact areas, contains uploaded logos, selects platform ink for the containing surface, and recovers when a business logo fails or is removed.
 
-The eight shared variants support size, icons, loading, disabled, focus, hover, active and selected states. Icons inherit currentColor. Accent foregrounds are calculated from contrast rather than brightness guesses. Paint transitions no longer temporarily produce white text on a white button. Destructive actions retain red even when selected. Digital membership cards use a solid chosen color so their computed foreground stays valid across the card.
+Boot keeps its fade, nest rings, bakery details, loading indicator and startup deadline; the duplicate typeset wordmark is removed because the full artwork already includes CounterNest. Login and Sign Up retain the light authentication layout. Headers and sidebar use compact icons; Catalogue, receipts, reports, print headers and QR signage keep the full logo.
 
-Readability changes preserve quantity conversion, gallery ordering, customer business names, four language support, contained full logos and the browser/cloud architecture. There are no new runtime dependencies and no SQL upgrades from RC12.
+Standard brown/gold and inverse cream/gold vectors have PNG/WebP fallbacks. The favicon is icon-only and adapts to browser dark preference; PWA icons are regenerated, with an intentional cream canvas only for the maskable app icon and OS splash. No rectangular background is embedded in the logo artwork.
 
-Validation covers 70 local browser scenarios with 5489 rendered text measurements, 126976 automated palette pair measurements, the full established test suite and production build. See the reports for scope and pending live/device acceptance.
+Business uploads retain their colors and transparency. Preparation now contains the full image by default; zoom is an explicit crop choice. Legacy server fallback paths are recognized as platform assets, allowing Dark Mode to work without changing historical SQL. Old public filenames remain small transparent compatibility aliases.
+
+There are no database changes and no new runtime dependency. sharp is development-only for asset regeneration. Live cloud, physical installed-PWA and printer/PDF destination acceptance remain on the UAT checklist.

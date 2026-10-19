@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'counternest-web-v2-0-0-rc13-accessibility'
+const CACHE_VERSION = 'counternest-web-v2-0-0-rc14-blended-branding'
 const SHELL_CACHE = `${CACHE_VERSION}-shell`
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`
 // Persist only the account binding, never a session/JWT or order details.
@@ -32,9 +32,10 @@ const CORE_ASSETS = [
   '/',
   '/index.html',
   '/manifest.webmanifest',
-  '/counternest-default-logo.svg',
-  '/counternest-icon.svg',
-  '/counternest-boot-logo-dark.svg',
+  '/counternest-logo-full-transparent.svg',
+  '/counternest-icon-transparent.svg',
+  '/counternest-logo-light.svg', '/counternest-icon-light.svg',
+  '/counternest-logo-full-light.svg', '/counternest-logo-horizontal-transparent.svg', '/counternest-logo-horizontal-light.svg', '/counternest-favicon.svg',
   '/boot-screen.css',
   '/pwa/icon-192.png',
   '/pwa/icon-512.png',
@@ -99,7 +100,7 @@ self.addEventListener('fetch', event => {
     return
   }
 
-  if (!/^\/(?:assets\/|pwa\/|boot-screen\.css$|counternest-(?:default-logo|boot-logo-dark)\.svg$|manifest\.webmanifest$)/.test(url.pathname)) return
+  if (!/^\/(?:assets\/|pwa\/|boot-screen\.css$|counternest-(?:logo-(?:full|horizontal)-(?:transparent|light)|icon-(?:transparent|light)|logo-(?:light|dark)|favicon|default-logo|brand-lockup|boot-logo-dark|icon)\.(?:svg|png|webp)$|manifest\.webmanifest$)/.test(url.pathname)) return
   event.respondWith((async () => {
     const cached = await caches.match(request)
     const network = fetch(request).then(async response => {

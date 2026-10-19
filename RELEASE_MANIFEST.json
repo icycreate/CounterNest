@@ -1,18 +1,18 @@
 {
-  "version": "2.0.0-rc.13",
-  "baseline_version": "Units and Catalogue RC12",
+  "version": "2.0.0-rc.14",
+  "baseline_version": "Readability RC13",
   "baseline_migration_count": 94,
   "migration_count": 94,
   "upgrade_migrations": [],
-  "name": "CounterNest POS Readability RC13",
-  "build": "2026-10-18-accessibility",
+  "name": "CounterNest POS Blended Branding RC14",
+  "build": "2026-10-18-blended-branding",
   "product": "CounterNest POS",
   "release_type": "browser-release-candidate",
   "backend": "Supabase Cloud",
   "desktop_installer": false,
   "features": [
     {
-      "title": "Central readable palette, all shared action variants, component paint contract, theme-safe cards/fields/tables/statuses and audited major module surfaces"
+      "title": "Transparent vector asset pipeline, shared BrandLogo, theme-safe platform fallback, contained business branding, print/PWA refresh"
     }
   ],
   "validation": "BUILD_VALIDATION.json",

@@ -1,9 +1,9 @@
+import {BrandLogo} from './BrandLogo'
 import {FormField,SelectField,InputField} from './Fields'
 import {Card} from './Surface'
 import {Button} from './Button'
 import {PageHeader} from './PageHeader'
 import {SearchField} from './SearchField'
-import {businessLogo} from './branding'
 import {systemLabel} from './systemLabels'
 import {trError,tr,LanguageSelector,useUiLanguage,getUiLocale} from './i18n'
 import {randomId} from './id'
@@ -95,7 +95,7 @@ export function CustomerDisplayScreen({token}:{token:string}){
 
   return <div className="customer-display-stage">
     <header className="customer-display-header"><LanguageSelector id="customer-display-language" compact/>
-      <div className="customer-brand"><img src={businessLogo(catalog.logo_url)} alt={tr("Business logo")}/><div><strong>{catalog.shop_name}</strong><small>{catalog.catalogue_title||tr('Catalogue')}{catalog.catalogue_subtitle?` • ${catalog.catalogue_subtitle}`:' • '+tr('Browse products and send your selection to the counter')}</small></div></div>
+      <div className="customer-brand"><BrandLogo logoUrl={catalog.logo_url} businessName={catalog.shop_name}/><div><strong>{catalog.shop_name}</strong><small>{catalog.catalogue_title||tr('Catalogue')}{catalog.catalogue_subtitle?` • ${catalog.catalogue_subtitle}`:' • '+tr('Browse products and send your selection to the counter')}</small></div></div>
       <div className="customer-cart-count"><ShoppingCart size={20}/><span>{itemCount}</span></div>
     </header>
     {confirmation&&<div className="customer-confirmation"><CheckCircle2 size={28}/><div><strong>{tr("Selection #")}{String(confirmation.number).padStart(4,'0')}{' '+tr("sent")}</strong><span>{confirmation.target}{' '+tr("• Status:")+' '} <strong>{({pending:'Received',loaded:'Received',preparing:'Preparing',ready:'Ready',completed:'Completed',dismissed:'Cancelled',cancelled:'Cancelled'} as Record<string,string>)[confirmation.status]??confirmation.status}</strong>{tr(". The cashier confirms availability and payment.")}</span></div><Button type="submit" variant="secondary" data-back-close="true" onClick={()=>setConfirmation(null)}><X size={17}/></Button></div>}

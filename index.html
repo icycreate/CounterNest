@@ -20,7 +20,9 @@
         } else catalogueManifest.remove();
       }
     </script>
-    <link rel="preload" href="/counternest-default-logo.svg" as="image" type="image/svg+xml" />
+    <link rel="preload" href="/counternest-logo-full-transparent.svg" as="image" type="image/svg+xml" />
+    <link rel="preload" href="/counternest-logo-light.svg" as="image" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/svg+xml" href="/counternest-favicon.svg" />
     <link rel="stylesheet" href="/boot-screen.css" />
     <script>
       window.__counterNestBootStarted = Date.now();
@@ -54,11 +56,10 @@
       }, 4000);
     </script>
     <link rel="apple-touch-icon" href="/pwa/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" href="/pwa/favicon-64.png" />
     <title>CounterNest POS</title>
   </head>
   <body>
-    <div id="boot-root"><section class="cn-boot" data-phase="waiting" aria-label="CounterNest" style="--boot-elapsed:0ms"><div class="cn-boot-content"><div class="cn-boot-art" aria-hidden="true"><svg class="cn-boot-rings" viewBox="0 0 260 260" fill="none"><circle class="cn-boot-ring cn-boot-ring-a" cx="130" cy="130" r="108" pathLength="100"></circle><circle class="cn-boot-ring cn-boot-ring-b" cx="130" cy="130" r="94" pathLength="100"></circle><path class="cn-boot-nest" d="M54 188 Q130 232 206 188 M67 200 Q130 232 193 200"></path></svg><img class="cn-boot-logo cn-boot-logo-light" src="/counternest-default-logo.svg" width="128" height="128" alt=""/><img class="cn-boot-logo cn-boot-logo-dark" src="/counternest-boot-logo-dark.svg" width="128" height="128" alt=""/><svg class="cn-boot-detail cn-boot-bread" viewBox="0 0 40 40" fill="none"><path d="M8 30V18c-5-8 5-15 12-10 7-5 17 2 12 10v12Z M14 17v7 M20 15v9 M26 17v7"></path></svg><svg class="cn-boot-detail cn-boot-cup" viewBox="0 0 40 40" fill="none"><path d="M8 15h21v10c0 10-21 10-21 0Z M29 17h3c8 0 5 11-3 10 M7 35h25 M16 10c-5-3 4-5 0-9 M23 10c-5-3 4-5 0-9"></path></svg><svg class="cn-boot-detail cn-boot-wheat" viewBox="0 0 40 40" fill="none"><path d="m10 35 18-27 M17 25c-10 2-12-4-10-9 7 0 10 3 10 9Zm5-8c-8 0-10-5-7-9 6 1 8 3 7 9Zm1 8c8 1 11-4 10-8-6-1-9 2-10 8Z M28 13c-3-5 0-10 5-11 3 6 1 9-5 11Z"></path></svg></div><p class="cn-boot-name">CounterNest</p><p class="cn-boot-tagline">Sweet business.<br/>Simpler days.</p><p class="cn-boot-status" role="status" aria-live="polite">Loading your workspace…</p><div class="cn-boot-track" aria-hidden="true"><span></span></div></div></section></div>
+    <div id="boot-root"><section class="cn-boot" data-phase="waiting" aria-label="CounterNest" style="--boot-elapsed:0ms"><div class="cn-boot-content"><div class="cn-boot-art" aria-hidden="true"><svg class="cn-boot-rings" viewBox="0 0 260 260" fill="none"><circle class="cn-boot-ring cn-boot-ring-a" cx="130" cy="130" r="108" pathLength="100"></circle><circle class="cn-boot-ring cn-boot-ring-b" cx="130" cy="130" r="94" pathLength="100"></circle><path class="cn-boot-nest" d="M54 188 Q130 232 206 188 M67 200 Q130 232 193 200"></path></svg><img class="cn-boot-logo cn-boot-logo-light" src="/counternest-logo-full-transparent.svg" width="128" height="128" alt=""/><img class="cn-boot-logo cn-boot-logo-dark" src="/counternest-logo-light.svg" width="128" height="128" alt=""/><svg class="cn-boot-detail cn-boot-bread" viewBox="0 0 40 40" fill="none"><path d="M8 30V18c-5-8 5-15 12-10 7-5 17 2 12 10v12Z M14 17v7 M20 15v9 M26 17v7"></path></svg><svg class="cn-boot-detail cn-boot-cup" viewBox="0 0 40 40" fill="none"><path d="M8 15h21v10c0 10-21 10-21 0Z M29 17h3c8 0 5 11-3 10 M7 35h25 M16 10c-5-3 4-5 0-9 M23 10c-5-3 4-5 0-9"></path></svg><svg class="cn-boot-detail cn-boot-wheat" viewBox="0 0 40 40" fill="none"><path d="m10 35 18-27 M17 25c-10 2-12-4-10-9 7 0 10 3 10 9Zm5-8c-8 0-10-5-7-9 6 1 8 3 7 9Zm1 8c8 1 11-4 10-8-6-1-9 2-10 8Z M28 13c-3-5 0-10 5-11 3 6 1 9-5 11Z"></path></svg></div><p class="cn-boot-tagline">Sweet business.<br/>Simpler days.</p><p class="cn-boot-status" role="status" aria-live="polite">Loading your workspace…</p><div class="cn-boot-track" aria-hidden="true"><span></span></div></div></section></div>
     <div id="root" inert aria-hidden="true"></div>
     <noscript><style>#boot-root{display:none}</style><p>CounterNest requires JavaScript. Enable JavaScript and reload.</p></noscript>
     <script type="module" src="/src/main.tsx"></script>

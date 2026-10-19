@@ -1,3 +1,5 @@
+> RC14 current release: 2.0.0-rc.14, 2026-10-18-blended-branding. No additional SQL when upgrading RC13; all 94 migrations are unchanged. Use INSTALL_UPGRADE_GUIDE.md, BRANDING_IMPLEMENTATION.md and BUILD_VALIDATION.json for current scope. Earlier release-specific notes below remain historical.
+
 > RC13 current release: 2.0.0-rc.13, build 2026-10-18-accessibility. Upgrading RC12 requires no additional SQL; all 94 migrations are unchanged. Use INSTALL_UPGRADE_GUIDE.md, ACCESSIBILITY_AUDIT.md and BUILD_VALIDATION.json for current scope. Earlier release-specific passages below are historical context.
 
 # Supabase migration order
@@ -98,4 +100,5 @@ RC11 upgrades apply only migrations 93 and 94, in order, before the RC12 fronten
 92. 202610181200_customer_experience_notifications.sql
 93. 202610181600_ingredient_measurement_units.sql
 94. 202610181700_gallery_catalogue_appearance.sql
+
 

@@ -1,3 +1,5 @@
+> RC14 current release: 2.0.0-rc.14, 2026-10-18-blended-branding. No additional SQL when upgrading RC13; all 94 migrations are unchanged. Use INSTALL_UPGRADE_GUIDE.md, BRANDING_IMPLEMENTATION.md and BUILD_VALIDATION.json for current scope. Earlier release-specific notes below remain historical.
+
 > RC13 current release: 2.0.0-rc.13, build 2026-10-18-accessibility. Upgrading RC12 requires no additional SQL; all 94 migrations are unchanged. Use INSTALL_UPGRADE_GUIDE.md, ACCESSIBILITY_AUDIT.md and BUILD_VALIDATION.json for current scope. Earlier release-specific passages below are historical context.
 
 > RC11 update: apply migration 92 after RC10. See INSTALL_UPGRADE_GUIDE.md and NOTIFICATION_SETUP.md for current deployment variables, webhook and retry setup. The detailed base deployment guidance below remains applicable.
@@ -13,4 +15,5 @@ Review workspace_owners backfill before production. Leave WORKSPACE_PURGE_ENABLE
 The in-app backup limit is48MB uncompressed. Rehearse realistic database/file sizes against the target Edge memory/response limits and retain Supabase platform backups for larger estates. Supported uploads include product-images, shop-logos, catalogue-media, special-order-references, ingredient-packages, recipe-steps and supply-imports; external URLs and Auth accounts are excluded.
 
 Local tests use PGlite with mocked Auth/Storage/PIN crypt and mocked Edge services. They do not deploy migrations or prove live Auth/Storage/Realtime/gateway delivery. Validate actual redirects, Storage upload/download, Realtime publication, five Edge functions and recovery before launch.
+
 

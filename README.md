@@ -1,15 +1,15 @@
-# CounterNest POS — Readability RC13
+# CounterNest POS — Blended Branding RC14
 
-Version 2.0.0-rc.13 · 2026-10-18 · continues actual Units and Catalogue RC12 source.
+2.0.0-rc.14 · 2026-10-18 · continues completed Readability RC13.
 
 Browser/Web Application → GitHub → Vercel → Supabase Cloud.
 
-RC13 centralizes measured foreground/background pairs and enforces the shared Button paint contract. Remove, Delete, Archive, Decline, Clear, Reset and Void actions keep a strong red identity; disabled and loading labels remain opaque and readable. Cards, prices, fields, table rows, statuses, report panels, receipt toolbars and customer preorder steps use theme-safe colors. Staff Catalogue now initializes authentication and theme normally; token-bearing customer links remain public.
+RC14 replaces opaque bitmap-in-SVG fallback artwork with transparent vector paths traced from the approved CounterNest identity. A shared BrandLogo component keeps the full lockup in larger areas and the nest icon in compact areas, contains uploaded logos, selects platform ink for the containing surface, and recovers when a business logo fails or is removed.
 
-Use Node 22.12+ or 24, npm install, npm run build, npm test and npm run test:assets. Vercel builds with npm run build and serves dist. Configure the public variables documented in .env.example; service-role credentials remain server-only.
+Run npm install, npm run build, npm test and npm run test:assets using Node 22.12+ or 24. The asset pipeline is reproducible with npm run brand:assets; sharp is a development-only dependency. Production uses Vite normally, build output dist. Configure only documented public Supabase variables in Vercel; keep private credentials server-only.
 
-RC12 upgrades need no SQL changes. All 94 migrations are byte-identical to RC12; fresh projects use SUPABASE_MIGRATION_ORDER.md. The approved full logo and icon assets are preserved.
+No new SQL is needed when upgrading RC13. All 94 migrations remain unchanged. Fresh projects apply SUPABASE_MIGRATION_ORDER.md.
 
-Read ACCESSIBILITY_AUDIT.md, UI_REGRESSION_CHECKLIST.md, UAT_ACCEPTANCE_CHECKLIST.md, BUILD_VALIDATION_REPORT.md, KNOWN_ISSUES.md and SCREENSHOT_EVIDENCE.md. Existing unit/gallery and deployment guides remain applicable. This is a locally validated source candidate, not a cloud deployment.
+Read BRANDING_IMPLEMENTATION.md, RELEASE_NOTES.md, BUILD_VALIDATION_REPORT.md, UAT_ACCEPTANCE_CHECKLIST.md, SCREENSHOT_EVIDENCE.md and KNOWN_ISSUES.md. This package is a local release candidate. It has not been pushed or deployed to a cloud project.
 
-Sample adapters under docs/qa and fixture entries under qa are isolated from the production entry point. Never use the sample QA configuration to deploy production.
+The qa folder and docs/qa adapters are isolated sample fixtures, excluded from the normal production entry point. Use them only for local visual review.

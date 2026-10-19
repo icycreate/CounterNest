@@ -1,31 +1,22 @@
-# RC13 screenshot evidence
+# RC14 branding screenshot evidence
 
-Current captures use actual production components with a local sample-data Supabase adapter, plus an explicitly labeled shared-state regression fixture. No live records or external transactions are shown. Viewport captures show the visible region; long forms continue below the fold.
+15 viewport captures from actual production components with an isolated local sample-data adapter. Boot uses the actual BootSplash component held at its settled animation time by a QA-only clock. Login and Sign Up are the actual authentication page; no account was submitted. Desktop 1280px, phone 390px and tablet 768px were reviewed. Mobile captures show responsive/PWA-compatible page layout, not a physical installed PWA. Receipt captures show the actual preview, not a physical print result.
 
-- [RC13-accent-2367ac.jpg](docs/accessibility/RC13-accent-2367ac.jpg)
-- [RC13-accent-ffff00.jpg](docs/accessibility/RC13-accent-ffff00.jpg)
-- [RC13-buttons-dark.jpg](docs/accessibility/RC13-buttons-dark.jpg)
-- [RC13-buttons-light.jpg](docs/accessibility/RC13-buttons-light.jpg)
-- [RC13-buttons-system.jpg](docs/accessibility/RC13-buttons-system.jpg)
-- [RC13-custom-cake-dark.jpg](docs/accessibility/RC13-custom-cake-dark.jpg)
-- [RC13-customer-catalogue-dark.jpg](docs/accessibility/RC13-customer-catalogue-dark.jpg)
-- [RC13-customer-phone-light.jpg](docs/accessibility/RC13-customer-phone-light.jpg)
-- [RC13-customers-dark.jpg](docs/accessibility/RC13-customers-dark.jpg)
-- [RC13-customers-light.jpg](docs/accessibility/RC13-customers-light.jpg)
-- [RC13-notifications-dark.jpg](docs/accessibility/RC13-notifications-dark.jpg)
-- [RC13-phone-en.jpg](docs/accessibility/RC13-phone-en.jpg)
-- [RC13-phone-es.jpg](docs/accessibility/RC13-phone-es.jpg)
-- [RC13-phone-zh-CN.jpg](docs/accessibility/RC13-phone-zh-CN.jpg)
-- [RC13-phone-zh-TW.jpg](docs/accessibility/RC13-phone-zh-TW.jpg)
-- [RC13-preorder-dark.jpg](docs/accessibility/RC13-preorder-dark.jpg)
-- [RC13-products-dark.jpg](docs/accessibility/RC13-products-dark.jpg)
-- [RC13-products-light.jpg](docs/accessibility/RC13-products-light.jpg)
-- [RC13-purchase-order-editor-light.jpg](docs/accessibility/RC13-purchase-order-editor-light.jpg)
-- [RC13-receipt-dark.jpg](docs/accessibility/RC13-receipt-dark.jpg)
-- [RC13-receiving-dialog-dark.jpg](docs/accessibility/RC13-receiving-dialog-dark.jpg)
-- [RC13-tablet-es.jpg](docs/accessibility/RC13-tablet-es.jpg)
+- [admin-catalogue-dark.jpg](docs/branding/admin-catalogue-dark.jpg)
+- [boot-dark.jpg](docs/branding/boot-dark.jpg)
+- [boot-light.jpg](docs/branding/boot-light.jpg)
+- [catalogue-dark.jpg](docs/branding/catalogue-dark.jpg)
+- [catalogue-light.jpg](docs/branding/catalogue-light.jpg)
+- [dashboard-dark.jpg](docs/branding/dashboard-dark.jpg)
+- [dashboard-light.jpg](docs/branding/dashboard-light.jpg)
+- [login.jpg](docs/branding/login.jpg)
+- [mobile-catalogue.jpg](docs/branding/mobile-catalogue.jpg)
+- [mobile-header-dark.jpg](docs/branding/mobile-header-dark.jpg)
+- [receipt-dark.jpg](docs/branding/receipt-dark.jpg)
+- [reports-dark.jpg](docs/branding/reports-dark.jpg)
+- [signup.jpg](docs/branding/signup.jpg)
+- [tablet-header-dark.jpg](docs/branding/tablet-header-dark.jpg)
+- [variants-dark.jpg](docs/branding/variants-dark.jpg)
 
-Modify/Remove, destructive, disabled and loading: RC13-buttons-light/dark/system. Alternate accents: RC13-accent-*. Product and Customer screens: RC13-products-*/RC13-customers-*. PO and Stock Receiving: editor/dialog captures. Customer-facing: catalogue, phone, preorder. Four languages and tablet: phone-*/tablet-es. Other copied screenshots belong to earlier releases.
-
-Local scenario results and limitations: ACCESSIBILITY_AUDIT.md.
+Geometry evidence: docs/branding/BROWSER_BRANDING_RESULTS.json records 18 scenarios and 34 visible logo measurements. All recorded logos loaded, used contain with no clip, had transparent image backgrounds and no document overflow. Uploaded example artwork intentionally keeps its own teal background/colors. Earlier release screenshot directories remain historical.
 

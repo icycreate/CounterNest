@@ -1,3 +1,5 @@
+> Historical RC13 readability audit retained with RC14. Current branding validation is in BRANDING_IMPLEMENTATION.md and docs/branding.
+
 # RC13 accessibility and readability audit
 
 2026-10-18 · local release candidate
@@ -27,3 +29,4 @@ Run npm install, npm run test:accessibility, npm run build and npm test. For loc
 ## Limits
 
 This is a readability correction audit, not certification of full WCAG conformance. Local fixtures include representative records and empty states; they do not exhaust every permission/data combination. Native OS date pickers, physical iPhone/Android/tablet rendering, installed-PWA chrome, live cloud sessions, custom photographic backgrounds, browser forced-colors and screen-reader task acceptance remain on the UAT checklist. User-supplied images cannot be exhaustively proved by token math; inspect branding/backgrounds after customization.
+

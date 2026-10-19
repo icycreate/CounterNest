@@ -1,3 +1,5 @@
+> Historical RC13 readability audit retained with RC14. Current branding validation is in BRANDING_IMPLEMENTATION.md and docs/branding.
+
 # RC13 UI regression checklist
 
 - [x] All eight shared variants retain readable native, hover, focus, active, selected, disabled and loading labels.
@@ -13,3 +15,4 @@
 - [ ] Target Vercel/Supabase session and permission-specific data review.
 
 Detailed local evidence: ACCESSIBILITY_AUDIT.md and docs/accessibility/BROWSER_READABILITY_RESULTS.json. Historical checklists from earlier releases remain historical.
+

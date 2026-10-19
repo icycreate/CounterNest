@@ -1,16 +1,17 @@
 {
   "product": "CounterNest POS",
-  "version": "2.0.0-rc.13",
-  "build": "2026-10-18-accessibility",
+  "version": "2.0.0-rc.14",
+  "build": "2026-10-18-blended-branding",
   "date": "2026-10-18",
-  "result": "Local candidate validation passed; cloud and physical PWA acceptance pending",
+  "result": "Local source candidate passed; target cloud, physical PWA and printer/PDF-destination acceptance pending",
   "dependency_install": {
-    "command": "npm install",
+    "command": "npm install --save-dev sharp",
     "status": "passed",
-    "packages_added": 140,
-    "packages_audited": 141,
+    "packages_added": 145,
+    "packages_audited": 146,
     "audit_vulnerabilities": 0,
-    "new_runtime_dependencies": 0
+    "new_runtime_dependencies": 0,
+    "development_dependency_added": "sharp"
   },
   "checks": [
     {
@@ -29,18 +30,43 @@
       "status": "passed"
     }
   ],
+  "final_followup_checks": [
+    {
+      "command": "npm run build",
+      "status": "passed"
+    },
+    {
+      "command": "npm run test:branding",
+      "status": "passed"
+    },
+    {
+      "command": "npm run test:rc4",
+      "status": "passed"
+    },
+    {
+      "command": "npm run test:assets",
+      "status": "passed"
+    }
+  ],
   "database_checks": 145,
   "migrations": 94,
-  "unchanged_migrations_from_rc12": 94,
-  "unchanged_public_image_assets": 10,
-  "palette_pair_measurements": 126976,
-  "browser_scenarios": 70,
-  "rendered_text_measurements": 5489,
-  "recorded_browser_failures": 0,
+  "unchanged_from_rc13": 94,
+  "branding_checks": 7,
+  "browser_scenarios": 18,
+  "visible_logo_measurements": 34,
+  "current_screenshots": 15,
   "production_preview_routes": 51,
+  "exclusions": [
+    ".env",
+    ".env.local",
+    "node_modules",
+    "dist",
+    ".git",
+    "desktop/native installers"
+  ],
   "limitations": [
-    "No GitHub push, Vercel deployment or live Supabase changes performed",
-    "Physical iPhone/Android/tablet and installed PWA acceptance pending",
-    "Local fixture and contrast audit does not certify full WCAG conformance"
+    "No remote deployment was performed",
+    "Physical devices and native print/PDF destinations pending",
+    "Earlier release accessibility/browser results remain historical scope"
   ]
 }

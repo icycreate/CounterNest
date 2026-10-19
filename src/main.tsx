@@ -45,4 +45,5 @@ import './systemStyle.css'
 
 import './release12.css'
 
+import './branding.css'
 import './accessibility.css'

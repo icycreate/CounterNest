@@ -1,15 +1,15 @@
-# CounterNest POS — Units and Catalogue RC12
+# CounterNest POS — Readability RC13
 
-Version 2.0.0-rc.12 · 2026-10-18. Continues the actual Customer Experience RC11 source.
+Version 2.0.0-rc.13 · 2026-10-18 · continues actual Units and Catalogue RC12 source.
 
 Browser/Web Application → GitHub → Vercel → Supabase Cloud.
 
-RC12 adds a workspace unit registry, explicit base/purchase/recipe units, order and receipt source snapshots, normalized recipe quantities, a canonical product gallery, catalogue header/background decoration controls, stronger semantic contrast and the complete approved logo in medium/large areas. Compact marks and PWA icons use dedicated icon artwork.
+RC13 centralizes measured foreground/background pairs and enforces the shared Button paint contract. Remove, Delete, Archive, Decline, Clear, Reset and Void actions keep a strong red identity; disabled and loading labels remain opaque and readable. Cards, prices, fields, table rows, statuses, report panels, receipt toolbars and customer preorder steps use theme-safe colors. Staff Catalogue now initializes authentication and theme normally; token-bearing customer links remain public.
 
-Apply only migrations 93 and 94 when upgrading RC11. All original 92 files are unchanged. Fresh projects apply all 94 migrations in SUPABASE_MIGRATION_ORDER.md. No production deployment or cloud data changes are performed by this source package.
+Use Node 22.12+ or 24, npm install, npm run build, npm test and npm run test:assets. Vercel builds with npm run build and serves dist. Configure the public variables documented in .env.example; service-role credentials remain server-only.
 
-Use npm install, npm run build, npm test and npm run test:assets. Vercel uses npm run build with output dist. Use Node 22.12+ or 24, as specified in package.json. Copy .env.example into a private local environment or set the documented public variables in Vercel; never commit secret files. Supabase service-role credentials stay on server-only endpoints.
+RC12 upgrades need no SQL changes. All 94 migrations are byte-identical to RC12; fresh projects use SUPABASE_MIGRATION_ORDER.md. The approved full logo and icon assets are preserved.
 
-Read INSTALL_UPGRADE_GUIDE.md, UNIT_CONVERSION_GUIDE.md, PRODUCT_GALLERY_GUIDE.md, CATALOGUE_APPEARANCE_GUIDE.md, UAT_ACCEPTANCE_CHECKLIST.md, BUILD_VALIDATION.json and KNOWN_ISSUES.md. Existing Calendar, notifications, contacts, four-language system UI, Back handling and business-name preservation remain in place.
+Read ACCESSIBILITY_AUDIT.md, UI_REGRESSION_CHECKLIST.md, UAT_ACCEPTANCE_CHECKLIST.md, BUILD_VALIDATION_REPORT.md, KNOWN_ISSUES.md and SCREENSHOT_EVIDENCE.md. Existing unit/gallery and deployment guides remain applicable. This is a locally validated source candidate, not a cloud deployment.
 
-The qa/ folder contains isolated sample-data component fixtures used only with the external local QA configuration. They are not connected to production or referenced by the production entry point. Screenshots under docs/screenshots are explicitly sample-data verification evidence, not live business records.
+Sample adapters under docs/qa and fixture entries under qa are isolated from the production entry point. Never use the sample QA configuration to deploy production.

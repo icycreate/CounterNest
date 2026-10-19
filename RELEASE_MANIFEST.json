@@ -1,21 +1,18 @@
 {
-  "version": "2.0.0-rc.12",
-  "baseline_version": "Customer Experience RC11",
-  "baseline_migration_count": 92,
+  "version": "2.0.0-rc.13",
+  "baseline_version": "Units and Catalogue RC12",
+  "baseline_migration_count": 94,
   "migration_count": 94,
-  "upgrade_migrations": [
-    "202610181600_ingredient_measurement_units.sql",
-    "202610181700_gallery_catalogue_appearance.sql"
-  ],
-  "name": "CounterNest POS Units and Catalogue RC12",
-  "build": "2026-10-18-units-gallery",
+  "upgrade_migrations": [],
+  "name": "CounterNest POS Readability RC13",
+  "build": "2026-10-18-accessibility",
   "product": "CounterNest POS",
   "release_type": "browser-release-candidate",
   "backend": "Supabase Cloud",
   "desktop_installer": false,
   "features": [
     {
-      "title": "Workspace measurement units, normalized purchasing/recipes, canonical gallery, decorative catalogue controls, semantic contrast and full approved lockup"
+      "title": "Central readable palette, all shared action variants, component paint contract, theme-safe cards/fields/tables/statuses and audited major module surfaces"
     }
   ],
   "validation": "BUILD_VALIDATION.json",

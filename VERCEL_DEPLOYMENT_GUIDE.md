@@ -1,3 +1,5 @@
+> RC13 current release: 2.0.0-rc.13, build 2026-10-18-accessibility. Upgrading RC12 requires no additional SQL; all 94 migrations are unchanged. Use INSTALL_UPGRADE_GUIDE.md, ACCESSIBILITY_AUDIT.md and BUILD_VALIDATION.json for current scope. Earlier release-specific passages below are historical context.
+
 > RC11 update: apply migration 92 after RC10. See INSTALL_UPGRADE_GUIDE.md and NOTIFICATION_SETUP.md for current deployment variables, webhook and retry setup. The detailed base deployment guidance below remains applicable.
 
 # Vercel RC5 deployment
@@ -11,3 +13,4 @@ Apply pending SQL84–87 and deploy workspace-lifecycle to Supabase first. Verif
 Local static preview exercises built routes/assets; Vercel function routing and real native installation require deployed HTTPS testing. No live deployment was performed.
 
 Deploy the new workspace-lifecycle function and redeploy create-staff-account and reset-staff-password for owner-account protections after applying SQL84–87.
+

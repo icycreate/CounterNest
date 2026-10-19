@@ -1,7 +1,11 @@
-# RC12 release notes · 2026-10-18
+# CounterNest RC13 release notes
 
-Implemented from Customer Experience RC11. Adds ten scientific units, workspace custom units, explicit ingredient purchase/recipe profiles, package-size PO previews, immutable source snapshots in purchasing/receiving, recipe source history, legacy-unit review, canonical photo galleries, custom decorative catalogue headers/backgrounds and contained approved branding.
+2026-10-18 · 2.0.0-rc.13
 
-Semantic action/disabled colors now retain readable foregrounds. Accent foregrounds choose true white or black to cover bright red as well as the standard palette. Danger actions use a dark red surface with white text. Buttons/icons inherit currentColor. Shared rounded fields continue through the unit editors. All new system labels support English, Spanish, Traditional Chinese and Simplified Chinese; business values remain literal.
+RC13 centralizes measured foreground/background pairs and enforces the shared Button paint contract. Remove, Delete, Archive, Decline, Clear, Reset and Void actions keep a strong red identity; disabled and loading labels remain opaque and readable. Cards, prices, fields, table rows, statuses, report panels, receipt toolbars and customer preorder steps use theme-safe colors. Staff Catalogue now initializes authentication and theme normally; token-bearing customer links remain public.
 
-Only two new migrations follow the unchanged original 92. Local validation evidence is in BUILD_VALIDATION.json, FINAL_CHECK_RESULTS.json, DATABASE_TEST_RESULTS.json and docs/validation. Sample-data screen evidence is under docs/screenshots. Live deployment, real storage/Edge networking and physical installed-device acceptance remain pending; see KNOWN_ISSUES.md.
+The eight shared variants support size, icons, loading, disabled, focus, hover, active and selected states. Icons inherit currentColor. Accent foregrounds are calculated from contrast rather than brightness guesses. Paint transitions no longer temporarily produce white text on a white button. Destructive actions retain red even when selected. Digital membership cards use a solid chosen color so their computed foreground stays valid across the card.
+
+Readability changes preserve quantity conversion, gallery ordering, customer business names, four language support, contained full logos and the browser/cloud architecture. There are no new runtime dependencies and no SQL upgrades from RC12.
+
+Validation covers 70 local browser scenarios with 5489 rendered text measurements, 126976 automated palette pair measurements, the full established test suite and production build. See the reports for scope and pending live/device acceptance.

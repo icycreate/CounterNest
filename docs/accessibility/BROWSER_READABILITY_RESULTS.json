@@ -1,0 +1,992 @@
+{
+  "version": "2.0.0-rc.13",
+  "environment": "Local browser with sample Supabase adapter; actual production components, not live data",
+  "scenarios": 70,
+  "textMeasurements": 5489,
+  "results": [
+    {
+      "route": "dashboard",
+      "mode": "light",
+      "headings": [
+        "- heading [level=3]: Operational alerts",
+        "- heading [level=2]: Sales & Activity",
+        "- heading [level=2]: Recent Sales",
+        "- heading [level=2]: Low Stock Alerts"
+      ],
+      "runtimeError": false,
+      "appearance": "light",
+      "checked": 69,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "route": "sale",
+      "mode": "light",
+      "headings": [
+        "- heading [level=2]: Chocolate Cake",
+        "- heading [level=2]: Butter Croissant",
+        "- heading [level=2]: Combos & bundles",
+        "- heading [level=2]: Cart (0)"
+      ],
+      "runtimeError": false,
+      "appearance": "light",
+      "checked": 82,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "route": "products",
+      "mode": "light",
+      "headings": [
+        "- heading [level=1]: Products"
+      ],
+      "runtimeError": false,
+      "appearance": "light",
+      "checked": 74,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "route": "customers",
+      "mode": "light",
+      "headings": [
+        "- heading [level=1]: Customers",
+        "- heading [level=3]: Demo Customer"
+      ],
+      "runtimeError": false,
+      "appearance": "light",
+      "checked": 49,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "route": "purchasing",
+      "mode": "light",
+      "headings": [
+        "- heading [level=1]: Purchase Items"
+      ],
+      "runtimeError": false,
+      "appearance": "light",
+      "checked": 53,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "route": "receiving",
+      "mode": "light",
+      "headings": [
+        "- heading [level=1]: Stock Receiving"
+      ],
+      "runtimeError": false,
+      "appearance": "light",
+      "checked": 40,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "route": "loyalty",
+      "mode": "light",
+      "headings": [
+        "- heading [level=2]: Stamp Earning Rule",
+        "- heading [level=2]: Rewards",
+        "- heading [level=2]: Loyalty Members",
+        "- heading [level=2]: Enrollment"
+      ],
+      "runtimeError": false,
+      "appearance": "light",
+      "checked": 69,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "route": "cards",
+      "mode": "light",
+      "headings": [
+        "- heading [level=2]: Feng’s Lotus & Flour",
+        "- heading [level=2]: Card Appearance",
+        "- heading [level=2]: Print Card",
+        "- heading [level=2]: Demo Customer"
+      ],
+      "runtimeError": false,
+      "appearance": "light",
+      "checked": 72,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "route": "scheduled-orders",
+      "mode": "light",
+      "headings": [
+        "- heading [level=1]: Catalogue Pre-Order Requests",
+        "- heading [level=2]: \"#1042 · Demo Customer\"",
+        "- heading [level=3]: Pre-Order Request Summary"
+      ],
+      "runtimeError": false,
+      "appearance": "light",
+      "checked": 55,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "route": "calendar",
+      "mode": "light",
+      "headings": [
+        "- heading [level=1]:",
+        "- heading [level=2]:",
+        "- heading [level=2]: Today",
+        "- heading [level=2]:"
+      ],
+      "runtimeError": false,
+      "appearance": "light",
+      "checked": 73,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "route": "production",
+      "mode": "light",
+      "headings": [
+        "- heading [level=1]: Bakery Production"
+      ],
+      "runtimeError": false,
+      "appearance": "light",
+      "checked": 55,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "route": "inventory",
+      "mode": "light",
+      "headings": [
+        "- heading [level=1]: Inventory"
+      ],
+      "runtimeError": false,
+      "appearance": "light",
+      "checked": 56,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "route": "dashboard",
+      "mode": "dark",
+      "headings": [
+        "- heading [level=3]: Operational alerts",
+        "- heading [level=2]: Sales & Activity",
+        "- heading [level=2]: Recent Sales",
+        "- heading [level=2]: Low Stock Alerts"
+      ],
+      "runtimeError": false,
+      "appearance": "dark",
+      "checked": 124,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "route": "sale",
+      "mode": "dark",
+      "headings": [
+        "- heading [level=2]: Chocolate Cake",
+        "- heading [level=2]: Butter Croissant",
+        "- heading [level=2]: Combos & bundles",
+        "- heading [level=2]: Cart (0)"
+      ],
+      "runtimeError": false,
+      "appearance": "dark",
+      "checked": 82,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "route": "products",
+      "mode": "dark",
+      "headings": [
+        "- heading [level=1]: Products"
+      ],
+      "runtimeError": false,
+      "appearance": "dark",
+      "checked": 74,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "route": "customers",
+      "mode": "dark",
+      "headings": [
+        "- heading [level=1]: Customers",
+        "- heading [level=3]: Demo Customer"
+      ],
+      "runtimeError": false,
+      "appearance": "dark",
+      "checked": 49,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "route": "purchasing",
+      "mode": "dark",
+      "headings": [
+        "- heading [level=1]: Purchase Items"
+      ],
+      "runtimeError": false,
+      "appearance": "dark",
+      "checked": 53,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "route": "receiving",
+      "mode": "dark",
+      "headings": [
+        "- heading [level=1]: Stock Receiving"
+      ],
+      "runtimeError": false,
+      "appearance": "dark",
+      "checked": 40,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "route": "loyalty",
+      "mode": "dark",
+      "headings": [
+        "- heading [level=2]: Stamp Earning Rule",
+        "- heading [level=2]: Rewards",
+        "- heading [level=2]: Loyalty Members",
+        "- heading [level=2]: Enrollment"
+      ],
+      "runtimeError": false,
+      "appearance": "dark",
+      "checked": 69,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "route": "cards",
+      "mode": "dark",
+      "headings": [
+        "- heading [level=2]: Feng’s Lotus & Flour",
+        "- heading [level=2]: Card Appearance",
+        "- heading [level=2]: Print Card",
+        "- heading [level=2]: Demo Customer"
+      ],
+      "runtimeError": false,
+      "appearance": "dark",
+      "checked": 72,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "route": "scheduled-orders",
+      "mode": "dark",
+      "headings": [
+        "- heading [level=1]: Catalogue Pre-Order Requests",
+        "- heading [level=2]: \"#1042 · Demo Customer\"",
+        "- heading [level=3]: Pre-Order Request Summary"
+      ],
+      "runtimeError": false,
+      "appearance": "dark",
+      "checked": 55,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "route": "calendar",
+      "mode": "dark",
+      "headings": [
+        "- heading [level=1]:",
+        "- heading [level=2]:",
+        "- heading [level=2]: Today",
+        "- heading [level=2]:"
+      ],
+      "runtimeError": false,
+      "appearance": "dark",
+      "checked": 73,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "route": "production",
+      "mode": "dark",
+      "headings": [
+        "- heading [level=1]: Bakery Production"
+      ],
+      "runtimeError": false,
+      "appearance": "dark",
+      "checked": 55,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "route": "inventory",
+      "mode": "dark",
+      "headings": [
+        "- heading [level=1]: Inventory"
+      ],
+      "runtimeError": false,
+      "appearance": "dark",
+      "checked": 56,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "route": "recipes",
+      "mode": "light",
+      "headings": [
+        "- heading [level=1]: Recipes & Ingredients",
+        "- heading [level=2]: Ingredient Inventory"
+      ],
+      "runtimeError": false,
+      "appearance": "light",
+      "checked": 71,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "supply",
+      "mode": "light",
+      "headings": [
+        "- heading [level=1]: Supply Operations",
+        "- heading [level=2]: Suppliers",
+        "- heading [level=2]: Ordering Controls",
+        "- heading [level=2]: Ingredient Purchase Orders"
+      ],
+      "runtimeError": false,
+      "appearance": "light",
+      "checked": 99,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "cash-drawer",
+      "mode": "light",
+      "headings": [
+        "- heading [level=1]: Daily Cash",
+        "- heading [level=2]:",
+        "- heading [level=2]: Recent closed cash records"
+      ],
+      "runtimeError": false,
+      "appearance": "light",
+      "checked": 46,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "expenses",
+      "mode": "light",
+      "headings": [
+        "- heading [level=1]: Expenses"
+      ],
+      "runtimeError": false,
+      "appearance": "light",
+      "checked": 61,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "staff",
+      "mode": "light",
+      "headings": [
+        "- heading [level=2]: Create Staff Account",
+        "- heading [level=2]: Access Summary",
+        "- heading [level=2]: Staff Directory",
+        "- heading [level=2]: Permission Presets"
+      ],
+      "runtimeError": false,
+      "appearance": "light",
+      "checked": 61,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "audit",
+      "mode": "light",
+      "headings": [
+        "- heading [level=1]: Audit Log"
+      ],
+      "runtimeError": false,
+      "appearance": "light",
+      "checked": 61,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "backup",
+      "mode": "light",
+      "headings": [
+        "- heading [level=1]: Workspace",
+        "- heading [level=2]: New Business Setup Wizard"
+      ],
+      "runtimeError": false,
+      "appearance": "light",
+      "checked": 77,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "readiness",
+      "mode": "light",
+      "headings": [
+        "- heading [level=2]: Workspace Health",
+        "- heading [level=1]: Deployment / Readiness",
+        "- heading [level=2]: Deployment Procedure"
+      ],
+      "runtimeError": false,
+      "appearance": "light",
+      "checked": 87,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "profit",
+      "mode": "light",
+      "headings": [
+        "- heading [level=1]: Profitability",
+        "- heading [level=2]: Product Profitability"
+      ],
+      "runtimeError": false,
+      "appearance": "light",
+      "checked": 63,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "recipes",
+      "mode": "dark",
+      "headings": [
+        "- heading [level=1]: Recipes & Ingredients",
+        "- heading [level=2]: Ingredient Inventory"
+      ],
+      "runtimeError": false,
+      "appearance": "dark",
+      "checked": 71,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "supply",
+      "mode": "dark",
+      "headings": [
+        "- heading [level=1]: Supply Operations",
+        "- heading [level=2]: Suppliers",
+        "- heading [level=2]: Ordering Controls",
+        "- heading [level=2]: Ingredient Purchase Orders"
+      ],
+      "runtimeError": false,
+      "appearance": "dark",
+      "checked": 99,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "cash-drawer",
+      "mode": "dark",
+      "headings": [
+        "- heading [level=1]: Daily Cash",
+        "- heading [level=2]:",
+        "- heading [level=2]: Recent closed cash records"
+      ],
+      "runtimeError": false,
+      "appearance": "dark",
+      "checked": 46,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "expenses",
+      "mode": "dark",
+      "headings": [
+        "- heading [level=1]: Expenses"
+      ],
+      "runtimeError": false,
+      "appearance": "dark",
+      "checked": 61,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "staff",
+      "mode": "dark",
+      "headings": [
+        "- heading [level=2]: Create Staff Account",
+        "- heading [level=2]: Access Summary",
+        "- heading [level=2]: Staff Directory",
+        "- heading [level=2]: Permission Presets"
+      ],
+      "runtimeError": false,
+      "appearance": "dark",
+      "checked": 61,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "audit",
+      "mode": "dark",
+      "headings": [
+        "- heading [level=1]: Audit Log"
+      ],
+      "runtimeError": false,
+      "appearance": "dark",
+      "checked": 61,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "backup",
+      "mode": "dark",
+      "headings": [
+        "- heading [level=1]: Workspace",
+        "- heading [level=2]: New Business Setup Wizard"
+      ],
+      "runtimeError": false,
+      "appearance": "dark",
+      "checked": 77,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "readiness",
+      "mode": "dark",
+      "headings": [
+        "- heading [level=2]: Workspace Health",
+        "- heading [level=1]: Deployment / Readiness",
+        "- heading [level=2]: Deployment Procedure"
+      ],
+      "runtimeError": false,
+      "appearance": "dark",
+      "checked": 87,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "profit",
+      "mode": "dark",
+      "headings": [
+        "- heading [level=1]: Profitability",
+        "- heading [level=2]: Product Profitability"
+      ],
+      "runtimeError": false,
+      "appearance": "dark",
+      "checked": 63,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "settings",
+      "mode": "light",
+      "headings": [
+        "- heading [level=2]:",
+        "- heading [level=2]: System Language",
+        "- heading [level=2]: Your workspace",
+        "- heading [level=2]:"
+      ],
+      "runtimeError": false,
+      "appearance": "light",
+      "checked": 228,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "production-studio",
+      "mode": "light",
+      "headings": [
+        "- heading [level=1]: Production Studio",
+        "- heading [level=2]: Ingredient Conversion & Yield Engine",
+        "- heading [level=3]: Outputs",
+        "- heading [level=2]: Active conversion rules"
+      ],
+      "runtimeError": false,
+      "appearance": "light",
+      "checked": 65,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "reports",
+      "mode": "light",
+      "headings": [
+        "- heading [level=2]: Payment Breakdown",
+        "- heading [level=2]: Daily Cash Reconciliation",
+        "- heading [level=2]: Drawer Shift History",
+        "- heading [level=2]: Inventory Context"
+      ],
+      "runtimeError": false,
+      "appearance": "light",
+      "checked": 74,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "catalogue",
+      "mode": "light",
+      "headings": [
+        "- heading [level=1]: Catalogue",
+        "- heading [level=2]: Chocolate Cake",
+        "- heading [level=2]: Butter Croissant"
+      ],
+      "runtimeError": false,
+      "appearance": "light",
+      "checked": 78,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "settings",
+      "mode": "dark",
+      "headings": [
+        "- heading [level=2]:",
+        "- heading [level=2]: System Language",
+        "- heading [level=2]: Your workspace",
+        "- heading [level=2]:"
+      ],
+      "runtimeError": false,
+      "appearance": "dark",
+      "checked": 228,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "production-studio",
+      "mode": "dark",
+      "headings": [
+        "- heading [level=1]: Production Studio",
+        "- heading [level=2]: Ingredient Conversion & Yield Engine",
+        "- heading [level=3]: Outputs",
+        "- heading [level=2]: Active conversion rules"
+      ],
+      "runtimeError": false,
+      "appearance": "dark",
+      "checked": 65,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "reports",
+      "mode": "dark",
+      "headings": [
+        "- heading [level=2]: Payment Breakdown",
+        "- heading [level=2]: Daily Cash Reconciliation",
+        "- heading [level=2]: Drawer Shift History",
+        "- heading [level=2]: Inventory Context"
+      ],
+      "runtimeError": false,
+      "appearance": "dark",
+      "checked": 74,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "catalogue",
+      "mode": "dark",
+      "headings": [
+        "- heading [level=1]: Catalogue",
+        "- heading [level=2]: Chocolate Cake",
+        "- heading [level=2]: Butter Croissant"
+      ],
+      "runtimeError": false,
+      "appearance": "dark",
+      "checked": 78,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "receiving-dialog",
+      "mode": "dark",
+      "appearance": "dark",
+      "checked": 118,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "purchase-order-editor",
+      "mode": "light",
+      "appearance": "light",
+      "checked": 174,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "custom-cake-editor",
+      "mode": "dark",
+      "appearance": "dark",
+      "checked": 47,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "notifications",
+      "mode": "dark",
+      "appearance": "dark",
+      "checked": 61,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "customer-catalogue",
+      "mode": "dark",
+      "appearance": "dark",
+      "checked": 31,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "customer-product-detail",
+      "mode": "dark",
+      "appearance": "dark",
+      "checked": 57,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "button-state-matrix",
+      "mode": "light",
+      "appearance": "light",
+      "checked": 109,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "button-state-matrix",
+      "mode": "dark",
+      "appearance": "dark",
+      "checked": 109,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "button-state-matrix",
+      "mode": "system",
+      "appearance": "dark",
+      "checked": 109,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "alternate-accent-2367ac",
+      "mode": "dark",
+      "appearance": "dark",
+      "checked": 109,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "alternate-accent-ffff00",
+      "mode": "dark",
+      "appearance": "dark",
+      "checked": 109,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1279
+    },
+    {
+      "route": "phone-state-matrix-en",
+      "mode": "dark",
+      "appearance": "dark",
+      "checked": 109,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 390
+    },
+    {
+      "route": "phone-state-matrix-es",
+      "mode": "dark",
+      "appearance": "dark",
+      "checked": 109,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 390
+    },
+    {
+      "route": "phone-state-matrix-zh-TW",
+      "mode": "dark",
+      "appearance": "dark",
+      "checked": 109,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 390
+    },
+    {
+      "route": "phone-state-matrix-zh-CN",
+      "mode": "dark",
+      "appearance": "dark",
+      "checked": 109,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 390
+    },
+    {
+      "route": "customer-catalogue-phone",
+      "mode": "light",
+      "appearance": "light",
+      "checked": 31,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 390
+    },
+    {
+      "route": "tablet-state-matrix-es",
+      "mode": "light",
+      "appearance": "light",
+      "checked": 109,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 768
+    },
+    {
+      "route": "receipt-preview",
+      "mode": "dark",
+      "appearance": "dark",
+      "checked": 91,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "route": "customer-preorder",
+      "mode": "dark",
+      "appearance": "dark",
+      "checked": 41,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1280
+    },
+    {
+      "route": "custom-cake-fields",
+      "mode": "dark",
+      "appearance": "dark",
+      "checked": 57,
+      "decorativeImageRegions": 0,
+      "failures": [],
+      "overflow": false,
+      "width": 1280
+    }
+  ]
+}

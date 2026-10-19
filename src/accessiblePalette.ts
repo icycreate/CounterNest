@@ -1,0 +1,17 @@
+/** Central contrast math; disabled labels deliberately meet the normal-text target. */
+export function luminance(value:string){const c=value.slice(1).match(/../g)!.map(v=>parseInt(v,16)/255).map(v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4);return c[0]*.2126+c[1]*.7152+c[2]*.0722}
+export const contrast=(a:string,b:string)=>(Math.max(luminance(a),luminance(b))+.05)/(Math.min(luminance(a),luminance(b))+.05)
+export function mix(a:string,b:string,f:number){return '#'+[0,1,2].map(i=>Math.round(parseInt(a.slice(1+i*2,3+i*2),16)*(1-f)+parseInt(b.slice(1+i*2,3+i*2),16)*f).toString(16).padStart(2,'0')).join('')}
+export function readableForeground(backgrounds:string[],preferred?:string,target=4.5){if(preferred&&backgrounds.every(bg=>contrast(preferred,bg)>=target))return preferred;return ['#000000','#ffffff'].sort((a,b)=>Math.min(...backgrounds.map(bg=>contrast(b,bg)))-Math.min(...backgrounds.map(bg=>contrast(a,bg))))[0]}
+export function readablePalette(t:{primary:string;background:string;text:string},dark:boolean){
+ const bg=dark?'#1d2025':t.background,deep=dark||luminance(bg)<.18,surface=deep?'#282d34':'#ffffff';
+ const initialText=readableForeground([bg,surface],dark?'#f3f5f7':t.text),hover=mix(surface,initialText,.045),active=mix(surface,initialText,.08),surfaces=[bg,surface,hover,active];
+ const text=readableForeground(surfaces,initialText),muted=readableForeground(surfaces,deep?'#bac4d0':'#58616e');
+ const border=readableForeground(surfaces,deep?'#8e9aaa':'#78818c',3),focus=readableForeground(surfaces,t.primary,3),secondaryText=readableForeground(surfaces,text);
+ const disabled=deep?'#3b444f':'#e1e5ea',disabledText=deep?'#d8dee8':'#424b56';
+ const accentText=readableForeground([bg,surface,hover],t.primary),successText=readableForeground([bg,surface],deep?'#92d9b3':'#17623c'),dangerText=readableForeground([bg,surface],deep?'#ffb4b4':'#a52329'),warningText=readableForeground([bg,surface],deep?'#f4ce82':'#7c530b');
+ return {'--primary':t.primary,'--accent':t.primary,'--primary-foreground':readableForeground([t.primary]),'--accent-text':accentText,'--page-bg':bg,'--background':bg,'--surface':surface,'--panel':surface,'--card':surface,'--text':text,'--muted':muted,'--border':border,'--line':border,'--focus':focus,'--success':successText,'--success-foreground':readableForeground([successText]),'--danger':dangerText,'--danger-foreground':readableForeground([dangerText]),'--warning':warningText,
+ '--color-background':bg,'--color-surface':surface,'--color-card':surface,'--color-text':text,'--color-text-muted':muted,'--color-primary':t.primary,'--color-primary-foreground':readableForeground([t.primary]),'--color-secondary':surface,'--color-secondary-foreground':secondaryText,'--color-surface-hover':hover,'--color-surface-active':active,
+ '--color-danger':'#a52329','--color-danger-foreground':'#ffffff','--color-success':'#17623c','--color-success-foreground':'#ffffff','--color-warning':'#805700','--color-warning-foreground':'#ffffff','--color-disabled':disabled,'--color-disabled-foreground':disabledText,'--color-disabled-bg':disabled,'--color-disabled-text':disabledText,'--color-border':border,'--color-focus':focus,
+ '--color-danger-soft':deep?'#43282d':'#fff0f1','--color-danger-text':deep?'#ffe1e3':'#841922','--color-success-soft':deep?'#223e30':'#eaf7ee','--color-success-text':deep?'#c4f2d5':'#155c35','--color-warning-soft':deep?'#3d331e':'#fff5d9','--color-warning-text':deep?'#ffe4aa':'#654400','--color-info-soft':deep?'#24384d':'#edf4fc','--color-info-text':deep?'#d8eaff':'#173f6b'};
+}

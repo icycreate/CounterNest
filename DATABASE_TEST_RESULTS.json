@@ -1,6 +1,6 @@
 {
-  "version": "2.0.0-rc.12",
-  "build": "2026-10-18-units-gallery",
+  "version": "2.0.0-rc.13",
+  "build": "2026-10-18-accessibility",
   "migration_count": 94,
   "database_engine": "PGlite PostgreSQL with mocked Supabase auth/storage and mocked manager-PIN crypt for refund tests; pgcrypto extension omitted",
   "checks": [

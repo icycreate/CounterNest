@@ -44,3 +44,5 @@ import './calendar.css'
 import './systemStyle.css'
 
 import './release12.css'
+
+import './accessibility.css'

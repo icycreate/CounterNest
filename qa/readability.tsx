@@ -1,0 +1,26 @@
+/** Actual shared components with sample data for reproducible paint/state regression checks. */
+import React from 'react'
+import {createRoot} from 'react-dom/client'
+import {Button} from '../src/Button'
+import {InputField,SelectField,TextAreaField,FormField} from '../src/Fields'
+import {Card} from '../src/Surface'
+import {useSharedTheme} from '../src/sharedTheme'
+import {setUiLanguage,tr} from '../src/i18n'
+import {Trash2,Pencil} from 'lucide-react'
+import '../src/styles.css'
+import '../src/navigation.css'
+import '../src/ux.css'
+import '../src/buttons.css'
+import '../src/phone.css'
+import '../src/receipts.css'
+import '../src/operations.css'
+import '../src/ingredientPurchasing.css'
+import '../src/searchField.css'
+import '../src/sharedTheme.css'
+import '../src/calendar.css'
+import '../src/systemStyle.css'
+import '../src/release12.css'
+import '../src/accessibility.css'
+const p=new URLSearchParams(location.search),appearance=p.get('qa_appearance')||'light',accent=p.get('qa_accent')||'#ad4b20';setUiLanguage((p.get('qa_language')||'en') as 'en');
+function Preview(){useSharedTheme({primary:accent,background:'#fbf7f2',text:'#33251e'},appearance);return <main className="main contrast-preview"><h1>{tr('Settings')} · RC13</h1><p>Readability regression fixture · actual shared components · sample data</p><Card><h2>{tr('Products')}</h2><div className="table-actions"><Button icon={<Pencil/>}>{tr('Modify')}</Button><Button variant="danger" className="danger-link" icon={<Trash2/>}>{tr('Remove')}</Button><Button variant="destructive">{tr('Delete Workspace')}</Button><Button variant="warning">{tr('Warning')}</Button><Button variant="success">{tr('Accept Order')}</Button><Button variant="primary">{tr('Save Changes')}</Button></div></Card><Card><h2>Button variants and states</h2><div className="matrix">{(['primary','secondary','success','danger','warning','ghost','destructive','disabled'] as const).map(variant=><section key={variant}><h3>{variant}</h3>{['normal','hover','focus','active','selected','disabled','loading'].map(state=><Button key={state} variant={variant} className={state==='selected'?'active danger-link':'danger-link'} disabled={state==='disabled'} loading={state==='loading'} data-contrast-state={state} data-matrix={variant+' '+state} icon={<Trash2/>}>{tr(variant==='danger'||variant==='destructive'?'Remove':'Save Changes')} · {state}</Button>)}</section>)}</div></Card><Card><h2>Fields, prices and status</h2><div className="form-grid"><FormField label={tr('Customer Name')}><InputField defaultValue="Sample business 原名" placeholder="Search…"/></FormField><FormField label={tr('Quantity')}><InputField type="number" defaultValue="2"/></FormField><FormField label={tr('Notes')}><TextAreaField placeholder="Optional notes…"/></FormField><FormField label={tr('Status')}><SelectField><option>{tr('Pending')}</option></SelectField></FormField><FormField label={tr('Disabled')}><InputField disabled defaultValue="Readable disabled value"/></FormField><FormField label={tr('Barcode')} error={tr('Required')}><InputField aria-invalid="true" placeholder="Required"/></FormField></div><p className="muted">Supporting text stays readable.</p><div className="warning-box">{tr('Warning')} · check quantity</div><div className="info-box">{tr('Information')} · sample data</div><div className="error-box">{tr('Error')} · check barcode</div><div className="success-box">{tr('Completed')} · receipt saved</div><table><thead><tr><th>{tr('Product')}</th><th>{tr('Price')}</th><th>{tr('Status')}</th><th>{tr('Action')}</th></tr></thead><tbody>{['Ready','Pending','Declined'].map((state,i)=><tr key={state}><td>Chocolate Cake {i+1}</td><td className="price">BZD 27.00</td><td><span className={'status '+state.toLowerCase()}>{tr(state)}</span></td><td><Button variant="danger" className="danger-link">{tr('Remove')}</Button></td></tr>)}</tbody></table><div className="totals"><div className="grand"><strong>{tr('Total')}</strong><strong>BZD 81.00</strong></div></div></Card></main>}
+document.getElementById('boot-root')?.remove();const root=document.getElementById('root')!;root.removeAttribute('inert');root.removeAttribute('aria-hidden');const css=document.createElement('style');css.textContent='.contrast-preview{max-width:1320px;margin:auto}.contrast-preview .matrix{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}.matrix section{display:flex;flex-direction:column;gap:10px}.contrast-preview table{min-width:0}.contrast-preview .table-actions{flex-wrap:wrap}.contrast-preview h3{margin:0}';document.head.appendChild(css);createRoot(root).render(<Preview/>);

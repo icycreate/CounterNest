@@ -1,9 +1,9 @@
 {
   "product": "CounterNest POS",
-  "version": "2.0.0-rc.12",
-  "build": "2026-10-18-units-gallery",
+  "version": "2.0.0-rc.13",
+  "build": "2026-10-18-accessibility",
   "date": "2026-10-18",
-  "result": "Local candidate validation passed; staging/cloud and physical PWA acceptance pending",
+  "result": "Local candidate validation passed; cloud and physical PWA acceptance pending",
   "dependency_install": {
     "command": "npm install",
     "status": "passed",
@@ -29,96 +29,18 @@
       "status": "passed"
     }
   ],
-  "database": {
-    "migration_count": 94,
-    "unchanged_baseline_migrations": 92,
-    "checks": 145,
-    "upgrade_fixture": "Known/unknown RC11 ingredient quantities and costs preserved; unknown unit flagged for review",
-    "engine": "PGlite PostgreSQL with mocked Supabase auth/storage and mocked manager-PIN crypt for refund tests; pgcrypto extension omitted",
-    "new_release_checks": [
-      "RC12 ten scientific units convert only within family, with explicit US cooking ratios",
-      "RC12 ingredient profiles preserve balances, enforce scientific factors and configure packaging and density explicitly",
-      "RC12 custom units are workspace scoped, reject duplicates and preserve optional explicit reference factors",
-      "RC12 purchase order captures three bags as 75000 g and receiving two bags adds exactly 50000 g once",
-      "RC12 profile edits cannot reinterpret an existing order snapshot; inventory projections hide source costs",
-      "RC12 recipes normalize half a kilogram and preserve the exact entered unit in the current recipe version",
-      "RC12 approval needs retain purchase units through approved order creation without double conversion",
-      "RC12 legacy gallery normalizes once, promotes next primary and rejects unowned replacements atomically",
-      "RC12 custom appearance publishes only validated tenant assets, bounds readability and stays token scoped",
-      "RC12 per-order package-size overrides freeze the chosen factor without changing ingredient setup",
-      "RC12 configured custom base units save atomically without losing opening stock",
-      "RC12 backups restore custom units, profiles, source snapshots and decorative media references together"
-    ]
-  },
-  "ui": {
-    "new_release_checks": [
-      "Weight, volume, count and ingredient factors match server conventions and reject guessed density",
-      "Legacy original and gallery deduplicate to one canonical collection with unchanged original URLs",
-      "Shared scientific and custom unit editor uses grouped fields; unknown legacy unit remains visible for review",
-      "Custom unit modal submits entered workspace configuration through the secured RPC",
-      "Existing ingredient editor locks base units and retains purchase and recipe controls",
-      "Catalogue appearance saves independently, preview clamps decorative opacity, and reset restores defaults",
-      "Both appearances keep primary, danger, success, disabled and surface labels above 4.5 contrast",
-      "All new unit and appearance labels localize in four languages while custom labels remain literal",
-      "Failed configuration reads cannot overwrite existing unit profiles or published catalogue appearance"
-    ],
-    "scope": "React component interactions, native field state, conversion previews, source preservation, semantic token contrast and four-language labels"
-  },
-  "browser": {
-    "responsive": [
-      {
-        "appearance": "light",
-        "height": 844,
-        "logoFit": "contain",
-        "overflow": false,
-        "width": 390
-      },
-      {
-        "appearance": "light",
-        "height": 844,
-        "logoFit": "contain",
-        "overflow": false,
-        "width": 768
-      },
-      {
-        "appearance": "light",
-        "height": 844,
-        "logoFit": "contain",
-        "overflow": false,
-        "width": 1280
-      }
-    ],
-    "screenshots": [
-      "RC12-add-ingredient.jpg",
-      "RC12-catalogue-appearance-controls.jpg",
-      "RC12-catalogue-custom-header.jpg",
-      "RC12-custom-unit-modal.jpg",
-      "RC12-customer-product-detail.jpg",
-      "RC12-dark-mode.jpg",
-      "RC12-mobile-catalogue.jpg",
-      "RC12-mobile-ingredient.jpg",
-      "RC12-product-gallery-manager.jpg",
-      "RC12-purchase-unit-setup.jpg"
-    ],
-    "scope": "Actual components and complete catalogue with local sample-data fixture; isolated dialog layout wrapper for full-page capture"
-  },
+  "database_checks": 145,
+  "migrations": 94,
+  "unchanged_migrations_from_rc12": 94,
+  "unchanged_public_image_assets": 10,
+  "palette_pair_measurements": 126976,
+  "browser_scenarios": 70,
+  "rendered_text_measurements": 5489,
+  "recorded_browser_failures": 0,
+  "production_preview_routes": 51,
   "limitations": [
-    "No production GitHub/Vercel deployment or Supabase mutation performed",
-    "Real auth/storage HTTP/CORS/Edge networking, concurrent cloud sessions and external push transport need staging acceptance",
-    "Physical phone/tablet installed PWA, camera/barcode, OS appearance and notification acceptance remain pending",
-    "Existing quantity/cost precision and large-chunk warning remain documented"
-  ],
-  "production_preview": {
-    "status": "passed",
-    "routes": 51,
-    "server": "Local Vite production preview",
-    "checks": [
-      "Direct HTML responses and identical SPA shell for staff and dedicated display routes",
-      "Built JS/CSS/PWA assets return non-HTML content"
-    ],
-    "limitations": [
-      "Vercel deployment rewrite is configured but has not been exercised on Vercel hosting.",
-      "Real authenticated route refresh requires the live Supabase session."
-    ]
-  }
+    "No GitHub push, Vercel deployment or live Supabase changes performed",
+    "Physical iPhone/Android/tablet and installed PWA acceptance pending",
+    "Local fixture and contrast audit does not certify full WCAG conformance"
+  ]
 }

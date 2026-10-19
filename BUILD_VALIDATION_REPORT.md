@@ -1,11 +1,11 @@
-# RC12 validation report
+# RC13 build validation report
 
-Dependency installation completed: 141 packages audited, zero reported vulnerabilities, no new runtime dependency. Production build, full npm test suite and built-asset checks passed. Logs are in docs/validation; FINAL_CHECK_RESULTS.json records exit codes.
+2026-10-18 · 2.0.0-rc.13
 
-All 94 SQL migrations applied locally. The original 92 migration bytes match RC11. 145 database behavior checks passed, plus the RC11 upgrade preservation fixture. New checks cover scientific factors, density rejection, tenant custom units, unchanged stock, source snapshots, partial receiving and retry idempotency, approval, source recipe versions, immutable order factors, gallery promotion/clearing, owned branding and backup/restore.
+Fresh npm install completed: 140 packages added, 141 audited, zero vulnerabilities reported, no new runtime dependency. npm run build, full npm test and npm run test:assets passed. Logs: docs/validation; exit codes: FINAL_CHECK_RESULTS.json. The production preview returned valid SPA shells and non-HTML asset responses across 51 routes.
 
-9 focused RC12 UI checks passed alongside every existing frontend suite. Token checks exercise standard and bright custom accents in Light/Dark, danger, success and disabled states. The catalogue was checked at 390/768/1280 px, with no document overflow and contained logo sizing. 10 sample-data screenshots are included; SCREENSHOT_GALLERY.md lists them.
+All 94 migrations applied to local PGlite; 145 database checks passed. Every migration and 10 public image assets match RC12 byte-for-byte. Automated accessibility checks passed 126976 pairs plus eight Button variants, four languages, shared paint contracts and public/staff route regressions.
 
-Local results do not certify deployment or physical-device behavior. Staging UAT, live Supabase storage/RLS/Edge, external push, physical PWA install and human screen review remain pending. Existing large-chunk and test-bundler import.meta warnings are non-fatal and documented in logs.
+The actual-browser sample audit records 70 scenarios and 5489 text measurements without remaining recorded contrast findings or document overflow. There are 22 current screenshots under docs/accessibility; prior releases' evidence remains historical.
 
-Production preview: 51 direct route responses and built asset content types passed. The check validates the current boot shell and SPA fallback; Vercel hosting acceptance remains pending.
+Vite's established large-chunk warning and test-bundler import.meta warnings are non-fatal. No runtime exception was found in reviewed fixture modules. Local PGlite mocks auth/storage and manager-PIN crypt; live cloud and physical installed-PWA acceptance remain pending. See KNOWN_ISSUES.md and UAT_ACCEPTANCE_CHECKLIST.md.

@@ -1,0 +1,775 @@
+{
+  "baseline": "RC12",
+  "css_files": [
+    {
+      "file": "calendar.css",
+      "declarations_with_color": 21
+    },
+    {
+      "file": "ingredientPurchasing.css",
+      "declarations_with_color": 8
+    },
+    {
+      "file": "navigation.css",
+      "declarations_with_color": 34
+    },
+    {
+      "file": "operations.css",
+      "declarations_with_color": 0
+    },
+    {
+      "file": "phone.css",
+      "declarations_with_color": 0
+    },
+    {
+      "file": "receipts.css",
+      "declarations_with_color": 1
+    },
+    {
+      "file": "searchField.css",
+      "declarations_with_color": 9
+    },
+    {
+      "file": "styles.css",
+      "declarations_with_color": 717
+    },
+    {
+      "file": "systemStyle.css",
+      "declarations_with_color": 90
+    },
+    {
+      "file": "ux.css",
+      "declarations_with_color": 39
+    }
+  ],
+  "component_files": [
+    {
+      "file": "AlertsEscalations.tsx",
+      "shared_buttons": 4,
+      "native_buttons": 0
+    },
+    {
+      "file": "App.tsx",
+      "shared_buttons": 186,
+      "native_buttons": 0
+    },
+    {
+      "file": "AuthStartupPending.tsx",
+      "shared_buttons": 1,
+      "native_buttons": 0
+    },
+    {
+      "file": "BootSplash.tsx",
+      "shared_buttons": 0,
+      "native_buttons": 0
+    },
+    {
+      "file": "BusinessContacts.tsx",
+      "shared_buttons": 4,
+      "native_buttons": 0
+    },
+    {
+      "file": "CashierHome.tsx",
+      "shared_buttons": 3,
+      "native_buttons": 0
+    },
+    {
+      "file": "Catalogue.tsx",
+      "shared_buttons": 17,
+      "native_buttons": 0
+    },
+    {
+      "file": "CatalogueAdvanced.tsx",
+      "shared_buttons": 14,
+      "native_buttons": 0
+    },
+    {
+      "file": "CatalogueAppearance.tsx",
+      "shared_buttons": 0,
+      "native_buttons": 0
+    },
+    {
+      "file": "CatalogueDecorationEditor.tsx",
+      "shared_buttons": 4,
+      "native_buttons": 0
+    },
+    {
+      "file": "CatalogueInstall.tsx",
+      "shared_buttons": 2,
+      "native_buttons": 0
+    },
+    {
+      "file": "CataloguePreorders.tsx",
+      "shared_buttons": 39,
+      "native_buttons": 0
+    },
+    {
+      "file": "CommercialCatalogue.tsx",
+      "shared_buttons": 16,
+      "native_buttons": 0
+    },
+    {
+      "file": "CommercialOperations.tsx",
+      "shared_buttons": 49,
+      "native_buttons": 0
+    },
+    {
+      "file": "ConfirmDialog.tsx",
+      "shared_buttons": 2,
+      "native_buttons": 0
+    },
+    {
+      "file": "CustomerContactSettings.tsx",
+      "shared_buttons": 7,
+      "native_buttons": 0
+    },
+    {
+      "file": "CustomerDisplay.tsx",
+      "shared_buttons": 21,
+      "native_buttons": 0
+    },
+    {
+      "file": "DailyChecklists.tsx",
+      "shared_buttons": 7,
+      "native_buttons": 0
+    },
+    {
+      "file": "EmptyState.tsx",
+      "shared_buttons": 0,
+      "native_buttons": 0
+    },
+    {
+      "file": "ErrorBoundary.tsx",
+      "shared_buttons": 1,
+      "native_buttons": 0
+    },
+    {
+      "file": "Fields.tsx",
+      "shared_buttons": 0,
+      "native_buttons": 0
+    },
+    {
+      "file": "FinishedBatchTraceability.tsx",
+      "shared_buttons": 17,
+      "native_buttons": 0
+    },
+    {
+      "file": "HardwareCommissioning.tsx",
+      "shared_buttons": 6,
+      "native_buttons": 0
+    },
+    {
+      "file": "i18n.tsx",
+      "shared_buttons": 0,
+      "native_buttons": 0
+    },
+    {
+      "file": "ImageCropper.tsx",
+      "shared_buttons": 4,
+      "native_buttons": 0
+    },
+    {
+      "file": "IngredientEditor.tsx",
+      "shared_buttons": 3,
+      "native_buttons": 0
+    },
+    {
+      "file": "IngredientPurchasing.tsx",
+      "shared_buttons": 30,
+      "native_buttons": 0
+    },
+    {
+      "file": "InternalGoLive.tsx",
+      "shared_buttons": 5,
+      "native_buttons": 0
+    },
+    {
+      "file": "InternalReleaseCandidate.tsx",
+      "shared_buttons": 2,
+      "native_buttons": 0
+    },
+    {
+      "file": "InventorySources.tsx",
+      "shared_buttons": 1,
+      "native_buttons": 0
+    },
+    {
+      "file": "IssueReport.tsx",
+      "shared_buttons": 2,
+      "native_buttons": 0
+    },
+    {
+      "file": "LegacyPurchaseHistory.tsx",
+      "shared_buttons": 1,
+      "native_buttons": 0
+    },
+    {
+      "file": "main.tsx",
+      "shared_buttons": 0,
+      "native_buttons": 0
+    },
+    {
+      "file": "Navigation.tsx",
+      "shared_buttons": 10,
+      "native_buttons": 0
+    },
+    {
+      "file": "NavigationBoundary.tsx",
+      "shared_buttons": 3,
+      "native_buttons": 0
+    },
+    {
+      "file": "OperationalAcceptance.tsx",
+      "shared_buttons": 2,
+      "native_buttons": 0
+    },
+    {
+      "file": "OperationalTasks.tsx",
+      "shared_buttons": 18,
+      "native_buttons": 0
+    },
+    {
+      "file": "OperationalWorkspace.tsx",
+      "shared_buttons": 1,
+      "native_buttons": 0
+    },
+    {
+      "file": "OperationsAnalytics.tsx",
+      "shared_buttons": 3,
+      "native_buttons": 0
+    },
+    {
+      "file": "OperationsCalendar.tsx",
+      "shared_buttons": 23,
+      "native_buttons": 0
+    },
+    {
+      "file": "OperationsCenter.tsx",
+      "shared_buttons": 11,
+      "native_buttons": 0
+    },
+    {
+      "file": "OperationsSetup.tsx",
+      "shared_buttons": 9,
+      "native_buttons": 0
+    },
+    {
+      "file": "OrderDisplays.tsx",
+      "shared_buttons": 5,
+      "native_buttons": 0
+    },
+    {
+      "file": "OrderNotifications.tsx",
+      "shared_buttons": 7,
+      "native_buttons": 0
+    },
+    {
+      "file": "PageHeader.tsx",
+      "shared_buttons": 0,
+      "native_buttons": 0
+    },
+    {
+      "file": "PhoneInput.tsx",
+      "shared_buttons": 0,
+      "native_buttons": 0
+    },
+    {
+      "file": "PosTools.tsx",
+      "shared_buttons": 9,
+      "native_buttons": 0
+    },
+    {
+      "file": "ProductImages.tsx",
+      "shared_buttons": 0,
+      "native_buttons": 0
+    },
+    {
+      "file": "ProductionOperations.tsx",
+      "shared_buttons": 13,
+      "native_buttons": 0
+    },
+    {
+      "file": "ProductionPlanning.tsx",
+      "shared_buttons": 6,
+      "native_buttons": 0
+    },
+    {
+      "file": "ProductionStudio.tsx",
+      "shared_buttons": 24,
+      "native_buttons": 0
+    },
+    {
+      "file": "PurchaseItemEditors.tsx",
+      "shared_buttons": 4,
+      "native_buttons": 0
+    },
+    {
+      "file": "RecallCaseManagement.tsx",
+      "shared_buttons": 7,
+      "native_buttons": 0
+    },
+    {
+      "file": "RecipeInventory.tsx",
+      "shared_buttons": 23,
+      "native_buttons": 0
+    },
+    {
+      "file": "RecordRemovalDialog.tsx",
+      "shared_buttons": 0,
+      "native_buttons": 0
+    },
+    {
+      "file": "RecordTable.tsx",
+      "shared_buttons": 0,
+      "native_buttons": 0
+    },
+    {
+      "file": "SearchField.tsx",
+      "shared_buttons": 0,
+      "native_buttons": 0
+    },
+    {
+      "file": "SecurityRecovery.tsx",
+      "shared_buttons": 7,
+      "native_buttons": 0
+    },
+    {
+      "file": "SegmentedNav.tsx",
+      "shared_buttons": 0,
+      "native_buttons": 0
+    },
+    {
+      "file": "SelectionAlertRecord.tsx",
+      "shared_buttons": 0,
+      "native_buttons": 0
+    },
+    {
+      "file": "ShiftHandover.tsx",
+      "shared_buttons": 10,
+      "native_buttons": 0
+    },
+    {
+      "file": "StaffSchedule.tsx",
+      "shared_buttons": 9,
+      "native_buttons": 0
+    },
+    {
+      "file": "StickyActions.tsx",
+      "shared_buttons": 0,
+      "native_buttons": 0
+    },
+    {
+      "file": "SupplyOperations.tsx",
+      "shared_buttons": 42,
+      "native_buttons": 0
+    },
+    {
+      "file": "Surface.tsx",
+      "shared_buttons": 0,
+      "native_buttons": 0
+    },
+    {
+      "file": "UnitFields.tsx",
+      "shared_buttons": 3,
+      "native_buttons": 0
+    },
+    {
+      "file": "UxShell.tsx",
+      "shared_buttons": 30,
+      "native_buttons": 0
+    },
+    {
+      "file": "WorkspaceRecovery.tsx",
+      "shared_buttons": 6,
+      "native_buttons": 0
+    }
+  ],
+  "destructive_migrations": [
+    {
+      "file": "App.tsx",
+      "labels": [
+        "Clear"
+      ]
+    },
+    {
+      "file": "App.tsx",
+      "labels": [
+        "Remove"
+      ]
+    },
+    {
+      "file": "App.tsx",
+      "labels": [
+        "Remove"
+      ]
+    },
+    {
+      "file": "App.tsx",
+      "labels": [
+        "Clear"
+      ]
+    },
+    {
+      "file": "App.tsx",
+      "labels": [
+        "Reset Password"
+      ]
+    },
+    {
+      "file": "App.tsx",
+      "labels": [
+        "Reset to Brand Theme"
+      ]
+    },
+    {
+      "file": "App.tsx",
+      "labels": [
+        "Reset Crop"
+      ]
+    },
+    {
+      "file": "BusinessContacts.tsx",
+      "labels": [
+        "Remove"
+      ]
+    },
+    {
+      "file": "CatalogueAdvanced.tsx",
+      "labels": [
+        "Remove label"
+      ]
+    },
+    {
+      "file": "CatalogueDecorationEditor.tsx",
+      "labels": [
+        "Remove image"
+      ]
+    },
+    {
+      "file": "CatalogueDecorationEditor.tsx",
+      "labels": [
+        "Reset to default"
+      ]
+    },
+    {
+      "file": "CataloguePreorders.tsx",
+      "labels": [
+        "Clear saved links"
+      ]
+    },
+    {
+      "file": "CataloguePreorders.tsx",
+      "labels": [
+        "Remove"
+      ]
+    },
+    {
+      "file": "CataloguePreorders.tsx",
+      "labels": [
+        "Remove"
+      ]
+    },
+    {
+      "file": "CommercialCatalogue.tsx",
+      "labels": [
+        "Reset filters"
+      ]
+    },
+    {
+      "file": "CommercialCatalogue.tsx",
+      "labels": [
+        "Remove"
+      ]
+    },
+    {
+      "file": "CommercialOperations.tsx",
+      "labels": [
+        "Remove"
+      ]
+    },
+    {
+      "file": "CommercialOperations.tsx",
+      "labels": [
+        "Remove"
+      ]
+    },
+    {
+      "file": "CustomerDisplay.tsx",
+      "labels": [
+        "Remove POS destination"
+      ]
+    },
+    {
+      "file": "ImageCropper.tsx",
+      "labels": [
+        "Reset crop"
+      ]
+    },
+    {
+      "file": "IngredientPurchasing.tsx",
+      "labels": [
+        "Remove"
+      ]
+    },
+    {
+      "file": "OperationsCalendar.tsx",
+      "labels": [
+        "Reset"
+      ]
+    },
+    {
+      "file": "ProductionStudio.tsx",
+      "labels": [
+        "Remove output"
+      ]
+    },
+    {
+      "file": "RecipeInventory.tsx",
+      "labels": [
+        "Remove"
+      ]
+    }
+  ],
+  "color_corrections": [
+    {
+      "file": "calendar.css",
+      "selector": ".calendar-day.is-today .calendar-day-heading",
+      "was": "var(--primary)",
+      "now": "var(--accent-text)"
+    },
+    {
+      "file": "navigation.css",
+      "selector": ".mobile-menu-sheet .nav-group-toggle",
+      "was": "var(--primary)",
+      "now": "var(--accent-text)"
+    },
+    {
+      "file": "navigation.css",
+      "selector": ".mobile-menu-sheet .nav-group-items>button.active",
+      "was": "var(--primary)",
+      "now": "var(--accent-text)"
+    },
+    {
+      "file": "navigation.css",
+      "selector": ".catalogue-admin-body>button",
+      "was": "var(--primary)",
+      "now": "var(--accent-text)"
+    },
+    {
+      "file": "navigation.css",
+      "selector": ".commercial-detail .detail-close",
+      "was": "var(--primary)",
+      "now": "var(--accent-text)"
+    },
+    {
+      "file": "navigation.css",
+      "selector": ".request-steps [aria-current]",
+      "was": "var(--primary)",
+      "now": "var(--accent-text)"
+    },
+    {
+      "file": "searchField.css",
+      "selector": ".cn-search-field",
+      "was": "var(--primary)",
+      "now": "var(--accent-text)"
+    },
+    {
+      "file": "styles.css",
+      "selector": "th",
+      "was": "#806d62",
+      "now": "var(--muted)"
+    },
+    {
+      "file": "styles.css",
+      "selector": ".login-card>p",
+      "was": "#7b685c",
+      "now": "var(--muted)"
+    },
+    {
+      "file": "styles.css",
+      "selector": ".product-card span",
+      "was": "var(--primary)",
+      "now": "var(--accent-text)"
+    },
+    {
+      "file": "styles.css",
+      "selector": ".product-card small",
+      "was": "#8b7669",
+      "now": "var(--muted)"
+    },
+    {
+      "file": "styles.css",
+      "selector": ".cart-copy small",
+      "was": "#8c7061",
+      "now": "var(--muted)"
+    },
+    {
+      "file": "styles.css",
+      "selector": ".empty",
+      "was": "#9d8a7d",
+      "now": "var(--muted)"
+    },
+    {
+      "file": "styles.css",
+      "selector": ".totals .grand",
+      "was": "var(--primary)",
+      "now": "var(--accent-text)"
+    },
+    {
+      "file": "styles.css",
+      "selector": ".reward-heading button",
+      "was": "var(--primary)",
+      "now": "var(--accent-text)"
+    },
+    {
+      "file": "styles.css",
+      "selector": ".join-success .member-code",
+      "was": "var(--primary)",
+      "now": "var(--accent-text)"
+    },
+    {
+      "file": "styles.css",
+      "selector": ".logo-circle.logo-empty",
+      "was": "var(--primary)",
+      "now": "var(--accent-text)"
+    },
+    {
+      "file": "styles.css",
+      "selector": ".receipt-toolbar small",
+      "was": "#8b7669",
+      "now": "var(--muted)"
+    },
+    {
+      "file": "styles.css",
+      "selector": ".cash-tender-summary>div strong",
+      "was": "var(--primary)",
+      "now": "var(--accent-text)"
+    },
+    {
+      "file": "styles.css",
+      "selector": ".refund-estimate strong",
+      "was": "var(--primary)",
+      "now": "var(--accent-text)"
+    },
+    {
+      "file": "styles.css",
+      "selector": ".mobile-shop-mark",
+      "was": "var(--primary)",
+      "now": "var(--accent-text)"
+    },
+    {
+      "file": "styles.css",
+      "selector": ".mobile-bottom-nav button.active",
+      "was": "var(--primary)",
+      "now": "var(--accent-text)"
+    },
+    {
+      "file": "styles.css",
+      "selector": ".mobile-menu-grid button.active",
+      "was": "var(--primary)",
+      "now": "var(--accent-text)"
+    },
+    {
+      "file": "styles.css",
+      "selector": ".variance-preview strong",
+      "was": "var(--primary)",
+      "now": "var(--accent-text)"
+    },
+    {
+      "file": "styles.css",
+      "selector": ".report-metrics strong",
+      "was": "var(--primary)",
+      "now": "var(--accent-text)"
+    },
+    {
+      "file": "styles.css",
+      "selector": ".daily-cash-stage .auth-heading small",
+      "was": "var(--primary)",
+      "now": "var(--accent-text)"
+    },
+    {
+      "file": "styles.css",
+      "selector": ".translation-list label small",
+      "was": "#806d62",
+      "now": "var(--muted)"
+    },
+    {
+      "file": "styles.css",
+      "selector": ".customer-card-id",
+      "was": "var(--primary)",
+      "now": "var(--accent-text)"
+    },
+    {
+      "file": "styles.css",
+      "selector": ".loyalty-progress-card p strong",
+      "was": "var(--primary)",
+      "now": "var(--accent-text)"
+    },
+    {
+      "file": "styles.css",
+      "selector": ".camera-scan-btn",
+      "was": "var(--primary)",
+      "now": "var(--accent-text)"
+    },
+    {
+      "file": "styles.css",
+      "selector": ".supplier-card b",
+      "was": "var(--primary)",
+      "now": "var(--accent-text)"
+    },
+    {
+      "file": "styles.css",
+      "selector": ".operations-formula>b",
+      "was": "var(--primary)",
+      "now": "var(--accent-text)"
+    },
+    {
+      "file": "styles.css",
+      "selector": ".trace-usage b",
+      "was": "var(--primary)",
+      "now": "var(--accent-text)"
+    },
+    {
+      "file": "styles.css",
+      "selector": ".recall-action-customer a",
+      "was": "var(--primary)",
+      "now": "var(--accent-text)"
+    },
+    {
+      "file": "styles.css",
+      "selector": ".go-live-checklist small",
+      "was": "var(--primary)",
+      "now": "var(--accent-text)"
+    },
+    {
+      "file": "styles.css",
+      "selector": ".schedule-date svg",
+      "was": "var(--primary)",
+      "now": "var(--accent-text)"
+    },
+    {
+      "file": "styles.css",
+      "selector": ".cart-option",
+      "was": "var(--primary)",
+      "now": "var(--accent-text)"
+    },
+    {
+      "file": "styles.css",
+      "selector": ".catalogue-admin-body del,.customer-product-body del",
+      "was": "#777",
+      "now": "var(--muted)"
+    },
+    {
+      "file": "systemStyle.css",
+      "selector": ".cn-section-icon",
+      "was": "var(--primary)",
+      "now": "var(--accent-text)"
+    },
+    {
+      "file": "systemStyle.css",
+      "selector": "html[data-appearance] .mobile-bottom-nav .cn-button.active",
+      "was": "var(--primary)",
+      "now": "var(--accent-text)"
+    }
+  ]
+}

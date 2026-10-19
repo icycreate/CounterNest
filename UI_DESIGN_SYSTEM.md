@@ -1,3 +1,5 @@
+> RC13 current release: 2.0.0-rc.13, build 2026-10-18-accessibility. Upgrading RC12 requires no additional SQL; all 94 migrations are unchanged. Use INSTALL_UPGRADE_GUIDE.md, ACCESSIBILITY_AUDIT.md and BUILD_VALIDATION.json for current scope. Earlier release-specific passages below are historical context.
+
 # CounterNest shared UI system — RC10
 
 ## Reference and scope
@@ -44,3 +46,4 @@ Physical PWA, real storage upload/CORS and target hosting acceptance remain sepa
 ## RC11 additions
 
 CatalogueAppearance stores a customer-only device preference, default Light, while shared tokens retain the business accent. Public business contacts use shared cards, fields, phone input and toggles. Order alerts use the same themed controls. Public contacts and device preferences have independent unsaved scopes; fingerprints exclude nested scopes so saving one section does not discard another section’s edits. Custom categories and all business product/brand/variant/option labels remain original data.
+

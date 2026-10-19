@@ -1,0 +1,2040 @@
+[
+  {
+    "route": "dashboard",
+    "mode": "light",
+    "headings": [
+      "- heading [level=2]: Recent staff and system activity",
+      "- heading [level=3]: Operational alerts",
+      "- heading [level=2]: Sales & Activity",
+      "- heading [level=2]: Recent Sales",
+      "- heading [level=2]: Low Stock Alerts"
+    ],
+    "errors": null,
+    "appearance": "light",
+    "checked": 124,
+    "decorativeImageRegions": 0,
+    "failures": [
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "cn-button cn-button--secondary",
+        "color": "rgb(255, 255, 255)",
+        "font": "16px",
+        "opacity": 1,
+        "ratio": 1,
+        "tag": "BUTTON",
+        "target": 4.5,
+        "text": "★"
+      }
+    ],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "sale",
+    "mode": "light",
+    "headings": [
+      "- heading [level=1]: Catalogue selection",
+      "- heading [level=2]: Chocolate Cake",
+      "- heading [level=2]: Butter Croissant",
+      "- heading [level=2]: Combos & bundles",
+      "- heading [level=2]: Cart (0)"
+    ],
+    "errors": null,
+    "appearance": "light",
+    "checked": 82,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "products",
+    "mode": "light",
+    "headings": [
+      "- heading [level=1]: Products"
+    ],
+    "errors": null,
+    "appearance": "light",
+    "checked": 74,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "customers",
+    "mode": "light",
+    "headings": [
+      "- heading [level=1]: Customers",
+      "- heading [level=3]: Demo Customer"
+    ],
+    "errors": null,
+    "appearance": "light",
+    "checked": 49,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "catalogue",
+    "mode": "light",
+    "errors": null,
+    "appearance": "light",
+    "checked": 1,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "purchasing",
+    "mode": "light",
+    "headings": [
+      "- heading [level=1]: Purchase Items"
+    ],
+    "errors": null,
+    "appearance": "light",
+    "checked": 52,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "receiving",
+    "mode": "light",
+    "headings": [
+      "- heading [level=1]: Stock Receiving"
+    ],
+    "errors": null,
+    "appearance": "light",
+    "checked": 40,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "dashboard",
+    "mode": "dark",
+    "headings": [
+      "- heading [level=2]: Recent staff and system activity",
+      "- heading [level=3]: Operational alerts",
+      "- heading [level=2]: Sales & Activity",
+      "- heading [level=2]: Recent Sales",
+      "- heading [level=2]: Low Stock Alerts"
+    ],
+    "errors": null,
+    "appearance": "dark",
+    "checked": 124,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "sale",
+    "mode": "dark",
+    "headings": [
+      "- heading [level=1]: Catalogue selection",
+      "- heading [level=2]: Chocolate Cake",
+      "- heading [level=2]: Butter Croissant",
+      "- heading [level=2]: Combos & bundles",
+      "- heading [level=2]: Cart (0)"
+    ],
+    "errors": null,
+    "appearance": "dark",
+    "checked": 82,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "products",
+    "mode": "dark",
+    "headings": [
+      "- heading [level=1]: Products"
+    ],
+    "errors": null,
+    "appearance": "dark",
+    "checked": 74,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "customers",
+    "mode": "dark",
+    "headings": [
+      "- heading [level=1]: Customers",
+      "- heading [level=3]: Demo Customer"
+    ],
+    "errors": null,
+    "appearance": "dark",
+    "checked": 49,
+    "decorativeImageRegions": 0,
+    "failures": [
+      {
+        "background": [
+          40,
+          45,
+          52
+        ],
+        "classes": "",
+        "color": "rgb(118, 98, 89)",
+        "font": "16px",
+        "opacity": 1,
+        "ratio": 2.42,
+        "tag": "P",
+        "target": 4.5,
+        "text": "No email  • +50160001234"
+      }
+    ],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "catalogue",
+    "mode": "dark",
+    "errors": null,
+    "appearance": "dark",
+    "checked": 1,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "purchasing",
+    "mode": "dark",
+    "headings": [
+      "- heading [level=1]: Purchase Items"
+    ],
+    "errors": null,
+    "appearance": "dark",
+    "checked": 53,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "receiving",
+    "mode": "dark",
+    "headings": [
+      "- heading [level=1]: Stock Receiving"
+    ],
+    "errors": null,
+    "appearance": "dark",
+    "checked": 40,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "loyalty",
+    "mode": "light",
+    "headings": [
+      "- heading [level=2]: Points Earning Rule",
+      "- heading [level=2]: Stamp Earning Rule",
+      "- heading [level=2]: Rewards",
+      "- heading [level=2]: Loyalty Members",
+      "- heading [level=2]: Enrollment"
+    ],
+    "errors": null,
+    "appearance": "light",
+    "checked": 69,
+    "decorativeImageRegions": 0,
+    "failures": [
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(141, 120, 108)",
+        "font": "13.3333px",
+        "opacity": 1,
+        "ratio": 4.17,
+        "tag": "SMALL",
+        "target": 4.5,
+        "text": "0 points •  0 stamps"
+      }
+    ],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "cards",
+    "mode": "light",
+    "headings": [
+      "- heading [level=2]: Demo Customer",
+      "- heading [level=2]: Feng’s Lotus & Flour",
+      "- heading [level=2]: Card Appearance",
+      "- heading [level=2]: Print Card",
+      "- heading [level=2]: Demo Customer"
+    ],
+    "errors": null,
+    "appearance": "light",
+    "checked": 72,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "scheduled-orders",
+    "mode": "light",
+    "headings": [
+      "- heading [level=1]: Catalogue Pre-Order Requests",
+      "- heading [level=2]: \"#1042 · Demo Customer\"",
+      "- heading [level=3]: Pre-Order Request Summary"
+    ],
+    "errors": null,
+    "appearance": "light",
+    "checked": 55,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "calendar",
+    "mode": "light",
+    "headings": [
+      "- heading [level=1]:",
+      "- heading [level=2]:",
+      "- heading [level=2]: Today",
+      "- heading [level=2]:"
+    ],
+    "errors": null,
+    "appearance": "light",
+    "checked": 73,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "production",
+    "mode": "light",
+    "headings": [
+      "- heading [level=1]: Bakery Production"
+    ],
+    "errors": null,
+    "appearance": "light",
+    "checked": 55,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "inventory",
+    "mode": "light",
+    "headings": [
+      "- heading [level=1]: Inventory"
+    ],
+    "errors": null,
+    "appearance": "light",
+    "checked": 56,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "recipes",
+    "mode": "light",
+    "headings": [
+      "- heading [level=1]: Recipes & Ingredients",
+      "- heading [level=2]: Ingredient Inventory"
+    ],
+    "errors": null,
+    "appearance": "light",
+    "checked": 71,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "supply",
+    "mode": "light",
+    "headings": [
+      "- heading [level=1]: Purchase Items",
+      "- heading [level=1]: Supply Operations",
+      "- heading [level=2]: Suppliers",
+      "- heading [level=2]: Ordering Controls",
+      "- heading [level=2]: Ingredient Purchase Orders"
+    ],
+    "errors": null,
+    "appearance": "light",
+    "checked": 99,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "loyalty",
+    "mode": "dark",
+    "headings": [
+      "- heading [level=2]: Points Earning Rule",
+      "- heading [level=2]: Stamp Earning Rule",
+      "- heading [level=2]: Rewards",
+      "- heading [level=2]: Loyalty Members",
+      "- heading [level=2]: Enrollment"
+    ],
+    "errors": null,
+    "appearance": "dark",
+    "checked": 69,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "cards",
+    "mode": "dark",
+    "headings": [
+      "- heading [level=2]: Demo Customer",
+      "- heading [level=2]: Feng’s Lotus & Flour",
+      "- heading [level=2]: Card Appearance",
+      "- heading [level=2]: Print Card",
+      "- heading [level=2]: Demo Customer"
+    ],
+    "errors": null,
+    "appearance": "dark",
+    "checked": 72,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "scheduled-orders",
+    "mode": "dark",
+    "headings": [
+      "- heading [level=1]: Catalogue Pre-Order Requests",
+      "- heading [level=2]: \"#1042 · Demo Customer\"",
+      "- heading [level=3]: Pre-Order Request Summary"
+    ],
+    "errors": null,
+    "appearance": "dark",
+    "checked": 55,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "calendar",
+    "mode": "dark",
+    "headings": [
+      "- heading [level=1]:",
+      "- heading [level=2]:",
+      "- heading [level=2]: Today",
+      "- heading [level=2]:"
+    ],
+    "errors": null,
+    "appearance": "dark",
+    "checked": 73,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "production",
+    "mode": "dark",
+    "headings": [
+      "- heading [level=1]: Bakery Production"
+    ],
+    "errors": null,
+    "appearance": "dark",
+    "checked": 55,
+    "decorativeImageRegions": 0,
+    "failures": [
+      {
+        "background": [
+          40,
+          45,
+          52
+        ],
+        "classes": "",
+        "color": "color(srgb 0.964706 0.970588 0.976471)",
+        "font": "14px",
+        "opacity": 1,
+        "ratio": 1.51,
+        "tag": "SPAN",
+        "target": 4.5,
+        "text": "Scheduled Batches"
+      },
+      {
+        "background": [
+          40,
+          45,
+          52
+        ],
+        "classes": "",
+        "color": "color(srgb 0.964706 0.970588 0.976471)",
+        "font": "14px",
+        "opacity": 1,
+        "ratio": 1.51,
+        "tag": "SPAN",
+        "target": 4.5,
+        "text": "Sellable Output"
+      },
+      {
+        "background": [
+          40,
+          45,
+          52
+        ],
+        "classes": "",
+        "color": "color(srgb 0.964706 0.970588 0.976471)",
+        "font": "14px",
+        "opacity": 1,
+        "ratio": 1.51,
+        "tag": "SPAN",
+        "target": 4.5,
+        "text": "Recorded Waste"
+      }
+    ],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "inventory",
+    "mode": "dark",
+    "headings": [
+      "- heading [level=1]: Inventory"
+    ],
+    "errors": null,
+    "appearance": "dark",
+    "checked": 56,
+    "decorativeImageRegions": 0,
+    "failures": [
+      {
+        "background": [
+          40,
+          45,
+          52
+        ],
+        "classes": "",
+        "color": "color(srgb 0.964706 0.970588 0.976471)",
+        "font": "14px",
+        "opacity": 1,
+        "ratio": 1.51,
+        "tag": "SPAN",
+        "target": 4.5,
+        "text": "Total Items"
+      },
+      {
+        "background": [
+          40,
+          45,
+          52
+        ],
+        "classes": "",
+        "color": "color(srgb 0.964706 0.970588 0.976471)",
+        "font": "14px",
+        "opacity": 1,
+        "ratio": 1.51,
+        "tag": "SPAN",
+        "target": 4.5,
+        "text": "Low Stock"
+      },
+      {
+        "background": [
+          40,
+          45,
+          52
+        ],
+        "classes": "",
+        "color": "color(srgb 0.964706 0.970588 0.976471)",
+        "font": "14px",
+        "opacity": 1,
+        "ratio": 1.51,
+        "tag": "SPAN",
+        "target": 4.5,
+        "text": "Out of Stock"
+      }
+    ],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "recipes",
+    "mode": "dark",
+    "headings": [
+      "- heading [level=1]: Recipes & Ingredients",
+      "- heading [level=2]: Ingredient Inventory"
+    ],
+    "errors": null,
+    "appearance": "dark",
+    "checked": 71,
+    "decorativeImageRegions": 0,
+    "failures": [
+      {
+        "background": [
+          40,
+          45,
+          52
+        ],
+        "classes": "",
+        "color": "color(srgb 0.964706 0.970588 0.976471)",
+        "font": "14px",
+        "opacity": 1,
+        "ratio": 1.51,
+        "tag": "SPAN",
+        "target": 4.5,
+        "text": "Active ingredients"
+      },
+      {
+        "background": [
+          40,
+          45,
+          52
+        ],
+        "classes": "",
+        "color": "color(srgb 0.964706 0.970588 0.976471)",
+        "font": "14px",
+        "opacity": 1,
+        "ratio": 1.51,
+        "tag": "SPAN",
+        "target": 4.5,
+        "text": "Active recipes"
+      },
+      {
+        "background": [
+          40,
+          45,
+          52
+        ],
+        "classes": "",
+        "color": "color(srgb 0.964706 0.970588 0.976471)",
+        "font": "14px",
+        "opacity": 1,
+        "ratio": 1.51,
+        "tag": "SPAN",
+        "target": 4.5,
+        "text": "Suggested restock"
+      },
+      {
+        "background": [
+          40,
+          45,
+          52
+        ],
+        "classes": "",
+        "color": "color(srgb 0.964706 0.970588 0.976471)",
+        "font": "14px",
+        "opacity": 1,
+        "ratio": 1.51,
+        "tag": "SPAN",
+        "target": 4.5,
+        "text": "Pricing suggestions"
+      }
+    ],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "supply",
+    "mode": "dark",
+    "headings": [
+      "- heading [level=1]: Purchase Items",
+      "- heading [level=1]: Supply Operations",
+      "- heading [level=2]: Suppliers",
+      "- heading [level=2]: Ordering Controls",
+      "- heading [level=2]: Ingredient Purchase Orders"
+    ],
+    "errors": null,
+    "appearance": "dark",
+    "checked": 99,
+    "decorativeImageRegions": 0,
+    "failures": [
+      {
+        "background": [
+          40,
+          45,
+          52
+        ],
+        "classes": "",
+        "color": "color(srgb 0.964706 0.970588 0.976471)",
+        "font": "14px",
+        "opacity": 1,
+        "ratio": 1.51,
+        "tag": "SPAN",
+        "target": 4.5,
+        "text": "Open ingredient orders"
+      },
+      {
+        "background": [
+          40,
+          45,
+          52
+        ],
+        "classes": "",
+        "color": "color(srgb 0.964706 0.970588 0.976471)",
+        "font": "14px",
+        "opacity": 1,
+        "ratio": 1.51,
+        "tag": "SPAN",
+        "target": 4.5,
+        "text": "Deliveries in range"
+      },
+      {
+        "background": [
+          40,
+          45,
+          52
+        ],
+        "classes": "",
+        "color": "color(srgb 0.964706 0.970588 0.976471)",
+        "font": "14px",
+        "opacity": 1,
+        "ratio": 1.51,
+        "tag": "SPAN",
+        "target": 4.5,
+        "text": "Waste in range"
+      },
+      {
+        "background": [
+          40,
+          45,
+          52
+        ],
+        "classes": "",
+        "color": "color(srgb 0.964706 0.970588 0.976471)",
+        "font": "14px",
+        "opacity": 1,
+        "ratio": 1.51,
+        "tag": "SPAN",
+        "target": 4.5,
+        "text": "Tracked contribution"
+      },
+      {
+        "background": [
+          40,
+          45,
+          52
+        ],
+        "classes": "",
+        "color": "rgb(125, 109, 99)",
+        "font": "16px",
+        "opacity": 1,
+        "ratio": 2.8,
+        "tag": "LI",
+        "target": 4.5,
+        "text": "Only active ingredients and suppliers can be ordered."
+      },
+      {
+        "background": [
+          40,
+          45,
+          52
+        ],
+        "classes": "",
+        "color": "rgb(125, 109, 99)",
+        "font": "16px",
+        "opacity": 1,
+        "ratio": 2.8,
+        "tag": "LI",
+        "target": 4.5,
+        "text": "Expected quantity and cost form the receiving baseline."
+      },
+      {
+        "background": [
+          40,
+          45,
+          52
+        ],
+        "classes": "",
+        "color": "rgb(125, 109, 99)",
+        "font": "16px",
+        "opacity": 1,
+        "ratio": 2.8,
+        "tag": "LI",
+        "target": 4.5,
+        "text": "Partial receiving keeps the order open."
+      },
+      {
+        "background": [
+          40,
+          45,
+          52
+        ],
+        "classes": "",
+        "color": "rgb(125, 109, 99)",
+        "font": "16px",
+        "opacity": 1,
+        "ratio": 2.8,
+        "tag": "LI",
+        "target": 4.5,
+        "text": "Cancellation never reverses stock already received."
+      }
+    ],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "cash-drawer",
+    "mode": "light",
+    "headings": [
+      "- heading [level=1]: Daily Cash",
+      "- heading [level=2]:",
+      "- heading [level=2]: Recent closed cash records"
+    ],
+    "errors": null,
+    "appearance": "light",
+    "checked": 46,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "expenses",
+    "mode": "light",
+    "headings": [
+      "- heading [level=1]: Expenses"
+    ],
+    "errors": null,
+    "appearance": "light",
+    "checked": 61,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "staff",
+    "mode": "light",
+    "headings": [
+      "- heading [level=2]: Create Staff Account",
+      "- heading [level=2]: Access Summary",
+      "- heading [level=2]: Staff Directory",
+      "- heading [level=2]: Permission Presets"
+    ],
+    "errors": null,
+    "appearance": "light",
+    "checked": 61,
+    "decorativeImageRegions": 0,
+    "failures": [
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(133, 118, 109)",
+        "font": "13.3333px",
+        "opacity": 1,
+        "ratio": 4.37,
+        "tag": "SMALL",
+        "target": 4.5,
+        "text": "Active staff"
+      },
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(133, 118, 109)",
+        "font": "13.3333px",
+        "opacity": 1,
+        "ratio": 4.37,
+        "tag": "SMALL",
+        "target": 4.5,
+        "text": "Administrators"
+      },
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(133, 118, 109)",
+        "font": "13.3333px",
+        "opacity": 1,
+        "ratio": 4.37,
+        "tag": "SMALL",
+        "target": 4.5,
+        "text": "Employees"
+      },
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(133, 118, 109)",
+        "font": "13.3333px",
+        "opacity": 1,
+        "ratio": 4.37,
+        "tag": "SMALL",
+        "target": 4.5,
+        "text": "Password change due"
+      }
+    ],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "reports",
+    "mode": "light",
+    "headings": [
+      "- heading [level=2]: Payment Breakdown",
+      "- heading [level=2]: Daily Cash Reconciliation",
+      "- heading [level=2]: Drawer Shift History",
+      "- heading [level=2]: Inventory Context"
+    ],
+    "errors": null,
+    "appearance": "light",
+    "checked": 74,
+    "decorativeImageRegions": 0,
+    "failures": [
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(133, 118, 109)",
+        "font": "13.3333px",
+        "opacity": 1,
+        "ratio": 4.37,
+        "tag": "SMALL",
+        "target": 4.5,
+        "text": "Closed days/shifts"
+      },
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(133, 118, 109)",
+        "font": "13.3333px",
+        "opacity": 1,
+        "ratio": 4.37,
+        "tag": "SMALL",
+        "target": 4.5,
+        "text": "Expected"
+      },
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(133, 118, 109)",
+        "font": "13.3333px",
+        "opacity": 1,
+        "ratio": 4.37,
+        "tag": "SMALL",
+        "target": 4.5,
+        "text": "Counted"
+      },
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(133, 118, 109)",
+        "font": "13.3333px",
+        "opacity": 1,
+        "ratio": 4.37,
+        "tag": "SMALL",
+        "target": 4.5,
+        "text": "Total variance"
+      }
+    ],
+    "overflow": true,
+    "width": 1280
+  },
+  {
+    "route": "audit",
+    "mode": "light",
+    "headings": [
+      "- heading [level=1]: Audit Log"
+    ],
+    "errors": null,
+    "appearance": "light",
+    "checked": 61,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "settings",
+    "mode": "light",
+    "headings": [
+      "- heading [level=2]:",
+      "- heading [level=2]: System Language",
+      "- heading [level=2]: Your workspace",
+      "- heading [level=2]:"
+    ],
+    "errors": null,
+    "appearance": "light",
+    "checked": 228,
+    "decorativeImageRegions": 0,
+    "failures": [
+      {
+        "background": [
+          241,
+          248,
+          237
+        ],
+        "classes": "",
+        "color": "rgb(133, 118, 109)",
+        "font": "11px",
+        "opacity": 1,
+        "ratio": 4.03,
+        "tag": "SMALL",
+        "target": 4.5,
+        "text": "Browser API detected"
+      },
+      {
+        "background": [
+          241,
+          248,
+          237
+        ],
+        "classes": "",
+        "color": "rgb(133, 118, 109)",
+        "font": "11px",
+        "opacity": 1,
+        "ratio": 4.03,
+        "tag": "SMALL",
+        "target": 4.5,
+        "text": "Browser API detected"
+      },
+      {
+        "background": [
+          241,
+          248,
+          237
+        ],
+        "classes": "",
+        "color": "rgb(133, 118, 109)",
+        "font": "11px",
+        "opacity": 1,
+        "ratio": 4.03,
+        "tag": "SMALL",
+        "target": 4.5,
+        "text": "Network profile supported"
+      },
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(133, 118, 109)",
+        "font": "13.3333px",
+        "opacity": 1,
+        "ratio": 4.37,
+        "tag": "SMALL",
+        "target": 4.5,
+        "text": "Cloud sales and syncing are available."
+      }
+    ],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "backup",
+    "mode": "light",
+    "headings": [
+      "- heading [level=1]: Workspace",
+      "- heading [level=2]: New Business Setup Wizard"
+    ],
+    "errors": null,
+    "appearance": "light",
+    "checked": 77,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "readiness",
+    "mode": "light",
+    "headings": [
+      "- heading [level=2]: Workspace Health",
+      "- heading [level=1]: Deployment / Readiness",
+      "- heading [level=2]: Deployment Procedure"
+    ],
+    "errors": null,
+    "appearance": "light",
+    "checked": 87,
+    "decorativeImageRegions": 0,
+    "failures": [
+      {
+        "background": [
+          255,
+          245,
+          217
+        ],
+        "classes": "",
+        "color": "rgb(128, 111, 101)",
+        "font": "12px",
+        "opacity": 1,
+        "ratio": 4.41,
+        "tag": "P",
+        "target": 4.5,
+        "text": "Simulated data. Live Supabase UAT is still required."
+      }
+    ],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "profit",
+    "mode": "light",
+    "headings": [
+      "- heading [level=1]: Profitability",
+      "- heading [level=2]: Product Profitability"
+    ],
+    "errors": null,
+    "appearance": "light",
+    "checked": 63,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "production-studio",
+    "mode": "light",
+    "headings": [
+      "- heading [level=1]: The POS screen encountered an error"
+    ],
+    "errors": null,
+    "appearance": "light",
+    "checked": 6,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "cash-drawer",
+    "mode": "dark",
+    "headings": [
+      "- heading [level=1]: Daily Cash",
+      "- heading [level=2]:",
+      "- heading [level=2]: Recent closed cash records"
+    ],
+    "errors": null,
+    "appearance": "dark",
+    "checked": 46,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "expenses",
+    "mode": "dark",
+    "headings": [
+      "- heading [level=1]: Expenses"
+    ],
+    "errors": null,
+    "appearance": "dark",
+    "checked": 61,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "staff",
+    "mode": "dark",
+    "headings": [
+      "- heading [level=2]: Create Staff Account",
+      "- heading [level=2]: Access Summary",
+      "- heading [level=2]: Staff Directory",
+      "- heading [level=2]: Permission Presets"
+    ],
+    "errors": null,
+    "appearance": "dark",
+    "checked": 61,
+    "decorativeImageRegions": 0,
+    "failures": [
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(212, 193, 174)",
+        "font": "13.3333px",
+        "opacity": 1,
+        "ratio": 1.74,
+        "tag": "SMALL",
+        "target": 4.5,
+        "text": "Active staff"
+      },
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(255, 255, 255)",
+        "font": "19px",
+        "opacity": 1,
+        "ratio": 1,
+        "tag": "STRONG",
+        "target": 3,
+        "text": "0"
+      },
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(212, 193, 174)",
+        "font": "13.3333px",
+        "opacity": 1,
+        "ratio": 1.74,
+        "tag": "SMALL",
+        "target": 4.5,
+        "text": "Administrators"
+      },
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(255, 255, 255)",
+        "font": "19px",
+        "opacity": 1,
+        "ratio": 1,
+        "tag": "STRONG",
+        "target": 3,
+        "text": "0"
+      },
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(212, 193, 174)",
+        "font": "13.3333px",
+        "opacity": 1,
+        "ratio": 1.74,
+        "tag": "SMALL",
+        "target": 4.5,
+        "text": "Employees"
+      },
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(255, 255, 255)",
+        "font": "19px",
+        "opacity": 1,
+        "ratio": 1,
+        "tag": "STRONG",
+        "target": 3,
+        "text": "0"
+      },
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(212, 193, 174)",
+        "font": "13.3333px",
+        "opacity": 1,
+        "ratio": 1.74,
+        "tag": "SMALL",
+        "target": 4.5,
+        "text": "Password change due"
+      },
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(255, 255, 255)",
+        "font": "19px",
+        "opacity": 1,
+        "ratio": 1,
+        "tag": "STRONG",
+        "target": 3,
+        "text": "0"
+      }
+    ],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "reports",
+    "mode": "dark",
+    "headings": [
+      "- heading [level=2]: Payment Breakdown",
+      "- heading [level=2]: Daily Cash Reconciliation",
+      "- heading [level=2]: Drawer Shift History",
+      "- heading [level=2]: Inventory Context"
+    ],
+    "errors": null,
+    "appearance": "dark",
+    "checked": 74,
+    "decorativeImageRegions": 0,
+    "failures": [
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(212, 193, 174)",
+        "font": "13.3333px",
+        "opacity": 1,
+        "ratio": 1.74,
+        "tag": "SMALL",
+        "target": 4.5,
+        "text": "Closed days/shifts"
+      },
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(255, 255, 255)",
+        "font": "19px",
+        "opacity": 1,
+        "ratio": 1,
+        "tag": "STRONG",
+        "target": 3,
+        "text": "1"
+      },
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(212, 193, 174)",
+        "font": "13.3333px",
+        "opacity": 1,
+        "ratio": 1.74,
+        "tag": "SMALL",
+        "target": 4.5,
+        "text": "Expected"
+      },
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(255, 255, 255)",
+        "font": "19px",
+        "opacity": 1,
+        "ratio": 1,
+        "tag": "STRONG",
+        "target": 3,
+        "text": "BZD 235.00"
+      },
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(212, 193, 174)",
+        "font": "13.3333px",
+        "opacity": 1,
+        "ratio": 1.74,
+        "tag": "SMALL",
+        "target": 4.5,
+        "text": "Counted"
+      },
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(255, 255, 255)",
+        "font": "19px",
+        "opacity": 1,
+        "ratio": 1,
+        "tag": "STRONG",
+        "target": 3,
+        "text": "BZD 235.00"
+      },
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(212, 193, 174)",
+        "font": "13.3333px",
+        "opacity": 1,
+        "ratio": 1.74,
+        "tag": "SMALL",
+        "target": 4.5,
+        "text": "Total variance"
+      },
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(255, 255, 255)",
+        "font": "19px",
+        "opacity": 1,
+        "ratio": 1,
+        "tag": "STRONG",
+        "target": 3,
+        "text": "BZD 0.00"
+      }
+    ],
+    "overflow": true,
+    "width": 1280
+  },
+  {
+    "route": "audit",
+    "mode": "dark",
+    "headings": [
+      "- heading [level=1]: Audit Log"
+    ],
+    "errors": null,
+    "appearance": "dark",
+    "checked": 61,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "settings",
+    "mode": "dark",
+    "headings": [
+      "- heading [level=2]:",
+      "- heading [level=2]: System Language",
+      "- heading [level=2]: Your workspace",
+      "- heading [level=2]:"
+    ],
+    "errors": null,
+    "appearance": "dark",
+    "checked": 228,
+    "decorativeImageRegions": 0,
+    "failures": [
+      {
+        "background": [
+          241,
+          248,
+          237
+        ],
+        "classes": "",
+        "color": "rgb(243, 245, 247)",
+        "font": "13px",
+        "opacity": 1,
+        "ratio": 1.01,
+        "tag": "STRONG",
+        "target": 4.5,
+        "text": "USB"
+      },
+      {
+        "background": [
+          241,
+          248,
+          237
+        ],
+        "classes": "",
+        "color": "rgb(212, 193, 174)",
+        "font": "11px",
+        "opacity": 1,
+        "ratio": 1.61,
+        "tag": "SMALL",
+        "target": 4.5,
+        "text": "Browser API detected"
+      },
+      {
+        "background": [
+          241,
+          248,
+          237
+        ],
+        "classes": "",
+        "color": "rgb(243, 245, 247)",
+        "font": "13px",
+        "opacity": 1,
+        "ratio": 1.01,
+        "tag": "STRONG",
+        "target": 4.5,
+        "text": "Bluetooth"
+      },
+      {
+        "background": [
+          241,
+          248,
+          237
+        ],
+        "classes": "",
+        "color": "rgb(212, 193, 174)",
+        "font": "11px",
+        "opacity": 1,
+        "ratio": 1.61,
+        "tag": "SMALL",
+        "target": 4.5,
+        "text": "Browser API detected"
+      },
+      {
+        "background": [
+          241,
+          248,
+          237
+        ],
+        "classes": "",
+        "color": "rgb(243, 245, 247)",
+        "font": "13px",
+        "opacity": 1,
+        "ratio": 1.01,
+        "tag": "STRONG",
+        "target": 4.5,
+        "text": "Wi-Fi"
+      },
+      {
+        "background": [
+          241,
+          248,
+          237
+        ],
+        "classes": "",
+        "color": "rgb(212, 193, 174)",
+        "font": "11px",
+        "opacity": 1,
+        "ratio": 1.61,
+        "tag": "SMALL",
+        "target": 4.5,
+        "text": "Network profile supported"
+      },
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(243, 245, 247)",
+        "font": "16px",
+        "opacity": 1,
+        "ratio": 1.09,
+        "tag": "STRONG",
+        "target": 4.5,
+        "text": "Online"
+      },
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(212, 193, 174)",
+        "font": "13.3333px",
+        "opacity": 1,
+        "ratio": 1.74,
+        "tag": "SMALL",
+        "target": 4.5,
+        "text": "Cloud sales and syncing are available."
+      },
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(243, 245, 247)",
+        "font": "16px",
+        "opacity": 1,
+        "ratio": 1.09,
+        "tag": "STRONG",
+        "target": 4.5,
+        "text": "Current address"
+      },
+      {
+        "background": [
+          243,
+          236,
+          230
+        ],
+        "classes": "",
+        "color": "rgb(243, 245, 247)",
+        "font": "12px",
+        "opacity": 1,
+        "ratio": 1.07,
+        "tag": "CODE",
+        "target": 4.5,
+        "text": "http://127.0.0.1:5193"
+      },
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(243, 245, 247)",
+        "font": "16px",
+        "opacity": 1,
+        "ratio": 1.09,
+        "tag": "STRONG",
+        "target": 4.5,
+        "text": "Mode"
+      },
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(212, 193, 174)",
+        "font": "13.3333px",
+        "opacity": 1,
+        "ratio": 1.74,
+        "tag": "SMALL",
+        "target": 4.5,
+        "text": "Local development (HTTP)"
+      },
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(243, 245, 247)",
+        "font": "16px",
+        "opacity": 1,
+        "ratio": 1.09,
+        "tag": "STRONG",
+        "target": 4.5,
+        "text": "Network"
+      },
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(212, 193, 174)",
+        "font": "13.3333px",
+        "opacity": 1,
+        "ratio": 1.74,
+        "tag": "SMALL",
+        "target": 4.5,
+        "text": "Online — Supabase access available"
+      },
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(243, 245, 247)",
+        "font": "16px",
+        "opacity": 1,
+        "ratio": 1.09,
+        "tag": "STRONG",
+        "target": 4.5,
+        "text": "Secure browser features"
+      },
+      {
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "classes": "",
+        "color": "rgb(212, 193, 174)",
+        "font": "13.3333px",
+        "opacity": 1,
+        "ratio": 1.74,
+        "tag": "SMALL",
+        "target": 4.5,
+        "text": "Ready"
+      },
+      {
+        "background": [
+          243,
+          236,
+          230
+        ],
+        "classes": "",
+        "color": "rgb(243, 245, 247)",
+        "font": "13px",
+        "opacity": 1,
+        "ratio": 1.07,
+        "tag": "CODE",
+        "target": 4.5,
+        "text": "#ad4b20"
+      },
+      {
+        "background": [
+          243,
+          236,
+          230
+        ],
+        "classes": "",
+        "color": "rgb(243, 245, 247)",
+        "font": "13px",
+        "opacity": 1,
+        "ratio": 1.07,
+        "tag": "CODE",
+        "target": 4.5,
+        "text": "#fbf7f2"
+      },
+      {
+        "background": [
+          243,
+          236,
+          230
+        ],
+        "classes": "",
+        "color": "rgb(243, 245, 247)",
+        "font": "13px",
+        "opacity": 1,
+        "ratio": 1.07,
+        "tag": "CODE",
+        "target": 4.5,
+        "text": "#33251e"
+      }
+    ],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "backup",
+    "mode": "dark",
+    "headings": [
+      "- heading [level=1]: Workspace",
+      "- heading [level=2]: New Business Setup Wizard"
+    ],
+    "errors": null,
+    "appearance": "dark",
+    "checked": 77,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "readiness",
+    "mode": "dark",
+    "headings": [
+      "- heading [level=2]: Workspace Health",
+      "- heading [level=1]: Deployment / Readiness",
+      "- heading [level=2]: Deployment Procedure"
+    ],
+    "errors": null,
+    "appearance": "dark",
+    "checked": 87,
+    "decorativeImageRegions": 0,
+    "failures": [
+      {
+        "background": [
+          61,
+          51,
+          30
+        ],
+        "classes": "",
+        "color": "rgb(128, 111, 101)",
+        "font": "12px",
+        "opacity": 1,
+        "ratio": 2.59,
+        "tag": "P",
+        "target": 4.5,
+        "text": "Simulated data. Live Supabase UAT is still required."
+      },
+      {
+        "background": [
+          61,
+          51,
+          30
+        ],
+        "classes": "",
+        "color": "rgb(138, 101, 34)",
+        "font": "10px",
+        "opacity": 1,
+        "ratio": 2.35,
+        "tag": "B",
+        "target": 4.5,
+        "text": "Warning"
+      },
+      {
+        "background": [
+          40,
+          45,
+          52
+        ],
+        "classes": "",
+        "color": "rgb(128, 111, 101)",
+        "font": "12px",
+        "opacity": 1,
+        "ratio": 2.89,
+        "tag": "P",
+        "target": 4.5,
+        "text": "This device is online."
+      },
+      {
+        "background": [
+          40,
+          45,
+          52
+        ],
+        "classes": "",
+        "color": "rgb(77, 114, 69)",
+        "font": "10px",
+        "opacity": 1,
+        "ratio": 2.51,
+        "tag": "B",
+        "target": 4.5,
+        "text": "pass"
+      },
+      {
+        "background": [
+          40,
+          45,
+          52
+        ],
+        "classes": "",
+        "color": "rgb(128, 111, 101)",
+        "font": "12px",
+        "opacity": 1,
+        "ratio": 2.89,
+        "tag": "P",
+        "target": 4.5,
+        "text": "Running in a browser; installation is optional."
+      },
+      {
+        "background": [
+          40,
+          45,
+          52
+        ],
+        "classes": "",
+        "color": "rgb(77, 114, 69)",
+        "font": "10px",
+        "opacity": 1,
+        "ratio": 2.51,
+        "tag": "B",
+        "target": 4.5,
+        "text": "pass"
+      },
+      {
+        "background": [
+          40,
+          45,
+          52
+        ],
+        "classes": "",
+        "color": "rgb(128, 111, 101)",
+        "font": "12px",
+        "opacity": 1,
+        "ratio": 2.89,
+        "tag": "P",
+        "target": 4.5,
+        "text": "System Print fallback is configured."
+      },
+      {
+        "background": [
+          40,
+          45,
+          52
+        ],
+        "classes": "",
+        "color": "rgb(77, 114, 69)",
+        "font": "10px",
+        "opacity": 1,
+        "ratio": 2.51,
+        "tag": "B",
+        "target": 4.5,
+        "text": "pass"
+      },
+      {
+        "background": [
+          40,
+          45,
+          52
+        ],
+        "classes": "",
+        "color": "rgb(125, 109, 99)",
+        "font": "16px",
+        "opacity": 1,
+        "ratio": 2.8,
+        "tag": "LI",
+        "target": 4.5,
+        "text": "Resolve every required issue and review every warning."
+      },
+      {
+        "background": [
+          40,
+          45,
+          52
+        ],
+        "classes": "",
+        "color": "rgb(125, 109, 99)",
+        "font": "16px",
+        "opacity": 1,
+        "ratio": 2.8,
+        "tag": "LI",
+        "target": 4.5,
+        "text": "Create and verify fresh business and Supply Operations backups."
+      },
+      {
+        "background": [
+          40,
+          45,
+          52
+        ],
+        "classes": "",
+        "color": "rgb(125, 109, 99)",
+        "font": "16px",
+        "opacity": 1,
+        "ratio": 2.8,
+        "tag": "LI",
+        "target": 4.5,
+        "text": "Verify the applied migration level and rehearse only pending upgrades in a staging Supabas"
+      },
+      {
+        "background": [
+          40,
+          45,
+          52
+        ],
+        "classes": "",
+        "color": "rgb(125, 109, 99)",
+        "font": "16px",
+        "opacity": 1,
+        "ratio": 2.8,
+        "tag": "LI",
+        "target": 4.5,
+        "text": "Complete the administrator and employee UAT in the Admin Guide and UAT Checklist."
+      },
+      {
+        "background": [
+          40,
+          45,
+          52
+        ],
+        "classes": "",
+        "color": "rgb(125, 109, 99)",
+        "font": "16px",
+        "opacity": 1,
+        "ratio": 2.8,
+        "tag": "LI",
+        "target": 4.5,
+        "text": "Open the production HTTPS URL on authorized devices and test System Print."
+      },
+      {
+        "background": [
+          40,
+          45,
+          52
+        ],
+        "classes": "",
+        "color": "rgb(125, 109, 99)",
+        "font": "16px",
+        "opacity": 1,
+        "ratio": 2.8,
+        "tag": "LI",
+        "target": 4.5,
+        "text": "Run Operational Acceptance, complete Internal Go-Live evidence, and follow the go-live run"
+      }
+    ],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "profit",
+    "mode": "dark",
+    "headings": [
+      "- heading [level=1]: Profitability",
+      "- heading [level=2]: Product Profitability"
+    ],
+    "errors": null,
+    "appearance": "dark",
+    "checked": 63,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "route": "production-studio",
+    "mode": "dark",
+    "headings": [
+      "- heading [level=1]: The POS screen encountered an error"
+    ],
+    "errors": null,
+    "appearance": "dark",
+    "checked": 6,
+    "decorativeImageRegions": 0,
+    "failures": [],
+    "overflow": false,
+    "width": 1280
+  }
+]

@@ -1,416 +1,448 @@
 {
-  "baseline": "actual System Style RC10 source",
-  "version": "2.0.0-rc.11",
+  "baseline": "actual Units and Catalogue RC12 source",
+  "version": "2.0.0-rc.13",
   "changes": [
     {
-      "file": ".env.example",
-      "status": "modified",
-      "sha256": "fd1bda63d866d626d89178f586404180a4904591e0840ede9ed68d210361cae9"
-    },
-    {
-      "file": "api/catalogue-manifest.js",
-      "status": "modified",
-      "sha256": "9bce675f9d650a4e6bf737478ec83485b265f21445d822ceee7224f4002eb36b"
-    },
-    {
-      "file": "api/order-push.js",
+      "file": "ACCESSIBILITY_AUDIT.md",
       "status": "added",
-      "sha256": "221ecba4206cd995e0d0ef1404445205372e41a610a4df5d3d02cde80961dcc7"
+      "sha256": "72504b62a9cd1bb54c7e8759e18172f58bf90dcb259c129f9b2c38c94f063184"
     },
     {
-      "file": "BOOT_ASSET_MANIFEST.json",
-      "status": "modified",
-      "sha256": "cce6fe13ffc10c41577607b8740015fdea0179a107f420c5f2fc2885717473de"
-    },
-    {
-      "file": "BRANDING_NOTES.md",
+      "file": "ACCESSIBILITY_TEST_RESULTS.json",
       "status": "added",
-      "sha256": "0670c34c8ea24d7530a9e82e11042bd48f1eab4a12a7cda87afe3ad9f1aa0842"
+      "sha256": "f90e471be400dc87284304086afda1dc8d213afc30bf13eafe8f951005862550"
     },
     {
       "file": "BUILD_VALIDATION.json",
       "status": "modified",
-      "sha256": "e831a76e0de8795de793b275bc865da3cfd58bee4cac3e142a7e46b34fbb47b0"
+      "sha256": "601ea38aa773fef5a0bb327198a49adba4f776ced205c2e63da3c303127d0996"
     },
     {
       "file": "BUILD_VALIDATION_REPORT.md",
       "status": "modified",
-      "sha256": "fe3e69d6375c2588f8d37198dcb8e9dcaa3efa1e5f7b265be506a144848144f8"
+      "sha256": "d6e35c481a328c95fc99a4214b86a28d73365323a114fed29f6eaeca3de6d399"
     },
     {
       "file": "CHANGELOG.md",
       "status": "modified",
-      "sha256": "5c5c6b62c3cb91f50b321bd81921045af8cb5db375f74a1559975ba8bbc5ae1c"
-    },
-    {
-      "file": "CUSTOMER_EXPERIENCE_SCREENSHOT_MANIFEST.json",
-      "status": "added",
-      "sha256": "669b13b4ff8bc52f687bf288e6ae4bc390b590cf39139357d924cec2dfa0dc80"
-    },
-    {
-      "file": "CUSTOMER_EXPERIENCE_TEST_RESULTS.json",
-      "status": "added",
-      "sha256": "b4fae9051deef7b9ede20f9a2cd6268cd63a62cabfef74160168cc6a698ffc19"
+      "sha256": "23b8379057e3facd310354cf26239d4f7add45d41ea1e55714d6e4fccfc8ddbc"
     },
     {
       "file": "DATABASE_TEST_RESULTS.json",
       "status": "modified",
-      "sha256": "cb6047196229b672ecbdc9940fefcf9c3390d9e3126ba6569b7276b26853ef8b"
+      "sha256": "9593b3eafb1f132dea6f9b0513bbd585deeea4d5aac09b38ecd593d659e913ee"
     },
     {
       "file": "DEPLOYMENT_NOTES.md",
       "status": "modified",
-      "sha256": "ff7c62b56f9d0931423ce6de5c30808bf8da8fd5c1c5c1b8989e3df725f4d074"
+      "sha256": "d7dafc984c19bf8027d0be6feaa4044baaab2671164252648f93484db0f4ea1b"
     },
     {
-      "file": "docs/customer-experience-screenshots/catalogue-phone-dark-contacts.jpg",
+      "file": "docs/accessibility/BROWSER_READABILITY_RESULTS.json",
       "status": "added",
-      "sha256": "10e17be431e8cf0edffa83b74b5b33ad05571fb0abdc9adc57c24f8094de3651"
+      "sha256": "72ce37cbe43d7c1db9634d0b2d91ccfe381af1a3926ac921e8b8dc0d6de423c5"
     },
     {
-      "file": "docs/customer-experience-screenshots/catalogue-phone-dark.jpg",
+      "file": "docs/accessibility/contrast-read.js",
       "status": "added",
-      "sha256": "34d499419faf964a50c4a885703683fc3bf13c23d3b07cba28603b23d0328bc7"
+      "sha256": "7e87dee8f30047e2719d036d4a4da7400cd587915560db58477741fb92dcf368"
     },
     {
-      "file": "docs/customer-experience-screenshots/settings-phone-header.jpg",
+      "file": "docs/accessibility/INITIAL_BROWSER_FINDINGS.json",
       "status": "added",
-      "sha256": "07029befa708f0ea5a5eda86b694610a1b40e7c6ee291a08cfb0acf7cdf6a747"
+      "sha256": "9296bc12de4df2f0883f98ef8c90cde78cdeffef851705e1506c96d2ca1cbb2d"
     },
     {
-      "file": "docs/reference/approved-brand-identity.png",
+      "file": "docs/accessibility/RC13-accent-2367ac.jpg",
       "status": "added",
-      "sha256": "40758b620c705ba3646583a6ca1e5f4568858912f92e4d754093ebec44667c7a"
+      "sha256": "6cb30a3149f86df2d70e1fd17bfe6ed4064c2378b5454ce290d62c947c8b5cce"
     },
     {
-      "file": "docs/reference/emblem-source.svg",
+      "file": "docs/accessibility/RC13-accent-ffff00.jpg",
       "status": "added",
-      "sha256": "3c8953ee2cae3f02584f7856f7a57630fc0ede12652d8533d1d7f357ea8c9a18"
+      "sha256": "273fff471b392904c5f587b8b59b5f9cb35bccbc6c6c186c6e5043bfbcddb60d"
+    },
+    {
+      "file": "docs/accessibility/RC13-buttons-dark.jpg",
+      "status": "added",
+      "sha256": "d8880b1dcd19a75f27ca502ae93cebf52eb3be82b2d7d4b1eef5923b6ea023d8"
+    },
+    {
+      "file": "docs/accessibility/RC13-buttons-light.jpg",
+      "status": "added",
+      "sha256": "5eec041117487bc3f891eaa3b171be99f17de9f61209066854c75165db5597e8"
+    },
+    {
+      "file": "docs/accessibility/RC13-buttons-system.jpg",
+      "status": "added",
+      "sha256": "22e877241ba1ee8ac7d3f487736feb05ec5ed0c55a026e15981161b5ff6ce409"
+    },
+    {
+      "file": "docs/accessibility/RC13-custom-cake-dark.jpg",
+      "status": "added",
+      "sha256": "b57bffd269bdfca42c875d2c09a43b55710ea51c63a9e0412c0f0b2eac6cd1e6"
+    },
+    {
+      "file": "docs/accessibility/RC13-customer-catalogue-dark.jpg",
+      "status": "added",
+      "sha256": "5f7d3e4a9cf643a1cfac870565b23e72d7fc23e36404a5b275bf0a1d63a39061"
+    },
+    {
+      "file": "docs/accessibility/RC13-customer-phone-light.jpg",
+      "status": "added",
+      "sha256": "d7d8034d1d27f3ad2c420066ecd59571788d78a4383cf5775540c8a98c6c42e6"
+    },
+    {
+      "file": "docs/accessibility/RC13-customers-dark.jpg",
+      "status": "added",
+      "sha256": "3f2680cd8f4c021bf655774de19aaca79dd3069b5cbe3b9e0061c40da8f5d78b"
+    },
+    {
+      "file": "docs/accessibility/RC13-customers-light.jpg",
+      "status": "added",
+      "sha256": "3a4bcaa3a6f3a387400907e50511824680c956355ec19b9badab263f1c6c3cec"
+    },
+    {
+      "file": "docs/accessibility/RC13-notifications-dark.jpg",
+      "status": "added",
+      "sha256": "d639cec759b9f13ffd94f3d57ee06db2b10d44c8aa18585c91d920b2c20133ce"
+    },
+    {
+      "file": "docs/accessibility/RC13-phone-en.jpg",
+      "status": "added",
+      "sha256": "fca5a376eccb8ebeb70329ed206b34faf552293dd263a0462d61a09c817fa9b5"
+    },
+    {
+      "file": "docs/accessibility/RC13-phone-es.jpg",
+      "status": "added",
+      "sha256": "1322497f92658413d01a514ddb0f38a18bf99655b2332131a36c403e3914ebc9"
+    },
+    {
+      "file": "docs/accessibility/RC13-phone-zh-CN.jpg",
+      "status": "added",
+      "sha256": "2e9dbbda36795cdebad132a3b3efe1e5d66949c762df65bfeb311149cb9586c5"
+    },
+    {
+      "file": "docs/accessibility/RC13-phone-zh-TW.jpg",
+      "status": "added",
+      "sha256": "fa92bbc1cc4ffe858055888dfb91acf0aa5a11dde47fc9b8df1f7e3e79341192"
+    },
+    {
+      "file": "docs/accessibility/RC13-preorder-dark.jpg",
+      "status": "added",
+      "sha256": "ae72c58e37faac934435215f5ee609d84036bf8bb2b41f5fa17947df599ba95a"
+    },
+    {
+      "file": "docs/accessibility/RC13-products-dark.jpg",
+      "status": "added",
+      "sha256": "771e53a0202bbb51f0cdc12c05a4e5b2b28c321000d7288b1816ff096213c75f"
+    },
+    {
+      "file": "docs/accessibility/RC13-products-light.jpg",
+      "status": "added",
+      "sha256": "586f37f077e1e7b18c5688ffb3273f2481ca40d3b7c9fd3442a8a04ef5a3287a"
+    },
+    {
+      "file": "docs/accessibility/RC13-purchase-order-editor-light.jpg",
+      "status": "added",
+      "sha256": "0a1635b9ded31c6db1e2333cabc434ec6ae18dcfc0c3185a978eb3d8697526b3"
+    },
+    {
+      "file": "docs/accessibility/RC13-receipt-dark.jpg",
+      "status": "added",
+      "sha256": "ce68dc7f242c10120a25a8d67e1e72781d1f0659982c6df293378f1c0a154d17"
+    },
+    {
+      "file": "docs/accessibility/RC13-receiving-dialog-dark.jpg",
+      "status": "added",
+      "sha256": "c9c6394d0d3c7b7e624fddb1bd2de5474d14c4f86d63d8cdd761007a1ef7bffc"
+    },
+    {
+      "file": "docs/accessibility/RC13-tablet-es.jpg",
+      "status": "added",
+      "sha256": "4014c1af2f8de28043811369012b07131ba947a89d470e2a133597c622122578"
+    },
+    {
+      "file": "docs/accessibility/SOURCE_AUDIT.json",
+      "status": "added",
+      "sha256": "8c8f402e68c56162644720656d0601f64bbb934e66cbdae7d18b0fbafaad8d13"
+    },
+    {
+      "file": "docs/qa/rc13/fixture-client.js",
+      "status": "added",
+      "sha256": "bad3e31771c7d98b02616aa08b91783e6701072f773ecc7165da8fd111eb0f9c"
+    },
+    {
+      "file": "docs/qa/rc13/vite.config.mjs",
+      "status": "added",
+      "sha256": "b21000abf78bc3482da118da097c0a6db8a75f35d27799187e3d989707dbbe6c"
     },
     {
       "file": "docs/validation/build.log",
       "status": "modified",
-      "sha256": "f6dd2473e70d2be8fac0cbb11277877a6e31eadf5eb925e167a7b51b47ce4145"
+      "sha256": "c64aeb5734058150641a03ea9cdc46793f72ed263840ef9b2a4758cbf98546fe"
     },
     {
       "file": "docs/validation/test-assets.log",
       "status": "modified",
-      "sha256": "66b7bdc69b41a0194592d421d6dee02f3b5a43a74af97c624a844c08ebb6b673"
-    },
-    {
-      "file": "docs/validation/test-experience.log",
-      "status": "added",
-      "sha256": "3f210bfcc675e8f146efb60befbf88f58a399c36adbcc53010549cb82a556e90"
+      "sha256": "a538cd600ef4c0f676cd5c0ec0d3e6b34ed5fccf2e8cb78e6b7e431ee0e09e77"
     },
     {
       "file": "docs/validation/test.log",
       "status": "modified",
-      "sha256": "d4f04bd6bf74c1f1b854e3a4eab3e8d87ee5a22291fd7b88934b6d4ae32fedaa"
-    },
-    {
-      "file": "ENVIRONMENT_VARIABLES.md",
-      "status": "modified",
-      "sha256": "b5858cc06399775cc0f7732001c0eed72becf4ad9c0627df31eecd6a086d2bee"
-    },
-    {
-      "file": "FINAL_CHECK_RESULTS.json",
-      "status": "modified",
-      "sha256": "bc7cbd3db0a47a254bf1c14f6411c494b1c263e37d3d4e6b2250ef515cd021c4"
+      "sha256": "f69463eb5297f7b97b22035be5097ed9542a0d31945ec16d6e27166c02b13c02"
     },
     {
       "file": "FINAL_SOURCE_NOTE.txt",
       "status": "modified",
-      "sha256": "92f30d42353832944a6e2267a4955bbc376a41cd435b0880c6f09dc8c87853a1"
+      "sha256": "919bcf352dab47669bd3fba8456944fe04de06bff89b43b163d0b794b30dab99"
     },
     {
       "file": "GITHUB_UPLOAD_GUIDE.md",
       "status": "modified",
-      "sha256": "79e94ff34c30dfaee1547321119004a158814b77788c41b40b08375ed5727ef0"
-    },
-    {
-      "file": "GIT_EXCLUSION_CHECK.json",
-      "status": "modified",
-      "sha256": "488238f5bddc739e25747523e8e89530aec7e565d7b50e0f80cc9b95309be4a5"
-    },
-    {
-      "file": "index.html",
-      "status": "modified",
-      "sha256": "e34a3cb5db095e82a8f65c3ab5ed53a45b61d7c9de45bc18588ae791bb1b7e4d"
+      "sha256": "f20109315ce1fdb2690aee4314203cd3a165b370fada8d8cf55da6a0fb7289d6"
     },
     {
       "file": "INSTALL_UPGRADE_GUIDE.md",
       "status": "modified",
-      "sha256": "5e9a4c8274904e709dd1e4b0f99a9cbb6a28c9685901906a68571a55b23395bb"
+      "sha256": "0ab15c66ee61c8cab8afc1ee7330fb46a4b0fe5fc70b5481fb66dfc801f7be15"
     },
     {
       "file": "KNOWN_ISSUES.md",
       "status": "modified",
-      "sha256": "b7ad5335213ed4758cbaf4eb1d9eb05ab90fba16fa0cd2c4bcc814421663670f"
-    },
-    {
-      "file": "MIGRATION_MANIFEST.json",
-      "status": "modified",
-      "sha256": "0814bfbb23a2ba632118bb629c78eaaa6848f975f6117db2d23a720409bd9d00"
-    },
-    {
-      "file": "NOTIFICATION_SETUP.md",
-      "status": "added",
-      "sha256": "6cbe3ace77c1f1b93c137aced7ad0830e2dcafc724cd18144dcdc8e643cbcc26"
+      "sha256": "be01c85c5bcf0a4b51b3db16a9221fee2ad613879bde070023ec784f089edd28"
     },
     {
       "file": "package-lock.json",
       "status": "modified",
-      "sha256": "299f09d4b5a87cb3dd2bbcd02644db2c65d04c83be157edd352bf111aabf827f"
+      "sha256": "a4c006d47d3f3ab058fd1afa52823802edb04f5153025ac324dcd46f033f3002"
     },
     {
       "file": "package.json",
       "status": "modified",
-      "sha256": "79b5c400dd51733af37031db50e909f790f4deeb7d1c12a173b58919230dc6de"
-    },
-    {
-      "file": "POST_REFRESH_CHECK_RESULTS.json",
-      "status": "modified",
-      "sha256": "f468caf68e447a6dff69b0d14a821cd1e9bde0574c97e96f81794ef6496d80f9"
-    },
-    {
-      "file": "PREVIEW_HTTP_RESULTS.json",
-      "status": "modified",
-      "sha256": "a7088c7415f6f679e7be0885c088e8c1de8c1eff370fed831723b9d6f066242c"
-    },
-    {
-      "file": "public/counternest-boot-logo-dark.svg",
-      "status": "modified",
-      "sha256": "4f4ea9923996eef50ae3e14ec84e47a23cafee66f342063a0cc280d9bfb98063"
-    },
-    {
-      "file": "public/counternest-brand-lockup.svg",
-      "status": "added",
-      "sha256": "9bbb1f91d1d25cf18df876654f0f52ea5386b617ec61e507d5857d54363d5a63"
-    },
-    {
-      "file": "public/counternest-default-logo.svg",
-      "status": "modified",
-      "sha256": "4f4ea9923996eef50ae3e14ec84e47a23cafee66f342063a0cc280d9bfb98063"
-    },
-    {
-      "file": "public/pwa/apple-touch-icon.png",
-      "status": "modified",
-      "sha256": "ab5cb252d7410f969e952a93b3f19d309567d41c6b30d94667a57d4714bbc4f1"
-    },
-    {
-      "file": "public/pwa/favicon-64.png",
-      "status": "modified",
-      "sha256": "861f173f727213c1d3831c47229dd830dd959c43222c4bf718a72a3d1b0e2125"
-    },
-    {
-      "file": "public/pwa/icon-192.png",
-      "status": "modified",
-      "sha256": "cc36a0486f0b43da0f3e28eb0d4c238afafd8dfaaf061c219c4a113c9c3d6f83"
-    },
-    {
-      "file": "public/pwa/icon-512.png",
-      "status": "modified",
-      "sha256": "e014cfb8c8fd91d2fae1c4420506c0c74aabeb432df8a3d6c59a52230c67acf9"
-    },
-    {
-      "file": "public/pwa/icon-maskable-512.png",
-      "status": "modified",
-      "sha256": "7437b12c887d5322f6a8c0f9230c1be1d68126873829ea99fb9e2b2887a99e5b"
-    },
-    {
-      "file": "public/pwa/splash-1024.png",
-      "status": "modified",
-      "sha256": "9a94113a568c5648b3373f03b5c50586abcf4d04fceb02a8f625a7650de1c6a5"
+      "sha256": "7cfee0ad33f60976e2cc3594f0bef3777664811cba18ce0883a590b044c5d45a"
     },
     {
       "file": "public/sw.js",
       "status": "modified",
-      "sha256": "24db7ed86f9b69c0e2edda98f84c7581e31e447b68e55019a8016a796112547e"
+      "sha256": "5943c8a7327e10af6692d229a00de09b6a104f70311117e8dbe8ba8542858d13"
     },
     {
-      "file": "PURCHASING_MODEL_TEST_RESULTS.json",
-      "status": "modified",
-      "sha256": "a8b4a4a938902e8ff226ec4871fb153aaf10462b2970b4700118e46c691abe39"
-    },
-    {
-      "file": "PWA_NOTES.md",
+      "file": "qa/readability.tsx",
       "status": "added",
-      "sha256": "d8ad58c2ff3d0e5db6bb0e5a48b75b59308e19c5d27c83925ccddfccd3a6c535"
-    },
-    {
-      "file": "RC11_BROWSER_QA.json",
-      "status": "added",
-      "sha256": "20859669bcf55ce2ffac0bf7d1a41fb3c2e356911a9697f4f2e1a262503c568b"
-    },
-    {
-      "file": "RC11_POST_REFRESH_RESULTS.json",
-      "status": "added",
-      "sha256": "607a7c30340f160af57c6ea9c98fd34191873071b69807382255d835d68b47ba"
+      "sha256": "a4c35425afb1ef8a006f16a3118523782c959ce658b43ded7761b8387b9adca3"
     },
     {
       "file": "README.md",
       "status": "modified",
-      "sha256": "6ce26d091eec2c3a76c7ab9c87d634d3771d378d608a8bddee40b2d0ea2cbcad"
+      "sha256": "f7034a55f8ff2da1a6ac5796546dad3aeabad11804f42bcc68c532668eeccc40"
     },
     {
       "file": "RELEASE_MANIFEST.json",
       "status": "modified",
-      "sha256": "8e9fd28f87b8f2722e7cd710e49a1ad649cf918bdf3e13f2e2b80245158ad4e5"
+      "sha256": "9a5cb79f72137ab3e65ad80e301de736d41277d29f34f3a4035f057be8b11df9"
     },
     {
       "file": "RELEASE_NOTES.md",
       "status": "modified",
-      "sha256": "0cf41971823e3ace02f954ee4544d50f9c81e1cf1005903110a466dc75b313ba"
+      "sha256": "529c17eb9fcb0d547cb184fc27a1eda1653fc329aacb984675e3b28972bf9f28"
+    },
+    {
+      "file": "SCREENSHOT_EVIDENCE.md",
+      "status": "modified",
+      "sha256": "2a9263f497180df5bfe8cfb17cdcc14b9266f5604592564473f918ec946ff3d5"
+    },
+    {
+      "file": "SCREENSHOT_GALLERY.md",
+      "status": "modified",
+      "sha256": "791f808825f6287a03d7bbf422a74da95093d2fdb23d009237ff7c4cac97ced5"
+    },
+    {
+      "file": "src/accessibility.css",
+      "status": "added",
+      "sha256": "a2db41bc62dba3a51afcef101413ece4c632c48dec0a8db05826d703c4557712"
+    },
+    {
+      "file": "src/accessiblePalette.ts",
+      "status": "added",
+      "sha256": "5d40699485246cba786ad145b75e48b9c10941d072f2e67fa6a6be6937de9ff2"
     },
     {
       "file": "src/App.tsx",
       "status": "modified",
-      "sha256": "188ad780d2caf831a510c2c02f8f8e7ce75f0716adb9524793f852a8e58cfc4f"
-    },
-    {
-      "file": "src/appNavigation.ts",
-      "status": "modified",
-      "sha256": "c3f946ac04b9906fc08a68cdff198f72475fea2ab5d587f50d8cff18ea5ae32d"
+      "sha256": "9cab4af9c1d16318ef87bee8e85ca084ee3c3c5904bfe7ffd32a6c14a7e79ca5"
     },
     {
       "file": "src/BusinessContacts.tsx",
-      "status": "added",
-      "sha256": "ca11a8bba98abef976df4bdbb4c02e5eba3c531b0bb9dcb94f8303684cea96d8"
+      "status": "modified",
+      "sha256": "95a8d8510ba3af89666e4c6a0f486960102fafd7e381f40dfc796ee263c3970c"
     },
     {
-      "file": "src/CatalogueAppearance.tsx",
-      "status": "added",
-      "sha256": "9df3e1e5a2ab08b059c52b51a89975990deeaffe20bcfaffd814ef2c8608109f"
+      "file": "src/Button.tsx",
+      "status": "modified",
+      "sha256": "aaac5abf4dc4e6ba4a327c5e653f57a0ae0fc472235a41014ed3f605ba19b8a3"
+    },
+    {
+      "file": "src/calendar.css",
+      "status": "modified",
+      "sha256": "b2779a0be6ffe153f253b05b8f5ec4dff88d0e3081e2fe45aa8a340d89ac5ced"
+    },
+    {
+      "file": "src/CatalogueAdvanced.tsx",
+      "status": "modified",
+      "sha256": "d44d1ab9fb6319ee12e19d90e7f9171ce1cb7fed8ebfef928e21774a30ef0c1b"
+    },
+    {
+      "file": "src/CatalogueDecorationEditor.tsx",
+      "status": "modified",
+      "sha256": "965f9917d246bce1416ff4fd59a062d160e8a26bd982a035f4a1acca9190ca91"
     },
     {
       "file": "src/CataloguePreorders.tsx",
       "status": "modified",
-      "sha256": "6f8e3dc17a9442d6979903d6b4763775e2bab9f3c57e6da765528b699d1132d5"
-    },
-    {
-      "file": "src/categoryLocalization.ts",
-      "status": "added",
-      "sha256": "aa4bdc4995760bb4f926de90d69e390a407a279c9cb8487c62374ac9080a1bed"
+      "sha256": "2f368446efc3bfac49ac44f37fc9b117b4e0b6f008fcff508ca6b7f52cef9282"
     },
     {
       "file": "src/CommercialCatalogue.tsx",
       "status": "modified",
-      "sha256": "f9aa906c49e5f431bc95462bc2b3c59ae6e995d8ef700cd6e6b45551f0497067"
+      "sha256": "65d0cbd08c0fb8ebd795da703d44ed981ce6f8da006402f5ed2f1763a623fb8a"
     },
     {
       "file": "src/CommercialOperations.tsx",
       "status": "modified",
-      "sha256": "e603fd321a80f182acf5f6892ceda9d658d9d6d746395961f01125570dd0d365"
+      "sha256": "58afa6b2b6461b43114fbb655e8cde10a1e8854bfe9a7aeae65df13a7a1fe35f"
     },
     {
-      "file": "src/CustomerContactSettings.tsx",
+      "file": "src/CustomerDisplay.tsx",
       "status": "modified",
-      "sha256": "58eeca716c3cbc5d0049b90718798f3224993dea16fecab93fe27a4f2f4ee282"
+      "sha256": "9270ebaa45d7c53955cd0414ab88ec07a9aaccc05c3fea7f1671e58a5f6ba40e"
     },
     {
-      "file": "src/OrderNotifications.tsx",
+      "file": "src/customerRoutes.ts",
       "status": "added",
-      "sha256": "4335c8f109c5b1ed8b5bc1a3131c7a04cce9a0ddb7ccdeea840647c498565312"
+      "sha256": "333169dfa21c5dd059b1563f1fd1613575eff85c8f65aca46196cb6bf4e5c335"
+    },
+    {
+      "file": "src/ImageCropper.tsx",
+      "status": "modified",
+      "sha256": "ab062d8ee6f4956f59786aa38844bee493f2778f9de7c781d724ff79c3767fd3"
+    },
+    {
+      "file": "src/IngredientPurchasing.tsx",
+      "status": "modified",
+      "sha256": "c463645d93acfa5731c579161b2a270ddc68f548bf20811abcfcd341de498991"
+    },
+    {
+      "file": "src/main.tsx",
+      "status": "modified",
+      "sha256": "001c37378e93032128dbc2d658f2cba73cd48d4e58c704e5689481e99a7e12ea"
+    },
+    {
+      "file": "src/navigation.css",
+      "status": "modified",
+      "sha256": "72a1f7350f596a6b28cb13dee1f25522afc01f41472f92a9e80e1487b386e889"
+    },
+    {
+      "file": "src/OperationsCalendar.tsx",
+      "status": "modified",
+      "sha256": "d2026516973b3de750096d485c8476e76f277e3cff5b54fdb862fa267f6d1f65"
+    },
+    {
+      "file": "src/ProductionStudio.tsx",
+      "status": "modified",
+      "sha256": "70754e3e3724adf848bef6ef2fcc7588e6819b28165834330eadd6355ba5d352"
+    },
+    {
+      "file": "src/RecipeInventory.tsx",
+      "status": "modified",
+      "sha256": "57395486dbd27eb54af17b983f377623aa640c1e4ad3bdc5102ac9732821a3d1"
     },
     {
       "file": "src/release.ts",
       "status": "modified",
-      "sha256": "bc11c9f3fb76601fbb26c33c0d2f010e2dc42dec83b82105adbe3985dae6269f"
+      "sha256": "6197f569962ea5e9e222f734177ec277b0151576138ee95818989dbefb2858b5"
     },
     {
-      "file": "src/SelectionAlertRecord.tsx",
-      "status": "added",
-      "sha256": "4350e51409a63b7d5e3b9dc3b10d06e5e22dcf4b36367e5ac82d5bf9518759c8"
+      "file": "src/searchField.css",
+      "status": "modified",
+      "sha256": "ceedccc1a4e7fe43fb429d7a083a541a49b93dc7bc463edfbcf85fe5a5906473"
+    },
+    {
+      "file": "src/sharedTheme.ts",
+      "status": "modified",
+      "sha256": "2742133e3dfbc605ec77e54a7d9d3c23944594edc27534892a74726a2abf9768"
+    },
+    {
+      "file": "src/styles.css",
+      "status": "modified",
+      "sha256": "8c40a8369c322f51c63b7fb91ff479d78b3492d59d45cd2a301679a97d1a6d32"
     },
     {
       "file": "src/systemStyle.css",
       "status": "modified",
-      "sha256": "c09db4cb356536d85c3291e4cc4c2b67ea69d3b2282981906f2c8aed55a07eaf"
-    },
-    {
-      "file": "src/translations.ts",
-      "status": "modified",
-      "sha256": "f2a8d3dc3774dc8bb055c0066fa75d1c38de637797a0a6f9bc0b28e8d1e0be0e"
-    },
-    {
-      "file": "src/UxShell.tsx",
-      "status": "modified",
-      "sha256": "e5dff1b9d26f2a1cb474e81daf3ecf6d0e4d4db177b3226bfee5f64ae39f1896"
-    },
-    {
-      "file": "supabase/migrations/202610181200_customer_experience_notifications.sql",
-      "status": "added",
-      "sha256": "8cf3d2a4bc2a2d6a676a7afdafd014f85db1d337644c42a067b6238912498be2"
+      "sha256": "a12030e1a8f9c09f0c5430a23b87bcd32a14d9a3b6d85144d4ecb93387190da6"
     },
     {
       "file": "SUPABASE_DEPLOYMENT_GUIDE.md",
       "status": "modified",
-      "sha256": "0942a634296611b6f0eff4434dcf4e0ae1f13446a8680cc1b0a4e5fb4308ac21"
+      "sha256": "99c4a0c3b53c65040b829d006463033bbb87807648078bc9d8dc763918efc31f"
     },
     {
       "file": "SUPABASE_MIGRATION_ORDER.md",
       "status": "modified",
-      "sha256": "6115b5be69a2bf2bb1e2875d545e974ebe20050a30ac4b3860c94072a7617619"
+      "sha256": "036748d092e4cb6db0d66bbcc23ef811003d4672ba9b490787832a18f1d84e74"
     },
     {
       "file": "SUPABASE_UPGRADE_GUIDE.md",
       "status": "modified",
-      "sha256": "5e9a4c8274904e709dd1e4b0f99a9cbb6a28c9685901906a68571a55b23395bb"
+      "sha256": "cec29efdbb32d316fce52a1d7d5eaff5bfb3ac7f3c71a6df4b0ad10ca1b7ec56"
+    },
+    {
+      "file": "tests/accessibility.cjs",
+      "status": "added",
+      "sha256": "21353a2e78c215128ac04c4851b5e11fc0d8404c88871401f7844732d50021f0"
     },
     {
       "file": "tests/boot.cjs",
       "status": "modified",
-      "sha256": "17473455f1fb4876e4cf9f1f5f509c9dd12939b66785d28a577b47d2602775d3"
-    },
-    {
-      "file": "tests/customer-experience-database.cjs",
-      "status": "added",
-      "sha256": "faba0387aff0f40f9b631c0962191eac73384402799296d4fbd3c5a0a2201935"
-    },
-    {
-      "file": "tests/customer-experience.cjs",
-      "status": "added",
-      "sha256": "e00ac33876ea38a04e689618ee4943952af49c5f82af8126b557fd5801c64eb9"
+      "sha256": "a0ec57f11466fbb88c9f9e9bac67975d7d4f903648946b11ef5d6f737eba0f70"
     },
     {
       "file": "tests/database-integration.cjs",
       "status": "modified",
-      "sha256": "ffa40b399ed5e1ec5780dc0da69833f126452cd4ec91da4ef51600011c2ce120"
+      "sha256": "8eb2bd32fcf2f840a97064b6f5bc55619ca46cbe4147d0dc1045fa2763a5b729"
     },
     {
       "file": "tests/STATIC_RELEASE_CHECKS.cjs",
       "status": "modified",
-      "sha256": "11a1de58193e4c4aca70210d84c91800b6104f45ef6507b12ba6fd874a02dd82"
-    },
-    {
-      "file": "tests/system-style.cjs",
-      "status": "modified",
-      "sha256": "04abdd8e276d835bb08bfa76646e219974f3978010df6d772ba09a662f4242e5"
+      "sha256": "0f67593db41209c289d1c82b9f0f327bd6d186d4fb0cebc70a97cf2f429bb2f9"
     },
     {
       "file": "UAT_ACCEPTANCE_CHECKLIST.md",
       "status": "modified",
-      "sha256": "6554e29473a306163344c4c67796ce328ec70671edbc3f2fe2a792c4944e0925"
+      "sha256": "4fd15c4ef8fa98c03aef10c3590f7df648422e21400a51d09f9328be1ca6ad4d"
     },
     {
       "file": "UI_DESIGN_SYSTEM.md",
       "status": "modified",
-      "sha256": "da3408ee06ac2d51da884d10f7b8b8da7e64e6ed2ecc70b2187970764ff7fbb5"
+      "sha256": "0a1528532cd49d8f1286b8ccc6169f473414701264129c15529c93b2c6d273bd"
+    },
+    {
+      "file": "UI_REGRESSION_CHECKLIST.md",
+      "status": "added",
+      "sha256": "51b10cb4726bc2fe36b651a39e2bb829455f7ce9806f0b9b760841d4a41e157c"
     },
     {
       "file": "UI_UAT_CHECKLIST.md",
       "status": "modified",
-      "sha256": "82993050133d2c11de2919502807b200c792e783945488116aa2ea0ab5af72b2"
-    },
-    {
-      "file": "vercel.json",
-      "status": "modified",
-      "sha256": "2e1c968d8a8e60e9a74ef78a2b3ee54cf2d778e85a345454ee99e0631622960e"
+      "sha256": "d55510cb43a2a3bc73a3295472d6dabb2731d4c441f38abf1fcbf35fe14292f7"
     },
     {
       "file": "VERCEL_DEPLOYMENT_GUIDE.md",
       "status": "modified",
-      "sha256": "0053bb2bcc729d83726b07115a643f17cee495be7b05e45150493ec49a6802dd"
+      "sha256": "c61d037a98f1f1032252395adb29856f833cb99f23cc0e118bfc866492e9b218"
     }
-  ]
+  ],
+  "unchanged_migrations": 94,
+  "unchanged_public_image_assets": 10
 }

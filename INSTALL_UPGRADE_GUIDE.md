@@ -1,11 +1,11 @@
-# RC14 installation and upgrade
+# Upgrade guide — existing RC14 installation
 
-Browser → GitHub → Vercel → Supabase Cloud.
+1. Keep the existing Supabase Cloud project, business records, storage buckets, environment variables, Vercel configuration and workspace IDs.
+2. Review REDESIGN_CHANGE_REPORT.md, DATA_PRESERVATION_REPORT.md and the screenshot gallery. Extract the ZIP to a clean source directory or branch, preserving your existing repository history.
+3. Run npm install and npm run build. The Vercel project uses its existing Vite build and dist output configuration.
+4. Deploy a Vercel preview against a dedicated staging environment for mutation-based UAT. Do not run sales, receiving, restore, deletion or other write tests against production.
+5. For an existing RC14 database: run ZERO SQL migrations. Do not run old bootstrap SQL, reset, seed or restore scripts. Historical SQL is included solely as source history for the existing app.
+6. Check the UAT checklist, then deploy through the existing GitHub/Vercel process. Existing environment secrets stay in Vercel; .env/.env.local are excluded from the ZIP.
+7. Reload installed PWAs after the new service worker activates. The cache version changes; notification device bindings and push behavior remain intact.
 
-1. Use Node 22.12+ or 24. Run npm install, npm run build, npm test and npm run test:assets.
-2. Normal Vercel build: npm run build; output dist. Configure the public environment values documented in .env.example; keep service-role credentials server-only.
-3. Upgrading RC13 requires no SQL. All 94 migration files remain unchanged. Earlier/fresh projects follow SUPABASE_MIGRATION_ORDER.md.
-4. Deploy the normal source through GitHub/Vercel. Do not deploy the isolated docs/qa configuration.
-5. Reload/update installed PWAs to use the rc14-blended-branding cache, then complete UAT_ACCEPTANCE_CHECKLIST.md.
-
-Optional asset regeneration: npm run brand:assets. Generated assets are already included; regeneration is not a production startup step.
+Rollback: redeploy the previous RC14 Vercel build. There is no database rollback for this release. Keep original uploaded assets and records in place.

@@ -1,0 +1,477 @@
+[
+  {
+    "label": "customer-light",
+    "rows": [
+      {
+        "disabled": false,
+        "label": "Home",
+        "ratio": 12.72549968727576
+      },
+      {
+        "disabled": false,
+        "label": "Categories",
+        "ratio": 14.74578151667847
+      },
+      {
+        "disabled": false,
+        "label": "Cakes",
+        "ratio": 14.74578151667847
+      },
+      {
+        "disabled": false,
+        "label": "Pastries",
+        "ratio": 14.74578151667847
+      },
+      {
+        "disabled": false,
+        "label": "My Orders",
+        "ratio": 14.74578151667847
+      },
+      {
+        "disabled": false,
+        "label": "Account",
+        "ratio": 14.74578151667847
+      },
+      {
+        "disabled": false,
+        "label": "Favorites",
+        "ratio": 14.74578151667847
+      },
+      {
+        "disabled": false,
+        "label": "Help & Support",
+        "ratio": 14.74578151667847
+      },
+      {
+        "disabled": false,
+        "label": "About CounterNest",
+        "ratio": 14.74578151667847
+      },
+      {
+        "disabled": false,
+        "label": "Your order0",
+        "ratio": 13.82474078200008
+      },
+      {
+        "disabled": false,
+        "label": "Account",
+        "ratio": 13.82474078200008
+      },
+      {
+        "disabled": false,
+        "label": "Order Now",
+        "ratio": 5.520308763449617
+      },
+      {
+        "disabled": false,
+        "label": "Custom OrdersContact Business",
+        "ratio": 14.74578151667847
+      },
+      {
+        "disabled": false,
+        "label": "Today’s SpecialsExplore the menu",
+        "ratio": 14.74578151667847
+      },
+      {
+        "disabled": false,
+        "label": "Filters",
+        "ratio": 13.82474078200008
+      },
+      {
+        "disabled": false,
+        "label": "All",
+        "ratio": 13.82474078200008
+      },
+      {
+        "disabled": false,
+        "label": "Cakes",
+        "ratio": 13.82474078200008
+      },
+      {
+        "disabled": false,
+        "label": "Pastries",
+        "ratio": 13.82474078200008
+      },
+      {
+        "disabled": false,
+        "label": "Strawberry Cream Cake",
+        "ratio": 14.74578151667847
+      },
+      {
+        "disabled": false,
+        "label": "Favorite: Strawberry Cream Cake",
+        "ratio": 14.74578151667847
+      },
+      {
+        "disabled": false,
+        "label": "Strawberry Cream Cake",
+        "ratio": 14.74578151667847
+      },
+      {
+        "disabled": false,
+        "label": "View options: Strawberry Cream Cake",
+        "ratio": 5.520308763449617
+      },
+      {
+        "disabled": false,
+        "label": "Butter Croissant",
+        "ratio": 14.74578151667847
+      },
+      {
+        "disabled": false,
+        "label": "Favorite: Butter Croissant",
+        "ratio": 14.74578151667847
+      },
+      {
+        "disabled": false,
+        "label": "Butter Croissant",
+        "ratio": 14.74578151667847
+      },
+      {
+        "disabled": false,
+        "label": "View options: Butter Croissant",
+        "ratio": 5.520308763449617
+      },
+      {
+        "disabled": false,
+        "label": "Made simpler with CounterNest",
+        "ratio": 13.82474078200008
+      }
+    ]
+  },
+  {
+    "label": "customer-dark",
+    "rows": [
+      {
+        "disabled": false,
+        "label": "Home",
+        "ratio": 14.94676442335589
+      },
+      {
+        "disabled": false,
+        "label": "Search",
+        "ratio": 14.94676442335589
+      },
+      {
+        "disabled": false,
+        "label": "Your order0",
+        "ratio": 14.94676442335589
+      },
+      {
+        "disabled": false,
+        "label": "Order Now",
+        "ratio": 5.520308763449617
+      },
+      {
+        "disabled": false,
+        "label": "Filters",
+        "ratio": 14.94676442335589
+      },
+      {
+        "disabled": false,
+        "label": "All",
+        "ratio": 14.94676442335589
+      },
+      {
+        "disabled": false,
+        "label": "Cakes",
+        "ratio": 14.94676442335589
+      },
+      {
+        "disabled": false,
+        "label": "Pastries",
+        "ratio": 14.94676442335589
+      },
+      {
+        "disabled": false,
+        "label": "Strawberry Cream Cake",
+        "ratio": 12.681779683443503
+      },
+      {
+        "disabled": false,
+        "label": "Favorite: Strawberry Cream Cake",
+        "ratio": 12.681779683443503
+      },
+      {
+        "disabled": false,
+        "label": "Strawberry Cream Cake",
+        "ratio": 12.681779683443503
+      },
+      {
+        "disabled": false,
+        "label": "View options: Strawberry Cream Cake",
+        "ratio": 5.520308763449617
+      },
+      {
+        "disabled": false,
+        "label": "Butter Croissant",
+        "ratio": 12.681779683443503
+      },
+      {
+        "disabled": false,
+        "label": "Favorite: Butter Croissant",
+        "ratio": 12.681779683443503
+      },
+      {
+        "disabled": false,
+        "label": "Butter Croissant",
+        "ratio": 12.681779683443503
+      },
+      {
+        "disabled": false,
+        "label": "View options: Butter Croissant",
+        "ratio": 5.520308763449617
+      },
+      {
+        "disabled": false,
+        "label": "Made simpler with CounterNest",
+        "ratio": 14.94676442335589
+      },
+      {
+        "disabled": false,
+        "label": "Home",
+        "ratio": 10.012396416995276
+      },
+      {
+        "disabled": false,
+        "label": "Categories",
+        "ratio": 12.681779683443503
+      },
+      {
+        "disabled": false,
+        "label": "My Orders",
+        "ratio": 12.681779683443503
+      },
+      {
+        "disabled": false,
+        "label": "Account",
+        "ratio": 12.681779683443503
+      }
+    ]
+  },
+  {
+    "label": "cart-dark",
+    "rows": [
+      {
+        "disabled": false,
+        "label": "Home",
+        "ratio": 14.94676442335589
+      },
+      {
+        "disabled": false,
+        "label": "Search",
+        "ratio": 14.94676442335589
+      },
+      {
+        "disabled": false,
+        "label": "Your order1",
+        "ratio": 14.94676442335589
+      },
+      {
+        "disabled": false,
+        "label": "Keep browsing",
+        "ratio": 14.94676442335589
+      },
+      {
+        "disabled": true,
+        "label": "−",
+        "ratio": 7.307447663356933
+      },
+      {
+        "disabled": false,
+        "label": "+",
+        "ratio": 12.681779683443503
+      },
+      {
+        "disabled": false,
+        "label": "Remove",
+        "ratio": 7.311218236688669
+      },
+      {
+        "disabled": false,
+        "label": "Customer information",
+        "ratio": 5.520308763449617
+      },
+      {
+        "disabled": false,
+        "label": "Made simpler with CounterNest",
+        "ratio": 14.94676442335589
+      },
+      {
+        "disabled": false,
+        "label": "Home",
+        "ratio": 12.681779683443503
+      },
+      {
+        "disabled": false,
+        "label": "Categories",
+        "ratio": 12.681779683443503
+      },
+      {
+        "disabled": false,
+        "label": "My Orders",
+        "ratio": 12.681779683443503
+      },
+      {
+        "disabled": false,
+        "label": "Account",
+        "ratio": 12.681779683443503
+      },
+      {
+        "disabled": false,
+        "label": "View order",
+        "ratio": 5.520308763449617
+      }
+    ]
+  },
+  {
+    "label": "admin-dark",
+    "rows": [
+      {
+        "disabled": false,
+        "label": "Collapse sidebar",
+        "ratio": 15.056795620637793
+      },
+      {
+        "disabled": false,
+        "label": "Overview",
+        "ratio": 15.056795620637793
+      },
+      {
+        "disabled": false,
+        "label": "Sales & Customers",
+        "ratio": 15.056795620637793
+      },
+      {
+        "disabled": false,
+        "label": "New Sale",
+        "ratio": 15.056795620637793
+      },
+      {
+        "disabled": false,
+        "label": "Products",
+        "ratio": 5.520308763449617
+      },
+      {
+        "disabled": false,
+        "label": "Catalogue",
+        "ratio": 15.056795620637793
+      },
+      {
+        "disabled": false,
+        "label": "Customers",
+        "ratio": 15.056795620637793
+      },
+      {
+        "disabled": false,
+        "label": "Pre-Orders / Custom Cakes",
+        "ratio": 15.056795620637793
+      },
+      {
+        "disabled": false,
+        "label": "Loyalty",
+        "ratio": 15.056795620637793
+      },
+      {
+        "disabled": false,
+        "label": "Production & Kitchen",
+        "ratio": 15.056795620637793
+      },
+      {
+        "disabled": false,
+        "label": "Inventory & Supplies",
+        "ratio": 15.056795620637793
+      },
+      {
+        "disabled": false,
+        "label": "Reports & Analysis",
+        "ratio": 15.056795620637793
+      },
+      {
+        "disabled": false,
+        "label": "Operations",
+        "ratio": 15.056795620637793
+      },
+      {
+        "disabled": false,
+        "label": "System & Settings",
+        "ratio": 15.056795620637793
+      },
+      {
+        "disabled": false,
+        "label": "Sign out",
+        "ratio": 15.056795620637793
+      },
+      {
+        "disabled": false,
+        "label": "Back",
+        "ratio": 12.681779683443503
+      },
+      {
+        "disabled": false,
+        "label": "⌕ Search products, orders, customers… Ctrl / ⌘ K",
+        "ratio": 12.681779683443503
+      },
+      {
+        "disabled": false,
+        "label": "Quick Actions +",
+        "ratio": 12.681779683443503
+      },
+      {
+        "disabled": false,
+        "label": "1",
+        "ratio": 12.681779683443503
+      },
+      {
+        "disabled": false,
+        "label": "☆",
+        "ratio": 12.681779683443503
+      },
+      {
+        "disabled": false,
+        "label": "Administrator",
+        "ratio": 12.681779683443503
+      },
+      {
+        "disabled": false,
+        "label": "★ Dashboard",
+        "ratio": 12.681779683443503
+      },
+      {
+        "disabled": false,
+        "label": "Manage Categories",
+        "ratio": 12.681779683443503
+      },
+      {
+        "disabled": false,
+        "label": "Add Product",
+        "ratio": 5.520308763449617
+      },
+      {
+        "disabled": true,
+        "label": "Save Inventory Source",
+        "ratio": 7.307447663356933
+      },
+      {
+        "disabled": false,
+        "label": "Modify",
+        "ratio": 12.681779683443503
+      },
+      {
+        "disabled": false,
+        "label": "Remove",
+        "ratio": 7.311218236688669
+      },
+      {
+        "disabled": false,
+        "label": "Modify",
+        "ratio": 12.681779683443503
+      },
+      {
+        "disabled": false,
+        "label": "Remove",
+        "ratio": 7.311218236688669
+      }
+    ]
+  }
+]

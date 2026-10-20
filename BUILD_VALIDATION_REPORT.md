@@ -1,11 +1,11 @@
-# RC14 build validation report
+# Build validation — RC15
 
-2026-10-18 · 2.0.0-rc.14
+- npm install --no-audit --no-fund: completed successfully using existing declared dependencies.
+- npm run build: PASS (TypeScript and Vite production build).
+- npm test: PASS; 250 PASS summary lines. Includes frontend, renderer, isolated database, deployment/static safeguards, requests/retries, four-language behavior, purchasing, calendar, PWA/push, theme, accessibility, branding and redesign checks.
+- Exact logs: docs/rc15-validation/build.log and tests.log. Some esbuild test harnesses emit import.meta/CJS warnings; production uses Vite ESM.
+- Existing main bundle remains above Vite's 500 kB warning threshold. Build succeeds; performance splitting is a follow-up, not a backend change.
+- .env, .env.local, node_modules and dist are excluded from the release ZIP; .env.example is retained. Archive validation checks this after packaging.
+- No Electron, NSIS, Capacitor or desktop packaging was introduced.
 
-Dependency installation passed: 145 packages added, 146 audited, zero reported vulnerabilities. sharp is development-only; no runtime package was added. Production build, full npm test and built-asset checks passed. After final branding/cache adjustments, build, focused branding, customer PWA/receipt checks and assets passed again. Logs are under docs/validation and exit codes are in FINAL_CHECK_RESULTS.json.
-
-The full established suite includes 145 local PGlite database checks, all 94 migrations and the existing UI/tenant/permissions tests. All migration bytes match RC13. 7 focused branding checks verify path-only vectors, alpha-preserving fallbacks, PWA/icon dimensions and related behavior, custom-logo URL/color preservation, legacy fallback classification, native image errors, contained preparation and print paths. Offline service-worker tests exercise the new logo formats while retaining API/tenant cache exclusions.
-
-Local browser review: 18 scenarios and 34 visible logo measurements; loaded logos, contain geometry, no clip, transparent image background and no document overflow. 15 current screenshots are included. Production preview: 51 direct route responses and asset content types passed.
-
-The current build retains Vite's established large-chunk warning. Test bundling may report import.meta warnings; these are non-fatal and visible in logs. PGlite mocks Supabase auth/storage and manager-PIN crypt. Target cloud, physical installed-PWA, native Save as PDF/printer output and real uploaded artwork acceptance remain pending. See UAT_ACCEPTANCE_CHECKLIST.md.
+Local automated tests do not certify physical scanners/printers, OS notifications, installed PWA delivery or real Supabase/Vercel deployment. See UAT_ACCEPTANCE_CHECKLIST.md.

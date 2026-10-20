@@ -1,72 +1,11 @@
 {
-  "product": "CounterNest POS",
-  "version": "2.0.0-rc.14",
-  "build": "2026-10-18-blended-branding",
-  "date": "2026-10-18",
-  "result": "Local source candidate passed; target cloud, physical PWA and printer/PDF-destination acceptance pending",
-  "dependency_install": {
-    "command": "npm install --save-dev sharp",
-    "status": "passed",
-    "packages_added": 145,
-    "packages_audited": 146,
-    "audit_vulnerabilities": 0,
-    "new_runtime_dependencies": 0,
-    "development_dependency_added": "sharp"
-  },
-  "checks": [
-    {
-      "command": "npm run build",
-      "exit_code": 0,
-      "status": "passed"
-    },
-    {
-      "command": "npm run test",
-      "exit_code": 0,
-      "status": "passed"
-    },
-    {
-      "command": "npm run test:assets",
-      "exit_code": 0,
-      "status": "passed"
-    }
-  ],
-  "final_followup_checks": [
-    {
-      "command": "npm run build",
-      "status": "passed"
-    },
-    {
-      "command": "npm run test:branding",
-      "status": "passed"
-    },
-    {
-      "command": "npm run test:rc4",
-      "status": "passed"
-    },
-    {
-      "command": "npm run test:assets",
-      "status": "passed"
-    }
-  ],
-  "database_checks": 145,
-  "migrations": 94,
-  "unchanged_from_rc13": 94,
-  "branding_checks": 7,
-  "browser_scenarios": 18,
-  "visible_logo_measurements": 34,
-  "current_screenshots": 15,
-  "production_preview_routes": 51,
-  "exclusions": [
-    ".env",
-    ".env.local",
-    "node_modules",
-    "dist",
-    ".git",
-    "desktop/native installers"
-  ],
-  "limitations": [
-    "No remote deployment was performed",
-    "Physical devices and native print/PDF destinations pending",
-    "Earlier release accessibility/browser results remain historical scope"
-  ]
+  "version": "2.0.0-rc.15",
+  "baseline": "2.0.0-rc.14",
+  "buildPassed": true,
+  "testPassed": true,
+  "passLines": 250,
+  "protectedFiles": 103,
+  "protectedFilesUnchanged": true,
+  "migrationsAdded": 0,
+  "liveProductionAccessed": false
 }

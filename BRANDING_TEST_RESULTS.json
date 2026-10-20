@@ -1,5 +1,5 @@
 {
-  "version": "2.0.0-rc.14",
+  "version": "2.0.0-rc.15",
   "checks": [
     {
       "name": "All six production vector variants contain paths and no raster, font, opaque background or external link",

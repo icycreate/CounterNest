@@ -1,0 +1,230 @@
+[
+  {
+    "name": "after-catalogue-mobile",
+    "height": 844,
+    "scrollWidth": 375,
+    "width": 390
+  },
+  {
+    "name": "after-catalogue-desktop",
+    "height": 900,
+    "scrollWidth": 1425,
+    "width": 1440
+  },
+  {
+    "name": "after-product-detail",
+    "height": 844,
+    "scrollWidth": 375,
+    "width": 390
+  },
+  {
+    "name": "after-cart",
+    "height": 844,
+    "scrollWidth": 375,
+    "width": 390
+  },
+  {
+    "name": "after-checkout",
+    "height": 844,
+    "scrollWidth": 375,
+    "width": 390
+  },
+  {
+    "name": "after-review",
+    "height": 844,
+    "scrollWidth": 375,
+    "width": 390
+  },
+  {
+    "name": "after-confirmation",
+    "height": 844,
+    "scrollWidth": 375,
+    "width": 390
+  },
+  {
+    "name": "after-dark-mode",
+    "height": 844,
+    "scrollWidth": 375,
+    "width": 390
+  },
+  {
+    "name": "after-dark-cart",
+    "height": 844,
+    "scrollWidth": 375,
+    "width": 390
+  },
+  {
+    "name": "after-admin-dashboard",
+    "height": 900,
+    "scrollWidth": 1425,
+    "width": 1440
+  },
+  {
+    "name": "after-products",
+    "height": 900,
+    "scrollWidth": 1440,
+    "width": 1440
+  },
+  {
+    "name": "after-orders",
+    "height": 900,
+    "scrollWidth": 1425,
+    "width": 1440
+  },
+  {
+    "name": "after-ingredients",
+    "height": 900,
+    "scrollWidth": 1425,
+    "width": 1440
+  },
+  {
+    "name": "after-purchase-orders",
+    "height": 900,
+    "scrollWidth": 1425,
+    "width": 1440
+  },
+  {
+    "name": "after-settings",
+    "height": 900,
+    "scrollWidth": 1425,
+    "width": 1440
+  },
+  {
+    "name": "after-dashboard-390",
+    "height": 844,
+    "scrollWidth": 375,
+    "width": 390
+  },
+  {
+    "name": "after-products-390",
+    "height": 844,
+    "scrollWidth": 375,
+    "width": 390
+  },
+  {
+    "name": "after-recipes-390",
+    "height": 844,
+    "scrollWidth": 375,
+    "width": 390
+  },
+  {
+    "name": "after-purchasing-390",
+    "height": 844,
+    "scrollWidth": 375,
+    "width": 390
+  },
+  {
+    "name": "after-settings-390",
+    "height": 844,
+    "scrollWidth": 375,
+    "width": 390
+  },
+  {
+    "name": "after-dashboard-768",
+    "height": 1024,
+    "scrollWidth": 753,
+    "width": 768
+  },
+  {
+    "name": "after-products-768",
+    "height": 1024,
+    "scrollWidth": 753,
+    "width": 768
+  },
+  {
+    "name": "after-recipes-768",
+    "height": 1024,
+    "scrollWidth": 753,
+    "width": 768
+  },
+  {
+    "name": "after-purchasing-768",
+    "height": 1024,
+    "scrollWidth": 753,
+    "width": 768
+  },
+  {
+    "name": "after-settings-768",
+    "height": 1024,
+    "scrollWidth": 753,
+    "width": 768
+  },
+  {
+    "name": "before-admin-dashboard",
+    "height": 900,
+    "scrollWidth": 1425,
+    "width": 1440
+  },
+  {
+    "name": "before-products",
+    "height": 900,
+    "scrollWidth": 1425,
+    "width": 1440
+  },
+  {
+    "name": "before-orders",
+    "height": 900,
+    "scrollWidth": 1425,
+    "width": 1440
+  },
+  {
+    "name": "before-ingredients",
+    "height": 900,
+    "scrollWidth": 1425,
+    "width": 1440
+  },
+  {
+    "name": "before-purchase-orders",
+    "height": 900,
+    "scrollWidth": 1425,
+    "width": 1440
+  },
+  {
+    "name": "before-settings",
+    "height": 900,
+    "scrollWidth": 1425,
+    "width": 1440
+  },
+  {
+    "name": "before-catalogue-desktop",
+    "height": 900,
+    "scrollWidth": 1425,
+    "width": 1440
+  },
+  {
+    "name": "before-catalogue-mobile",
+    "height": 844,
+    "scrollWidth": 375,
+    "width": 390
+  },
+  {
+    "name": "before-dark-mode",
+    "height": 844,
+    "scrollWidth": 375,
+    "width": 390
+  },
+  {
+    "name": "before-product-detail",
+    "height": 844,
+    "scrollWidth": 375,
+    "width": 390
+  },
+  {
+    "name": "after-catalogue-tablet",
+    "height": 1024,
+    "scrollWidth": 753,
+    "width": 768
+  },
+  {
+    "name": "after-contact-sheet",
+    "height": 844,
+    "scrollWidth": 375,
+    "width": 390
+  },
+  {
+    "name": "after-admin-dark",
+    "height": 900,
+    "scrollWidth": 1440,
+    "width": 1440
+  }
+]

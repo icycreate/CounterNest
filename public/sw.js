@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'counternest-web-v2-0-0-rc14-blended-branding'
+const CACHE_VERSION = 'counternest-web-v2-0-0-rc15-presentation'
 const SHELL_CACHE = `${CACHE_VERSION}-shell`
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`
 // Persist only the account binding, never a session/JWT or order details.
@@ -113,3 +113,4 @@ self.addEventListener('fetch', event => {
     return cached || (await network) || Response.error()
   })())
 })
+

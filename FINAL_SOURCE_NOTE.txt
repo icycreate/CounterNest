@@ -1,1 +1,1 @@
-CounterNest POS Blended Branding RC14 · actual modified Readability RC13 source · Browser/GitHub/Vercel/Supabase Cloud · all 94 SQL migrations unchanged · see BRANDING_IMPLEMENTATION.md, BUILD_VALIDATION.json and UAT_ACCEPTANCE_CHECKLIST.md.
+CounterNest RC15 actual source, derived from RC14. All backend/API files and 94 migrations preserved. No production access or data writes. See RC15 reports and validation logs.

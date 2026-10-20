@@ -1,7 +1,7 @@
 {
   "name": "counternest-pos",
   "private": true,
-  "version": "2.0.0-rc.14",
+  "version": "2.0.0-rc.15",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,7 +13,7 @@
     "test:ui": "node tests/ui-components.cjs",
     "test:release": "node tests/STATIC_RELEASE_CHECKS.cjs",
     "test:web": "node tests/web-deployment.cjs",
-    "test": "npm run test:frontend && npm run test:ui && npm run test:database && npm run test:release && npm run test:web && npm run test:edge && npm run test:display && npm run test:rc1 && npm run test:catalogue-export && npm run test:customer-requests && npm run test:ux && npm run test:finalization && npm run test:rc4 && npm run test:operations && npm run test:purchasing-model && npm run test:boot && npm run test:navigation-theme && npm run test:calendar && npm run test:system-style && npm run test:experience && npm run test:units && npm run test:accessibility && npm run test:branding",
+    "test": "npm run test:frontend && npm run test:ui && npm run test:database && npm run test:release && npm run test:web && npm run test:edge && npm run test:display && npm run test:rc1 && npm run test:catalogue-export && npm run test:customer-requests && npm run test:ux && npm run test:finalization && npm run test:rc4 && npm run test:operations && npm run test:purchasing-model && npm run test:boot && npm run test:navigation-theme && npm run test:calendar && npm run test:system-style && npm run test:experience && npm run test:units && npm run test:accessibility && npm run test:branding && npm run test:redesign",
     "test:edge": "node tests/edge-functions.cjs",
     "test:display": "node tests/catalogue-display.cjs",
     "test:assets": "node tests/built-assets.cjs",
@@ -35,7 +35,8 @@
     "test:units": "node tests/units-appearance-ui.cjs",
     "test:accessibility": "node tests/accessibility.cjs",
     "brand:assets": "node scripts/build-brand-assets.cjs",
-    "test:branding": "node tests/branding-rc14.cjs"
+    "test:branding": "node tests/branding-rc14.cjs",
+    "test:redesign": "node tests/redesign.cjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",
@@ -63,7 +64,7 @@
   "allowScripts": {
     "esbuild@0.25.12": true
   },
-  "description": "CounterNest POS transparent blended branding RC14",
+  "description": "CounterNest customer and operational workspace redesign",
   "engines": {
     "node": ">=22.12.0 <25"
   }

@@ -6,51 +6,51 @@
   "entries": [
     {
       "file": "counternest-logo-full-transparent.svg",
-      "bytes": 204756,
+      "bytes": 193847,
       "variant": "full",
       "surface": "light",
-      "sha256": "ee26e2e3c4c2f22ae5c8c27a65f2c0a6cbebbec3f67956c25f893b0a9951d06b",
-      "gzip_bytes": 59708
+      "sha256": "20650cab6330e6730c519483fea477024954802d11c41dc8f3eeb9c16db039b2",
+      "gzip_bytes": 56471
     },
     {
       "file": "counternest-logo-full-light.svg",
-      "bytes": 204756,
+      "bytes": 193847,
       "variant": "full",
       "surface": "dark",
-      "sha256": "56aee02f7ce658af3309db1dfb35c04812337e56675fd629c506d32887a54449",
-      "gzip_bytes": 59712
+      "sha256": "a4061706395ff73625fe62d661831ad3a8208bc3ba1b64dbd11e91858a16a80f",
+      "gzip_bytes": 56479
     },
     {
       "file": "counternest-icon-transparent.svg",
-      "bytes": 158178,
+      "bytes": 158153,
       "variant": "icon",
       "surface": "light",
-      "sha256": "b8e653168c59e438b8c6e4a4422e70f257f0595505c84e3a92ec5dd43997a3cd",
-      "gzip_bytes": 45813
+      "sha256": "7501d23f4690988cfa77f95a2d23d82250bfc8f962f0901f269a689a64a8e970",
+      "gzip_bytes": 45777
     },
     {
       "file": "counternest-icon-light.svg",
-      "bytes": 158178,
+      "bytes": 158153,
       "variant": "icon",
       "surface": "dark",
-      "sha256": "373484908cf595d7547b1323346c6440ba4a929116605b2d583eefab27d49d49",
-      "gzip_bytes": 45816
+      "sha256": "b52ca87182e0c8cdbefa3e1c842a239f1358ed590b4132334b465f958cfb38cc",
+      "gzip_bytes": 45781
     },
     {
       "file": "counternest-logo-horizontal-transparent.svg",
-      "bytes": 200783,
+      "bytes": 189874,
       "variant": "horizontal",
       "surface": "light",
-      "sha256": "920efc0983fef654e260013be32b3dec53d0059087ba9b708caaa2a4c6f8c690",
-      "gzip_bytes": 59117
+      "sha256": "6988b19b846a89a989c6f1bbf07c88f7c70c9c4484f71a265a63ba72edc3665e",
+      "gzip_bytes": 55809
     },
     {
       "file": "counternest-logo-horizontal-light.svg",
-      "bytes": 200783,
+      "bytes": 189874,
       "variant": "horizontal",
       "surface": "dark",
-      "sha256": "388ec146e7601f9a789c4f4ca1631ba1f1268b014ea5b176fba0b0a1f5581ed5",
-      "gzip_bytes": 59122
+      "sha256": "b3ca02f5d899e7c6e69abea1bc8df0f4fd32fe31feddc1b67c0546a02a808c46",
+      "gzip_bytes": 55816
     }
   ]
 }

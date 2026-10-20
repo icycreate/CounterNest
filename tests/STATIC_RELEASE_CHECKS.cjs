@@ -1,7 +1,7 @@
 const fs=require('fs'),path=require('path'),assert=require('assert'),crypto=require('crypto');
 const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'utf8');
 const manifest=JSON.parse(read('RELEASE_MANIFEST.json')),pkg=JSON.parse(read('package.json')),lock=JSON.parse(read('package-lock.json'));
-assert.equal(pkg.version,'2.0.0-rc.14');assert.equal(lock.version,pkg.version);assert.equal(lock.packages[''].version,pkg.version);
+assert.equal(pkg.version,'2.0.0-rc.15');assert.equal(lock.version,pkg.version);assert.equal(lock.packages[''].version,pkg.version);
 const files=fs.readdirSync(path.join(root,'supabase/migrations')).filter(f=>f.endsWith('.sql')).sort();assert.equal(files.length,94);assert.deepEqual(manifest.upgrade_migrations,[]);
 const order=read('SUPABASE_MIGRATION_ORDER.md');files.forEach((f,i)=>assert(order.includes((i+1)+'. '+f),f));
 const expected=JSON.parse(read('MIGRATION_MANIFEST.json'));for(const row of expected)assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'supabase/migrations',row.file))).digest('hex'),row.sha256,row.file);
@@ -10,3 +10,4 @@ for(const name of Object.keys(lock.packages))assert(!/node_modules\/(electron|el
 assert(!pkg.main&&!pkg.build);assert(Object.values(pkg.scripts).every(s=>!s.includes('powershell')));
 assert(!fs.readdirSync(root).some(f=>f.endsWith('.ps1')));assert(!fs.existsSync(path.join(root,'.env'))&&!fs.existsSync(path.join(root,'.env.local')));
 console.log('PASS web release version, preserved migration order/hashes, package lock, native/host removal and secret-file exclusions');
+

@@ -17240,3 +17240,239 @@ Object.assign(translations,{
     "zh-CN": "外观已保存"
   }
 })
+
+Object.assign(translations,{
+  "Added to your order": {
+    "es": "Añadido a tu pedido",
+    "zh-TW": "已加入訂單",
+    "zh-CN": "已加入订单"
+  },
+  "Main navigation": {
+    "es": "Navegación principal",
+    "zh-TW": "主選單",
+    "zh-CN": "主菜单"
+  },
+  "Help & Support": {
+    "es": "Ayuda y soporte",
+    "zh-TW": "協助與支援",
+    "zh-CN": "帮助与支持"
+  },
+  "Made for the everyday. Baked with care.": {
+    "es": "Hecho para cada día. Horneado con cariño.",
+    "zh-TW": "用心烘焙，陪伴每一天。",
+    "zh-CN": "用心烘焙，陪伴每一天。"
+  },
+  "Find something delicious": {
+    "es": "Encuentra algo delicioso",
+    "zh-TW": "尋找美味",
+    "zh-CN": "寻找美味"
+  },
+  "Your order": {
+    "es": "Tu pedido",
+    "zh-TW": "你的訂單",
+    "zh-CN": "你的订单"
+  },
+  "Freshly baked happiness.": {
+    "es": "Felicidad recién horneada.",
+    "zh-TW": "剛出爐的幸福。",
+    "zh-CN": "刚出炉的幸福。"
+  },
+  "Something good, made just for you.": {
+    "es": "Algo bueno, hecho para ti.",
+    "zh-TW": "專為你製作的美好滋味。",
+    "zh-CN": "专为你制作的美好滋味。"
+  },
+  "Order Now": {
+    "es": "Pide ahora",
+    "zh-TW": "立即訂購",
+    "zh-CN": "立即订购"
+  },
+  "Find your favorite": {
+    "es": "Encuentra tu favorito",
+    "zh-TW": "找到你的最愛",
+    "zh-CN": "找到你的最爱"
+  },
+  "Made for every craving": {
+    "es": "Para cada antojo",
+    "zh-TW": "滿足每一份期待",
+    "zh-CN": "满足每一份期待"
+  },
+  "Your saved favorites": {
+    "es": "Tus favoritos guardados",
+    "zh-TW": "你收藏的最愛",
+    "zh-CN": "你收藏的最爱"
+  },
+  "From our kitchen": {
+    "es": "De nuestra cocina",
+    "zh-TW": "來自我們的廚房",
+    "zh-CN": "来自我们的厨房"
+  },
+  "items": {
+    "es": "productos",
+    "zh-TW": "項商品",
+    "zh-CN": "项商品"
+  },
+  "Favorite": {
+    "es": "Favorito",
+    "zh-TW": "收藏",
+    "zh-CN": "收藏"
+  },
+  "Popular": {
+    "es": "Popular",
+    "zh-TW": "人氣商品",
+    "zh-CN": "人气商品"
+  },
+  "View options": {
+    "es": "Ver opciones",
+    "zh-TW": "查看選項",
+    "zh-CN": "查看选项"
+  },
+  "Keep your favorites close.": {
+    "es": "Guarda tus favoritos.",
+    "zh-TW": "把喜歡的美味收藏起來。",
+    "zh-CN": "把喜欢的美味收藏起来。"
+  },
+  "Browse the menu and find something you love.": {
+    "es": "Explora el menú y encuentra algo que te encante.",
+    "zh-TW": "瀏覽目錄，找到喜愛的美味。",
+    "zh-CN": "浏览目录，找到喜爱的美味。"
+  },
+  "Explore the menu": {
+    "es": "Explora el menú",
+    "zh-TW": "探索商品",
+    "zh-CN": "探索商品"
+  },
+  "Keep browsing": {
+    "es": "Seguir explorando",
+    "zh-TW": "繼續瀏覽",
+    "zh-CN": "继续浏览"
+  },
+  "Contact the business to place an order.": {
+    "es": "Contacta al negocio para hacer un pedido.",
+    "zh-TW": "請聯絡商家訂購。",
+    "zh-CN": "请联系商家订购。"
+  },
+  "Made for you": {
+    "es": "Hecho para ti",
+    "zh-TW": "為你製作",
+    "zh-CN": "为你制作"
+  },
+  "Follow your requests, from our kitchen to your table.": {
+    "es": "Sigue tus pedidos, de nuestra cocina a tu mesa.",
+    "zh-TW": "追蹤你的訂單，從廚房到餐桌。",
+    "zh-CN": "追踪你的订单，从厨房到餐桌。"
+  },
+  "Orders placed on this device appear here after submission. Keep your private tracking link to check on another device.": {
+    "es": "Los pedidos enviados desde este dispositivo aparecen aquí. Conserva tu enlace privado para consultarlos desde otro dispositivo.",
+    "zh-TW": "此裝置提交的訂單會顯示於此。保留私人追蹤連結，即可在其他裝置查詢。",
+    "zh-CN": "此设备提交的订单会显示于此。保留私人追踪链接，即可在其他设备查询。"
+  },
+  "Welcome to": {
+    "es": "Bienvenido a",
+    "zh-TW": "歡迎來到",
+    "zh-CN": "欢迎来到"
+  },
+  "Your little corner.": {
+    "es": "Tu rincón.",
+    "zh-TW": "你的專屬角落。",
+    "zh-CN": "你的专属角落。"
+  },
+  "Your orders, your favorites, your way.": {
+    "es": "Tus pedidos y favoritos, a tu manera.",
+    "zh-TW": "你的訂單、最愛與喜好。",
+    "zh-CN": "你的订单、最爱与喜好。"
+  },
+  "Let’s talk food.": {
+    "es": "Hablemos de comida.",
+    "zh-TW": "聊聊美味吧。",
+    "zh-CN": "聊聊美味吧。"
+  },
+  "Questions, celebrations, or something special? Get in touch with our team.": {
+    "es": "¿Preguntas, celebraciones o algo especial? Contacta a nuestro equipo.",
+    "zh-TW": "有疑問、慶祝活動或特別需求嗎？歡迎聯絡我們。",
+    "zh-CN": "有疑问、庆祝活动或特别需求吗？欢迎联系我们。"
+  },
+  "No contact methods have been configured yet.": {
+    "es": "Aún no hay métodos de contacto configurados.",
+    "zh-TW": "尚未設定聯絡方式。",
+    "zh-CN": "尚未设置联系方式。"
+  },
+  "For the people who start their day before everyone else.": {
+    "es": "Para quienes empiezan el día antes que los demás.",
+    "zh-TW": "獻給那些比別人更早開始一天的人。",
+    "zh-CN": "献给那些比别人更早开始一天的人。"
+  },
+  "For the baker measuring flour while the streets are still quiet. For the home baker preparing orders between family responsibilities.": {
+    "es": "Para quien mide harina cuando las calles aún están tranquilas. Para quien prepara pedidos entre las responsabilidades de la familia.",
+    "zh-TW": "獻給街道仍安靜時就在秤麵粉的烘焙師，也獻給在家庭責任間準備訂單的家庭烘焙者。",
+    "zh-CN": "献给街道仍安静时就在称面粉的烘焙师，也献给在家庭责任间准备订单的家庭烘焙者。"
+  },
+  "A normal day can quickly become complicated. Orders arrive through messages, ingredients run low, supplier prices change, and customers expect their orders on time.": {
+    "es": "Un día normal puede complicarse rápidamente: llegan pedidos por mensajes, faltan ingredientes, cambian los precios y los clientes esperan sus pedidos a tiempo.",
+    "zh-TW": "平凡的一天很快就忙碌起來：訊息訂單不斷、食材不足、供應商調整價格，客人也期待準時收到訂單。",
+    "zh-CN": "平凡的一天很快就忙碌起来：消息订单不断、食材不足、供应商调整价格，客人也期待准时收到订单。"
+  },
+  "CounterNest brings those everyday details together: orders, recipes, ingredients, purchasing, production, expenses, waste, and inventory.": {
+    "es": "CounterNest reúne los detalles cotidianos: pedidos, recetas, ingredientes, compras, producción, gastos, desperdicios e inventario.",
+    "zh-TW": "CounterNest 整合日常細節：訂單、食譜、食材、採購、生產、支出、耗損與庫存。",
+    "zh-CN": "CounterNest 整合日常细节：订单、食谱、食材、采购、生产、支出、损耗与库存。"
+  },
+  "CounterNest helps bakers spend less time remembering, searching, rewriting, and organizing—and more time creating the food their customers come back for.": {
+    "es": "CounterNest ayuda a dedicar menos tiempo a recordar, buscar, reescribir y organizar, y más tiempo a crear la comida por la que vuelven los clientes.",
+    "zh-TW": "CounterNest 讓烘焙師少花時間記憶、搜尋、重寫與整理，多花時間製作讓客人一再回訪的美食。",
+    "zh-CN": "CounterNest 让烘焙师少花时间记忆、搜索、重写与整理，多花时间制作让客人一再回访的美食。"
+  },
+  "Your recipes. Your ingredients. Your orders.": {
+    "es": "Tus recetas. Tus ingredientes. Tus pedidos.",
+    "zh-TW": "你的食譜。你的食材。你的訂單。",
+    "zh-CN": "你的食谱。你的食材。你的订单。"
+  },
+  "Your daily work—organized in one place.": {
+    "es": "Tu trabajo diario, organizado en un solo lugar.",
+    "zh-TW": "每天的工作，都在一處井然有序。",
+    "zh-CN": "每天的工作，都在一处井然有序。"
+  },
+  "Made simpler with CounterNest": {
+    "es": "Más sencillo con CounterNest",
+    "zh-TW": "CounterNest，讓日常更簡單",
+    "zh-CN": "CounterNest，让日常更简单"
+  },
+  "Customer navigation": {
+    "es": "Navegación del cliente",
+    "zh-TW": "顧客選單",
+    "zh-CN": "顾客菜单"
+  },
+  "View order": {
+    "es": "Ver pedido",
+    "zh-TW": "查看訂單",
+    "zh-CN": "查看订单"
+  },
+  "Add to Order": {
+    "es": "Añadir al pedido",
+    "zh-TW": "加入訂單",
+    "zh-CN": "加入订单"
+  },
+  "Skip to content": {
+    "es": "Saltar al contenido",
+    "zh-TW": "跳至主要內容",
+    "zh-CN": "跳至主要内容"
+  },
+  "Decrease quantity": {
+    "es": "Reducir cantidad",
+    "zh-TW": "減少數量",
+    "zh-CN": "减少数量"
+  },
+  "Increase quantity": {
+    "es": "Aumentar cantidad",
+    "zh-TW": "增加數量",
+    "zh-CN": "增加数量"
+  }
+})
+
+Object.assign(translations,{"Custom Orders":{"es":"Pedidos personalizados","zh-TW":"客製訂單","zh-CN":"定制订单"},"Today’s Specials":{"es":"Especiales de hoy","zh-TW":"今日特選","zh-CN":"今日特选"},"Your business at a glance":{"es":"Tu negocio de un vistazo","zh-TW":"營運概況一覽","zh-CN":"营运概况一览"},"Recent sales overview":{"es":"Resumen de ventas recientes","zh-TW":"近期銷售概況","zh-CN":"近期销售概况"}})
+
+Object.assign(translations,{'Search products, orders, customers…':{es:'Buscar productos, pedidos, clientes…','zh-TW':'搜尋商品、訂單、顧客…','zh-CN':'搜索商品、订单、顾客…'}})
+
+Object.assign(translations,{"My Orders":{"es":"Mis pedidos","zh-TW":"我的訂單","zh-CN":"我的订单"},"Contact Us":{"es":"Contáctanos","zh-TW":"聯絡我們","zh-CN":"联系我们"},"About CounterNest":{"es":"Acerca de CounterNest","zh-TW":"關於 CounterNest","zh-CN":"关于 CounterNest"}})
+
+Object.assign(translations,{"Account":{"es":"Cuenta","zh-TW":"帳戶","zh-CN":"账户"},"Search results":{"es":"Resultados de búsqueda","zh-TW":"搜尋結果","zh-CN":"搜索结果"}})

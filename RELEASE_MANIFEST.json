@@ -1,20 +1,20 @@
 {
-  "version": "2.0.0-rc.14",
-  "baseline_version": "Readability RC13",
+  "version": "2.0.0-rc.15",
+  "baseline_version": "Blended Branding RC14",
   "baseline_migration_count": 94,
   "migration_count": 94,
   "upgrade_migrations": [],
-  "name": "CounterNest POS Blended Branding RC14",
-  "build": "2026-10-18-blended-branding",
+  "name": "CounterNest POS Presentation Redesign RC15",
+  "build": "2026-10-19-redesign",
   "product": "CounterNest POS",
   "release_type": "browser-release-candidate",
   "backend": "Supabase Cloud",
   "desktop_installer": false,
   "features": [
     {
-      "title": "Transparent vector asset pipeline, shared BrandLogo, theme-safe platform fallback, contained business branding, print/PWA refresh"
+      "title": "Customer storefront and operational workspace presentation redesign"
     }
   ],
-  "validation": "BUILD_VALIDATION.json",
+  "validation": "docs/rc15-validation/tests.log",
   "deployment_status": "Local release candidate; live cloud and physical device acceptance pending"
 }

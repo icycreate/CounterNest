@@ -1,9 +1,11 @@
-> RC14 current release: 2.0.0-rc.14, 2026-10-18-blended-branding. No additional SQL when upgrading RC13; all 94 migrations are unchanged. Use INSTALL_UPGRADE_GUIDE.md, BRANDING_IMPLEMENTATION.md and BUILD_VALIDATION.json for current scope. Earlier release-specific notes below remain historical.
+# Upgrade guide — existing RC14 installation
 
-> RC13 current release: 2.0.0-rc.13, build 2026-10-18-accessibility. Upgrading RC12 requires no additional SQL; all 94 migrations are unchanged. Use INSTALL_UPGRADE_GUIDE.md, ACCESSIBILITY_AUDIT.md and BUILD_VALIDATION.json for current scope. Earlier release-specific passages below are historical context.
+1. Keep the existing Supabase Cloud project, business records, storage buckets, environment variables, Vercel configuration and workspace IDs.
+2. Review REDESIGN_CHANGE_REPORT.md, DATA_PRESERVATION_REPORT.md and the screenshot gallery. Extract the ZIP to a clean source directory or branch, preserving your existing repository history.
+3. Run npm install and npm run build. The Vercel project uses its existing Vite build and dist output configuration.
+4. Deploy a Vercel preview against a dedicated staging environment for mutation-based UAT. Do not run sales, receiving, restore, deletion or other write tests against production.
+5. For an existing RC14 database: run ZERO SQL migrations. Do not run old bootstrap SQL, reset, seed or restore scripts. Historical SQL is included solely as source history for the existing app.
+6. Check the UAT checklist, then deploy through the existing GitHub/Vercel process. Existing environment secrets stay in Vercel; .env/.env.local are excluded from the ZIP.
+7. Reload installed PWAs after the new service worker activates. The cache version changes; notification device bindings and push behavior remain intact.
 
-# Supabase RC12 upgrade
-
-Follow INSTALL_UPGRADE_GUIDE.md and SUPABASE_MIGRATION_ORDER.md. RC11 installs add only migrations 93 and 94; fresh installs apply all 94. Back up and verify on staging before production. No live cloud SQL was executed during this build.
-
-
+Rollback: redeploy the previous RC14 Vercel build. There is no database rollback for this release. Keep original uploaded assets and records in place.

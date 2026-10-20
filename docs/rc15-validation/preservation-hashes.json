@@ -1,0 +1,532 @@
+{
+  "baseline": "RC14",
+  "protectedFiles": [
+    {
+      "file": "supabase/config.toml",
+      "baseline": "367d8a0dc9140190b6d969194798e637f28655fabb0f4cf9da9c311cb9cff2e1",
+      "current": "367d8a0dc9140190b6d969194798e637f28655fabb0f4cf9da9c311cb9cff2e1"
+    },
+    {
+      "file": "supabase/functions/change-initial-password/index.ts",
+      "baseline": "62d7162cb46fbfe00ef5c0f972270f2323d512d512bb192884ab004b2dfdfc7b",
+      "current": "62d7162cb46fbfe00ef5c0f972270f2323d512d512bb192884ab004b2dfdfc7b"
+    },
+    {
+      "file": "supabase/functions/change-password/index.ts",
+      "baseline": "86e2fc8744997edc3458047592cdf7c41acccfbd90ea2aa7767f101307a0936b",
+      "current": "86e2fc8744997edc3458047592cdf7c41acccfbd90ea2aa7767f101307a0936b"
+    },
+    {
+      "file": "supabase/functions/create-staff-account/index.ts",
+      "baseline": "b10c26dabb0b0ff364872abe2095bfd7d25b32933b3d8ace5485444484276dfe",
+      "current": "b10c26dabb0b0ff364872abe2095bfd7d25b32933b3d8ace5485444484276dfe"
+    },
+    {
+      "file": "supabase/functions/reset-staff-password/index.ts",
+      "baseline": "89d307a05b00d3e4ef87c7d470d2597947f659ff1c01f90a9199766062b8cb21",
+      "current": "89d307a05b00d3e4ef87c7d470d2597947f659ff1c01f90a9199766062b8cb21"
+    },
+    {
+      "file": "supabase/functions/workspace-lifecycle/index.ts",
+      "baseline": "af349d219c4bc60decad804356912f6537143f4fd93b2cabbec40165f5eee4bf",
+      "current": "af349d219c4bc60decad804356912f6537143f4fd93b2cabbec40165f5eee4bf"
+    },
+    {
+      "file": "supabase/functions/_shared/workspaceArchive.ts",
+      "baseline": "952ddbd14a91ccbb3018ccb00728e3ffeb64801fad14bfcadfcec821c7827dd5",
+      "current": "952ddbd14a91ccbb3018ccb00728e3ffeb64801fad14bfcadfcec821c7827dd5"
+    },
+    {
+      "file": "supabase/migrations/20260815_initial.sql",
+      "baseline": "c60f5864cba34a345a060898b25d446db9c793b74b85ee2a1ce01a2572a1a8ca",
+      "current": "c60f5864cba34a345a060898b25d446db9c793b74b85ee2a1ce01a2572a1a8ca"
+    },
+    {
+      "file": "supabase/migrations/20260815_logo_settings.sql",
+      "baseline": "0fab2f65611b9b97a518c61711ecf18f31784e1b85a880d2c729362cee57a0f3",
+      "current": "0fab2f65611b9b97a518c61711ecf18f31784e1b85a880d2c729362cee57a0f3"
+    },
+    {
+      "file": "supabase/migrations/20260816_business_onboarding.sql",
+      "baseline": "9503d5f35045258c74024dc36485bf8c07e948d0e461c61c3fbc181b31006432",
+      "current": "9503d5f35045258c74024dc36485bf8c07e948d0e461c61c3fbc181b31006432"
+    },
+    {
+      "file": "supabase/migrations/20260816_receipt_system.sql",
+      "baseline": "58f69fac5cc45c59007da9c8c1fbc789d067c59e88b56c3711a4ca8138cd4cc7",
+      "current": "58f69fac5cc45c59007da9c8c1fbc789d067c59e88b56c3711a4ca8138cd4cc7"
+    },
+    {
+      "file": "supabase/migrations/20260816_refunds_voids.sql",
+      "baseline": "1c7085163dc8553766a13b3aa49f263435d883ceaa006d4d2e356d205759175f",
+      "current": "1c7085163dc8553766a13b3aa49f263435d883ceaa006d4d2e356d205759175f"
+    },
+    {
+      "file": "supabase/migrations/202608180800_cash_drawer.sql",
+      "baseline": "2b2f0d47eef7a995fba50ae3facd76292167b526f268f52a40f666db92994631",
+      "current": "2b2f0d47eef7a995fba50ae3facd76292167b526f268f52a40f666db92994631"
+    },
+    {
+      "file": "supabase/migrations/202608180810_product_barcodes.sql",
+      "baseline": "f53ae88fa6b6748a18ec1e6b2f604747d0f2197cf528c5e0d8389972b6548220",
+      "current": "f53ae88fa6b6748a18ec1e6b2f604747d0f2197cf528c5e0d8389972b6548220"
+    },
+    {
+      "file": "supabase/migrations/202608180820_management_reports.sql",
+      "baseline": "c3f4af63faae43351ceaa01080d5ea8c461a9b3275ec72c881958922f58f099f",
+      "current": "c3f4af63faae43351ceaa01080d5ea8c461a9b3275ec72c881958922f58f099f"
+    },
+    {
+      "file": "supabase/migrations/202608180830_staff_management.sql",
+      "baseline": "c59430a0d8ebe2503748bafc4506032b6048cf47d94d9fde5c7315de326556e1",
+      "current": "c59430a0d8ebe2503748bafc4506032b6048cf47d94d9fde5c7315de326556e1"
+    },
+    {
+      "file": "supabase/migrations/202608180840_unified_audit_log.sql",
+      "baseline": "27e8bcde41b5f29ab050d888af7f7f89f119621dfff1a6139ee038b3577f70fe",
+      "current": "27e8bcde41b5f29ab050d888af7f7f89f119621dfff1a6139ee038b3577f70fe"
+    },
+    {
+      "file": "supabase/migrations/202608180850_expenses.sql",
+      "baseline": "ceaa5bf465c716f2945071d76db9354fcb8330ddb1c4909072050708d3bb116c",
+      "current": "ceaa5bf465c716f2945071d76db9354fcb8330ddb1c4909072050708d3bb116c"
+    },
+    {
+      "file": "supabase/migrations/202608180860_profitability.sql",
+      "baseline": "6206bd7b045f9f06d385f85d6a009e6b8d523a5b3dbd2243182f31c6d3635695",
+      "current": "6206bd7b045f9f06d385f85d6a009e6b8d523a5b3dbd2243182f31c6d3635695"
+    },
+    {
+      "file": "supabase/migrations/202608180870_stock_receiving.sql",
+      "baseline": "c599bd0d5c0a15cb85649945d331132af60a0dfb6bf28d99be0c02774061b0c3",
+      "current": "c599bd0d5c0a15cb85649945d331132af60a0dfb6bf28d99be0c02774061b0c3"
+    },
+    {
+      "file": "supabase/migrations/202608180880_purchase_orders.sql",
+      "baseline": "e3c7ad331ded04f06b0c9bbd3b2385752e918c28198939a112b32926a455e2a0",
+      "current": "e3c7ad331ded04f06b0c9bbd3b2385752e918c28198939a112b32926a455e2a0"
+    },
+    {
+      "file": "supabase/migrations/202608180890_production_batches.sql",
+      "baseline": "01b15e226f59fb9f7bd021c31e9015ce79122a9fade3c3157cc4f98170811b26",
+      "current": "01b15e226f59fb9f7bd021c31e9015ce79122a9fade3c3157cc4f98170811b26"
+    },
+    {
+      "file": "supabase/migrations/202608180900_business_backup.sql",
+      "baseline": "96cfe4e762764d3c6b941751ffe7a890122c9bcad4f17b8ae77c7ebd24b08d2a",
+      "current": "96cfe4e762764d3c6b941751ffe7a890122c9bcad4f17b8ae77c7ebd24b08d2a"
+    },
+    {
+      "file": "supabase/migrations/202608180910_launch_readiness.sql",
+      "baseline": "b9cbd58ec35a31c8ae2c5a08f52b1b76505e635a3d0f286002c0003ae7613914",
+      "current": "b9cbd58ec35a31c8ae2c5a08f52b1b76505e635a3d0f286002c0003ae7613914"
+    },
+    {
+      "file": "supabase/migrations/202608180920_cash_tender.sql",
+      "baseline": "28c787bfde2a264e30b155ae4d74dd81408b3b51f77d83a28af80bdf7ea760a5",
+      "current": "28c787bfde2a264e30b155ae4d74dd81408b3b51f77d83a28af80bdf7ea760a5"
+    },
+    {
+      "file": "supabase/migrations/202608180930_daily_cash_report.sql",
+      "baseline": "919a93a30a716fe55b31cf0edb168005737bdfdef5d3ba522bf6276f216d824b",
+      "current": "919a93a30a716fe55b31cf0edb168005737bdfdef5d3ba522bf6276f216d824b"
+    },
+    {
+      "file": "supabase/migrations/202608190100_direct_staff_provisioning.sql",
+      "baseline": "55b5d32e062f354e3e5f55c0b27718b64c4db8b3258b6dd190a3721a127b13c3",
+      "current": "55b5d32e062f354e3e5f55c0b27718b64c4db8b3258b6dd190a3721a127b13c3"
+    },
+    {
+      "file": "supabase/migrations/202608190200_cards_staff_daily_cash.sql",
+      "baseline": "e85fb71aa18f20ae0c8fc8b0ee26a24422f1779809481c0cb918a83653a26cca",
+      "current": "e85fb71aa18f20ae0c8fc8b0ee26a24422f1779809481c0cb918a83653a26cca"
+    },
+    {
+      "file": "supabase/migrations/202608190300_manager_pin_pgcrypto_fix.sql",
+      "baseline": "21e91f91c210c26ebdd4154782382157e5b93473b02eca33477c8fc5534432c1",
+      "current": "21e91f91c210c26ebdd4154782382157e5b93473b02eca33477c8fc5534432c1"
+    },
+    {
+      "file": "supabase/migrations/202608190310_product_image_storage_policy_fix.sql",
+      "baseline": "81ed79a1a18b65c091294cbaf7972f48b35118b5479c152f1067cca202527c0c",
+      "current": "81ed79a1a18b65c091294cbaf7972f48b35118b5479c152f1067cca202527c0c"
+    },
+    {
+      "file": "supabase/migrations/202608190320_product_image_storage_auth_helper.sql",
+      "baseline": "e1802dd912bbffe5d01c4a22906b416203aa84356621b68c5362ff141f510a24",
+      "current": "e1802dd912bbffe5d01c4a22906b416203aa84356621b68c5362ff141f510a24"
+    },
+    {
+      "file": "supabase/migrations/202608190330_loyalty_points_management.sql",
+      "baseline": "01b45d20dc58582e252239932b515d921c63e5b7854ed9452ae0a030008cccc0",
+      "current": "01b45d20dc58582e252239932b515d921c63e5b7854ed9452ae0a030008cccc0"
+    },
+    {
+      "file": "supabase/migrations/202608190340_configurable_loyalty_earning_rules.sql",
+      "baseline": "b62483010031d40a949b4d5c1290ed24b19b62d96c8f5b19b416552525796038",
+      "current": "b62483010031d40a949b4d5c1290ed24b19b62d96c8f5b19b416552525796038"
+    },
+    {
+      "file": "supabase/migrations/202608190350_entity_translations.sql",
+      "baseline": "0de6da9bd1b83a7ec5fa7dc1a6445f034c5f7fd16a06057bf703a38ab95e31e1",
+      "current": "0de6da9bd1b83a7ec5fa7dc1a6445f034c5f7fd16a06057bf703a38ab95e31e1"
+    },
+    {
+      "file": "supabase/migrations/202608200100_product_emoji.sql",
+      "baseline": "d845bd59192b8ee84f30ab1914f321df137a8095e3e7b9134353c17c87909f70",
+      "current": "d845bd59192b8ee84f30ab1914f321df137a8095e3e7b9134353c17c87909f70"
+    },
+    {
+      "file": "supabase/migrations/202608240100_ingredient_inventory.sql",
+      "baseline": "5b3bdc848a18dbace6831db6a2d693a856c72e9e914fc0c66d3d8dcaeb038276",
+      "current": "5b3bdc848a18dbace6831db6a2d693a856c72e9e914fc0c66d3d8dcaeb038276"
+    },
+    {
+      "file": "supabase/migrations/202608240200_product_recipes.sql",
+      "baseline": "05b839376eb6079aec5ab7cc8ac1e7627636ae3ff4ceb5d35c3f44e2aa3162fd",
+      "current": "05b839376eb6079aec5ab7cc8ac1e7627636ae3ff4ceb5d35c3f44e2aa3162fd"
+    },
+    {
+      "file": "supabase/migrations/202608240300_recipe_production_consumption.sql",
+      "baseline": "a605e44da8f48012681b22794942837eeb744d76eebe99c6aef447d5818e290d",
+      "current": "a605e44da8f48012681b22794942837eeb744d76eebe99c6aef447d5818e290d"
+    },
+    {
+      "file": "supabase/migrations/202608240400_restock_and_pricing_recommendations.sql",
+      "baseline": "aaa25d6ac575205267fe630332862c3b8d7e93dd6a18a25ea9c501bfeccaf960",
+      "current": "aaa25d6ac575205267fe630332862c3b8d7e93dd6a18a25ea9c501bfeccaf960"
+    },
+    {
+      "file": "supabase/migrations/202608240500_phase31_operational_acceptance.sql",
+      "baseline": "b2d8d9212baa44ed215c83ae21ce08769daeebd1f976255b6da51db5aeb14cdf",
+      "current": "b2d8d9212baa44ed215c83ae21ce08769daeebd1f976255b6da51db5aeb14cdf"
+    },
+    {
+      "file": "supabase/migrations/202608240600_production_planning.sql",
+      "baseline": "bfbdf8a4f0869ed979af9930f06fa6ffff492d7e39d187a1960cb972388cdb78",
+      "current": "bfbdf8a4f0869ed979af9930f06fa6ffff492d7e39d187a1960cb972388cdb78"
+    },
+    {
+      "file": "supabase/migrations/202608240700_ingredient_purchase_orders.sql",
+      "baseline": "fe4a6d288698a6b57629092f374167d4c9fe59c139680350017a5dd200e30bfc",
+      "current": "fe4a6d288698a6b57629092f374167d4c9fe59c139680350017a5dd200e30bfc"
+    },
+    {
+      "file": "supabase/migrations/202608240800_ingredient_po_receiving.sql",
+      "baseline": "e862c3d2d75855cfdd9fafd9cbb8213f52a08dbf4fea8e0fb38df5f394eff254",
+      "current": "e862c3d2d75855cfdd9fafd9cbb8213f52a08dbf4fea8e0fb38df5f394eff254"
+    },
+    {
+      "file": "supabase/migrations/202608240900_inventory_waste.sql",
+      "baseline": "100dc818e42d5d2d9b295a9b2b7d3af21fdfb4fc09c4a56fe992f2791fef38a1",
+      "current": "100dc818e42d5d2d9b295a9b2b7d3af21fdfb4fc09c4a56fe992f2791fef38a1"
+    },
+    {
+      "file": "supabase/migrations/202608241000_supply_operations_reporting.sql",
+      "baseline": "6a690a977353e7c606335389a7a304396cd560821d22687ad7e0b82be6e769a7",
+      "current": "6a690a977353e7c606335389a7a304396cd560821d22687ad7e0b82be6e769a7"
+    },
+    {
+      "file": "supabase/migrations/202608241100_ingredient_lot_traceability.sql",
+      "baseline": "e12ba4da8b0ae5b1783936a940a0cfc829d1babc8769b70864c1b35a31edfebe",
+      "current": "e12ba4da8b0ae5b1783936a940a0cfc829d1babc8769b70864c1b35a31edfebe"
+    },
+    {
+      "file": "supabase/migrations/202608241200_finished_product_batch_traceability.sql",
+      "baseline": "8e25157a341fe4eff2f08933bb08b229a1f82142ea303d0f0b8d663f5ce4ada9",
+      "current": "8e25157a341fe4eff2f08933bb08b229a1f82142ea303d0f0b8d663f5ce4ada9"
+    },
+    {
+      "file": "supabase/migrations/202608241300_finished_product_recall_case_management.sql",
+      "baseline": "ad38b80beed5bc3209631c3a5a9fd18dcbddeebb54ad4634a9afd1c19a9b0e17",
+      "current": "ad38b80beed5bc3209631c3a5a9fd18dcbddeebb54ad4634a9afd1c19a9b0e17"
+    },
+    {
+      "file": "supabase/migrations/202608241400_phase32_internal_go_live.sql",
+      "baseline": "99a55c7570295980c179fbb83ae99b643187dd1edba7966609862324f31a11f4",
+      "current": "99a55c7570295980c179fbb83ae99b643187dd1edba7966609862324f31a11f4"
+    },
+    {
+      "file": "supabase/migrations/202608241500_phase33_operational_monitoring.sql",
+      "baseline": "098e06f0e4c5e9e1f7ba6df80ef0f091f1ef9989fc59b7948d98fed2e4e924ac",
+      "current": "098e06f0e4c5e9e1f7ba6df80ef0f091f1ef9989fc59b7948d98fed2e4e924ac"
+    },
+    {
+      "file": "supabase/migrations/202608241600_phase33_1_staff_issue_reporting.sql",
+      "baseline": "d0676d6b09808d1311322b78eded0d736ff144f861da5ae9ab35eceef2b89764",
+      "current": "d0676d6b09808d1311322b78eded0d736ff144f861da5ae9ab35eceef2b89764"
+    },
+    {
+      "file": "supabase/migrations/202608241700_phase33_2_shift_handover.sql",
+      "baseline": "1306e5b73b87f55ffc9828b47221f66b152b48cb80d5093303438644626ee23c",
+      "current": "1306e5b73b87f55ffc9828b47221f66b152b48cb80d5093303438644626ee23c"
+    },
+    {
+      "file": "supabase/migrations/202608251000_phase33_3_operational_tasks.sql",
+      "baseline": "2ab4d877f7033efb011b190849a003590c158e7ff017ffd7ec6964cfe1998e82",
+      "current": "2ab4d877f7033efb011b190849a003590c158e7ff017ffd7ec6964cfe1998e82"
+    },
+    {
+      "file": "supabase/migrations/202608251100_phase33_4_daily_checklists.sql",
+      "baseline": "09ee955f0a74fd096c24eb23349c0d316ccdc9ea4e367618f4cc0307b47e611c",
+      "current": "09ee955f0a74fd096c24eb23349c0d316ccdc9ea4e367618f4cc0307b47e611c"
+    },
+    {
+      "file": "supabase/migrations/202608251200_phase33_5_alerts_escalations.sql",
+      "baseline": "cef9d4d0c6cb329ffa38b3d9aea8a3e20c434100d40de591f7d071d799205e97",
+      "current": "cef9d4d0c6cb329ffa38b3d9aea8a3e20c434100d40de591f7d071d799205e97"
+    },
+    {
+      "file": "supabase/migrations/202608251300_phase33_6_staff_schedule_attendance.sql",
+      "baseline": "68d292683d4525f4734cafb20f288fc0f37b1c3d18043dc43ed75c84a48cce7d",
+      "current": "68d292683d4525f4734cafb20f288fc0f37b1c3d18043dc43ed75c84a48cce7d"
+    },
+    {
+      "file": "supabase/migrations/202608251400_phase33_7_operations_analytics.sql",
+      "baseline": "1e759a8493e6e410cb747348c2f19d2319f56f194a95e6a38203347c99623da3",
+      "current": "1e759a8493e6e410cb747348c2f19d2319f56f194a95e6a38203347c99623da3"
+    },
+    {
+      "file": "supabase/migrations/202608251500_phase33_8_security_retention_recovery.sql",
+      "baseline": "ba8e29c8d188efd2830d08af1e18d994ede466ea60039c282b0632fb7a9b1000",
+      "current": "ba8e29c8d188efd2830d08af1e18d994ede466ea60039c282b0632fb7a9b1000"
+    },
+    {
+      "file": "supabase/migrations/202608251600_phase33_9_internal_release_candidate.sql",
+      "baseline": "917a1e573f9ddd203937ba2a415217de7296dfe026cf379fca1aa987beb0d811",
+      "current": "917a1e573f9ddd203937ba2a415217de7296dfe026cf379fca1aa987beb0d811"
+    },
+    {
+      "file": "supabase/migrations/202608261300_phase34_1_1_auto_session_logoff.sql",
+      "baseline": "6dbe098f1c37974023e19434f17dae6d5c588bebd10d2b3c9e04a353952eb6ba",
+      "current": "6dbe098f1c37974023e19434f17dae6d5c588bebd10d2b3c9e04a353952eb6ba"
+    },
+    {
+      "file": "supabase/migrations/202608301300_phase34_3_customer_selection_supply_photos.sql",
+      "baseline": "ef585f3a4edbb8ce7d2bc16f0d866176064b5e5109f664e2fbdb103cadb3e6c3",
+      "current": "ef585f3a4edbb8ce7d2bc16f0d866176064b5e5109f664e2fbdb103cadb3e6c3"
+    },
+    {
+      "file": "supabase/migrations/202609111900_phase34_5_ingredient_conversion_yield.sql",
+      "baseline": "a2de85bd0fe9688a037acbd5ec7fdecee0f1641b3c3e86463adffa943fcd2e52",
+      "current": "a2de85bd0fe9688a037acbd5ec7fdecee0f1641b3c3e86463adffa943fcd2e52"
+    },
+    {
+      "file": "supabase/migrations/202609111910_phase34_6_recipe_preparation.sql",
+      "baseline": "8cad2ba6d6aa5a2ff0343713fb06a85c06b5068dd2aa7d2d9c25ff8789bb8241",
+      "current": "8cad2ba6d6aa5a2ff0343713fb06a85c06b5068dd2aa7d2d9c25ff8789bb8241"
+    },
+    {
+      "file": "supabase/migrations/202609111920_phase34_7_34_8_recipe_scaling_costing.sql",
+      "baseline": "ca17a91ad37441e68182205495a1378451ef164f68fd4ba2a66a6094cba72ed4",
+      "current": "ca17a91ad37441e68182205495a1378451ef164f68fd4ba2a66a6094cba72ed4"
+    },
+    {
+      "file": "supabase/migrations/202609111930_phase34_9_smart_production_planning.sql",
+      "baseline": "2f167fec06884246ce76a2a3fc3aad6d2ff7020faf71a695c9af70bdd666f468",
+      "current": "2f167fec06884246ce76a2a3fc3aad6d2ff7020faf71a695c9af70bdd666f468"
+    },
+    {
+      "file": "supabase/migrations/202609111940_phase35_0_35_1_variance_substitutions.sql",
+      "baseline": "9195c6dccb1623268dfcfb34bcb908bbffb14f5124361a84cfab3b0b81f59fa8",
+      "current": "9195c6dccb1623268dfcfb34bcb908bbffb14f5124361a84cfab3b0b81f59fa8"
+    },
+    {
+      "file": "supabase/migrations/202609111950_phase35_2_35_3_customer_status_supply_docs.sql",
+      "baseline": "f58c06916f33fe16b5cd8c547e32f444368513b9e25d265d6d315b942a342395",
+      "current": "f58c06916f33fe16b5cd8c547e32f444368513b9e25d265d6d315b942a342395"
+    },
+    {
+      "file": "supabase/migrations/202609112000_phase35_5_acceptance_training.sql",
+      "baseline": "881ba2488c3b1f5487c508e9c9f8272d2ac96a9678602cbbc3a83ec31d9e56d7",
+      "current": "881ba2488c3b1f5487c508e9c9f8272d2ac96a9678602cbbc3a83ec31d9e56d7"
+    },
+    {
+      "file": "supabase/migrations/202610121000_phase35_6_catalogue_account_security.sql",
+      "baseline": "71f78e65b59f924883f6f9bee64ce6d6a8af9af67e788022e4997d278314305e",
+      "current": "71f78e65b59f924883f6f9bee64ce6d6a8af9af67e788022e4997d278314305e"
+    },
+    {
+      "file": "supabase/migrations/202610121100_phase35_7_catalogue_customer_experience.sql",
+      "baseline": "0b2d73ea3de4bdc50b07efb2ad4243c6a283dd194fbbf8510115ade371dbbd6c",
+      "current": "0b2d73ea3de4bdc50b07efb2ad4243c6a283dd194fbbf8510115ade371dbbd6c"
+    },
+    {
+      "file": "supabase/migrations/202610121200_phase35_8_product_media.sql",
+      "baseline": "8aabdac7e7a135334724069332a656ae34fe674e39722a043ea6a86434d22ea0",
+      "current": "8aabdac7e7a135334724069332a656ae34fe674e39722a043ea6a86434d22ea0"
+    },
+    {
+      "file": "supabase/migrations/202610121300_phase35_9_promotions.sql",
+      "baseline": "b95534742df9e3b992ac272e1c1664644393b473da0bbb2f7275b70683fc2d65",
+      "current": "b95534742df9e3b992ac272e1c1664644393b473da0bbb2f7275b70683fc2d65"
+    },
+    {
+      "file": "supabase/migrations/202610121400_phase36_0_catalogue_pos_sync.sql",
+      "baseline": "b6289cb0c9a8ddf65b7899f79ba714be2e2d3c8bdfb24f8df86e1d3fd6a5eea3",
+      "current": "b6289cb0c9a8ddf65b7899f79ba714be2e2d3c8bdfb24f8df86e1d3fd6a5eea3"
+    },
+    {
+      "file": "supabase/migrations/202610121500_phase36_1_catalogue_analytics.sql",
+      "baseline": "f98db88a3610f2fdd8c8dedd351c4ff653299feb347327cd11af1d2558d514d3",
+      "current": "f98db88a3610f2fdd8c8dedd351c4ff653299feb347327cd11af1d2558d514d3"
+    },
+    {
+      "file": "supabase/migrations/202610130800_phase36_0_36_1_catalogue_displays.sql",
+      "baseline": "26275eb3efd151e83d8bcd236e577c0fd8ef2106ab519320bfeae7641b550716",
+      "current": "26275eb3efd151e83d8bcd236e577c0fd8ef2106ab519320bfeae7641b550716"
+    },
+    {
+      "file": "supabase/migrations/202610130900_phase36_2_variants.sql",
+      "baseline": "9975ceef4ff71bc693e1cde86a43103267502da8b3cda8a100c6ee4552ed2cf2",
+      "current": "9975ceef4ff71bc693e1cde86a43103267502da8b3cda8a100c6ee4552ed2cf2"
+    },
+    {
+      "file": "supabase/migrations/202610131000_phase36_3_combos.sql",
+      "baseline": "d83b891ef8e9772e37ebb88fcf67016c43c39a7bbfc4bf283ebc5634ca9a0170",
+      "current": "d83b891ef8e9772e37ebb88fcf67016c43c39a7bbfc4bf283ebc5634ca9a0170"
+    },
+    {
+      "file": "supabase/migrations/202610131100_phase36_3_commercial_checkout.sql",
+      "baseline": "2a0c19ec7ecd0b8637444a0f01a9f03cd3d2f68ddad616f55b53c80befb5a150",
+      "current": "2a0c19ec7ecd0b8637444a0f01a9f03cd3d2f68ddad616f55b53c80befb5a150"
+    },
+    {
+      "file": "supabase/migrations/202610131200_phase36_4_36_5_order_displays.sql",
+      "baseline": "470d06da726c4ae6fea89df31fcf7307d6312e39d62df7ebe7e3ad7380f0da43",
+      "current": "470d06da726c4ae6fea89df31fcf7307d6312e39d62df7ebe7e3ad7380f0da43"
+    },
+    {
+      "file": "supabase/migrations/202610131300_phase36_6_36_7_scheduled_orders.sql",
+      "baseline": "5c27ebec49f56d543b49f6b1d41bc84260413a829943c721ebd305ef4c726ab2",
+      "current": "5c27ebec49f56d543b49f6b1d41bc84260413a829943c721ebd305ef4c726ab2"
+    },
+    {
+      "file": "supabase/migrations/202610131400_phase36_6_36_8_planning_forecast.sql",
+      "baseline": "a2a7a529c38f325d7b6d313437430370336bfe783ce835adc250d921f6df4d55",
+      "current": "a2a7a529c38f325d7b6d313437430370336bfe783ce835adc250d921f6df4d55"
+    },
+    {
+      "file": "supabase/migrations/202610131500_phase36_9_shortage_alerts.sql",
+      "baseline": "f59f867be1f12b7eb986a80ea6c5d6ad85c2275a9c3459bcfcf582bd3bf314d0",
+      "current": "f59f867be1f12b7eb986a80ea6c5d6ad85c2275a9c3459bcfcf582bd3bf314d0"
+    },
+    {
+      "file": "supabase/migrations/202610131600_phase36_catalogue_integration.sql",
+      "baseline": "f0da918bd1a53546947a07c5fb779aca5f2f502dc914175c0ced483309e72e0f",
+      "current": "f0da918bd1a53546947a07c5fb779aca5f2f502dc914175c0ced483309e72e0f"
+    },
+    {
+      "file": "supabase/migrations/202610131700_phase36_order_payment.sql",
+      "baseline": "5f8f97c199d70f4310e77a69316f5e42545ee51bd39b3aecfab423efc333bee6",
+      "current": "5f8f97c199d70f4310e77a69316f5e42545ee51bd39b3aecfab423efc333bee6"
+    },
+    {
+      "file": "supabase/migrations/202610150900_rc1_security_hardening.sql",
+      "baseline": "ef8267f3ab33c520d002ed0025657acbd29e1cf29fd7b34cb5b3d7c16ac819d2",
+      "current": "ef8267f3ab33c520d002ed0025657acbd29e1cf29fd7b34cb5b3d7c16ac819d2"
+    },
+    {
+      "file": "supabase/migrations/202610151200_customer_requests_register.sql",
+      "baseline": "d5f66dfd8132bfd159bbb1f2dd2edf44acec7c0d73a118cad2eba2c4848033c0",
+      "current": "d5f66dfd8132bfd159bbb1f2dd2edf44acec7c0d73a118cad2eba2c4848033c0"
+    },
+    {
+      "file": "supabase/migrations/202610151800_ux_workspace.sql",
+      "baseline": "7ca98b9af7a5168da232db1cc4aa5487beb58b35dda8397c25729e63a37067e1",
+      "current": "7ca98b9af7a5168da232db1cc4aa5487beb58b35dda8397c25729e63a37067e1"
+    },
+    {
+      "file": "supabase/migrations/202610161200_catalogue_finalization.sql",
+      "baseline": "d058a4a6ba97329be6ee9fca087032f8a41e6478f8b9b54d85567362a614e510",
+      "current": "d058a4a6ba97329be6ee9fca087032f8a41e6478f8b9b54d85567362a614e510"
+    },
+    {
+      "file": "supabase/migrations/202610161500_original_catalogue_images.sql",
+      "baseline": "cecaa6552e63afeed6986dc32f6ed967d9c49ddc5f758d34772c9e6affce728e",
+      "current": "cecaa6552e63afeed6986dc32f6ed967d9c49ddc5f758d34772c9e6affce728e"
+    },
+    {
+      "file": "supabase/migrations/202610161600_phone_receipt_consistency.sql",
+      "baseline": "39b4c967d0796894a8d6255f798c1013fd22bcb186a4246113ed7882a58ba4ba",
+      "current": "39b4c967d0796894a8d6255f798c1013fd22bcb186a4246113ed7882a58ba4ba"
+    },
+    {
+      "file": "supabase/migrations/202610171000_ingredient_purchasing.sql",
+      "baseline": "18fb1d5f63daaccb3311282e9edf61ca5956809ced84d1ae36952f50ecd02c16",
+      "current": "18fb1d5f63daaccb3311282e9edf61ca5956809ced84d1ae36952f50ecd02c16"
+    },
+    {
+      "file": "supabase/migrations/202610171100_production_intelligence.sql",
+      "baseline": "71d3689713b335d095b4fc845cca8aac1fb52d13457243c767b5b77fb396fd77",
+      "current": "71d3689713b335d095b4fc845cca8aac1fb52d13457243c767b5b77fb396fd77"
+    },
+    {
+      "file": "supabase/migrations/202610171200_workspace_recovery.sql",
+      "baseline": "8247c44159d0ee3d3db166e0bf8490468dd7978ba908561b8094e4e84f9f9668",
+      "current": "8247c44159d0ee3d3db166e0bf8490468dd7978ba908561b8094e4e84f9f9668"
+    },
+    {
+      "file": "supabase/migrations/202610171300_operations_import_permissions.sql",
+      "baseline": "8cd1a27531124091cecc23a9ba63279cf7bc1e05038c3c6aaf1fc4cbb42877a5",
+      "current": "8cd1a27531124091cecc23a9ba63279cf7bc1e05038c3c6aaf1fc4cbb42877a5"
+    },
+    {
+      "file": "supabase/migrations/202610171400_purchase_item_model.sql",
+      "baseline": "6ed9dbe3f72d5bf9ea2d89869249df53064b00193f5bc9a130dc3ce6458ba95b",
+      "current": "6ed9dbe3f72d5bf9ea2d89869249df53064b00193f5bc9a130dc3ce6458ba95b"
+    },
+    {
+      "file": "supabase/migrations/202610171500_shared_catalogue_theme.sql",
+      "baseline": "a6bb770eea61f08001f4caeb80c1906ca72cef3c3e7977d95954578628ee946d",
+      "current": "a6bb770eea61f08001f4caeb80c1906ca72cef3c3e7977d95954578628ee946d"
+    },
+    {
+      "file": "supabase/migrations/202610171700_operations_calendar.sql",
+      "baseline": "f464483ea788475e6154e63a007a9b1208256fef4e2494e42468a6d98ceaaafa",
+      "current": "f464483ea788475e6154e63a007a9b1208256fef4e2494e42468a6d98ceaaafa"
+    },
+    {
+      "file": "supabase/migrations/202610180800_master_record_removal.sql",
+      "baseline": "79b231fe599b724a20adc2cedf9d655abe1e4973caa95ae2a5967670c840564e",
+      "current": "79b231fe599b724a20adc2cedf9d655abe1e4973caa95ae2a5967670c840564e"
+    },
+    {
+      "file": "supabase/migrations/202610181200_customer_experience_notifications.sql",
+      "baseline": "8cf3d2a4bc2a2d6a676a7afdafd014f85db1d337644c42a067b6238912498be2",
+      "current": "8cf3d2a4bc2a2d6a676a7afdafd014f85db1d337644c42a067b6238912498be2"
+    },
+    {
+      "file": "supabase/migrations/202610181600_ingredient_measurement_units.sql",
+      "baseline": "2f7b9274ca3680bdca9ba819c0e9f44a7b10125802758879f2b3662c9d1ae52d",
+      "current": "2f7b9274ca3680bdca9ba819c0e9f44a7b10125802758879f2b3662c9d1ae52d"
+    },
+    {
+      "file": "supabase/migrations/202610181700_gallery_catalogue_appearance.sql",
+      "baseline": "95a50edb01864cc6988911ff67f6259ee565f40e44c27486389d4f7ebbcab95e",
+      "current": "95a50edb01864cc6988911ff67f6259ee565f40e44c27486389d4f7ebbcab95e"
+    },
+    {
+      "file": "api/catalogue-manifest.js",
+      "baseline": "9bce675f9d650a4e6bf737478ec83485b265f21445d822ceee7224f4002eb36b",
+      "current": "9bce675f9d650a4e6bf737478ec83485b265f21445d822ceee7224f4002eb36b"
+    },
+    {
+      "file": "api/order-push.js",
+      "baseline": "221ecba4206cd995e0d0ef1404445205372e41a610a4df5d3d02cde80961dcc7",
+      "current": "221ecba4206cd995e0d0ef1404445205372e41a610a4df5d3d02cde80961dcc7"
+    }
+  ],
+  "sourceChanges": [
+    "src/App.tsx",
+    "src/BusinessContacts.tsx",
+    "src/CataloguePreorders.tsx",
+    "src/CommercialCatalogue.tsx",
+    "src/customerStorefront.css",
+    "src/CustomerStorefront.tsx",
+    "src/main.tsx",
+    "src/redesign.css",
+    "src/translations.ts",
+    "src/UxShell.tsx"
+  ]
+}

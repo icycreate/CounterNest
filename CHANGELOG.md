@@ -1,3 +1,16 @@
+# 2.0.0-rc.18 — 2026-10-20
+
+- Added private guest Track Order timeline, pickup banner, business details and clearly labeled totals.
+- Added explicit customer notification consent, remembered Not Now and per-order device preferences in four languages.
+- Added capability-scoped subscriptions and transactional accepted/preparing/ready outbox with retry leases and deduplication.
+- Extended existing Web Push dispatcher/service worker with private local tracking bindings and exact-order notification navigation.
+- Added optimistic status transitions to existing staff Ready actions; retained audit, payment and stock protections.
+- Preserved shared browser subscriptions when removing an individual customer or staff registration.
+- Added manual migration/configuration/deployment instructions; no dependency changes or live-system changes.
+- Not tested, built, type-checked, UAT-checked or deployed at the user's request.
+
+---
+
 # RC17 — Catalogue pre-order notification workflow (2026-10-20)
 
 - Preserve immutable submitted order/contact/price snapshots and capture international phone for every contact method in the current customer form.

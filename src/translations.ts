@@ -17483,3 +17483,197 @@ Object.assign(translations,{"Place order": {"es": "Realizar pedido", "zh-TW": "�
 
 
 Object.assign(translations,{'Availability and quoted price confirmed':{es:'Disponibilidad y precio cotizado confirmados','zh-TW':'已確認供應情況與報價','zh-CN':'已确认供应情况与报价'},'Confirm availability and quoted price':{es:'Confirma la disponibilidad y el precio cotizado','zh-TW':'請確認供應情況與報價','zh-CN':'请确认供应情况与报价'}})
+
+// RC18 customer tracking and explicit notification consent.
+Object.assign(translations,{
+  "Customer notification setup is required.": {
+    "es": "Se requiere configurar las notificaciones del cliente.",
+    "zh-TW": "需要設定顧客通知。",
+    "zh-CN": "需要配置顾客通知。"
+  },
+  "Order notifications are not supported in this browser.": {
+    "es": "Este navegador no admite notificaciones de pedidos.",
+    "zh-TW": "此瀏覽器不支援訂單通知。",
+    "zh-CN": "此浏览器不支持订单通知。"
+  },
+  "Notifications Blocked": {
+    "es": "Notificaciones bloqueadas",
+    "zh-TW": "通知已封鎖",
+    "zh-CN": "通知已阻止"
+  },
+  "Notifications Disabled": {
+    "es": "Notificaciones desactivadas",
+    "zh-TW": "通知已停用",
+    "zh-CN": "通知已停用"
+  },
+  "Refresh the app to finish notification setup.": {
+    "es": "Actualiza la aplicación para terminar de configurar las notificaciones.",
+    "zh-TW": "請重新整理應用程式以完成通知設定。",
+    "zh-CN": "请刷新应用以完成通知配置。"
+  },
+  "Order notifications enabled.": {
+    "es": "Notificaciones de pedidos activadas.",
+    "zh-TW": "已啟用訂單通知。",
+    "zh-CN": "已启用订单通知。"
+  },
+  "Notification Settings": {
+    "es": "Ajustes de notificaciones",
+    "zh-TW": "通知設定",
+    "zh-CN": "通知设置"
+  },
+  "Notification Status": {
+    "es": "Estado de notificaciones",
+    "zh-TW": "通知狀態",
+    "zh-CN": "通知状态"
+  },
+  "Receive updates about your orders, including when your order is accepted and ready for pickup.": {
+    "es": "Recibe actualizaciones de tus pedidos, incluso cuando se acepten y estén listos para recoger.",
+    "zh-TW": "接收訂單更新，包括訂單已接受及可取貨的通知。",
+    "zh-CN": "接收订单更新，包括订单已接受及可取货的通知。"
+  },
+  "On iPhone or iPad, open this catalogue in Safari, choose Share, then Add to Home Screen. Open the installed app to enable supported notifications.": {
+    "es": "En iPhone o iPad, abre este catálogo en Safari, elige Compartir y Añadir a pantalla de inicio. Abre la aplicación instalada para activar las notificaciones compatibles.",
+    "zh-TW": "在 iPhone 或 iPad 上，使用 Safari 開啟此目錄，選擇分享，再加入主畫面。開啟已安裝的應用程式以啟用支援的通知。",
+    "zh-CN": "在 iPhone 或 iPad 上，使用 Safari 打开此目录，选择分享，再添加到主屏幕。打开已安装的应用以启用支持的通知。"
+  },
+  "Allow notifications in your browser or device settings, then return here. CounterNest cannot change a blocked permission.": {
+    "es": "Permite las notificaciones en los ajustes del navegador o dispositivo y vuelve aquí. CounterNest no puede cambiar un permiso bloqueado.",
+    "zh-TW": "請在瀏覽器或裝置設定允許通知，再返回此處。CounterNest 無法變更已封鎖的權限。",
+    "zh-CN": "请在浏览器或设备设置允许通知，再返回此处。CounterNest 无法更改已阻止的权限。"
+  },
+  "Order Accepted Updates": {
+    "es": "Avisos de pedido aceptado",
+    "zh-TW": "訂單接受通知",
+    "zh-CN": "订单接受通知"
+  },
+  "Preparing Updates": {
+    "es": "Avisos de preparación",
+    "zh-TW": "製作進度通知",
+    "zh-CN": "制作进度通知"
+  },
+  "Ready-for-Pickup Updates": {
+    "es": "Avisos de pedido listo para recoger",
+    "zh-TW": "可取貨通知",
+    "zh-CN": "可取货通知"
+  },
+  "Save notification preferences": {
+    "es": "Guardar preferencias de notificaciones",
+    "zh-TW": "儲存通知偏好",
+    "zh-CN": "保存通知偏好"
+  },
+  "Enable Notifications": {
+    "es": "Activar notificaciones",
+    "zh-TW": "啟用通知",
+    "zh-CN": "启用通知"
+  },
+  "Disable Notifications on This Device": {
+    "es": "Desactivar notificaciones en este dispositivo",
+    "zh-TW": "在此裝置停用通知",
+    "zh-CN": "在此设备停用通知"
+  },
+  "These controls apply to this order on this device. Browser and OS settings control background sound and delivery.": {
+    "es": "Estos controles se aplican a este pedido en este dispositivo. El navegador y el sistema controlan el sonido y la entrega en segundo plano.",
+    "zh-TW": "這些控制項適用於此裝置上的這筆訂單。背景音效與傳送由瀏覽器及作業系統設定控制。",
+    "zh-CN": "这些控件适用于此设备上的这笔订单。后台音效与发送由浏览器及操作系统设置控制。"
+  },
+  "Order updates": {
+    "es": "Actualizaciones del pedido",
+    "zh-TW": "訂單更新",
+    "zh-CN": "订单更新"
+  },
+  "Not Now": {
+    "es": "Ahora no",
+    "zh-TW": "稍後再說",
+    "zh-CN": "暂不启用"
+  },
+  "Submit an order first, then enable updates from its private Track Order link. No account is required.": {
+    "es": "Envía un pedido y activa las actualizaciones desde su enlace privado de seguimiento. No necesitas una cuenta.",
+    "zh-TW": "請先提交訂單，再從私人訂單追蹤連結啟用更新。無需註冊帳戶。",
+    "zh-CN": "请先提交订单，再从私人订单追踪链接启用更新。无需注册账户。"
+  },
+  "Track Order": {
+    "es": "Seguir pedido",
+    "zh-TW": "追蹤訂單",
+    "zh-CN": "追踪订单"
+  },
+  "Pending Approval": {
+    "es": "Pendiente de aprobación",
+    "zh-TW": "待審核",
+    "zh-CN": "待审核"
+  },
+  "Accepted": {
+    "es": "Aceptado",
+    "zh-TW": "已接受",
+    "zh-CN": "已接受"
+  },
+  "Preparing": {
+    "es": "En preparación",
+    "zh-TW": "製作中",
+    "zh-CN": "制作中"
+  },
+  "Ready for Pickup": {
+    "es": "Listo para recoger",
+    "zh-TW": "可取貨",
+    "zh-CN": "可取货"
+  },
+  "Collected": {
+    "es": "Recogido",
+    "zh-TW": "已取貨",
+    "zh-CN": "已取货"
+  },
+  "Order progress": {
+    "es": "Progreso del pedido",
+    "zh-TW": "訂單進度",
+    "zh-CN": "订单进度"
+  },
+  "Your order is ready for pickup!": {
+    "es": "¡Tu pedido está listo para recoger!",
+    "zh-TW": "您的訂單已可取貨！",
+    "zh-CN": "您的订单已可取货！"
+  },
+  "View Pickup Details": {
+    "es": "Ver detalles de recogida",
+    "zh-TW": "查看取貨詳情",
+    "zh-CN": "查看取货详情"
+  },
+  "Paid total": {
+    "es": "Total pagado",
+    "zh-TW": "已付總額",
+    "zh-CN": "已付总额"
+  },
+  "Accepted quote (tax subject to final payment)": {
+    "es": "Cotización aceptada (impuesto sujeto al pago final)",
+    "zh-TW": "已接受報價（稅額以最終付款為準）",
+    "zh-CN": "已接受报价（税额以最终付款为准）"
+  },
+  "Pickup details": {
+    "es": "Detalles de recogida",
+    "zh-TW": "取貨詳情",
+    "zh-CN": "取货详情"
+  },
+  "Pickup time will be confirmed by the business.": {
+    "es": "El negocio confirmará la hora de recogida.",
+    "zh-TW": "商家將確認取貨時間。",
+    "zh-CN": "商家将确认取货时间。"
+  },
+  "Confirmed pickup": {
+    "es": "Recogida confirmada",
+    "zh-TW": "已確認取貨時間",
+    "zh-CN": "已确认取货时间"
+  },
+  "This order no longer accepts notification subscriptions": {
+    "es": "Este pedido ya no admite suscripciones a notificaciones",
+    "zh-TW": "此訂單已不再接受通知訂閱",
+    "zh-CN": "此订单已不再接受通知订阅"
+  },
+  "Device limit reached": {
+    "es": "Se alcanzó el límite de dispositivos",
+    "zh-TW": "已達裝置數量上限",
+    "zh-CN": "已达设备数量上限"
+  },
+  "Invalid push subscription": {
+    "es": "Suscripción de notificaciones no válida",
+    "zh-TW": "推播訂閱無效",
+    "zh-CN": "推送订阅无效"
+  }
+})

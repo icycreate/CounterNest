@@ -1,3 +1,11 @@
+# Current release: RC18 customer pickup notifications
+
+**Offline source update only — not tested, built, type-checked, UAT-checked or deployed.** No live services were accessed. Historical validation reports below/in this package do not validate this update.
+
+Start with [Customer pickup update](CUSTOMER_PICKUP_NOTIFICATIONS_UPDATE.md) and [manual migration/deployment instructions](MANUAL_DEPLOYMENT_RC18.md). RC17 upgrades require migration 96, `202610201800_customer_pickup_notifications.sql`. Customer push also requires server configuration and explicit device permission. See [changed files](MODIFIED_FILES_RC18.md).
+
+---
+
 > RC17 update: follow MANUAL_DEPLOYMENT_RC17.md and NOTIFICATION_SETUP.md first. One new migration follows the 94-file RC16 baseline. This release is not tested or build-validated. Earlier guidance below is retained for baseline context.
 
 > RC14 current release: 2.0.0-rc.14, 2026-10-18-blended-branding. No additional SQL when upgrading RC13; all 94 migrations are unchanged. Use INSTALL_UPGRADE_GUIDE.md, BRANDING_IMPLEMENTATION.md and BUILD_VALIDATION.json for current scope. Earlier release-specific notes below remain historical.

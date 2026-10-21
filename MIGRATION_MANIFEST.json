@@ -473,5 +473,10 @@
     "order": 95,
     "file": "202610201200_persistent_preorder_notifications.sql",
     "sha256": "0efde67835dff2fe9cfb3f28db4f4baec57fdb7565b42e5ca177f113ce866c78"
+  },
+  {
+    "order": 96,
+    "file": "202610201800_customer_pickup_notifications.sql",
+    "sha256": "2ca7043ad33adbad1fa55c89c7098bab46316892c24806e829cb0bd2bfb6980c"
   }
 ]

@@ -1,1 +1,6 @@
-CounterNest POS RC17. Not tested or build-validated. Offline source update only. One manual migration and Web Push configuration are required; see MANUAL_DEPLOYMENT_RC17.md. Prior release evidence is historical only.
+CounterNest POS Customer Pickup RC18
+Version 2.0.0-rc.18
+Complete source based on RC17. Offline source changes only.
+Not tested, built, type-checked, UAT-checked or deployed. No external systems accessed.
+Historical validation documents are not RC18 evidence.
+Read CUSTOMER_PICKUP_NOTIFICATIONS_UPDATE.md and MANUAL_DEPLOYMENT_RC18.md.

@@ -1,22 +1,22 @@
 {
-  "version": "2.0.0-rc.17",
-  "baseline_version": "CounterNest POS New Sale RC16",
-  "baseline_migration_count": 94,
-  "migration_count": 95,
+  "version": "2.0.0-rc.18",
+  "baseline_version": "CounterNest POS Catalogue Order Workflow RC17",
+  "baseline_migration_count": 95,
+  "migration_count": 96,
   "upgrade_migrations": [
-    "202610201200_persistent_preorder_notifications.sql"
+    "202610201800_customer_pickup_notifications.sql"
   ],
-  "name": "CounterNest POS Catalogue Order Workflow RC17",
-  "build": "2026-10-20-order-workflow",
+  "name": "CounterNest POS Customer Pickup RC18",
+  "build": "2026-10-20-customer-pickup",
   "product": "CounterNest POS",
   "release_type": "source-update",
   "backend": "Supabase Cloud",
   "desktop_installer": false,
   "features": [
     {
-      "title": "Persistent Catalogue pre-order snapshots and authorized notification workflow"
+      "title": "Private customer tracking, explicit device consent and durable pickup push events"
     }
   ],
-  "validation": "Not tested or build-validated, as requested",
+  "validation": "Not tested, built, type-checked, UAT-checked or deployed; source preparation only",
   "deployment_status": "Offline source only; migration, hosting and Web Push configuration required"
 }

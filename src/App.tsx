@@ -449,7 +449,7 @@ export default function App() {
   const standaloneToken=displayParams.get('catalogue_display')??(window.location.pathname.replace(/\/$/,'')==='/catalogue-display'?displayParams.get('token'):null)
   const readyToken=displayParams.get('ready_display')??(window.location.pathname.replace(/\/$/,'')==='/ready-display'?displayParams.get('token'):null)
   if(window.location.pathname.replace(/\/$/,'')==='/catalogue-display'||standaloneToken)return <CommercialCatalogue key={standaloneToken??'display'} token={standaloneToken??undefined} mode="display"/>
-  if(window.location.pathname.replace(/\/$/,'')==='/request-status')return <RequestStatus token={new URLSearchParams(window.location.search).get('token')??''}/>
+  if(window.location.pathname.replace(/\/$/,'')==='/request-status')return <RequestStatus key={new URLSearchParams(window.location.search).get('token')??''} token={new URLSearchParams(window.location.search).get('token')??''}/>
   if(window.location.pathname.replace(/\/$/,'')==='/ready-display'||readyToken)return readyToken?<ReadyDisplay token={readyToken}/>:<main className="commercial-catalogue"><p role="alert">{tr("Open the protected ready-display link from Display Settings.")}</p></main>
   if (customerDisplayToken || (window.location.pathname.replace(/\/$/,'')==='/catalogue'&&displayParams.has('token'))) return <CommercialCatalogue key={customerDisplayToken??displayParams.get('token')??'customer'} token={customerDisplayToken??displayParams.get('token')??undefined} mode="customer"/>
   if((displayParams.get('preparation')==='1'||['/preparation','/kitchen'].includes(window.location.pathname.replace(/\/$/,'')))&&authenticated&&!mustChangePassword)return <><CalendarSourcePanel/><PreparationScreen standalone/></>

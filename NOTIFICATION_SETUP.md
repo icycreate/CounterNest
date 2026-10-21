@@ -1,3 +1,11 @@
+# Current release: RC18 customer pickup notifications
+
+**Offline source update only — not tested, built, type-checked, UAT-checked or deployed.** No live services were accessed. Historical validation reports below/in this package do not validate this update.
+
+Start with [Customer pickup update](CUSTOMER_PICKUP_NOTIFICATIONS_UPDATE.md) and [manual migration/deployment instructions](MANUAL_DEPLOYMENT_RC18.md). RC17 upgrades require migration 96, `202610201800_customer_pickup_notifications.sql`. Customer push also requires server configuration and explicit device permission. See [changed files](MODIFIED_FILES_RC18.md).
+
+---
+
 # New Order Alerts — manual backend and Web Push setup
 
 RC17 is **not tested or build-validated**. These are manual configuration instructions; no keys were generated, no server was contacted, and no notification was sent during development.

@@ -1,46 +1,57 @@
-# Order notification setup — RC11
+# New Order Alerts — manual backend and Web Push setup
 
-The source implements delivery; no live credentials or external notification destination were configured in this task.
+RC17 is **not tested or build-validated**. These are manual configuration instructions; no keys were generated, no server was contacted, and no notification was sent during development.
 
-## Server settings
+## Database
 
-Generate one stable VAPID key pair with the installed web-push CLI (npx web-push generate-vapid-keys --json). Store the private output in Vercel's secret environment settings, never in the repository or a VITE variable.
+Apply migration `202610201200_persistent_preorder_notifications.sql` after all 94 existing migrations. It adds immutable submission snapshots, per-user read acknowledgements and automatic-popup claims, exact-record reads, device management and guarded decisions. Existing insertion triggers and the outbox are reused. No customer tab is needed after submission commits.
 
-| Variable | Location | Purpose |
-|---|---|---|
-| VITE_SUPABASE_URL | Browser and Vercel server | Existing project URL |
-| VITE_SUPABASE_PUBLISHABLE_KEY | Browser | Existing public API key |
+Authorized order handlers are active Admin, Manager and Cashier accounts in the same workspace, with no required password change or pending workspace recovery. Other roles are excluded. The backend, not a browser preference, determines recipient authorization. The existing staff role assignment workflow controls who is a Manager/Cashier; this package does not change existing staff records.
+
+## Server secrets and browser configuration
+
+Generate a stable VAPID pair in your own trusted environment using the existing web-push tooling when ready. Do not put private keys in source control.
+
+| Variable | Scope | Value |
+| --- | --- | --- |
+| VITE_SUPABASE_URL | Existing browser/server environment | Your existing project URL |
+| VITE_SUPABASE_PUBLISHABLE_KEY | Browser | Your existing public API key |
 | VITE_WEB_PUSH_PUBLIC_KEY | Browser build | VAPID public key |
-| WEB_PUSH_PUBLIC_KEY | Vercel server | Same VAPID public key |
-| WEB_PUSH_PRIVATE_KEY | Vercel server only | VAPID signing secret |
-| WEB_PUSH_SUBJECT | Vercel server only | Maintainer mailto: address or HTTPS contact URL |
-| SUPABASE_SERVICE_ROLE_KEY | Vercel server only | Private outbox dispatcher access |
-| CRON_SECRET | Vercel server only | Random dispatcher bearer secret |
+| WEB_PUSH_PUBLIC_KEY | Server only | The matching public key |
+| WEB_PUSH_PRIVATE_KEY | Server only | VAPID private key |
+| WEB_PUSH_SUBJECT | Server only | Maintainer mailto address or HTTPS contact |
+| SUPABASE_SERVICE_ROLE_KEY | Server only | Private dispatcher key; never a VITE variable |
+| CRON_SECRET | Server only | Random secret protecting the dispatcher |
 
-Redeploy after changing browser-build variables. Keep VAPID keys stable; rotating them requires device re-registration.
+Browser-build variable changes require a later deployment build. Keep VAPID keys stable; changing them requires devices to unsubscribe and register again. The provided ZIP contains no configured secrets.
 
-## Event and retry wiring
+## Server-triggered dispatch
 
-After migration 92 and the Vercel deployment, configure a Supabase Database Webhook for INSERT on public.order_alert_events. Use POST https://YOUR-DEPLOYMENT/api/order-push with Authorization: Bearer YOUR_CRON_SECRET and Content-Type: application/json. The request body is ignored; never put the secret in a URL. The database transaction creates device delivery rows alongside the event.
+After deployment, configure a Supabase Database Webhook for INSERT on `public.order_alert_events`:
 
-Also schedule a protected GET or POST to the same endpoint every minute (or a supported operational interval) using the same bearer header. Use a scheduler supported by your deployment plan; no paid plan is selected automatically. This drains backlogs/retries when a webhook fails. No scheduler is active merely from deploying the ZIP.
+- Method: POST
+- Destination: `https://YOUR-DEPLOYMENT/api/order-push`
+- Headers: `Authorization: Bearer YOUR_CRON_SECRET` and `Content-Type: application/json`
+- The endpoint ignores webhook body data and leases delivery work from the private outbox.
 
-The dispatcher leases up to 50 rows for five minutes with SKIP LOCKED. It rechecks active staff, current shop, temporary-password state, customer-service role, per-device choices and pending workspace deletion. Requests are queued once per event/device; OS notifications use stable tags and Web Push topics. A crash after sending but before acknowledging can retry; replacement tags suppress repeat notification identity. Transient failures retry after the lease, up to five attempts within one day. Inspect private delivery state/last_error in Supabase for failures. HTTP 404/410 removes expired devices; invalid/provider-authorization failures stop retries. The protected endpoint returns aggregate counts, without keys or customer information. Add an operational retention job for old alert/delivery rows if required by your retention policy; RC11 does not erase historical events automatically.
+Also configure a server scheduler to call the same endpoint with GET or POST and the same Authorization header, ordinarily every minute or at an interval supported by your plan. Nothing in this package creates a hosted scheduler automatically. This retry schedule handles missing webhooks, abandoned leases and transient transport failures. The customer Catalogue never invokes this dispatcher or receives its secret.
 
-Only recognized Google, Mozilla, Apple and Windows push-service hosts are sent requests. Other endpoints fail safely. Private subscriptions and queue tables have no browser table policies/grants. Only role-checked RPCs expose registration or same-shop minimal events. Push payloads carry type, event ID and record ID, without customer names/items/prices. Subscriptions are deliberately excluded from workspace exports and are not restored into another business.
+The existing dispatcher sends only to recognized Google, Mozilla, Apple and Windows push-provider endpoints. Unsupported providers fail safely. It uses leases, current role/workspace checks, per-device preferences and acknowledgement checks. Each event/device has a unique queue entry. Stable notification tags and service-worker event markers suppress retry duplicates. Generic payloads contain event/request IDs and type, not names, contacts, product lines or amounts. Authorized detail reads fetch that information after opening CounterNest.
 
-## Register and test
+## Per-device setup
 
-Sign in as Administrator or Cashier on HTTPS. Open Settings → New Order Alerts. Choose alert types, sound/repeat, Desktop Push or Mobile Push and badge. Save Changes, then Register this device and accept the browser permission prompt. Each browser/profile/device registers separately (20 per account limit). Test Notification checks the local foreground sound and, if registered/permitted, a local OS notification. It is not an end-to-end transport test.
+Sign in on the HTTPS deployment as an authorized order handler. Open Settings → Notifications → New Order Alerts. Choose enabled alert types, foreground sound, repetition count (default 3), unread badge and Desktop Push/Mobile Push as applicable. Save Changes. Choose **Enable notifications on this device** to explicitly request browser permission and register. Repeat on each browser/profile/device. Device names are optional. Registered devices can be viewed and removed for the current account.
 
-Send a disposable catalogue/pre-order/custom-cake request from another device in staging. With the POS focused, verify popup, badge and three two-note rings after a tap enables audio. With the POS backgrounded/closed, verify an OS notification, correct record after sign-in, and lease acknowledgement. Foreground polling is every five seconds while visible and uses a server-time composite cursor. Sound requires an initial user gesture; multiple tabs use a bounded shared event list and Web Locks where supported.
+The Test Notification button is a user-operated local sound/OS-preview control, not an end-to-end transport assertion. It never requests browser permission implicitly. It was not used during this work.
 
-Sign out unregisters the active device and clears the worker's persisted account binding. Service-worker delivery checks that binding, including after browser restart, and will not show another account's event. Revoking staff or freezing a workspace excludes new dispatch leases. Already accepted messages at an OS push service cannot be recalled; the worker binding and original record authorization still apply.
+## What remains inactive until setup
 
-## Platform limits and sources
+- Before the migration: new unread/acknowledgement, decision and device-list RPCs are unavailable; the UI reports backend/access requirements.
+- After migration but before Web Push configuration: authorized active sessions can poll for persistent requests; closed/background OS push cannot operate.
+- Without a valid device subscription and browser permission: that device cannot receive Web Push.
+- Without a user gesture permitting audio: the foreground sound cannot play; Enable alert sound is provided.
+- While a payment or other dialog is active: popup presentation and push-click navigation wait; the unread badge remains.
 
-The custom three-ring sound is a foreground feature. Fully closed/background sound, badges, delivery timing and install support follow browser/OS policy; a notification cannot guarantee a custom sound on every OS. Physical iOS/Android/Windows acceptance is still required. The shell stays installable; no offline financial transactions are added.
+Foreground custom audio is available only while the app is active. Background/closed-app sound, delivery timing, installation eligibility and badges follow browser/OS policy. On devices requiring an installed PWA for push, users must install CounterNest first. No custom audio playback is promised while the browser or PWA is closed. Already accepted provider messages cannot be recalled after account/device revocation; they contain no private order details, and details remain protected by current authorization.
 
-Implementation references: [web-push library](https://github.com/web-push-libs/web-push), [PushEvent](https://developer.mozilla.org/en-US/docs/Web/API/PushEvent), [showNotification](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/showNotification).
-
-Device registration saves the current system language for background titles (English, Spanish, traditional or simplified Chinese). Save/update the device after changing language. Foreground text follows the current UI language immediately.
+Notifications remain in the in-app inbox until each recipient explicitly acknowledges them. Dismiss/View later, Contact, Accept, Decline and OS notification taps do not silently mark them read. Existing historical events are available as unread; historical request snapshots are not invented or backfilled. Push transport retains the existing five-attempt/one-day delivery window; unread in-app state has no automatic one-day expiry.

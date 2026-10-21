@@ -52,5 +52,7 @@ import './customerStorefront.css'
 
 
 import './redesign.css'
+import './newSale.css'
+import './orderWorkflow.css'
 import './accessibility.css'
 

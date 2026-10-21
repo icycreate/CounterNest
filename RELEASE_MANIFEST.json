@@ -1,20 +1,22 @@
 {
-  "version": "2.0.0-rc.15",
-  "baseline_version": "Blended Branding RC14",
+  "version": "2.0.0-rc.17",
+  "baseline_version": "CounterNest POS New Sale RC16",
   "baseline_migration_count": 94,
-  "migration_count": 94,
-  "upgrade_migrations": [],
-  "name": "CounterNest POS Presentation Redesign RC15",
-  "build": "2026-10-19-redesign",
+  "migration_count": 95,
+  "upgrade_migrations": [
+    "202610201200_persistent_preorder_notifications.sql"
+  ],
+  "name": "CounterNest POS Catalogue Order Workflow RC17",
+  "build": "2026-10-20-order-workflow",
   "product": "CounterNest POS",
-  "release_type": "browser-release-candidate",
+  "release_type": "source-update",
   "backend": "Supabase Cloud",
   "desktop_installer": false,
   "features": [
     {
-      "title": "Customer storefront and operational workspace presentation redesign"
+      "title": "Persistent Catalogue pre-order snapshots and authorized notification workflow"
     }
   ],
-  "validation": "docs/rc15-validation/tests.log",
-  "deployment_status": "Local release candidate; live cloud and physical device acceptance pending"
+  "validation": "Not tested or build-validated, as requested",
+  "deployment_status": "Offline source only; migration, hosting and Web Push configuration required"
 }

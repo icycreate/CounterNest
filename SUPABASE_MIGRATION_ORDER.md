@@ -1,3 +1,5 @@
+> RC17 update: follow MANUAL_DEPLOYMENT_RC17.md and NOTIFICATION_SETUP.md first. One new migration follows the 94-file RC16 baseline. This release is not tested or build-validated. Earlier guidance below is retained for baseline context.
+
 > RC14 current release: 2.0.0-rc.14, 2026-10-18-blended-branding. No additional SQL when upgrading RC13; all 94 migrations are unchanged. Use INSTALL_UPGRADE_GUIDE.md, BRANDING_IMPLEMENTATION.md and BUILD_VALIDATION.json for current scope. Earlier release-specific notes below remain historical.
 
 > RC13 current release: 2.0.0-rc.13, build 2026-10-18-accessibility. Upgrading RC12 requires no additional SQL; all 94 migrations are unchanged. Use INSTALL_UPGRADE_GUIDE.md, ACCESSIBILITY_AUDIT.md and BUILD_VALIDATION.json for current scope. Earlier release-specific passages below are historical context.

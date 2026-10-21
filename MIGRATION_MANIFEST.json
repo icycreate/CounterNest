@@ -468,5 +468,10 @@
     "order": 94,
     "file": "202610181700_gallery_catalogue_appearance.sql",
     "sha256": "95a50edb01864cc6988911ff67f6259ee565f40e44c27486389d4f7ebbcab95e"
+  },
+  {
+    "order": 95,
+    "file": "202610201200_persistent_preorder_notifications.sql",
+    "sha256": "0efde67835dff2fe9cfb3f28db4f4baec57fdb7565b42e5ca177f113ce866c78"
   }
 ]

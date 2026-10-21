@@ -1,1 +1,1 @@
-CounterNest RC15 actual source, derived from RC14. All backend/API files and 94 migrations preserved. No production access or data writes. See RC15 reports and validation logs.
+CounterNest POS RC17. Not tested or build-validated. Offline source update only. One manual migration and Web Push configuration are required; see MANUAL_DEPLOYMENT_RC17.md. Prior release evidence is historical only.

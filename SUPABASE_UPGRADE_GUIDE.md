@@ -1,3 +1,5 @@
+> RC17 update: follow MANUAL_DEPLOYMENT_RC17.md and NOTIFICATION_SETUP.md first. One new migration follows the 94-file RC16 baseline. This release is not tested or build-validated. Earlier guidance below is retained for baseline context.
+
 # Upgrade guide — existing RC14 installation
 
 1. Keep the existing Supabase Cloud project, business records, storage buckets, environment variables, Vercel configuration and workspace IDs.

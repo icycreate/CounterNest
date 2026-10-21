@@ -1,3 +1,4 @@
+import {PosProductBrowser,PosOptions,usePosCatalogue} from './PosProductBrowser'
 import {BrandLogo} from './BrandLogo'
 import {isPublicCatalogueRoute} from './customerRoutes'
 import {readableForeground} from './accessiblePalette'
@@ -473,7 +474,7 @@ export default function App() {
       <main className="main"><div className="print-business-brand"><BrandLogo logoUrl={logoUrl} businessName={shopName} theme="light"/><strong>{shopName}</strong></div>
         <QuickActionBridge page={page}/>
         <BackButton/>
-        <NotificationRuntime enabled={['admin','cashier'].includes(effectiveRole)}/><UxHeader logoUrl={logoUrl} role={effectiveRole} page={page} setPage={setPage} workspace={workspace} save={savePreferences} shopName={shopName} onRecord={setRecord}/>
+        <NotificationRuntime key={scope} enabled={['admin','manager','cashier'].includes(effectiveRole)}/><UxHeader logoUrl={logoUrl} role={effectiveRole} page={page} setPage={setPage} workspace={workspace} save={savePreferences} shopName={shopName} onRecord={setRecord}/>
         <WhatsNew key={scope} scope={scope} seen={workspace.preferences.whats_new==="2026-10-17-operations1"} onDismiss={()=>void savePreferences({whats_new:'2026-10-17-operations1'})}/>
         {workspaceError&&<p role="alert">{workspaceError}</p>}
         {record&&<RecordPreview record={record} workspace={workspace} onClose={()=>setRecord(null)} setPage={setPage}/> }
@@ -843,8 +844,6 @@ function NewSale(props: {
     }catch{props.showToast(trError(confirmed?'Sale saved. Open Sales to retrieve its receipt; do not take payment again.':'The checkout response was interrupted. Retry confirmation using the saved checkout reference.'))}
     finally{checkoutLock.current=false;setBusy(false)}
   }
-  const [cat, setCat] = useState('All')
-  const [search, setSearch] = useState('')
   const [busy, setBusy] = useState(false)
   const [appliedRewardId, setAppliedRewardId] = useState('')
   const [receipt, setReceipt] = useState<ReceiptData | null>(null)
@@ -854,7 +853,27 @@ function NewSale(props: {
   const [cameraOpen,setCameraOpen]=useState(false)
   const [pricedProducts,setPricedProducts]=useState<Product[]>(props.products)
   const [priceSyncError,setPriceSyncError]=useState('')
-  const [commercialProducts,setCommercialProducts]=useState<CommercialProduct[]>([])
+  const {data:posCatalogue,error:optionsError}=usePosCatalogue()
+  const commercialProducts=posCatalogue?.products??[]
+  const [optionProduct,setOptionProduct]=useState<CommercialProduct|null>(null)
+  const [mobileCartOpen,setMobileCartOpen]=useState(false)
+  const cartHeading=useRef<HTMLHeadingElement>(null)
+  const viewCartButton=useRef<HTMLButtonElement>(null)
+  useEffect(()=>{if(mobileCartOpen){cartHeading.current?.focus();cartHeading.current?.scrollIntoView({block:'nearest'})}},[mobileCartOpen])
+  function closeMobileCart(){setMobileCartOpen(false);window.requestAnimationFrame(()=>viewCartButton.current?.focus())}
+  function addCommercial(item:CommercialItem){
+    const line=commercialCartLine(item)
+    props.setCart(old=>{
+      const found=old.find(x=>x.id===line.id&&(x.variantId??null)===(line.variantId??null)&&(x.catalogOption??null)===(line.catalogOption??null)&&(x.comboId??null)===(line.comboId??null)&&JSON.stringify(x.comboChoices??null)===JSON.stringify(line.comboChoices??null))
+      return found?old.map(x=>x===found?{...x,qty:x.qty+line.qty}:x):[...old,line]
+    })
+  }
+  function selectProduct(p:Product){
+    if(supabaseConfigured&&!posCatalogue){props.showToast(trError('Product options are unavailable. Refresh before adding products.'));return}
+    const detail=commercialProducts.find(x=>x.id===p.id)
+    if(detail&&(detail.variants.length||detail.option_labels.length)){setOptionProduct(detail);return}
+    add(p)
+  }
   const [serverQuote,setServerQuote]=useState<any>(null)
   const quoteSignature=JSON.stringify([props.cart.map(x=>[x.cartKey??x.id,x.qty]),appliedRewardId,props.selectedCustomerId])
   const currentQuote=serverQuote?.signature===quoteSignature?serverQuote:null
@@ -871,8 +890,6 @@ function NewSale(props: {
     props.setCart(old=>old.map(line=>{if(line.variantId||line.comboId)return line;const p=next.find(p=>p.id===line.id);return p?{...line,price:p.price,stock:p.stock,active:p.active,catalogueVisible:p.catalogueVisible,catalogueSoldOut:p.catalogueSoldOut}:line}))
   }
   useEffect(()=>{void syncPrices();const timer=window.setInterval(()=>{if(document.visibilityState==='visible')void syncPrices()},5000);return()=>window.clearInterval(timer)},[props.products])
-  const categories = ['All', ...Array.from(new Set(pricedProducts.map(p => p.category)))]
-  const visible = pricedProducts.filter(p => p.active && (cat === 'All' || p.category === cat) && p.name.toLowerCase().includes(search.toLowerCase()))
   const subtotal = currentQuote?Number(currentQuote.subtotal):props.cart.reduce((a, x) => a + x.price * x.qty, 0)
   const customer = props.customers.find(c => c.id === props.selectedCustomerId)
   const availableRewards = customer?.loyaltyStatus === 'member' ? props.rewards.filter(r => r.active && (r.costPoints ?? 0) <= customer.points && (r.requiredStamps ?? 0) <= customer.stamps) : []
@@ -886,10 +903,10 @@ function NewSale(props: {
   const tax = currentQuote?Number(currentQuote.tax):taxable * props.taxRate
   const total = currentQuote?Number(currentQuote.total):taxable + tax
 
-  function add(p: Product) { if (p.stock <= 0) return; const key=p.cartKey??p.id; props.setCart(c => { const used=c.filter(x=>x.id===p.id).reduce((sum,x)=>sum+x.qty,0);if(used>=p.stock)return c;const old = c.find(x => (x.cartKey??x.id) === key); return old ? c.map(x => (x.cartKey??x.id) === key ? { ...x, qty: x.qty + 1 } : x) : [...c, { ...p, cartKey:key, qty: 1 }] }) }
+  function add(p: Product) { if (p.stock <= 0) return; const key=p.cartKey??p.id; props.setCart(c => { const used=c.filter(x=>x.id===p.id).reduce((sum,x)=>sum+x.qty,0);if(used>=p.stock)return c;const old = c.find(x => x.id===p.id&&!x.variantId&&!x.comboId&&!x.catalogOption); return old ? c.map(x => x===old ? { ...x, qty: x.qty + 1 } : x) : [...c, { ...p, cartKey:key, qty: 1 }] }) }
   function change(key: string, d: number) { props.setCart(c => {const target=c.find(x=>(x.cartKey??x.id)===key);if(!target)return c;const otherQty=c.filter(x=>x.id===target.id&&(x.cartKey??x.id)!==key).reduce((sum,x)=>sum+x.qty,0);const maxForLine=target.variantId||target.comboId?1000:Math.max(0,target.stock-otherQty);return c.map(x => (x.cartKey??x.id) === key ? { ...x, qty: Math.max(0, Math.min(x.qty + d, maxForLine)) } : x).filter(x => x.qty > 0)}) }
-  function scanBarcode(raw:string){const code=raw.trim();if(!code)return;const variantProduct=commercialProducts.find(p=>p.variants.some(v=>v.barcode===code));if(variantProduct){const v=variantProduct.variants.find(v=>v.barcode===code)!;if(!v.available)return props.showToast(trError('This variant is sold out.'));const line=commercialCartLine({product_id:variantProduct.id,variant_id:v.id,qty:1,expected_unit_price:Number(v.price),name:variantProduct.name+' — '+v.name});props.setCart(old=>{const found=old.find(x=>x.cartKey===line.cartKey);return found?old.map(x=>x.cartKey===line.cartKey?{...x,qty:x.qty+1}:x):[...old,line]});setBarcodeInput('');return}const product=pricedProducts.find(p=>p.active&&p.barcode===code);if(!product)return props.showToast(trError(`Barcode ${code} is not assigned to a product.`));if(product.stock<=0)return props.showToast(trError(`${product.name} is out of stock.`));if(commercialProducts.find(p=>p.id===product.id)?.variants.length)return props.showToast(trError('Choose the required product variant in the catalogue.'));add(product);props.showToast(trError(`${product.name} added by scanner.`));setBarcodeInput('')}
-  useEffect(()=>{let buffer='';let last=0;const onKey=(event:KeyboardEvent)=>{const target=event.target as HTMLElement|null;if(target&&['INPUT','TEXTAREA','SELECT'].includes(target.tagName))return;const now=Date.now();if(now-last>100)buffer='';last=now;if(event.key==='Enter'){if(buffer.length>=3){event.preventDefault();scanBarcode(buffer)}buffer='';return}if(event.key.length===1&&!event.ctrlKey&&!event.metaKey&&!event.altKey)buffer+=event.key};window.addEventListener('keydown',onKey);return()=>window.removeEventListener('keydown',onKey)},[pricedProducts,commercialProducts])
+  function scanBarcode(raw:string){const code=raw.trim();if(!code)return;const variantProduct=commercialProducts.find(p=>p.variants.some(v=>v.barcode===code));if(variantProduct){const v=variantProduct.variants.find(v=>v.barcode===code)!;if(!v.available)return props.showToast(trError('This variant is sold out.'));addCommercial({product_id:variantProduct.id,variant_id:v.id,qty:1,expected_unit_price:Number(v.price),name:variantProduct.name+' — '+v.name});setBarcodeInput('');return}const product=pricedProducts.find(p=>p.active&&p.barcode===code);if(!product)return props.showToast(trError(`Barcode ${code} is not assigned to a product.`));if(product.stock<=0)return props.showToast(trError(`${product.name} is out of stock.`));selectProduct(product);setBarcodeInput('')}
+  useEffect(()=>{let buffer='';let last=0;const onKey=(event:KeyboardEvent)=>{const target=event.target as HTMLElement|null;if(target&&['INPUT','TEXTAREA','SELECT'].includes(target.tagName))return;const now=Date.now();if(now-last>100)buffer='';last=now;if(event.key==='Enter'){if(buffer.length>=3){event.preventDefault();scanBarcode(buffer)}buffer='';return}if(event.key.length===1&&!event.ctrlKey&&!event.metaKey&&!event.altKey)buffer+=event.key};window.addEventListener('keydown',onKey);return()=>window.removeEventListener('keydown',onKey)},[pricedProducts,commercialProducts,posCatalogue])
 
   async function resumeHeld(lines:HeldLine[]):Promise<boolean>{
     if(pendingCheckout||busy||props.cart.length)return false
@@ -950,25 +967,31 @@ function NewSale(props: {
   }
 
   return <>
-    {priceSyncError&&<div role="alert" className="warning-box">{priceSyncError}</div>}<PageHeader title={tr("New Sale")}><div className="customer-picker"><SelectField value={props.selectedCustomerId} onChange={e => { props.setSelectedCustomerId(e.target.value); setAppliedRewardId('') }}><option value="">{tr("Walk-in / Guest")}</option>{props.customers.map(c => <option value={c.id} key={c.id}>{c.name} {c.loyaltyStatus === 'member' ? `• ${c.points} pts • ${c.stamps} stamps` : ''}</option>)}</SelectField></div></PageHeader>
-    <PosTools scope={props.checkoutScope} products={pricedProducts} customers={props.customers} cart={props.cart} locked={Boolean(pendingCheckout)||busy} onAdd={p=>{if(commercialProducts.find(x=>x.id===p.id)?.variants.length){props.showToast(trError('Choose a product variant in the catalogue.'));return}add(p)}} onResume={resumeHeld} onHeld={()=>{props.setCart([]);props.setSelectedCustomerId('');setAppliedRewardId('')}} onCustomer={id=>{props.setSelectedCustomerId(id);setAppliedRewardId('')}} onBarcodeFocus={()=>document.querySelector<HTMLInputElement>('input[aria-label="Barcode"]')?.focus()} notify={props.showToast}/>
+    <span hidden data-payment-active={Boolean(busy||pendingCheckout||cashTenderOpen||paymentConfirm)}/>
+    {priceSyncError&&<div role="alert" className="warning-box">{priceSyncError}</div>}<PageHeader title={tr("New Sale")}></PageHeader>
+    <PosTools scope={props.checkoutScope} products={pricedProducts} customers={props.customers} cart={props.cart} locked={Boolean(pendingCheckout)||busy} onAdd={selectProduct} onResume={resumeHeld} onHeld={()=>{props.setCart([]);props.setSelectedCustomerId('');setAppliedRewardId('')}} onCustomer={id=>{props.setSelectedCustomerId(id);setAppliedRewardId('')}} onBarcodeFocus={()=>document.querySelector<HTMLInputElement>('input[aria-label="Barcode"]')?.focus()} notify={props.showToast}/>
     <CommercialSelectionInbox cart={props.cart} setCart={props.setCart} showToast={props.showToast}/>
     {customer && customer.loyaltyStatus !== 'member' && <div className="invite-banner"><div><strong>{customer.name}{' '+tr("is not enrolled in loyalty.")}</strong><span>{customer.loyaltyStatus === 'invited' ? tr(" Invitation already sent.") : tr(" Invite them without blocking checkout.")}</span></div><Button type="submit" variant="secondary" onClick={() => sendInvite(customer, props.setCustomers, props.showToast)}><Mail size={17}/> {customer.loyaltyStatus === 'invited' ? tr("Resend Invite") : tr("Invite to Loyalty")}</Button></div>}
     {customer?.loyaltyStatus === 'member' && <div className="member-banner"><Sparkles size={18}/><strong>{customer.name}</strong><span>{customer.points}{' '+tr("points")}</span><span>{customer.stamps}/{props.stampsRequired}{' '+tr("stamps")}</span></div>}
-    <div className="pos-grid">
+    <div className="new-sale-workspace"><div className={`pos-grid new-sale-grid ${mobileCartOpen?'mobile-cart-open':''}`}>
       <section className="catalog">
         <div className="scanner-row"><form className="barcode-entry" onSubmit={e=>{e.preventDefault();scanBarcode(barcodeInput)}}><QrCode size={18}/><InputField aria-label={tr("Barcode")} inputMode="numeric" value={barcodeInput} onChange={e=>setBarcodeInput(e.target.value)} placeholder={tr("Scan or enter barcode")}/><Button variant="secondary" type="submit">{tr("Add")}</Button></form><Button variant="secondary" className="camera-scan-btn" type="button" onClick={()=>setCameraOpen(true)}><Camera size={18}/>{' '+tr("Camera Scan")}</Button></div>
         <div className="scanner-note">{tr("Use a phone camera, webcam, or USB/Bluetooth keyboard-mode scanner. Camera permission is requested only while the scanner is open.")}</div>
-        <CommercialCatalogue mode="pos" onData={setCommercialProducts} onAdd={item=>{const line=commercialCartLine(item);props.setCart(old=>{const found=old.find(x=>x.cartKey===line.cartKey);return found?old.map(x=>x.cartKey===line.cartKey?{...x,qty:x.qty+line.qty}:x):[...old,line]})}}/>
+        <PosProductBrowser products={pricedProducts} data={posCatalogue} error={optionsError} currency={props.receiptConfig.currency} onSelect={selectProduct} onAdd={addCommercial}/>
       </section>
-      <aside className="cart-panel"><div className="panel-title"><h2>{tr("Cart (")}{props.cart.reduce((a,x)=>a+x.qty,0)})</h2><Button type="submit" variant="danger" onClick={() => props.setCart([])}>{tr("Clear")}</Button></div>
-        <div className="cart-lines">{props.cart.length === 0 ? <div className="empty"><ShoppingCart/><p>{tr("Tap a product to begin.")}</p></div> : props.cart.map(x => {const key=x.cartKey??x.id;return <div className="cart-line" key={key}><div className="mini-art">{x.iconEmoji??productEmoji(x.category)}</div><div className="cart-copy"><strong>{x.name}</strong>{x.catalogOption&&<small className="cart-option">{tr("Option:")+' '} {x.catalogOption}</small>}<small>{money(x.price, props.receiptConfig.currency)}</small><div className="qty"><Button type="submit" variant="secondary" onClick={() => change(key,-1)}><Minus size={14}/></Button><span>{x.qty}</span><Button type="submit" variant="secondary" onClick={() => change(key,1)}><Plus size={14}/></Button></div></div><b>{money(x.price*x.qty, props.receiptConfig.currency)}</b></div>})}</div>
+      <aside className="cart-panel" aria-label={tr("Current cart")}><Button type="button" variant="secondary" className="pos-back-products" onClick={closeMobileCart}>{tr("Back to products")}</Button><div className="panel-title"><h2 ref={cartHeading} tabIndex={-1}>{tr("Cart (")}{props.cart.reduce((a,x)=>a+x.qty,0)})</h2><Button type="submit" variant="danger" onClick={() => props.setCart([])}>{tr("Clear")}</Button></div>
+        <div className="customer-picker"><SelectField aria-label={tr("Customer")} value={props.selectedCustomerId} onChange={e => { props.setSelectedCustomerId(e.target.value); setAppliedRewardId('') }}><option value="">{tr("Walk-in / Guest")}</option>{props.customers.map(c => <option value={c.id} key={c.id}>{c.name} {c.loyaltyStatus === 'member' ? `• ${c.points} pts • ${c.stamps} stamps` : ''}</option>)}</SelectField></div>
+        <div className="pos-cart-scroll"><div className="cart-lines">{props.cart.length === 0 ? <div className="empty"><ShoppingCart/><p>{tr("Tap a product to begin.")}</p></div> : props.cart.map(x => {const key=x.cartKey??x.id;return <div className="cart-line" key={key}><div className="mini-art">{x.iconEmoji??productEmoji(x.category)}</div><div className="cart-copy"><strong>{x.name}</strong>{x.catalogOption&&<small className="cart-option">{tr("Option:")+' '} {x.catalogOption}</small>}<small>{money(x.price, props.receiptConfig.currency)}</small><div className="qty"><Button type="submit" variant="secondary" aria-label={`${tr("Decrease quantity")}: ${x.name}`} onClick={() => change(key,-1)}><Minus size={14}/></Button><span aria-label={tr("Quantity")}>{x.qty}</span><Button type="submit" variant="secondary" aria-label={`${tr("Increase quantity")}: ${x.name}`} onClick={() => change(key,1)}><Plus size={14}/></Button></div></div><div className="pos-line-end"><b>{money(x.price*x.qty, props.receiptConfig.currency)}</b><Button type="button" variant="ghost" aria-label={`${tr("Remove")}: ${x.name}`} onClick={()=>props.setCart(old=>old.filter(line=>(line.cartKey??line.id)!==key))}>{tr("Remove")}</Button></div></div>})}</div>
         {customer?.loyaltyStatus === 'member' && <div className="reward-box"><div className="reward-heading"><strong>{tr("Available Rewards")}</strong>{appliedReward && <Button type="submit" variant="danger" onClick={() => setAppliedRewardId('')}>{tr("Remove")}</Button>}</div>{availableRewards.length === 0 ? <small>{tr("No reward is currently available.")}</small> : <div className="reward-options">{availableRewards.map(r => { const freeMissing = r.type === 'free_product' && r.productId && !props.cart.some(x => x.id === r.productId); return <Button type="submit" variant="secondary" key={r.id} className={appliedRewardId===r.id?'active':''} disabled={Boolean(freeMissing)} onClick={() => setAppliedRewardId(r.id)}><span>{r.name}</span><small>{r.costPoints ? `${r.costPoints} pts` : ''}{r.requiredStamps ? `${r.requiredStamps} stamps` : ''}{freeMissing ? tr(" • add reward item first") : ''}</small></Button>})}</div>}</div>}
-        <div className="totals"><div><span>{tr("Subtotal")}</span><b>{money(subtotal, props.receiptConfig.currency)}</b></div>{discount>0&&<div className="discount-line"><span>{tr("Loyalty Reward")}</span><b>-{money(discount, props.receiptConfig.currency)}</b></div>}<div><span>{tr("Tax (")}{(props.taxRate*100).toFixed(1)}%)</span><b>{money(tax, props.receiptConfig.currency)}</b></div><div className="grand"><span>{tr("Total")}</span><b>{money(total, props.receiptConfig.currency)}</b></div></div>
+        </div><div className="pos-checkout-footer"><div className="totals"><div><span>{tr("Subtotal")}</span><b>{money(subtotal, props.receiptConfig.currency)}</b></div>{discount>0&&<div className="discount-line"><span>{tr("Loyalty Reward")}</span><b>-{money(discount, props.receiptConfig.currency)}</b></div>}<div><span>{tr("Tax (")}{(props.taxRate*100).toFixed(1)}%)</span><b>{money(tax, props.receiptConfig.currency)}</b></div><div className="grand"><span>{tr("Total")}</span><b>{money(total, props.receiptConfig.currency)}</b></div></div>
         {offlineLocked&&<div className="offline-checkout-note"><WifiOff size={16}/>{' '+tr("Reconnect before charging this order. Offline sales are intentionally blocked to protect inventory and loyalty balances.")}</div>}
         <div className="payments"><Button type="submit" variant="secondary" disabled={!props.cart.length || busy || offlineLocked || (supabaseConfigured&&!currentQuote)} onClick={() => setCashTenderOpen(true)}><WalletCards/>{tr("Cash")}</Button><Button type="submit" variant="secondary" disabled={!props.cart.length || busy || offlineLocked} onClick={() => setPaymentConfirm('card')}><CreditCard/>{tr("Card")}</Button><Button type="submit" variant="secondary" disabled={!props.cart.length || busy || offlineLocked} onClick={() => setPaymentConfirm('qr')}><QrCode/>{tr("QR")}</Button></div>
+        </div>
       </aside>
     </div>
+    {!mobileCartOpen&&<div className="pos-mobile-summary"><span role="status" aria-live="polite">{props.cart.reduce((n,x)=>n+x.qty,0)} {tr('item(s)')} · {props.receiptConfig.currency} {money(total,props.receiptConfig.currency)}</span><Button ref={viewCartButton} type="button" variant="primary" aria-expanded={mobileCartOpen} onClick={()=>setMobileCartOpen(true)}>{tr('View cart')}</Button></div>}
+    </div>
+    {optionProduct&&<PosOptions key={optionProduct.id} product={optionProduct} currency={props.receiptConfig.currency} onClose={()=>setOptionProduct(null)} onAdd={addCommercial}/>}
     {pendingCheckout&&<div className="modal-backdrop"><section className="modal compact-modal" role="dialog" aria-modal="true" aria-label={tr("Recover checkout confirmation")}><h2>{tr("Confirm previous checkout")}</h2><p>{tr("A checkout was submitted but its result has not been confirmed on this device. Retry confirmation to recover the original receipt safely. Do not collect payment again.")}</p><p>{tr("Reference:")+' '} <code>{pendingCheckout.id}</code></p><Button variant="primary" className="primary-btn" disabled={busy} type="button" onClick={()=>void completeCheckout(pendingCheckout)}>{busy?tr("Confirming…"):tr("Retry checkout confirmation")}</Button></section></div>}
     {paymentConfirm&&<PaymentConfirmation method={paymentConfirm} total={total} currency={props.receiptConfig.currency} busy={busy} onClose={()=>setPaymentConfirm(null)} onConfirm={async()=>{const method=paymentConfirm;setPaymentConfirm(null);await charge(method)}}/>}
     {receipt && <ReceiptModal receipt={receipt} onClose={() => setReceipt(null)} />}

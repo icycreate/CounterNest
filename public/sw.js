@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'counternest-web-v2-0-0-rc15-presentation'
+const CACHE_VERSION = 'counternest-web-v2-0-0-rc17-order-workflow'
 const SHELL_CACHE = `${CACHE_VERSION}-shell`
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`
 // Persist only the account binding, never a session/JWT or order details.
@@ -11,11 +11,22 @@ function notificationBinding(write, value) {
   })
 }
 self.addEventListener('message',event=>{if(event.data?.type==='counternest:notification-account'&&event.source?.url?.startsWith(self.location.origin+'/'))event.waitUntil(notificationBinding(true,event.data.user||null))})
+// Atomic, durable retry suppression per account/event; stores no customer details.
+function claimPushEvent(user,id){return new Promise((resolve,reject)=>{
+ const request=indexedDB.open('counternest-notification-binding',1)
+ request.onupgradeneeded=()=>request.result.createObjectStore('binding')
+ request.onerror=()=>reject(request.error)
+ request.onsuccess=()=>{const db=request.result,tx=db.transaction('binding','readwrite'),store=tx.objectStore('binding'),key='push:'+user+':'+id;let claimed=false
+ const get=store.get(key);get.onsuccess=()=>{if(!get.result){store.put(true,key);claimed=true}}
+ tx.oncomplete=()=>{db.close();resolve(claimed)};tx.onerror=()=>{db.close();reject(tx.error)}
+ }
+})}
 self.addEventListener('push',event=>event.waitUntil((async()=>{
   let p;try{p=event.data.json()}catch{return}
   if(!p||!['catalogue','preorder','custom_cake'].includes(p.kind)||!/^[a-f0-9-]{36}$/.test(p.record_id)||!/^[a-f0-9-]{36}$/.test(p.id)||p.user_id!==await notificationBinding(false))return
+  if(!await claimPushEvent(p.user_id,p.id))return
   const windows=await self.clients.matchAll({type:'window',includeUncontrolled:true})
-  const isStaffWindow=c=>{const u=new URL(c.url||self.location.origin+'/dashboard');return !u.searchParams.has('token')&&!['/catalogue-display','/request-status','/join'].includes(u.pathname)}
+  const isStaffWindow=c=>{const u=new URL(c.url||self.location.origin+'/dashboard');return !u.searchParams.has('token')&&!['/catalogue','/catalogue-display','/request-status','/join'].includes(u.pathname)}
   const focused=windows.find(c=>c.visibilityState==='visible'&&c.focused&&isStaffWindow(c))
   const payload={type:'counternest:order-alert',user_id:p.user_id,event:{id:p.id,kind:p.kind,record_id:p.record_id,created_at:new Date().toISOString()}}
   if(focused){focused.postMessage(payload);return}
@@ -26,7 +37,7 @@ self.addEventListener('push',event=>event.waitUntil((async()=>{
 })()))
 self.addEventListener('notificationclick',event=>{
  event.notification.close();const p=event.notification.data;if(!p?.record_id)return
- event.waitUntil((async()=>{if(p.user_id!==await notificationBinding(false))return;const route=p.kind==='catalogue'?'/sale?request='+encodeURIComponent(p.record_id):'/scheduled-orders?record='+encodeURIComponent(p.record_id);const windows=await self.clients.matchAll({type:'window',includeUncontrolled:true});const client=windows.find(c=>{const u=new URL(c.url);return !u.searchParams.has('token')&&!['/catalogue-display','/request-status','/join'].includes(u.pathname)});if(client){await client.focus();client.postMessage({type:'counternest:open-alert',user_id:p.user_id,event:{id:p.id,kind:p.kind,record_id:p.record_id}})}else await self.clients.openWindow(route);if(self.navigator.clearAppBadge)await self.navigator.clearAppBadge().catch(()=>{})})())
+ event.waitUntil((async()=>{if(p.user_id!==await notificationBinding(false))return;const route=p.kind==='catalogue'?'/sale?request='+encodeURIComponent(p.record_id):'/scheduled-orders?record='+encodeURIComponent(p.record_id);const windows=await self.clients.matchAll({type:'window',includeUncontrolled:true});const client=windows.find(c=>{const u=new URL(c.url);return !u.searchParams.has('token')&&!['/catalogue','/catalogue-display','/request-status','/join'].includes(u.pathname)});if(client){await client.focus();client.postMessage({type:'counternest:open-alert',user_id:p.user_id,event:{id:p.id,kind:p.kind,record_id:p.record_id}})}else await self.clients.openWindow(route)})())
 })
 const CORE_ASSETS = [
   '/',

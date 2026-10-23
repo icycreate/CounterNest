@@ -17,11 +17,21 @@ async function saveCustomerBinding(reg:ServiceWorkerRegistration,value:Record<st
  await new Promise<void>((resolve,reject)=>{const channel=new MessageChannel();const timer=window.setTimeout(()=>{channel.port1.close();reject(new Error(tr('Refresh the app to finish notification setup.')))},5000);channel.port1.onmessage=e=>{window.clearTimeout(timer);channel.port1.close();if(e.data?.saved)resolve();else reject(new Error(tr('Customer notification setup is required.')))};worker.postMessage({type:'counternest:customer-binding',...value},[channel.port2])})
 }
 export function CustomerOrderNotifications({token,catalogueToken}:{token:string;catalogueToken?:string}){
- useUiLanguage()
+ const selectedLanguage=useUiLanguage()
  const [state,setState]=useState(permission),[registered,setRegistered]=useState(false),[prefs,setPrefs]=useState<Preferences>(defaults),[busy,setBusy]=useState(false),[message,setMessage]=useState('')
  const [binding,setBinding]=useState<{subscription_id:string;request_id:string}|null>(null)
  useEffect(()=>{let live=true;async function read(){setState(permission());if(!validToken(token)||!supabase||!('serviceWorker'in navigator))return;try{const reg=await navigator.serviceWorker.getRegistration();const sub=await reg?.pushManager?.getSubscription();if(!sub){if(live)setRegistered(false);return}const r=await supabase.rpc('get_customer_order_push',{p_token:token,p_endpoint:sub.endpoint});if(!live)return;if(r.error){setMessage(tr('Customer notification setup is required.'));return}setRegistered(Boolean(r.data));if(r.data){setPrefs(r.data.preferences);setBinding(r.data);(reg?.active??navigator.serviceWorker.controller)?.postMessage({type:'counternest:customer-binding',...r.data,token,catalogueToken})}}catch{if(live)setMessage(tr('Customer notification setup is required.'))}}
  const changed=(e:MessageEvent)=>{if(e.data?.type==='counternest:customer-subscription-changed')void read()};void read();window.addEventListener('focus',read);navigator.serviceWorker?.addEventListener('message',changed);return()=>{live=false;window.removeEventListener('focus',read);navigator.serviceWorker?.removeEventListener('message',changed)}},[token,catalogueToken])
+ // Update only an already-authorized order subscription; never prompt or create a device here.
+ useEffect(()=>{let live=true;async function syncLanguage(){
+  if(!registered||!supabase||!('serviceWorker'in navigator))return
+  try{const reg=await navigator.serviceWorker.getRegistration(),sub=await reg?.pushManager?.getSubscription();if(!sub||!live)return
+   const current=await supabase.rpc('get_customer_order_push',{p_token:token,p_endpoint:sub.endpoint})
+   if(!live||current.error||!current.data||current.data.preferences?.language===selectedLanguage)return
+   const result=await supabase.rpc('register_customer_order_push',{p_token:token,p_subscription:sub.toJSON(),p_preferences:{...current.data.preferences,language:selectedLanguage}})
+   if(live&&result.error)setMessage(trError(result.error.message))
+  }catch{if(live)setMessage(tr('Customer notification setup is required.'))}
+ }void syncLanguage();return()=>{live=false}},[token,registered,selectedLanguage])
  async function enable(){
   if(!supabase||busy)return;setBusy(true);setMessage('')
   try{

@@ -4,7 +4,8 @@ export const contrast=(a:string,b:string)=>(Math.max(luminance(a),luminance(b))+
 export function mix(a:string,b:string,f:number){return '#'+[0,1,2].map(i=>Math.round(parseInt(a.slice(1+i*2,3+i*2),16)*(1-f)+parseInt(b.slice(1+i*2,3+i*2),16)*f).toString(16).padStart(2,'0')).join('')}
 export function readableForeground(backgrounds:string[],preferred?:string,target=4.5){if(preferred&&backgrounds.every(bg=>contrast(preferred,bg)>=target))return preferred;return ['#000000','#ffffff'].sort((a,b)=>Math.min(...backgrounds.map(bg=>contrast(b,bg)))-Math.min(...backgrounds.map(bg=>contrast(a,bg))))[0]}
 export function readablePalette(t:{primary:string;background:string;text:string},dark:boolean){
- const bg=dark?'#1d2025':t.background,deep=dark||luminance(bg)<.18,surface=deep?'#282d34':'#ffffff';
+ // Appearance controls luminance; keep the saved business color unchanged.
+ const bg=dark?'#1d2025':luminance(t.background)<.55?mix(t.background,'#ffffff',.92):t.background,deep=dark,surface=dark?'#282d34':'#ffffff';
  const initialText=readableForeground([bg,surface],dark?'#f3f5f7':t.text),hover=mix(surface,initialText,.045),active=mix(surface,initialText,.08),surfaces=[bg,surface,hover,active];
  const text=readableForeground(surfaces,initialText),muted=readableForeground(surfaces,deep?'#bac4d0':'#58616e');
  const border=readableForeground(surfaces,deep?'#8e9aaa':'#78818c',3),focus=readableForeground(surfaces,t.primary,3),secondaryText=readableForeground(surfaces,text);

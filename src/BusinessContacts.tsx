@@ -1,3 +1,5 @@
+import {ContactMethodIcon} from './ContactMethodIcon'
+import {isValidPhone} from './phone'
 import {useDialogFocus} from './useDialogFocus'
 import {useEffect,useState} from 'react'
 import {Card} from './Surface'
@@ -12,14 +14,14 @@ const kinds=['whatsapp','phone','sms','email','messenger','line','wechat','other
 const contactLabel=(kind:string)=>tr(({whatsapp:'WhatsApp',phone:'Phone',sms:'SMS',email:'Email',messenger:'Messenger',line:'LINE',wechat:'WeChat',other:'Other'} as Record<string,string>)[kind]??'Other');
 export function contactHref(c:BusinessContact){
  const v=c.value.trim();
- if(['phone','sms','whatsapp'].includes(c.kind)){if(!/^\+[1-9]\d{6,14}$/.test(v))return '';return c.kind==='whatsapp'?'https://wa.me/'+v.slice(1):(c.kind==='phone'?'tel:':'sms:')+v}
+ if(['phone','sms','whatsapp'].includes(c.kind)){if(!isValidPhone(v))return '';return c.kind==='whatsapp'?'https://wa.me/'+v.slice(1):(c.kind==='phone'?'tel:':'sms:')+v}
  if(c.kind==='email')return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)?'mailto:'+encodeURIComponent(v):'';
  try{const u=new URL(v);return u.protocol==='https:'&&!u.username&&!u.password?u.href:''}catch{return ''}
 }
 export function BusinessContacts({contacts,sheet=false}:{contacts:BusinessContact[];sheet?:boolean}){
  const[open,setOpen]=useState(false);const visible=contacts.filter(c=>c.enabled&&c.value.trim()).sort((a,b)=>Number(b.preferred)-Number(a.preferred)||a.sort-b.sort);
  if(!visible.length)return null;
- return <Card className="panel business-contacts"><Button aria-expanded={open} onClick={()=>setOpen(!open)}>{tr('Contact Business')}</Button>{open&&<ContactPanel sheet={sheet} close={()=>setOpen(false)}><h2>{tr('Customer Contact')}</h2><div className="contact-public-list">{visible.map((c,i)=><article key={i}><strong>{c.label||contactLabel(c.kind)}{c.preferred?' ★':''}</strong>{contactHref(c)?<a className="secondary-btn" href={contactHref(c)} target="_blank" rel="noopener noreferrer">{c.value}</a>:<p>{c.value}</p>}{c.note&&<p>{c.note}</p>}{/^https:\/\//.test(c.qr)&&<img loading="lazy" referrerPolicy="no-referrer" width="140" height="140" style={{objectFit:'contain'}} src={c.qr} alt={c.label||contactLabel(c.kind)}/>}</article>)}</div></ContactPanel>}</Card>
+ return <Card className="panel business-contacts"><h2>{tr('Contact Business')}</h2><div className="business-contact-icons">{visible.map((c,i)=>{const label=contactLabel(c.kind),href=contactHref(c);const content=<><ContactMethodIcon kind={c.kind}/><span>{label}</span><small className="contact-tooltip" role="tooltip">{label}</small></>;return href?<a key={i} className="business-contact-icon" aria-label={label} href={href} target="_blank" rel="noopener noreferrer">{content}</a>:<Button key={i} className="business-contact-icon" aria-label={label} onClick={()=>setOpen(true)}>{content}</Button>})}</div>{open&&<ContactPanel sheet={sheet} close={()=>setOpen(false)}><h3>{tr('Customer Contact')}</h3><div className="contact-public-list">{visible.filter(c=>!contactHref(c)).map((c,i)=><article key={i}><strong>{c.label||contactLabel(c.kind)}</strong><p>{c.value}</p>{c.note&&<p>{c.note}</p>}{/^https:\/\//.test(c.qr)&&<img loading="lazy" referrerPolicy="no-referrer" width="140" height="140" style={{objectFit:'contain'}} src={c.qr} alt={c.label||contactLabel(c.kind)}/>}</article>)}</div></ContactPanel>}</Card>
 }
 function ContactPanel({sheet,close,children}:{sheet:boolean;close:()=>void;children:import('react').ReactNode}){const ref=useDialogFocus(close);return sheet?<div className="modal-backdrop store-contact-backdrop"><section ref={ref} className="modal store-contact-sheet" role="dialog" aria-modal="true" aria-label={tr('Customer Contact')}><Button data-back-close="true" onClick={close}>{tr('Close')}</Button>{children}</section></div>:<section aria-label={tr('Customer Contact')}>{children}</section>}
 export function BusinessContactSettings({role}:{role:Role}){

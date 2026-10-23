@@ -17,7 +17,7 @@ export function useSharedTheme(value:Partial<SharedTheme>|null|undefined,appeara
   if(!enabled)return;
   if(typeof document==='undefined'||!document.documentElement?.style||typeof window.matchMedia!=='function')return;
   const media=window.matchMedia('(prefers-color-scheme: dark)');
-  const apply=()=>{const dark=mode==='dark'||mode==='system'&&media.matches,html=document.documentElement;html.dataset.appearance=dark?'dark':'light';for(const [k,v]of Object.entries(themeTokens(theme,dark)))html.style.setProperty(k,v);if(document.getElementById('boot-root')?.hidden!==false)document.querySelector('meta[name="theme-color"]')?.setAttribute('content',dark?'#1d2025':theme.background);};
+  const apply=()=>{const dark=mode==='dark'||mode==='system'&&media.matches,html=document.documentElement;html.dataset.appearance=dark?'dark':'light';for(const [k,v]of Object.entries(themeTokens(theme,dark)))html.style.setProperty(k,v);if(document.getElementById('boot-root')?.hidden!==false)document.querySelector('meta[name="theme-color"]')?.setAttribute('content',themeTokens(theme,dark)['--background']);};
   apply();try{if(cacheKey)localStorage.setItem(cacheKey,JSON.stringify({...theme,appearance:mode}));if(!cacheKey?.startsWith('counternest.catalogue-theme.'))localStorage.setItem('counternest.appearance',mode)}catch{}
   media.addEventListener('change',apply);return()=>media.removeEventListener('change',apply);
  },[theme.primary,theme.background,theme.text,mode,cacheKey,enabled]);

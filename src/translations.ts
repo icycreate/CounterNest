@@ -17677,3 +17677,117 @@ Object.assign(translations,{
     "zh-CN": "推送订阅无效"
   }
 })
+
+// RC19 contact, archive and WhatsApp preference labels.
+Object.assign(translations,{
+  "WhatsApp Order Alerts": {
+    "es": "Alertas de pedidos por WhatsApp",
+    "zh-TW": "WhatsApp 訂單通知",
+    "zh-CN": "WhatsApp 订单通知"
+  },
+  "Enable WhatsApp order alerts": {
+    "es": "Activar alertas de pedidos por WhatsApp",
+    "zh-TW": "啟用 WhatsApp 訂單通知",
+    "zh-CN": "启用 WhatsApp 订单通知"
+  },
+  "Notification Recipient": {
+    "es": "Destinatario de notificaciones",
+    "zh-TW": "通知接收者",
+    "zh-CN": "通知接收者"
+  },
+  "New Pre-Order alerts": {
+    "es": "Avisos de nuevos pedidos anticipados",
+    "zh-TW": "新預訂通知",
+    "zh-CN": "新预订通知"
+  },
+  "New Catalogue order alerts": {
+    "es": "Avisos de nuevos pedidos del catálogo",
+    "zh-TW": "新目錄訂單通知",
+    "zh-CN": "新目录订单通知"
+  },
+  "Include order summary": {
+    "es": "Incluir resumen del pedido",
+    "zh-TW": "包含訂單摘要",
+    "zh-CN": "包含订单摘要"
+  },
+  "Include customer contact": {
+    "es": "Incluir contacto del cliente",
+    "zh-TW": "包含顧客聯絡資料",
+    "zh-CN": "包含顾客联系资料"
+  },
+  "Notification language": {
+    "es": "Idioma de notificación",
+    "zh-TW": "通知語言",
+    "zh-CN": "通知语言"
+  },
+  "Save preferences": {
+    "es": "Guardar preferencias",
+    "zh-TW": "儲存偏好設定",
+    "zh-CN": "保存偏好设置"
+  },
+  "Recipient consent is required": {
+    "es": "Se requiere el consentimiento del destinatario",
+    "zh-TW": "需要接收者同意",
+    "zh-CN": "需要接收者同意"
+  },
+  "I confirm the recipient has opted in to these business order alerts.": {
+    "es": "Confirmo que el destinatario aceptó recibir estas alertas de pedidos del negocio.",
+    "zh-TW": "我確認接收者已同意接收這些商家訂單通知。",
+    "zh-CN": "我确认接收者已同意接收这些商家订单通知。"
+  },
+  "Automatic WhatsApp alerts require Meta setup and an approved template. Saving preferences does not send a message.": {
+    "es": "Las alertas automáticas requieren configurar Meta y una plantilla aprobada. Guardar las preferencias no envía un mensaje.",
+    "zh-TW": "自動 WhatsApp 通知需要 Meta 設定及已核准的範本。儲存偏好設定不會傳送訊息。",
+    "zh-CN": "自动 WhatsApp 通知需要 Meta 配置及已批准的模板。保存偏好设置不会发送消息。"
+  },
+  "Restore Customer": {
+    "es": "Restaurar cliente",
+    "zh-TW": "還原顧客",
+    "zh-CN": "恢复顾客"
+  },
+  "Customer restored.": {
+    "es": "Cliente restaurado.",
+    "zh-TW": "顧客已還原。",
+    "zh-CN": "顾客已恢复。"
+  },
+  "Archived": {
+    "es": "Archivados",
+    "zh-TW": "已封存",
+    "zh-CN": "已归档"
+  },
+  "Archived Customers": {
+    "es": "Clientes archivados",
+    "zh-TW": "已封存顧客",
+    "zh-CN": "已归档顾客"
+  },
+  "Invalid Phone Number": {
+    "es": "Número de teléfono no válido",
+    "zh-TW": "電話號碼無效",
+    "zh-CN": "电话号码无效"
+  },
+  "Loyalty history": {
+    "es": "Historial de fidelidad",
+    "zh-TW": "會員獎勵紀錄",
+    "zh-CN": "会员奖励记录"
+  },
+  "Contact Business": {
+    "es": "Contactar al negocio",
+    "zh-TW": "聯絡商家",
+    "zh-CN": "联系商家"
+  },
+  "Country Code": {
+    "es": "Código de país",
+    "zh-TW": "國碼",
+    "zh-CN": "国家代码"
+  },
+  "points": {
+    "es": "puntos",
+    "zh-TW": "點數",
+    "zh-CN": "积分"
+  },
+  "stamps": {
+    "es": "sellos",
+    "zh-TW": "集點章",
+    "zh-CN": "集点章"
+  }
+})

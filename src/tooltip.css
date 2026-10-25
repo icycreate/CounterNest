@@ -1,0 +1,28 @@
+/* Resolved appearance only. Neutral tooltip paint never changes business theme tokens. */
+:root,html[data-appearance="light"]{--cn-tooltip-bg:#222222;--cn-tooltip-text:#ffffff;--cn-tooltip-border:#333333}
+html[data-appearance="dark"]{--cn-tooltip-bg:#ffffff;--cn-tooltip-text:#202020;--cn-tooltip-border:#dedede}
+.cn-tooltip,[role="tooltip"].cn-tooltip{
+ position:fixed;z-index:2147483000;box-sizing:border-box;margin:0;
+ background:var(--cn-tooltip-bg);color:var(--cn-tooltip-text);border:1px solid var(--cn-tooltip-border);
+ border-radius:8px;padding:7px 11px;font-size:12px;font-weight:500;line-height:1.4;
+ max-width:min(280px,calc(100vw - 24px));overflow-wrap:anywhere;white-space:normal;
+ box-shadow:0 6px 20px rgba(0,0,0,.16);opacity:1;filter:none;isolation:isolate;
+ overflow:auto;pointer-events:auto;text-align:start;text-decoration:none;
+}
+.cn-tooltip :is(span,strong,small,p,b,em){color:inherit;opacity:1}
+/* Existing floating surfaces use the shared, contrast-derived surface pair. */
+html[data-appearance] :is(.ux-action-menu,.calendar-filters details>div,.store-toast,.mobile-menu-sheet,[role="menu"],[role="listbox"],.cn-popover){
+ background:var(--color-surface);color:var(--color-text);border-color:var(--color-border);opacity:1;filter:none;
+}
+html[data-appearance] :is(.ux-action-menu,.calendar-filters details>div,.cn-popover){max-width:calc(100vw - 24px);box-sizing:border-box}
+html[data-appearance] :is(.ux-action-menu,.calendar-filters details>div,.store-toast,.mobile-menu-sheet,.cn-popover) :is(p,small,strong,label){color:inherit;opacity:1}
+html[data-appearance] :is([role="menuitem"],[role="option"]):not([data-cn-button]){background:var(--color-surface);color:var(--color-text);opacity:1}
+html[data-appearance] :is([role="menuitem"],[role="option"]):not([data-cn-button]):is(:hover,:focus-visible){background:var(--color-surface-hover);color:var(--color-secondary-foreground);opacity:1}
+html[data-appearance] :is([role="menuitem"],[role="option"]):not([data-cn-button])[aria-selected="true"]{background:var(--color-primary);color:var(--color-primary-foreground)}
+html[data-appearance] :is([role="menuitem"],[role="option"]):not([data-cn-button])[aria-disabled="true"]{background:var(--color-disabled);color:var(--color-disabled-foreground);opacity:1}
+html[data-appearance] .business-contact-icon:is(a,button):not([data-cn-button]){background:var(--color-surface);color:var(--accent-text)}
+html[data-appearance] .business-contact-icon:is(a,button):not([data-cn-button]):is(:hover,:focus-visible){background:var(--color-surface-hover);color:var(--accent-text);border-color:currentColor}
+html[data-appearance] :is(.modal,.ux-dialog,[role="dialog"]) :is(.cn-field-helper,.muted){color:var(--color-text-muted);opacity:1}
+html[data-appearance] .ux-notice.read{opacity:1;border-inline-start:2px solid var(--color-border);padding-inline-start:12px}
+html[data-appearance] .toast{background:var(--cn-tooltip-bg);color:var(--cn-tooltip-text);border:1px solid var(--cn-tooltip-border);opacity:1}
+@media(print){.cn-tooltip{display:none!important}}

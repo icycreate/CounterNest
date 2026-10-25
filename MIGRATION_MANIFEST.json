@@ -478,5 +478,10 @@
     "order": 96,
     "file": "202610201800_customer_pickup_notifications.sql",
     "sha256": "2ca7043ad33adbad1fa55c89c7098bab46316892c24806e829cb0bd2bfb6980c"
+  },
+  {
+    "order": 97,
+    "file": "202610231200_customer_restore_whatsapp_alerts.sql",
+    "sha256": "4c79dc372a056b746910f146c7072d0fbf14b1d2ef5b4b5411113fca1d311c16"
   }
 ]

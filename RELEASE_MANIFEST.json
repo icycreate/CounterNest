@@ -1,22 +1,20 @@
 {
-  "version": "2.0.0-rc.18",
-  "baseline_version": "CounterNest POS Catalogue Order Workflow RC17",
-  "baseline_migration_count": 95,
-  "migration_count": 96,
-  "upgrade_migrations": [
-    "202610201800_customer_pickup_notifications.sql"
-  ],
-  "name": "CounterNest POS Customer Pickup RC18",
-  "build": "2026-10-20-customer-pickup",
+  "version": "2.0.0-rc.21",
+  "baseline_version": "CounterNest Automatic Language RC20",
+  "baseline_migration_count": 97,
+  "migration_count": 97,
+  "upgrade_migrations": [],
+  "name": "CounterNest Tooltip Contrast RC21",
+  "build": "2026-10-24-tooltip-contrast",
   "product": "CounterNest POS",
   "release_type": "source-update",
   "backend": "Supabase Cloud",
   "desktop_installer": false,
   "features": [
     {
-      "title": "Private customer tracking, explicit device consent and durable pickup push events"
+      "title": "Shared neutral tooltip layer and paired hover/popup text contrast"
     }
   ],
-  "validation": "Not tested, built, type-checked, UAT-checked or deployed; source preparation only",
+  "validation": "Not tested, build-validated, type-checked, configured against live services or deployed",
   "deployment_status": "Offline source only; migration, hosting and Web Push configuration required"
 }

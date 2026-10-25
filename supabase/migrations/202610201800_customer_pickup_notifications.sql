@@ -114,7 +114,7 @@ begin
  if not scheduled then select status into current_status from customer_selection_requests where id=p_id and shop_id=current_shop_id() for update;end if;
  if current_status is null then raise exception 'Request unavailable';end if;
  if current_status=p_status then return;end if;
- if current_status is distinct from case when scheduled and p_expected='received' then 'confirmed' else p_expected end then raise exception 'Request changed; refresh before continuing';end if;
+ if current_status is distinct from (case when scheduled and p_expected='received' then 'confirmed' else p_expected end) then raise exception 'Request changed; refresh before continuing';end if;
  if scheduled then perform set_scheduled_order_status(p_id,p_status);else perform set_preparation_order_status(p_id,p_status);end if;
 end$$;
 revoke all on function register_customer_order_push(uuid,jsonb,jsonb),remove_customer_order_push(uuid,text),get_customer_order_push(uuid,text),queue_customer_order_update(),lease_customer_order_push(),advance_pickup_order(uuid,text,text) from public,anon,authenticated;

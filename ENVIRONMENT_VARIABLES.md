@@ -1,3 +1,11 @@
+# Current release: RC19 — 2026-10-23
+
+**Not tested, build-validated, configured against live services or deployed.** No external service was accessed. Earlier validation reports in this source are historical and do not apply to this update.
+
+Read [change report](COUNTERNEST_NEXT_UPDATE_CHANGE_REPORT.md), [manual migration/WhatsApp/deployment guide](MANUAL_DEPLOYMENT_RC19.md), and [file inventory](MODIFIED_FILES_RC19.md). RC18 upgrades require only migration 97. WhatsApp requires separate Meta setup, approved templates, private server credentials, webhook/scheduler and explicit recipient consent.
+
+---
+
 > RC11 update: apply migration 92 after RC10. See INSTALL_UPGRADE_GUIDE.md and NOTIFICATION_SETUP.md for current deployment variables, webhook and retry setup. The detailed base deployment guidance below remains applicable.
 
 # Environment variables

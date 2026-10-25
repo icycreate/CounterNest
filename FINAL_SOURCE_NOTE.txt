@@ -1,6 +1,3 @@
-CounterNest POS Customer Pickup RC18
-Version 2.0.0-rc.18
-Complete source based on RC17. Offline source changes only.
-Not tested, built, type-checked, UAT-checked or deployed. No external systems accessed.
-Historical validation documents are not RC18 evidence.
-Read CUSTOMER_PICKUP_NOTIFICATIONS_UPDATE.md and MANUAL_DEPLOYMENT_RC18.md.
+CounterNest RC21 — tooltip, hover text and popup contrast.
+Untested, not type-checked, not build-validated and undeployed. No external systems accessed.
+Read TOOLTIP_HOVER_CONTRAST_FIX.md. Historical validation reports are not RC21 evidence.

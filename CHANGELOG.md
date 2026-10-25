@@ -1,3 +1,39 @@
+# 2.0.0-rc.21 — 2026-10-24
+
+- Add shared neutral Light/Dark tooltip tokens following resolved System appearance.
+- Render existing hover labels in a reusable viewport-positioned portal with keyboard support.
+- Replace nested contact tooltips while preserving visible touch labels and contact actions.
+- Pair popup/menu hover, selected and disabled foreground/background colors using existing theme tokens.
+- Remove legacy button brightness/fading rules; preserve business colors and workflows.
+- No database or backend changes. Untested, not build-validated and undeployed.
+
+---
+
+# 2.0.0-rc.20 — 2026-10-23
+
+- Detect supported browser language preferences before login/public rendering, with English fallback.
+- Match regional Spanish and Chinese script/region identifiers through BCP 47 parsing.
+- Preserve explicit staff preferences and isolate customer/PWA manual choices from POS settings.
+- Save only deliberate staff language changes; never persist automatic detection as a manual choice.
+- Synchronize existing customer notification subscriptions to the selected language without permission prompts.
+- No new migration, permissions or business-data changes. Untested and undeployed.
+
+---
+
+# 2.0.0-rc.19 — 2026-10-23
+
+- Default enabled WhatsApp for Catalogue contact; preserve empty customer number and review drafts.
+- Reuse locally available libphonenumber metadata for shared country-aware parsing, formatting and validation.
+- Center enabled business contact icons with accessible persistent labels/tooltips and safe destinations.
+- Refine request dialogs and correct Light appearance with dark custom business colors.
+- Add archived-customer filters, same-record administrator restoration and authorized loyalty history.
+- Add optional consent-based WhatsApp Cloud API template alerts via existing committed order events.
+- Preserve direct-to-cart New Sale, cart layouts, staff Web Push and customer pickup notifications.
+- Add migration 97 and offline deployment/configuration documentation; no business data changes executed.
+- Not tested, built, configured against live services or deployed.
+
+---
+
 # 2.0.0-rc.18 — 2026-10-20
 
 - Added private guest Track Order timeline, pickup banner, business details and clearly labeled totals.

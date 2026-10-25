@@ -25,7 +25,9 @@ const baselines=new Map<HTMLElement,string>();
 const controlSelector='input:not([type=search]):not([type=hidden]):not([type=submit]):not([type=button]),select,textarea';
 export function formFingerprint(scope:HTMLElement){return JSON.stringify(Array.from(scope.querySelectorAll<HTMLInputElement|HTMLSelectElement|HTMLTextAreaElement>(controlSelector)).filter(e=>{const nested=e.closest?.('[data-unsaved-scope]');return (!nested||nested===scope||!scope.contains(nested))}).filter(e=>!('readOnly' in e&&e.readOnly)&&!e.disabled&&!e.closest('.cn-search-field')).map(e=>[e.name||e.id||e.getAttribute('aria-label')||'',e instanceof HTMLInputElement&&(e.type==='checkbox'||e.type==='radio')?e.checked:e.value,e instanceof HTMLInputElement&&e.type==='file'?Array.from(e.files??[]).map(f=>[f.name,f.size,f.lastModified]):null]))}
 export function resetUnsaved(scope?:HTMLElement){for(const node of baselines.keys())if(!scope||scope===node||scope.contains(node))baselines.set(node,formFingerprint(node))}
-function dirty(layer?:Layer){for(const [node,before]of baselines){if(!node.isConnected){baselines.delete(node);continue}if((!layer||layer.node.contains(node)||node===layer.node)&&before!==formFingerprint(node))return true}return false}
+const explicitDirty=new Map<HTMLElement,()=>boolean>();
+export function registerUnsavedGuard(node:HTMLElement,check:()=>boolean){explicitDirty.set(node,check);return()=>{explicitDirty.delete(node)}}
+function dirty(layer?:Layer){for(const [node,check] of explicitDirty)if(node.isConnected&&(!layer||layer.node.contains(node)||node===layer.node)&&check())return true;for(const [node,before]of baselines){if(!node.isConnected){baselines.delete(node);continue}if((!layer||layer.node.contains(node)||node===layer.node)&&before!==formFingerprint(node))return true}return false}
 const overlaySelector='.modal-backdrop,.modal-overlay,.ux-backdrop,.mobile-menu-backdrop,.full-image-view,.catalogue-install-help,[data-back-layer]';
 function fallback(){return /^\/catalogue(?:-display)?\/?$/.test(location.pathname)?location.pathname+location.search:'/dashboard'}
 export function initializeNavigation(){

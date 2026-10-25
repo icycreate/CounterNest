@@ -1,3 +1,7 @@
+# RC22 — 2026-10-24
+
+Editable, localized business About Us with private image storage, crop preview, responsive Catalogue rendering, guarded drafts and conflict-safe publishing. Based on RC21 syntax fixes. Untested and undeployed. See RC22_CHANGE_REPORT.md and MANUAL_DEPLOYMENT_RC22.md.
+
 # 2.0.0-rc.21 — 2026-10-24
 
 - Add shared neutral Light/Dark tooltip tokens following resolved System appearance.

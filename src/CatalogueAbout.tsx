@@ -10,7 +10,7 @@ import {randomId} from './id'
 import {resetUnsaved,registerUnsavedGuard} from './appNavigation'
 import './catalogueAbout.css'
 
-type Copy={heading:string;intro:string;story:string;alt:string}
+type Copy={heading:string;intro:string;story:string;alt:string;highlight?:string}
 type About={enabled:boolean;default_language:UiLanguage;copy:Copy;translations:Partial<Record<UiLanguage,Copy>>;image_path:string|null}
 type RecordValue={value:About;revision:number;shop_id:string}
 const blankCopy:Copy={heading:'',intro:'',story:'',alt:''}
@@ -21,14 +21,20 @@ function useImage(path:string|null){
 }
 function AboutView({value,image,language}:{value:About;image:string;language:UiLanguage}){
  const localized=language===value.default_language?undefined:value.translations[language]
- const copy={...value.copy};for(const key of ['heading','intro','story','alt'] as const)if(localized?.[key]?.trim())copy[key]=localized[key]
+ const copy={...value.copy};for(const key of ['heading','intro','story','highlight','alt'] as const){const translated=localized?.[key];if(translated?.trim())copy[key]=translated}
  if(!value.enabled||!(copy.heading||copy.intro||copy.story||image))return null
- return <section className="catalogue-about" aria-label={tr('About Us')}><h2>{copy.heading||tr('About Us')}</h2>{copy.intro&&<p className="catalogue-about-intro">{copy.intro}</p>}<div className={image?'catalogue-about-grid':''}>{image&&<img src={image} alt={copy.alt} loading="lazy"/>}{copy.story&&<div className="catalogue-about-story">{copy.story}</div>}</div></section>
+ return <section className="store-story about-page" aria-label={tr('About Us')}><span className="store-eyebrow">{tr('About CounterNest')}</span><h1>{copy.heading||tr('About Us')}</h1><div className={`store-story-columns about-page-columns ${image?'about-page-with-image':''}`}>
+ {copy.intro&&<p className="store-story-lead about-page-intro">{copy.intro}</p>}
+ {image&&<img className="about-page-photo" src={image} alt={copy.alt} loading="lazy"/>}
+ {copy.story&&<div className="about-page-story">{copy.story.split(/\n\s*\n/).filter(part=>part.trim()).map((part,index)=><p key={index}>{part}</p>)}</div>}
+ {copy.highlight&&<blockquote className="about-page-highlight">{copy.highlight}</blockquote>}
+ </div></section>
 }
-export function PublicCatalogueAbout({token}:{token:string}){
- const[value,setValue]=useState<About|null>(null),language=useUiLanguage();const image=useImage(value?.image_path??null)
- useEffect(()=>{let live=true;setValue(null);async function load(){if(!supabase)return;const r=await supabase.rpc('get_catalogue_about',{p_token:token});if(live)setValue(r.error?null:r.data)};void load();const timer=setInterval(()=>{if(document.visibilityState==='visible')void load()},60000);return()=>{live=false;clearInterval(timer)}},[token])
- return value?<AboutView value={value} image={image} language={language}/>:null
+export function CustomerAboutPage({token}:{token:string}){
+ const[value,setValue]=useState<About|null>(null),[status,setStatus]=useState<'loading'|'ready'|'error'>('loading'),language=useUiLanguage();const image=useImage(value?.image_path??null)
+ useEffect(()=>{let live=true;setValue(null);setStatus('loading');async function load(){try{if(!supabase)throw Error('unavailable');const r=await supabase.rpc('get_catalogue_about',{p_token:token});if(r.error)throw r.error;if(live){setValue(r.data);setStatus('ready')}}catch{if(live){setValue(null);setStatus('error')}}};void load();const timer=setInterval(()=>{if(document.visibilityState==='visible')void load()},60000);return()=>{live=false;clearInterval(timer)}},[token])
+ if(value?.enabled)return <AboutView value={value} image={image} language={language}/>
+ return <section className="store-story about-page" aria-label={tr('About Us')}><span className="store-eyebrow">{tr('About CounterNest')}</span><h1>{tr('About Us')}</h1><p role="status">{tr(status==='loading'?'Loading About Us…':status==='error'?'About Us could not be loaded. Please try again later.':'About Us content is not currently available.')}</p></section>
 }
 export function CatalogueAboutEditor(){
  const[record,setRecord]=useState<RecordValue|null>(null),[draft,setDraft]=useState<About>(empty),[language,setLanguage]=useState<UiLanguage>('en'),[file,setFile]=useState<File|null>(null),[crop,setCrop]=useState<Blob|null>(null),[preview,setPreview]=useState(''),[busy,setBusy]=useState(false),[message,setMessage]=useState(''),[error,setError]=useState(''),[showPreview,setShowPreview]=useState(false)
@@ -54,7 +60,7 @@ export function CatalogueAboutEditor(){
  <fieldset disabled={busy||!record}><FormField><InputField type="checkbox" checked={draft.enabled} onChange={e=>setDraft({...draft,enabled:e.target.checked})}/>{tr('Show About Us')}</FormField>
  <FormField label={tr('Default content language')}><SelectField value={draft.default_language} onChange={e=>{const next=e.target.value as UiLanguage;setDraft(old=>({...old,default_language:next,copy:old.translations[next]??old.copy,translations:{...old.translations,[old.default_language]:old.copy}}));setLanguage(next)}}>{languageOptions.map(l=><option key={l.value} value={l.value}>{l.label}</option>)}</SelectField></FormField>
  <FormField label={tr('Edit content language')}><SelectField value={language} onChange={e=>setLanguage(e.target.value as UiLanguage)}>{languageOptions.map(l=><option key={l.value} value={l.value}>{l.label}</option>)}</SelectField></FormField><p>{tr('Empty translations use the default content. Business text is never automatically translated.')}</p>
- {(['heading','intro','story','alt'] as const).map(key=><FormField key={key} label={tr(({heading:'Business heading',intro:'Short introduction',story:'Business story',alt:'Image alternative text'})[key])}><TextAreaField rows={key==='story'?7:2} maxLength={key==='story'?10000:key==='intro'?600:200} value={copy[key]} onChange={e=>change(key,e.target.value)}/></FormField>)}
+ {(['heading','intro','story','highlight','alt'] as const).map(key=><FormField key={key} label={tr(({heading:'Business heading',intro:'Short introduction',story:'Business story',highlight:'Highlighted statement',alt:'Image alternative text'})[key])}><TextAreaField rows={key==='story'?7:2} maxLength={key==='story'?10000:key==='intro'?600:key==='highlight'?1000:200} value={copy[key]??''} onChange={e=>change(key,e.target.value)}/></FormField>)}
  <FormField label={tr('About Us image')}><InputField type="file" accept="image/jpeg,image/png,image/webp" onChange={e=>{const selected=e.target.files?.[0];if(selected)try{validateImageFile(selected);setFile(selected);setError('')}catch(err){setError(trError((err as Error).message))}e.target.value=''}}/></FormField>
  {(preview||image)&&<img className="catalogue-about-image-preview" src={preview||image} alt={copy.alt}/>}
  <div className="catalogue-about-actions"><Button disabled={!image||!!crop} onClick={()=>void recrop()}>{tr('Edit / crop')}</Button><Button onClick={()=>{setDraft({...draft,image_path:null});setCrop(null)}}>{tr('Remove image')}</Button><Button onClick={()=>{setDraft({...draft,image_path:record?.value.image_path??null});setCrop(null)}}>{tr('Restore saved image')}</Button><Button onClick={()=>setShowPreview(v=>!v)}>{tr('Preview')}</Button><Button onClick={cancel}>{tr('Cancel')}</Button><Button variant="primary" disabled={!dirty||!!file} onClick={()=>void save()}>{tr('Save Changes')}</Button></div></fieldset>

@@ -1,3 +1,11 @@
+# RC24 — 2026-10-25
+
+Added staff-confirmed Customer Recognition & Order Linking, international-phone candidates, duplicate-checked optional customer creation, guest acceptance, linked request history and audited concurrent-safe association changes. Reuses existing scheduled-sale and loyalty completion. Public submission/tracking and RC23 About page preserved. Untested, not built, undeployed. See CUSTOMER_RECOGNITION_ORDER_LINKING_UPDATE.md.
+
+# RC23 — 2026-10-24
+
+Corrected the existing About CounterNest page to display administrator-saved text and the dedicated About photograph. Removed RC22 home-storefront About insertion. Preserved navigation and product browsing. Added optional localized highlighted statement and backward-compatible validator migration. Untested, not built, undeployed. See RC23_ABOUT_INTEGRATION_REPORT.md.
+
 # RC22 — 2026-10-24
 
 Editable, localized business About Us with private image storage, crop preview, responsive Catalogue rendering, guarded drafts and conflict-safe publishing. Based on RC21 syntax fixes. Untested and undeployed. See RC22_CHANGE_REPORT.md and MANUAL_DEPLOYMENT_RC22.md.

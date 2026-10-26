@@ -1,6 +1,6 @@
 const fs=require('fs'),path=require('path'),assert=require('assert'),esbuild=require('esbuild');
 const root=path.resolve(__dirname,'..');
-function compile(file){const code=esbuild.buildSync({entryPoints:[path.join(root,file)],bundle:true,write:false,platform:'node',format:'cjs',packages:'external'}).outputFiles[0].text;const mod={exports:{}};new Function('module','exports','require',code)(mod,mod.exports,require);return mod.exports;}
+function compile(file){const code=esbuild.buildSync({entryPoints:[path.join(root,file)],bundle:true,write:false,loader:{'.css':'empty'},platform:'node',format:'cjs',packages:'external'}).outputFiles[0].text;const mod={exports:{}};new Function('module','exports','require',code)(mod,mod.exports,require);return mod.exports;}
 const {validatePublicConfig}=compile('src/lib/config.ts'),url='https://project.supabase.co';
 const jwt=role=>`eyJhbGciOiJIUzI1NiJ9.${Buffer.from(JSON.stringify({role})).toString('base64url')}.sig`;
 assert(validatePublicConfig({}).error);

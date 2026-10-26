@@ -1,20 +1,16 @@
 {
-  "version": "2.0.0-rc.21",
-  "baseline_version": "CounterNest Automatic Language RC20",
-  "baseline_migration_count": 97,
-  "migration_count": 97,
-  "upgrade_migrations": [],
-  "name": "CounterNest Tooltip Contrast RC21",
-  "build": "2026-10-24-tooltip-contrast",
+  "version": "2.0.0-rc.25",
+  "baseline_version": "2.0.0-rc.24",
+  "baseline_migration_count": 100,
+  "migration_count": 101,
+  "upgrade_migrations": [
+    "202610251600_independent_catalogue_editors.sql"
+  ],
+  "name": "CounterNest Independent Catalogue Editors RC25",
+  "build": "2026-10-26",
   "product": "CounterNest POS",
   "release_type": "source-update",
-  "backend": "Supabase Cloud",
   "desktop_installer": false,
-  "features": [
-    {
-      "title": "Shared neutral tooltip layer and paired hover/popup text contrast"
-    }
-  ],
-  "validation": "Not tested, build-validated, type-checked, configured against live services or deployed",
-  "deployment_status": "Offline source only; migration, hosting and Web Push configuration required"
+  "validation": "Local production build, PostgreSQL regression, focused editor/security tests, offline browser tests and selected frontend suites; see RC25_CHANGE_REPORT.md for failures and limits",
+  "deployment_status": "Not deployed; no live systems accessed"
 }

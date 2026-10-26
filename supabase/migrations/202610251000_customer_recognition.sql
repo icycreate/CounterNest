@@ -1111,6 +1111,7 @@ do $$declare d text;a text;b text;begin
  b:=$b$ select l.customer_id into customer from catalogue_customer_links l join customers c on c.id=l.customer_id and c.shop_id=l.shop_id where l.request_id=r.id and l.shop_id=r.shop_id and l.state='linked' and c.active;
  -- No confirmation means a genuine guest, not an automatically created customer.
  $b$;
+ d:=replace(d,chr(13),'');a:=replace(a,chr(13),'');b:=replace(b,chr(13),'');
  if position(a in d)=0 then raise exception 'Acceptance definition changed; review RC24 migration';end if;
  execute replace(d,a,b);
 end$$;
@@ -1123,6 +1124,7 @@ do $$declare d text;a text;b text;begin
  b:=$b$if p_values->>'customer_id' is null and p_id is not null and exists(select 1 from catalogue_preorder_requests where scheduled_order_id=p_id and shop_id=v_shop) then
   if exists(select 1 from catalogue_preorder_requests r join catalogue_customer_links l on l.request_id=r.id and l.shop_id=r.shop_id where r.scheduled_order_id=p_id and r.shop_id=v_shop and l.customer_id is not null) then raise exception 'Confirm customer association from Review Match';end if;
  elsif not exists(select 1 from customers where id=(p_values->>'customer_id')::uuid and shop_id=v_shop) then raise exception 'Customer not found';end if;$b$;
+ d:=replace(d,chr(13),'');a:=replace(a,chr(13),'');b:=replace(b,chr(13),'');
  if position(a in d)=0 then raise exception 'Scheduled edit definition changed; review RC24 migration';end if;
  execute replace(d,a,b);
 end$$;

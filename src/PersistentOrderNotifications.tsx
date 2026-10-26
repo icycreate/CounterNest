@@ -3,13 +3,13 @@ import {supabase} from './lib/supabase'
 import {Card} from './Surface'
 import {Button} from './Button'
 import {Toggle,SelectField,InputField,FormField} from './Fields'
-import {tr,trError,getUiLanguage} from './i18n'
+import {tr,trError,getUiLanguage,useUiLanguage} from './i18n'
 import {navigateRoute} from './appNavigation'
 import {IncomingOrder} from './IncomingOrder'
 import type {Role} from './types'
 export type AlertPreferences={enabled:boolean;preorder:boolean;catalogue:boolean;sound:boolean;repeat:boolean;repeatCount:number;tone:'chime'|'bell'|'gentle';desktop:boolean;mobile:boolean;badge:boolean;push:boolean;device_label:string}
 export const defaultAlertPreferences:AlertPreferences={enabled:true,preorder:true,catalogue:true,sound:true,repeat:true,repeatCount:3,tone:'chime',desktop:false,mobile:false,badge:true,push:false,device_label:''}
-export type OrderAlert={id:string;kind:string;record_id:string;created_at:string;presented?:boolean}
+export type OrderAlert={id:string;kind:string;record_id:string;created_at:string;presented?:boolean;request_number?:number;customer_name?:string;preferred_method?:string;item_count?:number}
 let account='';let audio:AudioContext|undefined
 const key=()=>`counternest.order-alerts.${account}`
 export function readAlertPreferences():AlertPreferences{try{const p=JSON.parse(localStorage.getItem(key())??'{}');return {...defaultAlertPreferences,...p,repeatCount:Math.max(1,Math.min(5,Number(p.repeatCount??(p.repeat===false?1:3))||3))}}catch{return {...defaultAlertPreferences}}}
@@ -28,21 +28,22 @@ const mobile=()=>matchMedia('(pointer: coarse)').matches
 const pushAllowed=(p:AlertPreferences)=>p.enabled&&(mobile()?p.mobile:p.desktop)
 
 export function NotificationRuntime({enabled}:{enabled:boolean}){
- const [events,setEvents]=useState<OrderAlert[]>([]),[count,setCount]=useState(0),[latest,setLatest]=useState<OrderAlert|null>(null),[blocked,setBlocked]=useState(false),[locked,setLocked]=useState(false),[error,setError]=useState(''),[revision,setRevision]=useState(0),[preferences,setPreferences]=useState(readAlertPreferences)
+ useUiLanguage()
+ const [inbox,setInbox]=useState(false);const [events,setEvents]=useState<OrderAlert[]>([]),[count,setCount]=useState(0),[latest,setLatest]=useState<OrderAlert|null>(null),[blocked,setBlocked]=useState(false),[locked,setLocked]=useState(false),[error,setError]=useState(''),[revision,setRevision]=useState(0),[preferences,setPreferences]=useState(readAlertPreferences)
  const identity=useRef(''),pendingOpen=useRef<OrderAlert|null>(null),claiming=useRef(false)
  useEffect(()=>{
   setLatest(null);setEvents([]);setCount(0);pendingOpen.current=null;identity.current=''
   if(!enabled||!supabase)return
-  let live=true,busy=false
+  let live=true,busy=false;let channel:ReturnType<NonNullable<typeof supabase>['channel']>|undefined
   async function poll(){if(busy||!identity.current||document.visibilityState!=='visible')return;busy=true;try{const r=await supabase!.rpc('get_order_alert_inbox');if(!live)return;if(r.error){setEvents([]);setLatest(null);setCount(0);setError(tr('Order alerts are unavailable. Backend setup or access is required.'));return}setError('');setEvents(r.data.events??[]);setLatest(old=>old&&Number(r.data.unread_count)>0&&!(r.data.acknowledged??[]).includes(old.id)?old:null);setCount(Number(r.data.unread_count));const p=readAlertPreferences();setPreferences(p);if(p.enabled&&p.badge&&r.data.unread_count>0)void (navigator as any).setAppBadge?.(r.data.unread_count)?.catch(()=>{});else void (navigator as any).clearAppBadge?.()?.catch(()=>{})}catch{if(live)setError(tr('Order alerts are unavailable. Backend setup or access is required.'))}finally{busy=false}}
   void supabase.auth.getSession().then(async r=>{if(!live)return;account=r.data.session?.user.id??'';identity.current=account;setPreferences(readAlertPreferences());await binding(account||null);if(live)void poll()})
   const scan=()=>setBlocked(Boolean(document.querySelector('[data-payment-active="true"]'))||Array.from(document.querySelectorAll('[role="dialog"],.modal,.payment-confirmation')).some(el=>!el.closest('.incoming-order')))
   const observer=new MutationObserver(scan);observer.observe(document.body,{subtree:true,childList:true,attributes:true,attributeFilter:['data-payment-active']});scan()
   const unlock=()=>{if(readAlertPreferences().sound)void enableAudio().catch(()=>{})};document.addEventListener('pointerdown',unlock,{once:true})
   const message=(e:MessageEvent)=>{if(e.data?.user_id!==identity.current)return;if(e.data.type==='counternest:open-alert'){pendingOpen.current=e.data.event;setRevision(n=>n+1)}if(['counternest:order-alert','counternest:open-alert'].includes(e.data.type))void poll()}
-  const refresh=()=>void poll();const timer=window.setInterval(refresh,5000)
+  const refresh=()=>void poll();void supabase.rpc('current_shop_id').then(r=>{if(live&&r.data){channel=supabase!.channel('order-alerts-'+r.data).on('postgres_changes',{event:'INSERT',schema:'public',table:'order_alert_events',filter:'shop_id=eq.'+r.data},refresh).subscribe()}});const timer=window.setInterval(refresh,5000)
   navigator.serviceWorker?.addEventListener('message',message);document.addEventListener('visibilitychange',refresh);window.addEventListener('counternest:alerts-refresh',refresh)
-  return()=>{live=false;observer.disconnect();window.clearInterval(timer);document.removeEventListener('pointerdown',unlock);document.removeEventListener('visibilitychange',refresh);window.removeEventListener('counternest:alerts-refresh',refresh);navigator.serviceWorker?.removeEventListener('message',message);identity.current='';void binding(null)}
+  return()=>{live=false;if(channel)void supabase!.removeChannel(channel);observer.disconnect();window.clearInterval(timer);document.removeEventListener('pointerdown',unlock);document.removeEventListener('visibilitychange',refresh);window.removeEventListener('counternest:alerts-refresh',refresh);navigator.serviceWorker?.removeEventListener('message',message);identity.current='';void binding(null)}
  },[enabled])
  useEffect(()=>{if(!blocked&&!document.querySelector('.incoming-order [role="dialog"]')&&pendingOpen.current){const e=pendingOpen.current;pendingOpen.current=null;navigateRoute(alertRoute(e))}},[blocked,revision,events])
  useEffect(()=>{
@@ -55,14 +56,16 @@ export function NotificationRuntime({enabled}:{enabled:boolean}){
   }}finally{claiming.current=false}}
   void pick()
  },[events,blocked,latest,enabled,preferences])
+ async function markAll(){const r=await supabase!.rpc('acknowledge_all_order_alerts');if(r.error){setError(trError(r.error.message));return}setEvents([]);setCount(0);setLatest(null);window.dispatchEvent(new Event('counternest:alerts-refresh'))}
  async function acknowledge(e:OrderAlert){const r=await supabase!.rpc('acknowledge_order_alert',{p_event:e.id});if(r.error){setError(trError(r.error.message));return}setLatest(null);setEvents(old=>old.filter(x=>x.id!==e.id));window.dispatchEvent(new Event('counternest:alerts-refresh'))}
  if(!enabled||!identity.current)return null
- return <><div className="order-alert-centre"><Button disabled={!events.length||blocked} onClick={()=>setLatest(events[0]??null)}>{tr('Order notifications')}{preferences.enabled&&preferences.badge&&count>0?` (${count})`:''}</Button>{blocked&&count>0&&<small role="status">{tr('Order alerts queued until the current transaction or dialog is closed.')}</small>}{error&&<small role="status">{error}</small>}</div>
+ return <><div className="order-alert-centre"><Button disabled={!events.length||blocked} aria-expanded={inbox} onClick={()=>setInbox(v=>!v)}>{tr('Order notifications')}{preferences.enabled&&preferences.badge&&count>0?` (${count})`:''}</Button>{inbox&&<section className="order-alert-list" aria-label={tr('Order notifications')}><Button onClick={()=>void markAll()} disabled={!count}>{tr('Mark all as read')}</Button><Button onClick={()=>setInbox(false)}>{tr('Close')}</Button>{events.map(e=><article key={e.id}><strong>{e.request_number?'#'+e.request_number:tr('New Catalogue Request')} · {e.customer_name}</strong><p>{e.item_count??''} {tr('items')} · {tr(e.preferred_method??'')}</p><small>{new Date(e.created_at).toLocaleString()}</small><div className="report-actions"><Button onClick={()=>{navigateRoute(alertRoute(e));setInbox(false)}}>{tr('Open record')}</Button><Button onClick={()=>void acknowledge(e)}>{tr('Mark as read')}</Button></div></article>)}</section>}{blocked&&count>0&&<small role="status">{tr('Order alerts queued until the current transaction or dialog is closed.')}</small>}{error&&<small role="status">{error}</small>}</div>
  {!blocked&&preferences.enabled&&latest&&(latest.kind==='catalogue'?preferences.catalogue:preferences.preorder)&&<>{latest.kind==='catalogue'?<aside className="incoming-order"><h2>{tr('New Catalogue Request')}</h2><Button onClick={()=>navigateRoute(alertRoute(latest))}>{tr('Open record')}</Button><Button onClick={()=>void acknowledge(latest)}>{tr('Acknowledge')}</Button><Button onClick={()=>setLatest(null)}>{tr('View later')}</Button></aside>:<IncomingOrder key={latest.id} id={latest.record_id} onDismiss={()=>setLatest(null)} onAcknowledge={()=>void acknowledge(latest)} onOpen={()=>{navigateRoute(alertRoute(latest));setLatest(null)}}/>}{locked&&<div className="order-sound-unlock"><Button onClick={()=>void enableAudio().then(()=>{ringOrderAlert(preferences.repeatCount,preferences.tone);setLocked(false)})}>{tr('Enable alert sound')}</Button></div>}</>}
  </>
 }
 
 export function NotificationSettings({role}:{role:Role}){
+ useUiLanguage()
  const [p,setP]=useState(readAlertPreferences),[message,setMessage]=useState(''),[busy,setBusy]=useState(false),[registered,setRegistered]=useState(false),[devices,setDevices]=useState<{id:string;updated_at:string;enabled:boolean;label:string}[]>([])
  async function loadDevices(){const r=await supabase?.rpc('list_order_push_devices');if(r?.error)setMessage(trError(r.error.message));else setDevices(r?.data??[])}
  useEffect(()=>{if(!['admin','manager','cashier'].includes(role))return;void supabase?.auth.getSession().then(r=>{account=r.data.session?.user.id??'';setP(readAlertPreferences());void loadDevices()});void navigator.serviceWorker?.getRegistration().then(r=>r?.pushManager?.getSubscription()).then(s=>setRegistered(!!s)).catch(()=>{})},[role])

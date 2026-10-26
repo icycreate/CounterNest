@@ -1,0 +1,591 @@
+{
+  "version": "2.0.0-rc.25",
+  "build": "2026-10-26-catalogue-editors",
+  "migration_count": 101,
+  "database_engine": "PGlite PostgreSQL with mocked Supabase auth/storage and mocked manager-PIN crypt for refund tests; pgcrypto extension omitted",
+  "checks": [
+    {
+      "name": "Catalogue themes are scoped by validated public token and expose visual fields only",
+      "status": "passed"
+    },
+    {
+      "name": "Admin appearance publishes to the same business; staff appearance stays private",
+      "status": "passed"
+    },
+    {
+      "name": "No promotion returns regular price",
+      "status": "passed"
+    },
+    {
+      "name": "Active fixed promotion and request price agree",
+      "status": "passed"
+    },
+    {
+      "name": "Percentage and expired/scheduled promotions",
+      "status": "passed"
+    },
+    {
+      "name": "Invalid discounts and date windows rejected",
+      "status": "passed"
+    },
+    {
+      "name": "Selection snapshots active promotion and aggregate stock protects shared variants",
+      "status": "passed"
+    },
+    {
+      "name": "Claim then checkout records promotion receipt and actual conversion",
+      "status": "passed"
+    },
+    {
+      "name": "Stale and missing quoted price rejected without stock deduction",
+      "status": "passed"
+    },
+    {
+      "name": "Media primary/label, cross-shop objects and malformed media",
+      "status": "passed"
+    },
+    {
+      "name": "Token view validation, session dedup and administrator analytics",
+      "status": "passed"
+    },
+    {
+      "name": "Employees cannot manage promotions/media or read analytics",
+      "status": "passed"
+    },
+    {
+      "name": "Cross-shop mutations and invalid token payloads rejected",
+      "status": "passed"
+    },
+    {
+      "name": "Unavailable customer product and inactive option blocked at payment",
+      "status": "passed"
+    },
+    {
+      "name": "Storage policies allow own admin folder and deny cross-shop/employee upload",
+      "status": "passed"
+    },
+    {
+      "name": "Catalogue metadata and standalone payload expose only customer fields",
+      "status": "passed"
+    },
+    {
+      "name": "Proper variants have unique prices identities and immutable inventory mode",
+      "status": "passed"
+    },
+    {
+      "name": "Shared variant price receipt cost and master stock deduction",
+      "status": "passed"
+    },
+    {
+      "name": "Independent variant lot stock deducts once without touching master stock",
+      "status": "passed"
+    },
+    {
+      "name": "Variant FEFO excludes expired lots and preserves stock on failure",
+      "status": "passed"
+    },
+    {
+      "name": "Fixed bundle allocates exact price and deducts every component once",
+      "status": "passed"
+    },
+    {
+      "name": "Category-choice combos validate choices and reject a foreign shop product",
+      "status": "passed"
+    },
+    {
+      "name": "Kitchen workflow friendly order numbers and ready-display privacy",
+      "status": "passed"
+    },
+    {
+      "name": "Pre-order quote deposit and final payment are idempotent and linked",
+      "status": "passed"
+    },
+    {
+      "name": "Custom cake quote private reference and cash deposits balance correctly",
+      "status": "passed"
+    },
+    {
+      "name": "Explainable forecast and approved scheduling do not deduct inventory",
+      "status": "passed"
+    },
+    {
+      "name": "Shortage alerts refresh resolve/dismiss and retain audit events",
+      "status": "passed"
+    },
+    {
+      "name": "Independent-variant refunds restore only its own lots and stock",
+      "status": "passed"
+    },
+    {
+      "name": "Bundle refund value equals allocated sale price and restores all components",
+      "status": "passed"
+    },
+    {
+      "name": "Independent variant approved production transfers output once",
+      "status": "passed"
+    },
+    {
+      "name": "Scheduled production plans are linked and duplicate approval is rejected",
+      "status": "passed"
+    },
+    {
+      "name": "Variant disable preserves receipt history and blocks new selection",
+      "status": "passed"
+    },
+    {
+      "name": "Staff catalogue works when customer display is disabled; cart repricing is authoritative",
+      "status": "passed"
+    },
+    {
+      "name": "Every new table has RLS and API roles cannot write ledgers or invoke private helpers",
+      "status": "passed"
+    },
+    {
+      "name": "Recipe-scaled variant production consumes usable ingredients once and propagates expiry/cost",
+      "status": "passed"
+    },
+    {
+      "name": "POS quote and checkout agree for a loyalty reward on allocated bundle pricing",
+      "status": "passed"
+    },
+    {
+      "name": "Customer profile history links scheduled orders and sales; large order numbers do not truncate",
+      "status": "passed"
+    },
+    {
+      "name": "Source-batch recalls and held-lot refunds/disposal cannot reintroduce unavailable variant stock",
+      "status": "passed"
+    },
+    {
+      "name": "Commercial mutations and private checkout helper enforce staff/admin boundaries",
+      "status": "passed"
+    },
+    {
+      "name": "RC1 temporary-password staff cannot bypass setup through RLS or RPCs",
+      "status": "passed"
+    },
+    {
+      "name": "RC1 checkout retry returns one receipt and deducts stock and cash once",
+      "status": "passed"
+    },
+    {
+      "name": "RC1 reused checkout references reject changed amounts and foreign staff",
+      "status": "passed"
+    },
+    {
+      "name": "RC1 insufficient cash rolls back sale, inventory, tender and retry ledger together",
+      "status": "passed"
+    },
+    {
+      "name": "RC1 checkout ledger is isolated and cannot be written directly by API roles",
+      "status": "passed"
+    },
+    {
+      "name": "RC1 supporting FEFO, allocation, kitchen, pickup and checkout indexes exist",
+      "status": "passed"
+    },
+    {
+      "name": "RC1 physical stock counts reject a concurrent sale and preserve the lot ledger",
+      "status": "passed"
+    },
+    {
+      "name": "Bakery UAT receives supplier lots and converts whole eggs with traceable yields",
+      "status": "passed"
+    },
+    {
+      "name": "Bakery UAT recipe production, variance and waste keep stock and ingredient lots aligned",
+      "status": "passed"
+    },
+    {
+      "name": "Bakery UAT catalogue, variant promotion, kitchen, POS receipt and daily cash agree",
+      "status": "passed"
+    },
+    {
+      "name": "Bakery UAT reports, refund, portable backup, audit and immutable day close reconcile",
+      "status": "passed"
+    },
+    {
+      "name": "Original and cropped photos persist separately without exposing uploader metadata",
+      "status": "passed"
+    },
+    {
+      "name": "Gallery rejects foreign originals and preserves existing saved photos on failure",
+      "status": "passed"
+    },
+    {
+      "name": "Customer request settings enforce administrator, allowed methods and canonical HTTPS origin",
+      "status": "passed"
+    },
+    {
+      "name": "Anonymous pre-order submission needs no pickup, uses server promo prices and never reserves stock",
+      "status": "passed"
+    },
+    {
+      "name": "Public request input rejects disabled methods, malformed contact, stale prices and foreign products",
+      "status": "passed"
+    },
+    {
+      "name": "Request RLS prevents public reads/direct writes and foreign-shop staff access",
+      "status": "passed"
+    },
+    {
+      "name": "Only selected contact action is permitted to staff; alternate method needs admin reason and audits once",
+      "status": "passed"
+    },
+    {
+      "name": "Request states reject stale/skipped transitions and schedule exactly one linked order",
+      "status": "passed"
+    },
+    {
+      "name": "Linked request follows real production/paid collection, with one stock deduction",
+      "status": "passed"
+    },
+    {
+      "name": "Register opening is admin-only, station-stamped, audited and immutable for the day",
+      "status": "passed"
+    },
+    {
+      "name": "Disabled/rotated customer links stop requests and receipt sharing",
+      "status": "passed"
+    },
+    {
+      "name": "Four workspace roles preserve base administrator authorization and password setup lock",
+      "status": "passed"
+    },
+    {
+      "name": "Universal search is bounded and excludes foreign records, costs and forbidden entity types",
+      "status": "passed"
+    },
+    {
+      "name": "Per-user preferences validate languages and remain private across staff and shops",
+      "status": "passed"
+    },
+    {
+      "name": "Role dashboards and board stage writes are scoped, optimistic and never change stock",
+      "status": "passed"
+    },
+    {
+      "name": "Kitchen and inventory direct API calls cannot read or mutate customer service records",
+      "status": "passed"
+    },
+    {
+      "name": "Customer tracking capability exposes safe status only and preserves idempotent intake",
+      "status": "passed"
+    },
+    {
+      "name": "Staff notes and contact templates are separate, scoped and never automatically sent",
+      "status": "passed"
+    },
+    {
+      "name": "Customer confirmation uses the exact pipeline without creating payment, pickup or stock changes",
+      "status": "passed"
+    },
+    {
+      "name": "Retired product purchasing routes cannot receive made-in-house stock; history stays readable",
+      "status": "passed"
+    },
+    {
+      "name": "UX backup includes preferences, role assignments and staff notes without tracking capabilities",
+      "status": "passed"
+    },
+    {
+      "name": "Low-stock cards need no alert refresh, and blocked/issue notifications keep stable role-scoped IDs",
+      "status": "passed"
+    },
+    {
+      "name": "Administrator financial dashboard totals use the business day and all sales; other roles receive no financial amounts",
+      "status": "passed"
+    },
+    {
+      "name": "Public catalogue branding follows only its enabled token shop and neutral logo fallback",
+      "status": "passed"
+    },
+    {
+      "name": "Direct acceptance from new request uses current variant quote, optional pickup and atomic real deposit",
+      "status": "passed"
+    },
+    {
+      "name": "Accepted receipt uses immutable accepted prices, real deposits and excludes internal notes",
+      "status": "passed"
+    },
+    {
+      "name": "Accepted orders reach kitchen, dashboard and planner once without duplicate jobs or stock deduction",
+      "status": "passed"
+    },
+    {
+      "name": "Direct decline is reasoned, audited once and available from legacy review states",
+      "status": "passed"
+    },
+    {
+      "name": "Acceptance, quote, receipt and decline enforce four roles, shop isolation and public denial",
+      "status": "passed"
+    },
+    {
+      "name": "Direct acceptance retains allocated bundle prices through quote, receipt and one stock deduction",
+      "status": "passed"
+    },
+    {
+      "name": "Recent staff activity is bounded, deterministic, administrator-only and excludes event details",
+      "status": "passed"
+    },
+    {
+      "name": "Kitchen includes manual pre-orders and cakes once with safe item projection and no customer PII",
+      "status": "passed"
+    },
+    {
+      "name": "New shop, supplier and customer phones use international canonical storage and reject malformed input",
+      "status": "passed"
+    },
+    {
+      "name": "Anonymous request normalization precedes replay checks and rate limits; contact override remains audited and normalized",
+      "status": "passed"
+    },
+    {
+      "name": "Purchasing identification and original photos are tenant-private and audited",
+      "status": "passed"
+    },
+    {
+      "name": "Preferred and substitute barcodes match; mismatches require reasoned authorized override",
+      "status": "passed"
+    },
+    {
+      "name": "Supplier offers retain normalized unit cost and immutable comparison history",
+      "status": "passed"
+    },
+    {
+      "name": "Configured approval blocks direct ordering and conversion is idempotent",
+      "status": "passed"
+    },
+    {
+      "name": "Receiving cannot bypass configured verification through legacy PO or stock RPCs",
+      "status": "passed"
+    },
+    {
+      "name": "Verified receiving preserves lot accounting, partial quantities and exact retry idempotency",
+      "status": "passed"
+    },
+    {
+      "name": "Inventory purchasing projections show operational records without historical costs",
+      "status": "passed"
+    },
+    {
+      "name": "Failed receiving checklist rolls back stock and override audit without approval",
+      "status": "passed"
+    },
+    {
+      "name": "Production reservations are idempotent commitments; accepted-order demand is replaced once by linked batches",
+      "status": "passed"
+    },
+    {
+      "name": "Latest approved normalized supplier cost drives full recipe cost and target margin without exposing costs to production",
+      "status": "passed"
+    },
+    {
+      "name": "Projected stock subtracts forecast and reservation once and rounds suggestions to supplier packs",
+      "status": "passed"
+    },
+    {
+      "name": "Existing FEFO consumption releases reservations on completion, records waste once and traces supplier lot into sale",
+      "status": "passed"
+    },
+    {
+      "name": "Operational role projections hide costs, reject cross-tenant recall and return stable exception IDs",
+      "status": "passed"
+    },
+    {
+      "name": "Workspace ownership is established atomically at bootstrap; employees cannot claim it",
+      "status": "passed"
+    },
+    {
+      "name": "Workspace privileged lifecycle RPCs are denied to authenticated browser roles",
+      "status": "passed"
+    },
+    {
+      "name": "Workspace exports are shop-scoped and remove PINs/passwords/tokens recursively",
+      "status": "passed"
+    },
+    {
+      "name": "Deletion refuses missing/stale backup, wrong name and missing confirmations; owner can cancel",
+      "status": "passed"
+    },
+    {
+      "name": "Restore creates a new workspace, never replaces an existing ID or membership",
+      "status": "passed"
+    },
+    {
+      "name": "Restore rejects foreign rows, credentials, unsupported tables and foreign public references atomically",
+      "status": "passed"
+    },
+    {
+      "name": "Full supported table snapshot roundtrips through UUID remapping into an isolated workspace",
+      "status": "passed"
+    },
+    {
+      "name": "Permission presets protect owner and admin grants, support manager/accounting, and audit old/new customization",
+      "status": "passed"
+    },
+    {
+      "name": "Import validates every row and rejects duplicates, malformed values, phones and foreign inventory without partial writes",
+      "status": "passed"
+    },
+    {
+      "name": "Imported opening stock uses ledgers; exact retries replay once and changed retries reject atomically",
+      "status": "passed"
+    },
+    {
+      "name": "Setup progress and enriched search remain tenant-scoped, permission-aware and bounded",
+      "status": "passed"
+    },
+    {
+      "name": "Full operational snapshot restores recipes, cash/stock ledgers, lots and reservations without replaying business side effects",
+      "status": "passed"
+    },
+    {
+      "name": "Expired recovery can be permanently purged only for its confirmed owner and leaves no partial tenant data",
+      "status": "passed"
+    },
+    {
+      "name": "Calendar projects each accepted source once, keeps untimed orders separate and never invents clock times",
+      "status": "passed"
+    },
+    {
+      "name": "Calendar date bounds, event/staff/search filters and pagination are enforced by the server",
+      "status": "passed"
+    },
+    {
+      "name": "Calendar flags pickup-before-completion, ingredient commitment shortage, late and overdue deliveries",
+      "status": "passed"
+    },
+    {
+      "name": "Calendar roles and tenant checks block hidden event types, financial fields and foreign records",
+      "status": "passed"
+    },
+    {
+      "name": "Production rescheduling changes the original batch once with assignment, optimistic concurrency and old/new audit",
+      "status": "passed"
+    },
+    {
+      "name": "Production scheduling rejects foreign staff, invalid intervals, missing permission and records that changed",
+      "status": "passed"
+    },
+    {
+      "name": "Pickup and delivery rescheduling updates existing sources, and source-module date edits also create audit",
+      "status": "passed"
+    },
+    {
+      "name": "Calendar notification IDs are stable and deduplicated in the existing notification centre",
+      "status": "passed"
+    },
+    {
+      "name": "Pending workspace deletion blocks Calendar reads and schedule changes",
+      "status": "passed"
+    },
+    {
+      "name": "RC10 removes unlinked zero-stock products and audits the actor and original ID",
+      "status": "passed"
+    },
+    {
+      "name": "RC10 archives products with inventory or real production links and blocks direct cascading deletion",
+      "status": "passed"
+    },
+    {
+      "name": "RC10 deletes unused customers but archives linked customer orders without changing history",
+      "status": "passed"
+    },
+    {
+      "name": "RC10 backups include the archive flag instead of reactivating archived customers",
+      "status": "passed"
+    },
+    {
+      "name": "RC10 archives stay out of new order pickers; staff cannot bypass removal via direct writes",
+      "status": "passed"
+    },
+    {
+      "name": "RC10 removal rechecks history under lock and rejects a stale delete decision",
+      "status": "passed"
+    },
+    {
+      "name": "RC10 removal RPCs reject staff, foreign-shop IDs, inactive and pending-deletion workspaces",
+      "status": "passed"
+    },
+    {
+      "name": "RC11 publishes explicitly enabled business contacts only, without staff details",
+      "status": "passed"
+    },
+    {
+      "name": "RC11 registers independent devices, updates the same device and blocks account takeover",
+      "status": "passed"
+    },
+    {
+      "name": "RC11 transactional request triggers queue each event/device once and respect alert preferences",
+      "status": "passed"
+    },
+    {
+      "name": "RC11 foreground cursors use server time and support same-timestamp pagination without duplicates",
+      "status": "passed"
+    },
+    {
+      "name": "RC11 push leases are exclusive and exclude revoked staff, disabled preferences and frozen workspaces",
+      "status": "passed"
+    },
+    {
+      "name": "RC11 unregister removes only the current account device and cascades queued deliveries",
+      "status": "passed"
+    },
+    {
+      "name": "RC11 public custom-cake requests retain replay identity and accept into the original cake workflow",
+      "status": "passed"
+    },
+    {
+      "name": "RC12 ten scientific units convert only within family, with explicit US cooking ratios",
+      "status": "passed"
+    },
+    {
+      "name": "RC12 ingredient profiles preserve balances, enforce scientific factors and configure packaging and density explicitly",
+      "status": "passed"
+    },
+    {
+      "name": "RC12 custom units are workspace scoped, reject duplicates and preserve optional explicit reference factors",
+      "status": "passed"
+    },
+    {
+      "name": "RC12 purchase order captures three bags as 75000 g and receiving two bags adds exactly 50000 g once",
+      "status": "passed"
+    },
+    {
+      "name": "RC12 profile edits cannot reinterpret an existing order snapshot; inventory projections hide source costs",
+      "status": "passed"
+    },
+    {
+      "name": "RC12 recipes normalize half a kilogram and preserve the exact entered unit in the current recipe version",
+      "status": "passed"
+    },
+    {
+      "name": "RC12 approval needs retain purchase units through approved order creation without double conversion",
+      "status": "passed"
+    },
+    {
+      "name": "RC12 legacy gallery normalizes once, promotes next primary and rejects unowned replacements atomically",
+      "status": "passed"
+    },
+    {
+      "name": "RC12 custom appearance publishes only validated tenant assets, bounds readability and stays token scoped",
+      "status": "passed"
+    },
+    {
+      "name": "RC12 per-order package-size overrides freeze the chosen factor without changing ingredient setup",
+      "status": "passed"
+    },
+    {
+      "name": "RC12 configured custom base units save atomically without losing opening stock",
+      "status": "passed"
+    },
+    {
+      "name": "RC12 backups restore custom units, profiles, source snapshots and decorative media references together",
+      "status": "passed"
+    }
+  ],
+  "limitations": [
+    "Live Supabase deployment, real bcrypt PIN checks, storage HTTP upload, Edge Functions and browser UAT still require target-environment verification."
+  ]
+}

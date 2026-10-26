@@ -477,11 +477,31 @@
   {
     "order": 96,
     "file": "202610201800_customer_pickup_notifications.sql",
-    "sha256": "2ca7043ad33adbad1fa55c89c7098bab46316892c24806e829cb0bd2bfb6980c"
+    "sha256": "639cdc027212f368e5401c5bba0ca16c16c87ad55479fbc6bf1bf74961acba06"
   },
   {
     "order": 97,
     "file": "202610231200_customer_restore_whatsapp_alerts.sql",
     "sha256": "4c79dc372a056b746910f146c7072d0fbf14b1d2ef5b4b5411113fca1d311c16"
+  },
+  {
+    "order": 98,
+    "file": "202610241200_catalogue_about.sql",
+    "sha256": "aad3b64a28f9441d144a4fcad3c072c17924b4319a58224104eb9277313a80b5"
+  },
+  {
+    "order": 99,
+    "file": "202610241300_about_page_highlight.sql",
+    "sha256": "90451a7a71929ca95fbcdb4808f5377164d5df225a57d0729a322c02734e590e"
+  },
+  {
+    "order": 100,
+    "file": "202610251000_customer_recognition.sql",
+    "sha256": "3f63d069fdd2f0a8c2b53da2a80400eecb529990b53f78f0d44507c9f305415a"
+  },
+  {
+    "order": 101,
+    "file": "202610251600_independent_catalogue_editors.sql",
+    "sha256": "8a12b73f9597fcf8418907fa3ea3ada9b3e5e204ef1904815474d497cd28effd"
   }
 ]

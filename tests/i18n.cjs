@@ -1,9 +1,9 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),Module=require('node:module'),esbuild=require('esbuild'),React=require('react'),Renderer=require('react-test-renderer');
 const root=path.resolve(__dirname,'..'),storage=new Map();
 global.localStorage={getItem:key=>storage.get(key)??null,setItem:(key,value)=>storage.set(key,String(value))};
-global.window={location:{origin:'https://test.invalid',search:''},addEventListener(){},dispatchEvent(){}};global.location=window.location;global.document={documentElement:{lang:''},addEventListener(){},removeEventListener(){}};
+global.window={location:{pathname:'/',origin:'https://test.invalid',search:''},addEventListener(){},dispatchEvent(){}};global.location=window.location;global.document={documentElement:{lang:''},addEventListener(){},removeEventListener(){}};
 async function main(){
- const result=await esbuild.build({stdin:{contents:"export * from './src/i18n';export {CatalogueExportModal} from './src/Catalogue'",resolveDir:root,loader:'tsx'},bundle:true,write:false,platform:'node',format:'cjs',packages:'external',jsx:'automatic',logOverride:{'empty-import-meta':'silent'},plugins:[{name:'mock',setup(build){build.onLoad({filter:/[\\/]lib[\\/]supabase\.ts$/},()=>({contents:'export const supabase=null;export const supabaseConfigured=false;',loader:'ts'}))}}]});
+ const result=await esbuild.build({stdin:{contents:"export * from './src/i18n';export {CatalogueExportModal} from './src/Catalogue'",resolveDir:root,loader:'tsx'},bundle:true,write:false,loader:{'.css':'empty'},platform:'node',format:'cjs',packages:'external',jsx:'automatic',logOverride:{'empty-import-meta':'silent'},plugins:[{name:'mock',setup(build){build.onLoad({filter:/[\\/]lib[\\/]supabase\.ts$/},()=>({contents:'export const supabase=null;export const supabaseConfigured=false;',loader:'ts'}))}}]});
  const compiled=new Module(path.join(__dirname,'i18n-compiled.cjs'),module);compiled.paths=Module._nodeModulePaths(__dirname);compiled._compile(result.outputFiles[0].text,path.join(__dirname,'i18n-compiled.cjs'));
  const api=compiled.exports;let tree;
  await Renderer.act(async()=>{tree=Renderer.create(React.createElement(api.LanguageSelector,{id:'test-language'}))});

@@ -1,28 +1,6 @@
-# Current release: RC19 — 2026-10-23
+# RC25 migration order
 
-**Not tested, build-validated, configured against live services or deployed.** No external service was accessed. Earlier validation reports in this source are historical and do not apply to this update.
-
-Read [change report](COUNTERNEST_NEXT_UPDATE_CHANGE_REPORT.md), [manual migration/WhatsApp/deployment guide](MANUAL_DEPLOYMENT_RC19.md), and [file inventory](MODIFIED_FILES_RC19.md). RC18 upgrades require only migration 97. WhatsApp requires separate Meta setup, approved templates, private server credentials, webhook/scheduler and explicit recipient consent.
-
----
-
-# Current release: RC18 customer pickup notifications
-
-**Offline source update only — not tested, built, type-checked, UAT-checked or deployed.** No live services were accessed. Historical validation reports below/in this package do not validate this update.
-
-Start with [Customer pickup update](CUSTOMER_PICKUP_NOTIFICATIONS_UPDATE.md) and [manual migration/deployment instructions](MANUAL_DEPLOYMENT_RC18.md). RC17 upgrades require migration 96, `202610201800_customer_pickup_notifications.sql`. Customer push also requires server configuration and explicit device permission. See [changed files](MODIFIED_FILES_RC18.md).
-
----
-
-> RC17 update: follow MANUAL_DEPLOYMENT_RC17.md and NOTIFICATION_SETUP.md first. One new migration follows the 94-file RC16 baseline. This release is not tested or build-validated. Earlier guidance below is retained for baseline context.
-
-> RC14 current release: 2.0.0-rc.14, 2026-10-18-blended-branding. No additional SQL when upgrading RC13; all 94 migrations are unchanged. Use INSTALL_UPGRADE_GUIDE.md, BRANDING_IMPLEMENTATION.md and BUILD_VALIDATION.json for current scope. Earlier release-specific notes below remain historical.
-
-> RC13 current release: 2.0.0-rc.13, build 2026-10-18-accessibility. Upgrading RC12 requires no additional SQL; all 94 migrations are unchanged. Use INSTALL_UPGRADE_GUIDE.md, ACCESSIBILITY_AUDIT.md and BUILD_VALIDATION.json for current scope. Earlier release-specific passages below are historical context.
-
-# Supabase migration order
-
-RC11 upgrades apply only migrations 93 and 94, in order, before the RC12 frontend. Fresh projects apply all 94 files. The original 92 files are unchanged. Back up first and review unknown units after upgrade.
+Apply only migrations absent from your target migration history, in this order. Do not replay applied migrations. Read MANUAL_DEPLOYMENT_RC25.md for the RC24 line-ending correction and upgrade procedure.
 
 1. 20260815_initial.sql
 2. 20260815_logo_settings.sql
@@ -118,5 +96,10 @@ RC11 upgrades apply only migrations 93 and 94, in order, before the RC12 fronten
 92. 202610181200_customer_experience_notifications.sql
 93. 202610181600_ingredient_measurement_units.sql
 94. 202610181700_gallery_catalogue_appearance.sql
-
-
+95. 202610201200_persistent_preorder_notifications.sql
+96. 202610201800_customer_pickup_notifications.sql
+97. 202610231200_customer_restore_whatsapp_alerts.sql
+98. 202610241200_catalogue_about.sql
+99. 202610241300_about_page_highlight.sql
+100. 202610251000_customer_recognition.sql
+101. 202610251600_independent_catalogue_editors.sql

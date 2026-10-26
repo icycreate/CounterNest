@@ -68,6 +68,7 @@ module.exports=async({db,check,scalar,rejects,other,emp})=>{
   await rejects("select set_catalogue_preorder_status($1,'awaiting_deposit','collected',null)",[request],/Invalid/);
   const customer=await scalar("insert into customers(shop_id,name) values($1,'Sample Customer') returning id",[shop]);
   await db.query("select set_config('test.user',$1,false)",[staff]);await rejects("select schedule_catalogue_preorder($1,$2,now()+interval '3 days',now()+interval '2 days')",[request,customer],/Administrator/);await db.query("select set_config('test.user',$1,false)",[uid]);
+  await scalar("select resolve_customer_recognition($1,0,gen_random_uuid(),'link',$2,'Confirmed with customer for scheduling')",[request,customer]);
   order=await scalar("select schedule_catalogue_preorder($1,$2,now()+interval '3 days',now()+interval '2 days')",[request,customer]);
   assert.equal(await scalar("select schedule_catalogue_preorder($1,$2,now()+interval '3 days',now()+interval '2 days')",[request,customer]),order);
   assert.equal(Number(await scalar('select count(*) from scheduled_customer_orders where shop_id=$1',[shop])),1);

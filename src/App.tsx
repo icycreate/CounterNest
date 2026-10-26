@@ -1,4 +1,4 @@
-import {CatalogueAboutEditor} from './CatalogueAbout'
+import {CatalogueSettingsEditors} from './CatalogueContentEditors'
 import {WhatsAppOrderSettings} from './WhatsAppOrderSettings'
 import {PosProductBrowser,PosOptions,usePosCatalogue} from './PosProductBrowser'
 import {BrandLogo} from './BrandLogo'
@@ -1726,7 +1726,7 @@ function SettingsPage({preferences,theme,setTheme,shopName,setShopName,logoUrl,s
       <ChangePasswordPanel showToast={showToast}/>
       <Card className="panel language-settings-panel"><h2>{tr('System Language')}</h2><p className="muted">{tr("Choose your system language. Business and product content stays as entered.")}</p><FormField>{tr('System Language')}<SelectField value={uiLanguage} onChange={e=>setUiLanguage(e.target.value as UiLanguage)}><option value="en">{tr('English')}</option><option value="es">{tr("Español")}</option><option value="zh-TW">繁體中文</option><option value="zh-CN">简体中文</option></SelectField></FormField></Card>
 
-      {role==='admin'&&<Card className="panel"><h2>{tr('Catalogue Settings')}</h2><CatalogueAboutEditor key={shopId}/></Card>}{preferences}<Card className="panel">
+      {role==='admin'&&<Card className="panel"><h2>{tr('Catalogue Settings')}</h2><CatalogueSettingsEditors key={shopId}/></Card>}{preferences}<Card className="panel">
         <h2><Palette size={20}/>{' '+tr("Appearance")}</h2>
         <p className="muted">{tr("Each future business can choose a preset or its own page colors.")}</p>
         <div className="theme-presets">{presets.map(p=><Button type="submit" variant="secondary" key={p.name} data-name={p.name} className={preset===p.name?'active':''} onClick={()=>{setPreset(p.name);setTheme(p.t)}}><span style={{background:p.t.primary}}></span><span style={{background:p.t.background}}></span>{p.name}</Button>)}</div>

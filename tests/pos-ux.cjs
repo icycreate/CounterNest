@@ -1,9 +1,9 @@
 const assert=require('node:assert/strict'),path=require('node:path'),Module=require('node:module'),esbuild=require('esbuild'),React=require('react'),Renderer=require('react-test-renderer');
 const store=new Map(),listeners=new Map();let failStorage=false;
 global.localStorage={getItem:k=>store.get(k)??null,setItem:(k,v)=>{if(failStorage)throw Error('quota');store.set(k,v)}};
-global.window={addEventListener:(k,f)=>listeners.set(k,f),removeEventListener:(k)=>listeners.delete(k),confirm:()=>true};global.document={querySelector:()=>null};
+global.window={location:{pathname:'/',search:'',origin:'http://localhost'},addEventListener:(k,f)=>listeners.set(k,f),removeEventListener:(k)=>listeners.delete(k),confirm:()=>true};global.document={querySelector:()=>null};
 const base={id:'p1',name:'Bread',category:'Bread',price:5,stock:5,lowAt:1,active:true,qty:2};
-async function main(){const result=await esbuild.build({entryPoints:[path.join(__dirname,'../src/PosTools.tsx')],bundle:true,write:false,format:'cjs',platform:'node',packages:'external',jsx:'automatic'});const m=new Module(__filename,module);m.paths=module.paths;m._compile(result.outputFiles[0].text,__filename);const {holdSelections,readPosMemory,savePosMemory,PosTools}=m.exports;const baselineListeners=new Map(listeners);
+async function main(){const result=await esbuild.build({entryPoints:[path.join(__dirname,'../src/PosTools.tsx')],bundle:true,write:false,loader:{'.css':'empty'},format:'cjs',platform:'node',packages:'external',jsx:'automatic'});const m=new Module(__filename,module);m.paths=module.paths;m._compile(result.outputFiles[0].text,__filename);const {holdSelections,readPosMemory,savePosMemory,PosTools}=m.exports;const baselineListeners=new Map(listeners);
  assert.deepEqual(holdSelections([{...base,customerName:'Private',price:9}]),[{product_id:'p1',qty:2}]);
  assert.deepEqual(holdSelections([{...base,variantId:'v1',comboId:'bundle',comboChoices:[{product_id:'p2',variant_id:'v2',name:'Do not persist'}]}]),[{product_id:'p1',qty:2,variant_id:'v1',combo_id:'bundle',choices:[{product_id:'p2',variant_id:'v2'}]}]);
  assert.throws(()=>holdSelections([{...base,selectionRequestId:'linked'}]));assert.throws(()=>holdSelections([{...base,qty:0}]));assert.throws(()=>holdSelections([{...base,qty:1.5}]));

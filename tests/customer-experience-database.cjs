@@ -16,7 +16,7 @@ module.exports=async({db,check,scalar,rejects})=>{
  d1=await scalar('select register_order_push($1,$2)',[JSON.stringify(sub(1)),JSON.stringify({push:true,preorder:true,catalogue:true})]);d2=await scalar('select register_order_push($1,$2)',[JSON.stringify(sub(2)),JSON.stringify({push:true,preorder:true,catalogue:false})]);assert.notEqual(d1,d2);
  assert.equal(await scalar('select register_order_push($1,$2)',[JSON.stringify(sub(1)),JSON.stringify({push:true,preorder:true,catalogue:true})]),d1);
  await db.query("select set_config('test.user',$1,false)",[cash]);await rejects('select register_order_push($1,$2)',[JSON.stringify(sub(1)),'{}'],/previous account/);
- await db.query("select set_config('test.user',$1,false)",[inv]);await rejects('select register_order_push($1,$2)',[JSON.stringify(sub(3)),'{}'],/Customer service/);await rejects('select get_order_alerts(null)',[],/Customer service/);await db.query("select set_config('test.user',$1,false)",[u]);
+ await db.query("select set_config('test.user',$1,false)",[inv]);await rejects('select register_order_push($1,$2)',[JSON.stringify(sub(3)),'{}'],/Customer service|Order handling/);await rejects('select get_order_alerts(null)',[],/Customer service|Order handling/);await db.query("select set_config('test.user',$1,false)",[u]);
  assert.equal(await scalar("select has_function_privilege('authenticated','lease_order_push()','execute')"),false);assert.equal(await scalar("select has_function_privilege('anon','register_order_push(jsonb,jsonb)','execute')"),false);
  });
  let selection,event;
@@ -24,7 +24,7 @@ module.exports=async({db,check,scalar,rejects})=>{
  selection=await scalar("insert into customer_selection_requests(shop_id,display_config_id,target_station_label) values($1,$2,'Main POS') returning id",[s,foreign]);
  event=await scalar('select id from order_alert_events where record_id=$1',[selection]);assert(event);assert.equal(Number(await scalar('select count(*) from order_push_deliveries where event_id=$1',[event])),1);
  await db.query('update customer_selection_requests set customer_note=$2 where id=$1',[selection,'Update does not notify twice']);assert.equal(Number(await scalar('select count(*) from order_alert_events where record_id=$1',[selection])),1);
- await db.query("insert into catalogue_preorder_requests(shop_id,display_config_id,client_key,payload,customer_name,preferred_method,contact_value,items,summary,estimated_subtotal) values($1,$2,gen_random_uuid(),'{\"type\":\"custom_cake\"}','Public Customer','phone','+5016001234','[]','{}',0)",[s,foreign]);assert.equal(Number(await scalar("select count(*) from order_alert_events where shop_id=$1 and kind='custom_cake'",[s])),1);
+ await db.query("insert into catalogue_preorder_requests(shop_id,display_config_id,client_key,payload,customer_name,preferred_method,contact_value,items,summary,estimated_subtotal) values($1,$2,gen_random_uuid(),'{\"type\":\"custom_cake\"}','Public Customer','phone','+5016001234','[]','[]',0)",[s,foreign]);assert.equal(Number(await scalar("select count(*) from order_alert_events where shop_id=$1 and kind='custom_cake'",[s])),1);
  assert.equal(Number(await scalar('select count(*) from order_push_deliveries q join order_alert_events e on e.id=q.event_id where e.shop_id=$1',[s])),3);
  });
  await check('RC11 foreground cursors use server time and support same-timestamp pagination without duplicates',async()=>{

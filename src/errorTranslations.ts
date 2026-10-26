@@ -1,4 +1,17 @@
 export const errorTranslations:Record<string,Record<string,string>> = {
+"Content changed elsewhere. Reload before saving.":{"es": "El contenido cambió en otra sesión. Vuelva a cargar antes de guardar.", "zh-TW": "內容已在其他工作階段變更。請重新載入後儲存。", "zh-CN": "内容已在其他会话中更改。请重新加载后保存。"},
+"Invalid catalogue content":{"es": "Contenido del catálogo no válido", "zh-TW": "目錄內容無效", "zh-CN": "目录内容无效"},
+"Invalid content language":{"es": "Idioma del contenido no válido", "zh-TW": "內容語言無效", "zh-CN": "内容语言无效"},
+"Invalid catalogue text":{"es": "Texto del catálogo no válido", "zh-TW": "目錄文字無效", "zh-CN": "目录文字无效"},
+"Invalid home display settings":{"es": "Configuración de inicio no válida", "zh-TW": "首頁顯示設定無效", "zh-CN": "首页显示设置无效"},
+"Invalid visibility setting":{"es": "Configuración de visibilidad no válida", "zh-TW": "顯示設定無效", "zh-CN": "显示设置无效"},
+"Too many images":{"es": "Demasiadas imágenes", "zh-TW": "圖片數量過多", "zh-CN": "图片数量过多"},
+"Invalid image reference":{"es": "Referencia de imagen no válida", "zh-TW": "圖片參照無效", "zh-CN": "图片引用无效"},
+"Invalid image caption":{"es": "Descripción de imagen no válida", "zh-TW": "圖片說明無效", "zh-CN": "图片说明无效"},
+"Invalid categories":{"es": "Categorías no válidas", "zh-TW": "分類無效", "zh-CN": "分类无效"},
+"Category name required":{"es": "Se requiere el nombre de la categoría", "zh-TW": "請輸入分類名稱", "zh-CN": "请输入分类名称"},
+"Category unavailable":{"es": "Categoría no disponible", "zh-TW": "分類無法使用", "zh-CN": "分类不可用"},
+
   "A Daily Cash record already exists for today and cannot be reopened": {
     "es": "Ya existe el registro de caja de hoy y no puede reabrirse",
     "zh-TW": "今日已有每日現金紀錄，無法重新開啟",

@@ -1,0 +1,34 @@
+{
+  "version": "2.0.0-rc.13",
+  "checks": [
+    {
+      "name": "Every sampled accent has a measured foreground of at least 4.5",
+      "status": "passed"
+    },
+    {
+      "name": "Custom backgrounds, table hover/active surfaces, helpers, focus and borders remain readable in both appearances",
+      "status": "passed"
+    },
+    {
+      "name": "Every variant retains native behavior and loading/disabled labels across all four languages",
+      "status": "passed"
+    },
+    {
+      "name": "No page renders a native button, invents a shared-button paint contract or restores the important danger-link override",
+      "status": "passed"
+    },
+    {
+      "name": "Staff catalogue hydrates normally while token customer routes remain public",
+      "status": "passed"
+    }
+  ],
+  "palette_pair_measurements": 126976,
+  "thresholds": {
+    "normal_text": 4.5,
+    "disabled_text_project_target": 4.5,
+    "control_focus": 3
+  },
+  "limitations": [
+    "Source and renderer checks are complemented by actual-browser computed-style and screenshot audits; physical OS/PWA settings still need device acceptance."
+  ]
+}

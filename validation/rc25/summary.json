@@ -1,0 +1,14 @@
+{
+  "release": "2.0.0-rc.25",
+  "offline": true,
+  "deployed": false,
+  "build": "passed",
+  "typescript": "passed as part of build",
+  "migration_count": 101,
+  "database_regression_groups": 145,
+  "focused_database_groups": 11,
+  "offline_browser_groups": 9,
+  "lint": "not configured",
+  "full_legacy_test_chain": "not green; six legacy suite groups remain failing; see report and logs",
+  "live_backend_push_storage": "not tested"
+}

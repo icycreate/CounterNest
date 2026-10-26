@@ -1,3 +1,9 @@
+# CounterNest RC25 — Independent Catalogue Editors
+
+Locally implemented and validated; **not deployed**. Start with [change/test report](RC25_CHANGE_REPORT.md), [manual deployment](MANUAL_DEPLOYMENT_RC25.md), [business user guide](CATALOGUE_EDITORS_USER_GUIDE.md), and [modified files](MODIFIED_FILES_RC25.md). Earlier release reports below are historical.
+
+---
+
 # RC21 — Tooltip and hover contrast correction
 
 **Untested, not type-checked, not build-validated and undeployed.** Read [corrections and manual update instructions](TOOLTIP_HOVER_CONTRAST_FIX.md) and [modified files](MODIFIED_FILES_RC21.md). No new migrations, dependencies or environment variables. Historical validation reports do not apply to RC21.

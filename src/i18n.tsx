@@ -34,7 +34,7 @@ export function detectBrowserLanguage():UiLanguage{
 /** Resolve before first render, including private Track Order and installed PWA entry routes. */
 export function isCustomerLanguageRoute(){
  if(typeof window==='undefined')return false
- const path=window.location.pathname.replace(/\/$/,''),params=new URLSearchParams(window.location.search)
+ const path=(window.location?.pathname??'').replace(/\/$/,''),params=new URLSearchParams(window.location?.search)
  return ['/request-status','/catalogue-display','/ready-display'].includes(path)||path==='/catalogue'&&params.has('token')||['customer_display','catalogue_display','ready_display'].some(k=>params.has(k))
 }
 function read(key:string):UiLanguage|null{const memory=sessionChoices.get(key);if(memory)return memory;try{const value=globalThis.localStorage?.getItem(key);return isUiLanguage(value)?value:null}catch{return null}}

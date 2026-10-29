@@ -1,0 +1,11 @@
+[
+  "first Dashboard visit opens an inline introduction without navigation",
+  "manual section navigation, dismissal and saved-step resume after reload",
+  "four languages switch immediately",
+  "active payment defers the walkthrough and preserves its step",
+  "completion suppresses automatic reopening; tutorial can be restarted",
+  "role filtering and independent account/workspace progress",
+  "mobile tablet desktop and Light/Dark custom accent layouts avoid overflow",
+  "blocked browser storage does not break the tutorial",
+  "no browser runtime errors"
+]

@@ -1,16 +1,14 @@
 {
-  "version": "2.0.0-rc.25",
-  "baseline_version": "2.0.0-rc.24",
-  "baseline_migration_count": 100,
-  "migration_count": 101,
-  "upgrade_migrations": [
-    "202610251600_independent_catalogue_editors.sql"
-  ],
-  "name": "CounterNest Independent Catalogue Editors RC25",
-  "build": "2026-10-26",
+  "version": "2.0.0-rc.30",
+  "baseline_version": "2.0.0-rc.29",
+  "baseline_migration_count": 105,
+  "migration_count": 105,
+  "upgrade_migrations": [],
+  "name": "CounterNest v6.2 Mobile UI — RC30",
+  "build": "2026-10-28",
   "product": "CounterNest POS",
   "release_type": "source-update",
   "desktop_installer": false,
-  "validation": "Local production build, PostgreSQL regression, focused editor/security tests, offline browser tests and selected frontend suites; see RC25_CHANGE_REPORT.md for failures and limits",
+  "validation": "See V62_IMPLEMENTATION_REPORT.md",
   "deployment_status": "Not deployed; no live systems accessed"
 }

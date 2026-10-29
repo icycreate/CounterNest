@@ -1,0 +1,13 @@
+[
+  "manager quick action opens allowed orders route; sales metric remains hidden",
+  "dashboard failure is visible and successful refresh recovers",
+  "workspace change clears previous freshness timestamp",
+  "available variant price and barcode filtering",
+  "simple product stock quantity and low-stock label",
+  "manager mobile role label and Escape navigation",
+  "publication review traps focus and Escape cancels without publishing",
+  "publication system labels in all four languages",
+  "review dialog responsive Light/Dark layouts and distinct foreground/background",
+  "UUID generation works without secure-context randomUUID",
+  "no browser runtime errors"
+]

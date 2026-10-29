@@ -1,3 +1,7 @@
+import {SetupPreferences,usePosPaymentMethods} from './SetupPreferences'
+import {DraftControls,useEditorDraft} from './EditorDraft'
+import {registerDraftSave} from './appNavigation'
+import {GuidedTutorial} from './GuidedTutorial'
 import {CatalogueSettingsEditors} from './CatalogueContentEditors'
 import {WhatsAppOrderSettings} from './WhatsAppOrderSettings'
 import {PosProductBrowser,PosOptions,usePosCatalogue} from './PosProductBrowser'
@@ -188,7 +192,7 @@ export default function App() {
   const idleLogoutInProgress = useRef(false)
   const uiLanguage=useUiLanguage()
   const scope=`${shopId??'public'}:${accountEmail}`
-  const {workspace,error:workspaceError,ready:workspaceReady,save:savePreferences}=useWorkspace(scope,authenticated&&!mustChangePassword&&Boolean(shopId),shopId)
+  const {workspace,error:workspaceError,ready:workspaceReady,save:savePreferences,refreshing:workspaceRefreshing,lastUpdated:workspaceLastUpdated}=useWorkspace(scope,authenticated&&!mustChangePassword&&Boolean(shopId),shopId)
   const [record,setRecord]=useState<SearchResult|null>(null)
   useEffect(()=>{if(authReady&&(!authenticated||!shopId||mustChangePassword||pendingWorkspace||workspaceReady||workspaceError))notifyStartupReady()},[authReady,authenticated,shopId,mustChangePassword,pendingWorkspace,workspaceReady,workspaceError])
   useEffect(()=>{const refresh=()=>void hydrateFromSupabase();window.addEventListener('counternest:workspace-lifecycle',refresh);return()=>window.removeEventListener('counternest:workspace-lifecycle',refresh)},[authenticated])
@@ -309,7 +313,7 @@ export default function App() {
 
     const [{ data: shop }, { data: productRows }, { data: customerRows }, { data: rewardRows }, { data: saleRows }, { data: loyaltyProgram }, {data:translationRows}, {data:customerCardRows}] = await Promise.all([
       supabase.from('shops').select('name,logo_url,address,phone,business_number,email,currency,timezone,receipt_footer,tax_rate,theme,auto_logout_enabled,auto_logout_minutes').eq('id', profile.shop_id).single(),
-      supabase.from('products').select('id,name,barcode,icon_emoji,price,cost_price,stock,low_stock_at,active,image_url,categories(id,name)').eq('shop_id', profile.shop_id).order('name'),
+      supabase.from('products').select('id,name,barcode,icon_emoji,price,cost_price,stock,low_stock_at,active,image_url,updated_at,categories(id,name)').eq('shop_id', profile.shop_id).order('name'),
       supabase.from('customers').select('id,name,email,phone,notes,loyalty_status,visits,total_spent').eq('shop_id', profile.shop_id).eq('active',true).order('name'),
       supabase.from('loyalty_rewards').select('id,name,reward_type,points_cost,stamps_cost,reward_value,product_id,active').eq('shop_id', profile.shop_id).order('name'),
       supabase.from('sales').select('id,receipt_number,total,payment_method,created_at,customer_name_snapshot,status,refunded_total,sale_items(product_name,qty)').eq('shop_id', profile.shop_id).order('created_at', { ascending: false }).limit(50),
@@ -338,7 +342,7 @@ export default function App() {
       localStorage.setItem('counternest.autoLogoutMinutes', String(Number.isFinite(sessionMinutes) && sessionMinutes >= 5 ? sessionMinutes : 30))
       setTheme(normalizeTheme(shop.theme))
     }
-    if (productRows) setProducts(productRows.map((p: any) => ({ id: p.id, name: p.name, barcode: p.barcode ?? undefined, iconEmoji:p.icon_emoji??undefined, category: p.categories?.name??'Other', price: Number(p.price), cost: Number(p.cost_price??0), stock: Number(p.stock), lowAt: Number(p.low_stock_at), active: p.active, image: p.image_url ?? undefined })))
+    if (productRows) setProducts(productRows.map((p: any) => ({ id: p.id, updatedAt:p.updated_at, name: p.name, barcode: p.barcode ?? undefined, iconEmoji:p.icon_emoji??undefined, category: p.categories?.name??'Other', price: Number(p.price), cost: Number(p.cost_price??0), stock: Number(p.stock), lowAt: Number(p.low_stock_at), active: p.active, image: p.image_url ?? undefined })))
     if (customerRows) {
       const mapped: Customer[] = customerRows.map((c: any) => ({ id: c.id, name: c.name, email: c.email ?? '', phone: c.phone ?? '', notes: c.notes ?? '', loyaltyStatus: c.loyalty_status, points: 0, stamps: 0, visits: c.visits, totalSpent: Number(c.total_spent) }))
       const { data: balances } = await supabase.from('loyalty_balances').select('customer_id,points,stamps').eq('shop_id', profile.shop_id)
@@ -471,12 +475,14 @@ export default function App() {
 
   return (
     <div className={`app-shell ${compactSidebar?'compact-sidebar':''}`}>
+      <a className="pos-skip-link" href="#pos-main">{tr('Skip to main content')}</a>
       <Sidebar compact={compactSidebar} onToggleCompact={toggleCompactSidebar} page={page} setPage={setPage} staffName={staffName} role={effectiveRole} shopName={shopName} logoUrl={logoUrl} logout={logout} />
       <MobileNavigation page={page} setPage={setPage} staffName={staffName} role={effectiveRole} shopName={shopName} logoUrl={logoUrl} logout={logout} />
-      <main className="main"><div className="print-business-brand"><BrandLogo logoUrl={logoUrl} businessName={shopName} theme="light"/><strong>{shopName}</strong></div>
+      <main className="main" id="pos-main" tabIndex={-1}><div className="print-business-brand"><BrandLogo logoUrl={logoUrl} businessName={shopName} theme="light"/><strong>{shopName}</strong></div>
         <QuickActionBridge page={page}/>
         <BackButton/>
         <NotificationRuntime key={scope} enabled={['admin','manager','cashier'].includes(effectiveRole)}/><UxHeader logoUrl={logoUrl} role={effectiveRole} page={page} setPage={setPage} workspace={workspace} save={savePreferences} shopName={shopName} onRecord={setRecord}/>
+        <GuidedTutorial key={scope+'-tutorial'} scope={scope} role={effectiveRole} page={page} setPage={setPage}/>
         <WhatsNew key={scope} scope={scope} seen={workspace.preferences.whats_new==="2026-10-17-operations1"} onDismiss={()=>void savePreferences({whats_new:'2026-10-17-operations1'})}/>
         {workspaceError&&<p role="alert">{workspaceError}</p>}
         {record&&<RecordPreview record={record} workspace={workspace} onClose={()=>setRecord(null)} setPage={setPage}/> }
@@ -488,7 +494,7 @@ export default function App() {
         {['planning','production','forecast-shortages'].includes(page)&&<SectionTabs label={tr("Production planning sections")} page={page} setPage={setPage} items={[["planning","Production Plans"],["production","Production Batches"],["forecast-shortages","Forecast & Shortages"]]}/>}
         {['readiness','acceptance','go-live','security-recovery','release-candidate','operations'].includes(page)&&<SectionTabs label={tr("Deployment and readiness sections")} page={page} setPage={setPage} items={[["readiness","Deployment Overview"],["acceptance","Validation"],["go-live","Launch Sign-off"],["security-recovery","Security & Recovery"],["release-candidate","Release Checks"],["operations","System Health"]]}/>}
         {['tasks','checklists','handover','schedule','alerts','analytics'].includes(page)&&<SectionTabs label={tr("Team workspace sections")} page={page} setPage={setPage} items={([['tasks','Tasks'],['checklists','Checklists'],['handover','Shift Handover'],['schedule','Schedule & Attendance'],['alerts','Alerts'],['analytics','Analytics']] as [PageKey,string][]).filter(([key])=>canAccessPage(effectiveRole,key))}/>}
-        {page === 'dashboard' && <>{effectiveRole==='accounting'&&<AccountingSummary/>}{effectiveRole==='cashier'&&<CashierHome scope={scope} customers={customers} onSale={customer=>{if(customer)setSelectedCustomerId(customer);setPage('sale')}}/>}<WorkspaceDashboard workspace={workspace} role={effectiveRole} setPage={setPage} onRecord={setRecord} overview={['admin','cashier'].includes(effectiveRole)?<Dashboard role={effectiveRole} sales={sales} products={products} setPage={setPage} currency={currency}/>:undefined}/>{['admin','inventory','production','manager'].includes(effectiveRole)&&workspace.operational&&<ProductionOperations role={effectiveRole} initialData={workspace.operational} onNavigate={setPage}/>}</>}
+        {page === 'dashboard' && <>{effectiveRole==='accounting'&&<AccountingSummary/>}{effectiveRole==='cashier'&&<CashierHome scope={scope} customers={customers} onSale={customer=>{if(customer)setSelectedCustomerId(customer);setPage('sale')}}/>}<WorkspaceDashboard refreshing={workspaceRefreshing} lastUpdated={workspaceLastUpdated} refreshError={workspaceError} workspace={workspace} role={effectiveRole} setPage={setPage} onRecord={setRecord} overview={['admin','cashier'].includes(effectiveRole)?<Dashboard role={effectiveRole} sales={sales} products={products} setPage={setPage} currency={currency}/>:undefined}/>{['admin','inventory','production','manager'].includes(effectiveRole)&&workspace.operational&&<ProductionOperations role={effectiveRole} initialData={workspace.operational} onNavigate={setPage}/>}</>}
         {page === 'sale' && <NewSale checkoutScope={`${shopId??'demo'}:${accountEmail}`} products={products} customers={customers} rewards={rewards} cart={cart} setCart={setCart} taxRate={taxRate} stampsRequired={stampsRequired} selectedCustomerId={selectedCustomerId} setSelectedCustomerId={setSelectedCustomerId} setCustomers={setCustomers} setProducts={setProducts} setSales={setSales} showToast={showToast} refresh={hydrateFromSupabase} receiptConfig={receiptConfig} />}
         {['scheduled-orders','preparation','purchasing','receiving'].includes(page)&&<CalendarSourcePanel/>}
         {page === 'calendar' && <OperationsCalendar key={scope} scope={scope} timezone={timezone}/>}
@@ -708,6 +714,9 @@ function InitialPasswordChange({accountEmail,onComplete,onLogout}:{accountEmail:
 
 function BusinessOnboarding({accountEmail,onComplete,onLogout}:{accountEmail:string;onComplete:(demoInfo?:{name:string;phone:string;address:string;logoUrl:string|null})=>Promise<void>;onLogout:()=>Promise<void>|void}){
   const [restore,setRestore]=useState(false)
+  const[registrationLogoPath,setRegistrationLogoPath]=useState('')
+  const[registrationReload,setRegistrationReload]=useState(0)
+  const[registrationRevision,setRegistrationRevision]=useState(0),[registrationReady,setRegistrationReady]=useState(!supabaseConfigured),[registrationStatus,setRegistrationStatus]=useState('')
   const[businessName,setBusinessName]=useState('')
   const[phone,setPhone]=useState('')
   const[address,setAddress]=useState('')
@@ -719,6 +728,8 @@ function BusinessOnboarding({accountEmail,onComplete,onLogout}:{accountEmail:str
 
   useEffect(()=>()=>{if(logoPreview?.startsWith('blob:'))URL.revokeObjectURL(logoPreview)},[logoPreview])
 
+  useEffect(()=>{let live=true;if(!supabaseConfigured||!supabase)return;setError('');void supabase.rpc('registration_draft').then(async r=>{if(!live)return;try{if(r.error)throw r.error;if(r.data){setBusinessName(r.data.value.name??'');setPhone(r.data.value.phone??'');setAddress(r.data.value.address??'');setRegistrationRevision(r.data.revision);const path=r.data.value.logo_path??'';setRegistrationLogoPath(path);if(path){const signed=await supabase!.storage.from('onboarding-assets').createSignedUrl(path,300);if(signed.error||!signed.data)throw signed.error??Error('Image unavailable');const response=await fetch(signed.data.signedUrl,{credentials:'omit'});if(!response.ok)throw Error('Image unavailable');const blob=await response.blob();if(!live)return;setLogoBlob(blob);setLogoPreview(URL.createObjectURL(blob))}}if(live)setRegistrationReady(true)}catch(e){if(live)setError(trError((e as Error).message))}});return()=>{live=false}},[registrationReload])
+  async function saveRegistration(exit=false){if(!supabase||!registrationReady||busy)return;setBusy(true);try{let path=registrationLogoPath;if(logoBlob&&!path){const user=await supabase.auth.getUser();if(!user.data.user)throw Error('Sign-in required');path=user.data.user.id+'/'+uid()+'.png';const upload=await supabase.storage.from('onboarding-assets').upload(path,logoBlob,{contentType:'image/png',upsert:false});if(upload.error)throw upload.error;setRegistrationLogoPath(path)}const r=await supabase.rpc('registration_draft',{p_value:{name:businessName,phone,address,logo_path:path},p_revision:registrationRevision});if(r.error)throw r.error;setRegistrationRevision(r.data.revision);setRegistrationStatus('Saved');if(exit)await onLogout()}catch(e){setError(trError((e as Error).message))}finally{setBusy(false)}}
   function chooseLogo(file?:File){
     if(!file)return
     if(!['image/png','image/jpeg','image/webp'].includes(file.type))return setError(trError(tr("Choose a PNG, JPG, or WebP logo.")))
@@ -728,11 +739,11 @@ function BusinessOnboarding({accountEmail,onComplete,onLogout}:{accountEmail:str
   }
   async function keepPreparedLogo(blob:Blob){
     if(logoPreview?.startsWith('blob:'))URL.revokeObjectURL(logoPreview)
-    setLogoBlob(blob);setLogoPreview(URL.createObjectURL(blob));setLogoEditorSrc(null)
+    setRegistrationLogoPath('');setLogoBlob(blob);setLogoPreview(URL.createObjectURL(blob));setLogoEditorSrc(null)
   }
   function removePreparedLogo(){
     if(logoPreview?.startsWith('blob:'))URL.revokeObjectURL(logoPreview)
-    setLogoBlob(null);setLogoPreview(null)
+    setRegistrationLogoPath('');setLogoBlob(null);setLogoPreview(null)
   }
   async function submit(e:FormEvent){
     e.preventDefault();setError(trError(''))
@@ -768,7 +779,7 @@ function BusinessOnboarding({accountEmail,onComplete,onLogout}:{accountEmail:str
     <div className="onboarding-modal" role="dialog" aria-modal="true" aria-labelledby="business-setup-title">
       <LanguageSelector id="onboarding-language"/><div className="onboarding-head"><div className="onboarding-icon"><Store size={24}/></div><div><small>{tr("FIRST-TIME SETUP")}</small><h1 id="business-setup-title">{tr("Tell us about your business")}</h1><p>{tr("This information creates your shop profile and can be changed later in Settings.")}</p></div></div>
       <Button onClick={()=>setRestore(true)}>{tr('Restore from CounterNest Backup')}</Button><form onSubmit={submit}>
-        <div className="onboarding-grid">
+        <fieldset disabled={busy||!registrationReady} style={{border:0,padding:0}}><div className="onboarding-grid">
           <FormField>{tr("Business name")}<InputField value={businessName} onChange={e=>setBusinessName(e.target.value)} placeholder={tr("Your company or shop name")} required/></FormField>
           <FormField>{tr("Business phone number")}<PhoneInput value={phone} onChange={setPhone} placeholder={tr("Business contact number")} required/></FormField>
           <FormField className="full">{tr("Business address")}<InputField value={address} onChange={e=>setAddress(e.target.value)} placeholder={tr("Street, city / district, country")} required/></FormField>
@@ -778,8 +789,8 @@ function BusinessOnboarding({accountEmail,onComplete,onLogout}:{accountEmail:str
           <div className="onboarding-logo-preview"><BrandLogo logoUrl={logoPreview} businessName={businessName}/></div>
           <div className="onboarding-logo-actions"><strong>{tr("Business logo")}</strong><p>{tr("Optional. Upload PNG, JPG or WebP up to 8 MB. You can resize it before saving.")}</p><FormField className="upload-logo-btn"><Upload size={17}/>{logoPreview?tr("Change Logo"):tr("Choose Logo")}<InputField type="file" accept="image/png,image/jpeg,image/webp" onChange={e=>{chooseLogo(e.target.files?.[0]);e.currentTarget.value=''}}/></FormField>{logoPreview&&<Button variant="danger" type="button" className="danger-outline" onClick={removePreparedLogo}><Trash2 size={17}/>{' '+tr("Remove")}</Button>}</div>
         </div>
-        {error&&<div className="error-box">{tr(error)}</div>}
-        <div className="onboarding-actions"><Button variant="ghost" type="button" className="text-button" onClick={onLogout}>{tr("Sign out")}</Button><Button type="submit" variant="primary" className="auth-submit" disabled={busy}>{busy?tr("Creating business…"):tr("Create Business & Open POS")}</Button></div>
+        </fieldset>{error&&<div className="error-box" role="alert">{tr(error)}{!registrationReady&&<Button type="button" onClick={()=>setRegistrationReload(n=>n+1)}>{tr("Reload")}</Button>}</div>}
+        <div className="onboarding-actions"><Button variant="ghost" type="button" className="text-button" onClick={onLogout}>{tr("Sign out")}</Button><Button type="button" disabled={busy||!registrationReady} onClick={()=>void saveRegistration(true)}>{tr("Save & Exit")}</Button><span role="status">{tr(registrationStatus)}</span><Button type="submit" variant="primary" className="auth-submit" disabled={busy||!registrationReady}>{busy?tr("Creating business…"):tr("Create Business & Open POS")}</Button></div>
       </form>
       {logoEditorSrc&&<LogoEditor src={logoEditorSrc} onCancel={()=>setLogoEditorSrc(null)} onUpload={keepPreparedLogo}/>} 
     </div>
@@ -823,6 +834,7 @@ function NewSale(props: {
   selectedCustomerId: string; setSelectedCustomerId: (id: string) => void; setCustomers: React.Dispatch<React.SetStateAction<Customer[]>>; setProducts: React.Dispatch<React.SetStateAction<Product[]>>;
   setSales: React.Dispatch<React.SetStateAction<SaleSummary[]>>; showToast: (m: string) => void; refresh: () => Promise<void>; receiptConfig: ShopReceiptConfig
 }) {
+  const paymentAvailability=usePosPaymentMethods(props.checkoutScope)
   const [pendingCheckout,setPendingCheckout]=useState<CheckoutAttempt|null>(()=>loadCheckout(props.checkoutScope))
   const checkoutLock=useRef(false)
   function rememberCheckout(attempt:CheckoutAttempt|null){saveCheckout(props.checkoutScope,attempt);setPendingCheckout(attempt)}
@@ -920,7 +932,7 @@ function NewSale(props: {
       props.setCart(rebuilt)
     }else{
       const rebuilt:CartLine[]=[]
-      for(const line of lines){const p=pricedProducts.find(p=>p.id===line.product_id);if(!p||!p.active||line.variant_id||line.combo_id||p.stock<lines.filter(x=>x.product_id===p.id).reduce((n,x)=>n+x.qty,0)){props.showToast(trError('A held product is unavailable.'));return false}rebuilt.push({...p,cartKey:p.id,qty:line.qty})}
+      for(const line of lines){const p=pricedProducts.find(p=>p.id===line.product_id);if(!p||!p.active||line.variant_id||line.combo_id||line.option_label||p.stock<lines.filter(x=>x.product_id===p.id).reduce((n,x)=>n+x.qty,0)){props.showToast(trError('A held product is unavailable.'));return false}rebuilt.push({...p,cartKey:p.id,qty:line.qty})}
       props.setCart(rebuilt)
     }
     props.setSelectedCustomerId('');setAppliedRewardId('');return true
@@ -987,7 +999,7 @@ function NewSale(props: {
         {customer?.loyaltyStatus === 'member' && <div className="reward-box"><div className="reward-heading"><strong>{tr("Available Rewards")}</strong>{appliedReward && <Button type="submit" variant="danger" onClick={() => setAppliedRewardId('')}>{tr("Remove")}</Button>}</div>{availableRewards.length === 0 ? <small>{tr("No reward is currently available.")}</small> : <div className="reward-options">{availableRewards.map(r => { const freeMissing = r.type === 'free_product' && r.productId && !props.cart.some(x => x.id === r.productId); return <Button type="submit" variant="secondary" key={r.id} className={appliedRewardId===r.id?'active':''} disabled={Boolean(freeMissing)} onClick={() => setAppliedRewardId(r.id)}><span>{r.name}</span><small>{r.costPoints ? `${r.costPoints} pts` : ''}{r.requiredStamps ? `${r.requiredStamps} stamps` : ''}{freeMissing ? tr(" • add reward item first") : ''}</small></Button>})}</div>}</div>}
         </div><div className="pos-checkout-footer"><div className="totals"><div><span>{tr("Subtotal")}</span><b>{money(subtotal, props.receiptConfig.currency)}</b></div>{discount>0&&<div className="discount-line"><span>{tr("Loyalty Reward")}</span><b>-{money(discount, props.receiptConfig.currency)}</b></div>}<div><span>{tr("Tax (")}{(props.taxRate*100).toFixed(1)}%)</span><b>{money(tax, props.receiptConfig.currency)}</b></div><div className="grand"><span>{tr("Total")}</span><b>{money(total, props.receiptConfig.currency)}</b></div></div>
         {offlineLocked&&<div className="offline-checkout-note"><WifiOff size={16}/>{' '+tr("Reconnect before charging this order. Offline sales are intentionally blocked to protect inventory and loyalty balances.")}</div>}
-        <div className="payments"><Button type="submit" variant="secondary" disabled={!props.cart.length || busy || offlineLocked || (supabaseConfigured&&!currentQuote)} onClick={() => setCashTenderOpen(true)}><WalletCards/>{tr("Cash")}</Button><Button type="submit" variant="secondary" disabled={!props.cart.length || busy || offlineLocked} onClick={() => setPaymentConfirm('card')}><CreditCard/>{tr("Card")}</Button><Button type="submit" variant="secondary" disabled={!props.cart.length || busy || offlineLocked} onClick={() => setPaymentConfirm('qr')}><QrCode/>{tr("QR")}</Button></div>
+        {paymentAvailability.error&&<p role="alert">{trError(paymentAvailability.error)}</p>}<div className="payments"><Button type="submit" variant="secondary" disabled={!paymentAvailability.methods.includes('cash') || !props.cart.length || busy || offlineLocked || (supabaseConfigured&&!currentQuote)} onClick={() => setCashTenderOpen(true)}><WalletCards/>{tr("Cash")}</Button><Button type="submit" variant="secondary" disabled={!paymentAvailability.methods.includes('card') || !props.cart.length || busy || offlineLocked} onClick={() => setPaymentConfirm('card')}><CreditCard/>{tr("Card")}</Button><Button type="submit" variant="secondary" disabled={!paymentAvailability.methods.includes('qr') || !props.cart.length || busy || offlineLocked} onClick={() => setPaymentConfirm('qr')}><QrCode/>{tr("QR")}</Button></div>
         </div>
       </aside>
     </div>
@@ -1126,7 +1138,17 @@ function ProductModal({ product, shopId, categories, onClose, onSaved }: { produ
   const [imageInputKey,setImageInputKey]=useState(0)
   const [emojiOpen,setEmojiOpen]=useState(false)
   const [forceEmoji,setForceEmoji]=useState(false)
-  async function save(e:FormEvent){e.preventDefault();setBusy(true);let image=form.image;let originalImage:string|undefined;const uploadedImagePaths:string[]=[]
+  const [stagedPhoto,setStagedPhoto]=useState<{image:string;original:string}|null>(null)
+  const productDraftValue={form,forceEmoji,photo:stagedPhoto}
+  const productDraft=useEditorDraft({kind:'product',recordKey:product?.id??'new',scope:shopId??'',ready:!!shopId&&supabaseConfigured,value:productDraftValue,base:{},blocked:busy||!!cropFile,onRestore:v=>{setForm(v.form);setForceEmoji(v.forceEmoji);setStagedPhoto(v.photo??null);setImageFile(null);setOriginalImageFile(null)},prepare:async v=>{
+    if(!imageFile||!supabase||!shopId)return v
+    const path=shopId+'/'+uid()+'-draft.jpg',originalPath=shopId+'/'+uid()+'-original'
+    for(const [key,blob]of [[path,imageFile],[originalPath,originalImageFile??imageFile]] as [string,Blob][]){const upload=await supabase.storage.from('product-images').upload(key,blob,{upsert:false,contentType:blob.type});if(upload.error)throw upload.error}
+    const photo={image:supabase.storage.from('product-images').getPublicUrl(path).data.publicUrl,original:supabase.storage.from('product-images').getPublicUrl(originalPath).data.publicUrl}
+    const next={...v,form:{...v.form,image:photo.image},photo};setForm(next.form);setStagedPhoto(photo);setImageFile(null);setOriginalImageFile(null);return next
+  }})
+  useEffect(()=>{if(dialog.current&&supabaseConfigured)return registerDraftSave(dialog.current,()=>productDraft.pending?productDraft.save():Promise.resolve(true))})
+  async function save(e:FormEvent){e.preventDefault();if(busy||productDraft.status==='Saving…'||supabaseConfigured&&!productDraft.loaded)return;setBusy(true);let image=form.image;let originalImage:string|undefined=stagedPhoto?.original;const uploadedImagePaths:string[]=[]
     if(supabaseConfigured&&supabase&&shopId){
       if(imageFile){
         const ext=imageFile.name.split('.').pop()||'jpg'
@@ -1139,18 +1161,19 @@ function ProductModal({ product, shopId, categories, onClose, onSaved }: { produ
       }
       if(forceEmoji) image=undefined
       const {data:cat}=await supabase.from('categories').select('id').eq('shop_id',shopId).eq('name',form.category).maybeSingle()
-      const payload={shop_id:shopId,name:form.name,barcode:form.barcode?.trim()||null,category_id:cat?.id??null,price:form.price,cost_price:form.cost??0,...(product?{}:{stock:form.stock}),low_stock_at:form.lowAt,active:form.active,image_url:image??null,...(imageFile?{original_image:originalImage??image??null,cropped_catalogue_image:image??null}:{}),...(forceEmoji?{original_image:null,cropped_catalogue_image:null}:{}),icon_emoji:form.iconEmoji||null}
-      const res=product?await supabase.from('products').update(payload).eq('id',product.id).select('id,stock').single():await supabase.from('products').insert(payload).select('id,stock').single()
-      if(res.error){if(uploadedImagePaths.length)await supabase.storage.from('product-images').remove(uploadedImagePaths);alert(res.error.message);setBusy(false);return} form.id=res.data.id;form.stock=Number(res.data.stock)
+      const payload={shop_id:shopId,name:form.name,barcode:form.barcode?.trim()||null,category_id:cat?.id??null,price:form.price,cost_price:form.cost??0,...(product?{}:{stock:form.stock}),low_stock_at:form.lowAt,active:form.active,image_url:image??null,...((imageFile||stagedPhoto)?{original_image:originalImage??image??null,cropped_catalogue_image:image??null}:{}),...(forceEmoji?{original_image:null,cropped_catalogue_image:null}:{}),icon_emoji:form.iconEmoji||null}
+      if(product&&!form.updatedAt){alert(tr('Reload the product before saving.'));setBusy(false);return}
+      const res=product?await supabase.from('products').update(payload).eq('id',product.id).eq('updated_at',form.updatedAt!).select('id,stock,updated_at').single():await supabase.from('products').insert(payload).select('id,stock,updated_at').single()
+      if(res.error){if(uploadedImagePaths.length)await supabase.storage.from('product-images').remove(uploadedImagePaths);alert(res.error.code==='PGRST116'?tr('Product changed elsewhere. Reopen it before saving.'):res.error.message);setBusy(false);return} form.id=res.data.id;form.stock=Number(res.data.stock);form.updatedAt=res.data.updated_at
     }
-    onSaved({...form,barcode:form.barcode?.trim()||undefined,image:forceEmoji?undefined:image});setBusy(false)
+    if(supabaseConfigured)await productDraft.clear({...productDraftValue,form:{...form,image}});onSaved({...form,barcode:form.barcode?.trim()||undefined,image:forceEmoji?undefined:image});setBusy(false)
   }
   function file(e:React.ChangeEvent<HTMLInputElement>){const f=e.target.files?.[0];if(!f)return;if(!['image/jpeg','image/png','image/webp'].includes(f.type)){alert(tr('Choose a JPG, PNG, or WebP product image.'));e.target.value='';return}if(f.size>5*1024*1024){alert(tr('Product image must be 5 MB or smaller.'));e.target.value='';return}setCropFile(f);e.target.value=''}
   function saveCroppedProduct(blob:Blob){setOriginalImageFile(cropFile);const cropped=new File([blob],'product-crop.jpg',{type:'image/jpeg'});setImageFile(cropped);setForceEmoji(false);setCropFile(null);const reader=new FileReader();reader.onload=()=>setForm(old=>({...old,image:String(reader.result)}));reader.readAsDataURL(cropped)}
 
   return <>{cropFile&&<ImageCropper file={cropFile} onCancel={()=>setCropFile(null)} onSave={saveCroppedProduct}/>}<div className="modal-backdrop"><form ref={dialog} className="modal" onSubmit={save} role="dialog" aria-modal="true" aria-label={tr(product?'Modify Product':'Add Product')}>
     <div className="panel-title"><h2>{product?tr("Modify Product"):tr("Add Product")}</h2><Button variant="secondary" data-back-close="true" type="button" onClick={onClose}>×</Button></div>
-    <div className="form-grid">
+    {supabaseConfigured&&<DraftControls draft={productDraft} value={productDraftValue}/>}<fieldset style={{display:'contents'}} disabled={busy||supabaseConfigured&&(!productDraft.loaded||productDraft.status==='Saving…')}><div className="form-grid">
       <FormField>{tr("Product name")}<InputField required value={form.name} onChange={e=>setForm({...form,name:e.target.value})}/></FormField>
       <BarcodeField label={tr("Barcode (optional)")} value={form.barcode??''} onChange={e=>setForm({...form,barcode:e.target.value.replace(/\s/g,'')})} placeholder={tr("Scan into this field")} helper={tr("Must be unique within this shop.")}/>
       <FormField>{tr("Category")}<SelectField value={form.category} onChange={e=>setForm({...form,category:e.target.value})}>{categories.map(c=><option key={c} value={c}>{localizeCategory(c)}</option>)}</SelectField></FormField>
@@ -1168,7 +1191,7 @@ function ProductModal({ product, shopId, categories, onClose, onSaved }: { produ
     <FormField className="switch-line"><InputField type="checkbox" checked={form.active} onChange={e=>setForm({...form,active:e.target.checked})}/>{' '+tr("Active product")}</FormField>
     {product&&<ProductImages id={product.id} onPrimaryChange={image=>setForm(current=>({...current,image}))}/>}
     <StickyActions className="modal-actions"><Button variant="secondary" data-back-close="true" type="button" onClick={onClose}>{tr("Cancel")}</Button><Button type="submit" variant="primary" className="primary-btn" disabled={busy}>{tr("Save Product")}</Button></StickyActions>
-  </form></div></>
+  </fieldset></form></div></>
 }
 
 function CategoryManager({shopId,categories,onClose,onChanged,showToast}:{shopId:string|null;categories:string[];onClose:()=>void;onChanged:(next:string[],oldName?:string,newName?:string|null)=>void;showToast:(m:string)=>void}){
@@ -1559,6 +1582,10 @@ function SettingsPage({preferences,theme,setTheme,shopName,setShopName,logoUrl,s
   useEffect(()=>{let active=true;void QRCode.toDataURL(currentOrigin,{width:220,margin:1}).then(url=>{if(active)setNetworkQr(url)}).catch(()=>{if(active)setNetworkQr('')});return()=>{active=false}},[currentOrigin])
   const savedSettings=useRef({theme,shopName,taxRate,shopAddress,shopPhone,businessNumber,shopEmail,currency,timezone,receiptFooter,autoLogoutEnabled,autoLogoutMinutes});
   useEffect(()=>{const discard=(event:Event)=>{if((event as CustomEvent).detail)return;const previous=savedSettings.current;setTheme(previous.theme);setShopName(previous.shopName);setTaxRate(previous.taxRate);setShopAddress(previous.shopAddress);setShopPhone(previous.shopPhone);setBusinessNumber(previous.businessNumber);setShopEmail(previous.shopEmail);setCurrency(previous.currency);setTimezone(previous.timezone);setReceiptFooter(previous.receiptFooter);setAutoLogoutEnabled(previous.autoLogoutEnabled);setAutoLogoutMinutes(previous.autoLogoutMinutes)};window.addEventListener('counternest:discard',discard);return()=>window.removeEventListener('counternest:discard',discard)},[]);
+  const settingsScope=useRef<HTMLDivElement>(null)
+  const settingsValue={theme,shopName,taxRate,shopAddress,shopPhone,businessNumber,shopEmail,currency,timezone,receiptFooter,autoLogoutEnabled,autoLogoutMinutes}
+  const settingsDraft=useEditorDraft({kind:'settings',scope:shopId??'',ready:!!shopId&&role==='admin'&&supabaseConfigured,value:settingsValue,base:{},onRestore:v=>{setTheme(v.theme);setShopName(v.shopName);setTaxRate(v.taxRate);setShopAddress(v.shopAddress);setShopPhone(v.shopPhone);setBusinessNumber(v.businessNumber);setShopEmail(v.shopEmail);setCurrency(v.currency);setTimezone(v.timezone);setReceiptFooter(v.receiptFooter);setAutoLogoutEnabled(v.autoLogoutEnabled);setAutoLogoutMinutes(v.autoLogoutMinutes)}})
+  useEffect(()=>{if(settingsScope.current&&role==='admin'&&supabaseConfigured)return registerDraftSave(settingsScope.current,()=>settingsDraft.pending?settingsDraft.save():Promise.resolve(true))})
   const presets:{name:string;t:ThemeConfig}[]=[
     {name:'Brand',t:{primary:'#8b451f',background:'#f8efe6',text:'#482e20'}},
     {name:'Mint Fresh',t:{primary:'#4d8a73',background:'#f2f8f5',text:'#28493d'}},
@@ -1581,7 +1608,7 @@ function SettingsPage({preferences,theme,setTheme,shopName,setShopName,logoUrl,s
     }
     localStorage.setItem('counternest.autoLogoutEnabled',String(autoLogoutEnabled))
     localStorage.setItem('counternest.autoLogoutMinutes',String(autoLogoutMinutes))
-    savedSettings.current={theme,shopName,taxRate,shopAddress,shopPhone,businessNumber,shopEmail,currency,timezone,receiptFooter,autoLogoutEnabled,autoLogoutMinutes};resetUnsaved();window.dispatchEvent(new Event('counternest:theme-saved'));showToast(trError(tr("Settings saved.")))
+    savedSettings.current={theme,shopName,taxRate,shopAddress,shopPhone,businessNumber,shopEmail,currency,timezone,receiptFooter,autoLogoutEnabled,autoLogoutMinutes};if(supabaseConfigured)await settingsDraft.clear(settingsValue);resetUnsaved();window.dispatchEvent(new Event('counternest:theme-saved'));showToast(trError(tr("Settings saved.")))
   }
   async function saveManagerPin(){
     if(role!=='admin')return
@@ -1653,7 +1680,7 @@ function SettingsPage({preferences,theme,setTheme,shopName,setShopName,logoUrl,s
   }
   return <>
     <PageHeader title={tr("Settings")} timezone={timezone}><Button type="submit" variant="primary" className="primary-btn small" onClick={save} disabled={role!=='admin'}><Save size={18}/>{tr("Save Changes")}</Button></PageHeader>
-    <div className="settings-grid cn-settings" data-unsaved-scope="settings">
+    <div ref={settingsScope} className="settings-grid cn-settings" data-unsaved-scope="settings">{role==='admin'&&supabaseConfigured&&<><DraftControls draft={settingsDraft} value={settingsValue}/><SetupPreferences/></>}
       <Card className="panel">
         <SectionHeader title={tr("Business Information")} description={tr("Manage your business details and how they appear on receipts and communications.")} icon={<Store size={21}/>}/>
         <div className="form-grid"><FormField>{tr("Business name")}<InputField value={shopName} onChange={e=>setShopName(e.target.value)}/></FormField><FormField>{tr("Address")}<InputField value={shopAddress} onChange={e=>setShopAddress(e.target.value)} placeholder={tr("Street / city")}/></FormField><FormField>{tr("Phone")}<PhoneInput value={shopPhone} onChange={setShopPhone} placeholder={tr("Business phone")}/></FormField><FormField>{tr("Business number")}<InputField value={businessNumber} onChange={e=>setBusinessNumber(e.target.value)} placeholder={tr("Registration or business number")}/></FormField><FormField>{tr("Email")}<InputField type="email" value={shopEmail} onChange={e=>setShopEmail(e.target.value)} placeholder={tr("Business email")}/></FormField></div>

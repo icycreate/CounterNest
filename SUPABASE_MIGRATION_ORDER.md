@@ -1,6 +1,8 @@
-# RC25 migration order
+# Manual Supabase migration order — RC29
 
-Apply only migrations absent from your target migration history, in this order. Do not replay applied migrations. Read MANUAL_DEPLOYMENT_RC25.md for the RC24 line-ending correction and upgrade procedure.
+Offline source only. These migrations have not been applied to any live system.
+
+For an existing RC28 database, apply only entries 102–105 in order after a verified backup. For a fresh database, apply the full sequence. Do not rerun previously applied migrations.
 
 1. 20260815_initial.sql
 2. 20260815_logo_settings.sql
@@ -103,3 +105,7 @@ Apply only migrations absent from your target migration history, in this order. 
 99. 202610241300_about_page_highlight.sql
 100. 202610251000_customer_recognition.sql
 101. 202610251600_independent_catalogue_editors.sql
+102. 202610271900_productivity_drafts_setup.sql
+103. 202610272000_search_media_history.sql
+104. 202610272100_optional_requested_time.sql
+105. 202610281000_setup_preferences.sql

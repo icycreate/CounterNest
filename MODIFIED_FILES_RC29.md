@@ -1,0 +1,52 @@
+# RC29 modified files
+
+Compared with RC28. Original 101 migration files are unchanged. Validation evidence is under `validation/rc29/`.
+
+- `CHANGELOG_RC29.md`
+- `MANUAL_DEPLOYMENT_RC29.md`
+- `MIGRATION_MANIFEST.json`
+- `MODIFIED_FILES_RC29.md`
+- `package-lock.json`
+- `package.json`
+- `PHASE56_IMPLEMENTATION_MAP.md`
+- `public/sw.js`
+- `RC29_PHASE56_REPORT.md`
+- `README.md`
+- `RELEASE_MANIFEST.json`
+- `src/App.tsx`
+- `src/appNavigation.ts`
+- `src/CatalogueAbout.tsx`
+- `src/CatalogueContentEditors.tsx`
+- `src/CataloguePreorders.tsx`
+- `src/CommercialCatalogue.tsx`
+- `src/commercialFilters.ts`
+- `src/ConnectionStatus.tsx`
+- `src/CustomerStorefront.tsx`
+- `src/EditorDraft.tsx`
+- `src/HelpCenter.tsx`
+- `src/IncomingOrder.tsx`
+- `src/MediaLibrary.tsx`
+- `src/NavigationBoundary.tsx`
+- `src/OperationalWorkspace.tsx`
+- `src/PosTools.tsx`
+- `src/productivityTranslations.ts`
+- `src/PublicationHistory.tsx`
+- `src/release.ts`
+- `src/SetupJourney.tsx`
+- `src/SetupPreferences.tsx`
+- `src/styles.css`
+- `src/translations.ts`
+- `src/types.ts`
+- `src/UxShell.tsx`
+- `supabase/migrations/202610271900_productivity_drafts_setup.sql`
+- `supabase/migrations/202610272000_search_media_history.sql`
+- `supabase/migrations/202610272100_optional_requested_time.sql`
+- `supabase/migrations/202610281000_setup_preferences.sql`
+- `SUPABASE_MIGRATION_ORDER.md`
+- `tests/boot.cjs`
+- `tests/branding-rc14.cjs`
+- `tests/phase56-localization.cjs`
+- `tests/rc1-ui.cjs`
+- `tests/rc25-browser.cjs`
+- `tests/rc25-editors-database.cjs`
+- `tests/STATIC_RELEASE_CHECKS.cjs`

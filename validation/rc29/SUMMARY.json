@@ -1,0 +1,128 @@
+[
+  {
+    "group": "frontend",
+    "exitCode": 0,
+    "seconds": 2
+  },
+  {
+    "group": "ui",
+    "exitCode": 0,
+    "seconds": 5
+  },
+  {
+    "group": "database",
+    "exitCode": 0,
+    "seconds": 11
+  },
+  {
+    "group": "release",
+    "exitCode": 0,
+    "seconds": 1
+  },
+  {
+    "group": "web",
+    "exitCode": 0,
+    "seconds": 1
+  },
+  {
+    "group": "edge",
+    "exitCode": 0,
+    "seconds": 1
+  },
+  {
+    "group": "display",
+    "exitCode": 1,
+    "seconds": 1
+  },
+  {
+    "group": "rc1",
+    "exitCode": 0,
+    "seconds": 2,
+    "rerun": "Passed after adding draft RPC and updated_at data to the legacy product-edit fixture; original stock-safety assertions retained."
+  },
+  {
+    "group": "catalogue-export",
+    "exitCode": 0,
+    "seconds": 1
+  },
+  {
+    "group": "customer-requests",
+    "exitCode": 1,
+    "seconds": 1
+  },
+  {
+    "group": "ux",
+    "exitCode": 1,
+    "seconds": 1
+  },
+  {
+    "group": "finalization",
+    "exitCode": 1,
+    "seconds": 1
+  },
+  {
+    "group": "rc4",
+    "exitCode": 1,
+    "seconds": 1
+  },
+  {
+    "group": "operations",
+    "exitCode": 0,
+    "seconds": 1
+  },
+  {
+    "group": "purchasing-model",
+    "exitCode": 0,
+    "seconds": 3
+  },
+  {
+    "group": "boot",
+    "exitCode": 0,
+    "seconds": 1
+  },
+  {
+    "group": "navigation-theme",
+    "exitCode": 0,
+    "seconds": 1
+  },
+  {
+    "group": "calendar",
+    "exitCode": 0,
+    "seconds": 1
+  },
+  {
+    "group": "system-style",
+    "exitCode": 0,
+    "seconds": 1
+  },
+  {
+    "group": "experience",
+    "exitCode": 1,
+    "seconds": 2
+  },
+  {
+    "group": "units",
+    "exitCode": 0,
+    "seconds": 1
+  },
+  {
+    "group": "accessibility",
+    "exitCode": 0,
+    "seconds": 1
+  },
+  {
+    "group": "branding",
+    "exitCode": 0,
+    "seconds": 1
+  },
+  {
+    "group": "redesign",
+    "exitCode": 0,
+    "seconds": 1
+  },
+  {
+    "group": "phase56",
+    "exitCode": 0,
+    "seconds": 3
+  }
+]

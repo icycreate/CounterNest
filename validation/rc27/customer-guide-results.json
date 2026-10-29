@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "width": 720,
+    "height": 1280,
+    "duration": 79.744166
+  },
+  "checks": [
+    "first-use invitation, persistent dismissal and no initial video download",
+    "explicit video controls and readable English transcript",
+    "MP4 decodes at 720×1280 with approximately 80-second duration",
+    "representative beginning installation contact and confirmation frames decode",
+    "guide controls support four languages while video stays English",
+    "mobile tablet desktop and Light/Dark layouts avoid overflow",
+    "playback fallback and installation navigation without requesting permission",
+    "independent catalogue preference and no runtime errors"
+  ]
+}

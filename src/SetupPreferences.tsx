@@ -1,0 +1,22 @@
+import {useEffect,useRef,useState} from 'react'
+import {supabase,supabaseConfigured} from './lib/supabase'
+import {Button} from './Button'
+import {FormField,InputField,SelectField} from './Fields'
+import {DraftControls,useEditorDraft} from './EditorDraft'
+import {registerDraftSave} from './appNavigation'
+import {languageOptions,tr,trError,useUiLanguage} from './i18n'
+type Preferences={business_type:string;default_language:string;payment_methods:string[];revision:number}
+const initial:Preferences={business_type:'',default_language:'en',payment_methods:['cash','card','qr'],revision:0}
+export function SetupPreferences(){
+ useUiLanguage();const[value,setValue]=useState(initial),[ready,setReady]=useState(false),[scope,setScope]=useState(''),[busy,setBusy]=useState(false),[error,setError]=useState(''),[refresh,setRefresh]=useState(0),[message,setMessage]=useState(''),ref=useRef<HTMLElement>(null)
+ useEffect(()=>{let active=true;setReady(false);setError('');async function load(){try{if(!supabase)throw Error('Workspace unavailable');const [p,s]=await Promise.all([supabase.rpc('get_business_setup_preferences'),supabase.rpc('current_shop_id')]);if(!active)return;if(p.error||s.error)throw p.error??s.error;setScope(s.data);setValue(p.data);setReady(true)}catch(e){if(active)setError((e as Error).message)}}void load();return()=>{active=false}},[refresh])
+ const draft=useEditorDraft({kind:'settings',recordKey:'setup-preferences',scope,ready,value,base:{revision:value.revision},blocked:busy,onRestore:setValue})
+ useEffect(()=>{if(ref.current)return registerDraftSave(ref.current,()=>draft.pending?draft.save():Promise.resolve(true))})
+ async function save(){if(!supabase||busy)return;setBusy(true);setError('');setMessage('');try{const r=await supabase.rpc('save_business_setup_preferences',{p_value:value,p_revision:value.revision});if(r.error)throw r.error;setValue(r.data);await draft.clear(r.data);setMessage('Changes saved.');window.dispatchEvent(new Event('counternest:payment-settings'))}catch(e){setError((e as Error).message)}finally{setBusy(false)}}
+ return <section ref={ref} data-unsaved-scope className="panel"><h3>{tr('Business setup preferences')}</h3>{error&&<p role="alert">{trError(error)}</p>}<Button onClick={()=>{if(confirm(tr('Reload saved settings?')))setRefresh(n=>n+1)}}>{tr('Reload')}</Button><DraftControls draft={draft} value={value}/><fieldset disabled={!ready||!draft.loaded||busy||draft.status==='Saving…'}><FormField label={tr('Business type')}><InputField maxLength={100} value={value.business_type} onChange={e=>setValue({...value,business_type:e.target.value})}/></FormField><FormField label={tr('Default content language')}><SelectField value={value.default_language} onChange={e=>setValue({...value,default_language:e.target.value})}>{languageOptions.map(l=><option key={l.value} value={l.value}>{l.label}</option>)}</SelectField></FormField><p>{tr('This default does not change staff language preferences or existing published translations.')}</p><h4>{tr('Enabled POS payment methods')}</h4>{['cash','card','qr'].map(method=><FormField key={method}><InputField type="checkbox" checked={value.payment_methods.includes(method)} onChange={e=>setValue({...value,payment_methods:e.target.checked?[...value.payment_methods,method]:value.payment_methods.filter(m=>m!==method)})}/>{tr(method==='qr'?'QR':method==='cash'?'Cash':'Card')}</FormField>)}<p>{tr('Enable at least one method. Card and QR record an externally confirmed payment; no gateway is added.')}</p><Button variant="primary" disabled={!value.payment_methods.length} onClick={()=>void save()}>{tr('Save Changes')}</Button></fieldset>{message&&<p role="status">{tr(message)}</p>}</section>
+}
+export function usePosPaymentMethods(scope:string){
+ const[methods,setMethods]=useState<string[]>(supabaseConfigured?[]:initial.payment_methods),[error,setError]=useState('')
+ useEffect(()=>{let active=true;const load=async()=>{if(!supabaseConfigured||!supabase)return;try{const r=await supabase.rpc('get_business_setup_preferences');if(!active)return;if(r.error)throw r.error;setMethods(r.data.payment_methods);setError('')}catch(e){if(active){setMethods([]);setError((e as Error).message)}}};void load();window.addEventListener('counternest:payment-settings',load);window.addEventListener('online',load);return()=>{active=false;window.removeEventListener('counternest:payment-settings',load);window.removeEventListener('online',load)}},[scope])
+ return{methods,error}
+}

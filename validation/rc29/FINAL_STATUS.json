@@ -1,0 +1,26 @@
+{
+  "release": "2.0.0-rc.29",
+  "date": "2026-10-28",
+  "offline": true,
+  "deployed": false,
+  "build": "passed",
+  "migrations": 105,
+  "original_migrations_unchanged": 101,
+  "broad_database_pass_entries": 146,
+  "focused_database_groups": 23,
+  "browser_groups": 14,
+  "translation_labels_checked": 159,
+  "legacy_groups_passed": 19,
+  "legacy_groups_total": 25,
+  "legacy_groups_failed": [
+    "display",
+    "customer-requests",
+    "ux",
+    "finalization",
+    "rc4",
+    "experience"
+  ],
+  "live_push_tested": false,
+  "full_wcag_audit": false,
+  "optional_advanced_analytics": "deferred"
+}

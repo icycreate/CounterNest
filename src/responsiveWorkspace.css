@@ -1,0 +1,50 @@
+/* v6.2: container-aware workspace geometry; colors and spacing use existing tokens. */
+.ux-header-container{container:workspace-header / inline-size;min-width:0}
+html[data-appearance] .app-shell .ux-header{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--space-3);padding:0 0 var(--space-4);margin:0 0 var(--space-4)}
+.ux-header :is(.ux-header-account,.ux-header-identity,.ux-header-tools){display:flex;align-items:center;flex-wrap:wrap;gap:var(--space-2);min-width:0}
+.ux-header-account{justify-content:flex-end}
+.ux-header-identity{grid-row:2}
+html[data-appearance] .app-shell .ux-header .ux-business{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;flex:1 1 8rem;min-width:0;max-width:none;margin:0;font-size:1rem;line-height:1.4;overflow-wrap:anywhere}
+html[data-appearance] .app-shell .ux-header .ux-header-logo{flex:0 0 32px;width:32px;height:32px}
+html[data-appearance] .app-shell .ux-header .ux-search{grid-row:3;display:flex;width:100%;min-width:0;max-width:none;box-sizing:border-box;gap:var(--space-2);min-height:var(--control-height);padding:var(--space-3);font-size:1rem;font-weight:400;white-space:nowrap;justify-content:flex-start}
+.ux-search-label{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1}
+.ux-search>span:first-child{flex:none}.ux-search kbd{display:none;flex:none}
+.ux-header-tools{grid-row:4}.ux-header-tools>.ux-actions{order:-1}
+.ux-header-tools>.cn-button,.ux-header-tools>.ux-actions{flex:1 1 8rem}
+.ux-header-tools>.ux-actions>.cn-button{width:100%}
+.ux-header .ux-action-menu{left:0;right:auto;min-width:0;width:max-content;max-width:min(24rem,calc(100vw - 48px));box-sizing:border-box;gap:var(--space-1)}
+.ux-header .ux-action-menu button{text-align:left;justify-content:flex-start;overflow-wrap:anywhere}
+.ux-header .ux-register-status{flex:0 1 auto;max-width:100%;font-size:.875rem;overflow-wrap:anywhere;border:1px solid var(--border);border-radius:var(--radius-input);padding:var(--space-1) var(--space-2);background:var(--surface)}
+.ux-header-connection{min-width:0;grid-row:5}.ux-header .cn-connection-status{max-width:100%;margin:0;overflow-wrap:anywhere}
+html[data-appearance] .ux-header button{min-height:var(--control-height)}
+.ux-header-account>button{flex:0 0 auto}.ux-header-account .redesign-profile{min-width:0;flex:0 1 auto;overflow-wrap:anywhere}
+@container workspace-header (min-width:30rem){
+ .ux-header-identity{grid-row:1;grid-column:1}.ux-header-account{grid-row:1;grid-column:2}
+ html[data-appearance] .app-shell .ux-header{grid-template-columns:minmax(0,1fr) auto}
+ html[data-appearance] .app-shell .ux-header .ux-search{grid-column:1 / -1;grid-row:2}
+ .ux-header-tools{grid-row:3;grid-column:1 / -1}.ux-header-tools>.cn-button,.ux-header-tools>.ux-actions{flex:0 1 auto}
+ .ux-header-connection{grid-column:1 / -1;grid-row:4}
+}
+@container workspace-header (min-width:46rem){
+ .ux-header .ux-search kbd{display:block}
+ html[data-appearance] .app-shell .ux-header{grid-template-columns:minmax(16rem,1fr) minmax(0,auto)}
+ html[data-appearance] .app-shell .ux-header .ux-search{grid-column:1;grid-row:2}
+ .ux-header-tools{grid-column:2;grid-row:2;justify-content:flex-end}
+ .ux-header-connection{grid-row:3}
+}
+@container workspace-header (min-width:70rem){
+ html[data-appearance] .app-shell .ux-header{grid-template-columns:minmax(12rem,.75fr) minmax(20rem,1.5fr) auto}
+ html[data-appearance] .app-shell .ux-header .ux-search{grid-column:2;grid-row:1}
+ .ux-header-account{grid-column:3}.ux-header-tools{grid-column:2 / -1;grid-row:2}
+ .ux-header-connection{grid-row:2;grid-column:1}
+}
+/* Shared form/action geometry, without changing specialized payment or calendar layouts. */
+:where(.main,.modal,.ux-dialog) :is(.form-grid,.form-row,.report-actions,.modal-actions){gap:var(--space-2)}
+:where(.main,.modal,.ux-dialog) :is(.form-grid,.form-row)>*{min-width:0}
+:where(.modal,.ux-dialog){box-sizing:border-box;max-width:calc(100vw - 2 * var(--space-4));max-height:calc(100dvh - 2 * var(--space-4));overflow:auto;overscroll-behavior:contain;padding:var(--space-4);scroll-padding-block:var(--space-4)}
+:where(.modal-actions,.report-actions,.recognition-actions){display:flex;align-items:center;flex-wrap:wrap;gap:var(--space-2)}
+:where(.modal-actions,.recognition-actions)>button{min-height:var(--control-height);min-width:0}
+:where(.main,.modal,.ux-dialog) button svg{flex-shrink:0}
+:where(.main,.modal,.ux-dialog) :is(th,td){vertical-align:middle}
+@media(min-width:768px){:where(.modal,.ux-dialog){padding:var(--space-5)}}
+@media print{.ux-header-container{display:none}}

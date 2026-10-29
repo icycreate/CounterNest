@@ -1,3 +1,4 @@
+import {systemLabel} from './systemLabels'
 import {BrandLogo} from './BrandLogo'
 import {Button} from './Button'
 import {SegmentedNav} from './SegmentedNav'
@@ -30,7 +31,7 @@ export function Sidebar({compact,onToggleCompact,...props}:Props&{compact:boolea
   return <aside className={`sidebar rc-sidebar ${compact?'is-compact':''}`} aria-label={tr("Staff sidebar")}>
     <header className="sidebar-brand"><div className="sidebar-logo"><BrandLogo logoUrl={props.logoUrl} businessName={props.shopName} variant="icon"/></div><strong title={props.shopName}>{props.shopName}</strong><Button variant="secondary" type="button" aria-label={compact?tr("Expand sidebar"):tr("Collapse sidebar")} aria-pressed={compact} onClick={onToggleCompact}>{compact?<PanelLeftOpen size={19}/>:<PanelLeftClose size={19}/>}</Button></header>
     <GroupedNavigation page={props.page} role={props.role} compact={compact} onNavigate={props.setPage}/>
-    <div className="staff-box"><CircleUserRound size={28}/><div><strong>{props.staffName}</strong><small>{props.role==='admin'?tr("Administrator"):props.role==='production'?tr("Production"):props.role==='inventory'?tr("Inventory"):tr("Cashier")}</small></div></div>
+    <div className="staff-box"><CircleUserRound size={28}/><div><strong>{props.staffName}</strong><small>{systemLabel(props.role)}</small></div></div>
     <Button variant="secondary" type="button" className="logout-btn" aria-label={tr("Sign out")} title={compact?tr("Sign out"):undefined} onClick={props.logout}><LogOut size={18}/><span>{tr("Sign out")}</span></Button>
   </aside>
 }
@@ -47,7 +48,7 @@ export function MobileNavigation(props:Props){
     return()=>{document.body.style.overflow=oldOverflow;document.removeEventListener('keydown',key);trigger.current?.focus()}
   },[open])
   return <>
-    <header className="mobile-topbar"><div className="mobile-shop-mark"><BrandLogo logoUrl={props.logoUrl} businessName={props.shopName} variant="icon"/></div><div className="mobile-shop-name"><strong>{props.shopName}</strong><small>{props.staffName} • {props.role==='admin'?tr("Administrator"):props.role==='production'?tr("Production"):props.role==='inventory'?tr("Inventory"):tr("Cashier")}</small></div><Button variant="secondary" type="button" ref={trigger} aria-label={tr("Open menu")} aria-expanded={open} onClick={()=>setOpen(true)}><Menu size={22}/></Button></header>
+    <header className="mobile-topbar"><div className="mobile-shop-mark"><BrandLogo logoUrl={props.logoUrl} businessName={props.shopName} variant="icon"/></div><div className="mobile-shop-name"><strong>{props.shopName}</strong><small>{props.staffName} • {systemLabel(props.role)}</small></div><Button variant="secondary" type="button" ref={trigger} aria-label={tr("Open menu")} aria-expanded={open} onClick={()=>setOpen(true)}><Menu size={22}/></Button></header>
     <nav className="mobile-bottom-nav" aria-label={tr("Quick navigation")}>{([['dashboard','Dashboard'],['sale','Sale'],['products','Products'],['customers','Customers']] as [PageKey,string][]).filter(([key])=>canAccessPage(props.role,key)).map(([key,label])=>{const Icon=icons[key]??Store;return <Button variant="secondary" type="button" key={key} aria-current={primaryPage(props.page)===key?'page':undefined} className={primaryPage(props.page)===key?'active':''} onClick={()=>go(key)}><Icon size={20}/><span>{tr(label)}</span></Button>})}<Button variant="secondary" type="button" aria-label={tr("More navigation")} onClick={()=>setOpen(true)}><Menu size={20}/><span>{tr("More")}</span></Button></nav>
     {open&&<div className="mobile-menu-backdrop" onClick={()=>setOpen(false)}><section ref={sheet} className="mobile-menu-sheet" role="dialog" aria-modal="true" aria-label={tr("Navigation menu")} onClick={e=>e.stopPropagation()}><div className="mobile-menu-head"><div><strong>{props.shopName}</strong><small>{props.staffName}</small></div><Button variant="secondary" data-back-close="true" type="button" aria-label={tr("Close menu")} onClick={()=>setOpen(false)}><X size={22}/></Button></div><GroupedNavigation page={props.page} role={props.role} onNavigate={go}/><Button variant="secondary" type="button" className="mobile-menu-logout" onClick={props.logout}><LogOut size={18}/>{' '+tr("Sign out")}</Button></section></div>}
   </>

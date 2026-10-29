@@ -33,6 +33,7 @@ export type CashDrawerTransaction = {
 export type SaleStatus = 'completed' | 'partially_refunded' | 'refunded' | 'voided'
 
 export type Product = {
+  updatedAt?: string
   id: string
   name: string
   category: string

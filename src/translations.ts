@@ -1,4 +1,50 @@
 export const translations:Record<string,Record<string,string>> = {
+"Customer quick start":{"es": "Guía rápida para clientes", "zh-TW": "顧客快速入門", "zh-CN": "顾客快速入门"},
+"Close video guide":{"es": "Cerrar guía en video", "zh-TW": "關閉影片指南", "zh-CN": "关闭视频指南"},
+"Watch: install & place an order":{"es": "Ver: instalar y realizar un pedido", "zh-TW": "觀看：安裝與下單", "zh-CN": "观看：安装与下单"},
+"New here? A short video shows you how.":{"es": "¿Primera visita? Un video breve te explica cómo.", "zh-TW": "第一次使用？短片帶您輕鬆上手。", "zh-CN": "第一次使用？短片带您轻松上手。"},
+"Not now":{"es": "Ahora no", "zh-TW": "稍後再說", "zh-CN": "稍后再说"},
+"Install the Catalogue and place a request":{"es": "Instala el Catálogo y envía una solicitud", "zh-TW": "安裝目錄並提交訂單需求", "zh-CN": "安装目录并提交订单请求"},
+"English captions · No voiceover":{"es": "Subtítulos en inglés · Sin narración", "zh-TW": "英文字幕・無旁白", "zh-CN": "英文字幕・无旁白"},
+"Ordering is available only when enabled by this shop.":{"es": "Los pedidos solo están disponibles si esta tienda los habilita.", "zh-TW": "商家啟用下單功能後才可提交需求。", "zh-CN": "商家启用下单功能后才可提交请求。"},
+"Read the written steps below if video playback is unavailable.":{"es": "Si el video no se reproduce, lee los pasos de abajo.", "zh-TW": "若無法播放影片，請閱讀下方文字步驟。", "zh-CN": "若无法播放视频，请阅读下方文字步骤。"},
+"Open installation options":{"es": "Abrir opciones de instalación", "zh-TW": "開啟安裝選項", "zh-CN": "打开安装选项"},
+"Read the steps":{"es": "Leer los pasos", "zh-TW": "閱讀步驟", "zh-CN": "阅读步骤"},
+
+"Tutorials":{"es": "Tutoriales", "zh-TW": "教學", "zh-CN": "教程"},
+"Hide tutorial":{"es": "Ocultar tutorial", "zh-TW": "隱藏教學", "zh-CN": "隐藏教程"},
+"Your CounterNest walkthrough":{"es": "Tu recorrido por CounterNest", "zh-TW": "CounterNest 操作導覽", "zh-CN": "CounterNest 操作导览"},
+"Tour progress":{"es": "Progreso del recorrido", "zh-TW": "導覽進度", "zh-CN": "导览进度"},
+"Tutorial topics":{"es": "Temas del tutorial", "zh-TW": "教學主題", "zh-CN": "教程主题"},
+"Open this screen":{"es": "Abrir esta pantalla", "zh-TW": "開啟此畫面", "zh-CN": "打开此页面"},
+"You are on this screen.":{"es": "Estás en esta pantalla.", "zh-TW": "您目前就在此畫面。", "zh-CN": "您当前就在此页面。"},
+"Finish tour":{"es": "Finalizar recorrido", "zh-TW": "完成導覽", "zh-CN": "完成导览"},
+"Restart tour":{"es": "Reiniciar recorrido", "zh-TW": "重新開始導覽", "zh-CN": "重新开始导览"},
+"Tutorial paused while a transaction or dialog is open.":{"es": "Tutorial en pausa mientras hay una transacción o un diálogo abierto.", "zh-TW": "交易或對話框開啟時，教學暫停。", "zh-CN": "交易或对话框打开时，教程暂停。"},
+"Only topics available to your role are shown. Progress is saved for this account and workspace on this device.":{"es": "Solo se muestran temas disponibles para tu rol. El progreso se guarda para esta cuenta y espacio de trabajo en este dispositivo.", "zh-TW": "僅顯示您角色可使用的主題。進度會依此帳號與工作區儲存在此裝置。", "zh-CN": "仅显示您角色可用的主题。进度会按此账号与工作区保存在此设备。"},
+"Welcome to CounterNest":{"es": "Bienvenido a CounterNest", "zh-TW": "歡迎使用 CounterNest", "zh-CN": "欢迎使用 CounterNest"},
+"Take a short tour of your workspace. This guide explains the screens; it does not create sales, change stock or submit orders.":{"es": "Conoce tu espacio de trabajo. Esta guía explica las pantallas; no crea ventas, cambia existencias ni envía pedidos.", "zh-TW": "簡單認識您的工作區。本導覽說明各個畫面，不會建立銷售、變更庫存或提交訂單。", "zh-CN": "简单了解您的工作区。本导览说明各个页面，不会创建销售、更改库存或提交订单。"},
+"Make the workspace yours":{"es": "Personaliza tu espacio de trabajo", "zh-TW": "設定您的工作區", "zh-CN": "设置您的工作区"},
+"In Settings, review your business profile, language and appearance. Changes here use the normal Save controls.":{"es": "En Configuración, revisa el perfil del negocio, el idioma y la apariencia. Los cambios usan los controles habituales de Guardar.", "zh-TW": "在設定中檢視商家資料、語言與外觀。變更仍需使用原有的儲存按鈕。", "zh-CN": "在设置中查看商家资料、语言和外观。更改仍需使用原有的保存按钮。"},
+"Meet your products":{"es": "Conoce tus productos", "zh-TW": "認識您的商品", "zh-CN": "了解您的商品"},
+"Review product names, prices and availability. Keep product photos separate from your Catalogue banners and About Us picture.":{"es": "Revisa nombres, precios y disponibilidad. Mantén las fotos de productos separadas de los banners del Catálogo y la imagen de Acerca de nosotros.", "zh-TW": "檢視商品名稱、價格與供應狀態。商品照片與目錄橫幅、關於我們圖片分開管理。", "zh-CN": "查看商品名称、价格和供应状态。商品照片与目录横幅、关于我们图片分开管理。"},
+"Explore New Sale":{"es": "Explora Nueva venta", "zh-TW": "探索新增銷售", "zh-CN": "探索新增销售"},
+"Products go directly into the cart. Review quantities and totals before payment. For a demonstration, use a separate demo workspace and do not confirm a real payment.":{"es": "Los productos van directamente al carrito. Revisa cantidades y totales antes de pagar. Para una demostración, usa un espacio separado y no confirmes un pago real.", "zh-TW": "商品可直接加入購物車。付款前請檢查數量與總額。示範請使用獨立的展示工作區，不要確認真實付款。", "zh-CN": "商品可直接加入购物车。付款前请检查数量和总额。演示请使用独立的演示工作区，不要确认真实付款。"},
+"Shape your public Catalogue":{"es": "Personaliza tu Catálogo público", "zh-TW": "編輯公開目錄", "zh-CN": "编辑公开目录"},
+"In Settings → Catalogue Settings, Home Page, Categories and About Us save independently. Preview each section and choose its content language before publishing.":{"es": "En Configuración → Configuración del catálogo, Inicio, Categorías y Acerca de nosotros se guardan por separado. Revisa cada sección y elige su idioma antes de publicar.", "zh-TW": "在設定 → 目錄設定中，首頁、分類與關於我們分別儲存。發布前請預覽各區並選擇內容語言。", "zh-CN": "在设置 → 目录设置中，首页、分类和关于我们分别保存。发布前请预览各区并选择内容语言。"},
+"Handle incoming requests":{"es": "Gestiona solicitudes entrantes", "zh-TW": "處理新訂單需求", "zh-CN": "处理新订单请求"},
+"Pre-Orders shows Catalogue Requests and Scheduled Orders. Open a request to review its customer and items. Contact does not accept it; Accept opens confirmation and Decline requires a reason.":{"es": "Pedidos anticipados muestra Solicitudes del catálogo y Pedidos programados. Abre una solicitud para revisar cliente y artículos. Contactar no la acepta; Aceptar abre una confirmación y Rechazar exige un motivo.", "zh-TW": "預訂顯示目錄需求與排程訂單。開啟需求可檢視顧客與品項。聯絡不代表接受；接受會開啟確認畫面，拒絕則需填寫原因。", "zh-CN": "预订显示目录请求和排程订单。打开请求可查看顾客和商品。联系不代表接受；接受会打开确认页面，拒绝则需填写原因。"},
+"Stay informed":{"es": "Mantente informado", "zh-TW": "掌握通知", "zh-CN": "掌握通知"},
+"Use Order notifications to open the exact request, mark it read or mark all read. In Settings → Notifications, enable this device explicitly. Push needs backend setup; custom sounds require an active app.":{"es": "Usa Notificaciones de pedidos para abrir la solicitud, marcarla como leída o marcar todas. En Configuración → Notificaciones, activa este dispositivo. Push requiere configurar el servidor; los sonidos personalizados necesitan la aplicación activa.", "zh-TW": "使用訂單通知開啟對應需求、標示已讀或全部已讀。在設定 → 通知中主動啟用此裝置。推播需要後端設定；自訂音效需要應用程式保持開啟。", "zh-CN": "使用订单通知打开对应请求、标记已读或全部已读。在设置 → 通知中主动启用此设备。推送需要后端配置；自定义音效需要应用保持打开。"},
+"Keep stock accurate":{"es": "Mantén existencias precisas", "zh-TW": "保持庫存正確", "zh-CN": "保持库存准确"},
+"Review inventory and use the existing receiving or production workflow for stock changes. Browsing the Catalogue and reading this tutorial do not deduct stock.":{"es": "Revisa el inventario y usa los procesos de recepción o producción para cambiar existencias. Navegar por el Catálogo y leer este tutorial no descuentan existencias.", "zh-TW": "檢視庫存，並使用既有收貨或生產流程變更庫存。瀏覽目錄與閱讀教學不會扣除庫存。", "zh-CN": "查看库存，并使用现有收货或生产流程更改库存。浏览目录与阅读教程不会扣除库存。"},
+"Prepare accepted orders":{"es": "Prepara pedidos aceptados", "zh-TW": "準備已接受的訂單", "zh-CN": "准备已接受的订单"},
+"Use Preparation / Kitchen to review the work assigned to your team. Follow the existing order status controls and confirm changes only when the work is ready.":{"es": "Usa Preparación / Cocina para revisar el trabajo de tu equipo. Sigue los controles de estado existentes y confirma los cambios cuando el trabajo esté listo.", "zh-TW": "使用備餐／廚房檢視團隊工作。依照既有訂單狀態控制操作，工作完成後再確認變更。", "zh-CN": "使用备餐／厨房查看团队工作。按照现有订单状态控制操作，工作完成后再确认更改。"},
+"Review your business":{"es": "Revisa tu negocio", "zh-TW": "檢視業務狀況", "zh-CN": "查看业务情况"},
+"Open Reports to review the information available to your role. Demo results and real business results should stay in separate workspaces.":{"es": "Abre Informes para revisar la información disponible para tu rol. Mantén los resultados de demostración separados de los datos reales.", "zh-TW": "開啟報表檢視您角色可存取的資訊。展示結果與真實業務結果應放在不同工作區。", "zh-CN": "打开报表查看您角色可访问的信息。演示结果与真实业务结果应放在不同工作区。"},
+"You are ready to explore":{"es": "Ya puedes explorar", "zh-TW": "開始探索吧", "zh-CN": "开始探索吧"},
+"Reopen Tutorials at any time to repeat the walkthrough or choose a topic. Finishing the tour marks only this guide as read; it does not certify that business setup is complete.":{"es": "Vuelve a abrir Tutoriales para repetir el recorrido o elegir un tema. Finalizar solo marca esta guía como leída; no certifica que la configuración del negocio esté completa.", "zh-TW": "隨時重新開啟教學，重看導覽或選擇主題。完成導覽僅代表已閱讀本指南，不表示商家設定已完成。", "zh-CN": "随时重新打开教程，重看导览或选择主题。完成导览仅代表已阅读本指南，不表示商家设置已完成。"},
+
 "Home Page Editor":{"es": "Editor de inicio", "zh-TW": "首頁編輯器", "zh-CN": "首页编辑器"},
 "Categories Editor":{"es": "Editor de categorías", "zh-TW": "分類編輯器", "zh-CN": "分类编辑器"},
 "About Us Editor":{"es": "Editor de Acerca de nosotros", "zh-TW": "關於我們編輯器", "zh-CN": "关于我们编辑器"},
@@ -17895,3 +17941,71 @@ Object.assign(translations,{
     "zh-CN": "集点章"
   }
 })
+
+Object.assign(translations, {
+  "Skip to main content": {
+    "es": "Saltar al contenido principal",
+    "zh-TW": "跳至主要內容",
+    "zh-CN": "跳至主要内容"
+  },
+  "Review publication": {
+    "es": "Revisar publicación",
+    "zh-TW": "檢查發佈內容",
+    "zh-CN": "检查发布内容"
+  },
+  "Images in this section": {
+    "es": "Imágenes en esta sección",
+    "zh-TW": "此區塊的圖片",
+    "zh-CN": "此区块的图片"
+  },
+  "Publishing makes this section available to customers immediately, using its current visibility settings. Other editors are saved separately.": {
+    "es": "Al publicar, esta sección estará disponible de inmediato según su visibilidad actual. Los otros editores se guardan por separado.",
+    "zh-TW": "發佈後，此區塊將依目前的顯示設定立即提供給顧客。其他編輯器須分別儲存。",
+    "zh-CN": "发布后，此区块将依当前显示设置立即提供给顾客。其他编辑器须分别保存。"
+  },
+  "Check each language in Preview before publishing. Empty translations use the configured fallback.": {
+    "es": "Revisa cada idioma en la vista previa antes de publicar. Las traducciones vacías usan el contenido alternativo configurado.",
+    "zh-TW": "發佈前請在預覽中檢查各語言。空白翻譯會使用設定的備用內容。",
+    "zh-CN": "发布前请在预览中检查各语言。空白翻译会使用设置的备用内容。"
+  },
+  "Back to editing": {
+    "es": "Volver a editar",
+    "zh-TW": "返回編輯",
+    "zh-CN": "返回编辑"
+  },
+  "Publish changes": {
+    "es": "Publicar cambios",
+    "zh-TW": "發佈變更",
+    "zh-CN": "发布更改"
+  },
+  "Review Pre-Orders": {
+    "es": "Revisar pedidos anticipados",
+    "zh-TW": "查看預訂單",
+    "zh-CN": "查看预订单"
+  },
+  "Refreshing dashboard…": {
+    "es": "Actualizando panel…",
+    "zh-TW": "正在更新儀表板…",
+    "zh-CN": "正在更新仪表板…"
+  },
+  "Refresh failed. Displayed data may be out of date.": {
+    "es": "No se pudo actualizar. Los datos mostrados pueden estar desactualizados.",
+    "zh-TW": "更新失敗。顯示的資料可能已過時。",
+    "zh-CN": "更新失败。显示的数据可能已过时。"
+  },
+  "Last updated": {
+    "es": "Última actualización",
+    "zh-TW": "上次更新",
+    "zh-CN": "上次更新"
+  },
+  "No live dashboard update yet.": {
+    "es": "Aún no hay actualización del panel en tiempo real.",
+    "zh-TW": "尚未取得即時儀表板更新。",
+    "zh-CN": "尚未取得实时仪表板更新。"
+  }
+})
+
+Object.assign(translations,{"Device storage is unavailable. Your cart has been kept.": {"es": "El almacenamiento del dispositivo no está disponible. Se conservó tu carrito.", "zh-TW": "裝置儲存空間無法使用。購物車已保留。", "zh-CN": "设备存储不可用。购物车已保留。"}, "Resume or discard a held sale first.": {"es": "Primero reanuda o descarta una venta en espera.", "zh-TW": "請先恢復或捨棄一筆暫存銷售。", "zh-CN": "请先恢复或放弃一笔暂存销售。"}, "Sale held. Prices and stock will be checked when resumed.": {"es": "Venta en espera. Al reanudar se comprobarán precios y existencias.", "zh-TW": "銷售已暫存。恢復時將檢查價格與庫存。", "zh-CN": "销售已暂存。恢复时将检查价格与库存。"}, "The held sale could not be checked. Reconnect and try again.": {"es": "No se pudo comprobar la venta en espera. Reconecta e inténtalo de nuevo.", "zh-TW": "無法檢查暫存銷售。請重新連線後再試。", "zh-CN": "无法检查暂存销售。请重新连接后再试。"}, "Discard this held sale?": {"es": "¿Descartar esta venta en espera?", "zh-TW": "要捨棄這筆暫存銷售嗎？", "zh-CN": "要放弃这笔暂存销售吗？"}, "This cart cannot be held. Keep linked customer selections in their current checkout.": {"es": "No se puede poner este carrito en espera. Conserva las selecciones vinculadas del cliente en su cobro actual.", "zh-TW": "此購物車無法暫存。請將已連結的顧客選項保留在目前結帳中。", "zh-CN": "此购物车无法暂存。请将已关联的顾客选项保留在当前结账中。"}, "Remove favorite": {"es": "Quitar de favoritos", "zh-TW": "移除收藏", "zh-CN": "移除收藏"}, "Favorite": {"es": "Favorito", "zh-TW": "收藏", "zh-CN": "收藏"}})
+
+import {productivityTranslations} from './productivityTranslations'
+Object.assign(translations,productivityTranslations)

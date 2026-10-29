@@ -1,0 +1,103 @@
+{
+  "release": "2.0.0-rc.28",
+  "date": "2026-10-27",
+  "deployment": "not deployed",
+  "live_system_access": false,
+  "production_build": "passed",
+  "migration_files": 101,
+  "database_groups_passed": 145,
+  "editor_security_database_groups_passed": 11,
+  "phase_browser_groups_passed": 11,
+  "editor_browser_groups_passed": 11,
+  "staff_tutorial_browser_groups_passed": 9,
+  "customer_video_browser_groups_passed": 8,
+  "pos_hold_unit_checks": "passed",
+  "navigation_theme_checks": "passed",
+  "accessibility_checks": "passed",
+  "release_checks": "passed",
+  "legacy_groups": [
+    {
+      "test": "test:frontend",
+      "passed": true
+    },
+    {
+      "test": "test:ui",
+      "passed": true
+    },
+    {
+      "test": "test:web",
+      "passed": true
+    },
+    {
+      "test": "test:edge",
+      "passed": true
+    },
+    {
+      "test": "test:display",
+      "passed": false
+    },
+    {
+      "test": "test:rc1",
+      "passed": true
+    },
+    {
+      "test": "test:catalogue-export",
+      "passed": true
+    },
+    {
+      "test": "test:customer-requests",
+      "passed": false
+    },
+    {
+      "test": "test:ux",
+      "passed": false
+    },
+    {
+      "test": "test:finalization",
+      "passed": false
+    },
+    {
+      "test": "test:rc4",
+      "passed": false
+    },
+    {
+      "test": "test:operations",
+      "passed": true
+    },
+    {
+      "test": "test:purchasing-model",
+      "passed": true
+    },
+    {
+      "test": "test:boot",
+      "passed": true,
+      "note": "Cache-version assertion updated for RC28; rerun passed. See test log."
+    },
+    {
+      "test": "test:calendar",
+      "passed": true
+    },
+    {
+      "test": "test:system-style",
+      "passed": true
+    },
+    {
+      "test": "test:experience",
+      "passed": false
+    },
+    {
+      "test": "test:units",
+      "passed": true
+    },
+    {
+      "test": "test:branding",
+      "passed": true,
+      "note": "Cache-version assertion updated for RC28; rerun passed. See test log."
+    },
+    {
+      "test": "test:redesign",
+      "passed": true
+    }
+  ],
+  "full_npm_test": "not green; six legacy groups fail; later commands within those groups are skipped"
+}

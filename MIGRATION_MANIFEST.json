@@ -1,507 +1,422 @@
 [
   {
-    "order": 1,
     "file": "20260815_initial.sql",
     "sha256": "c60f5864cba34a345a060898b25d446db9c793b74b85ee2a1ce01a2572a1a8ca"
   },
   {
-    "order": 2,
     "file": "20260815_logo_settings.sql",
     "sha256": "0fab2f65611b9b97a518c61711ecf18f31784e1b85a880d2c729362cee57a0f3"
   },
   {
-    "order": 3,
     "file": "20260816_business_onboarding.sql",
     "sha256": "9503d5f35045258c74024dc36485bf8c07e948d0e461c61c3fbc181b31006432"
   },
   {
-    "order": 4,
     "file": "20260816_receipt_system.sql",
     "sha256": "58f69fac5cc45c59007da9c8c1fbc789d067c59e88b56c3711a4ca8138cd4cc7"
   },
   {
-    "order": 5,
     "file": "20260816_refunds_voids.sql",
     "sha256": "1c7085163dc8553766a13b3aa49f263435d883ceaa006d4d2e356d205759175f"
   },
   {
-    "order": 6,
     "file": "202608180800_cash_drawer.sql",
     "sha256": "2b2f0d47eef7a995fba50ae3facd76292167b526f268f52a40f666db92994631"
   },
   {
-    "order": 7,
     "file": "202608180810_product_barcodes.sql",
     "sha256": "f53ae88fa6b6748a18ec1e6b2f604747d0f2197cf528c5e0d8389972b6548220"
   },
   {
-    "order": 8,
     "file": "202608180820_management_reports.sql",
     "sha256": "c3f4af63faae43351ceaa01080d5ea8c461a9b3275ec72c881958922f58f099f"
   },
   {
-    "order": 9,
     "file": "202608180830_staff_management.sql",
     "sha256": "c59430a0d8ebe2503748bafc4506032b6048cf47d94d9fde5c7315de326556e1"
   },
   {
-    "order": 10,
     "file": "202608180840_unified_audit_log.sql",
     "sha256": "27e8bcde41b5f29ab050d888af7f7f89f119621dfff1a6139ee038b3577f70fe"
   },
   {
-    "order": 11,
     "file": "202608180850_expenses.sql",
     "sha256": "ceaa5bf465c716f2945071d76db9354fcb8330ddb1c4909072050708d3bb116c"
   },
   {
-    "order": 12,
     "file": "202608180860_profitability.sql",
     "sha256": "6206bd7b045f9f06d385f85d6a009e6b8d523a5b3dbd2243182f31c6d3635695"
   },
   {
-    "order": 13,
     "file": "202608180870_stock_receiving.sql",
     "sha256": "c599bd0d5c0a15cb85649945d331132af60a0dfb6bf28d99be0c02774061b0c3"
   },
   {
-    "order": 14,
     "file": "202608180880_purchase_orders.sql",
     "sha256": "e3c7ad331ded04f06b0c9bbd3b2385752e918c28198939a112b32926a455e2a0"
   },
   {
-    "order": 15,
     "file": "202608180890_production_batches.sql",
     "sha256": "01b15e226f59fb9f7bd021c31e9015ce79122a9fade3c3157cc4f98170811b26"
   },
   {
-    "order": 16,
     "file": "202608180900_business_backup.sql",
     "sha256": "96cfe4e762764d3c6b941751ffe7a890122c9bcad4f17b8ae77c7ebd24b08d2a"
   },
   {
-    "order": 17,
     "file": "202608180910_launch_readiness.sql",
     "sha256": "b9cbd58ec35a31c8ae2c5a08f52b1b76505e635a3d0f286002c0003ae7613914"
   },
   {
-    "order": 18,
     "file": "202608180920_cash_tender.sql",
     "sha256": "28c787bfde2a264e30b155ae4d74dd81408b3b51f77d83a28af80bdf7ea760a5"
   },
   {
-    "order": 19,
     "file": "202608180930_daily_cash_report.sql",
     "sha256": "919a93a30a716fe55b31cf0edb168005737bdfdef5d3ba522bf6276f216d824b"
   },
   {
-    "order": 20,
     "file": "202608190100_direct_staff_provisioning.sql",
     "sha256": "55b5d32e062f354e3e5f55c0b27718b64c4db8b3258b6dd190a3721a127b13c3"
   },
   {
-    "order": 21,
     "file": "202608190200_cards_staff_daily_cash.sql",
     "sha256": "e85fb71aa18f20ae0c8fc8b0ee26a24422f1779809481c0cb918a83653a26cca"
   },
   {
-    "order": 22,
     "file": "202608190300_manager_pin_pgcrypto_fix.sql",
     "sha256": "21e91f91c210c26ebdd4154782382157e5b93473b02eca33477c8fc5534432c1"
   },
   {
-    "order": 23,
     "file": "202608190310_product_image_storage_policy_fix.sql",
     "sha256": "81ed79a1a18b65c091294cbaf7972f48b35118b5479c152f1067cca202527c0c"
   },
   {
-    "order": 24,
     "file": "202608190320_product_image_storage_auth_helper.sql",
     "sha256": "e1802dd912bbffe5d01c4a22906b416203aa84356621b68c5362ff141f510a24"
   },
   {
-    "order": 25,
     "file": "202608190330_loyalty_points_management.sql",
     "sha256": "01b45d20dc58582e252239932b515d921c63e5b7854ed9452ae0a030008cccc0"
   },
   {
-    "order": 26,
     "file": "202608190340_configurable_loyalty_earning_rules.sql",
     "sha256": "b62483010031d40a949b4d5c1290ed24b19b62d96c8f5b19b416552525796038"
   },
   {
-    "order": 27,
     "file": "202608190350_entity_translations.sql",
     "sha256": "0de6da9bd1b83a7ec5fa7dc1a6445f034c5f7fd16a06057bf703a38ab95e31e1"
   },
   {
-    "order": 28,
     "file": "202608200100_product_emoji.sql",
     "sha256": "d845bd59192b8ee84f30ab1914f321df137a8095e3e7b9134353c17c87909f70"
   },
   {
-    "order": 29,
     "file": "202608240100_ingredient_inventory.sql",
     "sha256": "5b3bdc848a18dbace6831db6a2d693a856c72e9e914fc0c66d3d8dcaeb038276"
   },
   {
-    "order": 30,
     "file": "202608240200_product_recipes.sql",
     "sha256": "05b839376eb6079aec5ab7cc8ac1e7627636ae3ff4ceb5d35c3f44e2aa3162fd"
   },
   {
-    "order": 31,
     "file": "202608240300_recipe_production_consumption.sql",
     "sha256": "a605e44da8f48012681b22794942837eeb744d76eebe99c6aef447d5818e290d"
   },
   {
-    "order": 32,
     "file": "202608240400_restock_and_pricing_recommendations.sql",
     "sha256": "aaa25d6ac575205267fe630332862c3b8d7e93dd6a18a25ea9c501bfeccaf960"
   },
   {
-    "order": 33,
     "file": "202608240500_phase31_operational_acceptance.sql",
     "sha256": "b2d8d9212baa44ed215c83ae21ce08769daeebd1f976255b6da51db5aeb14cdf"
   },
   {
-    "order": 34,
     "file": "202608240600_production_planning.sql",
     "sha256": "bfbdf8a4f0869ed979af9930f06fa6ffff492d7e39d187a1960cb972388cdb78"
   },
   {
-    "order": 35,
     "file": "202608240700_ingredient_purchase_orders.sql",
     "sha256": "fe4a6d288698a6b57629092f374167d4c9fe59c139680350017a5dd200e30bfc"
   },
   {
-    "order": 36,
     "file": "202608240800_ingredient_po_receiving.sql",
     "sha256": "e862c3d2d75855cfdd9fafd9cbb8213f52a08dbf4fea8e0fb38df5f394eff254"
   },
   {
-    "order": 37,
     "file": "202608240900_inventory_waste.sql",
     "sha256": "100dc818e42d5d2d9b295a9b2b7d3af21fdfb4fc09c4a56fe992f2791fef38a1"
   },
   {
-    "order": 38,
     "file": "202608241000_supply_operations_reporting.sql",
     "sha256": "6a690a977353e7c606335389a7a304396cd560821d22687ad7e0b82be6e769a7"
   },
   {
-    "order": 39,
     "file": "202608241100_ingredient_lot_traceability.sql",
     "sha256": "e12ba4da8b0ae5b1783936a940a0cfc829d1babc8769b70864c1b35a31edfebe"
   },
   {
-    "order": 40,
     "file": "202608241200_finished_product_batch_traceability.sql",
     "sha256": "8e25157a341fe4eff2f08933bb08b229a1f82142ea303d0f0b8d663f5ce4ada9"
   },
   {
-    "order": 41,
     "file": "202608241300_finished_product_recall_case_management.sql",
     "sha256": "ad38b80beed5bc3209631c3a5a9fd18dcbddeebb54ad4634a9afd1c19a9b0e17"
   },
   {
-    "order": 42,
     "file": "202608241400_phase32_internal_go_live.sql",
     "sha256": "99a55c7570295980c179fbb83ae99b643187dd1edba7966609862324f31a11f4"
   },
   {
-    "order": 43,
     "file": "202608241500_phase33_operational_monitoring.sql",
     "sha256": "098e06f0e4c5e9e1f7ba6df80ef0f091f1ef9989fc59b7948d98fed2e4e924ac"
   },
   {
-    "order": 44,
     "file": "202608241600_phase33_1_staff_issue_reporting.sql",
     "sha256": "d0676d6b09808d1311322b78eded0d736ff144f861da5ae9ab35eceef2b89764"
   },
   {
-    "order": 45,
     "file": "202608241700_phase33_2_shift_handover.sql",
     "sha256": "1306e5b73b87f55ffc9828b47221f66b152b48cb80d5093303438644626ee23c"
   },
   {
-    "order": 46,
     "file": "202608251000_phase33_3_operational_tasks.sql",
     "sha256": "2ab4d877f7033efb011b190849a003590c158e7ff017ffd7ec6964cfe1998e82"
   },
   {
-    "order": 47,
     "file": "202608251100_phase33_4_daily_checklists.sql",
     "sha256": "09ee955f0a74fd096c24eb23349c0d316ccdc9ea4e367618f4cc0307b47e611c"
   },
   {
-    "order": 48,
     "file": "202608251200_phase33_5_alerts_escalations.sql",
     "sha256": "cef9d4d0c6cb329ffa38b3d9aea8a3e20c434100d40de591f7d071d799205e97"
   },
   {
-    "order": 49,
     "file": "202608251300_phase33_6_staff_schedule_attendance.sql",
     "sha256": "68d292683d4525f4734cafb20f288fc0f37b1c3d18043dc43ed75c84a48cce7d"
   },
   {
-    "order": 50,
     "file": "202608251400_phase33_7_operations_analytics.sql",
     "sha256": "1e759a8493e6e410cb747348c2f19d2319f56f194a95e6a38203347c99623da3"
   },
   {
-    "order": 51,
     "file": "202608251500_phase33_8_security_retention_recovery.sql",
     "sha256": "ba8e29c8d188efd2830d08af1e18d994ede466ea60039c282b0632fb7a9b1000"
   },
   {
-    "order": 52,
     "file": "202608251600_phase33_9_internal_release_candidate.sql",
     "sha256": "917a1e573f9ddd203937ba2a415217de7296dfe026cf379fca1aa987beb0d811"
   },
   {
-    "order": 53,
     "file": "202608261300_phase34_1_1_auto_session_logoff.sql",
     "sha256": "6dbe098f1c37974023e19434f17dae6d5c588bebd10d2b3c9e04a353952eb6ba"
   },
   {
-    "order": 54,
     "file": "202608301300_phase34_3_customer_selection_supply_photos.sql",
     "sha256": "ef585f3a4edbb8ce7d2bc16f0d866176064b5e5109f664e2fbdb103cadb3e6c3"
   },
   {
-    "order": 55,
     "file": "202609111900_phase34_5_ingredient_conversion_yield.sql",
     "sha256": "a2de85bd0fe9688a037acbd5ec7fdecee0f1641b3c3e86463adffa943fcd2e52"
   },
   {
-    "order": 56,
     "file": "202609111910_phase34_6_recipe_preparation.sql",
     "sha256": "8cad2ba6d6aa5a2ff0343713fb06a85c06b5068dd2aa7d2d9c25ff8789bb8241"
   },
   {
-    "order": 57,
     "file": "202609111920_phase34_7_34_8_recipe_scaling_costing.sql",
     "sha256": "ca17a91ad37441e68182205495a1378451ef164f68fd4ba2a66a6094cba72ed4"
   },
   {
-    "order": 58,
     "file": "202609111930_phase34_9_smart_production_planning.sql",
     "sha256": "2f167fec06884246ce76a2a3fc3aad6d2ff7020faf71a695c9af70bdd666f468"
   },
   {
-    "order": 59,
     "file": "202609111940_phase35_0_35_1_variance_substitutions.sql",
     "sha256": "9195c6dccb1623268dfcfb34bcb908bbffb14f5124361a84cfab3b0b81f59fa8"
   },
   {
-    "order": 60,
     "file": "202609111950_phase35_2_35_3_customer_status_supply_docs.sql",
     "sha256": "f58c06916f33fe16b5cd8c547e32f444368513b9e25d265d6d315b942a342395"
   },
   {
-    "order": 61,
     "file": "202609112000_phase35_5_acceptance_training.sql",
     "sha256": "881ba2488c3b1f5487c508e9c9f8272d2ac96a9678602cbbc3a83ec31d9e56d7"
   },
   {
-    "order": 62,
     "file": "202610121000_phase35_6_catalogue_account_security.sql",
     "sha256": "71f78e65b59f924883f6f9bee64ce6d6a8af9af67e788022e4997d278314305e"
   },
   {
-    "order": 63,
     "file": "202610121100_phase35_7_catalogue_customer_experience.sql",
     "sha256": "0b2d73ea3de4bdc50b07efb2ad4243c6a283dd194fbbf8510115ade371dbbd6c"
   },
   {
-    "order": 64,
     "file": "202610121200_phase35_8_product_media.sql",
     "sha256": "8aabdac7e7a135334724069332a656ae34fe674e39722a043ea6a86434d22ea0"
   },
   {
-    "order": 65,
     "file": "202610121300_phase35_9_promotions.sql",
     "sha256": "b95534742df9e3b992ac272e1c1664644393b473da0bbb2f7275b70683fc2d65"
   },
   {
-    "order": 66,
     "file": "202610121400_phase36_0_catalogue_pos_sync.sql",
     "sha256": "b6289cb0c9a8ddf65b7899f79ba714be2e2d3c8bdfb24f8df86e1d3fd6a5eea3"
   },
   {
-    "order": 67,
     "file": "202610121500_phase36_1_catalogue_analytics.sql",
     "sha256": "f98db88a3610f2fdd8c8dedd351c4ff653299feb347327cd11af1d2558d514d3"
   },
   {
-    "order": 68,
     "file": "202610130800_phase36_0_36_1_catalogue_displays.sql",
     "sha256": "26275eb3efd151e83d8bcd236e577c0fd8ef2106ab519320bfeae7641b550716"
   },
   {
-    "order": 69,
     "file": "202610130900_phase36_2_variants.sql",
     "sha256": "9975ceef4ff71bc693e1cde86a43103267502da8b3cda8a100c6ee4552ed2cf2"
   },
   {
-    "order": 70,
     "file": "202610131000_phase36_3_combos.sql",
     "sha256": "d83b891ef8e9772e37ebb88fcf67016c43c39a7bbfc4bf283ebc5634ca9a0170"
   },
   {
-    "order": 71,
     "file": "202610131100_phase36_3_commercial_checkout.sql",
     "sha256": "2a0c19ec7ecd0b8637444a0f01a9f03cd3d2f68ddad616f55b53c80befb5a150"
   },
   {
-    "order": 72,
     "file": "202610131200_phase36_4_36_5_order_displays.sql",
     "sha256": "470d06da726c4ae6fea89df31fcf7307d6312e39d62df7ebe7e3ad7380f0da43"
   },
   {
-    "order": 73,
     "file": "202610131300_phase36_6_36_7_scheduled_orders.sql",
     "sha256": "5c27ebec49f56d543b49f6b1d41bc84260413a829943c721ebd305ef4c726ab2"
   },
   {
-    "order": 74,
     "file": "202610131400_phase36_6_36_8_planning_forecast.sql",
     "sha256": "a2a7a529c38f325d7b6d313437430370336bfe783ce835adc250d921f6df4d55"
   },
   {
-    "order": 75,
     "file": "202610131500_phase36_9_shortage_alerts.sql",
     "sha256": "f59f867be1f12b7eb986a80ea6c5d6ad85c2275a9c3459bcfcf582bd3bf314d0"
   },
   {
-    "order": 76,
     "file": "202610131600_phase36_catalogue_integration.sql",
     "sha256": "f0da918bd1a53546947a07c5fb779aca5f2f502dc914175c0ced483309e72e0f"
   },
   {
-    "order": 77,
     "file": "202610131700_phase36_order_payment.sql",
     "sha256": "5f8f97c199d70f4310e77a69316f5e42545ee51bd39b3aecfab423efc333bee6"
   },
   {
-    "order": 78,
     "file": "202610150900_rc1_security_hardening.sql",
     "sha256": "ef8267f3ab33c520d002ed0025657acbd29e1cf29fd7b34cb5b3d7c16ac819d2"
   },
   {
-    "order": 79,
     "file": "202610151200_customer_requests_register.sql",
     "sha256": "d5f66dfd8132bfd159bbb1f2dd2edf44acec7c0d73a118cad2eba2c4848033c0"
   },
   {
-    "order": 80,
     "file": "202610151800_ux_workspace.sql",
     "sha256": "7ca98b9af7a5168da232db1cc4aa5487beb58b35dda8397c25729e63a37067e1"
   },
   {
-    "order": 81,
     "file": "202610161200_catalogue_finalization.sql",
     "sha256": "d058a4a6ba97329be6ee9fca087032f8a41e6478f8b9b54d85567362a614e510"
   },
   {
-    "order": 82,
     "file": "202610161500_original_catalogue_images.sql",
     "sha256": "cecaa6552e63afeed6986dc32f6ed967d9c49ddc5f758d34772c9e6affce728e"
   },
   {
-    "order": 83,
     "file": "202610161600_phone_receipt_consistency.sql",
     "sha256": "39b4c967d0796894a8d6255f798c1013fd22bcb186a4246113ed7882a58ba4ba"
   },
   {
-    "order": 84,
     "file": "202610171000_ingredient_purchasing.sql",
     "sha256": "18fb1d5f63daaccb3311282e9edf61ca5956809ced84d1ae36952f50ecd02c16"
   },
   {
-    "order": 85,
     "file": "202610171100_production_intelligence.sql",
     "sha256": "71d3689713b335d095b4fc845cca8aac1fb52d13457243c767b5b77fb396fd77"
   },
   {
-    "order": 86,
     "file": "202610171200_workspace_recovery.sql",
     "sha256": "8247c44159d0ee3d3db166e0bf8490468dd7978ba908561b8094e4e84f9f9668"
   },
   {
-    "order": 87,
     "file": "202610171300_operations_import_permissions.sql",
     "sha256": "8cd1a27531124091cecc23a9ba63279cf7bc1e05038c3c6aaf1fc4cbb42877a5"
   },
   {
-    "order": 88,
     "file": "202610171400_purchase_item_model.sql",
     "sha256": "6ed9dbe3f72d5bf9ea2d89869249df53064b00193f5bc9a130dc3ce6458ba95b"
   },
   {
-    "order": 89,
     "file": "202610171500_shared_catalogue_theme.sql",
     "sha256": "a6bb770eea61f08001f4caeb80c1906ca72cef3c3e7977d95954578628ee946d"
   },
   {
-    "order": 90,
     "file": "202610171700_operations_calendar.sql",
     "sha256": "f464483ea788475e6154e63a007a9b1208256fef4e2494e42468a6d98ceaaafa"
   },
   {
-    "order": 91,
     "file": "202610180800_master_record_removal.sql",
     "sha256": "79b231fe599b724a20adc2cedf9d655abe1e4973caa95ae2a5967670c840564e"
   },
   {
-    "order": 92,
     "file": "202610181200_customer_experience_notifications.sql",
     "sha256": "8cf3d2a4bc2a2d6a676a7afdafd014f85db1d337644c42a067b6238912498be2"
   },
   {
-    "order": 93,
     "file": "202610181600_ingredient_measurement_units.sql",
     "sha256": "2f7b9274ca3680bdca9ba819c0e9f44a7b10125802758879f2b3662c9d1ae52d"
   },
   {
-    "order": 94,
     "file": "202610181700_gallery_catalogue_appearance.sql",
     "sha256": "95a50edb01864cc6988911ff67f6259ee565f40e44c27486389d4f7ebbcab95e"
   },
   {
-    "order": 95,
     "file": "202610201200_persistent_preorder_notifications.sql",
     "sha256": "0efde67835dff2fe9cfb3f28db4f4baec57fdb7565b42e5ca177f113ce866c78"
   },
   {
-    "order": 96,
     "file": "202610201800_customer_pickup_notifications.sql",
     "sha256": "639cdc027212f368e5401c5bba0ca16c16c87ad55479fbc6bf1bf74961acba06"
   },
   {
-    "order": 97,
     "file": "202610231200_customer_restore_whatsapp_alerts.sql",
     "sha256": "4c79dc372a056b746910f146c7072d0fbf14b1d2ef5b4b5411113fca1d311c16"
   },
   {
-    "order": 98,
     "file": "202610241200_catalogue_about.sql",
     "sha256": "aad3b64a28f9441d144a4fcad3c072c17924b4319a58224104eb9277313a80b5"
   },
   {
-    "order": 99,
     "file": "202610241300_about_page_highlight.sql",
     "sha256": "90451a7a71929ca95fbcdb4808f5377164d5df225a57d0729a322c02734e590e"
   },
   {
-    "order": 100,
     "file": "202610251000_customer_recognition.sql",
     "sha256": "3f63d069fdd2f0a8c2b53da2a80400eecb529990b53f78f0d44507c9f305415a"
   },
   {
-    "order": 101,
     "file": "202610251600_independent_catalogue_editors.sql",
     "sha256": "8a12b73f9597fcf8418907fa3ea3ada9b3e5e204ef1904815474d497cd28effd"
+  },
+  {
+    "file": "202610271900_productivity_drafts_setup.sql",
+    "sha256": "bf6bb665748387a31833918677a26e1f01541c50d97c1026f3be58c6c57d9761"
+  },
+  {
+    "file": "202610272000_search_media_history.sql",
+    "sha256": "169a871b978e819b195e4710e6f4d2d82114b6db4f2ad7c8c67fad59101d9137"
+  },
+  {
+    "file": "202610272100_optional_requested_time.sql",
+    "sha256": "5a38322e60edbb2389a8819a84aa6a63138891e9efc48a207879006d2bda6370"
+  },
+  {
+    "file": "202610281000_setup_preferences.sql",
+    "sha256": "83d50f8a9cbc91e95443d1fb6332fca82157e3c2d0ca3911f9e0ff6269c4cd1d"
   }
 ]

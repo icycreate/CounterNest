@@ -40,20 +40,20 @@ export function PosProductBrowser({products,data,error,currency,onSelect,onAdd}:
   const [query,setQuery]=useState(''),[category,setCategory]=useState('')
   const [combo,setCombo]=useState<Catalog['combos'][number]|null>(null)
   const categories=Array.from(new Set(products.filter(p=>p.active).map(p=>p.category)))
-  const visible=products.filter(p=>p.active&&(!category||p.category===category)&&p.name.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase()))
+  const visible=products.filter(p=>p.active&&(!category||p.category===category)&&(p.name+' '+(p.barcode??'')).toLocaleLowerCase().includes(query.trim().toLocaleLowerCase()))
   return <div className="pos-products">
     <h2>{tr('Products')}</h2>
-    <SearchField aria-label={tr('Search product name')} placeholder={tr('Search product name')} value={query} onChange={e=>setQuery(e.target.value)}/>
+    <SearchField aria-label={tr('Name or barcode')} placeholder={tr('Name or barcode')} value={query} onChange={e=>setQuery(e.target.value)}/>
     <div className="pos-categories" aria-label={tr('Category')}>{['',...categories].map(c=><Button key={c} type="button" variant={category===c?'primary':'secondary'} aria-pressed={category===c} onClick={()=>setCategory(c)}>{c?localizeCategory(c):tr('All')}</Button>)}</div>
     {error&&<p role="alert">{trError(error)}</p>}
     {supabase&&!data&&!error&&<p role="status">{tr('Loading catalogue…')}</p>}
     <div className="pos-product-grid">{visible.map(p=>{
       const detail=data?.products.find(x=>x.id===p.id)
       const available=detail?.variants.length?detail.variants.some(v=>v.available):p.stock>0&&(detail?.available??true)
-      const price=detail?.variants.length?Math.min(...detail.variants.map(v=>Number(v.price))):p.price
+      const price=detail?.variants.length?Math.min(...detail.variants.filter(v=>!available||v.available).map(v=>Number(v.price))):p.price
       return <Button key={p.id} type="button" variant="secondary" className="pos-product-tile" disabled={!available||Boolean(supabase&&!data)} onClick={()=>onSelect(p)}>
         <span className="pos-product-art">{(p.image||detail?.image_url)?<img src={detail?.cropped_catalogue_image||p.image||detail?.image_url||''} alt="" loading="lazy"/>:<span aria-hidden="true">{p.iconEmoji||'🧁'}</span>}</span>
-        <strong>{p.name}</strong><span>{formatMoney(price,currency)}</span><small>{!available?tr('Sold out'):detail&&(detail.variants.length>0||detail.option_labels.length>0)?tr('Choose options'):tr('Add to cart')}</small>
+        <strong>{p.name}</strong><span>{formatMoney(price,currency)}</span><small>{!available?tr('Sold out'):detail&&(detail.variants.length>0||detail.option_labels.length>0)?tr('Choose options'):tr('Add to cart')}</small>{!detail?.variants.length&&<small>{tr(p.stock<=p.lowAt?'Low Stock':'Stock')}: {Math.max(0,p.stock)}</small>}
       </Button>
     })}</div>
     {!visible.length&&<p>{tr('No products match these filters.')}</p>}

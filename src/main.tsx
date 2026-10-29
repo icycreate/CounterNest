@@ -61,3 +61,5 @@ import './accessibility.css'
 
 
 import './tooltip.css'
+
+import './responsiveWorkspace.css'

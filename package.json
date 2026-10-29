@@ -1,7 +1,7 @@
 {
   "name": "counternest-pos",
   "private": true,
-  "version": "2.0.0-rc.25",
+  "version": "2.0.0-rc.30",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -38,7 +38,12 @@
     "test:branding": "node tests/branding-rc14.cjs",
     "test:redesign": "node tests/redesign.cjs",
     "test:rc25": "node tests/rc25-editors-database.cjs",
-    "test:rc25:browser": "node tests/rc25-browser.cjs"
+    "test:rc25:browser": "node tests/rc25-browser.cjs",
+    "test:tutorial": "node tests/tutorial-browser.cjs",
+    "test:customer-guide": "node tests/customer-guide-browser.cjs",
+    "test:phases": "node tests/phases-browser.cjs",
+    "test:phase56": "node tests/rc25-editors-database.cjs && node tests/phase56-localization.cjs",
+    "test:v62": "node tests/v62-browser.cjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",

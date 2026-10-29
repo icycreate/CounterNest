@@ -1,0 +1,13 @@
+[
+  "four languages switch immediately and preserve authored draft",
+  "multiple image upload/crop, reorder, original preservation and save",
+  "saved home content reloads",
+  "live preview follows edited content language and cancel preserves published content",
+  "failed publication retains draft and leaves saved content unchanged",
+  "category edit/hide/save retains ID and independent home media",
+  "About Picture 3 and category cover upload independently and existing About page updates",
+  "home and About presentation remain independent",
+  "Pre-Orders mobile/tablet/desktop Light/Dark layout has no overflow or phantom hidden control",
+  "notification badge, metadata, read, all-read and exact request deep link",
+  "no browser runtime errors"
+]

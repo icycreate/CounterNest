@@ -1,3 +1,31 @@
+# CounterNest POS v6.2 — Mobile UI (RC30)
+
+Offline source update based on RC29. See `V62_IMPLEMENTATION_REPORT.md` for tested scope, limitations, screenshots and manual deployment instructions. No new database migration. Earlier release notes below are historical.
+
+# Current release: CounterNest RC29 — 2026-10-28
+
+Offline Phases 5–6 source update. Locally built and tested; **not deployed**. Six legacy test groups remain unresolved. Start with [RC29 report](RC29_PHASE56_REPORT.md), [changelog](CHANGELOG_RC29.md), and [manual deployment](MANUAL_DEPLOYMENT_RC29.md). Earlier release banners below are historical.
+
+---
+
+# CounterNest RC28 — UI & Operations Enhancement v4.0
+
+Start with [phase report and current validation status](RC28_PHASE_REPORT.md), [modified files](MODIFIED_FILES_RC28.md), [changelog](CHANGELOG_RC28.md) and [manual deployment](MANUAL_DEPLOYMENT_RC28.md). Built and tested locally; not deployed. Six legacy test groups remain failing. No migration over RC27. Reports below this section describe earlier releases.
+
+---
+
+# CounterNest RC27 — Customer Quick Start Video
+
+English captions, no voiceover. Includes the customer Catalogue video guide, captions and [transcript](CUSTOMER_VIDEO_TRANSCRIPT.md). See [changes, verification and deployment notes](RC27_CUSTOMER_VIDEO_REPORT.md). Locally tested; not deployed. No new migration over RC26.
+
+---
+
+# CounterNest RC26 — Guided Tutorials
+
+First-use walkthrough, reopenable in-app Tutorials and a [written demo guide](DEMO_GUIDE_RC26.md). See [implementation and validation](RC26_TUTORIAL_REPORT.md) and [modified files](MODIFIED_FILES_RC26.md). Locally tested; not deployed. No new migration over RC25.
+
+---
+
 # CounterNest RC25 — Independent Catalogue Editors
 
 Locally implemented and validated; **not deployed**. Start with [change/test report](RC25_CHANGE_REPORT.md), [manual deployment](MANUAL_DEPLOYMENT_RC25.md), [business user guide](CATALOGUE_EDITORS_USER_GUIDE.md), and [modified files](MODIFIED_FILES_RC25.md). Earlier release reports below are historical.

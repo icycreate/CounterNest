@@ -321,15 +321,15 @@
   },
   {
     "file": "202610161200_catalogue_finalization.sql",
-    "sha256": "d058a4a6ba97329be6ee9fca087032f8a41e6478f8b9b54d85567362a614e510"
+    "sha256": "959d8a16880d2904b18b9ded49b74f58046edb514a2225642078e7c5debddc28"
   },
   {
     "file": "202610161500_original_catalogue_images.sql",
-    "sha256": "cecaa6552e63afeed6986dc32f6ed967d9c49ddc5f758d34772c9e6affce728e"
+    "sha256": "91ae1c05262e15b7f9f5a43dee0a697cad0606d4a69d076c0818da370a181e16"
   },
   {
     "file": "202610161600_phone_receipt_consistency.sql",
-    "sha256": "39b4c967d0796894a8d6255f798c1013fd22bcb186a4246113ed7882a58ba4ba"
+    "sha256": "495eff0073fa22c45a33872423945be0cca8c28a0bce9b8572ac9b6f4c14f734"
   },
   {
     "file": "202610171000_ingredient_purchasing.sql",
@@ -341,7 +341,7 @@
   },
   {
     "file": "202610171200_workspace_recovery.sql",
-    "sha256": "8247c44159d0ee3d3db166e0bf8490468dd7978ba908561b8094e4e84f9f9668"
+    "sha256": "7fb996cbe82b1f9dbe6768be1861f98fcdeb2e35a0fadb768195a8b8d13a92f6"
   },
   {
     "file": "202610171300_operations_import_permissions.sql",
@@ -369,7 +369,7 @@
   },
   {
     "file": "202610181600_ingredient_measurement_units.sql",
-    "sha256": "2f7b9274ca3680bdca9ba819c0e9f44a7b10125802758879f2b3662c9d1ae52d"
+    "sha256": "6f91762bdb334487e10d4cd4a956267d24febecc6925e8a9b84e0a62c0c6a574"
   },
   {
     "file": "202610181700_gallery_catalogue_appearance.sql",
@@ -381,35 +381,35 @@
   },
   {
     "file": "202610201800_customer_pickup_notifications.sql",
-    "sha256": "639cdc027212f368e5401c5bba0ca16c16c87ad55479fbc6bf1bf74961acba06"
+    "sha256": "25e3ea25e0e0ebd8c3d5d8909c411386e2ab528bef74c1747eb18e9211c0d1c9"
   },
   {
     "file": "202610231200_customer_restore_whatsapp_alerts.sql",
-    "sha256": "4c79dc372a056b746910f146c7072d0fbf14b1d2ef5b4b5411113fca1d311c16"
+    "sha256": "25422598510371112c56792ecd3a0b1da58497fecde68dc495bb2c314bd1da96"
   },
   {
     "file": "202610241200_catalogue_about.sql",
-    "sha256": "aad3b64a28f9441d144a4fcad3c072c17924b4319a58224104eb9277313a80b5"
+    "sha256": "830fe061ddd74812f27625c808b249d8179fb7abf717c1d3e62a28245284b8cd"
   },
   {
     "file": "202610241300_about_page_highlight.sql",
-    "sha256": "90451a7a71929ca95fbcdb4808f5377164d5df225a57d0729a322c02734e590e"
+    "sha256": "65f508c842b655ad7507cbe100f08778cfb05fb4efc3c1eb40b935e1286ea392"
   },
   {
     "file": "202610251000_customer_recognition.sql",
-    "sha256": "3f63d069fdd2f0a8c2b53da2a80400eecb529990b53f78f0d44507c9f305415a"
+    "sha256": "9f2725a55c341173291fe3423abd950bf7688f66a8a5435ef2e7a9d646f693dd"
   },
   {
     "file": "202610251600_independent_catalogue_editors.sql",
-    "sha256": "8a12b73f9597fcf8418907fa3ea3ada9b3e5e204ef1904815474d497cd28effd"
+    "sha256": "8684e05bcc8540d71104dd61d2d61eb5d285eee8d515fcbf7ad8766ca56fa65f"
   },
   {
     "file": "202610271900_productivity_drafts_setup.sql",
-    "sha256": "bf6bb665748387a31833918677a26e1f01541c50d97c1026f3be58c6c57d9761"
+    "sha256": "4c3f2b65352467bfc9c6375b7c387758e11a3626449331312bef5596a0d2b19d"
   },
   {
     "file": "202610272000_search_media_history.sql",
-    "sha256": "169a871b978e819b195e4710e6f4d2d82114b6db4f2ad7c8c67fad59101d9137"
+    "sha256": "6212c5794a6ebfc4c3f20ac5bdbf4091110c483193c478518e2905e5c83eb259"
   },
   {
     "file": "202610272100_optional_requested_time.sql",
@@ -417,6 +417,10 @@
   },
   {
     "file": "202610281000_setup_preferences.sql",
-    "sha256": "83d50f8a9cbc91e95443d1fb6332fca82157e3c2d0ca3911f9e0ff6269c4cd1d"
+    "sha256": "270fdc638cccc5eb6d4196624cf58fdf7cadae76486271d3482093acc837d923"
+  },
+  {
+    "file": "20261031132856_release_63a_edge_email.sql",
+    "sha256": "cde982f31e60d5b20fa1c4a432ea5b64470fe9d09b33efc603452ad761d8ac4a"
   }
 ]

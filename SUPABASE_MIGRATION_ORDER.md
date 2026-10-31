@@ -109,3 +109,5 @@ For an existing RC28 database, apply only entries 102–105 in order after a ver
 103. 202610272000_search_media_history.sql
 104. 202610272100_optional_requested_time.sql
 105. 202610281000_setup_preferences.sql
+
+106. 20261031132856_release_63a_edge_email.sql — release 6.3A only; existing live email schema adopted conditionally.

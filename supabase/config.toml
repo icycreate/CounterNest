@@ -16,3 +16,13 @@ verify_jwt = false
 
 [functions.workspace-lifecycle]
 verify_jwt = false
+
+# Handler validates internal secret; gateway JWT is not an API-key check.
+[functions.send-preorder-email]
+verify_jwt = false
+# Public catalogue capability is validated in the database, not by a shared anon key.
+[functions.submit-preorder]
+verify_jwt = false
+# Handler authenticates user JWT and checks the existing admin settings RPC.
+[functions.preorder-email-admin]
+verify_jwt = false

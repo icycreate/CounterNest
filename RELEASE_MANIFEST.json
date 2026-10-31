@@ -1,14 +1,17 @@
 {
-  "version": "2.0.0-rc.30",
-  "baseline_version": "2.0.0-rc.29",
+  "version": "2.0.0-rc.30+6.3A",
+  "baseline_version": "2.0.0-rc.30",
+  "baseline_commit": "2cd67a737165cb29d72e6556a15890cd1d1d9392",
   "baseline_migration_count": 105,
-  "migration_count": 105,
-  "upgrade_migrations": [],
-  "name": "CounterNest v6.2 Mobile UI — RC30",
-  "build": "2026-10-28",
-  "product": "CounterNest POS",
+  "migration_count": 106,
+  "upgrade_migrations": [
+    "20261031132856_release_63a_edge_email.sql"
+  ],
+  "name": "CounterNest POS Release 6.3A",
+  "build": "2026-10-31",
   "release_type": "source-update",
   "desktop_installer": false,
-  "validation": "See V62_IMPLEMENTATION_REPORT.md",
-  "deployment_status": "Not deployed; no live systems accessed"
+  "validation": "validation/release-63a/results.json",
+  "deployment_status": "Prepared locally; see RELEASE_63A_DEPLOYMENT_REPORT.md for live status",
+  "excluded": "Release 6.3B indefinitely deferred"
 }

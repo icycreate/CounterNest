@@ -26,8 +26,9 @@ async function main(){
  select set_config('test.user','${uid}',false);`);
  const checks=[];
  async function check(name,fn){await fn();checks.push({name,status:'passed'});console.log('PASS',name)}
- const scalar=async(sql,params=[])=>Object.values((await db.query(sql,params)).rows[0])[0];
- const rejects=async(sql,params,pattern)=>{let error;try{await db.query(sql,params)}catch(e){error=e}assert(error,'Expected rejection');if(pattern)assert.match(error.message,pattern)};
+ const intakeQuery=(sql,params=[])=>require('./edge-intake-fixture.cjs')(db,sql,params);
+ const scalar=async(sql,params=[])=>Object.values((await intakeQuery(sql,params)).rows[0])[0];
+ const rejects=async(sql,params,pattern)=>{let error;try{await intakeQuery(sql,params)}catch(e){error=e}assert(error,'Expected rejection');if(pattern)assert.match(error.message,pattern)};
  await check('Catalogue themes are scoped by validated public token and expose visual fields only',async()=>{
  await db.query("update shops set theme=$1 where id=$2",[JSON.stringify({primary:'#2367ac',background:'#f0f4fa',text:'#263b58',appearance:'light',private_setting:'must-not-leak'}),shop]);
  await db.query("update shops set theme=$1 where id=$2",[JSON.stringify({primary:'#27653c',background:'#f1f5f0',text:'#263f2d',appearance:'dark'}),other]);

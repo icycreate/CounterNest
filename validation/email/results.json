@@ -1,0 +1,14 @@
+{
+  "cases": 40,
+  "passed": [
+    "four languages",
+    "light and dark",
+    "no horizontal overflow",
+    "admin settings",
+    "server-only recipient",
+    "test queued",
+    "unsaved preferences retained",
+    "cashier hidden"
+  ],
+  "errors": []
+}

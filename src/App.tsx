@@ -1,3 +1,4 @@
+import {EmailAlertSettings} from './EmailAlertSettings'
 import {SetupPreferences,usePosPaymentMethods} from './SetupPreferences'
 import {DraftControls,useEditorDraft} from './EditorDraft'
 import {registerDraftSave} from './appNavigation'
@@ -1703,7 +1704,7 @@ function SettingsPage({preferences,theme,setTheme,shopName,setShopName,logoUrl,s
         <FormField>{tr("Receipt footer")}<TextAreaField rows={3} value={receiptFooter} onChange={e=>setReceiptFooter(e.target.value)} placeholder={tr("Thank you for your business!")}/></FormField>
         <div className="mini-receipt-preview"><strong>{shopName||tr("Business Name")}</strong><span>{tr("Receipt #000123")}</span><span>{shopAddress||tr("Business address")}</span><span>{tr("Salesperson: Staff Name")}</span><b>{tr("Total")+' '} {money(12.50,currency)}</b><small>{receiptFooter||tr("Thank you!")}</small></div>
       </Card>
-      <NotificationSettings role={role}/><WhatsAppOrderSettings role={role}/><BusinessContactSettings role={role}/><CustomerContactSettings shopName={shopName} logoUrl={logoUrl} role={role} showToast={showToast}/><Card className="panel hardware-settings-panel">
+      <NotificationSettings role={role}/><EmailAlertSettings role={role}/><WhatsAppOrderSettings role={role}/><BusinessContactSettings role={role}/><CustomerContactSettings shopName={shopName} logoUrl={logoUrl} role={role} showToast={showToast}/><Card className="panel hardware-settings-panel">
         <SectionHeader title={tr("Hardware & Receipt Printer")} icon={<Printer size={21}/>}/>
         <p className="muted">{tr("Configure a generic ESC/POS connection now and keep System Print as the working fallback. Direct communication is activated only after a compatible printer is selected and tested.")}</p>
         <div className="form-grid"><FormField>{tr("Connection profile")}<SelectField value={printerProfile} onChange={e=>setPrinterProfile(e.target.value)}><option value="system">{tr("System Print (recommended fallback)")}</option><option value="escpos-usb">{tr("Generic ESC/POS — USB")}</option><option value="escpos-bluetooth">{tr("Generic ESC/POS — Bluetooth")}</option><option value="escpos-wifi">{tr("Generic ESC/POS — Wi-Fi / LAN")}</option></SelectField></FormField><FormField>{tr("Receipt paper width")}<SelectField value={paperWidth} onChange={e=>setPaperWidth(e.target.value)}><option value="58">{tr("58 mm")}</option><option value="80">{tr("80 mm")}</option></SelectField></FormField></div>

@@ -18009,3 +18009,147 @@ Object.assign(translations,{"Device storage is unavailable. Your cart has been k
 
 import {productivityTranslations} from './productivityTranslations'
 Object.assign(translations,productivityTranslations)
+
+Object.assign(translations,{
+  "Email Alerts": {
+    "es": "Alertas por correo",
+    "zh-TW": "電子郵件通知",
+    "zh-CN": "电子邮件通知"
+  },
+  "Automatic pre-order emails are sent by the server. Closing the catalogue does not cancel them.": {
+    "es": "El servidor envía los correos de pedidos anticipados. Cerrar el catálogo no los cancela.",
+    "zh-TW": "預訂郵件由伺服器寄送，關閉目錄不會取消。",
+    "zh-CN": "预订邮件由服务器发送，关闭目录不会取消。"
+  },
+  "Configured recipient": {
+    "es": "Destinatario configurado",
+    "zh-TW": "已設定收件人",
+    "zh-CN": "已配置收件人"
+  },
+  "Not configured": {
+    "es": "Sin configurar",
+    "zh-TW": "尚未設定",
+    "zh-CN": "尚未配置"
+  },
+  "Recipient configured. Worker and provider setup are required.": {
+    "es": "Destinatario configurado. Se requiere configurar el proceso de envío y el proveedor.",
+    "zh-TW": "收件人已設定。仍須設定寄送工作及郵件服務。",
+    "zh-CN": "收件人已配置。仍需配置发送任务及邮件服务。"
+  },
+  "Ask the administrator to provision an authorized recipient for this company.": {
+    "es": "Pide al administrador que configure un destinatario autorizado para esta empresa.",
+    "zh-TW": "請管理員為此公司設定授權收件人。",
+    "zh-CN": "请管理员为此公司配置授权收件人。"
+  },
+  "New Pre-order Email Notifications": {
+    "es": "Correos de nuevos pedidos anticipados",
+    "zh-TW": "新預訂電子郵件通知",
+    "zh-CN": "新预订电子邮件通知"
+  },
+  "Enable email notifications": {
+    "es": "Activar notificaciones por correo",
+    "zh-TW": "啟用電子郵件通知",
+    "zh-CN": "启用电子邮件通知"
+  },
+  "Email new pre-orders": {
+    "es": "Enviar nuevos pedidos por correo",
+    "zh-TW": "寄送新預訂通知",
+    "zh-CN": "发送新预订通知"
+  },
+  "Send Test Email": {
+    "es": "Enviar correo de prueba",
+    "zh-TW": "寄送測試郵件",
+    "zh-CN": "发送测试邮件"
+  },
+  "Last email test": {
+    "es": "Última prueba de correo",
+    "zh-TW": "上次郵件測試",
+    "zh-CN": "上次邮件测试"
+  },
+  "Test email": {
+    "es": "Correo de prueba",
+    "zh-TW": "測試郵件",
+    "zh-CN": "测试邮件"
+  },
+  "Test emails are limited to one every two minutes and five per day per company.": {
+    "es": "Las pruebas se limitan a una cada dos minutos y cinco al día por empresa.",
+    "zh-TW": "每家公司每兩分鐘最多測試一次，每天最多五次。",
+    "zh-CN": "每家公司每两分钟最多测试一次，每天最多五次。"
+  },
+  "Submitted to provider does not confirm inbox delivery.": {
+    "es": "La aceptación del proveedor no confirma la entrega al buzón.",
+    "zh-TW": "郵件服務已受理不代表已送達收件匣。",
+    "zh-CN": "邮件服务已受理不代表已送达收件箱。"
+  },
+  "Recent email attempts": {
+    "es": "Intentos de correo recientes",
+    "zh-TW": "近期郵件寄送紀錄",
+    "zh-CN": "近期邮件发送记录"
+  },
+  "Queued": {
+    "es": "En cola",
+    "zh-TW": "已排程",
+    "zh-CN": "已排队"
+  },
+  "Processing": {
+    "es": "Procesando",
+    "zh-TW": "處理中",
+    "zh-CN": "处理中"
+  },
+  "Retry scheduled": {
+    "es": "Reintento programado",
+    "zh-TW": "已排程重試",
+    "zh-CN": "已安排重试"
+  },
+  "Submitted to email provider": {
+    "es": "Enviado al proveedor de correo",
+    "zh-TW": "已提交郵件服務",
+    "zh-CN": "已提交邮件服务"
+  },
+  "Email failed": {
+    "es": "Correo fallido",
+    "zh-TW": "郵件失敗",
+    "zh-CN": "邮件失败"
+  },
+  "Email needs reconciliation": {
+    "es": "Correo pendiente de verificación",
+    "zh-TW": "郵件需要核對",
+    "zh-CN": "邮件需要核对"
+  },
+  "Email settings could not be loaded.": {
+    "es": "No se pudo cargar la configuración de correo.",
+    "zh-TW": "無法載入郵件設定。",
+    "zh-CN": "无法加载邮件设置。"
+  },
+  "Email preferences saved.": {
+    "es": "Preferencias de correo guardadas.",
+    "zh-TW": "已儲存郵件偏好設定。",
+    "zh-CN": "已保存邮件偏好设置。"
+  },
+  "Email settings changed or could not be saved. Reload and retry.": {
+    "es": "La configuración cambió o no se pudo guardar. Recarga e inténtalo de nuevo.",
+    "zh-TW": "郵件設定已變更或無法儲存，請重新載入後重試。",
+    "zh-CN": "邮件设置已变更或无法保存，请重新加载后重试。"
+  },
+  "Test email queued. Check the result below.": {
+    "es": "Correo de prueba en cola. Revisa el resultado abajo.",
+    "zh-TW": "測試郵件已排程，請查看下方結果。",
+    "zh-CN": "测试邮件已排队，请查看下方结果。"
+  },
+  "Email test limit reached. Try again later.": {
+    "es": "Se alcanzó el límite de pruebas. Inténtalo más tarde.",
+    "zh-TW": "已達郵件測試上限，請稍後重試。",
+    "zh-CN": "已达邮件测试上限，请稍后重试。"
+  },
+  "Test email could not be queued. Retry safely.": {
+    "es": "No se pudo poner la prueba en cola. Puedes reintentar.",
+    "zh-TW": "無法排程測試郵件，可以安全重試。",
+    "zh-CN": "无法安排测试邮件，可以安全重试。"
+  }
+})
+
+Object.assign(translations,{
+ 'Retry pending emails':{es:'Reintentar correos pendientes','zh-TW':'重試待寄郵件','zh-CN':'重试待发邮件'},
+ 'Email processing could not be started. The saved order is safe.':{es:'No se pudo iniciar el envío. El pedido guardado está seguro.','zh-TW':'無法開始處理郵件。已儲存的訂單不受影響。','zh-CN':'无法开始处理邮件。已保存的订单不受影响。'},
+ 'Disabling email cancels unsent alerts. An email already handed to the provider cannot be recalled.':{es:'Desactivar el correo cancela las alertas sin enviar. No se puede retirar un correo ya entregado al proveedor.','zh-TW':'停用郵件會取消尚未寄出的通知。已交給郵件服務商的郵件無法收回。','zh-CN':'停用邮件会取消尚未发出的通知。已交给邮件服务商的邮件无法撤回。'}
+})

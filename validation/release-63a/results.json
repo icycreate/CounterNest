@@ -1,0 +1,91 @@
+[
+  {
+    "name": "integration",
+    "exit": 0,
+    "result": "PASS",
+    "summary": [
+      "PASS atomic leases, immutable payload, stale lease denial and retry retention",
+      "PASS OFF cancels unsent jobs including tests; re-enable does not replay",
+      "PASS test limits, authorized recovery and foreign company cannot activate email",
+      "PASS HTTP path preserves confirmation when kick fails; rejects recipient injection",
+      "PASS 7 release 6.3A integration groups"
+    ]
+  },
+  {
+    "name": "email-handler",
+    "exit": 0,
+    "result": "PASS",
+    "summary": [
+      "PASS permanent failure versus bounded retry classification",
+      "PASS Resend test sender cannot leak to unapproved recipients",
+      "PASS temporary payload preparation failure retries without sending",
+      "PASS fail closed on missing secrets; secret-only wrapper; no public direct invocation",
+      "PASS 8 email handler groups (provider mocked; authentication wrapper inspected, not live-tested)"
+    ]
+  },
+  {
+    "name": "database",
+    "exit": 0,
+    "result": "PASS",
+    "summary": [
+      "PASS RC12 legacy gallery normalizes once, promotes next primary and rejects unowned replacements atomically",
+      "PASS RC12 custom appearance publishes only validated tenant assets, bounds readability and stays token scoped",
+      "PASS RC12 per-order package-size overrides freeze the chosen factor without changing ingredient setup",
+      "PASS RC12 configured custom base units save atomically without losing opening stock",
+      "PASS RC12 backups restore custom units, profiles, source snapshots and decorative media references together"
+    ]
+  },
+  {
+    "name": "frontend",
+    "exit": 0,
+    "result": "PASS",
+    "summary": [
+      "PASS frontend filters: name/category/tag/price/availability/badges/allergens/dietary",
+      "PASS HTTP-LAN UUID fallback"
+    ]
+  },
+  {
+    "name": "ui",
+    "exit": 0,
+    "result": "PASS",
+    "summary": [
+      "PASS expanded product detail/variant identity, required combo choice and guest-customer history modal"
+    ]
+  },
+  {
+    "name": "checkout",
+    "exit": 0,
+    "result": "PASS",
+    "summary": [
+      "PASS RC1 seven groups, consolidation, persistence, compact accessibility, role restrictions, route highlighting, checkout recovery isolation, concurrent product-edit stock safety and phase-free UI prose"
+    ]
+  },
+  {
+    "name": "catalogue",
+    "exit": 0,
+    "result": "PASS",
+    "summary": [
+      "PASS six PDF scopes, variant/discount prices, hidden products, business images/QR and A4/Letter portrait/landscape output HTML"
+    ]
+  },
+  {
+    "name": "web",
+    "exit": 0,
+    "result": "PASS",
+    "summary": [
+      "PASS browser config/key rejection, 44 refresh routes, variant PDF prices/availability and SPA rewrite configuration"
+    ]
+  },
+  {
+    "name": "typecheck",
+    "exit": 0,
+    "result": "PASS",
+    "summary": []
+  },
+  {
+    "name": "build",
+    "exit": 0,
+    "result": "PASS",
+    "summary": []
+  }
+]

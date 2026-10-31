@@ -456,6 +456,7 @@ button:disabled{opacity:.55}.primary-btn:disabled,.danger-btn:disabled{color:#ff
 .cn-connection-status{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;font-size:.75rem;max-width:18rem;overflow-wrap:anywhere}
 .catalogue-skeletons{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(10rem,100%),1fr));gap:1rem;padding:1rem}
 .catalogue-skeletons>div{height:12rem;border-radius:1rem;background:var(--surface-muted,#e9dfd4);border:1px solid var(--border,#c9b9a8)}
+.email-alert-settings{min-width:0;overflow-wrap:anywhere}.email-alert-settings fieldset{min-width:0}.email-recipient{overflow-wrap:anywhere}.email-alert-settings>.btn{margin:.25rem}
 .help-center,.setup-journey,.media-library,.draft-controls{overflow-wrap:anywhere;min-width:0}
 .media-library-grid article{min-width:0}.ux-command-list [role=group]>h3{font-size:.85rem;padding:.5rem;margin:0}
 @media(max-width:900px){.ux-header .cn-connection-status{flex-basis:100%;max-width:100%}.media-library-grid{grid-template-columns:repeat(auto-fit,minmax(min(15rem,100%),1fr))}}

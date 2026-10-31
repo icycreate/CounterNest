@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'counternest-web-v2-0-0-rc30-mobile-ui'
+const CACHE_VERSION = 'counternest-web-release-6-3A'
 const SHELL_CACHE = `${CACHE_VERSION}-shell`
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`
 // Persist only the account binding, never a session/JWT or order details.

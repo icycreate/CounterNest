@@ -54,7 +54,8 @@ export function CataloguePreorderForm({token,items,methods,currency,defaultCount
   const intent=pending??{key:randomId(),items:items.map(i=>({...i})),customer:{...customer,phone:normalizePhone(['phone','sms','whatsapp'].includes(customer.method)?customer.contact:customer.phone??'',defaultCountry),contact:['phone','sms','whatsapp'].includes(customer.method)?normalizePhone(customer.contact,defaultCountry):customer.contact.trim()}}
   setPending(intent);try{sessionStorage.setItem(pendingKey(token),JSON.stringify(intent))}catch{}
   try{
-   const r=await supabase.rpc('submit_catalogue_preorder',{p_token:token,p_key:intent.key,p_items:intent.items,p_customer:intent.customer})
+   const response=await supabase.functions.invoke('submit-preorder',{body:{p_token:token,p_key:intent.key,p_items:intent.items,p_customer:intent.customer}})
+   const r=response.error?{data:null,error:response.error}:response.data?.error?{data:null,error:response.data.error}:{data:response.data,error:null}
    if(r.error){if(r.error.code==='P0001'||r.error.code?.startsWith('22')){setPending(null);try{sessionStorage.removeItem(pendingKey(token))}catch{}}throw r.error}
    setResult(r.data.request_number);setStatusToken('');if(validStatusToken(r.data.status_token)){setStatusToken(r.data.status_token);rememberStatusToken(token,r.data.status_token)}setPending(null);try{sessionStorage.removeItem(pendingKey(token))}catch{};onClear();setStep(0);setCustomer({name:'',method:methods.includes('whatsapp')?'whatsapp':methods[0]??'',contact:'',note:''})
   }catch(e){setError(trError((e as Error).message||tr("Response unavailable. Retry this same request to recover its result.")))}finally{lock.current=false;setBusy(false)}

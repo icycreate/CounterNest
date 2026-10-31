@@ -1,10 +1,12 @@
 const fs=require('fs'),path=require('path'),assert=require('assert'),crypto=require('crypto');
 const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'utf8');
 const manifest=JSON.parse(read('RELEASE_MANIFEST.json')),pkg=JSON.parse(read('package.json')),lock=JSON.parse(read('package-lock.json'));
-assert.equal(pkg.version,'2.0.0-rc.30');assert.equal(lock.version,pkg.version);assert.equal(lock.packages[''].version,pkg.version);
-const files=fs.readdirSync(path.join(root,'supabase/migrations')).filter(f=>f.endsWith('.sql')).sort();assert.equal(files.length,105);assert.deepEqual(manifest.upgrade_migrations,files.slice(105));
+assert.equal(pkg.version,'2.0.0-rc.30+6.3A');assert.equal(lock.version,pkg.version);assert.equal(lock.packages[''].version,pkg.version);
+const files=fs.readdirSync(path.join(root,'supabase/migrations')).filter(f=>f.endsWith('.sql')).sort();assert.equal(files.length,106);assert.deepEqual(manifest.upgrade_migrations,files.slice(105));
 const order=read('SUPABASE_MIGRATION_ORDER.md');files.forEach((f,i)=>assert(order.includes((i+1)+'. '+f),f));
-const expected=JSON.parse(read('MIGRATION_MANIFEST.json'));for(const row of expected)assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'supabase/migrations',row.file))).digest('hex'),row.sha256,row.file);
+// Historical release fingerprints used both LF and CRLF; preserve those manifest rows
+// while validating equivalent checkout line endings rather than rewriting old migrations.
+const expected=JSON.parse(read('MIGRATION_MANIFEST.json'));for(const row of expected){const raw=read('supabase/migrations/'+row.file);const hash=v=>crypto.createHash('sha256').update(v).digest('hex');assert([raw,raw.replace(/\r\n/g,'\n'),raw.replace(/\r?\n/g,'\r\n')].some(v=>hash(v)===row.sha256),row.file)}
 for(const f of ['desktop','certs','capacitor.config.ts','BUILD_DESKTOP_WINDOWS.ps1','RUN_DESKTOP_SOURCE.ps1','INSTALL_COUNTERNEST_WINDOWS.ps1'])assert(!fs.existsSync(path.join(root,f)),f);
 for(const name of Object.keys(lock.packages))assert(!/node_modules\/(electron|electron-builder|@capacitor)(\/|$)/.test(name),name);
 assert(!pkg.main&&!pkg.build);assert(Object.values(pkg.scripts).every(s=>!s.includes('powershell')));

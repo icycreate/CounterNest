@@ -21,3 +21,10 @@ test-results/
 *.zip
 *.pem
 *.key
+
+android/app/google-services.json
+*.jks
+*.keystore
+keystore.properties
+android/local.properties
+.android-build/

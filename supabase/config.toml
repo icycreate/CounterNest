@@ -26,3 +26,8 @@ verify_jwt = false
 # Handler authenticates user JWT and checks the existing admin settings RPC.
 [functions.preorder-email-admin]
 verify_jwt = false
+
+[functions.android-push]
+verify_jwt = false
+[functions.android-push-test]
+verify_jwt = false

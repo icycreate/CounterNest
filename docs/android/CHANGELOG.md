@@ -11,3 +11,9 @@
 - Added local database, worker and browser tests; prepared Android debug and unsigned release builds.
 
 Backend activation, release signing and real-phone delivery acceptance remain required before production distribution.
+
+## Phone sizing revision (versionCode 60401)
+- Fixed dashboard grid minimum sizing that widened the Android viewport and clipped fixed navigation/order popups.
+- Added responsive incoming-order action layout and long-text wrapping.
+- Corrected Android splash/adaptive-icon safe zones and native system-bar insets.
+- Verified nine real-phone screens and added 48 mobile popup/dashboard regression cases.

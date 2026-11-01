@@ -48,8 +48,9 @@
     "test:email": "node tests/email-handler.cjs",
     "test:email:browser": "node tests/email-browser.cjs",
     "test:android": "node tests/android-push.cjs && node tests/android-worker.cjs",
-    "android:sync": "node scripts/check-android-config.cjs && npm run build && cap sync android",
-    "test:android:browser": "node tests/android-browser.cjs"
+    "android:sync": "node scripts/check-android-config.cjs && npm run build && node scripts/prepare-android-web.cjs && cap sync android",
+    "test:android:browser": "node tests/android-browser.cjs",
+    "test:android:sizing": "node tests/android-order-sizing.cjs"
   },
   "dependencies": {
     "@capacitor/android": "8.6.0",

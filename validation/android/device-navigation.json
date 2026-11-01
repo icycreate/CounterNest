@@ -1,0 +1,78 @@
+[
+  {
+    "screen": "Dashboard",
+    "path": "/dashboard",
+    "client": 384,
+    "scroll": 384,
+    "viewport": 384,
+    "fixed": [
+      {
+        "class": "mobile-topbar",
+        "left": 0,
+        "right": 384.0000305175781
+      },
+      {
+        "class": "mobile-bottom-nav",
+        "left": 0,
+        "right": 384.0000305175781
+      }
+    ]
+  },
+  {
+    "screen": "Products",
+    "path": "/products",
+    "client": 384,
+    "scroll": 384,
+    "viewport": 384,
+    "fixed": [
+      {
+        "class": "mobile-topbar",
+        "left": 0,
+        "right": 384.0000305175781
+      },
+      {
+        "class": "mobile-bottom-nav",
+        "left": 0,
+        "right": 384.0000305175781
+      }
+    ]
+  },
+  {
+    "screen": "Customers",
+    "path": "/customers",
+    "client": 384,
+    "scroll": 384,
+    "viewport": 384,
+    "fixed": [
+      {
+        "class": "mobile-topbar",
+        "left": 0,
+        "right": 384.0000305175781
+      },
+      {
+        "class": "mobile-bottom-nav",
+        "left": 0,
+        "right": 384.0000305175781
+      }
+    ]
+  },
+  {
+    "screen": "Sale",
+    "path": "/sale",
+    "client": 384,
+    "scroll": 384,
+    "viewport": 384,
+    "fixed": [
+      {
+        "class": "mobile-topbar",
+        "left": 0,
+        "right": 384.0000305175781
+      },
+      {
+        "class": "mobile-bottom-nav",
+        "left": 0,
+        "right": 384.0000305175781
+      }
+    ]
+  }
+]

@@ -1,0 +1,1 @@
+const fs=require('fs');const path='dist/index.html';const html=fs.readFileSync(path,'utf8');if(!html.includes('viewport-fit=cover'))throw Error('Unexpected web viewport configuration');fs.writeFileSync(path,html.replace('viewport-fit=cover','viewport-fit=contain'));console.log('Prepared Android-only web assets with native system-bar insets');

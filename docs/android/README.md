@@ -6,7 +6,7 @@ Date: 2026-10-31 (Belize). Base: CounterNest 6.3A, commit 2bf684835aad4dd445ebd7
 
 Implemented locally: Capacitor Android project, bundled React UI, Firebase configuration, Android Keystore session storage, native Back/deep links, explicit notification permission, native background notifications, device registration/revocation, per-business controls, FCM HTTP v1 worker, protected outbox leases and audit records, four-language labels, and APK builds. Backend changes are NOT deployed or enabled. Existing 6.3A email services/credentials remain unchanged. No 6.3B, pg_net, Vercel relay or scheduler was introduced.
 
-Application: com.counternest.pos, versionName 6.4.0, versionCode 60400, Firebase project counternest-82288. The supplied google-services.json matched this project/package and was integrated locally. It is excluded from Git and the distributable source ZIP; restore your existing downloaded file to android/app/google-services.json when rebuilding. It is Firebase client configuration, not a server service-account credential.
+Application: com.counternest.pos, versionName 6.4.0, versionCode 60401, Firebase project counternest-82288. The supplied google-services.json matched this project/package and was integrated locally. It is excluded from Git and the distributable source ZIP; restore your existing downloaded file to android/app/google-services.json when rebuilding. It is Firebase client configuration, not a server service-account credential.
 
 ## Build and install
 
@@ -15,7 +15,7 @@ Use Node 22.12+ (below 25 per existing project policy), JDK 21, Android SDK 36, 
 1. Run npm ci in the project root.
 2. Restore the supplied google-services.json to android/app/google-services.json.
 3. Configure only VITE_SUPABASE_URL and VITE_SUPABASE_PUBLISHABLE_KEY (public client key) and VITE_ENABLE_DEMO=false in your local build environment. Never use service-role/secret keys in VITE variables.
-4. Run npm run android:sync. This builds the bundled web app and synchronizes Capacitor.
+4. Run npm run android:sync. This builds the bundled web app, prepares Android-only viewport insets, and synchronizes Capacitor. Regular npm run build preserves the browser/PWA viewport.
 5. Open android/ in Android Studio, or run android/gradlew.bat :app:assembleDebug :app:assembleRelease with android/ as the working directory.
 6. Debug output: android/app/build/outputs/apk/debug/app-debug.apk. Release output: android/app/build/outputs/apk/release/app-release-unsigned.apk.
 

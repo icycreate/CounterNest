@@ -48,3 +48,12 @@ html[data-appearance] .ux-header button{min-height:var(--control-height)}
 :where(.main,.modal,.ux-dialog) :is(th,td){vertical-align:middle}
 @media(min-width:768px){:where(.modal,.ux-dialog){padding:var(--space-5)}}
 @media print{.ux-header-container{display:none}}
+/* A grid item's intrinsic chart/table width must not enlarge the mobile viewport. */
+.dashboard-sales-grid,.dashboard-sales-grid>*{min-width:0;max-width:100%}
+@media(max-width:900px){.dashboard-sales-grid{grid-template-columns:minmax(0,1fr)}}
+/* Keep every incoming-order action available inside a scrollable phone panel. */
+.incoming-order{box-sizing:border-box;min-width:0}
+.incoming-order .panel-title{display:flex;flex-wrap:wrap;justify-content:space-between}
+.incoming-order .panel-title h2{min-width:0;overflow-wrap:anywhere}
+.incoming-order .report-actions>*{max-width:100%;white-space:normal;overflow-wrap:anywhere}
+@media(max-width:650px){.incoming-order{max-width:calc(100% - 20px)}.incoming-order .report-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.incoming-order .report-actions>.cn-button{width:100%;justify-content:center}}

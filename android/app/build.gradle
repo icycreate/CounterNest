@@ -7,7 +7,7 @@ android {
         applicationId "com.counternest.pos"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 60400
+        versionCode 60401
         versionName "6.4.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {

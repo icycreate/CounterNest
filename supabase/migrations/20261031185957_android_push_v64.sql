@@ -17,7 +17,7 @@ do $$declare d text;begin d:=pg_get_functiondef('public.lease_order_push()'::reg
 create function public.register_android_device(p_installation uuid,p_token text,p_language text,p_label text) returns uuid language plpgsql security definer set search_path=pg_catalog,public,pg_temp as $$
 declare v uuid;sid uuid:=(auth.jwt()->>'session_id')::uuid;
 begin
- if auth.uid() is null or not public.can_handle_order_requests() or sid is null then raise exception 'Order access required';end if;
+ if auth.uid() is null or not public.can_handle_order_requests() or sid is null or not exists(select 1 from auth.sessions where id=sid and user_id=auth.uid() and (not_after is null or not_after>now())) then raise exception 'Order access required';end if;
  if p_installation is null or p_token is null or p_language is null or length(p_token) not between 30 and 4096 or p_token ~ '[[:space:]]' or p_language not in('en','es','zh-TW','zh-CN') then raise exception 'Invalid device';end if;
  perform pg_advisory_xact_lock(hashtextextended(p_installation::text,0));
  if exists(select 1 from public.order_push_devices where installation_id=p_installation and user_id<>auth.uid() and revoked_at is null) then raise exception 'Remove previous device binding first';end if;
@@ -55,7 +55,7 @@ create function public.claim_android_push() returns jsonb language plpgsql secur
 declare q public.order_push_deliveries%rowtype;d public.order_push_devices%rowtype;e public.order_alert_events%rowtype;token uuid:=gen_random_uuid();
 begin
  select j.* into q from public.order_push_deliveries j join public.order_push_devices x on x.id=j.device_id join public.order_alert_events a on a.id=j.event_id join public.android_push_settings s on s.shop_id=x.shop_id join public.staff_profiles u on u.user_id=x.user_id and u.shop_id=x.shop_id join auth.sessions sess on sess.id=x.session_id and sess.user_id=x.user_id
- where x.transport='android' and x.revoked_at is null and s.enabled and s.new_preorder and a.shop_id=x.shop_id and a.kind in('preorder','custom_cake') and a.created_at>now()-interval '1 day' and x.updated_at>now()-interval '30 days' and u.active and not u.must_change_password and (u.role='admin' or u.workspace_role in('manager','cashier')) and not exists(select 1 from public.workspace_recovery w where w.shop_id=x.shop_id and w.pending_at is not null)
+ where (sess.not_after is null or sess.not_after>now()) and coalesce((x.preferences->>'push')::boolean,false) and coalesce((x.preferences->>'preorder')::boolean,false) and x.transport='android' and x.revoked_at is null and s.enabled and s.new_preorder and a.shop_id=x.shop_id and a.kind in('preorder','custom_cake') and a.created_at>now()-interval '1 day' and x.updated_at>now()-interval '30 days' and u.active and not u.must_change_password and (u.role='admin' or u.workspace_role in('manager','cashier')) and not exists(select 1 from public.workspace_recovery w where w.shop_id=x.shop_id and w.pending_at is not null)
  and j.attempts<5 and j.next_attempt_at<=now() and (j.state='pending' or j.state='sending' and j.lease_until<now()) order by a.created_at for update of j skip locked limit 1;
  if not found then return null;end if;
  select * into d from public.order_push_devices where id=q.device_id;select * into e from public.order_alert_events where id=q.event_id;
@@ -73,7 +73,7 @@ end$$;
 create function public.prepare_android_test(p_installation uuid) returns jsonb language plpgsql security definer set search_path=pg_catalog,public,pg_temp as $$declare d public.order_push_devices%rowtype;t uuid;begin
  if public.current_workspace_role() is distinct from 'admin' then raise exception 'Administrator access required';end if;
  select * into d from public.order_push_devices where installation_id=p_installation and user_id=auth.uid() and shop_id=public.current_shop_id() and transport='android' and revoked_at is null for update;
- if not found then raise exception 'Registered device required';end if;
+ if not found or not exists(select 1 from auth.sessions where id=d.session_id and user_id=auth.uid() and (not_after is null or not_after>now())) then raise exception 'Registered device required';end if;
  if exists(select 1 from public.android_push_attempts where device_id=d.id and event_id is null and created_at>now()-interval '2 minutes') then raise exception 'Wait before another test';end if;
  insert into public.android_push_attempts(device_id,shop_id,state) values(d.id,d.shop_id,'test_requested') returning id into t;
  return jsonb_build_object('event_id',t,'record_id',t,'user_id',d.user_id,'device_id',d.id,'language',d.preferences->>'language','test','true');
@@ -82,7 +82,6 @@ end$$;
 revoke all on function public.register_android_device(uuid,text,text,text),public.revoke_android_device(uuid),public.get_android_push_settings(),public.save_android_push_settings(bigint,boolean,boolean),public.guard_android_push_job(),public.claim_android_push(),public.finish_android_push(uuid,uuid,uuid,text,text),public.prepare_android_test(uuid) from public,anon,authenticated;
 grant execute on function public.register_android_device(uuid,text,text,text),public.revoke_android_device(uuid),public.get_android_push_settings(),public.save_android_push_settings(bigint,boolean,boolean) to authenticated;
 grant execute on function public.claim_android_push(),public.finish_android_push(uuid,uuid,uuid,text,text),public.prepare_android_test(uuid) to service_role;
-commit;
 
 grant execute on function public.prepare_android_test(uuid) to authenticated;
 grant select,update on public.android_push_attempts to service_role;

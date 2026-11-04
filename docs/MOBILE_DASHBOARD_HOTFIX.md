@@ -25,3 +25,7 @@ APK: com.counternest.pos, 6.5.0 (60502), debug-signed upgrade candidate. SHA256 
 User deferred phone testing. No installation performed. Saved login and real status/navigation-bar behavior must be checked after upgrading the phone; matching identity/signature alone does not prove runtime behavior.
 
 Existing broader release regression failures from the preceding local test report remain outside this hotfix. This work does not claim the full production gate is green. No production deployment, merge, database migration, credential change or backend release is authorized/completed here. Existing Draft PR #2 is the active branch; only this focused hotfix is added to its inherited work. Production remains held for review and deferred phone QA.
+
+## Mobile web viewport follow-up
+The viewport meta tag already used device-width. Mobile shell/main and dashboard/header sections now explicitly fill their containing width, with safe-area-aware 12px side padding and bounded header logo sizing. The fixture now includes UxHeader and uses an actual mobile browser context. All 256 cases passed, including full-width main and viewport assertions. TypeScript/Vite build passed. No zoom restrictions or overflow hiding added. This follow-up is source/web only; the previously packaged APK 60502 does not include this subsequent width refinement.
+

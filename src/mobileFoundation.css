@@ -1,0 +1,22 @@
+/* Start at 390 x 844; expand only when content has room. */
+.notification-channels{grid-column:1/-1;min-width:0}
+.notification-channels [hidden]{display:none!important}
+.notification-channel-summary{list-style:none;padding:0;display:grid;gap:8px;margin:0}
+.notification-channel-summary li{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding:12px;border:1px solid var(--border);border-radius:12px;overflow-wrap:anywhere}
+.notification-channel-summary span{color:var(--muted)}
+.notification-channel-selector{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:16px 0}
+.notification-channels .panel{box-shadow:none;padding:12px;min-width:0}
+.notification-channels :is(button,input,select),.preorder-form :is(button,input,select){min-height:44px}
+.notification-channels :is(p,span,li),.preorder-form dd{overflow-wrap:anywhere;min-width:0}
+.notification-channels .report-actions{display:flex;flex-wrap:wrap;gap:8px}
+.notification-channels .report-actions>button{flex:1 1 180px}
+.store-story .about-page-photo,.catalogue-about-image-preview,.media-library img,.content-media img{background:transparent;object-fit:contain}
+@media(max-width:600px){
+ .preorder-form form{display:grid;gap:12px;min-width:0}
+ .preorder-form form>.cn-button,.preorder-form>.cn-button{width:100%;margin:4px 0}
+ .notification-channels .panel{padding:8px 0;border:0}
+ .notification-channels .report-actions>button{flex-basis:100%}
+ .preorder-form :is(input,select,textarea){font-size:16px;scroll-margin-block:100px}
+ body:has(.cn-settings) .page-header{position:static}
+}
+@media(min-width:768px){.notification-channel-selector,.notification-channel-summary{grid-template-columns:repeat(4,minmax(0,1fr))}.notification-channel-summary li{display:grid;align-content:start}}

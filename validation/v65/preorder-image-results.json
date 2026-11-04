@@ -1,0 +1,14 @@
+{
+  "submittedWithoutPickup": true,
+  "contactRetained": true,
+  "pixels": {
+    "alpha": 0,
+    "opaque": [
+      255,
+      255,
+      255,
+      255
+    ],
+    "type": "image/webp"
+  }
+}

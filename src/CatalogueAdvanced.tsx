@@ -1,3 +1,4 @@
+import {imageExtension} from './cropHelpers'
 import {productGallery} from './productGallery'
 import {FormField,InputField,SelectField} from './Fields'
 import {Button} from './Button'
@@ -37,8 +38,8 @@ export function CatalogueMediaPromotion({product,onSaved,photosOnly=false}:{prod
  function acceptCrop(blob:Blob){setOriginalFile(cropFile);if(preview)URL.revokeObjectURL(preview);setPending(blob);setPreview(URL.createObjectURL(blob));setCropFile(null)}
  async function upload(){if(!supabase||!pending)return;setBusy(true);setError(trError(''));let storagePath='';let originalPath='';let registered=false;try{
   const profile=await supabase.from('staff_profiles').select('shop_id').eq('user_id',(await supabase.auth.getUser()).data.user!.id).single();if(profile.error)throw profile.error
-  storagePath=`${profile.data.shop_id}/${product.id}/${randomId()}.jpg`
-  const result=await supabase.storage.from('catalogue-media').upload(storagePath,pending,{contentType:'image/jpeg',upsert:false});if(result.error)throw result.error
+  storagePath=`${profile.data.shop_id}/${product.id}/${randomId()}.${imageExtension(pending)}`
+  const result=await supabase.storage.from('catalogue-media').upload(storagePath,pending,{contentType:pending.type,upsert:false});if(result.error)throw result.error
   const url=supabase.storage.from('catalogue-media').getPublicUrl(storagePath).data.publicUrl
   let originalUrl=url
   if(originalFile){originalPath=`${profile.data.shop_id}/${product.id}/${randomId()}-original.${originalFile.name.split('.').pop()||'jpg'}`;const originalUpload=await supabase.storage.from('catalogue-media').upload(originalPath,originalFile,{contentType:originalFile.type,upsert:false});if(originalUpload.error)throw originalUpload.error;originalUrl=supabase.storage.from('catalogue-media').getPublicUrl(originalPath).data.publicUrl}

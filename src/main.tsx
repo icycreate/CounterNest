@@ -68,3 +68,5 @@ import './tooltip.css'
 import './responsiveWorkspace.css'
 
 import './native/android.css'
+
+import './mobileFoundation.css'

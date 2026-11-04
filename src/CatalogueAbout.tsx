@@ -1,3 +1,4 @@
+import {imageExtension} from './cropHelpers'
 import {PublicationHistory} from './PublicationHistory'
 import {MediaChooser} from './MediaLibrary'
 import {registerDraftSave} from './appNavigation'
@@ -43,6 +44,7 @@ export function CustomerAboutPage({token}:{token:string}){
 }
 export function CatalogueAboutEditor(){
  const[record,setRecord]=useState<RecordValue|null>(null),[draft,setDraft]=useState<About>(empty),[language,setLanguage]=useState<UiLanguage>('en'),[file,setFile]=useState<File|null>(null),[crop,setCrop]=useState<Blob|null>(null),[preview,setPreview]=useState(''),[review,setReview]=useState(false),[busy,setBusy]=useState(false),[message,setMessage]=useState(''),[error,setError]=useState(''),[showPreview,setShowPreview]=useState(false)
+ const originalUpload=useRef<File|null>(null)
  const scope=useRef<HTMLElement>(null),image=useImage(draft.image_path),dirty=!!record&&(JSON.stringify(draft)!==JSON.stringify(record.value)||!!crop||!!file)
  useUiLanguage()
  useEffect(()=>{let live=true;void supabase?.rpc('get_catalogue_about_admin').then(r=>{if(!live)return;if(r.error)setError(trError(r.error.message));else{setRecord(r.data);setDraft(r.data.value);setLanguage(r.data.value.default_language)}});return()=>{live=false}},[])
@@ -54,13 +56,23 @@ export function CatalogueAboutEditor(){
  function change(key:keyof Copy,value:string){setMessage('');setDraft(old=>language===old.default_language?{...old,copy:{...old.copy,[key]:value}}:{...old,translations:{...old.translations,[language]:{...(old.translations[language]??blankCopy),[key]:value}}})}
  function cancel(){if(dirty&&!confirm(tr('Discard unsaved About Us changes?')))return;if(record)setDraft(record.value);setCrop(null);setFile(null);setMessage('');setError('')}
  async function recrop(){if(!image||busy)return;setBusy(true);setError('');try{const response=await fetch(image,{credentials:'omit'});if(!response.ok)throw Error('Unable to load photo for editing.');const blob=await response.blob();const selected=new File([blob],'about.jpg',{type:blob.type});validateImageFile(selected);setFile(selected)}catch(e){setError(trError((e as Error).message))}finally{setBusy(false)}}
+ async function uploadAboutImage(blob:Blob){
+  if(!record||!supabase)throw Error('Workspace unavailable')
+  const path=record.shop_id+'/'+randomId()+'.'+imageExtension(blob)
+  const original=record.shop_id+'/'+randomId()+'-original'
+  const source=originalUpload.current??blob
+  const a=await supabase.storage.from('catalogue-about').upload(original,source,{contentType:source.type,upsert:false});if(a.error)throw a.error
+  const b=await supabase.storage.from('catalogue-about').upload(path,blob,{contentType:blob.type,upsert:false});if(b.error)throw b.error
+  const metadata=await supabase.rpc('organize_media',{p_bucket:'catalogue-about',p_path:path,p_title:originalUpload.current?.name??'About Us',p_retire:false,p_original:original});if(metadata.error)throw metadata.error
+  return path
+ }
  const draftValue={value:draft,revision:record?.revision??0,pendingImage:!!crop};
- const durable=useEditorDraft({kind:'about',scope:record?.shop_id??'',ready:!!record,value:draftValue,base:{revision:record?.revision??0},blocked:busy||review||!!file,onRestore:v=>{setDraft(v.value);setRecord(old=>old?{...old,revision:v.revision}:old);setCrop(null)},prepare:async v=>{if(!crop)return {...v,pendingImage:false};validateImageFile(crop);const path=`${record!.shop_id}/${randomId()}.jpg`;const r=await supabase!.storage.from('catalogue-about').upload(path,crop,{contentType:'image/jpeg',upsert:false});if(r.error)throw r.error;const value={...v.value,image_path:path};setDraft(value);setCrop(null);return {...v,value,pendingImage:false}}});
+ const durable=useEditorDraft({kind:'about',scope:record?.shop_id??'',ready:!!record,value:draftValue,base:{revision:record?.revision??0},blocked:busy||review||!!file,onRestore:v=>{setDraft(v.value);setRecord(old=>old?{...old,revision:v.revision}:old);setCrop(null)},prepare:async v=>{if(!crop)return {...v,pendingImage:false};validateImageFile(crop);const path=await uploadAboutImage(crop);const value={...v.value,image_path:path};setDraft(value);setCrop(null);return {...v,value,pendingImage:false}}});
  useEffect(()=>{if(scope.current)return registerDraftSave(scope.current,()=>durable.pending?durable.save():Promise.resolve(true))})
  async function save(){if(!supabase||!record||busy)return;setBusy(true);setError('');setMessage('');try{
   if(draft.enabled&&!draft.copy.heading.trim())throw Error('Enter an About Us heading.')
   let path=draft.image_path
-  if(crop){validateImageFile(crop);path=`${record.shop_id}/${randomId()}.jpg`;const upload=await supabase.storage.from('catalogue-about').upload(path,crop,{contentType:'image/jpeg',upsert:false});if(upload.error)throw upload.error}
+  if(crop){validateImageFile(crop);path=await uploadAboutImage(crop)}
   const next={...draft,image_path:path};const r=await supabase.rpc('save_catalogue_about',{p_value:next,p_revision:record.revision});if(r.error)throw r.error
   setRecord(r.data);setDraft(r.data.value);setCrop(null);await durable.clear({value:r.data.value,revision:r.data.revision,pendingImage:false});setMessage(tr('About Us saved.'))
  }catch(e){setError(trError(tr((e as Error).message)))}finally{setBusy(false)}}
@@ -73,5 +85,5 @@ export function CatalogueAboutEditor(){
  {(preview||image)&&<img className="catalogue-about-image-preview" src={preview||image} alt={copy.alt}/>}
  <div className="catalogue-about-actions"><Button onClick={()=>{if(confirm(tr('Restore defaults?'))){setDraft(empty);setCrop(null)}}}>{tr('Restore defaults')}</Button><Button disabled={!image||!!crop} onClick={()=>void recrop()}>{tr('Edit / crop')}</Button><Button onClick={()=>{setDraft({...draft,image_path:null});setCrop(null)}}>{tr('Remove image')}</Button><Button onClick={()=>{setDraft({...draft,image_path:record?.value.image_path??null});setCrop(null)}}>{tr('Restore saved image')}</Button><Button onClick={()=>setShowPreview(v=>!v)}>{tr('Preview')}</Button><Button onClick={cancel}>{tr('Cancel')}</Button><Button variant="primary" disabled={!dirty||!!file} onClick={()=>setReview(true)}>{tr('Save Changes')}</Button></div></fieldset>
  {error&&<p role="alert">{error}</p>}{message&&<p role="status">{message}</p>}{showPreview&&<AboutView value={{...draft,enabled:true}} image={preview||image} language={language}/>}
- {file&&<ImageCropper about file={file} onCancel={()=>setFile(null)} onSave={blob=>{setCrop(blob);setFile(null)}}/>}{review&&<PublicationReview section="About Us Editor" images={crop||draft.image_path?1:0} onCancel={()=>setReview(false)} onPublish={()=>{setReview(false);void save()}}/>}</section>
+ {file&&<ImageCropper about file={file} onCancel={()=>setFile(null)} onSave={blob=>{originalUpload.current=file;setCrop(blob);setFile(null)}}/>}{review&&<PublicationReview section="About Us Editor" images={crop||draft.image_path?1:0} onCancel={()=>setReview(false)} onPublish={()=>{setReview(false);void save()}}/>}</section>
 }

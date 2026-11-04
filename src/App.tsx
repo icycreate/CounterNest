@@ -1,12 +1,13 @@
-import {AndroidPushSettings} from './native/AndroidPushSettings'
+import {imageExtension} from './cropHelpers'
+import {NotificationChannels} from './NotificationChannels'
 import {isAndroid} from './native/platform'
-import {EmailAlertSettings} from './EmailAlertSettings'
+
 import {SetupPreferences,usePosPaymentMethods} from './SetupPreferences'
 import {DraftControls,useEditorDraft} from './EditorDraft'
 import {registerDraftSave} from './appNavigation'
 import {GuidedTutorial} from './GuidedTutorial'
 import {CatalogueSettingsEditors} from './CatalogueContentEditors'
-import {WhatsAppOrderSettings} from './WhatsAppOrderSettings'
+
 import {PosProductBrowser,PosOptions,usePosCatalogue} from './PosProductBrowser'
 import {BrandLogo} from './BrandLogo'
 import {isPublicCatalogueRoute} from './customerRoutes'
@@ -14,7 +15,7 @@ import {readableForeground} from './accessiblePalette'
 import {ProductImages} from './ProductImages'
 import {BarcodeField} from './Fields'
 import {localizeCategory} from './categoryLocalization'
-import {NotificationRuntime,NotificationSettings,disconnectOrderPush} from './OrderNotifications'
+import {NotificationRuntime,disconnectOrderPush} from './OrderNotifications'
 import {BusinessContactSettings} from './BusinessContacts'
 import {StickyActions} from './StickyActions'
 import {RecordRemovalDialog} from './RecordRemovalDialog'
@@ -1172,7 +1173,7 @@ function ProductModal({ product, shopId, categories, onClose, onSaved }: { produ
     if(supabaseConfigured)await productDraft.clear({...productDraftValue,form:{...form,image}});onSaved({...form,barcode:form.barcode?.trim()||undefined,image:forceEmoji?undefined:image});setBusy(false)
   }
   function file(e:React.ChangeEvent<HTMLInputElement>){const f=e.target.files?.[0];if(!f)return;if(!['image/jpeg','image/png','image/webp'].includes(f.type)){alert(tr('Choose a JPG, PNG, or WebP product image.'));e.target.value='';return}if(f.size>5*1024*1024){alert(tr('Product image must be 5 MB or smaller.'));e.target.value='';return}setCropFile(f);e.target.value=''}
-  function saveCroppedProduct(blob:Blob){setOriginalImageFile(cropFile);const cropped=new File([blob],'product-crop.jpg',{type:'image/jpeg'});setImageFile(cropped);setForceEmoji(false);setCropFile(null);const reader=new FileReader();reader.onload=()=>setForm(old=>({...old,image:String(reader.result)}));reader.readAsDataURL(cropped)}
+  function saveCroppedProduct(blob:Blob){setOriginalImageFile(cropFile);const cropped=new File([blob],'product-crop.'+imageExtension(blob),{type:blob.type});setImageFile(cropped);setForceEmoji(false);setCropFile(null);const reader=new FileReader();reader.onload=()=>setForm(old=>({...old,image:String(reader.result)}));reader.readAsDataURL(cropped)}
 
   return <>{cropFile&&<ImageCropper file={cropFile} onCancel={()=>setCropFile(null)} onSave={saveCroppedProduct}/>}<div className="modal-backdrop"><form ref={dialog} className="modal" onSubmit={save} role="dialog" aria-modal="true" aria-label={tr(product?'Modify Product':'Add Product')}>
     <div className="panel-title"><h2>{product?tr("Modify Product"):tr("Add Product")}</h2><Button variant="secondary" data-back-close="true" type="button" onClick={onClose}>×</Button></div>
@@ -1706,7 +1707,7 @@ function SettingsPage({preferences,theme,setTheme,shopName,setShopName,logoUrl,s
         <FormField>{tr("Receipt footer")}<TextAreaField rows={3} value={receiptFooter} onChange={e=>setReceiptFooter(e.target.value)} placeholder={tr("Thank you for your business!")}/></FormField>
         <div className="mini-receipt-preview"><strong>{shopName||tr("Business Name")}</strong><span>{tr("Receipt #000123")}</span><span>{shopAddress||tr("Business address")}</span><span>{tr("Salesperson: Staff Name")}</span><b>{tr("Total")+' '} {money(12.50,currency)}</b><small>{receiptFooter||tr("Thank you!")}</small></div>
       </Card>
-      <NotificationSettings role={role} foregroundOnly={isAndroid()}/><AndroidPushSettings role={role}/><EmailAlertSettings role={role}/><WhatsAppOrderSettings role={role}/><BusinessContactSettings role={role}/><CustomerContactSettings shopName={shopName} logoUrl={logoUrl} role={role} showToast={showToast}/><Card className="panel hardware-settings-panel">
+      <NotificationChannels role={role}/><BusinessContactSettings role={role}/><CustomerContactSettings shopName={shopName} logoUrl={logoUrl} role={role} showToast={showToast}/><Card className="panel hardware-settings-panel">
         <SectionHeader title={tr("Hardware & Receipt Printer")} icon={<Printer size={21}/>}/>
         <p className="muted">{tr("Configure a generic ESC/POS connection now and keep System Print as the working fallback. Direct communication is activated only after a compatible printer is selected and tested.")}</p>
         <div className="form-grid"><FormField>{tr("Connection profile")}<SelectField value={printerProfile} onChange={e=>setPrinterProfile(e.target.value)}><option value="system">{tr("System Print (recommended fallback)")}</option><option value="escpos-usb">{tr("Generic ESC/POS — USB")}</option><option value="escpos-bluetooth">{tr("Generic ESC/POS — Bluetooth")}</option><option value="escpos-wifi">{tr("Generic ESC/POS — Wi-Fi / LAN")}</option></SelectField></FormField><FormField>{tr("Receipt paper width")}<SelectField value={paperWidth} onChange={e=>setPaperWidth(e.target.value)}><option value="58">{tr("58 mm")}</option><option value="80">{tr("80 mm")}</option></SelectField></FormField></div>

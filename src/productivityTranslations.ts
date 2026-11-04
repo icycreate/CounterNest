@@ -1,5 +1,21 @@
 /** Extends the existing translation dictionary; business-authored text is never translated. */
 const entries:Array<[string,string,string,string]>=[
+["Desktop","Escritorio","桌面","桌面"],
+["Mobile","Móvil","行動裝置","移动设备"],
+["Setup required","Configuración necesaria","需要設定","需要设置"],
+ ["Staff will contact you using your selected contact method to arrange pickup.","El personal te contactará por el medio elegido para coordinar la recogida.","員工將使用您選擇的聯絡方式安排取貨。","员工将使用您选择的联系方式安排取货。"],
+ ["Use original image","Usar imagen original","使用原始圖片","使用原始图片"],
+ ["Notifications & Alerts","Notificaciones y alertas","通知與提醒","通知与提醒"],
+ ["Manage how your business receives notifications and alerts.","Administra cómo recibe tu negocio las notificaciones y alertas.","管理商家接收通知與提醒的方式。","管理商家接收通知与提醒的方式。"],
+ ["Manage notifications","Administrar notificaciones","管理通知","管理通知"],
+ ["Close notification settings","Cerrar ajustes de notificaciones","關閉通知設定","关闭通知设置"],
+ ["Notification channels","Canales de notificación","通知管道","通知渠道"],
+ ["Device preferences","Preferencias del dispositivo","裝置偏好設定","设备偏好设置"],
+ ["Connection error","Error de conexión","連線錯誤","连接错误"],
+ ["Delivery verification required","Se requiere verificar la entrega","需要驗證送達狀態","需要验证送达状态"],
+ ["In-app alerts work while CounterNest is open. Browser push requires permission, registration and server configuration.","Las alertas internas funcionan con CounterNest abierto. Las notificaciones del navegador requieren permiso, registro y configuración del servidor.","CounterNest 開啟時可接收應用程式內提醒。瀏覽器推播需要權限、註冊及伺服器設定。","CounterNest 打开时可接收应用内提醒。浏览器推送需要权限、注册及服务器设置。"],
+ ["Email is limited to the administrator recipient authorized for this business. Sender and recipient verification are managed by the server administrator.","El correo se limita al destinatario administrador autorizado para este negocio. El administrador del servidor gestiona la verificación del remitente y destinatario.","電子郵件僅傳送給此商家授權的管理員收件者。寄件者和收件者驗證由伺服器管理員管理。","电子邮件仅发送给此商家授权的管理员收件人。发件人和收件人验证由服务器管理员管理。"],
+ ["WhatsApp is not connected. Meta account verification, an approved template and an authorized server integration are required. Other channels do not depend on WhatsApp.","WhatsApp no está conectado. Se requiere verificar la cuenta de Meta, una plantilla aprobada y una integración autorizada del servidor. Los demás canales no dependen de WhatsApp.","WhatsApp 尚未連線。需要 Meta 帳號驗證、核准的範本及授權伺服器整合。其他管道不依賴 WhatsApp。","WhatsApp 尚未连接。需要 Meta 账号验证、批准的模板及授权服务器集成。其他渠道不依赖 WhatsApp。"],
  ['Invalid registration logo','Logotipo de registro no válido','註冊標誌無效','注册标志无效'],
 
  ['Crop as new image','Recortar como imagen nueva','裁切為新圖片','裁切为新图片'],

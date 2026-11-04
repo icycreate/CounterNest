@@ -26,5 +26,5 @@ export function EmailAlertSettings({role,onSaved}:{role:Role;onSaved?:()=>void})
  {data.last_test&&<p role="status">{tr('Last email test')}: {tr(states[data.last_test.state]??'Email needs reconciliation')} · {new Date(data.last_test.created_at).toLocaleString(getUiLocale())}</p>}
  <p className="muted">{tr('Submitted to provider does not confirm inbox delivery.')}</p>
  {data.recent?.length>0&&<details><summary>{tr('Recent email attempts')}</summary><ul>{data.recent.map(j=><li key={j.id}>{new Date(j.created_at).toLocaleString(getUiLocale())} · {tr(j.kind==='test'?'Test email':'New Pre-order')} · {tr(states[j.state]??'Email needs reconciliation')} ({j.attempts})</li>)}</ul></details>}</>}
- {data?.configured&&<Button disabled={busy||dirty.current||!data.enabled} onClick={()=>void recover()}>{tr('Retry pending emails')}</Button>}<Button disabled={busy} onClick={()=>{dirty.current=false;void load()}}>{tr('Refresh')}</Button>{message&&<p role="status">{tr(message)}</p>}</Card>
+ {data?.configured&&<Button disabled={busy||dirty.current||!data.enabled} onClick={()=>void recover()}>{tr('Retry pending emails')}</Button>}<Button className="cn-refresh-button" disabled={busy} onClick={()=>{dirty.current=false;void load()}}>{tr('Refresh')}</Button>{message&&<p role="status">{tr(message)}</p>}</Card>
 }

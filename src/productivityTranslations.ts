@@ -1,5 +1,6 @@
 /** Extends the existing translation dictionary; business-authored text is never translated. */
 const entries:Array<[string,string,string,string]>=[
+ ["Email","Correo","電子郵件","电子邮件"],
 ["Desktop","Escritorio","桌面","桌面"],
 ["Mobile","Móvil","行動裝置","移动设备"],
 ["Setup required","Configuración necesaria","需要設定","需要设置"],

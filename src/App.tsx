@@ -1,10 +1,13 @@
-import {EmailAlertSettings} from './EmailAlertSettings'
+import {imageExtension} from './cropHelpers'
+import {NotificationChannels} from './NotificationChannels'
+import {isAndroid} from './native/platform'
+
 import {SetupPreferences,usePosPaymentMethods} from './SetupPreferences'
 import {DraftControls,useEditorDraft} from './EditorDraft'
 import {registerDraftSave} from './appNavigation'
 import {GuidedTutorial} from './GuidedTutorial'
 import {CatalogueSettingsEditors} from './CatalogueContentEditors'
-import {WhatsAppOrderSettings} from './WhatsAppOrderSettings'
+
 import {PosProductBrowser,PosOptions,usePosCatalogue} from './PosProductBrowser'
 import {BrandLogo} from './BrandLogo'
 import {isPublicCatalogueRoute} from './customerRoutes'
@@ -12,7 +15,7 @@ import {readableForeground} from './accessiblePalette'
 import {ProductImages} from './ProductImages'
 import {BarcodeField} from './Fields'
 import {localizeCategory} from './categoryLocalization'
-import {NotificationRuntime,NotificationSettings,disconnectOrderPush} from './OrderNotifications'
+import {NotificationRuntime,disconnectOrderPush} from './OrderNotifications'
 import {BusinessContactSettings} from './BusinessContacts'
 import {StickyActions} from './StickyActions'
 import {RecordRemovalDialog} from './RecordRemovalDialog'
@@ -694,7 +697,7 @@ function PasswordRecovery({reset,onCancel,onDone}:{reset:boolean;onCancel:()=>vo
  const[email,setEmail]=useState(''),[password,setPassword]=useState(''),[confirmPassword,setConfirmPassword]=useState(''),[busy,setBusy]=useState(false),[error,setError]=useState(''),[notice,setNotice]=useState('');
  async function submit(e:FormEvent){e.preventDefault();if(!supabase)return;setBusy(true);setError('');try{
   if(reset){if(password.length<12||!/[a-z]/.test(password)||!/[A-Z]/.test(password)||!/[0-9]/.test(password))throw new Error('Use at least 12 characters with upper-case, lower-case, and a number.');if(password!==confirmPassword)throw new Error('Passwords do not match.');const result=await supabase.auth.updateUser({password});if(result.error)throw result.error;await supabase.auth.signOut();onDone()}
-  else{const result=await supabase.auth.resetPasswordForEmail(email.trim(),{redirectTo:window.location.origin+'/dashboard'});if(result.error)throw result.error;setNotice(tr('If an account matches, a password reset link will arrive by email.'))}
+  else{const result=await supabase.auth.resetPasswordForEmail(email.trim(),{redirectTo:isAndroid()?'counternest://auth/callback':window.location.origin+'/dashboard'});if(result.error)throw result.error;setNotice(tr('If an account matches, a password reset link will arrive by email.'))}
  }catch(err){setError(trError(err instanceof Error?err.message:'Could not continue.'))}finally{setBusy(false)}}
  return <div className="auth-stage"><div className="auth-language"><LanguageSelector id="recovery-language"/></div><form className="auth-card" onSubmit={submit}><div className="auth-heading"><h1>{tr('Reset password')}</h1></div>{reset?<><FormField>{tr('New password')}<PasswordInput required autoComplete="new-password" minLength={12} value={password} onChange={e=>setPassword(e.target.value)}/></FormField><FormField>{tr('Confirm new password')}<PasswordInput required autoComplete="new-password" minLength={12} value={confirmPassword} onChange={e=>setConfirmPassword(e.target.value)}/></FormField><small>{tr('At least 12 characters, including upper-case, lower-case, and a number.')}</small></>:<FormField>{tr('Email address')}<InputField required type="email" autoComplete="email" value={email} onChange={e=>setEmail(e.target.value)}/></FormField>}{error&&<p className="error-box" role="alert">{error}</p>}{notice&&<p className="auth-notice" role="status">{notice}</p>}<Button type="submit" variant="primary" className="auth-submit" disabled={busy}>{busy?tr('Please wait…'):tr(reset?'Save new password':'Send reset link')}</Button><Button variant="ghost" className="text-button" type="button" onClick={onCancel}>{tr('Back')}</Button></form></div>
 }
@@ -1170,7 +1173,7 @@ function ProductModal({ product, shopId, categories, onClose, onSaved }: { produ
     if(supabaseConfigured)await productDraft.clear({...productDraftValue,form:{...form,image}});onSaved({...form,barcode:form.barcode?.trim()||undefined,image:forceEmoji?undefined:image});setBusy(false)
   }
   function file(e:React.ChangeEvent<HTMLInputElement>){const f=e.target.files?.[0];if(!f)return;if(!['image/jpeg','image/png','image/webp'].includes(f.type)){alert(tr('Choose a JPG, PNG, or WebP product image.'));e.target.value='';return}if(f.size>5*1024*1024){alert(tr('Product image must be 5 MB or smaller.'));e.target.value='';return}setCropFile(f);e.target.value=''}
-  function saveCroppedProduct(blob:Blob){setOriginalImageFile(cropFile);const cropped=new File([blob],'product-crop.jpg',{type:'image/jpeg'});setImageFile(cropped);setForceEmoji(false);setCropFile(null);const reader=new FileReader();reader.onload=()=>setForm(old=>({...old,image:String(reader.result)}));reader.readAsDataURL(cropped)}
+  function saveCroppedProduct(blob:Blob){setOriginalImageFile(cropFile);const cropped=new File([blob],'product-crop.'+imageExtension(blob),{type:blob.type});setImageFile(cropped);setForceEmoji(false);setCropFile(null);const reader=new FileReader();reader.onload=()=>setForm(old=>({...old,image:String(reader.result)}));reader.readAsDataURL(cropped)}
 
   return <>{cropFile&&<ImageCropper file={cropFile} onCancel={()=>setCropFile(null)} onSave={saveCroppedProduct}/>}<div className="modal-backdrop"><form ref={dialog} className="modal" onSubmit={save} role="dialog" aria-modal="true" aria-label={tr(product?'Modify Product':'Add Product')}>
     <div className="panel-title"><h2>{product?tr("Modify Product"):tr("Add Product")}</h2><Button variant="secondary" data-back-close="true" type="button" onClick={onClose}>×</Button></div>
@@ -1538,7 +1541,7 @@ function CashDrawerPage({shopId,role,currency,online,showToast}:{shopId:string|n
   if(role!=='admin')return <><PageHeader title={tr("Daily Cash")}/><div className="info-box">{tr("Management access is required to view or adjust the daily cash record.")}</div></>
   const positiveAmount=Number(amount)>0
   return <>
-    <PageHeader title={tr("Daily Cash")}><div className="drawer-header-actions">{session&&<Button variant="secondary" type="button" onClick={()=>void openReport(session.id)} disabled={busy||!online}><FileBarChart size={16}/>{' '+tr("Current Report")}</Button>}<Button variant="secondary" type="button" onClick={()=>void load()} disabled={busy||!online}><RotateCcw size={16}/>{' '+tr("Refresh")}</Button><span className={`drawer-status ${session?'open':'closed'}`}>{session?tr("Day Open"):tr("Day Closed")}</span></div></PageHeader>
+    <PageHeader title={tr("Daily Cash")}><div className="drawer-header-actions">{session&&<Button variant="secondary" type="button" onClick={()=>void openReport(session.id)} disabled={busy||!online}><FileBarChart size={16}/>{' '+tr("Current Report")}</Button>}<Button className="cn-refresh-button" variant="secondary" type="button" onClick={()=>void load()} disabled={busy||!online}><RotateCcw size={16}/>{' '+tr("Refresh")}</Button><span className={`drawer-status ${session?'open':'closed'}`}>{session?tr("Day Open"):tr("Day Closed")}</span></div></PageHeader>
     <div className="info-box drawer-security"><ShieldCheck size={18}/><span>{tr("This is a system cash record, not a physical-drawer controller. Only administrators can start the day, record cash in/out, count cash, or close the day. Every action is audited.")}</span></div>
     {!session?<Card className="panel drawer-open-panel"><h2><Landmark size={20}/>{' '+tr("Open Register")}</h2><p className="muted">{tr("Enter the existing cash or opening amount available at the beginning of the business day.")}</p><div className="drawer-form"><FormField>{tr("Register / station")}<InputField required maxLength={60} value={station} onChange={e=>setStation(e.target.value)}/></FormField><FormField>{tr("Opening Cash")}<InputField type="number" min="0" step="0.01" inputMode="decimal" value={amount} onChange={e=>setAmount(e.target.value)} placeholder="0.00"/></FormField><FormField>{tr("Opening note")}<InputField value={openingNote} onChange={e=>setOpeningNote(e.target.value)} maxLength={200}/></FormField><Button  disabled={busy||!online||Number(amount)<0||amount===''} onClick={()=>callRpc('open_register',{p_opening_amount:Number(amount),p_station:station.trim(),p_note:openingNote.trim()||null},'Register opened and audited.')} type="button" variant="success">{tr("Open Register")}</Button></div></Card>:
     <>
@@ -1704,7 +1707,7 @@ function SettingsPage({preferences,theme,setTheme,shopName,setShopName,logoUrl,s
         <FormField>{tr("Receipt footer")}<TextAreaField rows={3} value={receiptFooter} onChange={e=>setReceiptFooter(e.target.value)} placeholder={tr("Thank you for your business!")}/></FormField>
         <div className="mini-receipt-preview"><strong>{shopName||tr("Business Name")}</strong><span>{tr("Receipt #000123")}</span><span>{shopAddress||tr("Business address")}</span><span>{tr("Salesperson: Staff Name")}</span><b>{tr("Total")+' '} {money(12.50,currency)}</b><small>{receiptFooter||tr("Thank you!")}</small></div>
       </Card>
-      <NotificationSettings role={role}/><EmailAlertSettings role={role}/><WhatsAppOrderSettings role={role}/><BusinessContactSettings role={role}/><CustomerContactSettings shopName={shopName} logoUrl={logoUrl} role={role} showToast={showToast}/><Card className="panel hardware-settings-panel">
+      <NotificationChannels role={role}/><BusinessContactSettings role={role}/><CustomerContactSettings shopName={shopName} logoUrl={logoUrl} role={role} showToast={showToast}/><Card className="panel hardware-settings-panel">
         <SectionHeader title={tr("Hardware & Receipt Printer")} icon={<Printer size={21}/>}/>
         <p className="muted">{tr("Configure a generic ESC/POS connection now and keep System Print as the working fallback. Direct communication is activated only after a compatible printer is selected and tested.")}</p>
         <div className="form-grid"><FormField>{tr("Connection profile")}<SelectField value={printerProfile} onChange={e=>setPrinterProfile(e.target.value)}><option value="system">{tr("System Print (recommended fallback)")}</option><option value="escpos-usb">{tr("Generic ESC/POS — USB")}</option><option value="escpos-bluetooth">{tr("Generic ESC/POS — Bluetooth")}</option><option value="escpos-wifi">{tr("Generic ESC/POS — Wi-Fi / LAN")}</option></SelectField></FormField><FormField>{tr("Receipt paper width")}<SelectField value={paperWidth} onChange={e=>setPaperWidth(e.target.value)}><option value="58">{tr("58 mm")}</option><option value="80">{tr("80 mm")}</option></SelectField></FormField></div>

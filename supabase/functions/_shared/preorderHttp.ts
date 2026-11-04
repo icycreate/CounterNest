@@ -1,5 +1,5 @@
 const allowedOrigin = 'https://counternest.vercel.app'
-const allowedOrigins = new Set([allowedOrigin,'https://counternest-icycreate.vercel.app','https://counternest-git-main-icycreate.vercel.app'])
+const allowedOrigins = new Set(['https://localhost',allowedOrigin,'https://counternest-icycreate.vercel.app','https://counternest-git-main-icycreate.vercel.app'])
 export function cors(req:Request){
  const origin=req.headers.get('origin')
  return {'Access-Control-Allow-Origin':origin&&allowedOrigins.has(origin)?origin:allowedOrigin,'Access-Control-Allow-Headers':'authorization, apikey, content-type, x-client-info','Access-Control-Allow-Methods':'POST, OPTIONS','Vary':'Origin','Cache-Control':'no-store'}

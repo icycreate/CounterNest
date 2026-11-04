@@ -1,3 +1,4 @@
+import {imageExtension} from './cropHelpers'
 import {PublicationHistory} from './PublicationHistory'
 import {MediaChooser} from './MediaLibrary'
 import {registerDraftSave} from './appNavigation'
@@ -48,7 +49,7 @@ function ContentEditor({kind}:{kind:'home'|'categories'}){
  function text(key:string,next:string){change({...value,translations:{...value.translations,[language]:{...value.translations[language],[key]:next}}})}
  function cancel(){if(dirty&&!confirm(tr('Discard unsaved changes?')))return;if(saved){if(kind==='home')setHome(JSON.parse(saved));else setCategories(JSON.parse(saved))}setPending({});setQueue([]);setMessage('');setError('')}
  function moveMedia(index:number,delta:number){const media=[...value.media];[media[index],media[index+delta]]=[media[index+delta],media[index]];change({...value,media})}
- async function upload(v:PublicContent):Promise<PublicContent>{const media=[];for(const m of v.media){const draft=pending[m.id];if(!draft){media.push(m);continue}const id=randomId(),path=`${shop}/${id}-crop.jpg`,original=`${shop}/${id}-original`;for(const [p,b]of [[path,draft.blob],[original,draft.file]] as [string,Blob][]){const r=await supabase!.storage.from(bucket).upload(p,b,{contentType:b.type,upsert:false});if(r.error)throw r.error}media.push({...m,path,original})}return {...v,media}}
+ async function upload(v:PublicContent):Promise<PublicContent>{const media=[];for(const m of v.media){const draft=pending[m.id];if(!draft){media.push(m);continue}const id=randomId(),path=`${shop}/${id}-crop.${imageExtension(draft.blob)}`,original=`${shop}/${id}-original`;for(const [p,b]of [[path,draft.blob],[original,draft.file]] as [string,Blob][]){const r=await supabase!.storage.from(bucket).upload(p,b,{contentType:b.type,upsert:false});if(r.error)throw r.error}media.push({...m,path,original})}return {...v,media}}
  const draftValue={value:kind==='home'?home:categories,revision};
  const draft=useEditorDraft({kind,scope:shop,ready,value:draftValue,base:{revision},blocked:busy||review||queue.length>0,onRestore:(v)=>{if(kind==='home')setHome(v.value as PublicContent);else setCategories(v.value as CategoryPresentation[]);setRevision(v.revision);setPending({})},prepare:async(v)=>{const staged=kind==='home'?await upload(v.value as PublicContent):await Promise.all((v.value as CategoryPresentation[]).map(async c=>({...c,value:await upload(c.value??defaultCategory())})));if(kind==='home')setHome(staged as PublicContent);else setCategories(staged as CategoryPresentation[]);setPending({});return {...v,value:staged}}});
  useEffect(()=>{if(scope.current)return registerDraftSave(scope.current,()=>draft.pending?draft.save():Promise.resolve(true))})

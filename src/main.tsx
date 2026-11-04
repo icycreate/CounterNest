@@ -1,3 +1,6 @@
+import {NativeNotice} from './native/NativeNotice'
+import {startAndroidRuntime} from './native/runtime'
+import {isAndroid} from './native/platform'
 import {TooltipRuntime} from './Tooltip'
 import NavigationBoundary from './NavigationBoundary'
 
@@ -20,12 +23,12 @@ const bootElement=document.getElementById('boot-root')
 if(bootElement)ReactDOM.createRoot(bootElement).render(<BootSplash lifecycle={boot}/>)
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <ErrorBoundary><TooltipRuntime/><NavigationBoundary/><React.Suspense fallback={<div className="auth-stage"><p>{tr("Opening screen…")}</p></div>}>{configurationError && !demoEnabled ? <main className="auth-stage"><section className="auth-card"><h1>{tr("Connection setup required")}</h1><p role="alert">{configurationError}</p></section></main> : <App />}</React.Suspense></ErrorBoundary>
+    <ErrorBoundary><NativeNotice/><TooltipRuntime/><NavigationBoundary/><React.Suspense fallback={<div className="auth-stage"><p>{tr("Opening screen…")}</p></div>}>{configurationError && !demoEnabled ? <main className="auth-stage"><section className="auth-card"><h1>{tr("Connection setup required")}</h1><p role="alert">{configurationError}</p></section></main> : <App />}</React.Suspense></ErrorBoundary>
   </React.StrictMode>,
 )
 
 if(configurationError&&!demoEnabled)notifyStartupReady()
-registerPosServiceWorker()
+if(!isAndroid())registerPosServiceWorker();else startAndroidRuntime()
 
 import './buttons.css'
 import './phone.css'
@@ -63,3 +66,7 @@ import './accessibility.css'
 import './tooltip.css'
 
 import './responsiveWorkspace.css'
+
+import './native/android.css'
+
+import './mobileFoundation.css'

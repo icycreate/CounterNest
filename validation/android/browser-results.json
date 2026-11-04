@@ -1,0 +1,14 @@
+{
+  "cases": 40,
+  "widths": [
+    320,
+    360,
+    393,
+    412,
+    768
+  ],
+  "languages": 4,
+  "themes": 2,
+  "errors": [],
+  "nativeApis": "mocked"
+}

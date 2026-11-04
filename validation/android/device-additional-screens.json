@@ -1,0 +1,42 @@
+[
+  {
+    "screen": "Inventory",
+    "path": "/inventory",
+    "client": 384,
+    "scroll": 384,
+    "viewport": 384,
+    "overflow": []
+  },
+  {
+    "screen": "Pre-Orders / Custom Cakes",
+    "path": "/scheduled-orders",
+    "client": 384,
+    "scroll": 384,
+    "viewport": 384,
+    "overflow": []
+  },
+  {
+    "screen": "Catalogue",
+    "path": "/catalogue",
+    "client": 384,
+    "scroll": 384,
+    "viewport": 384,
+    "overflow": []
+  },
+  {
+    "screen": "Reports",
+    "path": "/reports",
+    "client": 384,
+    "scroll": 384,
+    "viewport": 384,
+    "overflow": []
+  },
+  {
+    "screen": "Settings",
+    "path": "/settings",
+    "client": 384,
+    "scroll": 384,
+    "viewport": 384,
+    "overflow": []
+  }
+]

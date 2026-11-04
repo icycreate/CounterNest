@@ -1,0 +1,9 @@
+.native-android body{overscroll-behavior:none}
+.native-android #root{padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}
+.native-android button,.native-android input:not([type=checkbox]):not([type=radio]),.native-android select{min-height:44px}
+.native-android .auth-card{max-width:min(100%,440px)}
+.native-android .modal,.native-android [role=dialog]{max-height:calc(100dvh - 32px);overflow-y:auto;scroll-padding-bottom:72px}
+.native-android input,.native-android textarea{scroll-margin-block:80px}
+.android-push-settings .report-actions{display:flex;flex-wrap:wrap;gap:8px}
+.android-push-settings [role=status]{overflow-wrap:anywhere}
+@media(max-width:480px){.android-push-settings .report-actions>*{flex:1 1 160px}}

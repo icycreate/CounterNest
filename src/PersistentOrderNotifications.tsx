@@ -1,3 +1,4 @@
+import {revokeAndroidPush} from './native/runtime'
 import {useEffect,useRef,useState} from 'react'
 import {supabase} from './lib/supabase'
 import {Card} from './Surface'
@@ -23,7 +24,7 @@ export function ringOrderAlert(repeat:boolean|number=3,tone:AlertPreferences['to
 }
 async function enableAudio(){audio??=new AudioContext();await audio.resume()}
 async function binding(user:string|null){if(!('serviceWorker'in navigator))return;const reg=await navigator.serviceWorker.getRegistration();(reg?.active??navigator.serviceWorker.controller)?.postMessage({type:'counternest:notification-account',user})}
-export async function disconnectOrderPush(){await binding(null);try{const reg=await navigator.serviceWorker?.getRegistration(),sub=await reg?.pushManager.getSubscription();if(sub){await supabase?.rpc('unregister_order_push',{p_endpoint:sub.endpoint});/* Keep the shared browser subscription for guest order notifications. */}}catch{}account='';void (navigator as any).clearAppBadge?.()}
+export async function disconnectOrderPush(){await revokeAndroidPush();await binding(null);try{const reg=await navigator.serviceWorker?.getRegistration(),sub=await reg?.pushManager.getSubscription();if(sub){await supabase?.rpc('unregister_order_push',{p_endpoint:sub.endpoint});/* Keep the shared browser subscription for guest order notifications. */}}catch{}account='';void (navigator as any).clearAppBadge?.()}
 const mobile=()=>matchMedia('(pointer: coarse)').matches
 const pushAllowed=(p:AlertPreferences)=>p.enabled&&(mobile()?p.mobile:p.desktop)
 
@@ -64,7 +65,7 @@ export function NotificationRuntime({enabled}:{enabled:boolean}){
  </>
 }
 
-export function NotificationSettings({role}:{role:Role}){
+export function NotificationSettings({role,foregroundOnly=false}:{role:Role;foregroundOnly?:boolean}){
  useUiLanguage()
  const [p,setP]=useState(readAlertPreferences),[message,setMessage]=useState(''),[busy,setBusy]=useState(false),[registered,setRegistered]=useState(false),[devices,setDevices]=useState<{id:string;updated_at:string;enabled:boolean;label:string}[]>([])
  async function loadDevices(){const r=await supabase?.rpc('list_order_push_devices');if(r?.error)setMessage(trError(r.error.message));else setDevices(r?.data??[])}
@@ -79,12 +80,12 @@ export function NotificationSettings({role}:{role:Role}){
  }catch(e){setMessage(trError((e as Error).message))}finally{setBusy(false)}}
  async function remove(id:string){setBusy(true);try{const r=await supabase!.rpc('remove_order_push_device',{p_id:id});if(r.error)throw r.error;await loadDevices();setMessage(tr('Device unregistered.'))}catch(e){setMessage(trError((e as Error).message))}finally{setBusy(false)}}
  return <Card className="panel" id="order-alert-settings" data-unsaved-scope="order-alerts"><h2>{tr('Notifications')}</h2><h3>{tr('New Order Alerts')}</h3><p>{tr('Preferences apply to this account on this device. Register each device separately.')}</p>
- {([['enabled','Enable new order notifications'],['preorder','New Pre-Order Alerts'],['catalogue','New Catalogue Requests'],['sound','Sound'],['desktop','Desktop Push'],['mobile','Mobile Push'],['badge','Unread badge']] as const).map(([key,label])=><Toggle key={key} label={tr(label)} checked={p[key]} onChange={e=>setP(old=>({...old,[key]:e.target.checked}))}/>)}
+ {([['enabled','Enable new order notifications'],['preorder','New Pre-Order Alerts'],['catalogue','New Catalogue Requests'],['sound','Sound'],['desktop','Desktop Push'],['mobile','Mobile Push'],['badge','Unread badge']] as const).filter(([key])=>!foregroundOnly||!['desktop','mobile'].includes(key)).map(([key,label])=><Toggle key={key} label={tr(label)} checked={p[key]} onChange={e=>setP(old=>({...old,[key]:e.target.checked}))}/>)}
  <FormField>{tr('Foreground alert sound')}<SelectField value={p.tone} onChange={e=>setP({...p,tone:e.target.value as AlertPreferences['tone']})}>{(['chime','bell','gentle'] as const).map(t=><option key={t} value={t}>{tr({chime:'Chime',bell:'Bell',gentle:'Gentle'}[t])}</option>)}</SelectField></FormField>
  <FormField>{tr('Repeat sound count')}<SelectField value={p.repeatCount} onChange={e=>setP({...p,repeatCount:Number(e.target.value)})}>{[1,2,3,4,5].map(n=><option key={n}>{n}</option>)}</SelectField></FormField>
  <FormField>{tr('Device name')}<InputField maxLength={80} value={p.device_label} onChange={e=>setP({...p,device_label:e.target.value})}/></FormField>
- <div className="report-actions"><Button disabled={busy} variant="primary" onClick={()=>void save()}>{tr('Save Changes')}</Button><Button disabled={busy||!pushAllowed(p)} onClick={()=>void save(true)}>{tr('Enable notifications on this device')}</Button><Button disabled={busy||!registered} onClick={()=>void (async()=>{const reg=await navigator.serviceWorker?.getRegistration(),sub=await reg?.pushManager.getSubscription();if(sub){const r=await supabase?.rpc('unregister_order_push',{p_endpoint:sub.endpoint});if(r?.error){setMessage(trError(r.error.message));return}/* Keep the shared browser subscription for guest order notifications. */}setRegistered(false);await loadDevices()})()}>{tr('Unregister this device')}</Button><Button onClick={()=>void enableAudio().then(async()=>{ringOrderAlert(p.repeatCount,p.tone);setMessage(tr('Test Notification'));if(registered&&'Notification'in window&&Notification.permission==='granted'){const reg=await navigator.serviceWorker.getRegistration();await reg?.showNotification(tr('Test Notification'),{body:'CounterNest',icon:'/pwa/icon-192.png',tag:'counternest-test'})}}).catch(e=>setMessage(trError(e.message)))}>{tr('Test Notification')}</Button></div>
+ <div className="report-actions"><Button disabled={busy} variant="primary" onClick={()=>void save()}>{tr('Save Changes')}</Button>{!foregroundOnly&&<><Button disabled={busy||!pushAllowed(p)} onClick={()=>void save(true)}>{tr('Enable notifications on this device')}</Button><Button disabled={busy||!registered} onClick={()=>void (async()=>{const reg=await navigator.serviceWorker?.getRegistration(),sub=await reg?.pushManager.getSubscription();if(sub){const r=await supabase?.rpc('unregister_order_push',{p_endpoint:sub.endpoint});if(r?.error){setMessage(trError(r.error.message));return}/* Keep the shared browser subscription for guest order notifications. */}setRegistered(false);await loadDevices()})()}>{tr('Unregister this device')}</Button></>}<Button onClick={()=>void enableAudio().then(async()=>{ringOrderAlert(p.repeatCount,p.tone);setMessage(tr('Test Notification'));if(registered&&'Notification'in window&&Notification.permission==='granted'){const reg=await navigator.serviceWorker.getRegistration();await reg?.showNotification(tr('Test Notification'),{body:'CounterNest',icon:'/pwa/icon-192.png',tag:'counternest-test'})}}).catch(e=>setMessage(trError(e.message)))}>{tr('Test Notification')}</Button></div>
  <p>{tr('Custom sounds play only while the app is active and audio is permitted. Closed-app notifications use browser and OS settings.')}</p>
- <h3>{tr('Registered devices')}</h3>{devices.map(d=><div className="report-actions" key={d.id}><span>{d.label} · {new Date(d.updated_at).toLocaleString()}</span><Button disabled={busy} variant="danger" onClick={()=>void remove(d.id)}>{tr('Remove')}</Button></div>)}{message&&<p role="status">{message}</p>}
+ {!foregroundOnly&&<><h3>{tr('Registered devices')}</h3>{devices.map(d=><div className="report-actions" key={d.id}><span>{d.label} · {new Date(d.updated_at).toLocaleString()}</span><Button disabled={busy} variant="danger" onClick={()=>void remove(d.id)}>{tr('Remove')}</Button></div>)}</>}{message&&<p role="status">{message}</p>}
  </Card>
 }

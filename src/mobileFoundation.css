@@ -42,3 +42,26 @@ html button.cn-button.cn-refresh-button {
  min-block-size:44px;padding:10px 16px;line-height:1.25;align-self:center;
 }
 html .cn-page-header-actions:has(>.cn-refresh-button:only-child){flex:0 0 auto}
+/* Dashboard sections remain in flow while scrolling past operational alerts. */
+html .ux-dashboard > .cn-page-header{position:static}
+html .cn-production-operations > .panel-title{flex-wrap:wrap;align-items:flex-start;gap:12px}
+html .cn-production-operations > .panel-title h2{flex:1 1 240px;min-width:0;line-height:1.35}
+html .cn-production-operations > .panel-title .cn-refresh-button{align-self:flex-start}
+@media(max-width:820px){
+ html .app-shell > .mobile-topbar{position:sticky;top:0}
+ html .mobile-shop-mark .brand-logo-picture{display:block;width:100%;height:100%}
+ html .mobile-shop-mark .brand-logo{max-width:100%;max-height:100%;object-fit:contain}
+ html[data-appearance] .app-shell .ux-metrics{
+  grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:stretch;align-content:start;
+ }
+ html[data-appearance] .app-shell .ux-metrics > article{
+  min-width:0;min-height:0;height:auto;margin:0;padding:12px;
+  display:flex;flex-direction:column;justify-content:flex-start;gap:8px;
+ }
+ html[data-appearance] .app-shell .ux-metrics > article > span{font-size:.8125rem;line-height:1.4}
+ html[data-appearance] .app-shell .ux-metrics strong{font-size:1.5rem;line-height:1.25;letter-spacing:-.025em;overflow-wrap:break-word}
+ html .mobile-bottom-nav{grid-template-columns:repeat(5,minmax(0,1fr));gap:2px}
+ html[data-appearance] .mobile-bottom-nav .cn-button{width:100%;max-width:100%;min-width:0;min-height:48px;margin:0;font-size:.6875rem;line-height:1.25}
+ html .mobile-bottom-nav .cn-button span{min-width:0;max-width:100%;overflow-wrap:break-word}
+ html .cn-production-operations > .panel-title h2{flex-basis:100%}
+}

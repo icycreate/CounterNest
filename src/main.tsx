@@ -10,6 +10,7 @@ import {tr} from './i18n'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
+import AndroidDownload from './AndroidDownload'
 import ErrorBoundary from './ErrorBoundary'
 import './styles.css'
 import './navigation.css'
@@ -19,11 +20,12 @@ import { configurationError, demoEnabled } from './lib/supabase'
 
 
 const boot=startBoot()
+const downloadPage=window.location.pathname.replace(/\/$/,'')==='/download'
 const bootElement=document.getElementById('boot-root')
 if(bootElement)ReactDOM.createRoot(bootElement).render(<BootSplash lifecycle={boot}/>)
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <ErrorBoundary><NativeNotice/><TooltipRuntime/><NavigationBoundary/><React.Suspense fallback={<div className="auth-stage"><p>{tr("Opening screen…")}</p></div>}>{configurationError && !demoEnabled ? <main className="auth-stage"><section className="auth-card"><h1>{tr("Connection setup required")}</h1><p role="alert">{configurationError}</p></section></main> : <App />}</React.Suspense></ErrorBoundary>
+    <ErrorBoundary><NativeNotice/><TooltipRuntime/><NavigationBoundary/><React.Suspense fallback={<div className="auth-stage"><p>{tr("Opening screen…")}</p></div>}>{downloadPage?<AndroidDownload/>:configurationError && !demoEnabled ? <main className="auth-stage"><section className="auth-card"><h1>{tr("Connection setup required")}</h1><p role="alert">{configurationError}</p></section></main> : <App />}</React.Suspense></ErrorBoundary>
   </React.StrictMode>,
 )
 

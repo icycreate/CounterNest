@@ -134,6 +134,8 @@ self.addEventListener('fetch', event => {
   if (url.origin !== self.location.origin) return
   // Manifest responses contain a customer capability token. Never persist API data.
   if (url.pathname.startsWith('/api/')) return
+  // Approved release metadata must never be served from an offline/stale cache.
+  if (url.pathname.startsWith('/releases/') || url.pathname.endsWith('.apk')) return
 
   if (request.mode === 'navigate') {
     event.respondWith((async () => {

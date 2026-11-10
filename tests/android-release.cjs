@@ -1,0 +1,10 @@
+const assert=require('assert'),fs=require('fs'),esbuild=require('esbuild');
+const code=esbuild.buildSync({entryPoints:['src/androidRelease.ts'],bundle:true,write:false,platform:'node',format:'cjs'}).outputFiles[0].text;
+const m={exports:{}};new Function('module','exports',code)(m,m.exports);const {parseApprovedRelease,hasNewerRelease}=m.exports;
+const cert='a'.repeat(64),release={approved:true,buildType:'release',packageId:'com.counternest.pos',versionCode:60503,versionName:'6.5.1',fileName:'CounterNest-6.5.1-60503.apk',sizeBytes:100,sha256:'b'.repeat(64),certificateSha256:cert,releasedAt:'2026-11-10',minAndroid:'7.0',notes:{en:'Fixture',es:'Prueba','zh-TW':'測試','zh-CN':'测试'},url:'https://onfhqlsovqkwrmjuuauy.supabase.co/storage/v1/object/public/app-releases/60503/CounterNest-6.5.1-60503.apk'};
+assert.equal(parseApprovedRelease(JSON.parse(fs.readFileSync('public/releases/approved.json'))),null);
+assert.throws(()=>parseApprovedRelease({schemaVersion:1,release}));
+const valid=parseApprovedRelease({schemaVersion:1,release},cert);assert(hasNewerRelease(valid,60502));assert(!hasNewerRelease(valid,60503));assert(!hasNewerRelease(valid,60504));assert(!hasNewerRelease(valid,NaN));
+for(const patch of [{approved:false},{buildType:'debug'},{packageId:'com.other.app'},{certificateSha256:'c'.repeat(64)},{versionCode:-1},{sizeBytes:0},{sizeBytes:60*1024*1024},{sha256:'bad'},{url:'javascript:alert(1)'},{url:release.url+'?redirect=bad'},{url:release.url.replace('onfhqlsovqkwrmjuuauy','foreign')},{fileName:'latest.apk'},{notes:{en:'English only'}},{releasedAt:'not a date'}])assert.throws(()=>parseApprovedRelease({schemaVersion:1,release:{...release,...patch}},cert));
+assert(fs.readFileSync('public/sw.js','utf8').includes("url.pathname.startsWith('/releases/')"));
+console.log('PASS absent/unapproved/debug/foreign releases rejected; strict URL, package, fingerprint, size, notes and version checks; newer/equal/older comparisons; release cache exclusion.');

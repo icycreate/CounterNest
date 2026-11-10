@@ -1,0 +1,10 @@
+{
+  "cases": 64,
+  "status": "passed",
+  "syntheticDownloadIntegrity": true,
+  "actualApkDownload": false,
+  "nativeVersionApi": "mocked",
+  "cleanInstall": "blocked: no production signing identity",
+  "upgrade": "blocked: debug/production signing conflict",
+  "login": "not executed"
+}

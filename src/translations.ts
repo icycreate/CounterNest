@@ -18173,3 +18173,6 @@ Object.assign(translations,{
  'Email processing could not be started. The saved order is safe.':{es:'No se pudo iniciar el envío. El pedido guardado está seguro.','zh-TW':'無法開始處理郵件。已儲存的訂單不受影響。','zh-CN':'无法开始处理邮件。已保存的订单不受影响。'},
  'Disabling email cancels unsent alerts. An email already handed to the provider cannot be recalled.':{es:'Desactivar el correo cancela las alertas sin enviar. No se puede retirar un correo ya entregado al proveedor.','zh-TW':'停用郵件會取消尚未寄出的通知。已交給郵件服務商的郵件無法收回。','zh-CN':'停用邮件会取消尚未发出的通知。已交给邮件服务商的邮件无法撤回。'}
 })
+
+import {androidDownloadTranslations} from './androidDownloadTranslations'
+Object.assign(translations,androidDownloadTranslations)

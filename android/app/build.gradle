@@ -1,5 +1,16 @@
 apply plugin: 'com.android.application'
 
+// Signing material is supplied locally/through protected CI, never committed.
+def productionSigning = ['CN_ANDROID_KEYSTORE', 'CN_ANDROID_STORE_PASSWORD', 'CN_ANDROID_KEY_ALIAS', 'CN_ANDROID_KEY_PASSWORD'].collectEntries { [(it): System.getenv(it)] }
+def hasProductionSigning = productionSigning.values().every { it != null && !it.isBlank() }
+tasks.register('verifyProductionSigning') {
+    doLast {
+        if (!hasProductionSigning) throw new GradleException('Production signing is not configured. Do not distribute a debug or unsigned APK.')
+        if (!file(productionSigning.CN_ANDROID_KEYSTORE).isFile()) throw new GradleException('Production signing keystore is unavailable.')
+    }
+}
+tasks.configureEach { if (it.name == 'preReleaseBuild') it.dependsOn('verifyProductionSigning') }
+
 android {
     namespace = "com.counternest.pos"
     compileSdk = rootProject.ext.compileSdkVersion
@@ -16,8 +27,20 @@ android {
             ignoreAssetsPattern = '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
         }
     }
+    signingConfigs {
+        production {
+            if (hasProductionSigning) {
+                storeFile file(productionSigning.CN_ANDROID_KEYSTORE)
+                storePassword productionSigning.CN_ANDROID_STORE_PASSWORD
+                keyAlias productionSigning.CN_ANDROID_KEY_ALIAS
+                keyPassword productionSigning.CN_ANDROID_KEY_PASSWORD
+            }
+        }
+    }
     buildTypes {
         release {
+            debuggable false
+            signingConfig signingConfigs.production
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }

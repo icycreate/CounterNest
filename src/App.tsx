@@ -1,3 +1,4 @@
+import {AndroidReleaseAccess} from './AndroidDownload'
 import {imageExtension} from './cropHelpers'
 import {NotificationChannels} from './NotificationChannels'
 import {isAndroid} from './native/platform'
@@ -669,7 +670,7 @@ function AuthStage({ onAuthenticated, message = '' }: { onAuthenticated: (newBus
   if(forgot)return <PasswordRecovery reset={false} onCancel={()=>setForgot(false)} onDone={()=>setForgot(false)}/>
   return <div className="auth-stage"><div className="auth-language"><LanguageSelector id="login-language"/></div>
     <form className="auth-card" onSubmit={submit}>
-      <BrandLogo mode="platform" theme="light" className="auth-platform-logo"/>
+      <BrandLogo mode="platform" theme="light" className="auth-platform-logo"/><a href="/download">{tr('CounterNest for Android')}</a>
       <div className="auth-heading">
         <h1>{mode==='signin'?tr("Sign in"):tr("Create your account")}</h1>
         <p>{mode==='signin'?tr("Enter your account details to open the POS."):tr("Create the owner account first. Your business information is collected on the next screen.")}</p>
@@ -1707,7 +1708,7 @@ function SettingsPage({preferences,theme,setTheme,shopName,setShopName,logoUrl,s
         <FormField>{tr("Receipt footer")}<TextAreaField rows={3} value={receiptFooter} onChange={e=>setReceiptFooter(e.target.value)} placeholder={tr("Thank you for your business!")}/></FormField>
         <div className="mini-receipt-preview"><strong>{shopName||tr("Business Name")}</strong><span>{tr("Receipt #000123")}</span><span>{shopAddress||tr("Business address")}</span><span>{tr("Salesperson: Staff Name")}</span><b>{tr("Total")+' '} {money(12.50,currency)}</b><small>{receiptFooter||tr("Thank you!")}</small></div>
       </Card>
-      <NotificationChannels role={role}/><BusinessContactSettings role={role}/><CustomerContactSettings shopName={shopName} logoUrl={logoUrl} role={role} showToast={showToast}/><Card className="panel hardware-settings-panel">
+      <AndroidReleaseAccess/><NotificationChannels role={role}/><BusinessContactSettings role={role}/><CustomerContactSettings shopName={shopName} logoUrl={logoUrl} role={role} showToast={showToast}/><Card className="panel hardware-settings-panel">
         <SectionHeader title={tr("Hardware & Receipt Printer")} icon={<Printer size={21}/>}/>
         <p className="muted">{tr("Configure a generic ESC/POS connection now and keep System Print as the working fallback. Direct communication is activated only after a compatible printer is selected and tested.")}</p>
         <div className="form-grid"><FormField>{tr("Connection profile")}<SelectField value={printerProfile} onChange={e=>setPrinterProfile(e.target.value)}><option value="system">{tr("System Print (recommended fallback)")}</option><option value="escpos-usb">{tr("Generic ESC/POS — USB")}</option><option value="escpos-bluetooth">{tr("Generic ESC/POS — Bluetooth")}</option><option value="escpos-wifi">{tr("Generic ESC/POS — Wi-Fi / LAN")}</option></SelectField></FormField><FormField>{tr("Receipt paper width")}<SelectField value={paperWidth} onChange={e=>setPaperWidth(e.target.value)}><option value="58">{tr("58 mm")}</option><option value="80">{tr("80 mm")}</option></SelectField></FormField></div>
